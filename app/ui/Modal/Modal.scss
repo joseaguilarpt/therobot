@@ -1,0 +1,60 @@
+/* components/Modal.module.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000; /* Ensure modal is above other content */
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+.modal-content {
+  background: var(--background-color);
+  border: 1px solid var(--default-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  position: relative;
+  outline: none;
+  width: 80%;
+  max-width: 500px;
+  border-radius: var(--border-radius);
+
+  &.full {
+    max-width: 100%;
+    min-height: 80%;
+  }
+  &.lg {
+    max-width: 800px;
+  }
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-close-button span {
+  display: block;
+  line-height: 1;
+}

@@ -1,0 +1,23 @@
+.share-modal {
+    .modal-close-button {
+        svg {
+            color: var(--default-color) !important;
+            fill: var(--default-color) !important;
+        }
+    }
+    .share-buttons {
+    }
+    .share-email__button {
+        width: 195px;
+        background-color: black;
+        color: white;
+        &.button--disabled {
+            background-color: rgb(87, 87, 87);
+        }
+    }
+    .contact-with-whatsapp button {
+        &.button--disabled {
+            background-color: rgb(87, 87, 87);
+        }
+    }
+}

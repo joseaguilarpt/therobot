@@ -1,0 +1,29 @@
+@import '../../styles/theme';
+
+.status-bar {
+  padding: 5px 15px;
+  border-radius: var(--input-border-radius);
+
+  transform: scale(.8);
+  @include media-query(medium) {
+    transform: none;
+  }
+  &.completed {
+    background: #2196F3;
+    .text {
+        color: white;
+    }
+  }
+  &.processing {
+    background: rgb(150, 150, 150);
+    .text {
+        color: white;
+    }
+  }
+  &.error {
+    background: #b54242;
+    .text {
+        color: white;
+    }
+  }
+}

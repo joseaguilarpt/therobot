@@ -1,0 +1,49 @@
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill-container {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.pill-container:hover .pill-remove {
+  opacity: 1;
+}
+
+.pill {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  color: var(--default-color);
+  font-family: var(--default-font);
+  font-size: var(--font-size-medium);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.pill:hover {
+  background-color: var(--input-border-active);
+  transform: scale(1.05);
+  color: var(--contrast-color);
+}
+.pill--active {
+  background-color: var(--input-border-active);
+  color: var(--contrast-color);
+  font-weight: bold;
+}
+
+.pill-remove {
+  background: none;
+  border: none;
+  color: var(--error-color);
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/*# sourceMappingURL=Pills.css.map */

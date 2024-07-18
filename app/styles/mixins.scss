@@ -1,0 +1,83 @@
+// _mixins.scss
+
+// Flexbox Utilities
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Spacing Utilities
+@mixin padding($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  margin: $top $right $bottom $left;
+}
+
+// Font Size Utilities
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+// _utilities.scss
+
+// Padding Utilities
+@mixin generate-padding-classes($prefix) {
+  @for $i from 0 through 5 {
+    .#{$prefix}-p#{$i} {
+      padding: $i * 8px; // Adjust the multiplier to your spacing scale
+    }
+
+    .#{$prefix}-pt#{$i} {
+      padding-top: $i * 8px;
+    }
+
+    .#{$prefix}-pr#{$i} {
+      padding-right: $i * 8px;
+    }
+
+    .#{$prefix}-pb#{$i} {
+      padding-bottom: $i * 8px;
+    }
+
+    .#{$prefix}-pl#{$i} {
+      padding-left: $i * 8px;
+    }
+  }
+}
+
+@include generate-padding-classes('u');
+
+// Margin Utilities
+@mixin generate-margin-classes($prefix) {
+  @for $i from 0 through 10 {
+    .#{$prefix}-m#{$i} {
+      margin: $i * 8px; // Adjust the multiplier to your spacing scale
+    }
+
+    .#{$prefix}-mt#{$i} {
+      margin-top: $i * 8px;
+    }
+
+    .#{$prefix}-mr#{$i} {
+      margin-right: $i * 8px;
+    }
+
+    .#{$prefix}-mb#{$i} {
+      margin-bottom: $i * 8px;
+    }
+
+    .#{$prefix}-ml#{$i} {
+      margin-left: $i * 8px;
+    }
+  }
+}
+
+@include generate-margin-classes('u');

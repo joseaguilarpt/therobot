@@ -1,0 +1,54 @@
+/* components/MenuDropdown.module.css */
+.menu-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-dropdown__toggle {
+  background-color: transparent; /* Using primary color for toggle button */
+  color: var(--contrast-color); /* Text color using contrast color */
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.menu-dropdown__toggle.--contrast {
+  color: var(--default-color); /* Text color using default color */
+}
+
+.menu-dropdown__list {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  background-color: var(--background-color); /* Using global background color */
+  border: 1px solid var(--default-color); /* Using global default color for border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  margin: 0;
+  list-style-type: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+.menu-dropdown__list.open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.menu-dropdown__item {
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-dropdown__item:hover {
+  background-color: var(--nav-hover-color); /* Using nav hover color */
+}
+
+/*# sourceMappingURL=Menu.css.map */

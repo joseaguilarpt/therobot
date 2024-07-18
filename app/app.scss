@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import './styles/theme';
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: --background-color;
+}
+
+
+// main.scss or your main CSS file
+
+:root {
+  /* Fonts */
+  --default-font: #{$default-font};
+  --heading-font: #{$heading-font};
+  --nav-font: #{$nav-font};
+  --border-radius: 1em;
+  --input-border-radius: 1em;
+  --input-font-size: 1rem;
+  --input-padding: 0.65rem;
+
+  /* Font Sizes */
+  --font-size-small: #{$font-size-small};
+  --font-size-medium: #{$font-size-medium};
+  --font-size-large: #{$font-size-large};
+
+  /* Light Theme Variables */
+  --background-color: #{$background-color-light};
+  --font-color: #{$font-color-light};
+  --default-color: #{$default-color-light};
+  --heading-color: #{$heading-color-light};
+  --accent-color: #{$accent-color-light};
+  --accent-color-darken: #{$accent-color-light-darken};
+  --contrast-color: #{$contrast-color-light};
+  --shadow-color: #{$shadow-color-light};
+  --error-color: #{$error-color-light};
+  --carousel-overlay: #{$carousel-overlay-light};
+  --input-background-color: #{$input-background-color-light};
+  --button-color: #{$button-color-light};
+  --image-background: #{$image-background-light};
+
+  /* Nav Menu Colors */
+  --nav-color: #{$nav-color-light};
+  --placeholder-color: #{$placeholder-color-light};
+  --input-border: #{$input-border-light};
+  --input-border-active: #{$input-border-active-light};
+  --nav-hover-color: #{$nav-hover-color-light};
+  --nav-dropdown-background-color: #{$nav-dropdown-background-color-light};
+  --nav-dropdown-color: #{$nav-dropdown-color-light};
+  --nav-dropdown-hover-color: #{$nav-dropdown-hover-color-light};
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --background-color: #{$background-color-dark};
+  --font-color: #{$font-color-dark};
+  --default-color: #{$default-color-dark};
+  --heading-color: #{$heading-color-dark};
+  --accent-color: #{$accent-color-dark};
+  --accent-color-darken: #{$accent-color-dark-darken};
+  --contrast-color: #{$contrast-color-dark};
+  --shadow-color: #{$shadow-color-dark};
+  --error-color: #{$error-color-dark};
+  --carousel-overlay: #{$carousel-overlay-dark};
+  --button-color: #{$button-color-dark};
+  --image-background: #{$image-background-dark};
+
+
+  /* Nav Menu Colors */
+  --nav-color: #{$nav-color-dark};
+  --placeholder-color: #{$placeholder-color-dark};
+  --input-border: #{$input-border-dark};
+  --input-border-active: #{$input-border-active-dark};
+  --nav-hover-color: #{$nav-hover-color-dark};
+  --nav-dropdown-background-color: #{$nav-dropdown-background-color-dark};
+  --nav-dropdown-color: #{$nav-dropdown-color-dark};
+  --nav-dropdown-hover-color: #{$nav-dropdown-hover-color-dark};
+  --input-background-color: #{$input-background-color-dark};
+
+}
+
+
+// Root variables
+:root {
+  --small: #{map-get($breakpoints, small)};
+  --medium: #{map-get($breakpoints, medium)};
+  --large: #{map-get($breakpoints, large)};
+  --extra-large: #{map-get($breakpoints, extra-large)};
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

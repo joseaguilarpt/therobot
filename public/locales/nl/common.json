@@ -1,0 +1,626 @@
+{
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "id": "Indonesia",
+    "ru": "русский"
+  },
+  "pageName": "EasyConvertImage",
+  "nav": {
+    "home": "Home",
+    "topTools": "Beste Tools",
+    "contact": "Contact",
+    "about": "Over ons",
+    "main": "Hoofdnavigatie"
+  },
+  "convert": "Converteren",
+  "images": "beelden",
+  "to": "naar",
+  "goNow": "Begin nu!",
+  "goToDetails": "Bekijk details",
+  "email": "E-mail",
+  "phone": "Telefoonnummer",
+  "or": "Of",
+  "hero": {
+    "header1": "Eenvoudige Beeldconversie",
+    "header2": "Elk formaat, altijd.",
+    "description": "Converteer eenvoudig afbeeldingen met Easy Convert Image. Sleep en drop bestanden, plak met Ctrl+V, of upload vanaf uw apparaat. Converteer meerdere afbeeldingen in één keer. Ondersteunt JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP en meer.",
+    "freeToUse": "Gratis, geen registratie vereist. Transformeer uw afbeeldingen in enkele seconden!"
+  },
+  "tool": {
+    "fileArea": "Bestandsuploadarea",
+    "inputFile": "Invoerbestand",
+    "drop": "Zet beeldbestanden hier neer",
+    "maxLimit": "Bestandsgrootte overschrijdt de maximale limiet van",
+    "fileType": "Bestandstype",
+    "bytes": "bytes",
+    "notAccepted": " wordt niet geaccepteerd.",
+    "selectOption": "Selecteer een optie:",
+    "pdfOption1": "Aparte PDF voor elke afbeelding",
+    "pdfOption2": "Eén PDF voor alle afbeeldingen",
+    "convertFrom": "Converteer afbeeldingen van",
+    "convertTo": "Converteer afbeeldingen naar",
+    "uploadButton": "Upload Afbeeldingen",
+    "uploadMoreImages": "Upload Meer Afbeeldingen",
+    "instructions1": "U kunt bestanden ook hier naartoe slepen en neerzetten,",
+    "instructions2": "of gewoon plakken met Ctrl+V (of Cmd+V op Mac)"
+  },
+  "fileActions": {
+    "selected": "Geselecteerd",
+    "files": "Bestand(en)",
+    "zipSuccess": "ZIP-bestanden succesvol gedownload",
+    "fileSelected": "Bestand(en) Geselecteerd",
+    "downloadAll": "Alles Downloaden",
+    "removeAll": "Alles Verwijderen",
+    "share": "Delen",
+    "selectedList": "Lijst van Geselecteerde Bestanden",
+    "fileName": "Bestandsnaam",
+    "fileSize": "Grootte",
+    "fileStatus": "Status",
+    "fileActions": "Acties",
+    "download": "Downloaden",
+    "remove": "Verwijderen",
+    "completed": "Voltooid",
+    "error": "fout",
+    "processing": "Wordt verwerkt"
+  },
+  "share": {
+    "invalidEmail": "Ongeldig e-mailformaat",
+    "warning": "Opmerking: De WhatsApp-optie zal alleen een bericht delen. U zult het zip-bestand apart moeten versturen.",
+    "viaEmail": "Delen via e-mail",
+    "optionEmail": "Versturen per e-mail:",
+    "downloadZip": "Download ZIP-bestand",
+    "optionWhatsapp": "En versturen via WhatsApp",
+    "viaWhatsapp": "Delen via Whatsapp",
+    "title": "Deelmogelijkheden",
+    "whatsappMessage": "Hallo! Hier zijn een paar afbeeldingen die ik heb gecomprimeerd met Easy Convert Image",
+    "description": "Het ZIP-bestand met de afbeeldingen is klaar om te delen. U heeft 2 opties:"
+  },
+  "services": {
+    "itemDescriptionContent": "Converteer {{sourceFormat}}-afbeeldingen naar het {{targetFormat}}-formaat.",
+    "itemDescriptionAria": "Ga naar de {{sourceFormat}} naar {{targetFormat}} image converter.",
+    "otherConversions": "Andere conversies {{conversion}}:",
+    "itemTitle": "{{sourceFormat}} naar {{targetFormat}}",
+    "popularConversions": "Populaire Conversies",
+    "description": "Converteer uw afbeeldingen tussen verschillende formaten met onze gratis en eenvoudig te gebruiken tools. We ondersteunen een breed scala aan afbeeldingstypen, waardoor ze compatibel zijn met verschillende platforms en toepassingen."
+  },
+  "testimonials": {
+    "heading": "Betrouwbaar, Veilig en Vertrouwenswaardig",
+    "description": "Bij Easy Convert Image hebben we het vertrouwen gewonnen van gebruikers over de hele wereld dankzij onze onwrikbare toewijding aan veiligheid, kwaliteit en gebruikerstevredenheid. Onze geavanceerde technologie garandeert dat uw afbeeldingen met zorg worden verwerkt, terwijl onze gebruiksvriendelijke interface de conversie kinderspel maakt. Ontdek waarom particulieren en bedrijven ons kiezen voor hun afbeeldingsconversie-behoeften.",
+    "option1": {
+      "heading": "+500.000",
+      "description": "Gebruikers wereldwijd"
+    },
+    "option2": {
+      "heading": "+20.000.000",
+      "description": "Geconverteerde Afbeeldingen"
+    },
+    "option3": {
+      "heading": "+10.000",
+      "description": "Dagelijks Geconverteerde Afbeeldingen"
+    },
+    "option4": {
+      "heading": "Gratis",
+      "description": "Geen Betaling Vereist"
+    },
+    "option5": {
+      "heading": "Geen Registratie",
+      "description": "Geen registratie vereist - we respecteren uw privacy"
+    },
+    "option6": {
+      "heading": "10X",
+      "description": "Ultra-snelle conversies"
+    }
+  },
+  "faq": {
+    "heading": "Veelgestelde Vragen: Uw Vragen over Afbeeldingsconversie Beantwoord",
+    "description": "We begrijpen dat u vragen kunt hebben over onze afbeeldingsconversiedienst. Daarom hebben we deze lijst met veelgestelde vragen samengesteld om snelle en duidelijke antwoorden te bieden. Van bestandsformaten tot beveiligingskwesties, vind de informatie die u nodig hebt om met vertrouwen te converteren. Kunt u niet vinden wat u zoekt? Ons ondersteuningsteam staat altijd klaar om u te helpen!",
+    "option1": {
+      "heading": "Wat is Easy Convert Image?",
+      "description": "Easy Convert Image is een gratis online tool waarmee u snel en eenvoudig afbeeldingen tussen verschillende formaten kunt converteren. Onze service ondersteunt een breed scala aan afbeeldingsformaten en is ontworpen om gebruiksvriendelijk en efficiënt te zijn."
+    },
+    "option2": {
+      "heading": "Welke afbeeldingsformaten ondersteunt Easy Convert Image?",
+      "description": "We ondersteunen een breed scala aan formaten, waaronder JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO en meer. U kunt converteren tussen welk van deze formaten dan ook in beide richtingen."
+    },
+    "option3": {
+      "heading": "Is Easy Convert Image echt gratis?",
+      "description": "Ja, onze basisservice is volledig gratis. We bieden premium functies voor geavanceerde gebruikers, maar alle standaardconversies kunnen gratis worden uitgevoerd."
+    },
+    "option4": {
+      "heading": "Hoe kan ik een afbeelding converteren?",
+      "description": "Het converteren van een afbeelding is eenvoudig: 1) Selecteer het gewenste uitvoerformaat. 2) Upload uw afbeelding door deze te slepen en neerzetten op onze interface of door op de uploadknop te klikken. 3) Download uw geconverteerde afbeeldingen."
+    },
+    "option5": {
+      "heading": "Is er een limiet aan het aantal afbeeldingen dat ik kan converteren?",
+      "description": "We staan maximaal 10 afbeeldingen per conversie toe, met een maximale bestandsgrootte van 10 MB per afbeelding, u kunt altijd een nieuwe conversie batch starten."
+    },
+    "option6": {
+      "heading": "Hoe snel worden conversies uitgevoerd?",
+      "description": "De meeste conversies zijn binnen enkele seconden voltooid. Grotere bestanden of batch-conversies kunnen iets langer duren, maar we streven naar de snelst mogelijke service."
+    },
+    "option7": {
+      "heading": "Wat is Easy Convert Image?",
+      "description": "Absoluut. We nemen de gegevensbeveiliging zeer serieus. Alle uploads en downloads worden beschermd door SSL-versleuteling."
+    },
+    "option8": {
+      "heading": "Zijn mijn gegevens veilig wanneer ik Easy Convert Image gebruik?",
+      "description": "Easy Convert Image is een gratis online tool waarmee u snel en eenvoudig afbeeldingen tussen verschillende formaten kunt converteren. Onze service ondersteunt een breed scala aan afbeeldingsformaten en is ontworpen om gebruiksvriendelijk en efficiënt te zijn."
+    },
+    "option9": {
+      "heading": "Bewaar je kopieën van de afbeeldingen die ik converteer?",
+      "description": "Nee, we bewaren geen kopieën van uw afbeeldingen."
+    },
+    "option10": {
+      "heading": "Kan ik meerdere afbeeldingen tegelijk converteren?",
+      "description": "Ja, onze batchtransfertfunctie laat u meerdere afbeeldingen tegelijkertijd converteren. U hoeft alleen maar alle afbeeldingen die u wilt converteren te uploaden en ze in één keer te verwerken."
+    },
+    "option11": {
+      "heading": "Moet ik een account aanmaken om Easy Convert Image te gebruiken?",
+      "description": "Nee, u hoeft geen account aan te maken om gebruik te maken van onze diensten."
+    },
+    "option12": {
+      "heading": "Werkt Easy Convert Image op mobiele apparaten?",
+      "description": "Ja, onze website is volledig responsief en werkt op alle apparaten, waaronder smartphones en tablets."
+    },
+    "option13": {
+      "heading": "Wat moet ik doen als ik niet tevreden ben met het resultaat van de conversie?",
+      "description": "Als u niet tevreden bent met het resultaat, kunt u proberen de conversie-instellingen aan te passen of contact opnemen met ons ondersteuningsteam. We staan altijd klaar om u te helpen het beste resultaat te bereiken."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Neem Contact Met Ons Op | Easy Convert Image",
+      "description": "Neem contact op met Easy Convert Image voor hulp, feedback of vragen over onze gratis online conversieen optimalisatiehulpmiddelen voor afbeeldingen.",
+      "keywords": "contact, ondersteuning, klantenservice, hulp bij afbeeldingsconversie",
+      "ogTitle": "Neem Contact Op Met Easy Convert Image - We Zijn Hier Voor U",
+      "ogDescription": "Hulp nodig met afbeeldingsconversie? Hebt u feedback? Neem contact met ons op voor snelle en vriendelijke ondersteuning.",
+      "structuredData": {
+        "name": "Neem Contact Op Met Easy Convert Image",
+        "description": "Contact- en ondersteuningsinformatie voor gebruikers van Easy Convert Image.",
+        "publisherName": "Easy Convert Image"
+      }
+    },
+    "name": "Naam",
+    "phone": "Telefoonnummer",
+    "email": "E-mail",
+    "comments": "Opmerkingen",
+    "contactUs": "Neem Contact Met Ons Op",
+    "send": "E-mail Versturen",
+    "inquiries": "Algemene Informatie",
+    "support": "Technische Ondersteuning",
+    "heading": "Neem Contact Met Ons Op:",
+    "instructions": "Vul de onderstaande velden in",
+    "description": "We waarderen uw feedback en staan klaar om u te helpen met al uw vragen of problemen."
+  },
+  "footer": {
+    "theme": "Verander de pagina-indeling naar donker of licht",
+    "copyright": "Easy Convert Image 2024 - Alle rechten voorbehouden.",
+    "pageName": "EasyConvertImage",
+    "phone": "+354 910 232 032",
+    "email": "info@easyimageconvert.com",
+    "usefulInfo": {
+      "heading": "Handige Links",
+      "option1": {
+        "label": "Home",
+        "url": "/"
+      },
+      "option2": {
+        "label": "Over Ons",
+        "url": "/about"
+      },
+      "option3": {
+        "label": "Contact",
+        "url": "/contact"
+      },
+      "option4": {
+        "label": "Beste Tools",
+        "url": "/#top-tools"
+      }
+    },
+    "otherTools": {
+      "heading": "Andere Tools"
+    },
+    "legal": {
+      "heading": "Juridisch",
+      "option1": {
+        "label": "Privacybeleid",
+        "url": "/privacy-policy"
+      },
+      "option2": {
+        "label": "Gebruiksvoorwaarden",
+        "url": "/terms-of-service"
+      },
+      "option3": {
+        "label": "Cookiebeleid",
+        "url": "/cookie-policy"
+      },
+      "option4": {
+        "label": "Toegankelijkheidsverklaring",
+        "url": "/accessibility"
+      },
+      "option5": {
+        "label": "Contactinformatie",
+        "url": "/contact"
+      },
+      "option6": {
+        "label": "CCPA-naleving",
+        "url": "/ccpa-compliance"
+      },
+      "option7": {
+        "label": "GDPR-naleving",
+        "url": "/gdpr-compliance"
+      }
+    }
+  },
+  "homeMeta": {
+    "title": "Easy Convert Image: Gratis Online Converter en Optimalisator (JPG, PNG, WebP)",
+    "description": "Converteer, resize en optimaliseer afbeeldingen in een handomdraai. Ondersteunt JPG, PNG, WebP, AVIF, SVG en meer. Batch-verwerking, geen registratie. Snel, veilig en 100% gratis.",
+    "keywords": "afbeeldingsconverter, JPG naar PNG, WebP converter, afbeelding resizer, afbeeldingsoptimalisatie, batch-afbeeldingsverwerking",
+    "ogTitle": "Easy Convert Image: Transformeer Elk Afbeeldingsformaat Direct (Gratis)",
+    "ogDescription": "Converteer, resize en optimaliseer afbeeldingen in enkele seconden. JPG, PNG, WebP, AVIF en meer. Geen registratie, geen watermerken. Probeer onze supersnelle tool nu!"
+  },
+  "ui": {
+    "emailError": "Fout bij het verzenden van contacte-mail",
+    "conversionSuccess": "Bestanden succesvol geconverteerd",
+    "missingFormat": "Bestanden en formaat zijn vereist",
+    "conversionFailed": "Conversie mislukt",
+    "emailSuccess": "E-mail succesvol verzonden",
+    "downloadSuccess": "Bestanden succesvol gedownload",
+    "fileRemoveSuccess": "Bestand succesvol verwijderd",
+    "filesRemoveSuccess": "Bestanden succesvol verwijderd",
+    "contactEmailSent": "E-mail succesvol verzonden, we nemen snel contact met u op.",
+    "missingName": "Naam ontbreekt",
+    "missingPhone": "Telefoonnummer ontbreekt",
+    "missingEmail": "E-mail ontbreekt",
+    "formatEmail": "Ongeldig e-mailformaat",
+    "missingComments": "Opmerkingen ontbreken",
+    "success": "Succes",
+    "error": "Fout",
+    "warning": "Waarschuwing",
+    "info": "Info",
+    "backToTop": "Terug naar boven"
+  },
+  "convertMeta": {
+    "title": "Converteer {{sourceFormatUpper}} naar {{targetFormatUpper}} - Gratis Online Afbeeldingsconverter | Easy Convert Image",
+    "description": "Converteer uw {{sourceFormatUpper}}-afbeeldingen eenvoudig naar {{targetFormatUpper}}. Onze gratis online converter behoudt {{sourceBenefit}} terwijl het {{targetBenefit}} biedt. Geen registratie vereist, directe conversie!"
+  },
+  "keywordGenerator": {
+    "baseKeywords": [
+      "afbeeldingsconversie",
+      "gratis converter",
+      "online tool",
+      "afbeeldingsformaat",
+      "bestandsconversie",
+      "digitale beelden"
+    ],
+    "formatSpecificKeywords": {
+      "jpeg": ["verliescompressie", "fotografie", "webafbeeldingen"],
+      "png": ["verliesloze compressie", "transparantie", "graphics"],
+      "gif": ["geanimeerde afbeeldingen", "korte animaties", "memes"],
+      "webp": ["weboptimalisatie", "snellere laden", "nieuw generatieformaat"],
+      "avif": ["geavanceerde compressie", "hoge kwaliteit", "modern formaat"],
+      "tiff": ["hoge resolutie", "professionele afdruk", "beeldbewerking"],
+      "svg": ["vectorafbeeldingen", "schaalneutrale afbeeldingen", "logo's"],
+      "bmp": [
+        "bitmap-afbeeldingen",
+        "niet-gecomprimeerd formaat",
+        "ouderwets formaat"
+      ],
+      "pdf": ["documentconversie", "beeldextractie", "meerdere pagina's"]
+    },
+    "conversionKeywordTemplates": [
+      "{sourceFormat} naar {targetFormat}",
+      "{sourceFormat} converteren naar {targetFormat}",
+      "{sourceFormat} naar {targetFormat} converter",
+      "{sourceFormat} veranderen naar {targetFormat}",
+      "{sourceFormat} in {targetFormat}"
+    ]
+  },
+  "notFound": {
+    "title": "Pagina Niet Gevonden",
+    "message": "Sorry, de pagina die u zoekt bestaat niet.",
+    "goHome": "Ga naar de Startpagina"
+  },
+  "errorBoundary": {
+    "title": "Er is een fout opgetreden",
+    "message": "Sorry, er is een onverwachte fout opgetreden.",
+    "unknownError": "Er is een onbekende fout opgetreden."
+  },
+  "about": {
+    "about": "Over Ons",
+    "title": "Over Ons",
+    "description": "Bij Easy Convert Image worden we geleid door een set van fundamentele doelstellingen die onze missie om de beste afbeeldingsconversie-ervaring te bieden, sturen. Deze principes vormen onze service en weerspiegelen ons engagement jegens onze gebruikers:",
+    "purpose": "Ons Doel",
+    "meta": {
+      "title": "Over Easy Convert Image | Gratis Online Afbeeldingsconversietools",
+      "description": "Ontdek Easy Convert Image, onze missie om afbeeldingsconversie te vereenvoudigen, en het team achter onze krachtige en gebruiksvriendelijke tools. Ontdek waarom miljoenen mensen ons vertrouwen voor hun afbeeldingsconversiebehoeften.",
+      "keywords": "over ons, afbeeldingsconversietool, bedrijfsmissie, team, beeldverwerking, gratis online tools",
+      "ogTitle": "Over Easy Convert Image: Online Afbeeldingsconversie Vereenvoudigen",
+      "ogDescription": "Ontmoet het team achter Easy Convert Image en ontdek hoe we online afbeeldingsconversie revolutioneren met onze gratis, krachtige en gebruiksvriendelijke tools.",
+      "ogImage": "https://easyconvertimage.com/assets/about-team-image.jpg",
+      "canonicalUrl": "https://easyconvertimage.com/about"
+    },
+    "structuredData": {
+      "name": "Over Easy Convert Image",
+      "description": "Easy Convert Image biedt gratis online tools voor afbeeldingsconversie en -optimalisatie. Ontdek onze missie en het team achter onze services.",
+      "publisherName": "Easy Convert Image",
+      "logoUrl": "https://easyconvertimage.com/logo.png",
+      "websiteName": "Easy Convert Image",
+      "websiteUrl": "https://easyconvertimage.com"
+    }
+  },
+  "companyObjectives": {
+    "simplifyConversion": {
+      "title": "Afbeeldingsconversie Vereenvoudigen",
+      "content": "Ons primaire doel is om afbeeldingsconversie moeiteloos te maken. Met een intuïtieve interface zorgen we ervoor dat zelfs complexe conversies slechts een paar klikken verwijderd zijn."
+    },
+    "accessibility": {
+      "title": "Toegankelijk voor Iedereen",
+      "content": "We geloven in de democratisering van beeldverwerkingstools. Daarom bieden we onze diensten gratis aan, waardoor kwaliteitsafbeeldingsconversie toegankelijk is voor zowel particulieren als bedrijven."
+    },
+    "advancedTechnology": {
+      "title": "Geavanceerde Technologie Benutten",
+      "content": "Door gebruik te maken van de nieuwste beeldverwerkingsalgoritmen, blijven we de conversie-snelheid en -kwaliteit voortdurend verbeteren en blijven we voorop lopen in de industrie."
+    },
+    "userPrivacy": {
+      "title": "Gebruikersprivacy Prioriteit Geven",
+      "content": "Uw afbeeldingen zijn uw eigendom. We hanteren strikte beveiligingsmaatregelen en een duidelijk privacybeleid om ervoor te zorgen dat uw bestanden vertrouwelijk en beschermd blijven."
+    },
+    "formatSupport": {
+      "title": "Alle Belangrijke Formaten Ondersteunen",
+      "content": "Van veelgebruikte formaten als JPG en PNG tot gespecialiseerde formaten als WebP en AVIF, we streven ernaar uw one-stop-shop te zijn voor alle afbeeldingsconversiebehoeften."
+    },
+    "userFeedback": {
+      "title": "Evolueren Met de Behoeften van Gebruikers",
+      "content": "We zijn voortdurend verbeterd. Door actief op zoek te gaan naar en feedback van gebruikers te implementeren, zorgen we ervoor dat ons hulpmiddel evolueert om te voldoen aan veranderende eisen en opkomende technologieën."
+    }
+  },
+  "accessibility": {
+    "title": "Toegankelijkheidsverklaring",
+    "breadcrumb": "Toegankelijkheidsverklaring",
+    "statementTitle": "Toegankelijkheidsverklaring voor Easy Convert Image",
+    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
+    "commitment": "Easy Convert Image is toegewijd aan digitale toegankelijkheid voor mensen met beperkingen. We blijven de gebruikerservaring voor iedereen verbeteren en passen de relevante toegankelijkheidsnormen toe.",
+    "conformanceStatus": {
+      "title": "Conformiteitsstatus",
+      "description": "De Web Content Accessibility Guidelines (WCAG) definiëren de vereisten voor ontwerpers en ontwikkelaars om de toegankelijkheid voor mensen met beperkingen te verbeteren. Het definieert drie conformiteitsniveaus: Niveau A, Niveau AA en Niveau AAA. Easy Convert Image voldoet gedeeltelijk aan WCAG 2.1 Niveau AA."
+    },
+    "feedback": {
+      "title": "Feedback",
+      "description": "We ontvangen graag uw feedback over de toegankelijkheid van Easy Convert Image. Laat ons weten als u op toegankelijkheidsproblemen stuit: E-mail: accessibility@easyconvertimage.com"
+    },
+    "technicalSpecs": {
+      "title": "Technische Specificaties",
+      "description": "De toegankelijkheid van Easy Convert Image is gebaseerd op de volgende technologieën om te werken met de specifieke combinatie van webbrowser en ondersteunende technologieën of plug-ins die op uw computer zijn geïnstalleerd: - HTML - WAI-ARIA - CSS - JavaScript"
+    },
+    "assessmentApproach": {
+      "title": "Evaluatie-aanpak",
+      "description": "Easy Convert Image heeft de toegankelijkheid van onze website beoordeeld via de volgende benaderingen: - Zelfevaluatie - Externe evaluatie"
+    },
+    "meta": {
+      "title": "Toegankelijkheidsverklaring | Easy Convert Image",
+      "description": "Lees over de toewijding van Easy Convert Image aan toegankelijkheid en onze inspanningen om ervoor te zorgen dat onze gratis afbeeldingsconversietools bruikbaar zijn voor iedereen.",
+      "keywords": "toegankelijkheid, webtoegankelijkheid, inclusief ontwerp, afbeeldingstools",
+      "ogTitle": "Toegankelijkheidsverklaring van Easy Convert Image",
+      "ogDescription": "Onze toewijding om afbeeldingsconversie en -optimalisatie toegankelijk te maken voor alle gebruikers, ongeacht hun mogelijkheden.",
+      "structuredData": {
+        "name": "Toegankelijkheidsverklaring",
+        "description": "Toewijding van Easy Convert Image aan webtoegankelijkheid en inclusief ontwerp.",
+        "publisherName": "Easy Convert Image"
+      }
+    }
+  },
+  "privacyPolicy": {
+    "content": {
+      "heading": "Privacybeleid",
+      "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
+      "introduction": "Easy Convert Image ('wij' of 'ons') is toegewijd aan uw privacy. Dit beleid legt uit hoe we uw persoonlijke gegevens verzamelen, gebruiken en beschermen wanneer u onze afbeeldingsconversiediensten gebruikt.",
+      "sections": [
+        {
+          "title": "Door Ons Verzamelde Informatie",
+          "content": "We verzamelen de volgende soorten informatie: - Persoonlijke gegevens: e-mailadres (als u ervoor kiest een account aan te maken) - Gebruiksgegevens: soort geconverteerde afbeeldingen, gebruiksfrequentie - Technische gegevens: IP-adres, browsertype, apparaatinformatie"
+        },
+        {
+          "title": "Hoe We Uw Informatie Gebruiken",
+          "content": "We gebruiken uw gegevens om: - Onze afbeeldingsconversiediensten te leveren en te verbeteren - Gebruikspatronen te analyseren om onze algoritmen te optimaliseren - Servicegerelateerde meldingen te verzenden (bijv. onderhoudswaarschuwingen) - Uw onderzoeks- en ondersteuningsverzoeken te beantwoorden"
+        },
+        {
+          "title": "Gegevensbeveiliging",
+          "content": "We implementeren standaard industriebeveiligingsmaatregelen om uw gegevens te beschermen, waaronder versleuteling en toegangscontroles."
+        },
+        {
+          "title": "Uw Rechten",
+          "content": "U hebt het recht om: - Toegang tot en een kopie van uw gegevens te krijgen - Onjuiste gegevens te corrigeren - Verwijdering van uw gegevens aan te vragen - Bezwaar te maken tegen ons gebruik van uw gegevens"
+        }
+      ]
+    },
+    "dataSharing": {
+      "title": "Gegevensuitwisseling en -openbaarmaking",
+      "content": "We verkopen uw persoonlijke gegevens niet. We kunnen gegevens delen met: - Dienstverleners (bijv. cloudopslagproviders) - Wetshandhavingsinstanties wanneer de wet dat vereist"
+    },
+    "contactUs": {
+      "title": "Neem Contact Met Ons Op",
+      "content": "Voor vragen over dit Privacybeleid kunt u ons bereiken op privacy@easyconvertimage.com"
+    },
+    "meta": {
+      "title": "Privacybeleid | Easy Convert Image",
+      "description": "Ontdek hoe Easy Convert Image uw persoonlijke gegevens verzamelt, gebruikt en beschermt wanneer u onze gratis online afbeeldingsconversietools gebruikt.",
+      "keywords": "privacybeleid, gegevensbescherming, afbeeldingsconversieprivacy, gebruikersgegevens",
+      "ogTitle": "Privacybeleid van Easy Convert Image",
+      "ogDescription": "Begrijp hoe we uw gegevens beheren wanneer u onze afbeeldingsconversiediensten gebruikt. Uw privacy is voor ons belangrijk."
+    }
+  },
+  "termsOfService": {
+    "sections": {
+      "acceptance": {
+        "title": "Aanvaarding van de Voorwaarden",
+        "content": "Door Easy Convert Image te gebruiken, accepteert u deze Gebruiksvoorwaarden. Als u het niet eens bent met een deel van de voorwaarden, kunt u onze dienst niet gebruiken."
+      },
+      "use": {
+        "title": "Gebruik van de Dienst",
+        "content": "Onze dienst stelt u in staat afbeeldingen tussen verschillende formaten te converteren. U stemt ermee in om deze dienst uitsluitend voor wettelijke doeleinden en in overeenstemming met deze Voorwaarden te gebruiken."
+      },
+      "userContent": {
+        "title": "Gebruikersinhoud",
+        "content": "U behoudt alle rechten op de afbeeldingen die u uploadt. We claimen geen eigendom van uw inhoud. U verleent ons echter een licentie om uw afbeeldingen alleen op te slaan en te verwerken met het doel om onze conversiedienst te leveren."
+      },
+      "prohibited": {
+        "title": "Verboden Activiteiten",
+        "content": "U mag niet: - Onze dienst gebruiken om illegale of auteursrechtelijk beschermde inhoud te converteren of op te slaan - Proberen ongeautoriseerde toegang tot onze systemen te krijgen - Onze dienst op een manier gebruiken die onze infrastructuur kan beschadigen of overbelasten"
+      },
+      "termination": {
+        "title": "Beëindiging",
+        "content": "Wij kunnen uw toegang tot onze dienst onmiddellijk, zonder voorafgaande kennisgeving en zonder aansprakelijkheid, om welke reden dan ook beëindigen of opschorten, waaronder, zonder beperking, indien u de Voorwaarden schendt."
+      },
+      "liability": {
+        "title": "Beperking van Aansprakelijkheid",
+        "content": "Easy Convert Image is niet aansprakelijk voor indirecte, incidentele, speciale, gevolgschade of boetes, waaronder, zonder beperking, winstderving, gegevensverlies, verlies van gebruik, goodwill of ander immaterieel verlies."
+      },
+      "changes": {
+        "title": "Wijzigingen in de Voorwaarden",
+        "content": "We behouden ons het recht voor om deze Voorwaarden op elk moment te wijzigen of te vervangen. Als een herziening belangrijk is, proberen we u minstens 30 dagen van tevoren op de hoogte te brengen voordat nieuwe voorwaarden van kracht worden."
+      },
+      "contact": {
+        "title": "Neem Contact Met Ons Op",
+        "content": "Als u vragen hebt over deze Voorwaarden, neem dan contact met ons op via terms@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "Gebruiksvoorwaarden | Easy Convert Image",
+      "description": "Bekijk onze gebruiksvoorwaarden om de regels en voorschriften te begrijpen die gelden voor het gebruik van de gratis afbeeldingsconversietools van Easy Convert Image.",
+      "keywords": "gebruiksvoorwaarden, gebruikersovereenkomst, afbeeldingsconversievoorwaarden, juridisch",
+      "ogTitle": "Gebruiksvoorwaarden van Easy Convert Image",
+      "ogDescription": "Begrijp uw rechten en verantwoordelijkheden bij het gebruiken van onze gratis afbeeldingsconversie- en optimalisatietools.",
+      "structuredData": {
+        "name": "Gebruiksvoorwaarden",
+        "description": "Algemene voorwaarden voor gebruik van de online afbeeldingsconversiediensten van Easy Convert Image."
+      }
+    }
+  },
+  "cookiePolicy": {
+    "heading": "Cookiebeleid",
+    "subheading": "Cookiebeleid voor Easy Convert Image",
+    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
+    "sections": {
+      "whatAre": {
+        "title": "Wat Zijn Cookies",
+        "content": "Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen wanneer u onze website bezoekt. Ze helpen ons u een betere ervaring te bieden."
+      },
+      "howWeUse": {
+        "title": "Hoe Wij Cookies Gebruiken",
+        "content": "We gebruiken de volgende soorten cookies: - Essentiële cookies: Voor het inschakelen van basisfunctionaliteit (bijv. uw afbeeldingsconversie-instellingen onthouden) - Analytische cookies: Om te begrijpen hoe bezoekers onze site gebruiken (bijv. Google Analytics) - Voorkeurscookies: Om uw voorkeuren te onthouden (bijv. donkere modus instelling)"
+      },
+      "thirdParty": {
+        "title": "Cookies Van Derden",
+        "content": "We gebruiken Google Analytics om ons te helpen begrijpen hoe onze gebruikers met de website interacteren. Deze cookies kunnen elementen volgen zoals de tijd die u op de site doorbrengt en de pagina's die u bezoekt."
+      },
+      "managing": {
+        "title": "Cookies Beheren",
+        "content": "U kunt cookies naar wens beheren en/of verwijderen. U kunt alle cookies die al op uw computer staan verwijderen en de meeste browsers zodanig configureren dat ze voorkomen dat er nieuwe worden geplaatst."
+      },
+      "contact": {
+        "title": "Neem Contact Met Ons Op",
+        "content": "Als u vragen hebt over ons gebruik van cookies, stuur ons dan een e-mail naar cookies@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "Cookiebeleid | Easy Convert Image",
+      "description": "Ontdek hoe Easy Convert Image cookies gebruikt om uw ervaring met onze gratis online afbeeldingsconversie- en optimalisatietools te verbeteren.",
+      "keywords": "cookiebeleid, website-cookies, gegevensvolging, gebruikersvoorkeuren",
+      "ogTitle": "Cookiebeleid van Easy Convert Image",
+      "ogDescription": "Begrijp hoe we cookies gebruiken om uw afbeeldingsconversie-ervaring te verbeteren en uw privacy te beschermen.",
+      "structuredData": {
+        "name": "Cookiebeleid",
+        "description": "Details over hoe Easy Convert Image cookies en soortgelijke technologieën gebruikt."
+      }
+    }
+  },
+  "ccpaCompliance": {
+    "heading": "CCPA-naleving",
+    "subheading": "CCPA-naleving voor Easy Convert Image",
+    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
+    "sections": {
+      "consumerRights": {
+        "title": "Rechten van Californische Consumenten",
+        "intro": "Krachtens de California Consumer Privacy Act (CCPA) hebben Californische inwoners de volgende rechten:",
+        "list": "1. Recht om te weten welke persoonlijke informatie wordt verzameld\n2. Recht om verwijdering van persoonlijke informatie aan te vragen\n3. Recht om verkoop van persoonlijke informatie te weigeren\n4. Recht op non-discriminatie bij uitoefening van CCPA-rechten"
+      },
+      "infoCollected": {
+        "title": "Categorieën Verzamelde Persoonlijke Informatie",
+        "content": "In de afgelopen 12 maanden heeft Easy Convert Image geen persoonlijke gegevens verzameld."
+      },
+      "exerciseRights": {
+        "title": "Hoe U Uw Rechten Uitoefent",
+        "content": "Om uw CCPA-rechten uit te oefenen, stuur ons een e-mail naar ccpa@easyconvertimage.com. We zullen uw verzoek binnen 45 dagen behandelen."
+      },
+      "verification": {
+        "title": "Verificatieproces",
+        "content": "Om uw privacy te beschermen, zullen we uw identiteit verifiëren voordat we op uw verzoek reageren. We kunnen u vragen om aanvullende informatie te verstrekken voor verificatiedoeleinden."
+      },
+      "authorizedAgent": {
+        "title": "Gemachtigde Agent",
+        "content": "U kunt een gemachtigde agent aanwijzen om namens u een verzoek in te dienen. De gemachtigde agent moet bewijs van uw schriftelijke machtiging verstrekken en zijn eigen identiteit bij ons verifiëren."
+      },
+      "doNotSell": {
+        "title": "Verkoop Mijn Persoonlijke Informatie Niet",
+        "content": "Easy Convert Image verkoopt geen persoonlijke informatie. Als u zich echter wilt afmelden voor eventuele toekomstige verkoop van uw informatie, kunt u ons e-mailen naar donotsell@easyconvertimage.com."
+      }
+    },
+    "meta": {
+      "title": "CCPA-naleving | Easy Convert Image",
+      "description": "Leer over de naleving van Easy Convert Image van de California Consumer Privacy Act (CCPA) en uw rechten met betrekking tot uw persoonlijke informatie.",
+      "keywords": "CCPA, California Consumer Privacy Act, privacyrechten, gegevensbescherming, Easy Convert Image",
+      "ogTitle": "CCPA-naleving - Easy Convert Image",
+      "ogDescription": "Begrijp uw rechten onder de CCPA en hoe Easy Convert Image uw persoonlijke informatie beschermt volgens de Californische wetgeving.",
+      "structuredData": {
+        "name": "CCPA-naleving",
+        "description": "Informatie over de CCPA-naleving van Easy Convert Image en consumentenrechten."
+      }
+    }
+  },
+  "gdprCompliance": {
+    "heading": "GDPR-naleving",
+    "subheading": "GDPR-naleving voor Easy Convert Image",
+    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
+    "sections": {
+      "dataController": {
+        "title": "Verwerkingsverantwoordelijke",
+        "content": "Easy Convert Image is de verwerkingsverantwoordelijke voor de persoonsgegevens die via onze dienst worden verzameld."
+      },
+      "legalBasis": {
+        "title": "Rechtmatige Grondslag voor Verwerking",
+        "content": "We verwerken uw persoonsgegevens op basis van de volgende rechtmatige grondslagen: - Toestemming: Wanneer u instemt met ons gebruik van cookies voor niet-essentiële doeleinden. - Uitvoering van een Contract: Wanneer we u onze afbeeldingsconversiedienst leveren. - Gerechtvaardigd Belang: Om onze diensten te verbeteren en de beveiliging te waarborgen."
+      },
+      "dataSubjectRights": {
+        "title": "Rechten van Betrokkenen",
+        "content": "Krachtens de AVG heeft u de volgende rechten: - Recht op toegang - Recht op rectificatie - Recht op wissing - Recht op beperking van de verwerking - Recht op gegevensoverdraagbaarheid - Recht van bezwaar",
+        "exerciseRights": "Om deze rechten uit te oefenen, stuur ons een e-mail naar gdpr@easyconvertimage.com."
+      },
+      "dataRetention": {
+        "title": "Gegevensretentie",
+        "content": "We bewaren uw persoonsgegevens zolang als nodig is om onze diensten te verlenen en te voldoen aan wettelijke verplichtingen. Geconverteerde afbeeldingen worden automatisch na 24 uur verwijderd."
+      },
+      "internationalTransfers": {
+        "title": "Internationale Overdrachten",
+        "content": "Uw gegevens kunnen worden overgedragen naar servers buiten de EER. We zorgen ervoor dat passende waarborgen zijn getroffen, zoals Standaardcontractbepalingen."
+      }
+    },
+    "meta": {
+      "title": "GDPR-naleving | Easy Convert Image",
+      "description": "Ontdek hoe Easy Convert Image voldoet aan de GDPR-voorschriften terwijl het gratis online afbeeldingsconversie- en optimalisatiediensten biedt.",
+      "keywords": "GDPR-naleving, gegevensbescherming, EU-privacywetgeving, gebruikersrechten",
+      "ogTitle": "Informatie over GDPR-naleving van Easy Convert Image",
+      "ogDescription": "Ontdek uw gegevensrechten en hoe we uw persoonlijke informatie beschermen in overeenstemming met de GDPR.",
+      "structuredData": {
+        "name": "GDPR-naleving",
+        "description": "Informatie over de GDPR-naleving van Easy Convert Image."
+      }
+    }
+  }
+}

@@ -1,0 +1,630 @@
+{
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "id": "Indonesia",
+    "ru": "русский"
+  },
+  "pageName": "EasyConvertImage",
+  "nav": {
+    "home": "Startseite",
+    "topTools": "Top-Tools",
+    "contact": "Kontakt",
+    "about": "Über uns",
+    "main": "Hauptnavigation"
+  },
+  "convert": "Konvertieren",
+  "images": "Bilder",
+  "to": "zu",
+  "goNow": "Los geht's!",
+  "goToDetails": "Zu den Details",
+  "email": "E-Mail",
+  "phone": "Telefonnummer",
+  "or": "Oder",
+  "hero": {
+    "header1": "Einfache Bildkonvertierung",
+    "header2": "Jedes Format, jederzeit.",
+    "description": "Konvertieren Sie Bilder einfach mit Easy Convert Image. Ziehen Sie Dateien per Drag & Drop, fügen Sie sie mit Strg+V ein oder laden Sie sie von Ihrem Gerät hoch. Konvertieren Sie mehrere Bilder gleichzeitig. Unterstützt JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP und weitere Formate.",
+    "freeToUse": "Kostenlos nutzbar, keine Registrierung erforderlich. Transformieren Sie Ihre Bilder in Sekundenschnelle!"
+  },
+  "tool": {
+    "fileArea": "Datei-Upload-Bereich",
+    "inputFile": "Dateieingabe",
+    "drop": "Bilddateien hier ablegen",
+    "maxLimit": "Dateigröße überschreitet das maximale Limit von",
+    "fileType": "Dateityp",
+    "bytes": "Bytes",
+    "notAccepted": " wird nicht akzeptiert.",
+    "selectOption": "Wählen Sie eine Option:",
+    "pdfOption1": "Separates PDF für jedes Bild",
+    "pdfOption2": "Ein einzelnes PDF für alle Bilder",
+    "convertFrom": "Bilder konvertieren von",
+    "convertTo": "Bilder konvertieren zu",
+    "uploadButton": "Bilder hochladen",
+    "uploadMoreImages": "Weitere Bilder hochladen",
+    "instructions1": "Sie können auch Dateien hierher ziehen und ablegen,",
+    "instructions2": "oder einfach mit Strg+V (oder Cmd+V auf Mac) einfügen"
+  },
+  "fileActions": {
+    "selected": "Ausgewählt",
+    "files": "Datei(en)",
+    "zipSuccess": "ZIP-Dateien erfolgreich heruntergeladen",
+    "fileSelected": "Datei(en) ausgewählt",
+    "downloadAll": "Alle herunterladen",
+    "removeAll": "Alle entfernen",
+    "share": "Teilen",
+    "selectedList": "Liste der ausgewählten Dateien",
+    "fileName": "Dateiname",
+    "fileSize": "Größe",
+    "fileStatus": "Status",
+    "fileActions": "Aktionen",
+    "download": "Herunterladen",
+    "remove": "Entfernen",
+    "completed": "Abgeschlossen",
+    "error": "Fehler",
+    "processing": "Verarbeitung"
+  },
+  "share": {
+    "invalidEmail": "Ungültiges E-Mail-Format",
+    "warning": "Hinweis: Die WhatsApp-Option teilt nur eine Nachricht. Sie müssen die ZIP-Datei separat senden.",
+    "viaEmail": "Per E-Mail teilen",
+    "optionEmail": "Per E-Mail senden:",
+    "downloadZip": "ZIP-Datei herunterladen",
+    "optionWhatsapp": "Und per WhatsApp senden",
+    "viaWhatsapp": "Per WhatsApp teilen",
+    "title": "Teiloptionen",
+    "whatsappMessage": "Hallo! Hier sind einige Bilder, die ich mit Easy Convert Image komprimiert habe",
+    "description": "Die ZIP-Datei mit Bildern ist bereit zum Teilen. Sie haben 2 Optionen:"
+  },
+  "services": {
+    "itemDescriptionContent": "Konvertieren Sie {{sourceFormat}}-Bilder in das {{targetFormat}}-Format.",
+    "itemDescriptionAria": "Zum Konverter für {{sourceFormat}}-Bilder in das {{targetFormat}}-Format gehen.",
+    "otherConversions": "Andere {{conversion}}-Konvertierungen:",
+    "itemTitle": "{{sourceFormat}} zu {{targetFormat}}",
+    "popularConversions": "Beliebte Konvertierungen",
+    "description": "Konvertieren Sie Ihre Bilder zwischen mehreren Formaten mit unseren kostenlosen, einfach zu bedienenden Tools. Wir unterstützen eine breite Palette von Bildtypen und gewährleisten so die Kompatibilität über verschiedene Plattformen und Anwendungsfälle hinweg."
+  },
+  "testimonials": {
+    "heading": "Zuverlässig, sicher und vertrauenswürdig",
+    "description": "Bei Easy Convert Image haben wir das Vertrauen von Nutzern weltweit durch unser unermüdliches Engagement für Sicherheit, Qualität und Benutzerzufriedenheit gewonnen. Unsere hochmoderne Technologie stellt sicher, dass Ihre Bilder sorgfältig behandelt werden, während unsere benutzerfreundliche Oberfläche die Konvertierung zum Kinderspiel macht. Entdecken Sie, warum Einzelpersonen und Unternehmen gleichermaßen uns für ihre Bildkonvertierungsbedürfnisse wählen.",
+    "option1": {
+      "heading": "+500.000",
+      "description": "Nutzer weltweit"
+    },
+    "option2": {
+      "heading": "+20.000.000",
+      "description": "Konvertierte Bilder"
+    },
+    "option3": {
+      "heading": "+10.000",
+      "description": "Täglich konvertierte Bilder"
+    },
+    "option4": {
+      "heading": "Kostenlos",
+      "description": "Keine Zahlungen erforderlich"
+    },
+    "option5": {
+      "heading": "Keine Registrierung",
+      "description": "Keine Registrierung erforderlich - wir respektieren Ihre Privatsphäre"
+    },
+    "option6": {
+      "heading": "10X",
+      "description": "Blitzschnelle Konvertierungen"
+    }
+  },
+  "faq": {
+    "heading": "Häufig gestellte Fragen: Ihre Fragen zur Bildkonvertierung beantwortet",
+    "description": "Wir verstehen, dass Sie möglicherweise Fragen zu unserem Bildkonvertierungsservice haben. Deshalb haben wir diese Liste häufig gestellter Fragen zusammengestellt, um schnelle, klare Antworten zu geben. Von Dateiformaten bis hin zu Sicherheitsbedenken finden Sie hier die Informationen, die Sie benötigen, um mit Vertrauen zu konvertieren. Sie finden nicht, wonach Sie suchen? Unser Support-Team steht Ihnen jederzeit zur Verfügung!",
+    "option1": {
+      "heading": "Was ist Easy Convert Image?",
+      "description": "Easy Convert Image ist ein kostenloses Online-Tool, mit dem Sie Bilder schnell und einfach zwischen verschiedenen Formaten konvertieren können. Unser Service unterstützt eine breite Palette von Bildformaten und ist benutzerfreundlich und effizient gestaltet."
+    },
+    "option2": {
+      "heading": "Welche Bildformate unterstützt Easy Convert Image?",
+      "description": "Wir unterstützen eine breite Palette von Formaten, einschließlich JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO und mehr. Sie können zwischen all diesen Formaten in beide Richtungen konvertieren."
+    },
+    "option3": {
+      "heading": "Ist Easy Convert Image wirklich kostenlos?",
+      "description": "Ja, unser Basisdienst ist völlig kostenlos. Wir bieten Premium-Funktionen für fortgeschrittene Benutzer an, aber alle Standard-Konvertierungen können kostenlos durchgeführt werden."
+    },
+    "option4": {
+      "heading": "Wie konvertiere ich ein Bild?",
+      "description": "Das Konvertieren eines Bildes ist einfach: 1) Wählen Sie Ihr gewünschtes Ausgabeformat. 2) Laden Sie Ihr Bild hoch, indem Sie es per Drag & Drop auf unsere Oberfläche ziehen oder auf die Upload-Schaltfläche klicken. 3) Laden Sie Ihre konvertierten Bilder herunter."
+    },
+    "option5": {
+      "heading": "Gibt es eine Begrenzung für die Anzahl der Bilder, die ich konvertieren kann?",
+      "description": "Wir erlauben bis zu 10 Bilder pro Konvertierung, mit einer maximalen Dateigröße von 10 MB pro Bild. Sie können jederzeit eine neue Konvertierungsrunde starten."
+    },
+    "option6": {
+      "heading": "Wie schnell sind die Konvertierungen?",
+      "description": "Die meisten Konvertierungen werden innerhalb von Sekunden abgeschlossen. Größere Dateien oder Batch-Konvertierungen können etwas länger dauern, aber wir bemühen uns, den schnellstmöglichen Service zu bieten."
+    },
+    "option7": {
+      "heading": "Was ist Easy Convert Image?",
+      "description": "Absolut. Wir nehmen Datensicherheit sehr ernst. Alle Uploads und Downloads sind durch SSL-Verschlüsselung geschützt."
+    },
+    "option8": {
+      "heading": "Sind meine Daten sicher, wenn ich Easy Convert Image verwende?",
+      "description": "Easy Convert Image ist ein kostenloses Online-Tool, mit dem Sie Bilder schnell und einfach zwischen verschiedenen Formaten konvertieren können. Unser Service unterstützt eine breite Palette von Bildformaten und ist benutzerfreundlich und effizient gestaltet."
+    },
+    "option9": {
+      "heading": "Behalten Sie Kopien der Bilder, die ich konvertiere?",
+      "description": "Nein, wir behalten keine Kopien Ihrer Bilder."
+    },
+    "option10": {
+      "heading": "Kann ich mehrere Bilder gleichzeitig konvertieren?",
+      "description": "Ja, unsere Batch-Konvertierungsfunktion ermöglicht es Ihnen, mehrere Bilder gleichzeitig zu konvertieren. Laden Sie einfach alle Bilder hoch, die Sie konvertieren möchten, und verarbeiten Sie sie in einem Durchgang."
+    },
+    "option11": {
+      "heading": "Muss ich ein Konto erstellen, um Easy Convert Image zu nutzen?",
+      "description": "Nein, Sie müssen kein Konto erstellen, um unsere Dienste zu nutzen."
+    },
+    "option12": {
+      "heading": "Funktioniert Easy Convert Image auf mobilen Geräten?",
+      "description": "Ja, unsere Website ist vollständig responsive und funktioniert auf allen Geräten, einschließlich Smartphones und Tablets."
+    },
+    "option13": {
+      "heading": "Was passiert, wenn ich mit dem Konvertierungsergebnis nicht zufrieden bin?",
+      "description": "Wenn Sie mit dem Ergebnis nicht zufrieden sind, können Sie versuchen, die Konvertierungseinstellungen anzupassen oder sich an unser Support-Team wenden. Wir sind immer da, um Ihnen zu helfen, das bestmögliche Ergebnis zu erzielen."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Kontakt | Easy Convert Image",
+      "description": "Nehmen Sie Kontakt mit Easy Convert Image auf für Support, Feedback oder Anfragen zu unseren kostenlosen Online-Bildkonvertierungs- und Optimierungstools.",
+      "keywords": "Kontakt, Support, Kundenservice, Hilfe bei der Bildkonvertierung",
+      "ogTitle": "Kontaktieren Sie Easy Convert Image - Wir sind für Sie da",
+      "ogDescription": "Benötigen Sie Hilfe bei der Bildkonvertierung? Haben Sie Feedback? Kontaktieren Sie unser Team für schnelle, freundliche Unterstützung.",
+      "structuredData": {
+        "name": "Kontakt Easy Convert Image",
+        "description": "Kontaktinformationen und Support für Easy Convert Image-Benutzer.",
+        "publisherName": "Easy Convert Image"
+      }
+    },
+    "name": "Name",
+    "phone": "Telefonnummer",
+    "email": "E-Mail",
+    "comments": "Kommentare",
+    "contactUs": "Kontaktieren Sie uns",
+    "send": "E-Mail senden",
+    "inquiries": "Allgemeine Anfragen",
+    "support": "Technischer Support",
+    "heading": "Kontaktieren Sie uns:",
+    "instructions": "Bitte füllen Sie die folgenden Felder aus",
+    "description": "Wir schätzen Ihr Feedback und sind hier, um Ihnen bei allen Fragen oder Anliegen zu helfen."
+  },
+  "footer": {
+    "theme": "Ändern Sie das Seitenthema zu dunkel oder hell",
+    "copyright": "Easy Convert Image 2024 - Alle Rechte vorbehalten.",
+    "pageName": "EasyConvertImage",
+    "phone": "+354 910 232 032",
+    "email": "info@easyimageconvert.com",
+    "usefulInfo": {
+      "heading": "Nützliche Links",
+      "option1": {
+        "label": "Startseite",
+        "url": "/"
+      },
+      "option2": {
+        "label": "Über uns",
+        "url": "/about"
+      },
+      "option3": {
+        "label": "Kontaktieren Sie uns",
+        "url": "/contact"
+      },
+      "option4": {
+        "label": "Top-Tools",
+        "url": "/#top-tools"
+      }
+    },
+    "otherTools": {
+      "heading": "Andere Tools"
+    },
+    "legal": {
+      "heading": "Rechtliches",
+      "option1": {
+        "label": "Datenschutzrichtlinie",
+        "url": "/privacy-policy"
+      },
+      "option2": {
+        "label": "Nutzungsbedingungen",
+        "url": "/terms-of-service"
+      },
+      "option3": {
+        "label": "Cookie-Richtlinie",
+        "url": "/cookie-policy"
+      },
+      "option4": {
+        "label": "Barrierefreiheitserklärung",
+        "url": "/accessibility"
+      },
+      "option5": {
+        "label": "Kontaktinformationen",
+        "url": "/contact"
+      },
+      "option6": {
+        "label": "CCPA-Konformität",
+        "url": "/ccpa-compliance"
+      },
+      "option7": {
+        "label": "DSGVO-Konformität",
+        "url": "/gdpr-compliance"
+      }
+    }
+  },
+  "homeMeta": {
+    "name": "Easy Convert Image",
+    "title": "Easy Convert Image: Kostenloser Online-Konverter & Optimierer (JPG, PNG, WebP)",
+    "description": "Konvertieren, skalieren und optimieren Sie Bilder sofort. Unterstützung für JPG, PNG, WebP, AVIF, SVG und mehr. Stapelverarbeitung, keine Anmeldung. Schnell, sicher und 100% kostenlos.",
+    "keywords": "Bildkonverter, JPG zu PNG, WebP-Konverter, Bildgrößenänderung, Bildoptimierung, Stapelbildverarbeitung",
+    "ogTitle": "Easy Convert Image: Transformieren Sie jedes Bildformat sofort (Kostenlos)",
+    "ogDescription": "Konvertieren, skalieren und optimieren Sie Bilder in Sekundenschnelle. JPG, PNG, WebP, AVIF & mehr. Keine Anmeldung, keine Wasserzeichen. Probieren Sie unser blitzschnelles Tool jetzt aus!"
+  },
+  "ui": {
+    "emailError": "Fehler beim Senden der Kontakt-E-Mail",
+    "conversionSuccess": "Dateien erfolgreich konvertiert",
+    "missingFormat": "Dateien und Format sind erforderlich",
+    "conversionFailed": "Konvertierung fehlgeschlagen",
+    "emailSuccess": "E-Mail erfolgreich gesendet",
+    "downloadSuccess": "Dateien erfolgreich heruntergeladen",
+    "fileRemoveSuccess": "Datei erfolgreich entfernt",
+    "filesRemoveSuccess": "Dateien erfolgreich entfernt",
+    "contactEmailSent": "E-Mail erfolgreich gesendet, wir werden uns in Kürze bei Ihnen melden.",
+    "missingName": "Name fehlt",
+    "missingPhone": "Telefonnummer fehlt",
+    "missingEmail": "E-Mail fehlt",
+    "formatEmail": "Ungültiges E-Mail-Format",
+    "missingComments": "Kommentare fehlen",
+    "success": "Erfolg",
+    "error": "Fehler",
+    "warning": "Warnung",
+    "info": "Info",
+    "backToTop": "Zurück nach oben"
+  },
+  "convertMeta": {
+    "title": "{{sourceFormatUpper}} zu {{targetFormatUpper}} konvertieren - Kostenloser Online-Bildkonverter | Easy Convert Image",
+    "description": "Transformieren Sie Ihre {{sourceFormatUpper}}-Bilder mühelos in das {{targetFormatUpper}}-Format. Unser kostenloser Online-Konverter behält {{sourceBenefit}} bei und bietet gleichzeitig {{targetBenefit}}. Keine Anmeldung erforderlich, sofortige Konvertierung!"
+  },
+  "keywordGenerator": {
+    "baseKeywords": [
+      "Bildkonvertierung",
+      "kostenloser Konverter",
+      "Online-Tool",
+      "Bildformat",
+      "Dateikonvertierung",
+      "digitale Bilder"
+    ],
+    "formatSpecificKeywords": {
+      "jpeg": ["verlustbehaftete Komprimierung", "Fotografie", "Webbilder"],
+      "png": ["verlustfreie Komprimierung", "Transparenz", "Grafiken"],
+      "gif": ["animierte Bilder", "kurze Animationen", "Memes"],
+      "webp": ["Web-Optimierung", "schnelleres Laden", "Next-Gen-Format"],
+      "avif": [
+        "fortschrittliche Komprimierung",
+        "hohe Qualität",
+        "modernes Format"
+      ],
+      "tiff": ["hohe Auflösung", "professioneller Druck", "Bildbearbeitung"],
+      "svg": ["Vektorgrafiken", "skalierbare Bilder", "Logos"],
+      "bmp": ["Bitmap-Bilder", "unkomprimiertes Format", "Legacy-Format"],
+      "pdf": ["Dokumentenkonvertierung", "Bildextraktion", "mehrseitig"]
+    },
+    "conversionKeywordTemplates": [
+      "{sourceFormat} zu {targetFormat}",
+      "{sourceFormat} in {targetFormat} konvertieren",
+      "{sourceFormat} {targetFormat} Konverter",
+      "{sourceFormat} zu {targetFormat} ändern",
+      "{sourceFormat} in {targetFormat} umwandeln"
+    ]
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "message": "Entschuldigung, die gesuchte Seite existiert nicht.",
+    "goHome": "Zur Startseite"
+  },
+  "errorBoundary": {
+    "title": "Ein Fehler ist aufgetreten",
+    "message": "Entschuldigung, ein unerwarteter Fehler ist aufgetreten.",
+    "unknownError": "Ein unbekannter Fehler ist aufgetreten."
+  },
+  "about": {
+    "about": "Über uns",
+    "title": "Über uns",
+    "description": "Bei Easy Convert Image werden wir von einer Reihe von Kernzielen geleitet, die unsere Mission bestimmen, die beste Bildkonvertierungserfahrung zu bieten. Diese Prinzipien prägen unseren Service und spiegeln unser Engagement für unsere Nutzer wider:",
+    "purpose": "Unser Zweck",
+    "meta": {
+      "title": "Über Easy Convert Image | Kostenlose Online-Bildkonvertierungstools",
+      "description": "Erfahren Sie mehr über Easy Convert Image, unsere Mission zur Vereinfachung der Bildkonvertierung und das Team hinter unseren leistungsstarken und benutzerfreundlichen Tools. Entdecken Sie, warum Millionen uns für ihre Bildkonvertierungsbedürfnisse vertrauen.",
+      "keywords": "über uns, Bildkonvertierungstool, Unternehmensmission, Team, Bildverarbeitung, kostenlose Online-Tools",
+      "ogTitle": "Über Easy Convert Image: Vereinfachung der Online-Bildkonvertierung",
+      "ogDescription": "Lernen Sie das Team hinter Easy Convert Image kennen und erfahren Sie, wie wir die Online-Bildkonvertierung mit unseren kostenlosen, leistungsstarken und benutzerfreundlichen Tools revolutionieren.",
+      "ogImage": "https://easyconvertimage.com/assets/about-team-image.jpg",
+      "canonicalUrl": "https://easyconvertimage.com/about"
+    },
+    "structuredData": {
+      "name": "Über Easy Convert Image",
+      "description": "Easy Convert Image bietet kostenlose Online-Tools zur Bildkonvertierung und -optimierung. Erfahren Sie mehr über unsere Mission und das Team hinter unseren Diensten.",
+      "publisherName": "Easy Convert Image",
+      "logoUrl": "https://easyconvertimage.com/logo.png",
+      "websiteName": "Easy Convert Image",
+      "websiteUrl": "https://easyconvertimage.com"
+    }
+  },
+  "companyObjectives": {
+    "simplifyConversion": {
+      "title": "Vereinfachung der Bildkonvertierung",
+      "content": "Unser Hauptziel ist es, die Bildkonvertierung mühelos zu gestalten. Mit einer intuitiven Benutzeroberfläche stellen wir sicher, dass selbst komplexe Konvertierungen nur wenige Klicks entfernt sind."
+    },
+    "accessibility": {
+      "title": "Zugänglich für alle",
+      "content": "Wir glauben an die Demokratisierung von Bildwerkzeugen. Deshalb bieten wir unsere Dienste kostenlos an und stellen sicher, dass qualitativ hochwertige Bildkonvertierung für Privatpersonen und Unternehmen gleichermaßen zugänglich ist."
+    },
+    "advancedTechnology": {
+      "title": "Nutzung fortschrittlicher Technologie",
+      "content": "Durch den Einsatz der neuesten Bildverarbeitungsalgorithmen verbessern wir kontinuierlich die Konvertierungsgeschwindigkeit und -qualität und bleiben an der Spitze der Branche."
+    },
+    "userPrivacy": {
+      "title": "Priorisierung der Benutzerprivatsphäre",
+      "content": "Ihre Bilder sind Ihr Eigentum. Wir implementieren strenge Sicherheitsmaßnahmen und eine klare Datenschutzrichtlinie, um sicherzustellen, dass Ihre Dateien vertraulich und geschützt bleiben."
+    },
+    "formatSupport": {
+      "title": "Unterstützung aller gängigen Formate",
+      "content": "Von gängigen Formaten wie JPG und PNG bis hin zu spezialisierten Formaten wie WebP und AVIF streben wir danach, Ihre Komplettlösung für alle Bildkonvertierungsbedürfnisse zu sein."
+    },
+    "userFeedback": {
+      "title": "Entwicklung mit Benutzerbedürfnissen",
+      "content": "Wir sind der ständigen Verbesserung verpflichtet. Durch aktives Einholen und Umsetzen von Benutzerfeedback stellen wir sicher, dass unser Tool sich weiterentwickelt, um sich ändernden Anforderungen und aufkommenden Technologien gerecht zu werden."
+    }
+  },
+  "accessibility": {
+    "title": "Barrierefreiheitserklärung",
+    "breadcrumb": "Barrierefreiheitserklärung",
+    "statementTitle": "Barrierefreiheitserklärung für Easy Convert Image",
+    "lastUpdated": "Zuletzt aktualisiert: 15. Juli 2024",
+    "commitment": "Easy Convert Image ist bestrebt, digitale Barrierefreiheit für Menschen mit Behinderungen zu gewährleisten. Wir verbessern kontinuierlich die Benutzererfahrung für alle und wenden die relevanten Barrierefreiheitsstandards an.",
+    "conformanceStatus": {
+      "title": "Konformitätsstatus",
+      "description": "Die Web Content Accessibility Guidelines (WCAG) definieren Anforderungen für Designer und Entwickler zur Verbesserung der Barrierefreiheit für Menschen mit Behinderungen. Es werden drei Konformitätsstufen definiert: Stufe A, Stufe AA und Stufe AAA. Easy Convert Image ist teilweise konform mit WCAG 2.1 Stufe AA."
+    },
+    "feedback": {
+      "title": "Feedback",
+      "description": "Wir begrüßen Ihr Feedback zur Barrierefreiheit von Easy Convert Image. Bitte lassen Sie es uns wissen, wenn Sie auf Barrieren stoßen: E-Mail: accessibility@easyconvertimage.com"
+    },
+    "technicalSpecs": {
+      "title": "Technische Spezifikationen",
+      "description": "Die Barrierefreiheit von Easy Convert Image basiert auf den folgenden Technologien, die mit der jeweiligen Kombination aus Webbrowser und allen auf Ihrem Computer installierten Hilfstechnologien oder Plugins funktionieren: - HTML - WAI-ARIA - CSS - JavaScript"
+    },
+    "assessmentApproach": {
+      "title": "Bewertungsansatz",
+      "description": "Easy Convert Image hat die Barrierefreiheit unserer Website durch die folgenden Ansätze bewertet: - Selbstbewertung - Externe Bewertung"
+    },
+    "meta": {
+      "title": "Barrierefreiheitserklärung | Easy Convert Image",
+      "description": "Lesen Sie über das Engagement von Easy Convert Image für Barrierefreiheit und unsere Bemühungen, sicherzustellen, dass unsere kostenlosen Bildkonvertierungstools für jeden nutzbar sind.",
+      "keywords": "Barrierefreiheit, Webzugänglichkeit, inklusives Design, Bildwerkzeuge",
+      "ogTitle": "Easy Convert Image Barrierefreiheitserklärung",
+      "ogDescription": "Unser Engagement, Bildkonvertierung und -optimierung für alle Benutzer zugänglich zu machen, unabhängig von ihren Fähigkeiten.",
+      "structuredData": {
+        "name": "Barrierefreiheitserklärung",
+        "description": "Easy Convert Images Engagement für Webzugänglichkeit und inklusives Design.",
+        "publisherName": "Easy Convert Image"
+      }
+    }
+  },
+  "privacyPolicy": {
+    "content": {
+      "heading": "Datenschutzrichtlinie",
+      "lastUpdated": "Zuletzt aktualisiert: 15. Juli 2024",
+      "introduction": "Easy Convert Image („wir' oder „uns') verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Richtlinie erklärt, wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen, wenn Sie unsere Bildkonvertierungsdienste nutzen.",
+      "sections": [
+        {
+          "title": "Informationen, die wir sammeln",
+          "content": "Wir sammeln folgende Arten von Informationen: - Persönliche Informationen: E-Mail-Adresse (wenn Sie sich für ein Konto entscheiden) - Nutzungsdaten: Arten der konvertierten Bilder, Nutzungshäufigkeit - Technische Daten: IP-Adresse, Browsertyp, Geräteinformationen"
+        },
+        {
+          "title": "Wie wir Ihre Informationen verwenden",
+          "content": "Wir verwenden Ihre Informationen, um: - Unsere Bildkonvertierungsdienste bereitzustellen und zu verbessern - Nutzungsmuster zu analysieren, um unsere Algorithmen zu optimieren - Servicebezogene Benachrichtigungen zu senden (z.B. Wartungshinweise) - Auf Ihre Anfragen und Support-Anfragen zu antworten"
+        },
+        {
+          "title": "Datensicherheit",
+          "content": "Wir implementieren branchenübliche Sicherheitsmaßnahmen zum Schutz Ihrer Daten, einschließlich Verschlüsselung und Zugriffskontrollen."
+        },
+        {
+          "title": "Ihre Rechte",
+          "content": "Sie haben das Recht: - Auf Zugang und Erhalt einer Kopie Ihrer Daten - Unrichtige Daten zu berichtigen - Die Löschung Ihrer Daten zu verlangen - Der Verwendung Ihrer Daten zu widersprechen"
+        }
+      ]
+    },
+    "dataSharing": {
+      "title": "Datenaustausch und Offenlegung",
+      "content": "Wir verkaufen Ihre personenbezogenen Daten nicht. Wir können Daten teilen mit: - Dienstleistern (z.B. Cloud-Speicheranbieter) - Behörden, wenn gesetzlich vorgeschrieben"
+    },
+    "contactUs": {
+      "title": "Kontaktieren Sie uns",
+      "content": "Bei Fragen zu dieser Datenschutzrichtlinie kontaktieren Sie uns bitte unter privacy@easyconvertimage.com"
+    },
+    "meta": {
+      "title": "Datenschutzrichtlinie | Easy Convert Image",
+      "description": "Erfahren Sie, wie Easy Convert Image Ihre personenbezogenen Daten bei der Nutzung unserer kostenlosen Online-Bildkonvertierungstools sammelt, verwendet und schützt.",
+      "keywords": "Datenschutzrichtlinie, Datenschutz, Bildkonvertierungsdatenschutz, Benutzerdaten",
+      "ogTitle": "Easy Convert Image Datenschutzrichtlinie",
+      "ogDescription": "Verstehen Sie, wie wir mit Ihren Daten umgehen, wenn Sie unsere Bildkonvertierungsdienste nutzen. Ihre Privatsphäre ist uns wichtig."
+    }
+  },
+  "termsOfService": {
+    "heading": "Nutzungsbedingungen",
+    "subheading": "Nutzungsbedingungen für Easy Convert Image",
+    "lastUpdated": "Zuletzt aktualisiert: 15. Juli 2024",
+    "sections": {
+      "acceptance": {
+        "title": "Annahme der Bedingungen",
+        "content": "Durch die Nutzung von Easy Convert Image stimmen Sie diesen Nutzungsbedingungen zu. Wenn Sie mit einem Teil der Bedingungen nicht einverstanden sind, dürfen Sie unseren Dienst nicht nutzen."
+      },
+      "use": {
+        "title": "Nutzung des Dienstes",
+        "content": "Unser Dienst ermöglicht es Ihnen, Bilder zwischen verschiedenen Formaten zu konvertieren. Sie stimmen zu, diesen Dienst nur für rechtmäßige Zwecke und in Übereinstimmung mit diesen Bedingungen zu nutzen."
+      },
+      "userContent": {
+        "title": "Benutzerinhalte",
+        "content": "Sie behalten alle Rechte an den von Ihnen hochgeladenen Bildern. Wir beanspruchen kein Eigentum an Ihren Inhalten. Allerdings gewähren Sie uns eine Lizenz, Ihre Bilder ausschließlich zum Zweck der Bereitstellung unseres Konvertierungsdienstes zu speichern und zu verarbeiten."
+      },
+      "prohibited": {
+        "title": "Verbotene Aktivitäten",
+        "content": "Sie dürfen nicht: - Unseren Dienst zur Konvertierung oder Speicherung illegaler oder urheberrechtlich geschützter Inhalte verwenden - Versuchen, unbefugten Zugriff auf unsere Systeme zu erlangen - Unseren Dienst in einer Weise nutzen, die unsere Infrastruktur beschädigen oder überlasten könnte"
+      },
+      "termination": {
+        "title": "Kündigung",
+        "content": "Wir können Ihren Zugang zu unserem Dienst sofort, ohne vorherige Ankündigung oder Haftung, aus beliebigem Grund kündigen oder aussetzen, einschließlich, ohne Einschränkung, wenn Sie gegen die Bedingungen verstoßen."
+      },
+      "liability": {
+        "title": "Haftungsbeschränkung",
+        "content": "Easy Convert Image haftet nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, einschließlich, ohne Einschränkung, Verlust von Gewinnen, Daten, Nutzung, Goodwill oder anderen immateriellen Verlusten."
+      },
+      "changes": {
+        "title": "Änderungen der Bedingungen",
+        "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern oder zu ersetzen. Wenn eine Überarbeitung wesentlich ist, werden wir versuchen, mindestens 30 Tage vor Inkrafttreten neuer Bedingungen eine Benachrichtigung zu geben."
+      },
+      "contact": {
+        "title": "Kontaktieren Sie uns",
+        "content": "Wenn Sie Fragen zu diesen Bedingungen haben, kontaktieren Sie uns bitte unter terms@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "Nutzungsbedingungen | Easy Convert Image",
+      "description": "Lesen Sie unsere Nutzungsbedingungen, um die Regeln und Vorschriften für die Nutzung der kostenlosen Online-Bildkonvertierungstools von Easy Convert Image zu verstehen.",
+      "keywords": "Nutzungsbedingungen, Benutzervereinbarung, Bildkonvertierungsbedingungen, rechtlich",
+      "ogTitle": "Easy Convert Image Nutzungsbedingungen",
+      "ogDescription": "Verstehen Sie Ihre Rechte und Pflichten bei der Nutzung unserer kostenlosen Bildkonvertierungs- und Optimierungstools.",
+      "structuredData": {
+        "name": "Nutzungsbedingungen",
+        "description": "Geschäftsbedingungen für die Nutzung der Online-Bildkonvertierungsdienste von Easy Convert Image."
+      }
+    }
+  },
+  "cookiePolicy": {
+    "heading": "Cookie-Richtlinie",
+    "subheading": "Cookie-Richtlinie für Easy Convert Image",
+    "lastUpdated": "Zuletzt aktualisiert: 15. Juli 2024",
+    "sections": {
+      "whatAre": {
+        "title": "Was sind Cookies",
+        "content": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie unsere Website besuchen. Sie helfen uns, Ihnen eine bessere Erfahrung zu bieten."
+      },
+      "howWeUse": {
+        "title": "Wie wir Cookies verwenden",
+        "content": "Wir verwenden folgende Arten von Cookies: - Essentielle Cookies: Um Kernfunktionalitäten zu ermöglichen (z.B. Speichern Ihrer Bildkonvertierungseinstellungen) - Analyse-Cookies: Um zu verstehen, wie Besucher unsere Seite nutzen (z.B. Google Analytics) - Präferenz-Cookies: Um Ihre Einstellungen zu speichern (z.B. Dunkelmoduseinstellung)"
+      },
+      "thirdParty": {
+        "title": "Cookies von Drittanbietern",
+        "content": "Wir verwenden Google Analytics, um zu verstehen, wie unsere Benutzer mit der Website interagieren. Diese Cookies können Dinge wie die Dauer Ihres Besuchs auf der Website und die besuchten Seiten verfolgen."
+      },
+      "managing": {
+        "title": "Verwaltung von Cookies",
+        "content": "Sie können Cookies nach Belieben steuern und/oder löschen. Sie können alle Cookies löschen, die bereits auf Ihrem Computer sind, und Sie können die meisten Browser so einstellen, dass sie nicht platziert werden."
+      },
+      "contact": {
+        "title": "Kontaktieren Sie uns",
+        "content": "Wenn Sie Fragen zu unserer Verwendung von Cookies haben, senden Sie uns bitte eine E-Mail an cookies@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "Cookie-Richtlinie | Easy Convert Image",
+      "description": "Erfahren Sie, wie Easy Convert Image Cookies verwendet, um Ihre Erfahrung mit unseren kostenlosen Online-Bildkonvertierungs- und Optimierungstools zu verbessern.",
+      "keywords": "Cookie-Richtlinie, Website-Cookies, Datenverfolgung, Benutzerpräferenzen",
+      "ogTitle": "Easy Convert Image Cookie-Richtlinie",
+      "ogDescription": "Verstehen Sie, wie wir Cookies verwenden, um Ihre Bildkonvertierungserfahrung zu verbessern und Ihre Privatsphäre zu schützen.",
+      "structuredData": {
+        "name": "Cookie-Richtlinie",
+        "description": "Details zur Verwendung von Cookies und ähnlichen Technologien durch Easy Convert Image."
+      }
+    }
+  },
+  "ccpaCompliance": {
+    "heading": "CCPA-Konformität",
+    "subheading": "CCPA-Konformität für Easy Convert Image",
+    "lastUpdated": "Zuletzt aktualisiert: 15. Juli 2024",
+    "sections": {
+      "consumerRights": {
+        "title": "Rechte kalifornischer Verbraucher",
+        "intro": "Gemäß dem California Consumer Privacy Act (CCPA) haben kalifornische Einwohner folgende Rechte:",
+        "list": "1. Recht zu wissen, welche personenbezogenen Informationen gesammelt werden\n2. Recht, die Löschung personenbezogener Informationen zu verlangen\n3. Recht, den Verkauf personenbezogener Informationen abzulehnen\n4. Recht auf Nichtdiskriminierung bei der Ausübung der CCPA-Rechte"
+      },
+      "infoCollected": {
+        "title": "Kategorien der gesammelten personenbezogenen Informationen",
+        "content": "In den letzten 12 Monaten hat Easy Convert Image keine personenbezogenen Daten gesammelt."
+      },
+      "exerciseRights": {
+        "title": "Wie Sie Ihre Rechte ausüben können",
+        "content": "Um Ihre CCPA-Rechte auszuüben, senden Sie uns bitte eine E-Mail an ccpa@easyconvertimage.com. Wir werden innerhalb von 45 Tagen auf Ihre Anfrage antworten."
+      },
+      "verification": {
+        "title": "Verifizierungsprozess",
+        "content": "Um Ihre Privatsphäre zu schützen, werden wir Ihre Identität überprüfen, bevor wir auf Ihre Anfrage antworten. Wir können Sie bitten, zusätzliche Informationen für Verifizierungszwecke bereitzustellen."
+      },
+      "authorizedAgent": {
+        "title": "Bevollmächtigter Vertreter",
+        "content": "Sie können einen bevollmächtigten Vertreter bestimmen, um in Ihrem Namen eine Anfrage zu stellen. Der bevollmächtigte Vertreter muss einen Nachweis Ihrer schriftlichen Erlaubnis vorlegen und seine eigene Identität bei uns verifizieren."
+      },
+      "doNotSell": {
+        "title": "Meine persönlichen Informationen nicht verkaufen",
+        "content": "Easy Convert Image verkauft keine personenbezogenen Informationen. Wenn Sie sich jedoch von einem zukünftigen potenziellen Verkauf Ihrer Informationen abmelden möchten, können Sie uns eine E-Mail an donotsell@easyconvertimage.com senden."
+      }
+    },
+    "meta": {
+      "title": "CCPA-Konformität | Easy Convert Image",
+      "description": "Erfahren Sie mehr über die Einhaltung des California Consumer Privacy Act (CCPA) durch Easy Convert Image und Ihre Rechte in Bezug auf Ihre personenbezogenen Informationen.",
+      "keywords": "CCPA, California Consumer Privacy Act, Datenschutzrechte, Datenschutz, Easy Convert Image",
+      "ogTitle": "CCPA-Konformität - Easy Convert Image",
+      "ogDescription": "Verstehen Sie Ihre Rechte gemäß CCPA und wie Easy Convert Image Ihre personenbezogenen Informationen in Übereinstimmung mit dem kalifornischen Recht schützt.",
+      "structuredData": {
+        "name": "CCPA-Konformität",
+        "description": "Informationen über die Einhaltung des California Consumer Privacy Act (CCPA) durch Easy Convert Image und die Rechte der Verbraucher."
+      }
+    }
+  },
+  "gdprCompliance": {
+    "heading": "DSGVO-Konformität",
+    "subheading": "DSGVO-Konformität für Easy Convert Image",
+    "lastUpdated": "Zuletzt aktualisiert: 15. Juli 2024",
+    "sections": {
+      "dataController": {
+        "title": "Datenverantwortlicher",
+        "content": "Easy Convert Image ist der Datenverantwortliche für personenbezogene Daten, die über unseren Dienst gesammelt werden."
+      },
+      "legalBasis": {
+        "title": "Rechtsgrundlage für die Verarbeitung",
+        "content": "Wir verarbeiten Ihre personenbezogenen Daten auf folgenden Rechtsgrundlagen: - Einwilligung: Wenn Sie unserer Verwendung von Cookies für nicht wesentliche Zwecke zustimmen. - Vertragserfüllung: Wenn wir Ihnen unseren Bildkonvertierungsdienst zur Verfügung stellen. - Berechtigte Interessen: Zur Verbesserung unserer Dienste und zur Gewährleistung der Sicherheit."
+      },
+      "dataSubjectRights": {
+        "title": "Rechte der betroffenen Person",
+        "content": "Gemäß der DSGVO haben Sie folgende Rechte: - Recht auf Auskunft - Recht auf Berichtigung - Recht auf Löschung - Recht auf Einschränkung der Verarbeitung - Recht auf Datenübertragbarkeit - Widerspruchsrecht",
+        "exerciseRights": "Um diese Rechte auszuüben, senden Sie uns bitte eine E-Mail an gdpr@easyconvertimage.com."
+      },
+      "dataRetention": {
+        "title": "Datenspeicherung",
+        "content": "Wir speichern Ihre personenbezogenen Daten so lange, wie es für die Bereitstellung unserer Dienste und die Erfüllung rechtlicher Verpflichtungen erforderlich ist. Konvertierte Bilder werden nach 24 Stunden automatisch gelöscht."
+      },
+      "internationalTransfers": {
+        "title": "Internationale Übermittlungen",
+        "content": "Ihre Daten können auf Server außerhalb des EWR übertragen werden. Wir stellen sicher, dass angemessene Schutzmaßnahmen wie Standardvertragsklauseln vorhanden sind."
+      }
+    },
+    "meta": {
+      "title": "DSGVO-Konformität | Easy Convert Image",
+      "description": "Erfahren Sie, wie Easy Convert Image die Einhaltung der DSGVO-Vorschriften gewährleistet und gleichzeitig kostenlose Online-Bildkonvertierungs- und Optimierungsdienste anbietet.",
+      "keywords": "DSGVO-Konformität, Datenschutz, EU-Datenschutzrecht, Benutzerrechte",
+      "ogTitle": "Easy Convert Image DSGVO-Konformitätsinformationen",
+      "ogDescription": "Erfahren Sie mehr über Ihre Datenrechte und wie wir Ihre personenbezogenen Informationen gemäß der DSGVO schützen.",
+      "structuredData": {
+        "name": "DSGVO-Konformität",
+        "description": "Informationen zur Einhaltung der DSGVO-Vorschriften durch Easy Convert Image."
+      }
+    }
+  }
+}

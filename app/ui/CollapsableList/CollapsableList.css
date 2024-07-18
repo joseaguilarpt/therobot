@@ -1,0 +1,49 @@
+.collapsable-list {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.list-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.list-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 25px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.list-item-header:hover {
+  background-color: rgba(100, 189, 120, 0.18);
+}
+
+.list-item-header.expanded {
+  background-color: rgba(100, 189, 120, 0.18);
+}
+
+.list-item-content {
+  padding: 25px 20px;
+  background-color: var(--background-color);
+}
+
+.toggle-icon {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+.toggle-icon .icon {
+  color: var(--default-color);
+}
+
+.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/*# sourceMappingURL=CollapsableList.css.map */

@@ -1,0 +1,92 @@
+.image-slider {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &__number {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+    &.--show {
+      display: block;
+    }
+  }
+
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    height: 100%;
+
+    .slide {
+      min-width: 100%;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+    }
+
+    &__image-item {
+      height: 100%;
+      flex: 1 0 100%;
+      justify-content: center;
+      display: flex;
+      background-color: var(--image-background);
+
+      .image {
+        display: flex;
+        align-items: center;
+      }
+    }
+    &__image-img  {
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    background-color: transparent;
+    transform: translateY(-50%);
+    color:  var(--accent-color);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 20px;
+    padding: 10px;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+
+      &.active {
+        background-color: var(--accent-color);
+      }
+    }
+  }
+}

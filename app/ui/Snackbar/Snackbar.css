@@ -1,0 +1,99 @@
+.snackbar {
+  position: fixed;
+  top: 25px;
+  min-width: 300px;
+  max-width: 80%;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  color: var(--font-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards, fadeOut 0.5s 4.5s forwards;
+  font-family: var(--default-font);
+  z-index: 5000;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.snackbar:focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+.snackbar__message {
+  flex-grow: 1;
+  color: white;
+  margin-right: 16px;
+}
+.snackbar .text {
+  color: white;
+}
+.snackbar__close {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.snackbar__close:hover, .snackbar__close:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.snackbar__close:focus {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+.snackbar--success {
+  background-color: var(--accent-color);
+}
+.snackbar--error {
+  background-color: var(--error-color);
+}
+.snackbar--info {
+  background-color: rgb(60, 170, 221);
+}
+.snackbar--warning {
+  background-color: rgb(246, 226, 0);
+  color: black;
+}
+.snackbar--warning .text, .snackbar--warning .snackbar__close {
+  color: black;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+@media (max-width: 600px) {
+  .snackbar {
+    width: 90%;
+    max-width: none;
+    bottom: 0;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+/*# sourceMappingURL=Snackbar.css.map */

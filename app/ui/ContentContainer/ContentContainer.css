@@ -1,0 +1,9 @@
+/* ContentContainer.scss */
+.content-container {
+  max-width: 1200px;
+  width: unset;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/*# sourceMappingURL=ContentContainer.css.map */

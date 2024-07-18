@@ -1,0 +1,190 @@
+@import '../../styles/theme';
+
+.heading {
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+  position: relative;
+  width: inherit;
+  
+  &--h1 {
+    font-size: 2.5rem; /* Default 40px */
+    margin: 0.5em 0;
+
+    @include media-query(small) {
+      font-size: 3rem; /* 48px */
+    }
+
+    @include media-query(medium) {
+      font-size: 3.5rem; /* 56px */
+    }
+
+    @include media-query(large) {
+      font-size: 4rem; /* 64px */
+    }
+
+    @include media-query(extra-large) {
+      font-size: 4.5rem; /* 72px */
+    }
+  }
+
+  &--h2 {
+    font-size: 2rem; /* Default 32px */
+    margin: 0.5em 0;
+
+    @include media-query(small) {
+      font-size: 2.5rem; /* 40px */
+    }
+
+    @include media-query(medium) {
+      font-size: 3rem; /* 48px */
+    }
+
+    @include media-query(large) {
+      font-size: 3.5rem; /* 56px */
+    }
+  }
+
+  &--h3 {
+    font-size: 1.75rem; /* Default 28px */
+    margin: 0.5em 0;
+
+    @include media-query(small) {
+      font-size: 2rem; /* 32px */
+    }
+
+    @include media-query(medium) {
+      font-size: 2.5rem; /* 40px */
+    }
+
+    @include media-query(large) {
+      font-size: 3rem; /* 48px */
+    }
+  }
+
+  &--h4 {
+    font-size: 1.5rem;
+    margin: 0.5em 0;
+
+    @include media-query(small) {
+      font-size: 1.75rem;
+    }
+
+    @include media-query(medium) {
+      font-size: 2rem;
+    }
+
+    @include media-query(large) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &--h5 {
+    font-size: 1.25rem; /* Default 20px */
+    margin: 0.5em 0;
+
+    @include media-query(small) {
+      font-size: 1.5rem; /* 24px */
+    }
+
+    @include media-query(medium) {
+      font-size: 1.75rem; /* 28px */
+    }
+
+    @include media-query(large) {
+      font-size: 2rem; /* 32px */
+    }
+  }
+
+  &--h6 {
+    font-size: 1rem; /* Default 16px */
+    margin: 0.5em 0;
+
+    @include media-query(small) {
+      font-size: 1.25rem; /* 20px */
+    }
+
+    @include media-query(medium) {
+      font-size: 1.5rem; /* 24px */
+    }
+
+    @include media-query(large) {
+      font-size: 1.75rem; /* 28px */
+    }
+  }
+
+  &--underline {
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-color);
+      left: 0;
+      right: 0;
+      bottom: -15px;
+      margin: auto;
+    }
+  }
+
+  &--left {
+    &:after {
+      right: unset;
+    } 
+  }
+
+  &--right {
+    &:after {
+      left: unset;
+    } 
+  }
+  &--center {
+    text-align: center;
+    &:after {
+      left: 0;
+      right: 0;
+    } 
+  }
+
+  &--default {
+    color: var(--default-color);
+  }
+
+  &--accent {
+    color: var(--accent-color);
+  }
+
+  &--accent-dark {
+    color: var(--accent-color-dark);
+  }
+
+  &--dark {
+    color: var(--heading-color);
+    &.heading--underline {
+      &:after {
+        background-color: var(--heading-color);
+      }
+    }
+  }
+
+  &--contrast {
+    color: var(--contrast-color);
+    &.heading--underline {
+      &:after {
+        background-color: var(--contrast-color);
+      }
+    }
+  }
+
+  &--nav {
+    color: var(--nav-color);
+  }
+
+  &--white {
+    color: $heading-color-dark;
+  }
+
+  &--nav-hover {
+    color: var(--nav-hover-color);
+  }
+}

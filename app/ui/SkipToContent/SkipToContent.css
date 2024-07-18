@@ -1,0 +1,25 @@
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+}
+
+.skip-to-content:focus,
+.skip-to-content:active {
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  z-index: 5000;
+  background-color: #fff;
+  padding: 1rem;
+  border: 2px solid rgb(175, 175, 175);
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=SkipToContent.css.map */

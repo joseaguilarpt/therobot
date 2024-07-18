@@ -1,0 +1,122 @@
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.align-flex-start {
+  align-items: flex-start;
+}
+
+.align-flex-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.content-flex-start {
+  align-content: flex-start;
+}
+
+.content-flex-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+.content-space-between {
+  align-content: space-between;
+}
+
+.content-space-around {
+  align-content: space-around;
+}
+
+.gap-0 {
+  gap: 0px;
+}
+
+.gap-1 {
+  gap: 8px;
+}
+
+.gap-2 {
+  gap: 16px;
+}
+
+.gap-3 {
+  gap: 24px;
+}
+
+.gap-4 {
+  gap: 32px;
+}
+
+.gap-5 {
+  gap: 40px;
+}
+
+.gap-6 {
+  gap: 48px;
+}
+
+.gap-7 {
+  gap: 56px;
+}
+
+.gap-8 {
+  gap: 64px;
+}
+
+.gap-9 {
+  gap: 72px;
+}
+
+.gap-10 {
+  gap: 80px;
+}
+
+/*# sourceMappingURL=Grid.css.map */

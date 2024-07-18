@@ -1,0 +1,53 @@
+@import '../../styles/theme.scss';
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  font-size: var(--font-size-medium);
+  font-family: var(--default-font);
+  z-index: 990;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, background-color 0.3s, box-shadow 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  background-color: $accent-color-light;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    color: var(--button-color);
+    width: 24px;
+    height: 24px;
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken($accent-color-light, 10%);
+    box-shadow: 0 4px 8px var(--hover-shadow-color);
+  }
+
+  &:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

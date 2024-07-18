@@ -1,0 +1,626 @@
+{
+  "languages": {
+    "en": "English",
+    "es": "Español",
+    "pt": "Português",
+    "fr": "Français",
+    "nl": "Nederlands",
+    "de": "Deutsch",
+    "it": "Italiano",
+    "id": "Indonesia",
+    "ru": "русский"
+  },
+  "pageName": "EasyConvertImage",
+  "nav": {
+    "home": "Beranda",
+    "topTools": "Alat Teratas",
+    "contact": "Kontak",
+    "about": "Tentang",
+    "main": "Navigasi Utama"
+  },
+  "convert": "Konversi",
+  "images": "gambar",
+  "to": "ke",
+  "goNow": "Ayo Sekarang!",
+  "goToDetails": "Lihat detail",
+  "email": "Email",
+  "phone": "Nomor Telepon",
+  "or": "Atau",
+  "hero": {
+    "header1": "Konversi Gambar Mudah",
+    "header2": "Format Apapun, Kapanpun.",
+    "description": "Konversi gambar dengan mudah menggunakan Easy Convert Image. Tarik & lepas file, tempel dengan Ctrl+V, atau unggah dari perangkat Anda. Konversi berkas gambar dalam jumlah besar sekaligus. Mendukung format JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP, dan lebih banyak lagi.",
+    "freeToUse": "Gratis digunakan, tidak memerlukan registrasi. Ubah gambar Anda dalam hitungan detik!"
+  },
+  "tool": {
+    "fileArea": "Area unggah berkas",
+    "inputFile": "Input berkas",
+    "drop": "Letakkan berkas gambar di sini",
+    "maxLimit": "Ukuran berkas melebihi batas maksimum",
+    "fileType": "Tipe berkas",
+    "bytes": "byte",
+    "notAccepted": " tidak diterima.",
+    "selectOption": "Pilih opsi:",
+    "pdfOption1": "PDF Terpisah untuk Setiap Gambar",
+    "pdfOption2": "PDF Tunggal untuk Semua Gambar",
+    "convertFrom": "Konversi Gambar dari",
+    "convertTo": "Konversi Gambar ke",
+    "uploadButton": "Unggah Gambar",
+    "uploadMoreImages": "Unggah Lebih Banyak Gambar",
+    "instructions1": "Anda juga dapat menarik dan melepaskan berkas di sini,",
+    "instructions2": "atau cukup tempel dengan Ctrl+V (atau Cmd+V di Mac)"
+  },
+  "fileActions": {
+    "selected": "Dipilih",
+    "files": "Berkas",
+    "zipSuccess": "Berkas ZIP berhasil diunduh",
+    "fileSelected": "Berkas Dipilih",
+    "downloadAll": "Unduh Semua",
+    "removeAll": "Hapus Semua",
+    "share": "Bagikan",
+    "selectedList": "Daftar Berkas yang Dipilih",
+    "fileName": "Nama Berkas",
+    "fileSize": "Ukuran",
+    "fileStatus": "Status",
+    "fileActions": "Aksi",
+    "download": "Unduh",
+    "remove": "Hapus",
+    "completed": "Selesai",
+    "error": "error",
+    "processing": "Sedang diproses"
+  },
+  "share": {
+    "invalidEmail": "Format Email Tidak Valid",
+    "warning": "Catatan: Opsi WhatsApp hanya akan membagikan pesan. Anda perlu mengirimkan berkas zip secara terpisah.",
+    "viaEmail": "Bagikan via Email",
+    "optionEmail": "Kirim melalui email:",
+    "downloadZip": "Unduh Berkas ZIP",
+    "optionWhatsapp": "Dan kirim via WhatsApp",
+    "viaWhatsapp": "Bagikan via Whatsapp",
+    "title": "Opsi Berbagi",
+    "whatsappMessage": "Hai! Berikut beberapa gambar yang saya kompres dengan Easy Convert Image",
+    "description": "Berkas ZIP dengan gambar siap untuk dibagikan. Anda memiliki 2 opsi:"
+  },
+  "services": {
+    "itemDescriptionContent": "Konversi gambar {{sourceFormat}} ke format {{targetFormat}}.",
+    "itemDescriptionAria": "Beralih dari konversi gambar {{sourceFormat}} ke format {{targetFormat}}.",
+    "otherConversions": "Konversi Lainnya: {{conversion}}",
+    "itemTitle": "{{sourceFormat}} ke {{targetFormat}}",
+    "popularConversions": "Konversi Populer",
+    "description": "Konversikan gambar Anda di antara berbagai format dengan alat kami yang mudah digunakan dan gratis. Kami mendukung berbagai jenis gambar, memastikan kompatibilitas di berbagai platform dan kasus penggunaan."
+  },
+  "testimonials": {
+    "heading": "Terpercaya, Aman, dan Terpercaya",
+    "description": "Di Easy Convert Image, kami telah memperoleh kepercayaan pengguna di seluruh dunia melalui komitmen kami yang teguh terhadap keamanan, kualitas, dan kepuasan pengguna. Teknologi canggih kami memastikan gambar Anda dikelola dengan baik, sementara antarmuka yang ramah pengguna membuat konversi menjadi lebih mudah. Temukan mengapa individu dan bisnis memilih kami untuk kebutuhan konversi gambar mereka.",
+    "option1": {
+      "heading": "+500.000",
+      "description": "Pengguna di seluruh dunia"
+    },
+    "option2": {
+      "heading": "+20.000.000",
+      "description": "Gambar yang Dikonversi"
+    },
+    "option3": {
+      "heading": "+10.000",
+      "description": "Gambar Dikonversi Setiap Hari"
+    },
+    "option4": {
+      "heading": "Gratis",
+      "description": "Tidak Ada Pembayaran yang Diperlukan"
+    },
+    "option5": {
+      "heading": "Tidak Perlu Registrasi",
+      "description": "Tidak perlu registrasi - kami menghormati privasi Anda"
+    },
+    "option6": {
+      "heading": "10X",
+      "description": "Konversi super cepat"
+    }
+  },
+  "faq": {
+    "heading": "Pertanyaan yang Sering Diajukan: Pertanyaan Anda Tentang Konversi Gambar Terjawab",
+    "description": "Kami mengerti Anda mungkin memiliki pertanyaan tentang layanan konversi gambar kami. Itulah mengapa kami telah menyusun daftar pertanyaan yang sering diajukan ini untuk memberikan jawaban cepat dan jelas. Mulai dari format berkas hingga kekhawatiran keamanan, temukan informasi yang Anda butuhkan untuk mengkonversi dengan percaya diri. Tidak dapat menemukan yang Anda cari? Tim dukungan kami siap membantu kapan pun Anda membutuhkannya!",
+    "option1": {
+      "heading": "Apa itu Easy Convert Image?",
+      "description": "Easy Convert Image adalah alat online gratis yang memungkinkan Anda mengkonversi gambar antara berbagai format dengan cepat dan mudah. Layanan kami mendukung berbagai format gambar dan dirancang untuk digunakan dengan mudah dan efisien."
+    },
+    "option2": {
+      "heading": "Format gambar mana yang didukung oleh Easy Convert Image?",
+      "description": "Kami mendukung berbagai format termasuk JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO, dan banyak lagi. Anda dapat mengkonversi antara format-format ini ke dua arah."
+    },
+    "option3": {
+      "heading": "Apakah Easy Convert Image benar-benar gratis?",
+      "description": "Ya, layanan dasar kami benar-benar gratis. Kami menawarkan fitur premium untuk pengguna yang lebih maju, tetapi semua konversi standar dapat dilakukan tanpa biaya."
+    },
+    "option4": {
+      "heading": "Bagaimana cara mengkonversi gambar?",
+      "description": "Mengkonversi gambar sangat mudah: 1) Pilih format output yang Anda inginkan. 2) Unggah gambar Anda dengan menarik dan melepaskannya ke antarmuka kami atau klik tombol unggah. 3) Unduh gambar yang telah dikonversi."
+    },
+    "option5": {
+      "heading": "Apakah ada batasan berapa banyak gambar yang dapat saya konversi?",
+      "description": "Kami memungkinkan hingga 10 gambar per konversi, dengan ukuran file maksimum 10MB per gambar, Anda selalu dapat memulai batch konversi baru."
+    },
+    "option6": {
+      "heading": "Seberapa cepat proses konversi?",
+      "description": "Sebagian besar konversi selesai dalam hitungan detik. Berkas yang lebih besar atau konversi batch mungkin memerlukan waktu sedikit lebih lama, tetapi kami berusaha memberikan layanan tercepat yang memungkinkan."
+    },
+    "option7": {
+      "heading": "Apakah data saya aman saat menggunakan Easy Convert Image?",
+      "description": "Absolut. Kami sangat serius dalam menjaga keamanan data. Semua unggahan dan unduhan dilindungi dengan enkripsi SSL."
+    },
+    "option8": {
+      "heading": "Apakah data saya aman saat menggunakan Easy Convert Image?",
+      "description": "Easy Convert Image adalah alat online gratis yang memungkinkan Anda mengkonversi gambar antara berbagai format dengan cepat dan mudah. Layanan kami mendukung berbagai format gambar dan dirancang untuk digunakan dengan mudah dan efisien."
+    },
+    "option9": {
+      "heading": "Apakah Anda menyimpan salinan dari gambar yang saya konversi?",
+      "description": "Tidak, kami tidak menyimpan salinan dari gambar Anda."
+    },
+    "option10": {
+      "heading": "Dapatkah saya mengkonversi beberapa gambar sekaligus?",
+      "description": "Ya, fitur konversi batch kami memungkinkan Anda mengkonversi beberapa gambar secara simultan. Cukup unggah semua gambar yang ingin Anda konversi dan proses dalam satu kali jalan."
+    },
+    "option11": {
+      "heading": "Apakah saya perlu membuat akun untuk menggunakan Easy Convert Image?",
+      "description": "Tidak, Anda tidak perlu membuat akun untuk menggunakan layanan kami."
+    },
+    "option12": {
+      "heading": "Apakah Easy Convert Image dapat digunakan di perangkat seluler?",
+      "description": "Ya, situs web kami responsif dan dapat digunakan di semua perangkat termasuk ponsel pintar dan tablet."
+    },
+    "option13": {
+      "heading": "Bagaimana jika saya tidak puas dengan hasil konversi?",
+      "description": "Jika Anda tidak puas dengan hasilnya, Anda dapat mencoba menyesuaikan pengaturan konversi atau menghubungi tim dukungan kami. Kami selalu siap membantu memastikan Anda mendapatkan hasil terbaik."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Hubungi Kami | Easy Convert Image",
+      "description": "Hubungi Easy Convert Image untuk dukungan, umpan balik, atau pertanyaan tentang alat konversi dan optimasi gambar online gratis kami.",
+      "keywords": "hubungi, dukungan, layanan pelanggan, bantuan konversi gambar",
+      "ogTitle": "Hubungi Easy Convert Image - Kami Di Sini untuk Membantu",
+      "ogDescription": "Membutuhkan bantuan dengan konversi gambar? Punya umpan balik? Hubungi tim kami untuk dukungan yang cepat dan ramah.",
+      "structuredData": {
+        "name": "Hubungi Easy Convert Image",
+        "description": "Informasi kontak dan dukungan untuk pengguna Easy Convert Image.",
+        "publisherName": "Easy Convert Image"
+      }
+    },
+    "name": "Nama",
+    "phone": "Nomor Telepon",
+    "email": "Email",
+    "comments": "Komentar",
+    "contactUs": "Hubungi Kami",
+    "send": "Kirim Email",
+    "inquiries": "Pertanyaan Umum",
+    "support": "Dukungan Teknis",
+    "heading": "Hubungi Kami:",
+    "instructions": "Silakan isi bidang di bawah ini",
+    "description": "Kami menghargai umpan balik Anda dan siap membantu Anda dengan pertanyaan atau kekhawatiran apa pun."
+  },
+  "footer": {
+    "theme": "Ubah tema halaman menjadi gelap atau terang",
+    "copyright": "Easy Convert Image 2024 - Seluruh Hak Dilindungi.",
+    "pageName": "EasyConvertImage",
+    "phone": "+354 910 232 032",
+    "email": "info@easyimageconvert.com",
+    "usefulInfo": {
+      "heading": "Tautan Berguna",
+      "option1": {
+        "label": "Beranda",
+        "url": "/"
+      },
+      "option2": {
+        "label": "Tentang Kami",
+        "url": "/about"
+      },
+      "option3": {
+        "label": "Hubungi Kami",
+        "url": "/contact"
+      },
+      "option4": {
+        "label": "Alat Teratas",
+        "url": "/#top-tools"
+      }
+    },
+    "otherTools": {
+      "heading": "Alat Lainnya"
+    },
+    "legal": {
+      "heading": "Hukum",
+      "option1": {
+        "label": "Kebijakan Privasi",
+        "url": "/privacy-policy"
+      },
+      "option2": {
+        "label": "Syarat Layanan",
+        "url": "/terms-of-service"
+      },
+      "option3": {
+        "label": "Kebijakan Cookie",
+        "url": "/cookie-policy"
+      },
+      "option4": {
+        "label": "Pernyataan Aksesibilitas",
+        "url": "/accessibility"
+      },
+      "option5": {
+        "label": "Informasi Kontak",
+        "url": "/contact"
+      },
+      "option6": {
+        "label": "Kepatuhan CCPA",
+        "url": "/ccpa-compliance"
+      },
+      "option7": {
+        "label": "Kepatuhan GDPR",
+        "url": "/gdpr-compliance"
+      }
+    }
+  },
+  "homeMeta": {
+    "name": "Easy Convert Image",
+    "title": "Easy Convert Image: Konverter & Optimizer Gambar Online Gratis (JPG, PNG, WebP)",
+    "description": "Konversi, ubah ukuran, dan optimalkan gambar secara instan. Mendukung JPG, PNG, WebP, AVIF, SVG, dan lainnya. Pengolahan batch, tanpa pendaftaran. Cepat, aman, dan 100% gratis.",
+    "keywords": "konverter gambar, JPG ke PNG, konverter WebP, pengubah ukuran gambar, optimasi gambar, pengolahan batch gambar",
+    "ogTitle": "Easy Convert Image: Ubah Format Gambar Apapun Secara Instan (Gratis)",
+    "ogDescription": "Konversi, ubah ukuran, dan optimalkan gambar dalam hitungan detik. JPG, PNG, WebP, AVIF, & lainnya. Tanpa pendaftaran, tanpa watermark. Cobalah alat kami yang super cepat sekarang juga!"
+  },
+  "ui": {
+    "emailError": "Error saat mengirim email kontak",
+    "conversionSuccess": "Berkas berhasil dikonversi",
+    "missingFormat": "Berkas dan format diperlukan",
+    "conversionFailed": "Konversi gagal",
+    "emailSuccess": "Email berhasil dikirim",
+    "downloadSuccess": "Berkas berhasil diunduh",
+    "fileRemoveSuccess": "Berkas berhasil dihapus",
+    "filesRemoveSuccess": "Berkas berhasil dihapus",
+    "contactEmailSent": "Email berhasil dikirim, kami akan segera menghubungi Anda.",
+    "missingName": "Nama tidak ada",
+    "missingPhone": "Nomor telepon tidak ada",
+    "missingEmail": "Email tidak ada",
+    "formatEmail": "Format Email salah",
+    "missingComments": "Komentar tidak ada",
+    "success": "Berhasil",
+    "error": "Error",
+    "warning": "Peringatan",
+    "info": "Info",
+    "backToTop": "Kembali ke Atas"
+  },
+  "convertMeta": {
+    "title": "Konversi {{sourceFormatUpper}} ke {{targetFormatUpper}} - Konverter Gambar Online Gratis | Easy Convert Image",
+    "description": "Ubah gambar {{sourceFormatUpper}} Anda menjadi format {{targetFormatUpper}} dengan mudah. Konverter online gratis kami mempertahankan {{sourceBenefit}} sambil memberikan {{targetBenefit}}. Tidak perlu registrasi, konversi instan!"
+  },
+  "keywordGenerator": {
+    "baseKeywords": [
+      "konversi gambar",
+      "konverter gratis",
+      "alat online",
+      "format gambar",
+      "konversi berkas",
+      "gambar digital"
+    ],
+    "formatSpecificKeywords": {
+      "jpeg": ["kompresi berkurang", "fotografi", "gambar web"],
+      "png": ["kompresi tanpa kehilangan", "transparansi", "grafis"],
+      "gif": ["gambar animasi", "animasi pendek", "meme"],
+      "webp": [
+        "optimisasi web",
+        "memuat lebih cepat",
+        "format generasi berikutnya"
+      ],
+      "avif": ["kompresi canggih", "kualitas tinggi", "format modern"],
+      "tiff": ["resolusi tinggi", "cetakan profesional", "pengeditan gambar"],
+      "svg": ["grafik vektor", "gambar yang dapat diubah ukurannya", "logo"],
+      "bmp": ["gambar bitmap", "format tidak terkompresi", "format warisan"],
+      "pdf": ["konversi dokumen", "ekstraksi gambar", "multi-halaman"]
+    },
+    "conversionKeywordTemplates": [
+      "{sourceFormat} ke {targetFormat}",
+      "konversi {sourceFormat} ke {targetFormat}",
+      "{sourceFormat} {targetFormat} konverter",
+      "ubah {sourceFormat} ke {targetFormat}",
+      "{sourceFormat} menjadi {targetFormat}"
+    ]
+  },
+  "notFound": {
+    "title": "Halaman Tidak Ditemukan",
+    "message": "Maaf, halaman yang Anda cari tidak ada.",
+    "goHome": "Kembali ke Halaman Utama"
+  },
+
+  "errorBoundary": {
+    "title": "Terjadi Kesalahan",
+    "message": "Maaf, terjadi kesalahan yang tidak terduga.",
+    "unknownError": "Terjadi kesalahan yang tidak diketahui."
+  },
+  "about": {
+    "about": "Tentang Kami",
+    "title": "Tentang Kami",
+    "description": "Di Easy Convert Image, kami didorong oleh seperangkat tujuan inti yang memandu misi kami untuk memberikan pengalaman konversi gambar terbaik. Prinsip-prinsip ini membentuk layanan kami dan mencerminkan komitmen kami kepada pengguna kami:",
+    "purpose": "Tujuan Kami",
+    "meta": {
+      "title": "Tentang Easy Convert Image | Alat Konversi Gambar Online Gratis",
+      "description": "Pelajari tentang Easy Convert Image, misi kami untuk menyederhanakan konversi gambar, dan tim di balik alat-alat kami yang kuat namun mudah digunakan. Temukan mengapa jutaan orang percaya kepada kami untuk kebutuhan konversi gambar mereka.",
+      "keywords": "tentang kami, alat konversi gambar, misi perusahaan, tim, pemrosesan gambar, alat online gratis",
+      "ogTitle": "Tentang Easy Convert Image: Menyederhanakan Konversi Gambar Online",
+      "ogDescription": "Temui tim di balik Easy Convert Image dan pelajari bagaimana kami merevolusi konversi gambar online dengan alat-alat kami yang gratis, kuat, dan ramah pengguna.",
+      "ogImage": "https://easyconvertimage.com/assets/about-team-image.jpg",
+      "canonicalUrl": "https://easyconvertimage.com/about"
+    },
+    "structuredData": {
+      "name": "Tentang Easy Convert Image",
+      "description": "Easy Convert Image menyediakan alat-alat online gratis untuk konversi dan optimisasi gambar. Pelajari tentang misi kami dan tim di balik layanan kami.",
+      "publisherName": "Easy Convert Image",
+      "logoUrl": "https://easyconvertimage.com/logo.png",
+      "websiteName": "Easy Convert Image",
+      "websiteUrl": "https://easyconvertimage.com"
+    }
+  },
+  "companyObjectives": {
+    "simplifyConversion": {
+      "title": "Menyederhanakan Konversi Gambar",
+      "content": "Tujuan utama kami adalah membuat konversi gambar menjadi mudah. Dengan antarmuka yang intuitif, kami memastikan bahwa bahkan konversi yang kompleks hanya beberapa klik saja."
+    },
+    "accessibility": {
+      "title": "Akses untuk Semua Orang",
+      "content": "Kami percaya dalam demokratisasi alat gambar. Itulah mengapa kami menawarkan layanan kami secara gratis, memastikan bahwa konversi gambar berkualitas dapat diakses oleh individu dan bisnis."
+    },
+    "advancedTechnology": {
+      "title": "Memanfaatkan Teknologi Canggih",
+      "content": "Dengan memanfaatkan algoritma pemrosesan gambar terbaru, kami terus meningkatkan kecepatan dan kualitas konversi, tetap berada di garis depan industri."
+    },
+    "userPrivacy": {
+      "title": "Prioritaskan Privasi Pengguna",
+      "content": "Gambar Anda adalah milik Anda. Kami menerapkan langkah-langkah keamanan yang ketat dan kebijakan privasi yang jelas untuk memastikan file Anda tetap rahasia dan terlindungi."
+    },
+    "formatSupport": {
+      "title": "Dukungan untuk Semua Format Utama",
+      "content": "Dari format umum seperti JPG dan PNG hingga format khusus seperti WebP dan AVIF, kami bertujuan untuk menjadi solusi satu atap untuk semua kebutuhan konversi gambar."
+    },
+    "userFeedback": {
+      "title": "Berkembang dengan Kebutuhan Pengguna",
+      "content": "Kami berkomitmen untuk perbaikan yang berkelanjutan. Dengan mencari dan menerapkan umpan balik pengguna secara aktif, kami memastikan alat kami berkembang untuk memenuhi tuntutan yang berubah dan teknologi yang muncul."
+    }
+  },
+  "accessibility": {
+    "title": "Pernyataan Aksesibilitas",
+    "breadcrumb": "Pernyataan Aksesibilitas",
+    "statementTitle": "Pernyataan Aksesibilitas untuk Easy Convert Image",
+    "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
+    "commitment": "Easy Convert Image berkomitmen untuk memastikan aksesibilitas digital bagi orang-orang dengan disabilitas. Kami terus memperbaiki pengalaman pengguna untuk semua orang dan menerapkan standar aksesibilitas yang relevan.",
+    "conformanceStatus": {
+      "title": "Status kesesuaian",
+      "description": "Pedoman Konten Web Aksesibilitas (WCAG) mendefinisikan persyaratan untuk desainer dan pengembang untuk meningkatkan aksesibilitas bagi orang-orang dengan disabilitas. Ini mendefinisikan tiga tingkat kesesuaian: Level A, Level AA, dan Level AAA. Easy Convert Image sebagian sesuai dengan WCAG 2.1 level AA."
+    },
+    "feedback": {
+      "title": "Umpan Balik",
+      "description": "Kami menyambut umpan balik Anda tentang aksesibilitas Easy Convert Image. Beri tahu kami jika Anda menghadapi hambatan aksesibilitas: E-mail: accessibility@easyconvertimage.com"
+    },
+    "technicalSpecs": {
+      "title": "Spesifikasi Teknis",
+      "description": "Aksesibilitas Easy Convert Image bergantung pada teknologi berikut untuk bekerja dengan kombinasi khusus browser web dan teknologi bantu atau plugin yang diinstal di komputer Anda: - HTML - WAI-ARIA - CSS - JavaScript"
+    },
+    "assessmentApproach": {
+      "title": "Pendekatan Penilaian",
+      "description": "Easy Convert Image menilai aksesibilitas situs web kami dengan pendekatan berikut: - Evaluasi mandiri - Evaluasi eksternal"
+    },
+    "meta": {
+      "title": "Pernyataan Aksesibilitas | Easy Convert Image",
+      "description": "Baca tentang komitmen Easy Convert Image terhadap aksesibilitas dan upaya kami untuk memastikan alat konversi gambar online gratis kami dapat digunakan oleh semua orang.",
+      "keywords": "aksesibilitas, aksesibilitas web, desain inklusif, alat gambar",
+      "ogTitle": "Pernyataan Aksesibilitas Easy Convert Image",
+      "ogDescription": "Komitmen kami untuk membuat konversi dan optimisasi gambar dapat diakses oleh semua pengguna, tanpa memandang kemampuan mereka."
+    }
+  },
+  "privacyPolicy": {
+    "content": {
+      "heading": "Kebijakan Privasi",
+      "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
+      "introduction": "Easy Convert Image (\"kami\" atau \"kami\") berkomitmen untuk melindungi privasi Anda. Kebijakan ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan layanan konversi gambar kami.",
+      "sections": [
+        {
+          "title": "Informasi yang Kami Kumpulkan",
+          "content": "Kami mengumpulkan jenis informasi berikut: - Informasi pribadi: alamat email (jika Anda memilih untuk membuat akun) - Data penggunaan: jenis gambar yang dikonversi, frekuensi penggunaan - Data teknis: alamat IP, jenis browser, informasi perangkat"
+        },
+        {
+          "title": "Bagaimana Kami Menggunakan Informasi Anda",
+          "content": "Kami menggunakan informasi Anda untuk: - Menyediakan dan meningkatkan layanan konversi gambar kami - Menganalisis pola penggunaan untuk mengoptimalkan algoritma kami - Mengirim pemberitahuan terkait layanan (mis. peringatan pemeliharaan) - Menanggapi pertanyaan dan permintaan dukungan Anda"
+        },
+        {
+          "title": "Keamanan Data",
+          "content": "Kami menerapkan langkah-langkah keamanan standar industri untuk melindungi data Anda, termasuk enkripsi dan kontrol akses."
+        },
+        {
+          "title": "Hak Anda",
+          "content": "Anda memiliki hak untuk: - Mengakses dan menerima salinan data Anda - Memperbaiki data yang tidak akurat - Meminta penghapusan data Anda - Memprotes penggunaan data Anda"
+        }
+      ]
+    },
+    "dataSharing": {
+      "title": "Berbagi Data dan Pengungkapan",
+      "content": "Kami tidak menjual informasi pribadi Anda. Kami dapat berbagi data dengan: - Penyedia layanan (mis. penyedia penyimpanan cloud) - Otoritas hukum saat diperlukan oleh hukum"
+    },
+    "contactUs": {
+      "title": "Hubungi Kami",
+      "content": "Untuk pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami di privacy@easyconvertimage.com"
+    },
+    "meta": {
+      "title": "Kebijakan Privasi | Easy Convert Image",
+      "description": "Pelajari tentang bagaimana Easy Convert Image mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan alat konversi dan optimisasi gambar online gratis kami.",
+      "keywords": "kebijakan privasi, perlindungan data, privasi konversi gambar, data pengguna",
+      "ogTitle": "Kebijakan Privasi Easy Convert Image",
+      "ogDescription": "Pahami bagaimana kami mengelola data Anda saat Anda menggunakan layanan konversi gambar kami. Privasi Anda penting bagi kami."
+    }
+  },
+  "termsOfService": {
+    "heading": "Syarat Layanan",
+    "subheading": "Syarat Layanan untuk Easy Convert Image",
+    "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
+    "sections": {
+      "acceptance": {
+        "title": "Penerimaan Syarat",
+        "content": "Dengan menggunakan Easy Convert Image, Anda menyetujui Syarat Layanan ini. Jika Anda tidak setuju dengan bagian mana pun dari syarat tersebut, Anda tidak boleh menggunakan layanan kami."
+      },
+      "use": {
+        "title": "Penggunaan Layanan",
+        "content": "Layanan kami memungkinkan Anda untuk mengkonversi gambar antara format yang berbeda. Anda setuju untuk menggunakan layanan ini hanya untuk tujuan yang sah dan sesuai dengan Syarat ini."
+      },
+      "userContent": {
+        "title": "Konten Pengguna",
+        "content": "Anda tetap memiliki semua hak atas gambar yang Anda unggah. Kami tidak mengklaim kepemilikan konten Anda. Namun, Anda memberi kami lisensi untuk menyimpan dan memproses gambar Anda semata-mata untuk tujuan menyediakan layanan konversi kami."
+      },
+      "prohibited": {
+        "title": "Aktivitas yang Dilarang",
+        "content": "Anda tidak boleh: - Menggunakan layanan kami untuk mengonversi atau menyimpan konten ilegal atau berhak cipta - Berusaha untuk mendapatkan akses yang tidak sah ke sistem kami - Menggunakan layanan kami dengan cara yang dapat merusak atau membebani infrastruktur kami"
+      },
+      "termination": {
+        "title": "Pengakhiran",
+        "content": "Kami dapat mengakhiri atau menangguhkan akses Anda ke layanan kami secara segera, tanpa pemberitahuan atau tanggung jawab sebelumnya, atas alasan apa pun, termasuk namun tidak terbatas pada pelanggaran Syarat ini."
+      },
+      "liability": {
+        "title": "Batasan Tanggung Jawab",
+        "content": "Easy Convert Image tidak bertanggung jawab atas kerugian tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk namun tidak terbatas pada kehilangan keuntungan, data, penggunaan, goodwill, atau kerugian lainnya yang tidak berwujud."
+      },
+      "changes": {
+        "title": "Perubahan pada Syarat",
+        "content": "Kami berhak untuk memodifikasi atau mengganti Syarat ini kapan saja. Jika revisi tersebut material, kami akan mencoba memberikan pemberitahuan setidaknya 30 hari sebelum syarat baru berlaku."
+      },
+      "contact": {
+        "title": "Hubungi Kami",
+        "content": "Jika Anda memiliki pertanyaan tentang Syarat ini, silakan hubungi kami di terms@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "Syarat Layanan | Easy Convert Image",
+      "description": "Periksa syarat layanan kami untuk memahami aturan dan regulasi yang mengatur penggunaan alat konversi dan optimisasi gambar online gratis Easy Convert Image.",
+      "keywords": "syarat layanan, perjanjian pengguna, syarat konversi gambar, hukum",
+      "ogTitle": "Syarat Layanan Easy Convert Image",
+      "ogDescription": "Pahami hak dan kewajiban Anda saat menggunakan alat konversi dan optimisasi gambar gratis kami.",
+      "structuredData": {
+        "name": "Syarat Layanan",
+        "description": "Syarat dan ketentuan untuk menggunakan layanan konversi gambar online Easy Convert Image."
+      }
+    }
+  },
+  "cookiePolicy": {
+    "heading": "Kebijakan Cookie",
+    "subheading": "Kebijakan Cookie untuk Easy Convert Image",
+    "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
+    "sections": {
+      "whatAre": {
+        "title": "Apa Itu Cookie",
+        "content": "Cookie adalah file teks kecil yang disimpan di perangkat Anda saat Anda mengunjungi situs web kami. Mereka membantu kami memberikan pengalaman yang lebih baik kepada Anda."
+      },
+      "howWeUse": {
+        "title": "Bagaimana Kami Menggunakan Cookie",
+        "content": "Kami menggunakan jenis cookie berikut: - Cookie penting: Untuk mengaktifkan fungsi inti (mis., mengingat pengaturan konversi gambar Anda) - Cookie analitik: Untuk memahami bagaimana pengunjung menggunakan situs kami (mis., Google Analytics) - Cookie preferensi: Untuk mengingat preferensi Anda (mis., pengaturan mode gelap)"
+      },
+      "thirdParty": {
+        "title": "Cookie Pihak Ketiga",
+        "content": "Kami menggunakan Google Analytics untuk membantu kami memahami bagaimana pengguna berinteraksi dengan situs web. Cookie ini dapat melacak hal-hal seperti berapa lama Anda menghabiskan waktu di situs dan halaman apa yang Anda kunjungi."
+      },
+      "managing": {
+        "title": "Mengelola Cookie",
+        "content": "Anda dapat mengontrol dan/atau menghapus cookie sesuai keinginan Anda. Anda dapat menghapus semua cookie yang sudah ada di komputer Anda dan Anda dapat mengatur sebagian besar browser untuk mencegah mereka ditempatkan."
+      },
+      "contact": {
+        "title": "Hubungi Kami",
+        "content": "Jika Anda memiliki pertanyaan tentang penggunaan cookie kami, silakan email kami di cookies@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "Kebijakan Cookie | Easy Convert Image",
+      "description": "Pelajari tentang bagaimana Easy Convert Image menggunakan cookie untuk meningkatkan pengalaman Anda dengan alat konversi dan optimisasi gambar online gratis kami.",
+      "keywords": "kebijakan cookie, cookie situs web, pelacakan data, preferensi pengguna",
+      "ogTitle": "Kebijakan Cookie Easy Convert Image",
+      "ogDescription": "Pahami bagaimana kami menggunakan cookie untuk meningkatkan pengalaman konversi gambar Anda dan melindungi privasi Anda.",
+      "structuredData": {
+        "name": "Kebijakan Cookie",
+        "description": "Detail tentang bagaimana Easy Convert Image menggunakan cookie dan teknologi serupa."
+      }
+    }
+  },
+  "ccpaCompliance": {
+    "heading": "Kepatuhan CCPA",
+    "subheading": "Kepatuhan CCPA untuk Easy Convert Image",
+    "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
+    "sections": {
+      "consumerRights": {
+        "title": "Hak Konsumen California",
+        "intro": "Di bawah California Consumer Privacy Act (CCPA), penduduk California memiliki hak-hak berikut:",
+        "list": "1. Hak untuk mengetahui informasi pribadi apa yang dikumpulkan\n2. Hak untuk meminta penghapusan informasi pribadi\n3. Hak untuk tidak menjual informasi pribadi\n4. Hak untuk tidak diskriminasi atas penggunaan hak-hak CCPA"
+      },
+      "infoCollected": {
+        "title": "Kategori Informasi Pribadi yang Dikumpulkan",
+        "content": "Dalam 12 bulan terakhir, Easy Convert Image tidak mengumpulkan Data pribadi apapun."
+      },
+      "exerciseRights": {
+        "title": "Bagaimana Melakukan Hak Anda",
+        "content": "Untuk menggunakan hak-hak CCPA Anda, silakan email kami di ccpa@easyconvertimage.com. Kami akan merespons permintaan Anda dalam waktu 45 hari."
+      },
+      "verification": {
+        "title": "Proses Verifikasi",
+        "content": "Untuk melindungi privasi Anda, kami akan memverifikasi identitas Anda sebelum menanggapi permintaan Anda. Kami dapat meminta Anda untuk memberikan informasi tambahan untuk tujuan verifikasi."
+      },
+      "authorizedAgent": {
+        "title": "Agen Berwenang",
+        "content": "Anda dapat menunjuk agen berwenang untuk membuat permintaan atas nama Anda. Agen berwenang harus memberikan bukti izin tertulis Anda dan memverifikasi identitas mereka sendiri kepada kami."
+      },
+      "doNotSell": {
+        "title": "\"Jangan Jual Informasi Pribadi Saya\"",
+        "content": "Easy Convert Image tidak menjual informasi pribadi. Namun, jika Anda ingin mengopt-out dari penjualan informasi Anda di masa depan, Anda dapat email kami di donotsell@easyconvertimage.com."
+      }
+    },
+    "meta": {
+      "title": "Kepatuhan CCPA | Easy Convert Image",
+      "description": "Pelajari tentang kepatuhan Easy Convert Image dengan California Consumer Privacy Act (CCPA) dan hak Anda terkait informasi pribadi Anda.",
+      "keywords": "CCPA, California Consumer Privacy Act, hak privasi, perlindungan data, Easy Convert Image",
+      "ogTitle": "Kepatuhan CCPA - Easy Convert Image",
+      "ogDescription": "Pahami hak-hak Anda di bawah CCPA dan bagaimana Easy Convert Image melindungi informasi pribadi Anda sesuai dengan hukum California.",
+      "structuredData": {
+        "name": "Kepatuhan CCPA",
+        "description": "Informasi tentang kepatuhan Easy Convert Image dengan peraturan California Consumer Privacy Act (CCPA) dan hak konsumen."
+      }
+    }
+  },
+  "gdprCompliance": {
+    "heading": "Kepatuhan GDPR",
+    "subheading": "Kepatuhan GDPR untuk Easy Convert Image",
+    "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
+    "sections": {
+      "dataController": {
+        "title": "Pengontrol Data",
+        "content": "Easy Convert Image, adalah pengontrol data untuk data pribadi yang dikumpulkan melalui layanan kami."
+      },
+      "legalBasis": {
+        "title": "Dasar Hukum untuk Pengolahan",
+        "content": "Kami mengolah data pribadi Anda berdasarkan dasar hukum berikut: - Persetujuan: Ketika Anda menyetujui penggunaan cookie kami untuk tujuan yang tidak penting. - Penyelesaian Kontrak: Ketika kami menyediakan layanan konversi gambar kami kepada Anda. - Kepentingan yang sah: Untuk meningkatkan layanan kami dan memastikan keamanan."
+      },
+      "dataSubjectRights": {
+        "title": "Hak Subjek Data",
+        "content": "Di bawah GDPR, Anda memiliki hak-hak berikut: - Hak untuk mengakses - Hak untuk perbaikan - Hak untuk penghapusan - Hak untuk membatasi pemrosesan - Hak portabilitas data - Hak untuk keberatan",
+        "exerciseRights": "Untuk menggunakan hak-hak ini, silakan email kami di gdpr@easyconvertimage.com."
+      },
+      "dataRetention": {
+        "title": "Pemeliharaan Data",
+        "content": "Kami menyimpan data pribadi Anda selama yang diperlukan untuk menyediakan layanan kami dan mematuhi kewajiban hukum. Gambar yang dikonversi akan dihapus secara otomatis setelah 24 jam."
+      },
+      "internationalTransfers": {
+        "title": "Transfer Internasional",
+        "content": "Data Anda dapat ditransfer ke server yang terletak di luar EEA. Kami memastikan tindakan pencegahan yang tepat, seperti Klousul Kontrak Standar."
+      }
+    },
+    "meta": {
+      "title": "Kepatuhan GDPR | Easy Convert Image",
+      "description": "Temukan bagaimana Easy Convert Image memastikan kepatuhan dengan peraturan GDPR sambil menyediakan layanan konversi gambar online dan optimisasi gratis.",
+      "keywords": "kepatuhan GDPR, perlindungan data, undang-undang privasi UE, hak pengguna",
+      "ogTitle": "Informasi Kepatuhan GDPR Easy Convert Image",
+      "ogDescription": "Pelajari tentang hak data Anda dan bagaimana kami melindungi informasi pribadi Anda sesuai dengan GDPR.",
+      "structuredData": {
+        "name": "Kepatuhan GDPR",
+        "description": "Informasi tentang kepatuhan Easy Convert Image dengan peraturan GDPR."
+      }
+    }
+  }
+}
