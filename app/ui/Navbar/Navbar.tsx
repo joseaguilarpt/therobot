@@ -111,7 +111,7 @@ const Navbar = ({
   const keepScrolled = autoScrolled ? true : isScrolled;
 
   const navigateHome = () => {
-    window.location.href = "/";
+    window.location.href = `/${i18n.language ?? 'en'}`;
   };
   return (
     <nav
@@ -124,7 +124,7 @@ const Navbar = ({
           <GridItem>
             <Button
               appareance="link"
-              href={`/${i18n.language ?? 'en'}`}
+              onClick={navigateHome}
               aria-label={t("homePageLink")}
             >
               <GridContainer alignItems="flex-start">
@@ -151,8 +151,8 @@ const Navbar = ({
                   )}
                   role="none"
                 >
-                  <Link
-                    to={item.href ?? ""}
+                  <a
+                    href={item.href ?? ""}
                     role="menuitem"
                     tabIndex={index === 0 ? 0 : -1}
                     aria-current={
@@ -160,7 +160,7 @@ const Navbar = ({
                     }
                   >
                     {t(item.value)}
-                  </Link>
+                  </a>
                 </li>
               ))}
               <li role="none">

@@ -7,7 +7,7 @@ import { RemixServer } from "@remix-run/react";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { createInstance } from "i18next";
-import i18next, { getLocaleWithFallback } from "./i18next.server";
+import i18next from "./i18next.server";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import Backend from "i18next-fs-backend";
 import i18n from "./i18n"; // your i18n configuration file
@@ -30,7 +30,7 @@ export default async function handleRequest(
 		: "onShellReady";
 
 	let instance = createInstance();
-	let lng = await getLocaleWithFallback(request);
+	let lng = await i18next.getLocale(request);
 	let ns = i18next.getRouteNamespaces(remixContext);
 
 	await instance
