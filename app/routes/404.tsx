@@ -5,7 +5,6 @@ import BackToTop from "~/ui/BackToTop/BackToTop";
 import Footer from "~/ui/Footer/Footer";
 import { FOOTER } from "~/constants/content";
 import Navbar from "~/ui/Navbar/Navbar";
-import ToolContainer from "~/ui/ToolContainer/ToolContainer";
 import Heading from "~/ui/Heading/Heading";
 import type { MetaFunction } from "@remix-run/node";
 import { createMeta } from "~/utils/meta";

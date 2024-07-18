@@ -16,7 +16,7 @@ import Heading from "../Heading/Heading";
 import { HoneypotInputs } from "remix-utils/honeypot/react";
 import { useOutletContext } from "@remix-run/react";
 import { useTheme } from "~/context/ThemeContext";
-
+import { useHCaptcha } from "~/context/HCaptchaContext";
 interface DragAndDropProps {
   onFilesDrop: (files: File[], formData: FormData) => void;
   acceptedTypes?: string[];
@@ -38,6 +38,8 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const { honeypotInputProps } = useOutletContext<any>();
 
   const formRef = React.useRef();
+
+  const { captchaRef, token } = useHCaptcha();
 
   useEffect(() => {
     window.addEventListener("paste", handlePaste);
@@ -72,7 +74,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     return true;
   };
 
-  const addFiles = (files: File[]) => {
+  const addFiles = async (files: File[]) => {
     const validFiles = files.filter(validateFile);
 
     const formData = new FormData();
@@ -87,7 +89,18 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
           formData.append(field.id, field.value);
         }
       });
-    onFilesDrop(validFiles, formData);
+    let currentToken = null;
+    if (captchaRef.current) {
+      const { response } = await captchaRef.current.execute({ async: true });
+
+      if (response) {
+        currentToken = response;
+        formData.set('h-captcha-response', response);
+      }
+    }
+    if (currentToken) {
+      onFilesDrop(validFiles, formData);
+    }
   };
 
   const handleDrag = (e: DragEvent<HTMLDivElement>) => {
@@ -196,9 +209,6 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               accept={acceptedTypes.join(",")}
               aria-label={t("t.inputFile")}
             />
-            <button type="submit" style={{ display: "none" }}>
-              Submit
-            </button>
           </div>
         )}
       </div>
