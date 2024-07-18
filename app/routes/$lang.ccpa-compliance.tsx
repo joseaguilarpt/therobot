@@ -66,7 +66,7 @@ export const meta: MetaFunction = ({ data }) => {
 };
 
 export default function CCPA() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <>
       <Navbar autoScrolled />
@@ -84,7 +84,7 @@ export default function CCPA() {
           <GridContainer justifyContent="center" className="u-pt3">
             <Breadcrumb
               paths={[
-                { icon: "FaHome", label: t("home"), href: "/" },
+                { icon: "FaHome", label: t("home"), href: `/${i18n.language ?? ''}` },
                 { label: t("ccpaCompliance.heading") },
               ]}
             />

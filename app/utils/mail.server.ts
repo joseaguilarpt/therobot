@@ -33,7 +33,7 @@ export async function sendEmail({ file, email }: SendEmail) {
     ensureUploadsDirectoryExists();
 
     // Save the file to a temporary location
-    const filePath = path.join(__dirname, "uploads", fileName);
+    const filePath = path.join(__dirname, "../uploads", fileName);
     fs.writeFileSync(filePath, Buffer.from(fileBuffer));
 
     const emailTemplatePath = path.join(
@@ -99,7 +99,6 @@ export async function onSendEmail(formData: FormData) {
     });
     return json({ emailSent: true });
   } catch (e) {
-    console.log(e);
     return json(
       { error: "Failed sending email", convertedFiles: null },
       { status: 500 }

@@ -5,7 +5,7 @@ import "./Text.scss";
 interface TextProps {
   className?: string;
   size?: "smaller" | "small" | "medium" | "large";
-  color?: "primary" | "secondary" | "tertiary";
+  color?: "primary" | "secondary" | "tertiary" | "contrast";
   children: React.ReactNode;
   textWeight?: "bold" | "normal" | "semi-bold";
   align?: "left" | "center" | "right";
