@@ -390,7 +390,7 @@
 
 .drag-and-drop-container {
   width: 100%;
-  min-height: 200px;
+  min-height: 150px;
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
@@ -401,12 +401,27 @@
   font-family: var(--default-font);
   font-size: var(--font-size-medium);
   transition: all 0.3s ease;
-  padding: 15px 0px;
+  padding-top: 15px;
+  box-shadow: 0 2px 4px var(--shadow-color);
 }
 .drag-and-drop-container.dragging {
-  background-color: var(--input-background-color);
-  border-color: var(--accent-color-darken);
-  outline: 2px solid var(--accent-color);
+  background-color: #aed3b4;
+  border: none;
+  outline: 2px dotted var(--accent-color);
+}
+.drag-and-drop-container.dragging .drag-zone {
+  align-items: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.drag-and-drop-container.dragging .drag-zone .icon {
+  color: var(--default-font);
+}
+.drag-and-drop-container.loading {
+  background: linear-gradient(87deg, #47af6b, #3cb73c, #548f5c);
+  background-size: 200% 200%;
+  animation: gradient-animation 3s ease infinite alternate-reverse;
 }
 .drag-and-drop-container .instructions {
   text-align: center;
@@ -431,6 +446,13 @@
   color: #ffffff;
   padding: 10px 20px;
   transition: all 0.3s ease;
+}
+.drag-and-drop-container .upload-button:disabled {
+  cursor: not-allowed;
+  background-color: #4b4b4b;
+}
+> .drag-and-drop-container .upload-button:disabled:hover {
+  background-color: #4b4b4b;
 }
 .drag-and-drop-container .upload-button:focus {
   outline: none;
@@ -491,6 +513,18 @@
 }
 .files-list {
   width: 100%;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /*# sourceMappingURL=DragDrop.css.map */

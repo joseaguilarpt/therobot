@@ -26,14 +26,16 @@ export default function Tool() {
   };
 
   const handleToChange = (v: string) => {
-    const fromValue = selectedFormat?.toLowerCase() ?? "png";
+    const fromValue = selectedFormatFrom?.toLowerCase() ?? "png";
     const toValue = v?.toLowerCase() ?? "jpeg";
+    console.log(fromValue, toValue)
     window.location.href = `/${lang}/convert/${fromValue}/${toValue}`;
   };
 
   const {
     convertedFiles,
     pdfType,
+    isPending,
     setPdfType,
     handleAllAction,
     handleDownload,
@@ -55,6 +57,7 @@ export default function Tool() {
       />
       <DragAndDrop
         onFilesDrop={handleAllAction}
+        isLoading={isPending}
         acceptedTypes={[`image/${selectedFormatFrom?.toLowerCase()}`]}
         maxSize={10_000_000} // 10 MB
         files={convertedFiles}

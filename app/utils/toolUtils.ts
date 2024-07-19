@@ -10,8 +10,18 @@ import { json } from "@remix-run/node";
 import { onSendCustomerEmail, onSendEmail } from "./mail.server";
 import { verify } from "hcaptcha";
 import { validateCSRFToken } from "./csrf.server";
+import { checkRateLimit } from "./rateLimiter.server";
 
 export async function toolAction(request: any) {
+
+  const identifier = request.headers.get('x-forwarded-for') || request.ip;
+
+  // Check rate limit
+  const rateLimitError = await checkRateLimit(identifier);
+  if (rateLimitError) {
+    return json({ error: 'Rate limit exceeded. Please try again later.' }, { status: 429 });
+  }
+
   const formData = await parseFormData(request);
   const token = formData.get("h-captcha-response") as string;
 
@@ -46,7 +56,14 @@ export async function toolAction(request: any) {
     }
   }
 
-  await validateCSRFToken(request, formData);
+  try {
+    await validateCSRFToken(request, formData);
+  } catch (error) {
+    return json(
+      { error: 'Invalid CSRF token', convertedFiles: null },
+      { status: 400 }
+    );
+  }
 
   const typeOperation = formData.get("type") as string;
 

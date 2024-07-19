@@ -29,7 +29,7 @@
   "hero": {
     "header1": "Conversão Fácil de Imagens",
     "header2": "Qualquer Formato, A Qualquer Momento.",
-    "description": "Converta imagens facilmente com o Easy Convert Image. Arraste e solte arquivos, cole com Ctrl+V ou faça upload do seu dispositivo. Converta vários arquivos de uma só vez. Suporta formatos JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP e muito mais.",
+    "description": "Converta imagens facilmente com o Easy Convert Image. Arraste e solte arquivos, cole com Ctrl+V ou faça upload do seu dispositivo. Converta vários arquivos de uma só vez. Suporta formatos JPG, PNG, SVG, WebP e muito mais.",
     "freeToUse": "Grátis para usar, sem necessidade de registro. Transforme suas imagens em segundos!"
   },
   "tool": {
@@ -126,7 +126,7 @@
     },
     "option2": {
       "heading": "Quais formatos de imagem o Easy Convert Image suporta?",
-      "description": "Suportamos uma ampla gama de formatos, incluindo JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO e muito mais. Você pode converter entre qualquer um desses formatos em ambas as direções."
+      "description": "Suportamos uma ampla gama de formatos, incluindo JPEG, PNG,  GIF, WebP, TIFF, SVG, BMP, ICO e muito mais. Você pode converter entre qualquer um desses formatos em ambas as direções."
     },
     "option3": {
       "heading": "O Easy Convert Image é realmente gratuito?",
@@ -260,11 +260,11 @@
   },
   "homeMeta": {
     "name": "Easy Convert Image",
-    "title": "Easy Convert Image: Conversor e Otimizador Online Gratuito (JPG, PNG, WebP)",
-    "description": "Converta, redimensione e otimize imagens instantaneamente. Suporte para JPG, PNG, WebP, AVIF, SVG e mais. Processamento em lote, sem necessidade de cadastro. Rápido, seguro e 100% gratuito.",
-    "keywords": "conversor de imagens, JPG para PNG, conversor WebP, redimensionador de imagens, otimização de imagens, processamento em lote de imagens",
+    "title": "Easy Convert Image: Conversor e Otimizador Online Gratuito (JPG, PNG,  WebP)",
+    "description": "Converta, redimensione e otimize imagens instantaneamente. Suporte para JPG, PNG,  WebP, AVIF, SVG e mais. Processamento em lote, sem necessidade de cadastro. Rápido, seguro e 100% gratuito.",
+    "keywords": "conversor de imagens, JPG para PNG,  conversor WebP, redimensionador de imagens, otimização de imagens, processamento em lote de imagens",
     "ogTitle": "Easy Convert Image: Transforme Qualquer Formato de Imagem Instantaneamente (Grátis)",
-    "ogDescription": "Converta, redimensione e otimize imagens em segundos. JPG, PNG, WebP, AVIF e mais. Sem cadastro, sem marcas d'água. Experimente nossa ferramenta super rápida agora!"
+    "ogDescription": "Converta, redimensione e otimize imagens em segundos. JPG, PNG,  WebP, AVIF e mais. Sem cadastro, sem marcas d'água. Experimente nossa ferramenta super rápida agora!"
   },
   "ui": {
     "emailError": "Erro ao enviar e-mail de contato",

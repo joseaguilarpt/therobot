@@ -18,13 +18,13 @@ $input-background-color-light: #FFFFFF; // Changed for better contrast
 $font-color-light: rgba(18,29,43,.8);
 $default-color-light: #323232;
 $heading-color-light: #424242;
-$accent-color-light: #51975D; // Adjusted for better contrast
+$accent-color-light: #47af6b; // Adjusted for better contrast
 $accent-color-light-darken: #{darken(#2e7d32, 15%)};
 $button-color-light: rgba(249,250,251,.94);
 $image-background-light: #d1d1d1;
 
 $contrast-color-light: #ffffff;
-$shadow-color-light: rgba(0, 0, 0, 0.1);
+$shadow-color-light: rgba(0, 0, 0, 0.25);
 $error-color-light: #d32f2f; // Adjusted for better contrast
 $carousel-overlay-light: rgba(0, 42, 65, 0.85); // Increased opacity for better readability
 

@@ -25,7 +25,6 @@ export const HCaptchaComponent = React.memo(function HCaptchaComponent({ sitekey
 
   const handleExpire = useCallback(() => {
     setToken(null);
-    showSnackbar("Captcha expired. Please try again.", "warning");
   }, [setToken, showSnackbar]);
 
   const handleError = useCallback((err: string) => {

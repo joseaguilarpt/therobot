@@ -17,7 +17,11 @@ import { HoneypotInputs } from "remix-utils/honeypot/react";
 import { useOutletContext } from "@remix-run/react";
 import { useTheme } from "~/context/ThemeContext";
 import { useHCaptcha } from "~/context/HCaptchaContext";
+import classNames from "classnames";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+
 interface DragAndDropProps {
+  isLoading?: boolean;
   onFilesDrop: (files: File[], formData: FormData) => void;
   acceptedTypes?: string[];
   maxSize?: number; // in bytes
@@ -26,6 +30,7 @@ interface DragAndDropProps {
 
 const DragAndDrop: React.FC<DragAndDropProps> = ({
   onFilesDrop,
+  isLoading,
   acceptedTypes = [],
   files: existingFiles,
   maxSize = Infinity,
@@ -36,10 +41,10 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const dropRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { honeypotInputProps } = useOutletContext<any>();
-
+const [showArrow, setShowArrow] = useState('false')
   const formRef = React.useRef();
 
-  const { captchaRef, token } = useHCaptcha();
+  const { captchaRef } = useHCaptcha();
 
   useEffect(() => {
     window.addEventListener("paste", handlePaste);
@@ -49,6 +54,9 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   }, []);
 
   const handlePaste = (e: ClipboardEvent) => {
+    if (isLoading) {
+      return;
+    }
     if (e.clipboardData && e.clipboardData.files.length > 0) {
       e.preventDefault();
       const files = Array.from(e.clipboardData.files);
@@ -95,7 +103,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
 
       if (response) {
         currentToken = response;
-        formData.set('h-captcha-response', response);
+        formData.set("h-captcha-response", response);
       }
     }
     if (currentToken) {
@@ -104,11 +112,17 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   };
 
   const handleDrag = (e: DragEvent<HTMLDivElement>) => {
+    if (isLoading) {
+      return;
+    }
     e.preventDefault();
     e.stopPropagation();
   };
 
   const handleDragIn = (e: DragEvent<HTMLDivElement>) => {
+    if (isLoading) {
+      return;
+    }
     e.preventDefault();
     e.stopPropagation();
     if (e.dataTransfer.items && e.dataTransfer.items.length > 0) {
@@ -117,12 +131,18 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   };
 
   const handleDragOut = (e: DragEvent<HTMLDivElement>) => {
+    if (isLoading) {
+      return;
+    }
     e.preventDefault();
     e.stopPropagation();
     setIsDragging(false);
   };
 
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
+    if (isLoading) {
+      return;
+    }
     e.preventDefault();
     e.stopPropagation();
     setIsDragging(false);
@@ -133,6 +153,9 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   };
 
   const handleFileInput = (e: ChangeEvent<HTMLInputElement>) => {
+    if (isLoading) {
+      return;
+    }
     if (e.target.files && e.target.files.length > 0) {
       const files = Array.from(e.target.files);
       addFiles(files);
@@ -140,6 +163,9 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   };
 
   const handleButtonClick = () => {
+    if (isLoading) {
+      return;
+    }
     fileInputRef.current?.click();
   };
 
@@ -152,7 +178,11 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     >
       <HoneypotInputs label="" />
       <div
-        className={`drag-and-drop-container ${isDragging ? "dragging" : ""}`}
+        className={classNames(
+          "drag-and-drop-container",
+          isDragging && "dragging",
+          isLoading && "loading"
+        )}
         onDragEnter={handleDragIn}
         onDragLeave={handleDragOut}
         onDragOver={handleDrag}
@@ -162,8 +192,9 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
         aria-label={t("tool.fileArea")}
       >
         <input type="hidden" name="actionType" value="uploadFiles" />
-        {isDragging ? (
+        {isDragging && !isLoading ? (
           <div className="drag-zone" aria-live="polite">
+            <Icon color="dark" size="large" icon="FaRegFolderOpen" />
             <Heading level={4} appearance={6}>
               {t("tool.drop")}
             </Heading>
@@ -171,6 +202,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
         ) : (
           <div className="upload-button-container">
             <Button
+              isDisabled={isLoading}
               ariaLabel={
                 existingFiles.length > 0
                   ? t("tool.uploadMoreImages")
@@ -179,13 +211,26 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               onClick={handleButtonClick}
               className="upload-button"
             >
-              <Icon icon="FaUpload" size="large" aria-hidden="true" />{" "}
-              <Divider orientation="vertical" />{" "}
-              <Text align="center" size="large" color="contrast">
-                {existingFiles.length > 0
-                  ? t("tool.uploadMoreImages")
-                  : t("tool.uploadButton")}
-              </Text>
+              {isLoading && (
+                <>
+                  <LoadingSpinner />{" "}
+                  <Divider orientation="vertical" />{" "}
+                  <Text align="center" size="large" color="contrast">
+                    {t('fileActions.processing')}
+                  </Text>
+                </>
+              )}
+              {!isLoading && (
+                <>
+                  <Icon icon="FaUpload" size="large" aria-hidden="true" />{" "}
+                  <Divider orientation="vertical" />{" "}
+                  <Text align="center" size="large" color="contrast">
+                    {existingFiles.length > 0
+                      ? t("tool.uploadMoreImages")
+                      : t("tool.uploadButton")}
+                  </Text>
+                </>
+              )}
             </Button>
             <Text
               color="contrast"

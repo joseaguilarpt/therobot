@@ -1,12 +1,17 @@
 // src/hooks/useFileConversion.ts
 import { useState, useEffect } from "react";
-import { useActionData, useSubmit } from "@remix-run/react";
+import { useActionData, useLoaderData, useSubmit } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
 
-export function useFileConversion(selectedFormat: string, selectedFormatFrom: string) {
+export function useFileConversion(
+  selectedFormat: string,
+  selectedFormatFrom: string
+) {
   const { t } = useTranslation("common");
+  const loaderData = useLoaderData();
+
   const { showSnackbar } = useTheme();
   const data = useActionData() as any;
   const submit = useSubmit();
@@ -18,6 +23,7 @@ export function useFileConversion(selectedFormat: string, selectedFormatFrom: st
   useEffect(() => {
     if (data?.error) {
       showSnackbar(data.error, "error");
+      setIsPending(false);
       if (convertedFiles) {
         const files = convertedFiles.map((item: any) => {
           if (item.status === "processing") {
@@ -37,6 +43,8 @@ export function useFileConversion(selectedFormat: string, selectedFormatFrom: st
   useEffect(() => {
     if (data?.emailSent) {
       showSnackbar(t("ui.emailSuccess"), "success");
+      setIsPending(false);
+
     }
   }, [data?.emailSent]);
 
@@ -51,6 +59,7 @@ export function useFileConversion(selectedFormat: string, selectedFormatFrom: st
         const data = convertedFiles.filter(
           (item) => item.status !== "processing"
         );
+        setIsPending(false);
         showSnackbar(t("ui.conversionSuccess"), "success");
         setConvertedFiles([...data, ...files]);
       }, 1500);
@@ -72,6 +81,8 @@ export function useFileConversion(selectedFormat: string, selectedFormatFrom: st
   }, [data?.emailSent]);
 
   const handleAllAction = (files: File[], form: FormData) => {
+    setIsPending(true);
+
     const parsed = files.map((item) => ({
       status: "processing",
       fileName: item.name,
@@ -83,6 +94,9 @@ export function useFileConversion(selectedFormat: string, selectedFormatFrom: st
     files.forEach((file) => formData.append("file", file));
     if (selectedFormat === "PDF") {
       formData.append("pdfType", pdfType);
+    }
+    if (loaderData?.csrfToken) {
+      formData.append("csrf", loaderData?.csrfToken);
     }
     submit(formData, { method: "post", encType: "multipart/form-data" });
   };

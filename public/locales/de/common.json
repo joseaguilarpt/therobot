@@ -29,7 +29,7 @@
   "hero": {
     "header1": "Einfache Bildkonvertierung",
     "header2": "Jedes Format, jederzeit.",
-    "description": "Konvertieren Sie Bilder einfach mit Easy Convert Image. Ziehen Sie Dateien per Drag & Drop, fügen Sie sie mit Strg+V ein oder laden Sie sie von Ihrem Gerät hoch. Konvertieren Sie mehrere Bilder gleichzeitig. Unterstützt JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP und weitere Formate.",
+    "description": "Konvertieren Sie Bilder einfach mit Easy Convert Image. Ziehen Sie Dateien per Drag & Drop, fügen Sie sie mit Strg+V ein oder laden Sie sie von Ihrem Gerät hoch. Konvertieren Sie mehrere Bilder gleichzeitig. Unterstützt JPG, PNG, SVG, WebP und weitere Formate.",
     "freeToUse": "Kostenlos nutzbar, keine Registrierung erforderlich. Transformieren Sie Ihre Bilder in Sekundenschnelle!"
   },
   "tool": {
@@ -126,7 +126,7 @@
     },
     "option2": {
       "heading": "Welche Bildformate unterstützt Easy Convert Image?",
-      "description": "Wir unterstützen eine breite Palette von Formaten, einschließlich JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO und mehr. Sie können zwischen all diesen Formaten in beide Richtungen konvertieren."
+      "description": "Wir unterstützen eine breite Palette von Formaten, einschließlich JPEG, PNG,  GIF, WebP, TIFF, SVG, BMP, ICO und mehr. Sie können zwischen all diesen Formaten in beide Richtungen konvertieren."
     },
     "option3": {
       "heading": "Ist Easy Convert Image wirklich kostenlos?",
@@ -260,11 +260,11 @@
   },
   "homeMeta": {
     "name": "Easy Convert Image",
-    "title": "Easy Convert Image: Kostenloser Online-Konverter & Optimierer (JPG, PNG, WebP)",
-    "description": "Konvertieren, skalieren und optimieren Sie Bilder sofort. Unterstützung für JPG, PNG, WebP, AVIF, SVG und mehr. Stapelverarbeitung, keine Anmeldung. Schnell, sicher und 100% kostenlos.",
-    "keywords": "Bildkonverter, JPG zu PNG, WebP-Konverter, Bildgrößenänderung, Bildoptimierung, Stapelbildverarbeitung",
+    "title": "Easy Convert Image: Kostenloser Online-Konverter & Optimierer (JPG, PNG,  WebP)",
+    "description": "Konvertieren, skalieren und optimieren Sie Bilder sofort. Unterstützung für JPG, PNG,  WebP, AVIF, SVG und mehr. Stapelverarbeitung, keine Anmeldung. Schnell, sicher und 100% kostenlos.",
+    "keywords": "Bildkonverter, JPG zu PNG,  WebP-Konverter, Bildgrößenänderung, Bildoptimierung, Stapelbildverarbeitung",
     "ogTitle": "Easy Convert Image: Transformieren Sie jedes Bildformat sofort (Kostenlos)",
-    "ogDescription": "Konvertieren, skalieren und optimieren Sie Bilder in Sekundenschnelle. JPG, PNG, WebP, AVIF & mehr. Keine Anmeldung, keine Wasserzeichen. Probieren Sie unser blitzschnelles Tool jetzt aus!"
+    "ogDescription": "Konvertieren, skalieren und optimieren Sie Bilder in Sekundenschnelle. JPG, PNG,  WebP, AVIF & mehr. Keine Anmeldung, keine Wasserzeichen. Probieren Sie unser blitzschnelles Tool jetzt aus!"
   },
   "ui": {
     "emailError": "Fehler beim Senden der Kontakt-E-Mail",

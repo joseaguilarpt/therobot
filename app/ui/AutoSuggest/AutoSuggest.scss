@@ -112,8 +112,9 @@
 }
 
 .home-suggest {
-  margin: 10px;
-
+  margin: 0;
+  margin-bottom: 10px;
+  
   .suggestions {
     top: 80px;
     max-height: unset;

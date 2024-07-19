@@ -29,7 +29,7 @@
   "hero": {
     "header1": "Konversi Gambar Mudah",
     "header2": "Format Apapun, Kapanpun.",
-    "description": "Konversi gambar dengan mudah menggunakan Easy Convert Image. Tarik & lepas file, tempel dengan Ctrl+V, atau unggah dari perangkat Anda. Konversi berkas gambar dalam jumlah besar sekaligus. Mendukung format JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP, dan lebih banyak lagi.",
+    "description": "Konversi gambar dengan mudah menggunakan Easy Convert Image. Tarik & lepas file, tempel dengan Ctrl+V, atau unggah dari perangkat Anda. Konversi berkas gambar dalam jumlah besar sekaligus. Mendukung format JPG, PNG, SVG, WebP, dan lebih banyak lagi.",
     "freeToUse": "Gratis digunakan, tidak memerlukan registrasi. Ubah gambar Anda dalam hitungan detik!"
   },
   "tool": {
@@ -126,7 +126,7 @@
     },
     "option2": {
       "heading": "Format gambar mana yang didukung oleh Easy Convert Image?",
-      "description": "Kami mendukung berbagai format termasuk JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO, dan banyak lagi. Anda dapat mengkonversi antara format-format ini ke dua arah."
+      "description": "Kami mendukung berbagai format termasuk JPEG, PNG,  GIF, WebP, TIFF, SVG, BMP, ICO, dan banyak lagi. Anda dapat mengkonversi antara format-format ini ke dua arah."
     },
     "option3": {
       "heading": "Apakah Easy Convert Image benar-benar gratis?",
@@ -260,11 +260,11 @@
   },
   "homeMeta": {
     "name": "Easy Convert Image",
-    "title": "Easy Convert Image: Konverter & Optimizer Gambar Online Gratis (JPG, PNG, WebP)",
-    "description": "Konversi, ubah ukuran, dan optimalkan gambar secara instan. Mendukung JPG, PNG, WebP, AVIF, SVG, dan lainnya. Pengolahan batch, tanpa pendaftaran. Cepat, aman, dan 100% gratis.",
-    "keywords": "konverter gambar, JPG ke PNG, konverter WebP, pengubah ukuran gambar, optimasi gambar, pengolahan batch gambar",
+    "title": "Easy Convert Image: Konverter & Optimizer Gambar Online Gratis (JPG, PNG,  WebP)",
+    "description": "Konversi, ubah ukuran, dan optimalkan gambar secara instan. Mendukung JPG, PNG,  WebP, AVIF, SVG, dan lainnya. Pengolahan batch, tanpa pendaftaran. Cepat, aman, dan 100% gratis.",
+    "keywords": "konverter gambar, JPG ke PNG,  konverter WebP, pengubah ukuran gambar, optimasi gambar, pengolahan batch gambar",
     "ogTitle": "Easy Convert Image: Ubah Format Gambar Apapun Secara Instan (Gratis)",
-    "ogDescription": "Konversi, ubah ukuran, dan optimalkan gambar dalam hitungan detik. JPG, PNG, WebP, AVIF, & lainnya. Tanpa pendaftaran, tanpa watermark. Cobalah alat kami yang super cepat sekarang juga!"
+    "ogDescription": "Konversi, ubah ukuran, dan optimalkan gambar dalam hitungan detik. JPG, PNG,  WebP, AVIF, & lainnya. Tanpa pendaftaran, tanpa watermark. Cobalah alat kami yang super cepat sekarang juga!"
   },
   "ui": {
     "emailError": "Error saat mengirim email kontak",

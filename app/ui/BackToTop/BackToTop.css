@@ -401,7 +401,7 @@
   transition: opacity 0.3s, visibility 0.3s, background-color 0.3s, box-shadow 0.3s;
   border-radius: 50%;
   box-shadow: 0 2px 4px var(--shadow-color);
-  background-color: #51975D;
+  background-color: #47af6b;
   border: none;
   cursor: pointer;
 }
@@ -415,7 +415,7 @@
   visibility: visible;
 }
 .back-to-top:hover, .back-to-top:focus {
-  background-color: #3f7649;
+  background-color: #388b55;
   box-shadow: 0 4px 8px var(--hover-shadow-color);
 }
 .back-to-top:focus {
