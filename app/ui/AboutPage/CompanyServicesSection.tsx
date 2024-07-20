@@ -41,6 +41,7 @@ export default function CompanyServicesSection({ list = POPULAR_CONVERSIONS, hea
             className="u-mt1 u-mb1"
           >
             <Card
+              id={index}
               shadow
               {...item}
               ariaLabel={t('services.itemDescriptionAria', { 

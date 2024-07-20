@@ -163,7 +163,7 @@ const Navbar = ({
                   </a>
                 </li>
               ))}
-              <li role="none">
+              <li role="menuitem">
                 <LanguageSwitcher keepScrolled={keepScrolled} />
               </li>
             </ul>

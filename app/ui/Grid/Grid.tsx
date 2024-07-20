@@ -22,6 +22,7 @@ interface GridContainerProps {
     | "space-around";
   spacing?: number;
   className?: string;
+  role?: string;
   backgroundColorClass?: string; // New prop for background color class
 }
 
@@ -33,6 +34,7 @@ const GridContainer: React.FC<GridContainerProps> = ({
   alignItems = "stretch",
   alignContent = "stretch",
   spacing = 0,
+  role,
   className,
   backgroundColorClass, // Handle background color class
 }) => {
@@ -52,7 +54,7 @@ const GridContainer: React.FC<GridContainerProps> = ({
   );
 
   return (
-    <div className={containerClasses}>
+    <div role={role} className={containerClasses}>
       {children}
     </div>
   );

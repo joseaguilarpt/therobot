@@ -24,12 +24,12 @@ export function useForm(data: any) {
   }, [data?.contactError]);
 
   React.useEffect(() => {
-    if (data?.emailSent) {
+    if (data?.contactEmailSent) {
       showSnackbar(t("ui.contactEmailSent"), "success");
       setIsPending(false);
       setContactForm({});
     }
-  }, [data?.emailSent]);
+  }, [data?.contactEmailSent]);
 
   const onFormSubmit = async (p: any) => {
     let currentToken = null;
@@ -75,7 +75,12 @@ export function useForm(data: any) {
     }
     formData.append("type", "contact");
     setIsPending(true);
-    submit(formData, { method: "post", encType: "multipart/form-data" });
+    submit(formData, {
+      method: "post",
+      encType: "multipart/form-data",
+      replace: false,
+      preventScrollReset: true,
+    });
   };
   return {
     onFormSubmit,

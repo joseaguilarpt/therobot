@@ -11,6 +11,7 @@ interface GridItemProps {
   md?: number;
   lg?: number;
   xl?: number;
+  role?: string;
   spacing?: number;
   className?: string;
   animation?: string;
@@ -42,7 +43,8 @@ const GridItem: React.FC<GridItemProps> = ({
   animation,
   justifyContent,
   alignItems,
-  id
+  id,
+  role
 }) => {
   const itemClasses = classNames("grid-item", className, {
     [`grid-item--xs-${xs}`]: xs !== undefined,
@@ -56,14 +58,14 @@ const GridItem: React.FC<GridItemProps> = ({
 
   if (animation) {
     return (
-      <div  id={id} className={itemClasses} style={{ gap: spacing }}>
+      <div role={role}  id={id} className={itemClasses} style={{ gap: spacing }}>
         <FadeInComponent className="max-height" animation={animation}>{children}</FadeInComponent>
       </div>
     );
   }
 
   return (
-    <div id={id} className={itemClasses} style={{ gap: spacing }}>
+    <div role={role} id={id} className={itemClasses} style={{ gap: spacing }}>
       {children}
     </div>
   );

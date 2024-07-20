@@ -27,7 +27,7 @@ interface InputField {
   label: string;
   isLabelVisible: boolean;
   placeholder?: string;
-  autoComplete?: "no" | "yes";
+  autoComplete?: "off" | "yes";
 }
 
 interface RadioInput {
@@ -168,7 +168,7 @@ export interface GetInTouchForm {
   buttonLabel?: string;
   id?: string;
   isLoading?: boolean;
-  autoComplete?: "no" | "yes";
+  autoComplete?: "off" | "yes";
   submitAppareance?: ButtonProps["appareance"];
   className?: string;
   buttonClassname?: string;
@@ -186,7 +186,7 @@ const FormField = ({
   onSubmit = () => {},
   onChange,
   isLoading,
-  autoComplete = "no",
+  autoComplete = "off",
   submitAppareance = "link",
   className,
   buttonClassname,

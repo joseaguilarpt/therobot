@@ -3,7 +3,6 @@
   fill: var(--default-color) !important;
 }
 .share-modal .share-email__button {
-  width: 195px;
   background-color: black;
   color: white;
 }

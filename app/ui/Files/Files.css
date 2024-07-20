@@ -396,6 +396,13 @@
   font-weight: bold;
 }
 
+.preview-button .icon--small {
+  color: var(--accent-color);
+}
+.preview-button .icon--small:hover {
+  color: var(--accent-color-darken);
+}
+
 .files-table__container {
   box-shadow: 0 4px 8px rgba(128, 128, 128, 0.1882352941);
   border-radius: var(--border-radius);
@@ -439,6 +446,13 @@
 .files-table__remove-button {
   background-color: black;
   color: white;
+}
+
+.preview-modal .modal-content {
+  border: none;
+}
+.preview-modal .modal-close-button .icon--medium {
+  color: var(--default-color);
 }
 
 /*# sourceMappingURL=Files.css.map */

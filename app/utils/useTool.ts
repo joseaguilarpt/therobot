@@ -6,14 +6,12 @@ import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
 import { useHCaptcha } from "~/context/HCaptchaContext";
 
-export function useFileConversion(
-  selectedFormat: string,
-) {
+export function useFileConversion(selectedFormat: string) {
   const { t } = useTranslation("common");
   const loaderData = useLoaderData();
+  const data = useActionData() as any;
 
   const { showSnackbar } = useTheme();
-  const data = useActionData() as any;
   const submit = useSubmit();
   const { captchaRef } = useHCaptcha();
 
@@ -73,13 +71,6 @@ export function useFileConversion(
     }
   }, [data?.contactError]);
 
-  useEffect(() => {
-    if (data?.emailSent) {
-      showSnackbar(t("ui.emailSuccess"), "success");
-      setIsPending(false);
-    }
-  }, [data?.emailSent]);
-
   const handleAllAction = (files: File[], form: FormData) => {
     setIsPending(true);
 
@@ -98,7 +89,12 @@ export function useFileConversion(
     if (loaderData?.csrfToken) {
       formData.append("csrf", loaderData?.csrfToken);
     }
-    submit(formData, { method: "post", encType: "multipart/form-data" });
+    submit(formData, {
+      method: "post",
+      encType: "multipart/form-data",
+      replace: true,
+      preventScrollReset: true,
+    });
   };
 
   const handleDownload = (v: any) => {
@@ -135,9 +131,13 @@ export function useFileConversion(
     }
     if (currentToken) {
       formData.append("type", "email");
-      submit(formData, { method: "post", encType: "multipart/form-data" });
-    }
-    else {
+      submit(formData, {
+        method: "post",
+        encType: "multipart/form-data",
+        replace: false,
+        preventScrollReset: true,
+      });
+    } else {
       setIsPending(false);
     }
   };

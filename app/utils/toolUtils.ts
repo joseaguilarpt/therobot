@@ -12,109 +12,126 @@ import { verify } from "hcaptcha";
 import { validateCSRFToken } from "./csrf.server";
 import { checkRateLimit } from "./rateLimiter.server";
 
-export async function toolAction(request: any) {
-
-  const identifier = request.headers.get('x-forwarded-for') || request.ip;
-
-  // Check rate limit
+async function validateRateLimit(request: Request) {
+  const identifier = request.headers.get("x-forwarded-for") || request.ip;
   const rateLimitError = await checkRateLimit(identifier);
   if (rateLimitError) {
-    return json({ error: 'Rate limit exceeded. Please try again later.' }, { status: 429 });
+    throw json(
+      { error: "Rate limit exceeded. Please try again later." },
+      { status: 429 }
+    );
   }
+}
 
-  const formData = await parseFormData(request);
-  const token = formData.get("h-captcha-response") as string;
-
+async function validateCaptcha(token: string) {
   if (!token) {
-    return json({ error: "hCaptcha token is missing" }, { status: 400 });
+    throw json({ error: "hCaptcha token is missing" }, { status: 400 });
   }
 
-  try {
-    const secret = process.env.DUMMY_CAPTCHA_SECRET ?? "";
-    const { success } = await verify(secret, token);
-    if (!success) {
-      return json(
-        { error: "Suspicious Activity: Cancelling", convertedFiles: null },
-        { status: 400 }
-      );
-    }
-  } catch {
-    return json(
+  const captchaSecret =
+    process.env.NODE_ENV === "development"
+      ? process.env.DUMMY_CAPTCHA_SECRET
+      : process.env.CAPTCHA_SECRET;
+
+  const secret = captchaSecret ?? "";
+  const { success } = await verify(secret, token);
+  if (!success) {
+    throw json(
       { error: "Suspicious Activity: Cancelling", convertedFiles: null },
       { status: 400 }
     );
   }
+}
 
+function validateHoneypot(formData: FormData) {
   try {
     honeypot.check(formData);
   } catch (error) {
     if (error instanceof SpamError) {
-      return json(
+      throw json(
         { error: "Suspicious Activity: Cancelling", convertedFiles: null },
         { status: 400 }
       );
     }
   }
+}
 
+async function handleContactForm(formData: FormData) {
   try {
-    await validateCSRFToken(request, formData);
-  } catch (error) {
+    await onSendCustomerEmail(formData);
+    return json({ emailSent: true });
+  } catch {
     return json(
-      { error: 'Invalid CSRF token', convertedFiles: null },
+      { contactError: "Error sending contact email" },
+      { status: 400 }
+    );
+  }
+}
+
+async function handleEmailForm(formData: FormData) {
+  return await onSendEmail(formData);
+}
+
+async function handleFileConversion(
+  files: File[],
+  format: string,
+  formData: FormData
+) {
+  if (files.length === 0 || !format) {
+    throw json(
+      { error: "Files and format are required", convertedFiles: null },
       { status: 400 }
     );
   }
 
-  const typeOperation = formData.get("type") as string;
+  let convertedFiles: any[];
 
-  console.log(typeOperation, )
-  if (typeOperation === "contact") {
-    try {
-      await onSendCustomerEmail(formData);
-      return json({ emailSent: true });
-    } catch {
-      return json(
-        { contactError: "Error sending contact email" },
-        { status: 400 }
-      );
-    }
-  } else if (typeOperation === "email") {
-    console.log('email')
-
-    return await onSendEmail(formData);
+  if (format === "svg") {
+    convertedFiles = await convertToSvg(files, format);
+  } else if (format === "pdf") {
+    const pdfType = formData.get("pdfType");
+    const imageFiles = Array.from(files);
+    convertedFiles = await convertImagesToPdf(
+      imageFiles,
+      pdfType === "separated"
+    );
   } else {
-    const files = formData.getAll("file") as File[];
-    const format = formData.get("format") as string | null;
+    convertedFiles = await convertToOtherFormat(files, format);
+  }
 
-    if (files.length === 0 || !format) {
-      console.log('file length')
-      return json(
-        { error: "Files and format are required", convertedFiles: null },
-        { status: 400 }
-      );
+  return json({ convertedFiles });
+}
+
+export async function toolAction(request: Request) {
+  try {
+    await validateRateLimit(request);
+
+    const formData = await parseFormData(request);
+    const token = formData.get("h-captcha-response") as string;
+
+    await validateCaptcha(token);
+    validateHoneypot(formData);
+    await validateCSRFToken(request, formData);
+
+    const typeOperation = formData.get("type") as string;
+
+    switch (typeOperation) {
+      case "contact":
+        return handleContactForm(formData);
+      case "email":
+        return handleEmailForm(formData);
+      default:
+        const files = formData.getAll("file") as File[];
+        const format = formData.get("format") as string;
+        return handleFileConversion(files, format, formData);
     }
-
-    try {
-      let convertedFiles: any[] = [];
-
-      if (format === "svg") {
-        convertedFiles = await convertToSvg(files, format);
-      } else if (format === "pdf") {
-        const pdfType = formData.get("pdfType");
-        const imageFiles = Array.from(files);
-        convertedFiles = await convertImagesToPdf(
-          imageFiles,
-          pdfType === "separated"
-        );
-      } else {
-        convertedFiles = await convertToOtherFormat(files, format);
-      }
-      return json({ convertedFiles });
-    } catch (error) {
-      return json(
-        { error: "Conversion failed", convertedFiles: null },
-        { status: 500 }
-      );
+  } catch (error) {
+    if (error instanceof Response) {
+      return error;
     }
+    return json(
+      { error: "An unexpected error occurred", convertedFiles: null },
+      { status: 500 }
+    );
   }
 }

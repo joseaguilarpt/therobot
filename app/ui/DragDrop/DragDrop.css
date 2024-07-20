@@ -425,7 +425,7 @@
   color: var(--default-font);
 }
 .drag-and-drop-container.loading {
-  background: linear-gradient(87deg, #47af6b, #3cb73c, #548f5c);
+  background: linear-gradient(87deg, #47af6b, #3cb73c, var(--accent-color));
   background-size: 200% 200%;
   animation: gradient-animation 3s ease infinite alternate-reverse;
 }
