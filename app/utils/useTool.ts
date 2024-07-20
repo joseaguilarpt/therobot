@@ -1,146 +1,162 @@
 // src/hooks/useFileConversion.ts
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useActionData, useLoaderData, useSubmit } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
 import { useHCaptcha } from "~/context/HCaptchaContext";
 
+interface ConvertedFile {
+  status: 'processing' | 'completed' | 'error';
+  fileName: string;
+  fileSize: number;
+  fileUrl?: string;
+}
+
+interface ActionData {
+  error?: string;
+  emailSent?: boolean;
+  convertedFiles?: Array<{
+    fileUrl: string;
+    fileName: string;
+  }>;
+  contactError?: string;
+}
+
+interface LoaderData {
+  csrfToken?: string;
+}
+
 export function useFileConversion(selectedFormat: string) {
   const { t } = useTranslation("common");
-  const loaderData = useLoaderData();
-  const data = useActionData() as any;
+  const loaderData = useLoaderData<LoaderData>();
+  const data = useActionData<ActionData>();
 
   const { showSnackbar } = useTheme();
   const submit = useSubmit();
   const { captchaRef } = useHCaptcha();
 
-  const [convertedFiles, setConvertedFiles] = useState([]);
-  const [pdfType, setPdfType] = useState("separated");
+  const [convertedFiles, setConvertedFiles] = useState<ConvertedFile[]>([]);
+  const [pdfType, setPdfType] = useState<'separated' | 'merged'>('separated');
   const [isPending, setIsPending] = useState(false);
 
   useEffect(() => {
     if (data?.error) {
       showSnackbar(data.error, "error");
       setIsPending(false);
-      if (convertedFiles) {
-        const files = convertedFiles.map((item: any) => {
-          if (item.status === "processing") {
-            return {
-              ...item,
-              status: "error",
-            };
-          } else {
-            return item;
-          }
-        });
-        setConvertedFiles(files);
-      }
+      setConvertedFiles(prevFiles => 
+        prevFiles.map(item => 
+          item.status === "processing" ? { ...item, status: "error" } : item
+        )
+      );
     }
-  }, [data?.error]);
+  }, [data?.error, showSnackbar]);
 
   useEffect(() => {
     if (data?.emailSent) {
       showSnackbar(t("ui.emailSuccess"), "success");
       setIsPending(false);
     }
-  }, [data?.emailSent]);
+  }, [data?.emailSent, showSnackbar, t]);
 
   useEffect(() => {
     if (data?.convertedFiles) {
-      const files = data.convertedFiles.map((item: any) => ({
+      const newFiles = data.convertedFiles.map(item => ({
         ...item,
         fileUrl: base64ToImage(item.fileUrl),
-        status: "completed",
+        status: 'completed' as const,
       }));
+      
       setTimeout(() => {
-        const data = convertedFiles.filter(
-          (item) => item.status !== "processing"
-        );
+        // ts-expect-error
+        setConvertedFiles(prevFiles => [
+          ...prevFiles.filter(item => item.status !== "processing"),
+          ...newFiles
+        ]);
         setIsPending(false);
         showSnackbar(t("ui.conversionSuccess"), "success");
-        setConvertedFiles([...data, ...files]);
       }, 1500);
     }
-  }, [data?.convertedFiles]);
+  }, [data?.convertedFiles, showSnackbar, t]);
 
   useEffect(() => {
     if (data?.contactError) {
       showSnackbar(t("ui.emailError"), "error");
       setIsPending(false);
     }
-  }, [data?.contactError]);
+  }, [data?.contactError, showSnackbar, t]);
 
-  const handleAllAction = (files: File[], form: FormData) => {
+  const handleAllAction = useCallback((files: File[], form: FormData) => {
     setIsPending(true);
 
-    const parsed = files.map((item) => ({
-      status: "processing",
+    const newFiles = files.map(item => ({
+      status: 'processing' as const,
       fileName: item.name,
       fileSize: item.size,
     }));
-    setConvertedFiles([...convertedFiles, ...parsed]);
-    const formData = form;
-    formData.append("format", selectedFormat?.toLowerCase());
-    files.forEach((file) => formData.append("file", file));
+    setConvertedFiles(prevFiles => [...prevFiles, ...newFiles]);
+
+    form.append("format", selectedFormat.toLowerCase());
+    files.forEach(file => form.append("file", file));
     if (selectedFormat === "PDF") {
-      formData.append("pdfType", pdfType);
+      form.append("pdfType", pdfType);
     }
     if (loaderData?.csrfToken) {
-      formData.append("csrf", loaderData?.csrfToken);
+      form.append("csrf", loaderData.csrfToken);
     }
-    submit(formData, {
+    submit(form, {
       method: "post",
       encType: "multipart/form-data",
       replace: true,
       preventScrollReset: true,
     });
-  };
+  }, [selectedFormat, pdfType, loaderData?.csrfToken, submit]);
 
-  const handleDownload = (v: any) => {
-    downloadBlob(v.fileUrl, v.fileName);
-    showSnackbar(t("ui.downloadSuccess"), "success");
-  };
+  const handleDownload = useCallback((file: ConvertedFile) => {
+    if (file.fileUrl) {
+      downloadBlob(file.fileUrl, file.fileName);
+      showSnackbar(t("ui.downloadSuccess"), "success");
+    }
+  }, [showSnackbar, t]);
 
-  const handleRemove = (v: number) => {
-    const filtered = convertedFiles.filter((value, i) => i !== v);
-    setConvertedFiles(filtered);
+  const handleRemove = useCallback((index: number) => {
+    setConvertedFiles(prevFiles => prevFiles.filter((_, i) => i !== index));
     showSnackbar(t("ui.fileRemoveSuccess"), "info");
-  };
+  }, [showSnackbar, t]);
 
-  const handleRemoveAll = () => {
+  const handleRemoveAll = useCallback(() => {
     showSnackbar(t("ui.filesRemoveSuccess"), "info");
     setConvertedFiles([]);
-  };
+  }, [showSnackbar, t]);
 
-  const handleEmailShare = async (v: any, email: string) => {
+  const handleEmailShare = useCallback(async (file: Blob, email: string) => {
     setIsPending(true);
     const formData = new FormData();
     formData.append("email", email);
-    formData.append("zipFile", v);
-    let currentToken = null;
+    formData.append("zipFile", file);
+    
     if (loaderData?.csrfToken) {
-      formData.append("csrf", loaderData?.csrfToken);
+      formData.append("csrf", loaderData.csrfToken);
     }
+    
     if (captchaRef.current) {
       const { response } = await captchaRef.current.execute({ async: true });
       if (response) {
-        currentToken = response;
         formData.set("h-captcha-response", response);
+        formData.append("type", "email");
+        submit(formData, {
+          method: "post",
+          encType: "multipart/form-data",
+          replace: false,
+          preventScrollReset: true,
+        });
+      } else {
+        setIsPending(false);
       }
-    }
-    if (currentToken) {
-      formData.append("type", "email");
-      submit(formData, {
-        method: "post",
-        encType: "multipart/form-data",
-        replace: false,
-        preventScrollReset: true,
-      });
     } else {
       setIsPending(false);
     }
-  };
+  }, [captchaRef, loaderData?.csrfToken, submit]);
 
   return {
     convertedFiles,

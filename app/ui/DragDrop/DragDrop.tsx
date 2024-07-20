@@ -10,11 +10,10 @@ import Button from "../Button/Button";
 import Icon from "../Icon/Icon";
 import Divider from "../Divider/Divider";
 import Text from "../Text/Text";
-import { Form } from "@remix-run/react";
+import { Form , useOutletContext } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import Heading from "../Heading/Heading";
 import { HoneypotInputs } from "remix-utils/honeypot/react";
-import { useOutletContext } from "@remix-run/react";
 import { useTheme } from "~/context/ThemeContext";
 import { useHCaptcha } from "~/context/HCaptchaContext";
 import classNames from "classnames";
@@ -36,7 +35,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   maxSize = Infinity,
 }) => {
   const { showSnackbar } = useTheme();
-  let { t } = useTranslation("common");
+  const { t } = useTranslation("common");
   const [isDragging, setIsDragging] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);

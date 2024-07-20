@@ -22,7 +22,7 @@ import Tool from "~/ui/Tool/Tool";
 import { getCSRFToken } from "~/utils/csrf.server";
 
 export { meta };
-export let handle = { i18n: "common" };
+export const handle = { i18n: "common" };
 
 export async function loader({ request, params }: LoaderFunctionArgs) {
   const { sourceFormat, targetFormat } = params;
@@ -53,7 +53,7 @@ export default function ConvertPageMultilanguage() {
 
   const selectedFormatFrom = initialFrom?.label ?? "JPEG";
 
-  let footerData = { ...FOOTER };
+  const footerData = { ...FOOTER };
   footerData.sections = [
     ...footerData.sections,
     {

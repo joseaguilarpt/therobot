@@ -15,12 +15,12 @@ import { useTranslation } from "react-i18next";
 import { POPULAR_CONVERSIONS } from "~/utils/conversions";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
-  let keywords = t("about.meta.keywords");
-  let ogTitle = t("about.meta.ogTitle");
-  let ogDescription = t("about.meta.ogDescription");
-  let description = t("about.meta.description");
-  let title = t("about.meta.title");
+  const t = await i18next.getFixedT(request);
+  const keywords = t("about.meta.keywords");
+  const ogTitle = t("about.meta.ogTitle");
+  const ogDescription = t("about.meta.ogDescription");
+  const description = t("about.meta.description");
+  const title = t("about.meta.title");
   return json({ title, description, keywords, ogDescription, ogTitle });
 }
 
@@ -69,7 +69,7 @@ export const meta: MetaFunction = ({ data }) => {
 export default function AboutPage() {
   const { t, i18n } = useTranslation();
 
-  let footerData = { ...FOOTER };
+  const footerData = { ...FOOTER };
 
   footerData.sections = [
     ...footerData.sections,

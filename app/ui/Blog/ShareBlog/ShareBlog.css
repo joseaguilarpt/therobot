@@ -1,0 +1,30 @@
+.shareSocial {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.shareSocial button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.shareSocial button:hover {
+  opacity: 0.8;
+}
+.shareSocial .facebook {
+  background-color: #3b5998;
+}
+.shareSocial .twitter {
+  background-color: #1da1f2;
+}
+.shareSocial .linkedin {
+  background-color: #0077b5;
+}
+.shareSocial .whatsapp {
+  background-color: #25d366;
+}
+
+/*# sourceMappingURL=ShareBlog.css.map */

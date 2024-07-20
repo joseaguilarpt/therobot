@@ -16,15 +16,15 @@ import ContentContainer from "~/ui/ContentContainer/ContentContainer";
 import Icon from "~/ui/Icon/Icon";
 import Button from "~/ui/Button/Button";
 
-export let handle = { i18n: "common" };
+export const handle = { i18n: "common" };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
-  let keywords = t("homeMeta.keywords");
-  let ogTitle = t("homeMeta.ogTitle");
-  let ogDescription = t("homeMeta.ogDescription");
-  let description = t("homeMeta.description");
-  let title = t("homeMeta.title");
+  const t = await i18next.getFixedT(request);
+  const keywords = t("homeMeta.keywords");
+  const ogTitle = t("homeMeta.ogTitle");
+  const ogDescription = t("homeMeta.ogDescription");
+  const description = t("homeMeta.description");
+  const title = t("homeMeta.title");
   return json({ title, description, keywords, ogDescription, ogTitle });
 }
 
@@ -60,8 +60,8 @@ export const meta: MetaFunction = createMeta({
 });
 
 export default function NotFound() {
-  let { t, i18n } = useTranslation("common");
-  let footerData = { ...FOOTER };
+  const { t, i18n } = useTranslation("common");
+  const footerData = { ...FOOTER };
 
   footerData.sections = [
     ...footerData.sections,

@@ -19,7 +19,7 @@ const BASE_URL = 'https://easyconvertimage.com';
 const languages = ['en', 'es', 'fr', 'de', 'pt', 'nl', 'it', 'id', 'ru']
 
 const getAlternateLanguages = (url: string) => {
-  let alternateLanguages: any = {}
+  const alternateLanguages: any = {}
     languages.forEach((item) => {
       alternateLanguages[item] = `${BASE_URL}/${item}`
       if (url) {

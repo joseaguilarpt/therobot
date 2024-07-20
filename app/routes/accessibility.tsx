@@ -14,12 +14,12 @@ import Text from "~/ui/Text/Text";
 import { createMeta } from "~/utils/meta";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
-  let keywords = t("accessibility.meta.keywords");
-  let ogTitle = t("accessibility.meta.ogTitle");
-  let ogDescription = t("accessibility.meta.ogDescription");
-  let description = t("accessibility.meta.description");
-  let title = t("accessibility.meta.title");
+  const t = await i18next.getFixedT(request);
+  const keywords = t("accessibility.meta.keywords");
+  const ogTitle = t("accessibility.meta.ogTitle");
+  const ogDescription = t("accessibility.meta.ogDescription");
+  const description = t("accessibility.meta.description");
+  const title = t("accessibility.meta.title");
   return json({ title, description, keywords, ogDescription, ogTitle });
 }
 
