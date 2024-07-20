@@ -1,0 +1,22 @@
+@use "../../styles/theme" as *;
+
+.tool-conversion-form {
+  @include media-query(large) {
+    width: 100%;
+    min-height: 155px;
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+    font-family: var(--default-font);
+    font-size: var(--font-size-medium);
+    transition: all 0.3s ease;
+    min-height: 154px;
+    border-radius: var(--border-radius);
+    background-color: #1d7434;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    height: 100%;
+  }
+}

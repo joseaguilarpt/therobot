@@ -59,7 +59,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
               />
             </GridItem>
             <GridItem className="tool-heading__to">
-              <Icon icon="FaArrowRight" size="medium" color="accent" />
+              <Icon icon="FaArrowRight" size="medium" color="white" />
             </GridItem>
             <GridItem className="u-pl1 u-pr1">
               <AutoSuggest

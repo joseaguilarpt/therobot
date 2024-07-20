@@ -4,10 +4,10 @@ import { useActionData, useLoaderData, useSubmit } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
+import { useHCaptcha } from "~/context/HCaptchaContext";
 
 export function useFileConversion(
   selectedFormat: string,
-  selectedFormatFrom: string
 ) {
   const { t } = useTranslation("common");
   const loaderData = useLoaderData();
@@ -15,6 +15,7 @@ export function useFileConversion(
   const { showSnackbar } = useTheme();
   const data = useActionData() as any;
   const submit = useSubmit();
+  const { captchaRef } = useHCaptcha();
 
   const [convertedFiles, setConvertedFiles] = useState([]);
   const [pdfType, setPdfType] = useState("separated");
@@ -44,7 +45,6 @@ export function useFileConversion(
     if (data?.emailSent) {
       showSnackbar(t("ui.emailSuccess"), "success");
       setIsPending(false);
-
     }
   }, [data?.emailSent]);
 
@@ -117,13 +117,29 @@ export function useFileConversion(
     setConvertedFiles([]);
   };
 
-  const handleEmailShare = (v: any, email: string) => {
+  const handleEmailShare = async (v: any, email: string) => {
     setIsPending(true);
     const formData = new FormData();
-    formData.append("type", "email");
     formData.append("email", email);
     formData.append("zipFile", v);
-    submit(formData, { method: "post", encType: "multipart/form-data" });
+    let currentToken = null;
+    if (loaderData?.csrfToken) {
+      formData.append("csrf", loaderData?.csrfToken);
+    }
+    if (captchaRef.current) {
+      const { response } = await captchaRef.current.execute({ async: true });
+      if (response) {
+        currentToken = response;
+        formData.set("h-captcha-response", response);
+      }
+    }
+    if (currentToken) {
+      formData.append("type", "email");
+      submit(formData, { method: "post", encType: "multipart/form-data" });
+    }
+    else {
+      setIsPending(false);
+    }
   };
 
   return {

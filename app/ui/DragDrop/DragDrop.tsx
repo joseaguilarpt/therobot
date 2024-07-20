@@ -41,7 +41,6 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const dropRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { honeypotInputProps } = useOutletContext<any>();
-const [showArrow, setShowArrow] = useState('false')
   const formRef = React.useRef();
 
   const { captchaRef } = useHCaptcha();
@@ -101,6 +100,7 @@ const [showArrow, setShowArrow] = useState('false')
     if (captchaRef.current) {
       const { response } = await captchaRef.current.execute({ async: true });
 
+      console.log(response)
       if (response) {
         currentToken = response;
         formData.set("h-captcha-response", response);
@@ -173,6 +173,7 @@ const [showArrow, setShowArrow] = useState('false')
     <Form
       ref={formRef}
       navigate={false}
+      className="drag-drop-form"
       method="post"
       encType="multipart/form-data"
     >
@@ -238,11 +239,7 @@ const [showArrow, setShowArrow] = useState('false')
               className="u-pt2"
               size="small"
             >
-              {t("tool.instructions1")}{" "}
-            </Text>
-            <Text color="contrast" align="center" size="small">
-              {" "}
-              {t("tool.instructions2")}
+              {t("tool.instructions1")}{" "}{t("tool.instructions2")}
             </Text>
             <input
               type="file"
