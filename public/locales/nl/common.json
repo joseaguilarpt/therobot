@@ -16,7 +16,29 @@
     "topTools": "Beste Tools",
     "contact": "Contact",
     "about": "Over ons",
+    "blog": "Blog",
     "main": "Hoofdnavigatie"
+  },
+  "blog": {
+    "table": "Inhoudsopgave",
+    "finance": "financiën",
+    "organization": "organisatie",
+    "decisionMaking": "besluitvorming",
+    "design": "ontwerp",
+    "approval": "goedkeuring",
+    "ranking": "rangschikking",
+    "share": "Delen",
+    "shareInFacebook": "Delen op Facebook",
+    "shareInTwitter": "Delen op Twitter",
+    "shareInWhatsapp": "Delen op WhatsApp",
+    "shareInLinkedin": "Delen op LinkedIn",
+    "minsRead": "Min Leestijd",
+    "by": "Door",
+    "seniorTechnicalEditor": "Senior Technisch Redacteur",
+    "relatedPosts": "Gerelateerde Berichten",
+    "manuelGomezBio": "Manuel Gomez is een gepassioneerde webontwikkelaar en beeldoptimalisatie-enthousiasteling. Met meer dan tien jaar ervaring in het maken van mooie, performante websites deelt Manuel graag zijn kennis om anderen te helpen betere webervaringen te creëren. Wanneer hij niet in de nieuwste webtechnologieën duikt, kun je hem vinden terwijl hij experimenteert met fotografie en de natuur verkent",
+    "latestPosts": "Laatste Berichten",
+    "latestPostsDescription": "Ontdek onze nieuwste artikelen en blijf op de hoogte"
   },
   "convert": "Converteren",
   "images": "beelden",
@@ -623,5 +645,15 @@
         "description": "Informatie over de GDPR-naleving van Easy Convert Image."
       }
     }
-  }
+  },
+  "articles": [
+    {
+      "heading": "PNG vs WebP: De definitieve gids voor het optimaliseren van uw webafbeeldingen",
+      "url": "png-vs-webp-conversion-guide"
+    },
+    {
+      "heading": "Top 10 afbeeldingsformaten voor uw website: Een uitgebreide gids",
+      "url": "top-10-image-formats-for-website"
+    }
+  ]
 }

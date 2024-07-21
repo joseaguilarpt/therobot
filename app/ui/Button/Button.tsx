@@ -18,6 +18,7 @@ export interface ButtonProps {
   fitContainer?: boolean;
   className?: string;
   leftIcon?: IconType;
+  target?: string;
   size?: "small" | "medium" | "large";
   tooltipContent?: string;
 }
@@ -31,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   ariaLabel,
   type = "button",
   className,
+  target,
   isLoading = false,
   isDisabled = false,
   fitContainer = false,
@@ -38,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
   size = "medium",
   tooltipContent,
 }) => {
-  const isLink = appareance === "link";
+  const isLink = appareance === "link" || href;
   const buttonContent = (
     <>
       {isLoading && <LoadingSpinner size="small" aria-hidden="true" />}
@@ -69,6 +71,7 @@ const Button: React.FC<ButtonProps> = ({
     <a
       href={href}
       {...commonProps}
+      target={target}
       role="button"
       tabIndex={isDisabled || isLoading ? -1 : 0}
     >

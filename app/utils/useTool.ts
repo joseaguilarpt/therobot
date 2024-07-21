@@ -107,7 +107,6 @@ export function useFileConversion(selectedFormat: string) {
     submit(form, {
       method: "post",
       encType: "multipart/form-data",
-      replace: true,
       preventScrollReset: true,
     });
   }, [selectedFormat, pdfType, loaderData?.csrfToken, submit]);
@@ -147,7 +146,6 @@ export function useFileConversion(selectedFormat: string) {
         submit(formData, {
           method: "post",
           encType: "multipart/form-data",
-          replace: false,
           preventScrollReset: true,
         });
       } else {

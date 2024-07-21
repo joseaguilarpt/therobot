@@ -1,0 +1,45 @@
+.editor-card {
+  display: flex;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  align-items: center;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+.editor-card__image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 83px;
+  padding: 20px;
+}
+.editor-card__content {
+  padding: 16px;
+  flex: 1;
+}
+.editor-card__name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+.editor-card__role {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 12px 0;
+}
+.editor-card__bio {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+.editor-card a {
+  padding: 0;
+  margin: 0;
+}
+.editor-card .icon--medium {
+  color: var(--default-color);
+}
+
+/*# sourceMappingURL=EditorCard.css.map */

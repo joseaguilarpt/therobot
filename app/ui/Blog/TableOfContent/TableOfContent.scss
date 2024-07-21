@@ -5,7 +5,7 @@
     max-height: calc(100vh - 40px);
     overflow-y: auto;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #2d7d4c21;
     border-radius: 5px;
   }
   
@@ -20,12 +20,15 @@
   }
   
   .toc-item {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
   
   .toc-item a {
-    color: #333;
     text-decoration: none;
+    .text--medium {
+      color: var(--accent-color);
+
+    }
   }
   
   .toc-item a:hover {

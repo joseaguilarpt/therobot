@@ -18,6 +18,27 @@
     "about": "Über uns",
     "main": "Hauptnavigation"
   },
+  "de": {
+    "table": "Inhaltsverzeichnis",
+    "finance": "finanzen",
+    "organization": "organisation",
+    "decisionMaking": "entscheidungsfindung",
+    "design": "design",
+    "approval": "genehmigung",
+    "ranking": "rangfolge",
+    "share": "Teilen",
+    "shareInFacebook": "Auf Facebook teilen",
+    "shareInTwitter": "Auf Twitter teilen",
+    "shareInWhatsapp": "Auf WhatsApp teilen",
+    "shareInLinkedin": "Auf LinkedIn teilen",
+    "minsRead": "Min Lesezeit",
+    "by": "Von",
+    "seniorTechnicalEditor": "Leitender Technischer Redakteur",
+    "relatedPosts": "Ähnliche Beiträge",
+    "manuelGomezBio": "Manuel Gomez ist ein leidenschaftlicher Webentwickler und Enthusiast für Bildoptimierung. Mit über einem Jahrzehnt Erfahrung in der Erstellung schöner, leistungsfähiger Websites teilt Manuel gerne sein Wissen, um anderen zu helfen, bessere Web-Erlebnisse zu schaffen. Wenn er nicht gerade in die neuesten Webtechnologien eintaucht, experimentiert er mit Fotografie und erkundet die Natur",
+    "latestPosts": "Neueste Beiträge",
+    "latestPostsDescription": "Entdecken Sie unsere aktuellsten Artikel und bleiben Sie auf dem Laufenden"
+  },
   "convert": "Konvertieren",
   "images": "Bilder",
   "to": "zu",
@@ -627,5 +648,15 @@
         "description": "Informationen zur Einhaltung der DSGVO-Vorschriften durch Easy Convert Image."
       }
     }
-  }
+  },
+  "articles": [
+    {
+      "heading": "PNG vs WebP: Der ultimative Leitfaden zur Optimierung Ihrer Webbilder",
+      "url": "png-vs-webp-conversion-guide"
+    },
+    {
+      "heading": "Die 10 besten Bildformate für Ihre Website: Ein umfassender Leitfaden",
+      "url": "top-10-image-formats-for-website"
+    }
+  ]
 }

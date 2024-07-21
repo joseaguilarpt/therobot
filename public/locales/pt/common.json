@@ -16,7 +16,29 @@
     "topTools": "Principais Ferramentas",
     "contact": "Contato",
     "about": "Sobre",
+    "blog": "Blog",
     "main": "Navegação Principal"
+  },
+  "blog": {
+    "table": "Índice",
+    "finance": "finanças",
+    "organization": "organização",
+    "decisionMaking": "tomada_de_decisão",
+    "design": "design",
+    "approval": "aprovação",
+    "ranking": "classificação",
+    "share": "Compartilhar",
+    "shareInFacebook": "Compartilhar no Facebook",
+    "shareInTwitter": "Compartilhar no Twitter",
+    "shareInWhatsapp": "Compartilhar no WhatsApp",
+    "shareInLinkedin": "Compartilhar no LinkedIn",
+    "minsRead": "Min De Leitura",
+    "by": "Por",
+    "seniorTechnicalEditor": "Editor Técnico Sênior",
+    "relatedPosts": "Posts Relacionados",
+    "manuelGomezBio": "Manuel Gomez é um desenvolvedor web apaixonado e entusiasta da otimização de imagens. Com mais de uma década de experiência na criação de sites bonitos e performáticos, Manuel adora compartilhar seu conhecimento para ajudar outros a criar melhores experiências na web. Quando não está mergulhando nas mais recentes tecnologias web, você pode encontrá-lo experimentando fotografia e explorando a natureza",
+    "latestPosts": "Últimas Publicações",
+    "latestPostsDescription": "Descubra nossos artigos mais recentes e mantenha-se atualizado"
   },
   "convert": "Converter",
   "images": "imagens",
@@ -631,5 +653,15 @@
         "description": "Informações sobre a conformidade do Easy Convert Image com os regulamentos do GDPR."
       }
     }
-  }
+  },
+  "articles": [
+    {
+      "heading": "PNG vs WebP: O guia definitivo para otimizar suas imagens da web",
+      "url": "png-vs-webp-conversion-guide"
+    },
+    {
+      "heading": "Os 10 melhores formatos de imagem para o seu site: Um guia abrangente",
+      "url": "top-10-image-formats-for-website"
+    }
+  ]
 }

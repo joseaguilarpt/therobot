@@ -1,6 +1,10 @@
 // TableOfContents.tsx
-import React, { useState, useEffect } from 'react';
-import './TableOfContents.css';
+import React from "react";
+import "./TableOfContent.scss";
+import { Link } from "@remix-run/react";
+import Text from "~/ui/Text/Text";
+import Heading from "~/ui/Heading/Heading";
+import { useTranslation } from "react-i18next";
 
 interface ToCItem {
   id: string;
@@ -8,51 +12,35 @@ interface ToCItem {
   level: number;
 }
 
-const TableOfContents: React.FC = () => {
-  const [toc, setToc] = useState<ToCItem[]>([]);
-  const [activeId, setActiveId] = useState<string>('');
+interface TableOfContentsProps {
+  items: ToCItem[];
+  enumerate?: boolean;
+}
 
-  useEffect(() => {
-    const headings = Array.from(document.querySelectorAll('h2, h3, h4, h5, h6'));
-    const tocItems = headings.map((heading) => ({
-      id: heading.id,
-      text: heading.textContent || '',
-      level: parseInt(heading.tagName[1]),
-    }));
-    setToc(tocItems);
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -40% 0px' }
-    );
-
-    headings.forEach((heading) => observer.observe(heading));
-
-    return () => {
-      headings.forEach((heading) => observer.unobserve(heading));
-    };
-  }, []);
-
+const TableOfContents: React.FC<TableOfContentsProps> = ({
+  items,
+  enumerate,
+}) => {
+  const { t } = useTranslation();
   return (
     <nav className="toc-container">
-      <h2 className="toc-title">Table of Contents</h2>
+      <Heading level={3} appearance={4} className="toc-title">
+        {t('blog.table')}
+      </Heading>
       <ul className="toc-list">
-        {toc.map((item) => (
-          <li
-            key={item.id}
-            className={`toc-item toc-level-${item.level} ${
-              activeId === item.id ? 'toc-active' : ''
-            }`}
-          >
-            <a href={`#${item.id}`} aria-current={activeId === item.id ? 'location' : undefined}>
-              {item.text}
-            </a>
+        {items?.map((item, index) => (
+          <li key={item.id} className={`toc-item toc-level-${item.level}`}>
+            <Link to={`#${item.id}`}>
+              <Text textWeight="bold">
+                {enumerate && (
+                  <>
+                    {index + 1}
+                    {") "}
+                  </>
+                )}
+                {item.text}
+              </Text>
+            </Link>
           </li>
         ))}
       </ul>

@@ -568,5 +568,8 @@
 .heading--nav-hover {
   color: var(--nav-hover-color);
 }
+.heading--italic {
+  font-style: italic;
+}
 
 /*# sourceMappingURL=Heading.css.map */
