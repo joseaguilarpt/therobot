@@ -388,6 +388,9 @@
   min-height: 100vh !important;
 }
 
+.tool-conversion-form .tool-heading__to .icon--medium {
+  color: var(--default-color);
+}
 @media (min-width: 992px) {
   .tool-conversion-form {
     width: 100%;
@@ -406,6 +409,9 @@
     background-color: #47af6b;
     box-shadow: 0 2px 4px var(--shadow-color);
     height: 100%;
+  }
+  .tool-conversion-form .tool-heading__to .icon--medium {
+    color: var(--contrast-color);
   }
 }
 

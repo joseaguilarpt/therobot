@@ -9,53 +9,54 @@ import Backend from "i18next-http-backend";
 import { getInitialNamespaces } from "remix-i18next/client";
 
 function detectNamespaceFromURL() {
-	const path = window.location.pathname;
-	const match = path.match(/\/blog\/([\w-]+)/);
-	if (match) {
-	  return ['common', match[1]];  // Return both 'common' and the specific article namespace
-	}
-	return ['common'];  // Default namespace
+  const path = window.location.pathname;
+  const match = path.match(/\/blog\/([\w-]+)/);
+  if (match) {
+    return ["common", match[1]]; // Return both 'common' and the specific article namespace
   }
-  
-  const detectedNamespaces = detectNamespaceFromURL();
+  return ["common"]; // Default namespace
+}
+
+const detectedNamespaces = detectNamespaceFromURL();
 
 async function hydrate() {
-	await i18next
-		.use(initReactI18next) // Tell i18next to use the react-i18next plugin
-		.use(LanguageDetector) // Setup a client-side language detector
-		.use(Backend) // Setup your backend
-		.init({
-			...i18n, // spread the configuration
-			// This function detects the namespaces your routes rendered while SSR use
-			ns: [...getInitialNamespaces(), ...detectedNamespaces],
-			backend: { loadPath: "/locales/{{lng}}/{{ns}}.json" },
-			detection: {
-				// Here only enable htmlTag detection, we'll detect the language only
-				// server-side with remix-i18next, by using the `<html lang>` attribute
-				// we can communicate to the client the language detected server-side
-				order: ["htmlTag"],
-				// Because we only use htmlTag, there's no reason to cache the language
-				// on the browser, so we disable it
-				caches: [],
-			},
-		});
+  // eslint-disable-next-line import/no-named-as-default-member
+  await i18next
+    .use(initReactI18next) // Tell i18next to use the react-i18next plugin
+    .use(LanguageDetector) // Setup a client-side language detector
+    .use(Backend) // Setup your backend
+    .init({
+      ...i18n, // spread the configuration
+      // This function detects the namespaces your routes rendered while SSR use
+      ns: [...getInitialNamespaces(), ...detectedNamespaces],
+      backend: { loadPath: "/locales/{{lng}}/{{ns}}.json" },
+      detection: {
+        // Here only enable htmlTag detection, we'll detect the language only
+        // server-side with remix-i18next, by using the `<html lang>` attribute
+        // we can communicate to the client the language detected server-side
+        order: ["htmlTag"],
+        // Because we only use htmlTag, there's no reason to cache the language
+        // on the browser, so we disable it
+        caches: [],
+      },
+    });
 
-	startTransition(() => {
-		hydrateRoot(
-			document,
-			<I18nextProvider i18n={i18next}>
-				<StrictMode>
-					<RemixBrowser />
-				</StrictMode>
-			</I18nextProvider>,
-		);
-	});
+  startTransition(() => {
+    hydrateRoot(
+      document,
+      <I18nextProvider i18n={i18next}>
+        <StrictMode>
+          <RemixBrowser />
+        </StrictMode>
+      </I18nextProvider>
+    );
+  });
 }
 
 if (window.requestIdleCallback) {
-	window.requestIdleCallback(hydrate);
+  window.requestIdleCallback(hydrate);
 } else {
-	// Safari doesn't support requestIdleCallback
-	// https://caniuse.com/requestidlecallback
-	window.setTimeout(hydrate, 1);
+  // Safari doesn't support requestIdleCallback
+  // https://caniuse.com/requestidlecallback
+  window.setTimeout(hydrate, 1);
 }

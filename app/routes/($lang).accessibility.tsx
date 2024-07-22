@@ -11,7 +11,7 @@ import Heading from "~/ui/Heading/Heading";
 import Hero from "~/ui/Hero/Hero";
 import Navbar from "~/ui/Navbar/Navbar";
 import Text from "~/ui/Text/Text";
-import { createMeta } from "~/utils/meta";
+import { MetaProps, createMeta } from "~/utils/meta";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request);
@@ -23,8 +23,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return json({ title, description, keywords, ogDescription, ogTitle });
 }
 
-export const meta: MetaFunction = ({ data }) => {
-  const { description, title } = data as any;
+export const meta: MetaFunction<typeof loader> = ({ data, params, location, matches }) => {
+  if (!data) {
+    return [];
+  }
+  const { description, title } = data as MetaProps;
   const url = `https://easyconvertimage.com/accessibility`;
 
   return createMeta({
@@ -61,8 +64,7 @@ export const meta: MetaFunction = ({ data }) => {
         url: "https://easyconvertimage.com",
       },
     },
-    // @ts-ignore
-  })({ data });
+  })({ data,  params, location, matches });
 };
 
 export default function Accessibility() {

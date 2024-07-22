@@ -18,3 +18,38 @@ export const blogArticlesArray = [
     url: "articles.1.url",
   }
 ];
+
+type ContentItem = {
+  id: string;
+  title: string;
+  paragraphs: string[];
+  img?: string;
+  altText?: string;
+  pros?: string[];
+  cons?: string[];
+};
+
+type ArticleImage = {
+  url: string;
+  category: string;
+  alt: string;
+};
+
+type Article = {
+  id: string;
+  heading: string;
+  url: string;
+  category: string;
+  editor: string;
+  date: string;
+  readTime: string;
+  resume: string;
+  prosTitle: string;
+  consTitle: string;
+  content: ContentItem[];
+  image: ArticleImage;
+};
+
+export type ArticleType = {
+  article: Article;
+};

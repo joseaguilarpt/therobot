@@ -1,7 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
-import i18next from "~/i18next.server";
 
-interface MetaProps {
+export interface MetaProps {
   title?: string;
   description?: string;
   keywords?: string;
@@ -10,24 +9,29 @@ interface MetaProps {
   ogImage?: string;
   twitterCard?: string;
   canonicalUrl?: string;
+  path?: string;
+  datePublished?: string;
+  dateModified?: string;
   alternateLanguages?: Record<string, string>;
-  structuredData?: Record<string, any>;
+  structuredData?: Record<string, unknown>;
+  url?: string;
+  alternate?: string;
 }
 
-const BASE_URL = 'https://easyconvertimage.com';
+const BASE_URL = "https://easyconvertimage.com";
 
-const languages = ['en', 'es', 'fr', 'de', 'pt', 'nl', 'it', 'id', 'ru']
+const languages = ["en", "es", "fr", "de", "pt", "nl", "it", "id", "ru"];
 
-const getAlternateLanguages = (url: string) => {
-  const alternateLanguages: any = {}
-    languages.forEach((item) => {
-      alternateLanguages[item] = `${BASE_URL}/${item}`
-      if (url) {
-        alternateLanguages[item] = `${alternateLanguages}/${url}`
-      }
-    })
-    return alternateLanguages;
-}
+const getAlternateLanguages = (url: string): Record<string, string> => {
+  const alternateLanguages: Record<string, string> = {};
+  languages.forEach((item) => {
+    alternateLanguages[item] = `${BASE_URL}/${item}`;
+    if (url) {
+      alternateLanguages[item] = `${alternateLanguages[item]}/${url}`;
+    }
+  });
+  return alternateLanguages;
+};
 
 export const createMeta = ({
   ogImage,
@@ -37,8 +41,13 @@ export const createMeta = ({
   structuredData,
 }: MetaProps): MetaFunction => {
   return ({ data }) => {
-    const { title = '', description = '', keywords, ogTitle, ogDescription } =
-      data as MetaProps;
+    const {
+      title = "",
+      description = "",
+      keywords,
+      ogTitle,
+      ogDescription,
+    } = (data as MetaProps) || {};
 
     const meta: Record<string, string> = {
       title,
@@ -78,9 +87,13 @@ export const createMeta = ({
   };
 };
 
-export const meta: MetaFunction = ({ data }) => {
-  const { description, title, url, alternate } = data as any;
-  const alternateLanguages = getAlternateLanguages(alternate)
+export const meta: MetaFunction = ({ data, params, location, matches }) => {
+  if (!data) {
+    return [];
+  }
+  const { description, title, url, alternate } =
+    (data as MetaProps & { url: string; alternate: string }) || {};
+  const alternateLanguages = alternate ? getAlternateLanguages(alternate) : {};
   return createMeta({
     ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
     twitterCard: "summary_large_image",
@@ -105,5 +118,5 @@ export const meta: MetaFunction = ({ data }) => {
         url: BASE_URL,
       },
     },
-  })({ data });
+  })({ data, params, location, matches });
 };

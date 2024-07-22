@@ -8,7 +8,11 @@ import FormField from "../FormField/FormField";
 import { GET_IN_TOUCH_FORM } from "~/constants/getInTouchForm";
 import { useForm } from "~/utils/formUtils";
 
-export default function ContactForm({ data }: { data: any }) {
+export default function ContactForm({
+  data,
+}: {
+  data: { contactError: boolean; contactEmailSent: boolean };
+}) {
   const { t } = useTranslation();
   const params = GET_IN_TOUCH_FORM;
   const formId = "get-in-touch-form";

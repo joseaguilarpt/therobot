@@ -24,8 +24,12 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return json({ title, description, keywords, ogDescription, ogTitle });
 }
 
-export const meta: MetaFunction = ({ data }) => {
-  const { description, title } = data as any;
+export const meta: MetaFunction<typeof loader> = ({ data, params, location, matches }) => {
+  if (!data) {
+    return [];
+  }
+  
+  const { description, title } = data;
   const url = `https://easyconvertimage.com/about`;
 
   return createMeta({
@@ -62,8 +66,7 @@ export const meta: MetaFunction = ({ data }) => {
         url: "https://easyconvertimage.com",
       },
     },
-    // @ts-ignore
-  })({ data });
+  })({ data, params, location, matches });
 };
 
 export default function AboutPage() {

@@ -6,6 +6,7 @@ import Icon from "../Icon/Icon";
 import Text from "../Text/Text";
 import ButtonGroup from "../ButtonGroup/ButtonGroup";
 import { useTranslation } from "react-i18next";
+import { trackClick } from "~/utils/analytics";
 
 type Option = {
   id: string | number;
@@ -33,29 +34,50 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
     handleFromChange,
     handleToChange,
   }: ConversionFormProps) {
-    const { t } = useTranslation("common");
+    const { t, i18n } = useTranslation("common");
 
-    const filteredFromOptions = useMemo(() => 
-      options.filter(
-        (item) =>
-          item.label.toLowerCase() !== selectedFormat.toLowerCase() && item.value !== 'pdf'
-      ),
-    [options, selectedFormat]);
+    const filteredFromOptions = useMemo(
+      () =>
+        options.filter(
+          (item) =>
+            item.label.toLowerCase() !== selectedFormat.toLowerCase() &&
+            item.value !== "pdf"
+        ),
+      [options, selectedFormat]
+    );
 
-    const filteredToOptions = useMemo(() => 
-      options.filter(
-        (item) =>
-          item.label.toLowerCase() !== selectedFormatFrom.toLowerCase()
-      ),
-    [options, selectedFormatFrom]);
+    const filteredToOptions = useMemo(
+      () =>
+        options.filter(
+          (item) =>
+            item.label.toLowerCase() !== selectedFormatFrom.toLowerCase()
+        ),
+      [options, selectedFormatFrom]
+    );
 
-    const handleFromChangeCallback = useCallback((v: Option) => {
-      handleFromChange(v.label);
-    }, [handleFromChange]);
+    const handleFromChangeCallback = useCallback(
+      (v: Option) => {
+        trackClick(
+          "Conversion Form Interaction",
+          `Change Format from`,
+          `language: ${i18n.language} - format from: ${v.label} - format to: : ${selectedFormat}`
+        );
+        handleFromChange(v.label);
+      },
+      [handleFromChange, i18n.language, selectedFormat]
+    );
 
-    const handleToChangeCallback = useCallback((v: Option) => {
-      handleToChange(v.label);
-    }, [handleToChange]);
+    const handleToChangeCallback = useCallback(
+      (v: Option) => {
+        trackClick(
+          "Conversion Form Interaction",
+          `Change Format to`,
+          `language: ${i18n.language} - format from: ${selectedFormatFrom} - format to: : ${v.label}`
+        );
+        handleToChange(v.label);
+      },
+      [handleToChange, i18n.language, selectedFormatFrom]
+    );
 
     return (
       <>
@@ -99,7 +121,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
         {selectedFormat === "PDF" && (
           <>
             <Text textWeight="bold" align="center">
-              {t('tool.selectOption')}
+              {t("tool.selectOption")}
             </Text>
             <GridContainer className="u-pt2 u-pb3" justifyContent="center">
               <ButtonGroup
@@ -107,8 +129,8 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
                 onChange={setPdfType}
                 selectedValue={pdfType}
                 options={[
-                  { label: t('tool.pdfOption1'), id: "separated" },
-                  { label: t('tool.pdfOption2'), id: "single" },
+                  { label: t("tool.pdfOption1"), id: "separated" },
+                  { label: t("tool.pdfOption2"), id: "single" },
                 ]}
               />
             </GridContainer>

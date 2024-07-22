@@ -55,6 +55,7 @@
     "freeToUse": "Gratis digunakan, tidak memerlukan registrasi. Ubah gambar Anda dalam hitungan detik!"
   },
   "tool": {
+    "maxFiles": "Batas maksimum file tercapai. Anda dapat mengunggah hingga 15 file sekaligus.",
     "fileArea": "Area unggah berkas",
     "inputFile": "Input berkas",
     "drop": "Letakkan berkas gambar di sini",
@@ -655,5 +656,28 @@
         "url": "top-10-image-formats-for-website"
       }
     ]
+  },
+  "cookieBanner": {
+    "title": "Preferensi Cookie",
+    "description": "Kami menggunakan cookie untuk meningkatkan pengalaman browsing Anda dan menganalisis lalu lintas kami. Silakan pilih preferensi Anda di bawah ini.",
+    "legend": "Preferensi Cookie",
+    "savePreferences": "Simpan Preferensi",
+    "acceptAll": "Terima Semua",
+    "savePreferencesAriaLabel": "Simpan preferensi cookie",
+    "acceptAllAriaLabel": "Terima semua cookie"
+  },
+  "cookiePreferences": {
+    "necessary": {
+      "name": "Diperlukan (Selalu aktif)"
+    },
+    "functional": {
+      "name": "Fungsional"
+    },
+    "analytics": {
+      "name": "Analitik"
+    },
+    "marketing": {
+      "name": "Pemasaran"
+    }
   }
 }

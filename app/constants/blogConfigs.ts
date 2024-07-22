@@ -58,7 +58,7 @@ export const BLOG_IMAGES = [
   },
 ];
 
-const article = {
+export const article = {
   heading: "Top 10 Image Formats for Your Website: A Comprehensive Guide",
   url: "top-10-image-formats-for-website",
   category: DECISION_MAKING,

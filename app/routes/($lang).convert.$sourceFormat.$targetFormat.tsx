@@ -14,7 +14,6 @@ import CompanyServicesSection from "~/ui/AboutPage/CompanyServicesSection";
 import FAQSection from "~/ui/AboutPage/FAQSection";
 import { CONVERSIONS, POPULAR_CONVERSIONS } from "~/utils/conversions";
 import { useTranslation } from "react-i18next";
-import i18n from "~/i18n";
 import { toolAction } from "~/utils/toolUtils";
 import { meta } from "../utils/meta";
 import { getMetaIntl } from "~/utils/metaIntl";
@@ -99,7 +98,7 @@ export default function ConvertPageMultilanguage() {
               <Heading align="center" underline appearance={4} level={2}>
                 {t("hero.header2")}
               </Heading>
-              <Text className="u-pt5" align="center">
+              <Text className="u-pt5 hero-description" align="center">
                 {t("hero.description")}{' '}{t("hero.freeToUse")}
               </Text>
               <Tool />

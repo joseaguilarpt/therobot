@@ -4,11 +4,32 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { json } from "@remix-run/node";
 import { createCustomerEmail } from "~/templates/customerEmail";
+import i18n from "~/i18n";
 
 interface SendEmail {
-  file: any;
+  file: File;
+  language: string;
   email: string;
 }
+
+interface CustomerEmailData {
+  email: string;
+  comments: string;
+  phone: string;
+  name: string;
+}
+
+const heading = {
+  en: "Here are your converted Images - EasyConvertImage",
+  es: "Aquí están sus imágenes convertidas - EasyConvertImage",
+  it: "Ecco le tue immagini convertite - EasyConvertImage",
+  fr: "Voici vos images converties - EasyConvertImage",
+  ru: "Вот ваши конвертированные изображения - EasyConvertImage",
+  id: "Berikut adalah gambar Anda yang telah dikonversi - EasyConvertImage",
+  pt: "Aqui estão suas imagens convertidas - EasyConvertImage",
+  nl: "Hier zijn uw geconverteerde afbeeldingen - EasyConvertImage",
+  de: "Hier sind Ihre konvertierten Bilder - EasyConvertImage",
+};
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,7 +41,7 @@ const ensureUploadsDirectoryExists = () => {
   }
 };
 
-export async function sendImagesEmail({ file, email }: SendEmail) {
+export async function sendImagesEmail({ file, email, language }: SendEmail) {
   try {
     if (!file || typeof email !== "string") {
       throw new Error("Missing File or Email");
@@ -36,9 +57,12 @@ export async function sendImagesEmail({ file, email }: SendEmail) {
     const filePath = path.join(__dirname, "../uploads", fileName);
     fs.writeFileSync(filePath, Buffer.from(fileBuffer));
 
+    const isValidLanguage = i18n.supportedLngs.includes(language);
     const emailTemplatePath = path.join(
       __dirname,
-      "../templates/send-email.html"
+      isValidLanguage
+        ? `../templates/send-email-${language}.html`
+        : `../templates/send-email.html`
     );
     const emailTemplate = fs.readFileSync(emailTemplatePath, "utf8");
 
@@ -55,7 +79,9 @@ export async function sendImagesEmail({ file, email }: SendEmail) {
     await transporter.sendMail({
       from: process.env.NODEMAILER_ACCOUNT,
       to: email,
-      subject: "Here are your converted Images - EasyConvertImage",
+      subject: isValidLanguage
+        ? heading[language]
+        : "Here are your converted Images - EasyConvertImage",
       html: emailTemplate, // Use the email template
       attachments: [
         {
@@ -78,8 +104,10 @@ export async function sendImagesEmail({ file, email }: SendEmail) {
 }
 
 export async function onSendEmail(formData: FormData) {
-  const zipFile = formData.get("zipFile");
-  const email = formData.get("email");
+  const zipFile = formData.get("zipFile") as File | null;
+  const email = formData.get("email") as string | null;
+  const language = formData.get("language") as string | null;
+
   if (!zipFile) {
     return json(
       { error: "Zip File required", convertedFiles: null },
@@ -93,9 +121,10 @@ export async function onSendEmail(formData: FormData) {
     );
   }
   try {
-    const data = await sendImagesEmail({
+    await sendImagesEmail({
       file: zipFile,
       email: email,
+      language: language,
     });
     return json({ emailSent: true });
   } catch (e) {
@@ -106,7 +135,12 @@ export async function onSendEmail(formData: FormData) {
   }
 }
 
-export async function sendCustomerEmail({ email, comments, phone, name }: any) {
+export async function sendCustomerEmail({
+  email,
+  comments,
+  phone,
+  name,
+}: CustomerEmailData) {
   try {
     // Set up nodemailer transporter
     const transporter = nodemailer.createTransport({
@@ -123,7 +157,7 @@ export async function sendCustomerEmail({ email, comments, phone, name }: any) {
     await transporter.sendMail({
       from: process.env.NODEMAILER_ACCOUNT,
       to: process.env.NODEMAILER_ACCOUNT,
-      subject: `Message Receiver from ${email} in Easy Convert Image`,
+      subject: `Message Received from ${email} in Easy Convert Image`,
       html: createCustomerEmail(data), // Use the email template
     });
 
@@ -165,7 +199,7 @@ export async function onSendCustomerEmail(formData: FormData) {
     );
   }
   try {
-    const data = await sendCustomerEmail({
+    await sendCustomerEmail({
       name,
       phone,
       comments,

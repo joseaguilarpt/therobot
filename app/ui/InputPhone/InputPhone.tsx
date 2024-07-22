@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import InputText, { InputTextRef, InputTextProps } from '../InputText/InputText';
 
 const phoneRegex = /^\+?[1-9]\d{1,14}$/;
@@ -14,5 +14,8 @@ const InputPhone = forwardRef<InputTextRef, Omit<InputTextProps, 'type'>>((props
 
   return <InputText ref={ref} type="tel" validateFormat={validatePhoneFormat} error={error} {...props} />;
 });
+
+InputPhone.displayName = 'InputPhone';
+
 
 export default InputPhone;

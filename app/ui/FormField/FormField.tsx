@@ -11,7 +11,6 @@ import React, { useState } from "react";
 import AutoSuggest from "../AutoSuggest/AutoSuggest";
 import classNames from "classnames";
 import GridItem from "../Grid/GridItem";
-import Multiselect from '../Multiselect/Multiselect';
 import InputPassword from '../InputPassword/InputPassword';
 import { useTranslation } from 'react-i18next';
 
@@ -62,9 +61,9 @@ const DynamicField = ({
   formData,
 }: {
   input: InputType;
-  onChange: (id: string, value: any) => void;
+  onChange: (id: string, value: string) => void;
   autoComplete?: InputField["autoComplete"];
-  formData: Record<string, any>;
+  formData: Record<string, string>;
 }) => {
   switch (input.type) {
     case "text":
@@ -138,24 +137,15 @@ const DynamicField = ({
         />
       );
     case "autosuggest":
-      const isDisabled = input.conditionalDisabled ? !formData[input.conditionalDisabled] : false;
       return (
         <AutoSuggest
           key={input.id}
           {...input}
-          isDisabled={isDisabled}
+          isDisabled={false}
           value={formData[input.id]}
           onChange={(value) => onChange(input.id, value)}
         />
       );
-    case "multiselect":
-        return (
-          <Multiselect
-            key={input.id}
-            {...input}
-            onChange={(value) => onChange(input.id, value)}
-          />
-        );
     default:
       return null;
   }
@@ -172,9 +162,9 @@ export interface GetInTouchForm {
   submitAppareance?: ButtonProps["appareance"];
   className?: string;
   buttonClassname?: string;
-  initialValue?: any;
-  onSubmit?: (formData: Record<string, any>) => void; // Adjusted onSubmit signature
-  onChange?: (formData: Record<string, any>) => void; // Adjusted onSubmit signature
+  initialValue?: Record<string, string | number | boolean>;
+  onSubmit?: (formData: Record<string, string | number | boolean>) => void;
+  onChange?: (formData: Record<string, string | number | boolean>) => void;
 }
 
 const FormField = ({
@@ -193,9 +183,9 @@ const FormField = ({
   initialValue
 }: GetInTouchForm) => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState<Record<string, any>>({});
+  const [formData, setFormData] = useState<Record<string, string | number | boolean>>({});
 
-  const handleChange = (id: string, value: any) => {
+  const handleChange = (id: string, value: string | number | boolean) => {
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,

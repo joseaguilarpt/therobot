@@ -1,6 +1,6 @@
 // In app/routes/convert.tsx
-import { ShouldRevalidateFunctionArgs, useActionData, useLoaderData } from "@remix-run/react";
-import { ActionFunction, LoaderFunctionArgs , json } from "@remix-run/node";
+import { useActionData } from "@remix-run/react";
+import { ActionFunction, LoaderFunctionArgs, json } from "@remix-run/node";
 import BackToTop from "~/ui/BackToTop/BackToTop";
 import Footer from "~/ui/Footer/Footer";
 import { FOOTER } from "~/constants/content";
@@ -65,11 +65,16 @@ export default function IndexPage() {
               >
                 {t("hero.header1")}
               </Heading>
-              <Heading align="center" underline appearance={4} level={2}>
+              <Heading
+                align="center"
+                underline
+                appearance={4}
+                level={2}
+              >
                 {t("hero.header2")}
               </Heading>
-              <Text className="u-pt5" align="center">
-                {t("hero.description")}{' '}{t("hero.freeToUse")}
+              <Text className="u-pt5 hero-description" align="center">
+                {t("hero.description")} {t("hero.freeToUse")}
               </Text>
               <Tool />
             </section>

@@ -5,33 +5,53 @@ import BackToTop from "~/ui/BackToTop/BackToTop";
 import BlogPage from "~/ui/Blog/BlogPage";
 import Footer from "~/ui/Footer/Footer";
 import Navbar from "~/ui/Navbar/Navbar";
-import { createMeta } from "~/utils/meta";
-import articles from "../constants/blog/data";
+import { MetaProps, createMeta } from "~/utils/meta";
+import articles, { ArticleType } from "../constants/blog/data";
 import { useLoaderData, useParams } from "@remix-run/react";
 
 export async function loader({ request, params }: LoaderFunctionArgs) {
-  const blogData = params.blogId ? articles[params.blogId] : {};
+  const blogData: ArticleType = params.blogId ? articles[params.blogId] : {};
   const t = await i18next.getFixedT(request, params.blogId);
   const ogTitle = `${t(blogData?.article?.heading)} | Easy Convert Image`;
-  const keywords = (blogData?.article?.content ?? []).map((item) => t(item.title))?.join(', ');
-  const ogDescription = t(blogData?.article.description);
-  const description = t(blogData?.article.description);
+  const keywords = (blogData?.article?.content ?? [])
+    .map((item) => t(item.title))
+    ?.join(", ");
+  const ogDescription = t(blogData?.article.resume);
+  const description = t(blogData?.article.resume);
   const title = `${t(blogData?.article?.heading)} | Easy Convert Image`;
-  return json({ 
-    title, 
-    description, 
-    keywords, 
-    ogDescription, 
-    ogTitle, 
-    blogData, 
+  return json({
+    title,
+    description,
+    keywords,
+    ogDescription,
+    ogTitle,
+    blogData,
     path: params?.blogId,
-    datePublished: blogData?.article?.datePublished || new Date().toISOString(),
-    dateModified: blogData?.article?.dateModified || new Date().toISOString(),
+    datePublished: blogData?.article?.date || new Date().toISOString(),
+    dateModified: blogData?.article?.date || new Date().toISOString(),
   });
 }
 
-export const meta: MetaFunction = ({ data }) => {
-  const { description, title, path, keywords, ogDescription, ogTitle, datePublished, dateModified } = data as any;
+export const meta: MetaFunction<typeof loader> = ({
+  data,
+  params,
+  location,
+  matches,
+}) => {
+  if (!data) {
+    return [];
+  }
+  const {
+    description,
+    title,
+    keywords,
+    ogDescription,
+    ogTitle,
+    path,
+    datePublished,
+    dateModified,
+  } = data as MetaProps;
+
   const url = `https://easyconvertimage.com/blog/${path}`;
 
   return createMeta({
@@ -69,8 +89,8 @@ export const meta: MetaFunction = ({ data }) => {
         url: "https://easyconvertimage.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://easyconvertimage.com/app/img/thebot.svg"
-        }
+          url: "https://easyconvertimage.com/app/img/thebot.svg",
+        },
       },
       keywords: keywords,
     },
@@ -78,19 +98,17 @@ export const meta: MetaFunction = ({ data }) => {
     description,
     ogTitle,
     ogDescription,
-  })({ data });
+  })({ data, params, location, matches });
 };
-
-// ... rest of your component code
 
 export default function Blog() {
   const { blogId } = useParams();
-  const { blogData } = useLoaderData() as { blogData: any };
+  const { blogData } = useLoaderData() as { blogData: ArticleType };
   return (
     <>
       <Navbar autoScrolled />
       <main id="main-content">
-       {blogData && <BlogPage blogId={blogId ?? ''} data={blogData} />}
+        {blogData && <BlogPage blogId={blogId ?? ""} data={blogData} />}
       </main>
       <BackToTop />
       <Footer

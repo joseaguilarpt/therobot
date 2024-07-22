@@ -49,21 +49,26 @@ const AutoSuggest: React.FC<AutoSuggestProps> = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
   useEffect(() => {
     if (isOpen && activeIndex !== -1) {
-      const activeElement = listboxRef.current?.children[activeIndex] as HTMLElement;
-      activeElement?.scrollIntoView({ block: 'nearest' });
+      const activeElement = listboxRef.current?.children[
+        activeIndex
+      ] as HTMLElement;
+      activeElement?.scrollIntoView({ block: "nearest" });
     }
   }, [isOpen, activeIndex]);
 
@@ -82,24 +87,30 @@ const AutoSuggest: React.FC<AutoSuggestProps> = ({
     buttonRef.current?.focus();
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement | HTMLUListElement>) => {
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLButtonElement | HTMLUListElement>
+  ) => {
     switch (e.key) {
-      case 'ArrowDown':
+      case "ArrowDown":
         e.preventDefault();
         if (!isOpen) {
           setIsOpen(true);
         }
-        setActiveIndex((prevIndex) => (prevIndex < options.length - 1 ? prevIndex + 1 : 0));
+        setActiveIndex((prevIndex) =>
+          prevIndex < options.length - 1 ? prevIndex + 1 : 0
+        );
         break;
-      case 'ArrowUp':
+      case "ArrowUp":
         e.preventDefault();
         if (!isOpen) {
           setIsOpen(true);
         }
-        setActiveIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : options.length - 1));
+        setActiveIndex((prevIndex) =>
+          prevIndex > 0 ? prevIndex - 1 : options.length - 1
+        );
         break;
-      case 'Enter':
-      case ' ':
+      case "Enter":
+      case " ":
         e.preventDefault();
         if (isOpen && activeIndex !== -1) {
           handleOptionSelect(options[activeIndex]);
@@ -107,11 +118,11 @@ const AutoSuggest: React.FC<AutoSuggestProps> = ({
           setIsOpen(!isOpen);
         }
         break;
-      case 'Escape':
+      case "Escape":
         setIsOpen(false);
         buttonRef.current?.focus();
         break;
-      case 'Tab':
+      case "Tab":
         if (isOpen) {
           e.preventDefault();
           setIsOpen(false);
@@ -156,10 +167,10 @@ const AutoSuggest: React.FC<AutoSuggestProps> = ({
         </button>
       </div>
       {isOpen && (
-        <ul 
+        <ul
           ref={listboxRef}
-          className="suggestions" 
-          role="listbox" 
+          className="suggestions"
+          role="listbox"
           aria-labelledby={`${id}-label`}
           onKeyDown={handleKeyDown}
           tabIndex={-1}
@@ -170,10 +181,17 @@ const AutoSuggest: React.FC<AutoSuggestProps> = ({
                 key={option.id}
                 id={`${id}-option-${index}`}
                 role="option"
-                aria-selected={index === activeIndex}
+                aria-selected={value?.id === option.id}
                 className={index === activeIndex ? "active" : ""}
                 onClick={() => handleOptionSelect(option)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    handleOptionSelect(option);
+                  }
+                }}
                 onMouseEnter={() => setActiveIndex(index)}
+                tabIndex={0}
               >
                 <Text>{option.label}</Text>
                 {option?.details && (
@@ -184,7 +202,12 @@ const AutoSuggest: React.FC<AutoSuggestProps> = ({
               </li>
             ))
           ) : (
-            <li className="disabled" role="option" aria-disabled="true">
+            <li
+              className="disabled"
+              role="option"
+              aria-selected="false"
+              aria-disabled="true"
+            >
               <Text>{isLoading ? t("loading") : t("noOptions")}</Text>
             </li>
           )}

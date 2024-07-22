@@ -13,7 +13,8 @@ import ShareButton from "../ShareButton/ShareButton";
 import { useTranslation } from "react-i18next";
 import Modal from "../Modal/Modal";
 import Icon from "../Icon/Icon";
-import Advertiser from "../Advertiser/Avertiser";
+import { trackClick } from "~/utils/analytics";
+import { useParams } from "@remix-run/react";
 
 const { saveAs } = pkg;
 
@@ -22,7 +23,7 @@ interface FilesProps {
   onDownload: (file: File) => void;
   onRemove: (v: number) => void;
   onRemoveAll: () => void;
-  onEmailShare: (zip: any, email: string) => void;
+  onEmailShare: (zip: File | Blob | undefined, email: string) => void;
 }
 
 const Files: React.FC<FilesProps> = ({
@@ -36,7 +37,8 @@ const Files: React.FC<FilesProps> = ({
     file: string;
     fileName: string;
   }>(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const params = useParams();
   const { showSnackbar } = useTheme();
   if (files?.length === 0) {
     return null;
@@ -60,6 +62,12 @@ const Files: React.FC<FilesProps> = ({
   const onDownloadAll = async () => {
     if (!files) return;
 
+    trackClick(
+      "Files Interaction",
+      `Button - format: ${params?.sourceFormat}`,
+      `Download All - language: ${i18n.language} - format: ${params?.targetFormat}`
+    );
+
     const zipContent = await generateZip();
     saveAs(zipContent, "files.zip");
     showSnackbar(t("fileActions.zipSuccess"), "success");
@@ -73,12 +81,22 @@ const Files: React.FC<FilesProps> = ({
   const handleEmailShare = async (v: string) => {
     const zipContent = await generateZip();
     if (onEmailShare) {
+      trackClick(
+        "Files Interaction",
+        `Button - format: ${params?.sourceFormat}`,
+        `Email Share - language: ${i18n.language} - format: ${params?.targetFormat}`
+      );
       onEmailShare(zipContent, v);
     }
   };
 
   const handlePreview = (data: { name: string; file: Blob }) => {
     const blobUrl = URL.createObjectURL(data.file);
+    trackClick(
+      "Files Interaction",
+      `Button - format: ${params?.sourceFormat}`,
+      `Preview - language: ${i18n.language} - format: ${params?.targetFormat}`
+    );
     setPreviewModal({
       file: blobUrl,
       fileName: data.name,
@@ -94,6 +112,9 @@ const Files: React.FC<FilesProps> = ({
 
   const notDownloadable = files?.filter((item) => item.status === "processing");
 
+  const hidePreview = ["pdf", "tiff"].includes(
+    params?.targetFormat?.toLowerCase() ?? ""
+  );
   return (
     <div
       className="files-container"
@@ -202,21 +223,23 @@ const Files: React.FC<FilesProps> = ({
               <GridContainer justifyContent="flex-end">
                 {file.fileUrl && (
                   <>
-                    <GridItem className="u-pr1 preview-button table-item">
-                      <Button
-                        appareance="link"
-                        ariaLabel={t("fileActions.preview")}
-                        tooltipContent={t("fileActions.preview")}
-                        onClick={() =>
-                          handlePreview({
-                            name: file.fileName,
-                            file: file?.fileUrl,
-                          })
-                        }
-                      >
-                        <Icon color="secondary" size="small" icon="FaImage" />
-                      </Button>
-                    </GridItem>
+                    {!hidePreview && (
+                      <GridItem className="u-pr1 preview-button table-item">
+                        <Button
+                          appareance="link"
+                          ariaLabel={t("fileActions.preview")}
+                          tooltipContent={t("fileActions.preview")}
+                          onClick={() =>
+                            handlePreview({
+                              name: file.fileName,
+                              file: file?.fileUrl,
+                            })
+                          }
+                        >
+                          <Icon color="secondary" size="small" icon="FaImage" />
+                        </Button>
+                      </GridItem>
+                    )}
                     <GridItem className="u-pr1">
                       <Button
                         onClick={() => onDownload(file)}
@@ -263,11 +286,6 @@ const Files: React.FC<FilesProps> = ({
             src={previewModal?.file}
             alt={t("fileActions.preview")}
           />
-        </GridContainer>
-        <GridContainer justifyContent="center">
-          <div style={{ maxWidth: "700px", width: "100%" }} className="u-pt3">
-            <Advertiser />
-          </div>
         </GridContainer>
       </Modal>
     </div>

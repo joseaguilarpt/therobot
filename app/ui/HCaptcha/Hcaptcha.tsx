@@ -9,6 +9,7 @@ interface HCaptchaProps {
 }
 
 export const HCaptchaComponent = React.memo(function HCaptchaComponent({
+  // eslint-disable-next-line
   sitekey,
 }: HCaptchaProps) {
   const { onSuccess, setToken, captchaRef } = useHCaptcha();

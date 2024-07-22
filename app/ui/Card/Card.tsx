@@ -7,7 +7,6 @@ import Button from "../Button/Button";
 import Icon, { IconType } from "../Icon/Icon";
 import GridContainer from "../Grid/Grid";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "@remix-run/react";
 
 interface CardProps {
   title?: string;
@@ -57,7 +56,6 @@ const Card: React.FC<CardProps> = ({
     }
   );
 
-  // @ts-ignore
   const iconValue: IconType = icon ? t(icon) : "Fa500Px";
 
   // Create a unique ID for the card

@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useCookies } from "react-cookie";
+import { useTranslation } from "react-i18next";
 import "./CookiesConsent.scss";
 import Heading from "../Heading/Heading";
 import Text from "../Text/Text";
 import Checkbox from "../Checkbox/Checkbox";
 import Button from "../Button/Button";
+import ContentContainer from "../ContentContainer/ContentContainer";
 
 type CookiePreferences = {
   necessary: boolean;
@@ -14,7 +16,13 @@ type CookiePreferences = {
 };
 
 export function CookiesConsent() {
-  const [cookies, setCookie, removeCookie] = useCookies(["functional_cookies", "necessary_cookies", "analytics_cookies", "marketing_cookies"]);
+  const { t } = useTranslation();
+  const [cookies, setCookie, removeCookie] = useCookies([
+    "functional_cookies",
+    "necessary_cookies",
+    "analytics_cookies",
+    "marketing_cookies",
+  ]);
   const [isVisible, setIsVisible] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true,
@@ -23,36 +31,27 @@ export function CookiesConsent() {
     marketing: true,
   });
 
-
-  const bannerRef = useRef<HTMLDivElement>(null);
-  const firstFocusableElementRef = useRef<HTMLElement | null>(null);
-  const lastFocusableElementRef = useRef<HTMLElement | null>(null);
+  const bannerRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     if (cookies.necessary_cookies === undefined) {
       setTimeout(() => {
         setIsVisible(true);
-      }, 1000)
+      }, 1000);
     } else {
       setPreferences({
         functional: cookies.functional_cookies,
         necessary: cookies.necessary_cookies,
         analytics: cookies.analytics_cookies,
-        marketing: cookies.marketing_cookies
+        marketing: cookies.marketing_cookies,
       });
     }
-  }, [cookies.functional_cookies]);
-
-  useEffect(() => {
-    if (isVisible && bannerRef.current) {
-      const focusableElements = bannerRef.current.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      firstFocusableElementRef.current = focusableElements[1] as HTMLElement;
-      lastFocusableElementRef.current = focusableElements[focusableElements.length - 1] as HTMLElement;
-      firstFocusableElementRef.current.focus();
-    }
-  }, [isVisible]);
+  }, [
+    cookies.functional_cookies,
+    cookies.necessary_cookies,
+    cookies.analytics_cookies,
+    cookies.marketing_cookies
+  ]);
 
   const handlePreferenceChange = (category: keyof CookiePreferences) => {
     setPreferences((prev) => ({ ...prev, [category]: !prev[category] }));
@@ -71,14 +70,14 @@ export function CookiesConsent() {
     if (prefs.analytics) {
       setCookie("analytics_cookies", "true", { path: "/", maxAge: 31536000 });
       // Enable analytics (e.g., Google Analytics)
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'granted'
+      window.gtag("consent", "update", {
+        analytics_storage: "granted",
       });
     } else {
       removeCookie("analytics_cookies", { path: "/" });
       // Disable analytics
-      window.gtag('consent', 'update', {
-        'analytics_storage': 'denied'
+      window.gtag("consent", "update", {
+        analytics_storage: "denied",
       });
     }
 
@@ -89,7 +88,7 @@ export function CookiesConsent() {
     } else {
       removeCookie("marketing_cookies", { path: "/" });
       // Disable marketing cookies
-     // window.fbq('consent', 'revoke');
+      // window.fbq('consent', 'revoke');
     }
   };
 
@@ -126,49 +125,33 @@ export function CookiesConsent() {
     setIsVisible(false);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      setIsVisible(false);
-    }
-    if (event.key === 'Tab') {
-      if (event.shiftKey) {
-        if (document.activeElement === firstFocusableElementRef.current) {
-          event.preventDefault();
-          lastFocusableElementRef.current?.focus();
-        }
-      } else {
-        if (document.activeElement === lastFocusableElementRef.current) {
-          event.preventDefault();
-          firstFocusableElementRef.current?.focus();
-        }
-      }
-    }
-  };
-
   if (!isVisible) return null;
 
   return (
-    <div 
+    <dialog
       ref={bannerRef}
-      className="cookie-banner" 
-      role="dialog" 
+      className="cookie-banner"
+      open={isVisible}
       aria-labelledby="cookieConsentTitle"
-      onKeyDown={handleKeyDown}
     >
-      <div className="cookie-banner__content">
-        <Heading level={2} appearance={6} className="cookie-banner__title" id="cookieConsentTitle">
-          Cookie Preferences
+      <ContentContainer>
+        <Heading
+          level={2}
+          appearance={6}
+          className="cookie-banner__title"
+          id="cookieConsentTitle"
+        >
+          {t('cookieBanner.title')}
         </Heading>
         <Text>
-          We use cookies to enhance your browsing experience and analyze our
-          traffic. Please select your preferences below.
+          {t('cookieBanner.description')}
         </Text>
         <form className="cookie-banner__options u-pt2">
           <fieldset>
-            <legend className="visually-hidden">Cookie Preferences</legend>
+            <legend className="visually-hidden">{t('cookieBanner.legend')}</legend>
             <Checkbox
               id="necessary"
-              label="Necessary (Always active)"
+              label={t('cookiePreferences.necessary.name')}
               name="necessary"
               checked={true}
               onChange={() => {}}
@@ -177,24 +160,24 @@ export function CookiesConsent() {
             />
             <Checkbox
               id="functional"
-              label="Functional"
+              label={t('cookiePreferences.functional.name')}
               name="functional"
               checked={preferences.functional}
-              onChange={() => handlePreferenceChange('functional')}
+              onChange={() => handlePreferenceChange("functional")}
             />
             <Checkbox
               id="analytics"
-              label="Analytics"
+              label={t('cookiePreferences.analytics.name')}
               name="analytics"
               checked={preferences.analytics}
-              onChange={() => handlePreferenceChange('analytics')}
+              onChange={() => handlePreferenceChange("analytics")}
             />
             <Checkbox
               id="marketing"
-              label="Marketing"
+              label={t('cookiePreferences.marketing.name')}
               name="marketing"
               checked={preferences.marketing}
-              onChange={() => handlePreferenceChange('marketing')}
+              onChange={() => handlePreferenceChange("marketing")}
             />
           </fieldset>
         </form>
@@ -203,20 +186,20 @@ export function CookiesConsent() {
             appareance="outlined"
             className="cookie-banner__button cookie-banner__button--save"
             onClick={saveCookiePreferences}
-            aria-label="Save cookie preferences"
+            aria-label={t('cookieBanner.savePreferencesAriaLabel')}
           >
-            Save Preferences
+            {t('cookieBanner.savePreferences')}
           </Button>
           <Button
             className="cookie-banner__button cookie-banner__button--accept-all"
             onClick={acceptAllCookies}
-            aria-label="Accept all cookies"
+            aria-label={t('cookieBanner.acceptAllAriaLabel')}
           >
-            Accept All
+            {t('cookieBanner.acceptAll')}
           </Button>
         </div>
-      </div>
-    </div>
+      </ContentContainer>
+    </dialog>
   );
 }
 

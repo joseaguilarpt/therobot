@@ -1,6 +1,6 @@
 import "./Hero.scss";
 
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
 import ContentContainer from "../ContentContainer/ContentContainer";
 import classNames from "classnames";
 

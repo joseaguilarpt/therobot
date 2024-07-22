@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react';
+import { forwardRef, useState } from 'react';
 import InputText, { InputTextRef, InputTextProps } from '../InputText/InputText';
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -14,5 +14,7 @@ const InputEmail = forwardRef<InputTextRef, Omit<InputTextProps, 'type'>>((props
 
   return <InputText ref={ref} type="email" validateFormat={validateEmailFormat} error={error} {...props} />;
 });
+
+InputEmail.displayName = 'InputEmail';
 
 export default InputEmail;

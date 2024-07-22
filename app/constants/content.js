@@ -1,5 +1,3 @@
-import { POPULAR_CONVERSIONS } from "../utils/conversions";
-
 export const COMPANY_OBJECTIVES_DESCRIPTION =
   "At Easy Convert Image, we're driven by a set of core objectives that guide our mission to provide the best image conversion experience. These principles shape our service and reflect our commitment to our users:";
 

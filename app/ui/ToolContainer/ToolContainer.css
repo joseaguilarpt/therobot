@@ -13,5 +13,13 @@
 .tool-container .tool-heading .text {
   line-height: 1.6;
 }
+.tool-container .tool-heading .conversion-heading-bottom, .tool-container .tool-heading .hero-description {
+  display: none;
+}
+@media (min-width: 768px) {
+  .tool-container .tool-heading .conversion-heading-bottom, .tool-container .tool-heading .hero-description {
+    display: block;
+  }
+}
 
 /*# sourceMappingURL=ToolContainer.css.map */

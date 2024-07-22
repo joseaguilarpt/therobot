@@ -57,7 +57,7 @@ export default async function handleRequest(
 
   const securityHeaders = getHeaders({ nonce });
 
-  (remixContext as any).customNonce = nonce;
+  (remixContext as EntryContext).customNonce = nonce;
 
   return new Promise((resolve, reject) => {
     let didError = false;

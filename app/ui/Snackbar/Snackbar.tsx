@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import classNames from "classnames";
 import "./Snackbar.scss";
 import { useTheme } from "~/context/ThemeContext";
@@ -11,12 +11,20 @@ const Snackbar = () => {
   const snackbarRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
 
-  const title: any = {
+  const title = {
     success: t("ui.success"),
     warning: t("ui.warning"),
     info: t("ui.info"),
     error: t("ui.error"),
   };
+
+  const closeSnackbar = useCallback(() => {
+    hideSnackbar();
+    // Return focus to the previously focused element
+    if (previousFocusRef.current) {
+      previousFocusRef.current.focus();
+    }
+  }, [hideSnackbar]);
 
   useEffect(() => {
     if (snackbar.message) {
@@ -32,7 +40,7 @@ const Snackbar = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [snackbar]);
+  }, [snackbar, closeSnackbar]);
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -45,15 +53,7 @@ const Snackbar = () => {
     return () => {
       document.removeEventListener('keydown', handleEscape);
     };
-  }, [snackbar]);
-
-  const closeSnackbar = () => {
-    hideSnackbar();
-    // Return focus to the previously focused element
-    if (previousFocusRef.current) {
-      previousFocusRef.current.focus();
-    }
-  };
+  }, [snackbar, closeSnackbar]);
 
   if (!snackbar.message) return null;
 

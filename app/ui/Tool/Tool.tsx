@@ -9,7 +9,6 @@ import { useFileConversion } from "~/utils/useTool";
 import GridContainer from "../Grid/Grid";
 import GridItem from "../Grid/GridItem";
 import { useTranslation } from 'react-i18next';
-import HCaptchaComponent from '../HCaptcha/Hcaptcha';
 
 export default function Tool() {
   const { sourceFormat, targetFormat, lang } = useParams();

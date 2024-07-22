@@ -14,7 +14,6 @@ import {
 } from "@remix-run/react";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import { LinksFunction, LoaderFunctionArgs, json } from "@remix-run/node";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useChangeLanguage } from "remix-i18next/react";
 import { useTranslation } from "react-i18next";
 import { HoneypotProvider } from "remix-utils/honeypot/react";
@@ -30,28 +29,7 @@ import i18n from "./i18n";
 import { HCaptchaProvider } from "./context/HCaptchaContext";
 import { HCaptchaComponent } from "~/ui/HCaptcha/Hcaptcha";
 import { useAnalytics } from "./utils/analytics";
-import { NonceContext, useNonce } from "./context/NonceContext";
-
-// export const headers: HeadersFunction = () => {
-//   return {
-//     "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
-//     "Content-Security-Policy": `
-//       default-src 'self';
-//       script-src 'self' https://js.hcaptcha.com https://*.hcaptcha.com https://www.googletagmanager.com;
-//       style-src 'self' 'unsafe-inline' https://hcaptcha.com https://*.hcaptcha.com;
-//       frame-src 'self' https://*.hcaptcha.com;
-//       img-src 'self' data: https: blob: https://www.google-analytics.com https://*.google-analytics.com;
-//       font-src 'self';
-//       connect-src 'self' https://*.hcaptcha.com https://www.google-analytics.com https://*.google-analytics.com https://region1.google-analytics.com;
-//       object-src 'none';
-//       base-uri 'self';
-//       form-action 'self';
-//       frame-ancestors 'none';
-//       block-all-mixed-content;
-//       upgrade-insecure-requests;
-//     `.replace(/\s{2,}/g, ' ').trim()
-//   };
-// };
+import { useNonce } from "./context/NonceContext";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -60,7 +38,7 @@ export const links: LinksFunction = () => [
   { rel: "manifest", href: "/manifest.json" },
 ];
 
-export async function loader({ params, request, context }: LoaderFunctionArgs) {
+export async function loader({ params, request }: LoaderFunctionArgs) {
   const checkValidLang = (v: string) => i18n.supportedLngs.includes(v);
 
   if (params?.sourceFormat?.toLowerCase() === "pdf") {
@@ -102,11 +80,9 @@ export const handle = {
   i18n: "common",
 };
 
-const queryClient = new QueryClient();
-
 export function ErrorBoundary() {
   const error = useRouteError();
-  console.log(error, 'error')
+  console.log(error, "error");
   const { i18n } = useTranslation();
   useChangeLanguage(i18n.language ?? "en");
   useAnalytics();
@@ -128,16 +104,14 @@ export function ErrorBoundary() {
         <Links />
       </head>
       <body>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider>
-            <SkipToContent />
-            <ErrorComponent />
-            <Snackbar />
-            <ScrollRestoration nonce={nonce} />
-            <Scripts nonce={nonce} />
-            <CookieConsentBanner />
-          </ThemeProvider>
-        </QueryClientProvider>
+        <ThemeProvider>
+          <SkipToContent />
+          <ErrorComponent />
+          <Snackbar />
+          <ScrollRestoration nonce={nonce} />
+          <Scripts nonce={nonce} />
+          <CookieConsentBanner />
+        </ThemeProvider>
       </body>
     </html>
   );
@@ -147,7 +121,6 @@ const App = React.memo(function App() {
   const { locale, honeypotInputProps, ENV } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
   const nonce = useNonce();
-
   useChangeLanguage(locale);
   useAnalytics();
 
@@ -179,25 +152,24 @@ const App = React.memo(function App() {
           />
         </head>
         <body>
-          <QueryClientProvider client={queryClient}>
-            <ThemeProvider>
-              <HCaptchaProvider>
-                <SkipToContent />
-                <Outlet context={{ locale, honeypotInputProps }} />
-                <Snackbar />
-                <CookieConsentBanner />
-                <Scripts nonce={nonce} />
-                <HCaptchaComponent sitekey={ENV.CAPTCHA_KEY ?? ""} />
-                <ScrollRestoration nonce={nonce} />
-                <script
+          <ThemeProvider>
+            <HCaptchaProvider>
+              <SkipToContent />
+              <Outlet context={{ locale, honeypotInputProps }} />
+              <Snackbar />
+              <CookieConsentBanner />
+              <Scripts nonce={nonce} />
+              <HCaptchaComponent sitekey={ENV.CAPTCHA_KEY ?? ""} />
+
+              <ScrollRestoration nonce={nonce} />
+              <script
                 nonce={nonce}
-                  dangerouslySetInnerHTML={{
-                    __html: `window.ENV = ${JSON.stringify(ENV)}`,
-                  }}
-                />
-              </HCaptchaProvider>
-            </ThemeProvider>
-          </QueryClientProvider>
+                dangerouslySetInnerHTML={{
+                  __html: `window.ENV = ${JSON.stringify(ENV)}`,
+                }}
+              />
+            </HCaptchaProvider>
+          </ThemeProvider>
         </body>
       </HoneypotProvider>
     </html>

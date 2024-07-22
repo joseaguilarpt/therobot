@@ -16,7 +16,7 @@ import GridItem from "~/ui/Grid/GridItem";
 import Heading from "~/ui/Heading/Heading";
 import Navbar from "~/ui/Navbar/Navbar";
 import Text from "~/ui/Text/Text";
-import { createMeta } from "~/utils/meta";
+import { MetaProps, createMeta } from "~/utils/meta";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request);
@@ -33,8 +33,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return json({ title, description, keywords, ogDescription, ogTitle });
 }
 
-export const meta: MetaFunction = ({ data }) => {
-  const { description, title, keywords } = data as any;
+export const meta: MetaFunction<typeof loader> = ({
+  data,
+  params,
+  location,
+  matches,
+}) => {
+  if (!data) {
+    return [];
+  }
+  const { description, title, keywords } = data as MetaProps;
   const url = `https://easyconvertimage.com/blog`;
 
   return createMeta({
@@ -75,8 +83,7 @@ export const meta: MetaFunction = ({ data }) => {
       },
       keywords: keywords,
     },
-    // @ts-ignore
-  })({ data });
+  })({ data, params, location, matches });
 };
 
 export default function Blog() {
@@ -87,18 +94,18 @@ export default function Blog() {
       <main id="main-content">
         <div className="blogs-page">
           <ContentContainer>
-          <Breadcrumb
-            paths={[
-              {
-                icon: "FaHome",
-                label: t("nav.home"),
-                href: `/${i18n.language ?? ""}`,
-              },
-              {
-                label: t("nav.blog"),
-              },
-            ]}
-          />
+            <Breadcrumb
+              paths={[
+                {
+                  icon: "FaHome",
+                  label: t("nav.home"),
+                  href: `/${i18n.language ?? ""}`,
+                },
+                {
+                  label: t("nav.blog"),
+                },
+              ]}
+            />
             <Heading align="center" underline level={1} appearance={4}>
               {t("nav.blog")}
             </Heading>
@@ -126,7 +133,6 @@ export default function Blog() {
               ))}
             </GridContainer>
           </ContentContainer>
-
         </div>
       </main>
       <BackToTop />

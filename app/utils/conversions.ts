@@ -23,7 +23,7 @@ type ImageFormat = {
     { value: "pdf", label: "PDF" },
   ];
   
-  interface ConversionService {
+  export interface ConversionService {
     title: string;
     icon: string;
     content: string;
@@ -34,7 +34,7 @@ type ImageFormat = {
     ariaLabel: string;
   }
   
-  export function generateConversionServices(values: any): ConversionService[] {
+  export function generateConversionServices(values: ImageFormat[]): ConversionService[] {
     const services: ConversionService[] = [];
   
     for (const sourceFormat of values) {
