@@ -16,8 +16,8 @@ export const HCaptchaComponent = React.memo(function HCaptchaComponent({
   const { showSnackbar } = useTheme();
 
   const handleVerify = useCallback(
-    (token: string, ekey: string) => {
-      onSuccess(token, ekey);
+    (token: string) => {
+      onSuccess(token);
     },
     [onSuccess]
   );
