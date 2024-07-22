@@ -211,7 +211,7 @@ export default function BlogPage({
             name={t(articleKeys.editor)}
             role={t("editor")}
             bio="link"
-            imageUrl="/app/img/profile.jpg"
+            imageUrl="/img/profile.jpg"
           />
         </ContentContainer>
         <ContentContainer>

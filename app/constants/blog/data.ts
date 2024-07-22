@@ -8,12 +8,12 @@ export default {
 
 export const blogArticlesArray = [
   {
-    img: '/app/img/blog/man-choosing.webp',
+    img: '/img/blog/man-choosing.webp',
     heading: "articles.0.heading",
     url: "articles.0.url",
   },
   {
-    img: '/app/img/blog/folders.webp',
+    img: '/img/blog/folders.webp',
     heading: "articles.1.heading",
     url: "articles.1.url",
   }

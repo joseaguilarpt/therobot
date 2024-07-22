@@ -6,37 +6,37 @@ export const COMPANY_OBJECTIVES_DESCRIPTION =
       title: "companyObjectives.simplifyConversion.title",
       icon: "FaHome",
       content: "companyObjectives.simplifyConversion.content",
-      imageUrl: "/app/img/simplify-conversion.jpg",
+      imageUrl: "/img/simplify-conversion.jpg",
     },
     {
       title: "companyObjectives.accessibility.title",
       icon: "FaInfo",
       content: "companyObjectives.accessibility.content",
-      imageUrl: "/app/img/accessibility.jpg",
+      imageUrl: "/img/accessibility.jpg",
     },
     {
       title: "companyObjectives.advancedTechnology.title",
       icon: "FaEnvelope",
       content: "companyObjectives.advancedTechnology.content",
-      imageUrl: "/app/img/advanced-technology.jpg",
+      imageUrl: "/img/advanced-technology.jpg",
     },
     {
       title: "companyObjectives.userPrivacy.title",
       icon: "FaInfo",
       content: "companyObjectives.userPrivacy.content",
-      imageUrl: "/app/img/user-privacy.jpg",
+      imageUrl: "/img/user-privacy.jpg",
     },
     {
       title: "companyObjectives.formatSupport.title",
       icon: "FaBars",
       content: "companyObjectives.formatSupport.content",
-      imageUrl: "/app/img/format-support.jpg",
+      imageUrl: "/img/format-support.jpg",
     },
     {
       title: "companyObjectives.userFeedback.title",
       icon: "FaInfo",
       content: "companyObjectives.userFeedback.content",
-      imageUrl: "/app/img/user-feedback.jpg",
+      imageUrl: "/img/user-feedback.jpg",
     },
   ];
 

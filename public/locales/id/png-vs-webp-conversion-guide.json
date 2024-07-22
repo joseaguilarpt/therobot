@@ -23,7 +23,7 @@
         {
           "id": "compression-quality",
           "title": "Kompresi dan Kualitas Gambar",
-          "img": "/app/img/blog/graphics.webp",
+          "img": "/img/blog/graphics.webp",
           "altText": "Perbandingan visual kompresi antara PNG dan WebP",
           "pros": [
             "WebP menawarkan kompresi yang lebih baik sambil mempertahankan kualitas",
@@ -43,7 +43,7 @@
         {
           "id": "file-size",
           "title": "Ukuran File",
-          "img": "/app/img/blog/thumbsup.webp",
+          "img": "/img/blog/thumbsup.webp",
           "altText": "Perbandingan ukuran file antara PNG dan WebP",
           "pros": [
             "WebP menawarkan ukuran file yang jauh lebih kecil",
@@ -76,7 +76,7 @@
         }
       ],
       "image": {
-        "url": "/app/img/blog/man-choosing.webp",
+        "url": "/img/blog/man-choosing.webp",
         "category": "image-optimization",
         "alt": "Perbandingan visual antara format PNG dan WebP"
       }
