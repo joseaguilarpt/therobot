@@ -18,8 +18,6 @@ import crypto from "crypto";
 import { headers as getHeaders } from "./utils/headers";
 import { NonceContext } from "./context/NonceContext";
 import { resolve } from "node:path";
-import fs from 'fs';
-import { join } from 'path';
 
 config();
 
@@ -45,48 +43,7 @@ export default async function handleRequest(
   const lng = await i18next.getLocale(request);
   const ns = i18next.getRouteNamespaces(remixContext);
 
-  const currentDir = process.cwd();
-  console.log('Current working directory:', currentDir);
-
-  // Debug: Log contents of current directory
-  console.log('Contents of current directory:', fs.readdirSync(currentDir));
-
-  // Debug: Log contents of parent directory
-  const parentDir = join(currentDir, '..');
-  console.log('Parent directory:', parentDir);
-  console.log('Contents of parent directory:', fs.readdirSync(parentDir));
-
-  // Debug: Log the resolved path for locales
   const localesPath = resolve("./public/locales");
-  console.log('Resolved locales path:', localesPath);
-
-  // Debug: Check if the locales directory exists and log its contents
-  if (fs.existsSync(localesPath)) {
-    console.log('Locales directory exists');
-    console.log('Contents of locales directory:', fs.readdirSync(localesPath));
-    
-    // Log contents of language-specific directories
-    fs.readdirSync(localesPath).forEach(lang => {
-      const langPath = join(localesPath, lang);
-      if (fs.statSync(langPath).isDirectory()) {
-        console.log(`Contents of ${lang} directory:`, fs.readdirSync(langPath));
-      }
-    });
-  } else {
-    console.log('Locales directory does not exist');
-  }
-
-  // Debug: Log the full path that will be used
-  const fullPath = resolve("./public/locales/en/common.json"); // assumes 'en' and 'common' namespace
-  console.log('Full path to English common translations:', fullPath);
-
-  // Debug: Check if the file exists
-  if (fs.existsSync(fullPath)) {
-    console.log('English common translations file exists');
-  } else {
-    console.log('English common translations file does not exist');
-  }
-
 
   await instance
     .use(initReactI18next)
