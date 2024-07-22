@@ -4,7 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build && vite build",
+    "build": "remix vite:build",
     "dev": "concurrently \"npm run sass\" \"remix vite:dev\"",
     "preview": "vite preview",
     "sass": "sass --watch app/:app/",
