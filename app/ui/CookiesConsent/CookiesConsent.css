@@ -397,10 +397,13 @@
   background-color: var(--background-color);
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  width: 100%;
+  border: none;
 }
 .cookie-banner fieldset {
   display: flex;
   border: none;
+  flex-wrap: wrap;
 }
 .cookie-banner fieldset .visually-hidden {
   position: absolute;
@@ -417,7 +420,7 @@
   padding-right: 10px;
 }
 .cookie-banner:focus-within {
-  outline: 2px solid var(--focus-color, #4d90fe);
+  outline: 1px solid var(--focus-color, #4d90fe);
   outline-offset: 2px;
 }
 

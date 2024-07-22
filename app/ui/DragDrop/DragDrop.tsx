@@ -247,7 +247,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               {isLoading && (
                 <>
                   <LoadingSpinner /> <Divider orientation="vertical" />{" "}
-                  <Text align="center" size="large" color="contrast">
+                  <Text align="center" size="large" color="white">
                     {t("fileActions.processing")}
                   </Text>
                 </>
@@ -256,7 +256,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
                 <>
                   <Icon icon="FaUpload" size="large" aria-hidden="true" />{" "}
                   <Divider orientation="vertical" />{" "}
-                  <Text align="center" size="large" color="contrast">
+                  <Text align="center" size="large" color="white">
                     {existingFiles.length > 0
                       ? t("tool.uploadMoreImages")
                       : t("tool.uploadButton")}
