@@ -29,7 +29,6 @@ export const ReCaptchaComponent = React.memo(function ReCaptchaComponent({
 
   const handleError = useCallback(() => {
     setToken(null);
-    showSnackbar("Captcha error occurred", "error");
   }, [setToken, showSnackbar]);
 
   const ReCaptchaInner = useMemo(() => {
