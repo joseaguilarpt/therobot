@@ -8,7 +8,7 @@ interface ReCaptchaContextType {
   onSuccess: (token: string) => void;
   onError: () => void;
   resetCaptcha: () => void;
-  executeCaptcha: () => Promise<void>;
+  executeCaptcha: () => Promise<string | undefined>;
   isLoading: boolean;
 }
 
@@ -53,9 +53,12 @@ export function ReCaptchaProvider({ children }: { children: ReactNode }) {
       const newToken = await captchaRef.current?.executeAsync();
       if (newToken) {
         onSuccess(newToken);
+        return newToken;
       }
     } catch (error) {
       onError();
+      console.log(error, "error")
+      throw new Error('Recaptcha Error')
     } finally {
       setIsLoading(false);
     }

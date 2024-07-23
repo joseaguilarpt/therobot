@@ -52,7 +52,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { honeypotInputProps } = useOutletContext<OutletContext>();
   const formRef = useRef<HTMLFormElement>(null);
-  const { captchaRef } = useReCaptcha();
+  const { captchaRef, executeCaptcha} = useReCaptcha();
   const { setIsPending } = useFileConversion('jpeg')
 
   const validateFile = useCallback((file: File): boolean => {
@@ -98,7 +98,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     let currentToken = null;
     if (captchaRef.current) {
       try {
-        const token = await captchaRef.current.executeAsync();
+        const token = await executeCaptcha();
         if (token) {
           currentToken = token;
           formData.set("g-recaptcha-response", token);
