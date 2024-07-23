@@ -88,10 +88,10 @@ const Footer: React.FC<FooterProps> = ({
                 <strong>{t('email')}:</strong> {t(email)}
               </address>
               <GridContainer className="footer__buttons u-pt1">
-                <GridItem>
+                {/* <GridItem>
                   <ThemeToggle />
-                </GridItem>
-                {socialNetworks.map((item) => (
+                </GridItem> */}
+                {/* {socialNetworks.map((item) => (
                   <GridItem className="u-pl1" key={item.icon}>
                     <Button
                       href={getLocalizedUrl(item.href)}
@@ -102,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({
                       <Icon icon={item.icon} color="white" size="small" />
                     </Button>
                   </GridItem>
-                ))}
+                ))} */}
               </GridContainer>
             </div>
 

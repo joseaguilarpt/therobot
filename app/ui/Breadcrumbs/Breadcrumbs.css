@@ -451,7 +451,8 @@
   .breadcrumb {
     font-size: var(--font-size-small);
   }
-  .breadcrumb__label, .breadcrumb__link {
+  .breadcrumb__label,
+  .breadcrumb__link {
     font-size: var(--font-size-small);
     padding: 0 1px;
   }
@@ -460,7 +461,8 @@
   }
 }
 @media (max-width: 480px) {
-  .breadcrumb__label, .breadcrumb__link {
+  .breadcrumb__label,
+  .breadcrumb__link {
     font-size: var(--font-size-x-small);
     padding: 0;
   }
