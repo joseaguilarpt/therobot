@@ -10,6 +10,18 @@ import Backend from "i18next-http-backend";
 import { getInitialNamespaces } from "remix-i18next/client";
 import i18n from "./i18n";
 
+function detectNamespaceFromURL() {
+  const path = window.location.pathname;
+  const match = path.match(/\/blog\/([\w-]+)/);
+  if (match) {
+    return ["common", match[1]]; // Return both 'common' and the specific article namespace
+  }
+  return ["common"]; // Default namespace
+}
+
+const detectedNamespaces = detectNamespaceFromURL();
+
+
 async function hydrate() {
   try {
 
@@ -19,7 +31,7 @@ async function hydrate() {
       .use(Backend)
       .init({
         ...i18n,
-        ns: getInitialNamespaces(),
+        ns: [...getInitialNamespaces(), ...detectedNamespaces],
         backend: { 
           loadPath: '/locales/{{lng}}/{{ns}}.json',
         },

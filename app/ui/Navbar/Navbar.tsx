@@ -17,6 +17,7 @@ import svgDarkMode from "../../img/thebot-white.svg";
 import { useTheme } from "~/context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "../LanguageSelector/LanguageSelector";
+import ToolSelector from "../ToolSelector/ToolSelector";
 
 const Navbar = ({
   autoScrolled,
@@ -35,31 +36,25 @@ const Navbar = ({
   const defaultOptions = [
     {
       value: "nav.home",
-      href: `/${i18n?.language ?? ''}`,
+      href: `/${i18n?.language ?? ""}`,
       icon: "FaHome",
     },
     {
-      value: "nav.topTools",
-      href: `/${i18n?.language ?? ''}#top-tools`,
-      icon: "FaSearch",
-    },
-    {
       value: "nav.contact",
-      href: `/${i18n?.language ?? ''}/contact`,
+      href: `/${i18n?.language ?? ""}/contact`,
       icon: "FaPhone",
     },
     {
       value: "nav.about",
-      href: `/${i18n?.language ?? ''}/about`,
+      href: `/${i18n?.language ?? ""}/about`,
       icon: "FaHome",
     },
     {
       value: "Blog",
-      href: `/${i18n?.language ?? ''}/blog`,
+      href: `/${i18n?.language ?? ""}/blog`,
       icon: "FaMap",
     },
   ];
-  
 
   const options =
     items ?? defaultOptions.map((item) => ({ ...item, value: t(item.value) }));
@@ -77,16 +72,16 @@ const Navbar = ({
 
   useEffect(() => {
     const menuElement = menuRef.current;
-  
+
     const handleKeyDown = (event: KeyboardEvent) => {
       const menuItems = menuElement?.querySelectorAll('[role="menuitem"]');
       if (!menuItems) return;
-  
+
       const menuItemsArray = Array.from(menuItems);
       const currentIndex = menuItemsArray.findIndex(
         (item) => item === document.activeElement
       );
-  
+
       switch (event.key) {
         case "ArrowRight":
         case "ArrowDown":
@@ -116,9 +111,9 @@ const Navbar = ({
           break;
       }
     };
-  
+
     menuElement?.addEventListener("keydown", handleKeyDown);
-  
+
     return () => {
       menuElement?.removeEventListener("keydown", handleKeyDown);
     };
@@ -127,7 +122,7 @@ const Navbar = ({
   const keepScrolled = autoScrolled ? true : isScrolled;
 
   const navigateHome = () => {
-    window.location.href = `/${i18n.language ?? 'en'}`;
+    window.location.href = `/${i18n.language ?? "en"}`;
   };
   return (
     <nav
@@ -179,6 +174,9 @@ const Navbar = ({
                   </a>
                 </li>
               ))}
+              <li className="u-mr2" role="menuitem">
+                <ToolSelector keepScrolled={keepScrolled} />
+              </li>
               <li role="menuitem">
                 <LanguageSwitcher keepScrolled={keepScrolled} />
               </li>
@@ -209,7 +207,10 @@ const Navbar = ({
           id="mobile-menu"
           label={t("mobileMenuLabel")}
         >
-          <LanguageSwitcher keepScrolled={keepScrolled} />
+           <div className="u-mb2">
+           <ToolSelector keepScrolled={keepScrolled} />
+           </div>
+            <LanguageSwitcher keepScrolled={keepScrolled} />
         </Sidebar>
       </ContentContainer>
     </nav>

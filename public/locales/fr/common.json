@@ -168,13 +168,9 @@
       "heading": "À quelle vitesse les conversions sont-elles effectuées ?",
       "description": "La plupart des conversions sont terminées en quelques secondes. Les fichiers plus volumineux ou les conversions par lots peuvent prendre un peu plus de temps, mais nous nous efforçons de fournir le service le plus rapide possible."
     },
-    "option7": {
-      "heading": "Qu'est-ce qu'Easy Convert Image ?",
-      "description": "Absolument. Nous prenons la sécurité des données très au sérieux. Tous les téléchargements et téléversements sont protégés par un chiffrement SSL."
-    },
     "option8": {
       "heading": "Mes données sont-elles en sécurité lorsque j'utilise Easy Convert Image ?",
-      "description": "Easy Convert Image est un outil en ligne gratuit qui vous permet de convertir rapidement et facilement des images entre divers formats. Notre service prend en charge une large gamme de formats d'image et est conçu pour être convivial et efficace."
+      "description": "Absolument. Nous prenons la sécurité des données très au sérieux. Tous les téléchargements et téléversements sont protégés par un chiffrement SSL."
     },
     "option9": {
       "heading": "Conservez-vous des copies des images que je convertis ?",

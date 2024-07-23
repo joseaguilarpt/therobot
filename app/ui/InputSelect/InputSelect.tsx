@@ -114,6 +114,24 @@ const InputSelect: React.FC<InputSelectProps> = ({
     }
   };
 
+  const handleMouseEnter = () => {
+    if (!isOpen) {
+      setIsOpen(true);
+      setFocusedIndex(0);
+    }
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent) => {
+    const rect = selectRef.current?.getBoundingClientRect();
+    if (rect) {
+      const isMovingToList = e.clientY > rect.bottom;
+      if (!isMovingToList) {
+        setIsOpen(false);
+        setFocusedIndex(-1);
+      }
+    }
+  };
+
   useEffect(() => {
     if (isOpen && focusedIndex !== -1) {
       optionsRef.current[focusedIndex]?.scrollIntoView({ block: "nearest" });
@@ -124,7 +142,10 @@ const InputSelect: React.FC<InputSelectProps> = ({
   const selected = current ? current.label : placeholder;
 
   return (
-    <div className={`input-select ${className}`} ref={selectRef}>
+    <div 
+      className={`input-select ${className}`} 
+      ref={selectRef}
+    >
       <label
         id={`${uniqueId}-label`}
         htmlFor={`${uniqueId}-button`}
@@ -139,6 +160,8 @@ const InputSelect: React.FC<InputSelectProps> = ({
         aria-expanded={isOpen}
         aria-labelledby={`${uniqueId}-label ${uniqueId}-button`}
         onClick={toggleDropdown}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         onKeyDown={handleKeyDown}
       >
         {selected}

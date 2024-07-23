@@ -87,10 +87,6 @@ const Footer: React.FC<FooterProps> = ({
                 {t("pageName")}
               </Heading>
               <address className="footer__address u-pb1">
-                {t(address)}
-                <br />
-                <strong>{t('phone')}:</strong> {t(phone)}
-                <br />
                 <strong>{t('email')}:</strong> {t(email)}
               </address>
               <GridContainer className="footer__buttons u-pt1">

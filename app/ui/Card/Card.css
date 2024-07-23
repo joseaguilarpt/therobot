@@ -165,5 +165,11 @@
   color: var(--accent-color-darken);
   font-weight: bold;
 }
+.card .heading--button {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5px;
+  width: fit-content;
+}
 
 /*# sourceMappingURL=Card.css.map */

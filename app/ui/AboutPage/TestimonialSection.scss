@@ -1,25 +1,40 @@
 .testimonial-container {
-    padding: 20px;
-    background: var(--default-color);
-    border-radius: var(--input-border-radius);
-    box-shadow: 0 2px 4px var(--shadow-color);
+  padding: 20px;
+  background: var(--default-color);
+  border-radius: var(--input-border-radius);
+  box-shadow: 0 2px 4px var(--shadow-color);
 
-    .testimonial-item {
-        text-align: center;
-        transition: all 0.3s ease;
+  .testimonial-item {
+    text-align: center;
+    transition: all 0.3s ease;
 
-        .heading, .text, .icon--large {
-            color: var(--contrast-color);
-            transition: all 0.3s ease;
-
-        }
-
-        &:hover {
-            .heading, .text, .icon--large {
-                color: var(--accent-color);
-                transition: all 0.3s ease;
-
-            }
-        }
+    .heading,
+    .text,
+    .icon--large {
+      color: var(--contrast-color);
+      transition: all 0.3s ease;
     }
+
+    &:hover {
+      .heading,
+      .text,
+      .icon--large {
+        color: var(--accent-color);
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+.services-container {
+  h3 {
+    margin: 0;
+  }
+  .card__content {
+    padding: 13px;
+    padding-left: 16px;
+  }
+  .button--link {
+    font-weight: bold;
+  }
 }

@@ -2,7 +2,7 @@
 import { useLoaderData, useSubmit } from "@remix-run/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useHCaptcha } from "~/context/HCaptchaContext";
+import { useReCaptcha } from "~/context/ReCaptchaContext";
 import { useTheme } from "~/context/ThemeContext";
 import { validateEmailFormat } from "~/ui/ShareButton/ShareButton";
 import { trackClick } from "./analytics";
@@ -17,7 +17,7 @@ interface ContactFormData {
 export function useForm(data: { contactError: boolean; contactEmailSent: boolean; }) {
   const { t, i18n } = useTranslation("common");
   const { showSnackbar } = useTheme();
-  const { captchaRef } = useHCaptcha();
+  const { captchaRef } = useReCaptcha();
   const loaderData = useLoaderData();
   const [isPending, setIsPending] = React.useState(false);
   const [contactFormData, setContactForm] = React.useState<ContactFormData>({
@@ -51,15 +51,14 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
 
   const onFormSubmit = async (p: ContactFormData) => {
     const formData = new FormData();
-
     if (captchaRef.current) {
-      const { response } = await captchaRef.current.execute({ async: true });
-
-      if (response) {
-        formData.set("h-captcha-response", response);
-      } else {
+      try {
+        const token = await captchaRef.current.executeAsync();
+        if (token) {
+          formData.set("g-recaptcha-response", token);
+        }
+      } catch (error) {
         showSnackbar(t("errorBoundary.title"), "error");
-        return;
       }
     }
     formData.append("name", p.name);

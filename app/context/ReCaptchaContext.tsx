@@ -1,27 +1,27 @@
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import ReCAPTCHA from "react-google-recaptcha";
 import React, { createContext, useState, useContext, ReactNode, useRef, useEffect } from "react";
 
-interface HCaptchaContextType {
-  captchaRef: React.RefObject<HCaptcha>;
+interface ReCaptchaContextType {
+  captchaRef: React.RefObject<ReCAPTCHA>;
   setToken: React.Dispatch<React.SetStateAction<string | null>>;
   token: string | null;
   onSuccess: (token: string) => void;
   onError: () => void;
 }
 
-const HCaptchaContext = createContext<HCaptchaContextType | undefined>(
+const ReCaptchaContext = createContext<ReCaptchaContextType | undefined>(
   undefined
 );
 
-export function HCaptchaProvider({ children }: { children: ReactNode }) {
+export function ReCaptchaProvider({ children }: { children: ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
-  const captchaRef = useRef<HCaptcha>(null);
+  const captchaRef = useRef<ReCAPTCHA>(null);
 
   useEffect(() => {
     const currentCaptchaRef = captchaRef.current;
     return () => {
       if (currentCaptchaRef) {
-        currentCaptchaRef.resetCaptcha();
+        currentCaptchaRef.reset();
       }
     };
   }, []);
@@ -30,7 +30,7 @@ export function HCaptchaProvider({ children }: { children: ReactNode }) {
   const onError = () => setToken(null);
 
   return (
-    <HCaptchaContext.Provider
+    <ReCaptchaContext.Provider
       value={{
         captchaRef,
         setToken,
@@ -40,14 +40,14 @@ export function HCaptchaProvider({ children }: { children: ReactNode }) {
       }}
     >
       {children}
-    </HCaptchaContext.Provider>
+    </ReCaptchaContext.Provider>
   );
 }
 
-export function useHCaptcha() {
-  const context = useContext(HCaptchaContext);
+export function useReCaptcha() {
+  const context = useContext(ReCaptchaContext);
   if (context === undefined) {
-    throw new Error("useHCaptcha must be used within a HCaptchaProvider");
+    throw new Error("useReCaptcha must be used within a ReCaptchaProvider");
   }
   return context;
 }

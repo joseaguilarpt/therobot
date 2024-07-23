@@ -1,6 +1,6 @@
 import styles from "./app.scss?url";
 
-import React from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 
 import {
   Links,
@@ -26,8 +26,8 @@ import NotFound from "./routes/404";
 import ErrorPage from "./routes/Error";
 import { honeypot } from "~/honeypot.server";
 import i18n from "./i18n";
-import { HCaptchaProvider } from "./context/HCaptchaContext";
-import { HCaptchaComponent } from "~/ui/HCaptcha/Hcaptcha";
+import { ReCaptchaProvider } from "./context/ReCaptchaContext";
+import ReCaptchaComponent from "~/ui/ReCaptcha/ReCaptcha";
 import { useAnalytics } from "./utils/analytics";
 import { useNonce } from "./context/NonceContext";
 
@@ -41,6 +41,7 @@ export const links: LinksFunction = () => [
 export async function loader({ params, request }: LoaderFunctionArgs) {
   const checkValidLang = (v: string) => i18n.supportedLngs.includes(v);
 
+  const cookieHeader = request.headers.get("Cookie");
   if (params?.sourceFormat?.toLowerCase() === "pdf") {
     throw new Response(null, {
       status: 404,
@@ -69,9 +70,7 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     locale,
     ENV: {
       GOOGLE_ID_ANALYTICS: process.env.GOOGLE_ID_ANALYTICS,
-      CAPTCHA_KEY: isDev
-        ? process.env.DUMMY_CAPTCHA_KEY
-        : process.env.CAPTCHA_KEY,
+      RCAPTCHA_CLIENT: process.env.RCAPTCHA_CLIENT,
     },
   });
 }
@@ -82,7 +81,6 @@ export const handle = {
 
 export function ErrorBoundary() {
   const error = useRouteError();
-  console.log(error, "error");
   const { i18n } = useTranslation();
   useChangeLanguage(i18n.language ?? "en");
   useAnalytics();
@@ -96,51 +94,56 @@ export function ErrorBoundary() {
   const nonce = useNonce();
 
   return (
-    <html lang={i18n.language} dir={i18n.dir()}>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <ThemeProvider>
+    <ThemeProvider>
+      <html lang={i18n.language} dir={i18n.dir()}>
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <Meta />
+          <Links />
+        </head>
+        <body>
           <SkipToContent />
           <ErrorComponent />
           <Snackbar />
           <ScrollRestoration nonce={nonce} />
           <Scripts nonce={nonce} />
           <CookieConsentBanner />
-        </ThemeProvider>
-      </body>
-    </html>
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
 
 const App = React.memo(function App() {
-  const { locale, honeypotInputProps, ENV } = useLoaderData<typeof loader>();
+  const { locale, honeypotInputProps, ENV } =
+    useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
   const nonce = useNonce();
   useChangeLanguage(locale);
   useAnalytics();
 
   return (
-    <html lang={locale} dir={i18n.dir()}>
-      <HoneypotProvider {...honeypotInputProps}>
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <Meta />
-          <Links />
-          <script
-            async
-            nonce={nonce}
-            src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
-          ></script>
-          <script
-            nonce={nonce}
-            dangerouslySetInnerHTML={{
-              __html: `
+    <ThemeProvider>
+      <html lang={locale} dir={i18n.dir()}>
+        <HoneypotProvider {...honeypotInputProps}>
+          <head>
+            <meta charSet="utf-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1"
+            />
+            <Meta />
+            <Links />
+            <script
+              async
+              nonce={nonce}
+              src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
+            ></script>
+            <script
+              nonce={nonce}
+              dangerouslySetInnerHTML={{
+                __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -148,18 +151,17 @@ const App = React.memo(function App() {
                 page_path: window.location.pathname,
               });
             `,
-            }}
-          />
-        </head>
-        <body>
-          <ThemeProvider>
-            <HCaptchaProvider>
+              }}
+            />
+          </head>
+          <body>
+            <ReCaptchaProvider>
               <SkipToContent />
               <Outlet context={{ locale, honeypotInputProps }} />
               <Snackbar />
               <CookieConsentBanner />
               <Scripts nonce={nonce} />
-              <HCaptchaComponent sitekey={ENV.CAPTCHA_KEY ?? ""} />
+              <ReCaptchaComponent sitekey={ENV.RCAPTCHA_CLIENT ?? ""} />
 
               <ScrollRestoration nonce={nonce} />
               <script
@@ -168,11 +170,11 @@ const App = React.memo(function App() {
                   __html: `window.ENV = ${JSON.stringify(ENV)}`,
                 }}
               />
-            </HCaptchaProvider>
-          </ThemeProvider>
-        </body>
-      </HoneypotProvider>
-    </html>
+            </ReCaptchaProvider>
+          </body>
+        </HoneypotProvider>
+      </html>
+    </ThemeProvider>
   );
 });
 

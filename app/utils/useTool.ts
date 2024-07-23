@@ -9,7 +9,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
-import { useHCaptcha } from "~/context/HCaptchaContext";
+import { useReCaptcha } from "~/context/ReCaptchaContext";
 import { trackClick } from "./analytics";
 
 interface ConvertedFile {
@@ -60,7 +60,7 @@ export function useFileConversion(selectedFormat: string) {
 
   const { showSnackbar } = useTheme();
   const submit = useSubmit();
-  const { captchaRef } = useHCaptcha();
+  const { captchaRef } = useReCaptcha();
 
   const [convertedFiles, setConvertedFiles] = useState<ConvertedFile[]>([]);
   const [pdfType, setPdfType] = useState<"separated" | "merged">("separated");
@@ -200,19 +200,26 @@ export function useFileConversion(selectedFormat: string) {
       }
 
       if (captchaRef.current) {
-        const { response } = await captchaRef.current.execute({ async: true });
-        if (response) {
-          formData.set("h-captcha-response", response);
-          formData.append("type", "email");
-          submit(formData, {
-            method: "post",
-            encType: "multipart/form-data",
-            preventScrollReset: true,
-          });
-        } else {
-          setIsPending(false);
+        try {
+          const token = await captchaRef.current.executeAsync();
+          if (token) {
+            formData.append("type", "email");
+            formData.set("g-recaptcha-response", token);
+            submit(formData, {
+              method: "post",
+              encType: "multipart/form-data",
+              preventScrollReset: true,
+            });
+          }
+          else {
+            setIsPending(false);
+
+          }
+        } catch (error) {
+          showSnackbar(t("errorBoundary.title"), "error");
         }
-      } else {
+      }
+      else {
         setIsPending(false);
       }
     },
