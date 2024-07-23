@@ -3,22 +3,74 @@ command = "npm run build"
 publish = "build/client"
 
 [functions]
-  included_files = ["locales/**, img/**"]
+included_files = ["locales/**, img/**"]
 
 [dev]
 command = "npm run dev"
 framework = "vite"
 
 # Set immutable caching for static files, because they have fingerprinted filenames
-
 [[headers]]
 for = "/build/*"
-
 [headers.values]
-
 "Cache-Control" = "public, max-age=31560000, immutable"
 
-[build.environment]
-  NODE_VERSION = "20.5.0"
+# Enable Brotli compression for all files
+[[headers]]
+for = "/*"
+[headers.values]
+"Content-Encoding" = "br"
 
-  
+# Additional performance headers
+[[headers]]
+for = "/*"
+[headers.values]
+"X-Frame-Options" = "DENY"
+"X-XSS-Protection" = "1; mode=block"
+"X-Content-Type-Options" = "nosniff"
+"Referrer-Policy" = "strict-origin-when-cross-origin"
+
+# Cache API responses
+[[headers]]
+for = "/api/*"
+[headers.values]
+"Cache-Control" = "public, max-age=60, s-maxage=300"
+
+# Cache static assets
+[[headers]]
+for = "/*.{js,css,png,jpg,jpeg,svg,gif}"
+[headers.values]
+"Cache-Control" = "public, max-age=31536000, immutable"
+
+[build.environment]
+NODE_VERSION = "20.5.0"
+
+# Enable HTTP/2 Server Push
+[[headers]]
+for = "/*"
+[headers.values]
+Link = </build/entry.client-*.js>; rel=preload; as=script
+
+# Redirect options
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+# Enable serverless functions if you're using them
+[functions]
+directory = "netlify/functions"
+
+# Post processing configuration to optimize images
+[build.processing]
+skip_processing = false
+[build.processing.css]
+bundle = true
+minify = true
+[build.processing.js]
+bundle = true
+minify = true
+[build.processing.html]
+pretty_urls = true
+[build.processing.images]
+compress = true
