@@ -1,6 +1,6 @@
 import styles from "./app.scss?url";
 
-import React, { useEffect, useLayoutEffect } from "react";
+import React from "react";
 
 import {
   Links,
@@ -27,7 +27,7 @@ import ErrorPage from "./routes/Error";
 import { honeypot } from "~/honeypot.server";
 import i18n from "./i18n";
 import { ReCaptchaProvider } from "./context/ReCaptchaContext";
-import ReCaptchaComponent from "~/ui/ReCaptcha/ReCaptcha";
+import CaptchaComponent from "~/ui/ReCaptcha/ReCaptcha";
 import { useAnalytics } from "./utils/analytics";
 import { useNonce } from "./context/NonceContext";
 
@@ -41,7 +41,6 @@ export const links: LinksFunction = () => [
 export async function loader({ params, request }: LoaderFunctionArgs) {
   const checkValidLang = (v: string) => i18n.supportedLngs.includes(v);
 
-  const cookieHeader = request.headers.get("Cookie");
   if (params?.sourceFormat?.toLowerCase() === "pdf") {
     throw new Response(null, {
       status: 404,
@@ -62,8 +61,6 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
       statusText: "Not Found",
     });
   }
-
-  const isDev = process.env.NODE_ENV === "development";
 
   return json({
     honeypotInputProps: honeypot?.getInputProps(),
@@ -161,7 +158,7 @@ const App = React.memo(function App() {
               <Snackbar />
               <CookieConsentBanner />
               <Scripts nonce={nonce} />
-              <ReCaptchaComponent sitekey={ENV.RCAPTCHA_CLIENT ?? ""} />
+              <CaptchaComponent sitekey={ENV.RCAPTCHA_CLIENT ?? ""} />
 
               <ScrollRestoration nonce={nonce} />
               <script
