@@ -46,6 +46,7 @@ export default function Tool() {
     pdfType,
     isPending,
     setPdfType,
+    setIsPending,
     handleAllAction,
     handleDownload,
     handleRemove,
@@ -73,6 +74,7 @@ export default function Tool() {
           <DragAndDrop
             onFilesDrop={handleAllAction}
             isLoading={isPending}
+            setIsPending={setIsPending}
             acceptedTypes={[`image/${selectedFormatFrom?.toLowerCase()}`]}
             maxSize={10_000_000} // 10 MB
             files={convertedFiles}
