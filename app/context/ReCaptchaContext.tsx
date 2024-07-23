@@ -32,9 +32,7 @@ export function ReCaptchaProvider({ children }: { children: ReactNode }) {
 
   const onSuccess = (token: string) => {
     setToken(token);
-    setTimeout(() => {
-      captchaRef.current?.reset();
-    }, 1000)
+    captchaRef.current?.reset();
   };
 
   const onError = () => {
