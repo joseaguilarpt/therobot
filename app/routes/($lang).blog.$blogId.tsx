@@ -107,7 +107,7 @@ export default function Blog() {
   return (
     <>
       <Navbar autoScrolled />
-      <main id="main-content">
+      <main className='blog-page__container' id="main-content">
         {blogData && <BlogPage blogId={blogId ?? ""} data={blogData} />}
       </main>
       <BackToTop />

@@ -10,6 +10,7 @@
     img {
       position: relative;
       z-index: 2;
+      max-width: 100%;
     }
     &::after {
       content: "";
@@ -76,11 +77,7 @@
       font-size: 1.25rem;
     }
     .content-image {
-      width: max-content;
-
-      img {
-        max-height: 350px;
-      }
+      width: fit-content;
     }
   }
 }
@@ -111,4 +108,8 @@
       }
     }
   }
+}
+
+.blog-page__container {
+  //overflow-x: hidden;
 }
