@@ -1,9 +1,7 @@
 import { LoaderFunction } from "@remix-run/node";
+import posts from '../constants/blog/data';
 
-const BLOG_POSTS = [
-  "top-10-image-formats-for-website",
-  "png-vs-webp-conversion-guide",
-];
+const BLOG_POSTS = Object.keys(posts);
 const LANGUAGES = ["en", "es", "pt", "fr", "nl", "de", "it", "id", "ru"];
 const FORMATS = [
   "jpeg",

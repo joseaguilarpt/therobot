@@ -39,10 +39,17 @@ interface OutletContext {
 const DragAndDrop: React.FC<DragAndDropProps> = ({
   onFilesDrop,
   isLoading: isExternalLoading,
-  acceptedTypes = [],
+  acceptedTypes: fileTypes,
   files: existingFiles,
   maxSize = Infinity,
 }) => {
+
+  const acceptedTypes = fileTypes?.map((item) => {
+    if (item.includes('svg')) {
+      return 'image/svg+xml';
+    }
+    return item;
+  })
   const params = useParams();
   const { showSnackbar } = useTheme();
   const { t, i18n } = useTranslation("common");

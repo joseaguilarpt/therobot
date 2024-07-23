@@ -2,7 +2,7 @@ import "../ui/Blog/BlogPage.scss";
 
 import { LoaderFunctionArgs, MetaFunction, json } from "@remix-run/node";
 import { useTranslation } from "react-i18next";
-import { blogArticlesArray } from "~/constants/blog/data";
+import data, { blogArticlesArray } from "~/constants/blog/data";
 import { FOOTER } from "~/constants/content";
 import { FORMATS } from "~/constants/formats";
 import i18next from "~/i18next.server";
