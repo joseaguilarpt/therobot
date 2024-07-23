@@ -26,10 +26,9 @@ import NotFound from "./routes/404";
 import ErrorPage from "./routes/Error";
 import { honeypot } from "~/honeypot.server";
 import i18n from "./i18n";
-import { ReCaptchaProvider } from "./context/ReCaptchaContext";
-import CaptchaComponent from "~/ui/ReCaptcha/ReCaptcha";
 import { useAnalytics } from "./utils/analytics";
 import { useNonce } from "./context/NonceContext";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -152,14 +151,12 @@ const App = React.memo(function App() {
             />
           </head>
           <body>
-            <ReCaptchaProvider>
+            <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ''}>
               <SkipToContent />
               <Outlet context={{ locale, honeypotInputProps }} />
               <Snackbar />
               <CookieConsentBanner />
               <Scripts nonce={nonce} />
-              <CaptchaComponent sitekey={ENV.RCAPTCHA_CLIENT ?? ""} />
-
               <ScrollRestoration nonce={nonce} />
               <script
                 nonce={nonce}
@@ -167,7 +164,7 @@ const App = React.memo(function App() {
                   __html: `window.ENV = ${JSON.stringify(ENV)}`,
                 }}
               />
-            </ReCaptchaProvider>
+            </GoogleReCaptchaProvider>
           </body>
         </HoneypotProvider>
       </html>

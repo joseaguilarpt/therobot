@@ -2,7 +2,7 @@
 import { useLoaderData, useSubmit } from "@remix-run/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useReCaptcha } from "~/context/ReCaptchaContext";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { useTheme } from "~/context/ThemeContext";
 import { validateEmailFormat } from "~/ui/ShareButton/ShareButton";
 import { trackClick } from "./analytics";
@@ -17,7 +17,7 @@ interface ContactFormData {
 export function useForm(data: { contactError: boolean; contactEmailSent: boolean; }) {
   const { t, i18n } = useTranslation("common");
   const { showSnackbar } = useTheme();
-  const { captchaRef } = useReCaptcha();
+  const { executeRecaptcha } = useGoogleReCaptcha();
   const loaderData = useLoaderData();
   const [isPending, setIsPending] = React.useState(false);
   const [contactFormData, setContactForm] = React.useState<ContactFormData>({
@@ -51,9 +51,9 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
 
   const onFormSubmit = async (p: ContactFormData) => {
     const formData = new FormData();
-    if (captchaRef.current) {
+    if (executeRecaptcha) {
       try {
-        const token = await captchaRef.current.executeAsync();
+        const token = await executeRecaptcha();
         if (token) {
           formData.set("g-recaptcha-response", token);
         }

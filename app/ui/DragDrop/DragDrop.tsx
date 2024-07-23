@@ -16,11 +16,10 @@ import { useTranslation } from "react-i18next";
 import Heading from "../Heading/Heading";
 import { HoneypotInputs } from "remix-utils/honeypot/react";
 import { useTheme } from "~/context/ThemeContext";
-import { useReCaptcha } from "~/context/ReCaptchaContext";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import classNames from "classnames";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { trackClick } from "~/utils/analytics";
-import { useFileConversion } from "~/utils/useTool";
 
 interface DragAndDropProps {
   isLoading?: boolean;
@@ -52,7 +51,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { honeypotInputProps } = useOutletContext<OutletContext>();
   const formRef = useRef<HTMLFormElement>(null);
-  const { captchaRef, executeCaptcha} = useReCaptcha();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [isInternalLoading, setInternalLoading] = useState(false);
 
@@ -98,10 +97,10 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
       });
     }
     let currentToken = null;
-    if (captchaRef.current) {
+    if (executeRecaptcha) {
       try {
         setInternalLoading(true);
-        const token = await executeCaptcha();
+        const token = await executeRecaptcha();
         if (token) {
           currentToken = token;
           formData.set("g-recaptcha-response", token);
