@@ -42,6 +42,8 @@ export const action: ActionFunction = async ({ request }) => {
   return toolAction(request);
 };
 
+export const shouldRevalidate = () => false;
+
 export default function IndexPage() {
   const { t } = useTranslation("common");
   const data = useActionData<typeof action>();

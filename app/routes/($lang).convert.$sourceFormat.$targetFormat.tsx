@@ -23,6 +23,8 @@ import { getCSRFToken } from "~/utils/csrf.server";
 export { meta };
 export const handle = { i18n: "common" };
 
+export const shouldRevalidate = () => false;
+
 export async function loader({ request, params }: LoaderFunctionArgs) {
   const { sourceFormat, targetFormat } = params;
   const data = await getMetaIntl(params, request);

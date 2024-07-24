@@ -1,12 +1,18 @@
-Genera un artículo de ranking basado en el siguiente enunciado:
+// PROMPT 1
 
-"Los mejores [tema] para [objetivo] en [año]"
+Dame 10 Ideas para un articulo de blog
+Considera que el sitio web se trata de conversion de imagenes en diferentes formatos:
+- El tema tiene que tener cierta relacion, puede ser no tan especifico
+
+// PROMPT 2
+
+Genera un artículo de TOPICO SELECCIONADO
 
 Para este artículo:
 
 1. Crea un título atractivo y relevante.
 2. Genera un resumen conciso del artículo en 2-3 frases.
-3. Define 10 elementos para el ranking.
+3. Define 2 elementos para el ranking.
 4. Para cada elemento del ranking, proporciona:
    - Un título breve y descriptivo
    - 4-5 párrafos de contenido, incluyendo una descripción, pros, contras y casos de uso
@@ -102,3 +108,11 @@ export const BLOG_IMAGES = [
 ];
 
 Asegúrate de que el contenido sea informativo, actualizado y relevante para el tema y objetivo especificados en el enunciado. Selecciona imágenes apropiadas de la lista BLOG_IMAGES para cada elemento del ranking y para la imagen principal del artículo.
+
+Luego buscar en Escritorio Carpeta TEMPLATO-V1 y reemplazar el contenido de paste.ts con la data de Claude 
+// Abrir la console y buscar TEMPLATO-V1
+- Ejecutar ts-node createTemplate.ts
+- Ir a claude otra vez
+- Cambiar a version 3 de claude (Haiku)
+- Pedir 1 por 1 que traduzca (en, es, pt, id, it, nl, de, ru, fr)
+- reemplazar el contenido de las carpetas dentro de locales con el resultante de claude.

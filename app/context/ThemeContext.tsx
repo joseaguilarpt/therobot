@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react";
+import React, { createContext, useContext, useState, useCallback, useMemo } from "react";
 
 type Theme = "light-mode" | "dark-mode";
 
@@ -18,7 +18,7 @@ const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [theme, setTheme] = useState<Theme>("light-mode");
+  const [theme] = useState<Theme>("light-mode");
   const [snackbar, setSnackbar] = useState({ message: "", type: "" });
 
   const showSnackbar = useCallback((message: string, type: string) => {

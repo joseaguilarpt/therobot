@@ -35,7 +35,6 @@ export default function CompanyServicesSection({ list = POPULAR_CONVERSIONS }: {
       <GridContainer className="services-container u-mt4">
         {data.map((item, index) => (
           <GridItem
-            animation="slide-in-bottom"
             xs={12}
             md={4}
             key={index}

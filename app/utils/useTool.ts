@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import {
   useActionData,
   useLoaderData,
+  useLocation,
   useParams,
   useSubmit,
 } from "@remix-run/react";
@@ -40,6 +41,7 @@ export function useFileConversion(selectedFormat: string) {
     state: "idle",
     type: "",
   });
+  const location = useLocation();
   const loaderData = useLoaderData<LoaderData>();
   const data = useActionData<ActionData>();
 
@@ -133,6 +135,7 @@ export function useFileConversion(selectedFormat: string) {
       }
       submit(form, {
         method: "post",
+        action: location.pathname,
         encType: "multipart/form-data",
         preventScrollReset: true,
       });
@@ -198,7 +201,6 @@ export function useFileConversion(selectedFormat: string) {
       formData.append("csrf", loaderData.csrfToken);
     }
 
-    console.log(executeRecaptcha, "reca");
     if (executeRecaptcha) {
       try {
         const token = await executeRecaptcha();
@@ -207,6 +209,7 @@ export function useFileConversion(selectedFormat: string) {
           formData.set("g-recaptcha-response", token);
           submit(formData, {
             method: "post",
+            action: location.pathname,
             encType: "multipart/form-data",
             preventScrollReset: true,
           });

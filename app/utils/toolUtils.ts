@@ -152,8 +152,6 @@ export async function toolAction(request: Request) {
         return handleFileConversion(files, format, formData);
     }
   } catch (error) {
-    console.log(error, 'error')
-    console.log(error, 'error')
     if (error instanceof Response) {
       return error;
     }

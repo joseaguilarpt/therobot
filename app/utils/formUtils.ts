@@ -1,5 +1,5 @@
 // src/hooks/useFileConversion.ts
-import { useLoaderData, useSubmit } from "@remix-run/react";
+import { useLoaderData, useLocation, useSubmit } from "@remix-run/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
@@ -18,6 +18,7 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
   const { t, i18n } = useTranslation("common");
   const { showSnackbar } = useTheme();
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const location = useLocation();
   const loaderData = useLoaderData();
   const [isPending, setIsPending] = React.useState(false);
   const [contactFormData, setContactForm] = React.useState<ContactFormData>({
@@ -99,6 +100,7 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
 
     submit(formData, {
       method: "post",
+      action: location.pathname,
       encType: "multipart/form-data",
     });
     setTimeout(() => {

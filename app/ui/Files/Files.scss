@@ -23,10 +23,14 @@
     background: var(--accent-color);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
-    padding: 15px;
+    padding: 5px 15px;
 
     .text--large {
       color: white;
+    }
+
+    @include media-query(large) {
+      padding: 15px;
     }
   }
   .table-item {
@@ -34,6 +38,13 @@
 
     @include media-query(medium) {
       display: block;
+    }
+  }
+  .table-item__mobile {
+    display: flex;
+
+    @include media-query(medium) {
+      display: none;
     }
   }
   .files-table__item {
