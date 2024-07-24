@@ -28,14 +28,14 @@ import { honeypot } from "~/honeypot.server";
 import i18n from "./i18n";
 import { useAnalytics } from "./utils/analytics";
 import { useNonce } from "./context/NonceContext";
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import styleFonts from "~/styles/fonts.scss?url";
-
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: styles },
   { rel: "stylesheet", href: styleFonts },
+  { rel: "preload", href: "/fonts/MaterialIcons-Regular.ttf", as: "font", type: "font/ttf", crossOrigin: "anonymous" },
   { rel: "icon", href: "/favicon.ico" },
   { rel: "manifest", href: "/manifest.json" },
 ];
@@ -117,8 +117,7 @@ export function ErrorBoundary() {
 }
 
 const App = React.memo(function App() {
-  const { locale, honeypotInputProps, ENV } =
-    useLoaderData<typeof loader>();
+  const { locale, honeypotInputProps, ENV } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
   const nonce = useNonce();
   useChangeLanguage(locale);
@@ -156,7 +155,7 @@ const App = React.memo(function App() {
             />
           </head>
           <body>
-            <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ''}>
+            <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
               <SkipToContent />
               <Outlet context={{ locale, honeypotInputProps }} />
               <Snackbar />
