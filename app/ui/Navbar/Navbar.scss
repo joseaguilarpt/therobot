@@ -193,8 +193,8 @@ $font-color: #333;
   @include media-query(large) {
     display: none;
   }
-  svg {
-    fill: var(--default-color);
+  .icon--medium {
+    color: var(--default-color);
   }
 }
 .navbar__select--mobile {

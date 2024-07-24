@@ -11,7 +11,6 @@ import classNames from "classnames";
 import Icon from "../Icon/Icon";
 import Button from "../Button/Button";
 import Sidebar from "../Sidebar/Sidebar";
-import { IconType } from "react-icons";
 import svg from "../../img/thebot.svg";
 import svgDarkMode from "../../img/thebot-white.svg";
 import { useTheme } from "~/context/ThemeContext";
@@ -24,7 +23,7 @@ const Navbar = ({
   items,
 }: {
   autoScrolled?: boolean;
-  items?: { value: string; href?: string; icon: IconType }[];
+  items?: { value: string; href?: string; icon: string }[];
 }) => {
   const { theme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,22 +36,22 @@ const Navbar = ({
     {
       value: "nav.home",
       href: `/${i18n?.language ?? ""}`,
-      icon: "FaHome",
+      icon: "home",
     },
     {
       value: "nav.contact",
       href: `/${i18n?.language ?? ""}/contact`,
-      icon: "FaPhone",
+      icon: "phone",
     },
     {
       value: "nav.about",
       href: `/${i18n?.language ?? ""}/about`,
-      icon: "FaHome",
+      icon: "home",
     },
     {
       value: "Blog",
       href: `/${i18n?.language ?? ""}/blog`,
-      icon: "FaMap",
+      icon: "map",
     },
   ];
 
@@ -190,7 +189,7 @@ const Navbar = ({
                 ariaLabel={t("openMobileMenu")}
               >
                 <Icon
-                  icon="FaBars"
+                  icon="menu"
                   size="medium"
                   color={keepScrolled ? "primary" : "white"}
                   aria-hidden="true"

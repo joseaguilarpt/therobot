@@ -92,7 +92,7 @@ export default function Terms() {
             <Breadcrumb
               paths={[
                 {
-                  icon: "FaHome",
+                  icon: "home",
                   label: t("home"),
                   href: `/${i18n.language ?? ""}`,
                 },
@@ -164,8 +164,8 @@ export default function Terms() {
         {...FOOTER}
         backgroundImageUrl={""}
         socialNetworks={[
-          { label: "Facebook", icon: "FaFacebook", href: "#" },
-          { label: "Twitter", icon: "FaTwitter", href: "#" },
+          { label: "Facebook", icon: "facebook", href: "#" },
+          { label: "Twitter", icon: "X", href: "#" },
         ]}
       />
     </>

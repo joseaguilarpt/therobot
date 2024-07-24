@@ -15,9 +15,8 @@ export default defineConfig({
           // Other routes with optional language parameter
           route(":lang?/about", "routes/($lang).about.tsx");
           route(":lang?/accessibility", "routes/($lang).accessibility.tsx");
-          route(":lang?/blog", "routes/($lang).blog._index.tsx", () => {
-            route(":blogId", "routes/($lang).blog.$blogId.tsx");
-          });
+          route(":lang?/blog", "routes/($lang).blog._index.tsx");
+          route(":lang?/blog/:blogId", "routes/($lang).blog.$blogId.tsx");
           route(":lang?/ccpa-compliance", "routes/($lang).ccpa-compliance.tsx");
           route(":lang?/contact", "routes/($lang).contact.tsx");
           route(

@@ -1,11 +1,13 @@
 // ShareSocial.tsx
 import React from "react";
 import "./ShareBlog.css";
-import Icon from "~/ui/Icon/Icon";
 import Tooltip from "~/ui/ToolTip/ToolTip";
 import Button from "~/ui/Button/Button";
 import { useTranslation } from "react-i18next";
-
+import facebook from '../../../img/facebook.svg'
+import whatsapp from '../../../img/whatsapp.svg'
+import linkedin from '../../../img/linkedin.svg'
+import twitter from '../../../img/twitter.svg'
 interface ShareSocialProps {
   url: string;
   title: string;
@@ -58,22 +60,22 @@ const ShareSocial: React.FC<ShareSocialProps> = ({
           onClick={shareFacebook}
           className="share-button share-facebook"
         >
-          <Icon icon="FaFacebook" />
+          <img src={facebook} alt={t('blog.shareFacebook')} />
         </Button>
       </Tooltip>
       <Tooltip content={t('blog.shareInTwitter')}>
         <Button ariaLabel={t('blog.shareInTwitter')} onClick={shareTwitter} className="share-button share-twitter">
-          <Icon icon="FaTwitter" />
+        <img src={twitter} alt={t('blog.shareInTwitter')} />
         </Button>
       </Tooltip>
       <Tooltip content={t('blog.shareInLinkedin')}>
         <Button ariaLabel={t('blog.shareInLinkedin')} onClick={shareLinkedIn} className="share-button share-linkedin">
-          <Icon icon="FaLinkedin" />
+        <img src={linkedin} alt={t('blog.shareInLinkedin')} />
         </Button>
       </Tooltip>
       <Tooltip content={t('blog.shareInWhatsapp')}>
         <Button ariaLabel={t('blog.shareInWhatsapp')} onClick={shareWhatsApp} className="share-button share-whatsapp">
-          <Icon icon="FaWhatsapp" />
+        <img src={whatsapp} alt={t('blog.shareInWhatsapp')} />
         </Button>
       </Tooltip>
     </div>

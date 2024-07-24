@@ -93,7 +93,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
               filterData={false}
               isLabelVisible={false}
               showSuggestionsOnFocus
-              rightIcon="FaChevronDown"
+              rightIcon="keyboard_arrow_down"
               label={t("tool.convertFrom")}
               onChange={handleFromChangeCallback}
               value={{ label: selectedFormatFrom }}
@@ -101,14 +101,14 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
             />
           </GridItem>
           <GridItem className="tool-heading__to">
-            <Icon icon="FaArrowRight" size="medium" color="white" />
+            <Icon icon="arrow_forward" size="medium" color="white" />
           </GridItem>
           <GridItem className="u-pl1 u-pr1">
             <AutoSuggest
               className="home-suggest"
               id="to"
               label={t("tool.convertTo")}
-              rightIcon="FaChevronDown"
+              rightIcon="keyboard_arrow_down"
               onChange={handleToChangeCallback}
               isLabelVisible={false}
               filterData={false}

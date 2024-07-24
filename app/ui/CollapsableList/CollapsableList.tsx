@@ -38,9 +38,9 @@ const CollapsableList: React.FC<CollapsableListProps> = ({
             <Text size="large">{item.title}</Text>
             <span className="toggle-icon">
               {expandedIndex === index ? (
-                <Icon size="small" icon="FaChevronDown" />
+                <Icon icon="keyboard_arrow_down" />
               ) : (
-                <Icon size="small" icon="FaChevronRight" />
+                <Icon icon="keyboard_arrow_right" />
               )}
             </span>
           </button>

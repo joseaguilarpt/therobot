@@ -1,14 +1,13 @@
 import React, { ReactNode, useEffect, useRef, useCallback } from "react";
-import { IconType } from "react-icons";
-import * as Icons from "react-icons/fa";
 import classNames from "classnames";
 import "./Sidebar.scss";
 import { useTranslation } from "react-i18next";
+import Icon from "../Icon/Icon";
 
 export interface SidebarItem {
   value: string;
   href: string;
-  icon: keyof typeof Icons;
+  icon: string;
 }
 
 export interface SidebarProps {
@@ -134,14 +133,13 @@ const Sidebar: React.FC<SidebarProps> = ({
           <nav>
             <ul className="sidebar__list">
               {items.map((item, index) => {
-                const IconComponent: IconType = Icons[item.icon];
                 return (
                   <li key={index} className="sidebar__item">
                     <a href={item.href} className="sidebar__link">
-                      {IconComponent && (
-                        <IconComponent
-                          className="sidebar__icon"
-                          aria-hidden="true"
+                      {item.icon && (
+                        <Icon
+                          color="primary"
+                          icon={item.icon}
                         />
                       )}
                       <span className="sidebar__label">{t(item.value)}</span>
