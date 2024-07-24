@@ -4,5 +4,11 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { netlifyPlugin } from "@netlify/remix-adapter/plugin";
 
 export default defineConfig({
-  plugins: [remix(), netlifyPlugin(), tsconfigPaths()],
+  plugins: [remix({
+    routes: async (defineRoutes) => {
+      return defineRoutes((route) => {
+        route("/sitemap.xml", "routes/sitemap[.]xml.tsx");
+      });
+    },
+  }), netlifyPlugin(), tsconfigPaths()],
 });
