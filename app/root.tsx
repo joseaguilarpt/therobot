@@ -35,7 +35,13 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: styles },
   { rel: "stylesheet", href: styleFonts },
-  { rel: "preload", href: "/fonts/MaterialIcons-Regular.ttf", as: "font", type: "font/ttf", crossOrigin: "anonymous" },
+  {
+    rel: "preload",
+    href: "/fonts/MaterialIcons-Regular.ttf",
+    as: "font",
+    type: "font/ttf",
+    crossOrigin: "anonymous",
+  },
   { rel: "icon", href: "/favicon.ico" },
   { rel: "manifest", href: "/manifest.json" },
 ];

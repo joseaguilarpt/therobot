@@ -32,28 +32,39 @@ export const meta: MetaFunction<typeof loader> = ({
   if (!data) {
     return [];
   }
-  const { description, title } = data as MetaProps;
-  const url = `https://easyconvertimage.com/privacy-policy`;
+  const { description, title, keywords, ogDescription, ogTitle } = data as MetaProps;
+  const lang = params.lang || 'en';
+  const path = 'privacy-policy';
+  const fullUrl = `https://easyconvertimage.com${lang === 'en' ? '' : '/' + lang}/${path}`;
+
+  const alternateLanguages = {
+    "x-default": `https://easyconvertimage.com/${path}`,
+    en: `https://easyconvertimage.com/${path}`,
+    es: `https://easyconvertimage.com/es/${path}`,
+    fr: `https://easyconvertimage.com/fr/${path}`,
+    de: `https://easyconvertimage.com/de/${path}`,
+    pt: `https://easyconvertimage.com/pt/${path}`,
+    nl: `https://easyconvertimage.com/nl/${path}`,
+    it: `https://easyconvertimage.com/it/${path}`,
+    id: `https://easyconvertimage.com/id/${path}`,
+    ru: `https://easyconvertimage.com/ru/${path}`,
+  };
 
   return createMeta({
-    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage: "https://easyconvertimage.com/img/advanced-technology.jpg",
     twitterCard: "summary_large_image",
-    canonicalUrl: url,
-    alternateLanguages: {
-      es: `https://easyconvertimage.com/es/privacy-policy`,
-      fr: `https://easyconvertimage.com/fr/privacy-policy`,
-      de: `https://easyconvertimage.com/de/privacy-policy`,
-      pt: `https://easyconvertimage.com/pt/privacy-policy`,
-      nl: `https://easyconvertimage.com/nl/privacy-policy`,
-      it: `https://easyconvertimage.com/it/privacy-policy`,
-      id: `https://easyconvertimage.com/id/privacy-policy`,
-      ru: `https://easyconvertimage.com/ru/privacy-policy`,
-    },
+    canonicalUrl: fullUrl,
+    alternateLanguages,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       name: title,
-      url: url,
+      url: fullUrl,
       description: description,
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Any",

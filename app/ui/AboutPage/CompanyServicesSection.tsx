@@ -8,7 +8,7 @@ import Card from "~/ui/Card/Card";
 import { ConversionService, POPULAR_CONVERSIONS } from "~/utils/conversions";
 import { useTranslation } from "react-i18next";
 
-export default function CompanyServicesSection({ list = POPULAR_CONVERSIONS }: { list: ConversionService[] }) {
+export default function CompanyServicesSection({ list = POPULAR_CONVERSIONS }: { list?: ConversionService[] }) {
 
   const data = list.filter((item) => item?.from?.toLowerCase() !== 'pdf');
   const { t } = useTranslation();

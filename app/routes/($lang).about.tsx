@@ -8,7 +8,7 @@ import Hero from "~/ui/Hero/Hero";
 import Heading from "~/ui/Heading/Heading";
 import GridContainer from "~/ui/Grid/Grid";
 import Breadcrumb from "~/ui/Breadcrumbs/Breadcrumbs";
-import { createMeta } from "~/utils/meta";
+import { MetaProps, createMeta } from "~/utils/meta";
 import { LoaderFunctionArgs, MetaFunction, json } from "@remix-run/node";
 import i18next from "~/i18next.server";
 import { useTranslation } from "react-i18next";
@@ -29,29 +29,39 @@ export const meta: MetaFunction<typeof loader> = ({ data, params, location, matc
     return [];
   }
   
-  const { description, title } = data;
-  const url = `https://easyconvertimage.com/about`;
+  const { description, title, keywords, ogDescription, ogTitle } = data as MetaProps;
+  const lang = params.lang || 'en';
+  const path = 'about';
+  const fullUrl = `https://easyconvertimage.com${lang === 'en' ? '' : '/' + lang}/${path}`;
+
+  const alternateLanguages = {
+    "x-default": `https://easyconvertimage.com/${path}`,
+    en: `https://easyconvertimage.com/${path}`,
+    es: `https://easyconvertimage.com/es/${path}`,
+    fr: `https://easyconvertimage.com/fr/${path}`,
+    de: `https://easyconvertimage.com/de/${path}`,
+    pt: `https://easyconvertimage.com/pt/${path}`,
+    nl: `https://easyconvertimage.com/nl/${path}`,
+    it: `https://easyconvertimage.com/it/${path}`,
+    id: `https://easyconvertimage.com/id/${path}`,
+    ru: `https://easyconvertimage.com/ru/${path}`,
+  };
 
   return createMeta({
-    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage: "https://easyconvertimage.com/img/advanced-technology.jpg",
     twitterCard: "summary_large_image",
-    canonicalUrl: url,
-    alternateLanguages: {
-      en: `https://easyconvertimage.com/en/about`,
-      es: `https://easyconvertimage.com/es/about`,
-      fr: `https://easyconvertimage.com/fr/about`,
-      de: `https://easyconvertimage.com/de/about`,
-      pt: `https://easyconvertimage.com/pt/about`,
-      nl: `https://easyconvertimage.com/nl/about`,
-      it: `https://easyconvertimage.com/it/about`,
-      id: `https://easyconvertimage.com/id/about`,
-      ru: `https://easyconvertimage.com/ru/about`,
-    },
+    canonicalUrl: fullUrl,
+    alternateLanguages,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       name: title,
-      url: url,
+      url: fullUrl,
       description: description,
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Any",

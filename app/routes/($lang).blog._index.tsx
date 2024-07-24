@@ -42,31 +42,41 @@ export const meta: MetaFunction<typeof loader> = ({
   if (!data) {
     return [];
   }
-  const { description, title, keywords } = data as MetaProps;
-  const url = `https://easyconvertimage.com/blog`;
+  const { description, title, keywords, ogDescription, ogTitle } = data as MetaProps;
+  const lang = params.lang || 'en';
+  const path = 'blog';
+  const fullUrl = `https://easyconvertimage.com${lang === 'en' ? '' : '/' + lang}/${path}`;
+
+  const alternateLanguages = {
+    "x-default": `https://easyconvertimage.com/${path}`,
+    en: `https://easyconvertimage.com/${path}`,
+    es: `https://easyconvertimage.com/es/${path}`,
+    fr: `https://easyconvertimage.com/fr/${path}`,
+    de: `https://easyconvertimage.com/de/${path}`,
+    pt: `https://easyconvertimage.com/pt/${path}`,
+    nl: `https://easyconvertimage.com/nl/${path}`,
+    it: `https://easyconvertimage.com/it/${path}`,
+    id: `https://easyconvertimage.com/id/${path}`,
+    ru: `https://easyconvertimage.com/ru/${path}`,
+  };
 
   return createMeta({
-    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage: "https://easyconvertimage.com/img/advanced-technology.jpg",
     twitterCard: "summary_large_image",
-    canonicalUrl: url,
-    alternateLanguages: {
-      en: `https://easyconvertimage.com/en/blog`,
-      es: `https://easyconvertimage.com/es/blog`,
-      fr: `https://easyconvertimage.com/fr/blog`,
-      de: `https://easyconvertimage.com/de/blog`,
-      pt: `https://easyconvertimage.com/pt/blog`,
-      nl: `https://easyconvertimage.com/nl/blog`,
-      it: `https://easyconvertimage.com/it/blog`,
-      id: `https://easyconvertimage.com/id/blog`,
-      ru: `https://easyconvertimage.com/ru/blog`,
-    },
+    canonicalUrl: fullUrl,
+    alternateLanguages,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: title,
       description: description,
-      image: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
-      url: url,
+      image: "https://easyconvertimage.com/img/advanced-technology.jpg",
+      url: fullUrl,
       author: {
         "@type": "Organization",
         name: "Easy Convert Image",
