@@ -34,6 +34,9 @@
   max-width: 500px;
   border-radius: var(--border-radius);
 }
+.modal-content .icon--medium {
+  color: var(--default-color);
+}
 .modal-content.full {
   max-width: 100%;
   min-height: 80%;
