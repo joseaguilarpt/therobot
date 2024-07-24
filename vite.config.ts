@@ -10,7 +10,7 @@ export default defineConfig({
       routes: async (defineRoutes) => {
         return defineRoutes((route) => {
           // Root route with optional language parameter
-          route("/:lang?", "routes/($lang)._index.tsx", { index: true });
+          route(":lang?", "routes/($lang)._index.tsx", { index: true });
 
           // Other routes with optional language parameter
           route(":lang?/about", "routes/($lang).about.tsx");
