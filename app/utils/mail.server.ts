@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { json } from "@remix-run/node";
 import { createCustomerEmail } from "~/templates/customerEmail";
 import i18n from "~/i18n";
+import { dirname } from "path";
 
 interface SendEmail {
   file: File;
@@ -50,16 +51,17 @@ export async function sendImagesEmail({ file, email, language }: SendEmail) {
     const fileBuffer = Buffer.from(await file.arrayBuffer());
     const fileName = file.name;
 
+
     // Ensure the uploads directory exists
     ensureUploadsDirectoryExists();
 
     // Save the file to a temporary location
-    const filePath = path.join(__dirname, "../uploads", fileName);
+    const filePath = path.join(dirName, "../uploads", fileName);
     fs.writeFileSync(filePath, Buffer.from(fileBuffer));
 
     const isValidLanguage = i18n.supportedLngs.includes(language);
     const emailTemplatePath = path.join(
-      __dirname,
+      dirName,
       isValidLanguage
         ? `../templates/send-email-${language}.html`
         : `../templates/send-email.html`
@@ -99,6 +101,7 @@ export async function sendImagesEmail({ file, email, language }: SendEmail) {
       convertedFiles: [],
     };
   } catch (e) {
+    console.log(e, "error");
     throw new Error("Error sending email");
   }
 }
@@ -144,7 +147,7 @@ export async function sendCustomerEmail({
   try {
     // Set up nodemailer transporter
     const transporter = nodemailer.createTransport({
-      service: "gmail", // or another email service
+      service: "gmail",
       auth: {
         user: process.env.NODEMAILER_ACCOUNT,
         pass: process.env.NODEMAILER_SECRET,
@@ -152,7 +155,6 @@ export async function sendCustomerEmail({
     });
 
     const data = `<div><p>Name: ${name}</p><p>Phone Number: ${phone}</p><p>Email: ${email}</p><p>Comments: ${comments}</p></div>`;
-
     // Send email with attachment
     await transporter.sendMail({
       from: process.env.NODEMAILER_ACCOUNT,
