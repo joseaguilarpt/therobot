@@ -35,7 +35,7 @@ export default defineConfig({
           // API routes (no language parameter)
           route("manifest.json", "routes/manifest[.]json.ts");
           route("robots.txt", "routes/robots[.]txt.tsx");
-          route("/sitemap.xml", "routes/sitemap[.]xml.tsx");
+          route("sitemap.xml", "routes/sitemap[.]xml.tsx");
         });
       },
     }),
