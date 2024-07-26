@@ -1,10 +1,11 @@
 // _variables.scss
 
 // Fonts
-$default-font: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto,
+$default-font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-$heading-font: "Questrial", sans-serif;
+$heading-font: "Inter", sans-serif;
+$text-font: "Questrial", sans-serif;
 $nav-font: "Poppins", sans-serif;
 
 // Font Sizes
@@ -17,7 +18,7 @@ $background-color-light: rgba(249,250,251,.94);
 $input-background-color-light: #FFFFFF; // Changed for better contrast
 $font-color-light: rgba(18,29,43,.8);
 $default-color-light: #323232;
-$heading-color-light: #424242;
+$heading-color-light: #000000;
 $accent-color-light: #2d7d4c; // Adjusted for better contrast
 $accent-color-light-darken: #{darken(#2e7d32, 15%)};
 $button-color-light: rgba(249,250,251,.94);

@@ -1,4 +1,4 @@
-import './Tool.scss';
+import "./Tool.scss";
 
 import { ConversionForm } from "../ConversionForm/ConversionForm";
 import DragAndDrop from "../DragDrop/DragDrop";
@@ -8,13 +8,15 @@ import { useParams } from "@remix-run/react";
 import { useFileConversion } from "~/utils/useTool";
 import GridContainer from "../Grid/Grid";
 import GridItem from "../Grid/GridItem";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import Heading from "../Heading/Heading";
+import Text from "../Text/Text";
 
 export default function Tool() {
   const { sourceFormat, targetFormat, lang } = useParams();
 
   let language = lang;
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   if (!language) {
     language = i18n.language;
   }
@@ -56,29 +58,55 @@ export default function Tool() {
 
   return (
     <>
-      <GridContainer className="u-mt3" justifyContent="space-between">
-        <GridItem xs={12} lg={5}>
-          <div className="tool-conversion-form">
-            <ConversionForm
-              options={allOptions}
-              selectedFormat={selectedFormat}
-              selectedFormatFrom={selectedFormatFrom}
-              pdfType={pdfType}
-              setPdfType={setPdfType}
-              handleFromChange={handleFromChange}
-              handleToChange={handleToChange}
-            />
-          </div>
+      <GridContainer alignItems="center" justifyContent="space-between">
+        <GridItem xs={12} lg={6}>
+          <Heading
+            id="conversion-heading"
+            //align="center"
+            color="accent"
+            appearance={3}
+            level={1}
+          >
+            {t("hero.header1")}
+          </Heading>
+          <Heading
+            //align="center"
+            underline
+            appearance={3}
+            level={1}
+          >
+            {t("hero.header2")}
+          </Heading>
+          <Text className="u-pt5 hero-description">
+            {t("hero.description")} {t("hero.freeToUse")}
+          </Text>
         </GridItem>
-        <GridItem xs={12} lg={7}>
-          <DragAndDrop
-            onFilesDrop={handleAllAction}
-            isLoading={isPending}
-            setIsPending={setIsPending}
-            acceptedTypes={[`image/${selectedFormatFrom?.toLowerCase()}`]}
-            maxSize={10_000_000} // 10 MB
-            files={convertedFiles}
-          />
+        <GridItem xs={12} lg={5}>
+          <GridContainer className="u-mt4" justifyContent="space-between">
+            <GridItem xs={12}>
+              <div className="tool-conversion-form">
+                <ConversionForm
+                  options={allOptions}
+                  selectedFormat={selectedFormat}
+                  selectedFormatFrom={selectedFormatFrom}
+                  pdfType={pdfType}
+                  setPdfType={setPdfType}
+                  handleFromChange={handleFromChange}
+                  handleToChange={handleToChange}
+                />
+              </div>
+            </GridItem>
+            <GridItem xs={12}>
+              <DragAndDrop
+                onFilesDrop={handleAllAction}
+                isLoading={isPending}
+                setIsPending={setIsPending}
+                acceptedTypes={[`image/${selectedFormatFrom?.toLowerCase()}`]}
+                maxSize={10_000_000} // 10 MB
+                files={convertedFiles}
+              />
+            </GridItem>
+          </GridContainer>
         </GridItem>
       </GridContainer>
       <Files

@@ -24,18 +24,105 @@ export default function BlogPage({
   blogId: string;
 }) {
   const { t, i18n } = useTranslation(blogId);
-  const { t: tOther } = useTranslation("common");
-
+  const { t: tCommon } = useTranslation("common");
   const location = useLocation();
-  const currentURL = `https://easyconvertimage.com${location.pathname}${location.search}${location.hash}`;
 
+  const checkIfExist = (key: string) => t(key, "") !== "";
+
+  const filterExistingItems = (items: any[]) => items.filter(checkIfExist);
+
+  const currentURL = `https://easyconvertimage.com${location.pathname}${location.search}${location.hash}`;
   const articleKeys = data.article;
 
-  const tableOfContentData = Object.values(articleKeys.content).map((item) => ({
-    level: 1,
-    id: t(item.id),
-    text: t(item.title),
-  }));
+  const tableOfContentData = Object.values(articleKeys.content)
+    .filter((item) => checkIfExist(item.title))
+    .map((item) => ({
+      level: 1,
+      id: t(item.id),
+      text: t(item.title),
+    }));
+
+  const renderContentSection = (item: any) => (
+    <div key={t(item.id)}>
+      <Heading
+        underline
+        id={t(item.id)}
+        className="u-pb1 u-pt2"
+        level={2}
+        appearance={5}
+      >
+        {t(item.title)}
+      </Heading>
+      {item.img && checkIfExist(item.img) && (
+        <div className="u-pt2 u-pb2 content-image">
+          <img
+            src={t(item.img)}
+            alt={t(item.altText)}
+            width="100%"
+            height="auto"
+            loading="lazy"
+          />
+        </div>
+      )}
+      {filterExistingItems(item.paragraphs || []).map(
+        (p: string, index: number) => (
+          <Text key={index} className="u-pt2">
+            {t(p)}
+          </Text>
+        )
+      )}
+      {renderProsCons(item)}
+      {item.quote && (
+        <GridContainer
+          justifyContent="center"
+          className="u-pt5 u-pb5 blog-quote"
+        >
+          <GridItem xs={11} md={8}>
+            <Heading italic align="center" level={3} appearance={6}>
+              {t(item.quote)}
+            </Heading>
+          </GridItem>
+        </GridContainer>
+      )}
+    </div>
+  );
+
+  const renderProsCons = (item: any) => (
+    <>
+      {item.pros && filterExistingItems(item.pros).length > 0 && (
+        <div className="u-pt2">
+          <Text size="large" textWeight="bold">
+            {t(articleKeys.prosTitle)}
+          </Text>
+          <ul>
+            {filterExistingItems(item.pros).map(
+              (pro: string, index: number) => (
+                <li key={`${pro}-${index}`}>
+                  <Text>{t(pro)}</Text>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+      )}
+      {item.cons && filterExistingItems(item.cons).length > 0 && (
+        <div className="u-pt2">
+          <Text size="large" textWeight="bold">
+            {t(articleKeys.consTitle)}
+          </Text>
+          <ul>
+            {filterExistingItems(item.cons).map(
+              (con: string, index: number) => (
+                <li key={`${con}-${index}`}>
+                  <Text>{t(con)}</Text>
+                </li>
+              )
+            )}
+          </ul>
+        </div>
+      )}
+    </>
+  );
 
   return (
     <div
@@ -54,11 +141,11 @@ export default function BlogPage({
             paths={[
               {
                 icon: "home",
-                label: tOther("nav.home"),
+                label: tCommon("nav.home"),
                 href: `/${i18n.language ?? ""}`,
               },
               {
-                label: tOther("nav.blog"),
+                label: tCommon("nav.blog"),
                 href: `/${i18n.language ?? ""}/blog`,
               },
               { label: t(articleKeys.heading) },
@@ -95,13 +182,13 @@ export default function BlogPage({
         />
         <div className="u-pt3">
           <Text textWeight="bold" size="small" className="u-pr2 u-pb1">
-            {tOther("blog.share")}:
+            {tCommon("blog.share")}:
           </Text>
           <ShareSocial
             url={currentURL}
-            title={tOther("blog.share")}
+            title={tCommon("blog.share")}
             description={t(articleKeys.resume)}
-            aria-label={tOther("blog.shareAriaLabel")}
+            aria-label={tCommon("blog.shareAriaLabel")}
           />
         </div>
       </ContentContainer>
@@ -122,79 +209,13 @@ export default function BlogPage({
           </nav>
         </ContentContainer>
         <ContentContainer className="blog-content">
-          {articleKeys.content.map((item) => (
-            <div key={t(item.id)}>
-              <Heading
-                underline
-                id={t(item.id)}
-                className="u-pb1 u-pt2"
-                level={2}
-                appearance={5}
-              >
-                {t(item.title)}
-              </Heading>
-              {item.img && (
-                <div className="u-pt2 u-pb2 content-image">
-                  <img
-                    src={t(item.img)}
-                    alt={t(item.altText)}
-                    width="100%"
-                    height="auto"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              {item.paragraphs?.map((p: string, index: number) => (
-                <Text key={index} className="u-pt2">
-                  {t(p)}
-                </Text>
-              ))}
-              {item.pros && (
-                <div className="u-pt2">
-                  <Text size="large" textWeight="bold">
-                    {t(articleKeys.prosTitle)}
-                  </Text>
-                  <ul>
-                    {item.pros?.map((pro: string, index: number) => (
-                      <li key={`${pro}-${index}`}>
-                        <Text>{t(pro)}</Text>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {item.cons && (
-                <div className="u-pt2">
-                  <Text size="large" textWeight="bold">
-                    {t(articleKeys.consTitle)}
-                  </Text>
-                  <ul>
-                    {item.cons?.map((con: string, index: number) => (
-                      <li key={`${con}-${index}`}>
-                        <Text>{t(con)}</Text>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {item.quote && (
-                <GridContainer
-                  justifyContent="center"
-                  className="u-pt5 u-pb5 blog-quote"
-                >
-                  <GridItem xs={11} md={8}>
-                    <Heading italic align="center" level={3} appearance={6}>
-                      {t(item.quote)}
-                    </Heading>
-                  </GridItem>
-                </GridContainer>
-              )}
-            </div>
-          ))}
+          {articleKeys.content
+            .filter((item) => checkIfExist(item.title))
+            .map(renderContentSection)}
           <div className="u-pt5 u-pb4">
             <Text className="u-pb2" textWeight="bold" transform="uppercase">
-              {tOther("hero.header1")} {tOther("hero.header2")}{" "}
-              {tOther("hero.freeToUse")}{" "}
+              {tCommon("hero.header1")} {tCommon("hero.header2")}{" "}
+              {tCommon("hero.freeToUse")}{" "}
             </Text>
             <Button
               target="_blank"
@@ -202,7 +223,7 @@ export default function BlogPage({
               href="https://easyconvertimage.com"
               rel="noopener noreferrer"
             >
-              {tOther("goNow")} Easy Convert Image
+              {tCommon("goNow")} Easy Convert Image
             </Button>
           </div>
         </ContentContainer>
@@ -222,7 +243,7 @@ export default function BlogPage({
             level={2}
             appearance={5}
           >
-            {tOther("blog.relatedPosts")}
+            {tCommon("blog.relatedPosts")}
           </Heading>
           <div className="u-pt2">
             <GridContainer>
@@ -237,10 +258,10 @@ export default function BlogPage({
                 >
                   <Card
                     imagePosition="top"
-                    title={tOther(item.heading)}
+                    title={tCommon(item.heading)}
                     imageUrl={item.img}
                     id={index}
-                    url={`/blog/${tOther(item.url)}`}
+                    url={`/blog/${tCommon(item.url)}`}
                     icon={undefined}
                   />
                 </GridItem>

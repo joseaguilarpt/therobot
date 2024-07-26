@@ -6,11 +6,12 @@ import BlogPage from "~/ui/Blog/BlogPage";
 import Footer from "~/ui/Footer/Footer";
 import Navbar from "~/ui/Navbar/Navbar";
 import { MetaProps, createMeta } from "~/utils/meta";
-import articles, { ArticleType } from "../constants/blog/data";
+import { ArticleType } from "../constants/blog/data";
 import { useLoaderData, useParams } from "@remix-run/react";
+import { data as template } from "~/constants/blog/template";
 
 export async function loader({ request, params }: LoaderFunctionArgs) {
-  const blogData: ArticleType = params.blogId ? articles[params.blogId] : {};
+  const blogData: ArticleType = template;
   const t = await i18next.getFixedT(request, params.blogId);
   const ogTitle = `${t(blogData?.article?.heading)} | Easy Convert Image`;
   const keywords = (blogData?.article?.content ?? [])

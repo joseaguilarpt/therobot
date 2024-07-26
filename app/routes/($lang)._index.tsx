@@ -20,6 +20,8 @@ import Tool from "~/ui/Tool/Tool";
 import ContactForm from "~/ui/ContactForm/ContactForm";
 import { meta } from "~/utils/meta";
 import { getCSRFToken } from "~/utils/csrf.server";
+import GridContainer from "~/ui/Grid/Grid";
+import GridItem from "~/ui/Grid/GridItem";
 
 export { meta };
 export const handle = { i18n: "common" };
@@ -58,26 +60,6 @@ export default function IndexPage() {
               className="tool-heading"
               aria-labelledby="conversion-heading"
             >
-              <Heading
-                id="conversion-heading"
-                align="center"
-                color="accent"
-                appearance={4}
-                level={1}
-              >
-                {t("hero.header1")}
-              </Heading>
-              <Heading
-                align="center"
-                underline
-                appearance={4}
-                level={2}
-              >
-                {t("hero.header2")}
-              </Heading>
-              <Text className="u-pt5 hero-description" align="center">
-                {t("hero.description")} {t("hero.freeToUse")}
-              </Text>
               <Tool />
             </section>
           </ContentContainer>

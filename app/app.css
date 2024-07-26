@@ -405,8 +405,9 @@ body {
 
 :root {
   /* Fonts */
-  --default-font: Nunito, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-  --heading-font: Questrial, sans-serif;
+  --default-font: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --heading-font: Inter, sans-serif;
+  --text-font: Questrial, sans-serif;
   --nav-font: Poppins, sans-serif;
   --border-radius: 1em;
   --input-border-radius: 1em;
@@ -420,7 +421,7 @@ body {
   --background-color: rgba(249, 250, 251, 0.94);
   --font-color: rgba(18, 29, 43, 0.8);
   --default-color: #323232;
-  --heading-color: #424242;
+  --heading-color: #000000;
   --accent-color: #2d7d4c;
   --accent-color-darken: #19451c;
   --contrast-color: #ffffff;

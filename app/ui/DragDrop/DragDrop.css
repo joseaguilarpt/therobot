@@ -388,16 +388,12 @@
   min-height: 100vh !important;
 }
 
-@media (min-width: 992px) {
-  .drag-drop-form {
-    padding-left: 15px;
-  }
-}
-
 .drag-and-drop-container {
   width: 100%;
   min-height: 150px;
   border-radius: var(--border-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -434,7 +430,8 @@
   margin-bottom: 20px;
 }
 .drag-and-drop-container .upload-button-container {
-  margin: 0px 10px;
+  margin: 15px;
+  margin-bottom: 25px;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -450,11 +447,11 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
-  width: 100%;
+  width: 90%;
   cursor: pointer;
   background-color: #000000;
   color: #ffffff !important;
-  padding: 10px 20px;
+  padding: 3px 15px;
   transition: all 0.3s ease;
 }
 .drag-and-drop-container .upload-button:disabled {
@@ -485,7 +482,7 @@
   .drag-and-drop-container .upload-button {
     min-width: 172px;
     max-width: 350px;
-    padding: 15px 30px;
+    padding: 5px 30px;
   }
   .drag-and-drop-container .upload-button svg {
     font-size: 2.5rem;

@@ -104,7 +104,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {sections.map((section, index) => (
               <div className="footer__section" key={index}>
-                <Heading appearance={6} level={2} color="accent">
+                <Heading type="questrial" appearance={6} level={2} color="accent">
                   {t(section.title)}
                 </Heading>
                 <ul className="footer__links">

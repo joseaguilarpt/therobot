@@ -153,6 +153,7 @@ const Card: React.FC<CardProps> = ({
               align="left"
               underline={underline}
               level={3}
+              type='questrial'
               appearance={6}
               id={titleId}
             >

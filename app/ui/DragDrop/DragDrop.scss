@@ -1,16 +1,12 @@
 @import "../../styles/theme.scss";
 
-.drag-drop-form {
-
-  @include media-query(large) {
-    padding-left: 15px;
-  }
-}
 
 .drag-and-drop-container {
   width: 100%;
   min-height: 150px;
   border-radius: var(--border-radius);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +47,8 @@
   }
 
   .upload-button-container {
-    margin: 0px 10px;
+    margin: 15px;
+    margin-bottom: 25px;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -69,11 +66,11 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 600;
-    width: 100%;
+    width: 90%;
     cursor: pointer;
     background-color: #000000;
     color: #ffffff !important;
-    padding: 10px 20px;
+    padding: 3px 15px;
     transition: all 0.3s ease;
 
     &:disabled {
@@ -110,7 +107,7 @@
     @include media-query(medium) {
       min-width: 172px;
       max-width: 350px;
-      padding: 15px 30px;
+      padding: 5px 30px;
       
       svg {
         font-size: 2.5rem;

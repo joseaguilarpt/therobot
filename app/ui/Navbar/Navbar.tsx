@@ -34,21 +34,6 @@ const Navbar = ({
 
   const defaultOptions = [
     {
-      value: "nav.home",
-      href: `/${i18n?.language ?? ""}`,
-      icon: "home",
-    },
-    {
-      value: "nav.contact",
-      href: `/${i18n?.language ?? ""}/contact`,
-      icon: "phone",
-    },
-    {
-      value: "nav.about",
-      href: `/${i18n?.language ?? ""}/about`,
-      icon: "home",
-    },
-    {
       value: "Blog",
       href: `/${i18n?.language ?? ""}/blog`,
       icon: "map",
@@ -143,7 +128,7 @@ const Navbar = ({
                   className="image-bot"
                   alt={t("logoAlt")}
                 />
-                <Heading level={1} appearance={6} color={"white"}>
+                <Heading level={1} type="questrial" appearance={6} color={"white"}>
                   {t("pageName")}
                 </Heading>
               </GridContainer>
