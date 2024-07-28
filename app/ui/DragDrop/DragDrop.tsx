@@ -317,7 +317,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
                   </GridItem>
                   <GridItem>
                     <DropboxUpload
-                      isDisabled
+                      isDisabled={isLoading ?? false}
                       addFiles={addFiles}
                       sourceFormat={params?.sourceFormat ?? "jpeg"}
                     />
