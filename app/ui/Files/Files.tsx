@@ -1,67 +1,73 @@
 import "./Files.scss";
-import React from "react";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useParams } from "@remix-run/react";
+import JSZip from "jszip";
+import pkg from 'file-saver';
 import Button from "../Button/Button";
 import Text from "../Text/Text";
 import GridContainer from "../Grid/Grid";
 import GridItem from "../Grid/GridItem";
 import Heading from "../Heading/Heading";
 import StatusBar from "../StatusBar/StatusBar";
-import JSZip from "jszip";
-import pkg from "file-saver";
-import { useTheme } from "~/context/ThemeContext";
 import ShareButton from "../ShareButton/ShareButton";
-import { useTranslation } from "react-i18next";
 import Modal from "../Modal/Modal";
 import Icon from "../Icon/Icon";
+import { FormatImage } from "../FormatImage/FormatImage";
+
+import { useTheme } from "~/context/ThemeContext";
 import { trackClick } from "~/utils/analytics";
-import { useParams } from "@remix-run/react";
 
 const { saveAs } = pkg;
+
+interface File {
+  fileName: string;
+  fileSize: number;
+  fileUrl: Blob;
+  status: string;
+}
 
 interface FilesProps {
   files?: File[];
   onDownload: (file: File) => void;
-  onRemove: (v: number) => void;
+  onRemove: (index: number) => void;
   onRemoveAll: () => void;
   onEmailShare: (zip: File | Blob | undefined, email: string) => void;
 }
 
+interface PreviewModalState {
+  file: string;
+  fileName: string;
+}
+
 const Files: React.FC<FilesProps> = ({
-  files,
+  files = [],
   onDownload,
   onRemove,
   onRemoveAll,
   onEmailShare,
 }) => {
-  const [previewModal, setPreviewModal] = React.useState<null | {
-    file: string;
-    fileName: string;
-  }>(null);
+  const [previewModal, setPreviewModal] = useState<PreviewModalState | null>(null);
   const { t, i18n } = useTranslation();
   const params = useParams();
   const { showSnackbar } = useTheme();
-  if (files?.length === 0) {
+
+  if (files.length === 0) {
     return null;
   }
 
-  const generateZip = async () => {
-    if (!files) return;
-
+  const generateZip = async (): Promise<Blob | undefined> => {
     const zip = new JSZip();
 
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
+    for (const file of files) {
       const fileContent = await file.fileUrl.arrayBuffer();
       zip.file(file.fileName, fileContent);
     }
 
-    const zipContent = await zip.generateAsync({ type: "blob" });
-    return zipContent;
+    return await zip.generateAsync({ type: "blob" });
   };
 
   const onDownloadAll = async () => {
-    if (!files) return;
-
     trackClick(
       "Files Interaction",
       `Button - format: ${params?.sourceFormat}`,
@@ -69,24 +75,25 @@ const Files: React.FC<FilesProps> = ({
     );
 
     const zipContent = await generateZip();
-    saveAs(zipContent, "files.zip");
-    showSnackbar(t("fileActions.zipSuccess"), "success");
+    if (zipContent) {
+      saveAs(zipContent, "files.zip");
+      showSnackbar(t("fileActions.zipSuccess"), "success");
+    }
   };
 
-  function bytesToKilobytes(bytes: number): number {
-    const kilobytes = bytes / 1024;
-    return Math.round(kilobytes * 10) / 10;
-  }
+  const bytesToKilobytes = (bytes: number): number => {
+    return Math.round((bytes / 1024) * 10) / 10;
+  };
 
-  const handleEmailShare = async (v: string) => {
+  const handleEmailShare = async (email: string) => {
     const zipContent = await generateZip();
-    if (onEmailShare) {
+    if (zipContent) {
       trackClick(
         "Files Interaction",
         `Button - format: ${params?.sourceFormat}`,
         `Email Share - language: ${i18n.language} - format: ${params?.targetFormat}`
       );
-      onEmailShare(zipContent, v);
+      onEmailShare(zipContent, email);
     }
   };
 
@@ -110,11 +117,11 @@ const Files: React.FC<FilesProps> = ({
     setPreviewModal(null);
   };
 
-  const notDownloadable = files?.filter((item) => item.status === "processing");
-
+  const notDownloadable = files.filter((item) => item.status === "processing");
   const hidePreview = ["pdf", "tiff"].includes(
     params?.targetFormat?.toLowerCase() ?? ""
   );
+
   return (
     <div
       className="files-container"
@@ -129,21 +136,20 @@ const Files: React.FC<FilesProps> = ({
       >
         <GridItem>
           <Heading level={2} appearance={5}>
-            {files?.length} {t("fileActions.files")} {t("fileActions.selected")}
-            :
+            {files.length} {t("fileActions.files")} {t("fileActions.selected")}:
           </Heading>
         </GridItem>
         <GridItem>
           <GridContainer>
-            {notDownloadable?.length === 0 && (
+            {notDownloadable.length === 0 && (
               <GridItem>
                 <Button
                   onClick={onDownloadAll}
                   ariaLabel={`${t("fileActions.downloadAll")} ${
-                    files?.length
+                    files.length
                   } ${t("fileActions.files")}`}
                 >
-                  {t("fileActions.downloadAll")} ({files?.length})
+                  {t("fileActions.downloadAll")} ({files.length})
                 </Button>
               </GridItem>
             )}
@@ -158,12 +164,12 @@ const Files: React.FC<FilesProps> = ({
                 {t("fileActions.removeAll")}
               </Button>
             </GridItem>
-            {notDownloadable?.length === 0 && (
+            {notDownloadable.length === 0 && (
               <GridItem className="u-pl1">
                 <ShareButton
                   onEmailShare={handleEmailShare}
                   onDownload={onDownloadAll}
-                  files={files ?? []}
+                  files={files}
                 />
               </GridItem>
             )}
@@ -187,14 +193,14 @@ const Files: React.FC<FilesProps> = ({
               {t("fileActions.fileSize")}
             </Text>
           </GridItem>
-          <GridItem className="table-item" xs={1} md={3} role="columnheader">
+          <GridItem className="table-item" xs={1} md={2} role="columnheader">
             <GridContainer justifyContent="center">
               <Text size="large" textWeight="bold">
                 {t("fileActions.fileStatus")}
               </Text>
             </GridContainer>
           </GridItem>
-          <GridItem xs={3} md={3} role="columnheader">
+          <GridItem xs={3} md={4} role="columnheader">
             <GridContainer justifyContent="center">
               <Text size="large" textWeight="bold">
                 {t("fileActions.fileActions")}
@@ -202,7 +208,7 @@ const Files: React.FC<FilesProps> = ({
             </GridContainer>
           </GridItem>
         </GridContainer>
-        {files?.map((file, index) => (
+        {files.map((file, index) => (
           <GridContainer
             className="files-table__item"
             alignItems="center"
@@ -210,7 +216,13 @@ const Files: React.FC<FilesProps> = ({
             role="row"
           >
             <GridItem xs={9} md={5} role="cell">
-              <Text>{file.fileName}</Text>
+              <GridContainer alignItems="center">
+                <div className="table-item u-pr1">
+                <FormatImage format={file.fileUrl?.type ?? params?.sourceFormat ?? 'jpeg'} />
+
+                </div>
+                <Text>{file.fileName}</Text>
+              </GridContainer>
               <GridContainer className="table-item__mobile" alignItems="center">
                 <Text size="small">{bytesToKilobytes(file.fileSize)} kb</Text>
                 <StatusBar status={file.status} />
@@ -219,12 +231,12 @@ const Files: React.FC<FilesProps> = ({
             <GridItem className="table-item" xs={4} md={1} role="cell">
               <Text>{bytesToKilobytes(file.fileSize)} kb</Text>
             </GridItem>
-            <GridItem className="table-item" xs={1} md={3} role="cell">
+            <GridItem className="table-item" xs={1} md={2} role="cell">
               <GridContainer justifyContent="center">
                 <StatusBar status={file.status} />
               </GridContainer>
             </GridItem>
-            <GridItem xs={3} md={3} role="cell">
+            <GridItem xs={3} md={4} role="cell">
               <GridContainer justifyContent="flex-end">
                 {file.fileUrl && (
                   <>
@@ -237,7 +249,7 @@ const Files: React.FC<FilesProps> = ({
                           onClick={() =>
                             handlePreview({
                               name: file.fileName,
-                              file: file?.fileUrl,
+                              file: file.fileUrl,
                             })
                           }
                         >
@@ -249,7 +261,7 @@ const Files: React.FC<FilesProps> = ({
                       <Button
                         onClick={() => onDownload(file)}
                         ariaLabel={`${t("fileActions.download")} ${
-                          file?.fileName
+                          file.fileName
                         }`}
                       >
                         {t("fileActions.download")}

@@ -27,7 +27,7 @@
     }
 
     &.button--disabled {
-      background-color: var(--accent-color-light);
+      background-color: grey;
       cursor: not-allowed;
     }
   }
@@ -43,7 +43,7 @@
     }
 
     &.button--disabled {
-      background-color: var(--default-color-light);
+     // background-color: grey;
       cursor: not-allowed;
     }
   }

@@ -1,13 +1,4 @@
-/* app/components/Icon.scss */
 @import '../../styles/theme';
-
-@font-face {
-  font-family: 'Material Icons';
-  src: url('/fonts/MaterialIcons-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 .material-icons {
   font-family: 'Material Icons';
@@ -44,8 +35,8 @@
 
   &--xxsmall { font-size: 0.5rem; }
   &--xsmall { font-size: 0.75rem; }
-  &--small { font-size: 1rem; }
+  &--small { font-size: 1.5rem; }
   &--medium { font-size: 2rem; }
   &--large { font-size: 3rem; }
-  &--xlarge { font-size: 4rem; }
+  &--xlarge { font-size: 8rem; }
 }

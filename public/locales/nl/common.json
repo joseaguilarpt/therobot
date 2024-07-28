@@ -224,7 +224,7 @@
     "copyright": "Easy Convert Image 2024 - Alle rechten voorbehouden.",
     "pageName": "EasyConvertImage",
     "phone": "+354 910 232 032",
-    "email": "info@easyimageconvert.com",
+    "email": "admin@easyconvertimage.com",
     "usefulInfo": {
       "heading": "Handige Links",
       "option1": {
@@ -406,121 +406,141 @@
     "title": "Toegankelijkheidsverklaring",
     "breadcrumb": "Toegankelijkheidsverklaring",
     "statementTitle": "Toegankelijkheidsverklaring voor Easy Convert Image",
-    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
-    "commitment": "Easy Convert Image is toegewijd aan digitale toegankelijkheid voor mensen met beperkingen. We blijven de gebruikerservaring voor iedereen verbeteren en passen de relevante toegankelijkheidsnormen toe.",
+    "lastUpdated": "Laatst bijgewerkt: 27 juli 2024",
+    "commitment": "Easy Convert Image is toegewijd aan het waarborgen van digitale toegankelijkheid voor mensen met een handicap. We blijven de gebruikerservaring voor iedereen verbeteren en passen de relevante toegankelijkheidsstandaarden toe.",
     "conformanceStatus": {
       "title": "Conformiteitsstatus",
-      "description": "De Web Content Accessibility Guidelines (WCAG) definiëren de vereisten voor ontwerpers en ontwikkelaars om de toegankelijkheid voor mensen met beperkingen te verbeteren. Het definieert drie conformiteitsniveaus: Niveau A, Niveau AA en Niveau AAA. Easy Convert Image voldoet gedeeltelijk aan WCAG 2.1 Niveau AA."
+      "description": "De Web Content Accessibility Guidelines (WCAG) definiëren eisen voor ontwerpers en ontwikkelaars om de toegankelijkheid te verbeteren voor mensen met een handicap. Het definieert drie conformiteitsniveaus: Niveau A, Niveau AA en Niveau AAA. Easy Convert Image voldoet gedeeltelijk aan de vereisten van WCAG 2.1 niveau AA."
     },
     "feedback": {
       "title": "Feedback",
-      "description": "We ontvangen graag uw feedback over de toegankelijkheid van Easy Convert Image. Laat ons weten als u op toegankelijkheidsproblemen stuit: E-mail: accessibility@easyconvertimage.com"
+      "description": "We stellen uw feedback over de toegankelijkheid van Easy Convert Image op prijs. Laat ons weten als u toegankelijkheidsbarrières tegenkomt: E-mail: admin@easyconvertimage.com"
     },
     "technicalSpecs": {
-      "title": "Technische Specificaties",
-      "description": "De toegankelijkheid van Easy Convert Image is gebaseerd op de volgende technologieën om te werken met de specifieke combinatie van webbrowser en ondersteunende technologieën of plug-ins die op uw computer zijn geïnstalleerd: - HTML - WAI-ARIA - CSS - JavaScript"
+      "title": "Technische specificaties",
+      "description": "De toegankelijkheid van Easy Convert Image is afhankelijk van de volgende technologieën om te werken met de specifieke combinatie van webbrowser en eventuele hulptechnologieën of plugins die op uw computer zijn geïnstalleerd: - HTML - WAI-ARIA - CSS - JavaScript"
     },
     "assessmentApproach": {
-      "title": "Evaluatie-aanpak",
-      "description": "Easy Convert Image heeft de toegankelijkheid van onze website beoordeeld via de volgende benaderingen: - Zelfevaluatie - Externe evaluatie"
+      "title": "Beoordeningsaanpak",
+      "description": "Easy Convert Image heeft de toegankelijkheid van onze website beoordeeld aan de hand van de volgende benaderingen: - Zelfevaluatie - Externe evaluatie"
     },
     "meta": {
       "title": "Toegankelijkheidsverklaring | Easy Convert Image",
-      "description": "Lees over de toewijding van Easy Convert Image aan toegankelijkheid en onze inspanningen om ervoor te zorgen dat onze gratis afbeeldingsconversietools bruikbaar zijn voor iedereen.",
-      "keywords": "toegankelijkheid, webtoegankelijkheid, inclusief ontwerp, afbeeldingstools",
+      "description": "Lees over de toewijding van Easy Convert Image aan toegankelijkheid en onze inspanningen om ervoor te zorgen dat onze gratis beeldconversietools voor iedereen bruikbaar zijn.",
+      "keywords": "toegankelijkheid, webtoegang, inclusief ontwerp, beeldtools",
       "ogTitle": "Toegankelijkheidsverklaring van Easy Convert Image",
-      "ogDescription": "Onze toewijding om afbeeldingsconversie en -optimalisatie toegankelijk te maken voor alle gebruikers, ongeacht hun mogelijkheden.",
+      "ogDescription": "Onze toewijding om beeldconversie en -optimalisatie toegankelijk te maken voor alle gebruikers, ongeacht hun capaciteiten.",
       "structuredData": {
         "name": "Toegankelijkheidsverklaring",
-        "description": "Toewijding van Easy Convert Image aan webtoegankelijkheid en inclusief ontwerp.",
+        "description": "De toewijding van Easy Convert Image aan webtoegang en inclusief ontwerp.",
         "publisherName": "Easy Convert Image"
       }
     }
   },
+
   "privacyPolicy": {
     "content": {
       "heading": "Privacybeleid",
       "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
-      "introduction": "Easy Convert Image ('wij' of 'ons') is toegewijd aan uw privacy. Dit beleid legt uit hoe we uw persoonlijke gegevens verzamelen, gebruiken en beschermen wanneer u onze afbeeldingsconversiediensten gebruikt.",
+      "introduction": "Easy Convert Image ('wij' of 'ons') is toegewijd aan de bescherming van uw privacy. Dit beleid legt uit hoe we omgaan met uw informatie wanneer u onze beeldconversiediensten gebruikt.",
       "sections": [
         {
-          "title": "Door Ons Verzamelde Informatie",
-          "content": "We verzamelen de volgende soorten informatie: - Persoonlijke gegevens: e-mailadres (als u ervoor kiest een account aan te maken) - Gebruiksgegevens: soort geconverteerde afbeeldingen, gebruiksfrequentie - Technische gegevens: IP-adres, browsertype, apparaatinformatie"
+          "title": "Informatie die we niet verzamelen",
+          "content": "We verzamelen of slaan geen persoonlijke informatie op. Onze service is ontworpen om zich te richten op privacy, en we bewaren geen gegevens over u of uw afbeeldingen nadat het conversieproces is voltooid."
         },
         {
-          "title": "Hoe We Uw Informatie Gebruiken",
-          "content": "We gebruiken uw gegevens om: - Onze afbeeldingsconversiediensten te leveren en te verbeteren - Gebruikspatronen te analyseren om onze algoritmen te optimaliseren - Servicegerelateerde meldingen te verzenden (bijv. onderhoudswaarschuwingen) - Uw onderzoeks- en ondersteuningsverzoeken te beantwoorden"
+          "title": "Hoe we uw afbeeldingen verwerken",
+          "content": "Wanneer u onze service gebruikt om een afbeelding te converteren: - De afbeelding wordt tijdelijk verwerkt op onze servers - Er wordt geen kopie van de afbeelding of de metadata ervan bewaard na de conversie - De geconverteerde afbeelding is onmiddellijk beschikbaar voor download en wordt vervolgens verwijderd van onze systemen"
         },
         {
           "title": "Gegevensbeveiliging",
-          "content": "We implementeren standaard industriebeveiligingsmaatregelen om uw gegevens te beschermen, waaronder versleuteling en toegangscontroles."
+          "content": "Hoewel we uw gegevens niet opslaan, implementeren we branchenorm beveiligingsmaatregelen om uw afbeeldingen tijdens het conversieproces te beschermen, waaronder veilige gegevensoverdrachtsprotocollen."
         },
         {
-          "title": "Uw Rechten",
-          "content": "U hebt het recht om: - Toegang tot en een kopie van uw gegevens te krijgen - Onjuiste gegevens te corrigeren - Verwijdering van uw gegevens aan te vragen - Bezwaar te maken tegen ons gebruik van uw gegevens"
+          "title": "Uw rechten",
+          "content": "Omdat we geen persoonlijke gegevens verzamelen of opslaan, zijn er geen persoonlijke gegevens waar u toegang toe, kunt wijzigen of verwijderen. U hebt echter altijd het recht om te kiezen of u onze service wel of niet wilt gebruiken."
+        },
+        {
+          "title": "Privacy van kinderen",
+          "content": "Onze service is niet gericht op kinderen onder de 13 jaar. Omdat we geen persoonlijke informatie verzamelen, hebben we geen manier om de leeftijd van onze gebruikers te weten. Als u denkt dat een kind onze service op ongepaste wijze gebruikt, neem dan contact met ons op."
+        },
+        {
+          "title": "Wijzigingen in dit beleid",
+          "content": "We kunnen dit beleid van tijd tot tijd bijwerken. We zullen gebruikers op de hoogte stellen van eventuele belangrijke wijzigingen door een kennisgeving op onze website te plaatsen."
+        },
+        {
+          "title": "EU-gegevensbeschermingsrechten",
+          "content": "Als u een inwoner bent van de Europese Unie, heeft u bepaalde gegevensbeschermingsrechten onder de AVG. Aangezien we echter geen persoonlijke gegevens verzamelen of opslaan, zijn veel van deze rechten mogelijk niet van toepassing op onze service. Als u vragen of zorgen hebt, neem dan contact met ons op via admin@easyconvertimage.com."
         }
       ]
     },
     "dataSharing": {
       "title": "Gegevensuitwisseling en -openbaarmaking",
-      "content": "We verkopen uw persoonlijke gegevens niet. We kunnen gegevens delen met: - Dienstverleners (bijv. cloudopslagproviders) - Wetshandhavingsinstanties wanneer de wet dat vereist"
+      "content": "We delen of onthullen geen gebruikersgegevens, omdat we niets verzamelen of opslaan. Uw afbeeldingen worden in real-time verwerkt en onmiddellijk na de conversie verwijderd."
     },
     "contactUs": {
-      "title": "Neem Contact Met Ons Op",
-      "content": "Voor vragen over dit Privacybeleid kunt u ons bereiken op privacy@easyconvertimage.com"
+      "title": "Neem contact met ons op",
+      "content": "Voor vragen over dit Privacybeleid kunt u contact met ons opnemen via admin@easyconvertimage.com"
     },
     "meta": {
       "title": "Privacybeleid | Easy Convert Image",
-      "description": "Ontdek hoe Easy Convert Image uw persoonlijke gegevens verzamelt, gebruikt en beschermt wanneer u onze gratis online afbeeldingsconversietools gebruikt.",
-      "keywords": "privacybeleid, gegevensbescherming, afbeeldingsconversieprivacy, gebruikersgegevens",
+      "description": "Leer hoe Easy Convert Image uw privacy beschermt wanneer u onze gratis online beeldconversietools gebruikt.",
+      "keywords": "privacybeleid, gegevensbescherming, privacy beeldconversie, gebruikersgegevens",
       "ogTitle": "Privacybeleid van Easy Convert Image",
-      "ogDescription": "Begrijp hoe we uw gegevens beheren wanneer u onze afbeeldingsconversiediensten gebruikt. Uw privacy is voor ons belangrijk."
+      "ogDescription": "Begrijp hoe we omgaan met uw gegevens wanneer u onze beeldconversiedienst gebruikt. Uw privacy is onze prioriteit."
     }
   },
   "termsOfService": {
+    "heading": "Gebruiksvoorwaarden",
+    "subheading": "Gebruiksvoorwaarden voor Easy Convert Image",
+    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
     "sections": {
       "acceptance": {
-        "title": "Aanvaarding van de Voorwaarden",
-        "content": "Door Easy Convert Image te gebruiken, accepteert u deze Gebruiksvoorwaarden. Als u het niet eens bent met een deel van de voorwaarden, kunt u onze dienst niet gebruiken."
+        "title": "Acceptatie van de voorwaarden",
+        "content": "Door Easy Convert Image te gebruiken, gaat u akkoord met deze Gebruiksvoorwaarden. Als u het niet eens bent met een deel van de voorwaarden, mag u onze service niet gebruiken."
       },
       "use": {
-        "title": "Gebruik van de Dienst",
-        "content": "Onze dienst stelt u in staat afbeeldingen tussen verschillende formaten te converteren. U stemt ermee in om deze dienst uitsluitend voor wettelijke doeleinden en in overeenstemming met deze Voorwaarden te gebruiken."
+        "title": "Gebruik van de service",
+        "content": "Onze service stelt u in staat afbeeldingen tussen verschillende indelingen te converteren. U stemt ermee in deze service alleen voor wettelijke doeleinden en in overeenstemming met deze Voorwaarden te gebruiken. We slaan uw afbeeldingen of persoonlijke gegevens niet op."
       },
       "userContent": {
         "title": "Gebruikersinhoud",
-        "content": "U behoudt alle rechten op de afbeeldingen die u uploadt. We claimen geen eigendom van uw inhoud. U verleent ons echter een licentie om uw afbeeldingen alleen op te slaan en te verwerken met het doel om onze conversiedienst te leveren."
+        "content": "U behoudt alle rechten op de afbeeldingen die u uploadt. We maken geen aanspraak op het eigendom van uw inhoud en bewaren geen kopieën van uw afbeeldingen na de conversie."
       },
       "prohibited": {
-        "title": "Verboden Activiteiten",
-        "content": "U mag niet: - Onze dienst gebruiken om illegale of auteursrechtelijk beschermde inhoud te converteren of op te slaan - Proberen ongeautoriseerde toegang tot onze systemen te krijgen - Onze dienst op een manier gebruiken die onze infrastructuur kan beschadigen of overbelasten"
+        "title": "Verboden activiteiten",
+        "content": "U mag niet: - Onze service gebruiken om illegale of auteursrechtelijk beschermde content te converteren - Proberen ongeautoriseerde toegang tot onze systemen te krijgen - Onze service gebruiken op een manier die onze infrastructuur kan beschadigen of overbelasten - Proberen de broncode van onze service te achterhalen of te ontleden"
       },
       "termination": {
         "title": "Beëindiging",
-        "content": "Wij kunnen uw toegang tot onze dienst onmiddellijk, zonder voorafgaande kennisgeving en zonder aansprakelijkheid, om welke reden dan ook beëindigen of opschorten, waaronder, zonder beperking, indien u de Voorwaarden schendt."
+        "content": "We behouden ons het recht voor om de toegang tot onze service onmiddellijk, zonder voorafgaande kennisgeving of aansprakelijkheid, om welke reden dan ook te beëindigen of op te schorten, inclusief, maar niet beperkt tot, als u de Voorwaarden schendt."
       },
       "liability": {
-        "title": "Beperking van Aansprakelijkheid",
-        "content": "Easy Convert Image is niet aansprakelijk voor indirecte, incidentele, speciale, gevolgschade of boetes, waaronder, zonder beperking, winstderving, gegevensverlies, verlies van gebruik, goodwill of ander immaterieel verlies."
+        "title": "Beperking van aansprakelijkheid",
+        "content": "Easy Convert Image is niet aansprakelijk voor enige indirecte, incidentele, speciale, gevolgschade of boetes, inclusief, maar niet beperkt tot, verlies van winst, gegevens, gebruik, goodwill of andere immateriële verliezen. We zijn niet verantwoordelijk voor gegevensverlies tijdens het conversieproces."
       },
       "changes": {
-        "title": "Wijzigingen in de Voorwaarden",
-        "content": "We behouden ons het recht voor om deze Voorwaarden op elk moment te wijzigen of te vervangen. Als een herziening belangrijk is, proberen we u minstens 30 dagen van tevoren op de hoogte te brengen voordat nieuwe voorwaarden van kracht worden."
+        "title": "Wijzigingen in de voorwaarden",
+        "content": "We behouden ons het recht voor om deze Voorwaarden op elk moment te wijzigen of te vervangen. Als een herziening materieel is, zullen we ten minste 30 dagen voorafgaand aan de inwerkingtreding van nieuwe voorwaarden trachten een kennisgeving te geven."
+      },
+      "governingLaw": {
+        "title": "Toepasselijk recht",
+        "content": "Deze Voorwaarden worden beheerst en geïnterpreteerd volgens de wetten van Braga, Portugal, zonder rekening te houden met zijn conflictenrechtelijke bepalingen."
       },
       "contact": {
-        "title": "Neem Contact Met Ons Op",
-        "content": "Als u vragen hebt over deze Voorwaarden, neem dan contact met ons op via terms@easyconvertimage.com"
+        "title": "Neem contact met ons op",
+        "content": "Als u vragen hebt over deze Voorwaarden, neem dan contact op via admin@easyconvertimage.com"
       }
     },
     "meta": {
       "title": "Gebruiksvoorwaarden | Easy Convert Image",
-      "description": "Bekijk onze gebruiksvoorwaarden om de regels en voorschriften te begrijpen die gelden voor het gebruik van de gratis afbeeldingsconversietools van Easy Convert Image.",
-      "keywords": "gebruiksvoorwaarden, gebruikersovereenkomst, afbeeldingsconversievoorwaarden, juridisch",
+      "description": "Bekijk onze gebruiksvoorwaarden om de regels en voorschriften te begrijpen die het gebruik van de gratis online beeldconversietools van Easy Convert Image regelen.",
+      "keywords": "gebruiksvoorwaarden, gebruikersovereenkomst, voorwaarden beeldconversie, juridisch",
       "ogTitle": "Gebruiksvoorwaarden van Easy Convert Image",
-      "ogDescription": "Begrijp uw rechten en verantwoordelijkheden bij het gebruiken van onze gratis afbeeldingsconversie- en optimalisatietools.",
+      "ogDescription": "Begrijp uw rechten en verantwoordelijkheden bij het gebruik van onze gratis beeld-conversie- en optimalisatietools.",
       "structuredData": {
         "name": "Gebruiksvoorwaarden",
-        "description": "Algemene voorwaarden voor gebruik van de online afbeeldingsconversiediensten van Easy Convert Image."
+        "description": "Algemene voorwaarden voor het gebruik van de online beeldconversiediensten van Easy Convert Image."
       }
     }
   },
@@ -530,120 +550,146 @@
     "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
     "sections": {
       "whatAre": {
-        "title": "Wat Zijn Cookies",
+        "title": "Wat zijn cookies?",
         "content": "Cookies zijn kleine tekstbestanden die op uw apparaat worden opgeslagen wanneer u onze website bezoekt. Ze helpen ons u een betere ervaring te bieden."
       },
-      "howWeUse": {
-        "title": "Hoe Wij Cookies Gebruiken",
-        "content": "We gebruiken de volgende soorten cookies: - Essentiële cookies: Voor het inschakelen van basisfunctionaliteit (bijv. uw afbeeldingsconversie-instellingen onthouden) - Analytische cookies: Om te begrijpen hoe bezoekers onze site gebruiken (bijv. Google Analytics) - Voorkeurscookies: Om uw voorkeuren te onthouden (bijv. donkere modus instelling)"
+      "typesOfCookies": {
+        "title": "Soorten cookies die we gebruiken",
+        "content": "We gebruiken de volgende soorten cookies op onze website:",
+        "cookieTypes": [
+          {
+            "name": "Essentiële cookies",
+            "description": "Deze zijn strikt noodzakelijk voor de goede werking van de website. Ze maken basisfuncties mogelijk zoals veiligheid, netwerkbeheer en toegankelijkheid. U kunt deze uitschakelen door uw browserinstellingen te wijzigen, maar dit kan van invloed zijn op hoe de website functioneert."
+          },
+          {
+            "name": "Functionele cookies",
+            "description": "Deze cookies stellen de website in staat verbeterde functionaliteit en personalisatie te bieden. Ze kunnen door ons of door derde partijen wier diensten we aan onze pagina's hebben toegevoegd worden ingesteld. Als u deze cookies niet toestaat, werken sommige of alle van deze diensten mogelijk niet correct."
+          },
+          {
+            "name": "Marketing-cookies",
+            "description": "Deze cookies kunnen via onze site worden ingesteld door onze advertentiepartners. Ze kunnen door die bedrijven worden gebruikt om een profiel van uw interesses op te bouwen en u relevante advertenties op andere sites te tonen. Ze slaan geen directe persoonlijke informatie op, maar zijn gebaseerd op de unieke identificatie van uw browser en internetapparaat."
+          },
+          {
+            "name": "Analysecookies",
+            "description": "Deze cookies stellen ons in staat bezoeken en verkeersbronnen te tellen, zodat we de prestaties van onze site kunnen meten en verbeteren. Ze helpen ons te weten welke pagina's het populairst en minst populair zijn, en hoe bezoekers zich op de site bewegen. Alle informatie die deze cookies verzamelen, wordt geaggregeerd en is daarom anoniem."
+          }
+        ]
       },
-      "thirdParty": {
-        "title": "Cookies Van Derden",
-        "content": "We gebruiken Google Analytics om ons te helpen begrijpen hoe onze gebruikers met de website interacteren. Deze cookies kunnen elementen volgen zoals de tijd die u op de site doorbrengt en de pagina's die u bezoekt."
+      "howWeUse": {
+        "title": "Hoe we cookies gebruiken",
+        "content": "We gebruiken vooral essentiële cookies om de kernfunctionaliteit van onze service mogelijk te maken. Deze cookies slaan geen persoonlijke informatie op en zijn strikt noodzakelijk voor de juiste werking van de website. We kunnen ook functionele, marketing- en analytische cookies gebruiken om uw ervaring te verbeteren en onze service te verbeteren, maar alleen met uw expliciete toestemming."
       },
       "managing": {
-        "title": "Cookies Beheren",
-        "content": "U kunt cookies naar wens beheren en/of verwijderen. U kunt alle cookies die al op uw computer staan verwijderen en de meeste browsers zodanig configureren dat ze voorkomen dat er nieuwe worden geplaatst."
+        "title": "Cookies beheren",
+        "content": "De meeste webbrowsers bieden enige controle over de meeste cookies via de browserinstellingen. Voor meer informatie over cookies, inclusief hoe u kunt zien welke cookies zijn ingesteld, bezoekt u www.aboutcookies.org of www.allaboutcookies.org."
+      },
+      "euCookieLaw": {
+        "title": "Naleving van de EU-cookiewet",
+        "content": "Ons gebruik van cookies voldoet aan de EU-cookiewet (e-privacyrichtlijn). We vragen expliciet toestemming voor niet-essentiële cookies in overeenstemming met de EU-wetgeving."
       },
       "contact": {
-        "title": "Neem Contact Met Ons Op",
-        "content": "Als u vragen hebt over ons gebruik van cookies, stuur ons dan een e-mail naar cookies@easyconvertimage.com"
+        "title": "Neem contact met ons op",
+        "content": "Als u vragen hebt over ons gebruik van cookies, stuur ons dan een e-mail naar admin@easyconvertimage.com"
       }
     },
     "meta": {
       "title": "Cookiebeleid | Easy Convert Image",
-      "description": "Ontdek hoe Easy Convert Image cookies gebruikt om uw ervaring met onze gratis online afbeeldingsconversie- en optimalisatietools te verbeteren.",
-      "keywords": "cookiebeleid, website-cookies, gegevensvolging, gebruikersvoorkeuren",
+      "description": "Ontdek hoe Easy Convert Image cookies gebruikt om onze gratis online beeld-conversie- en optimalisatietools te bieden.",
+      "keywords": "cookiebeleid, website-cookies, essentiële cookies, privacy van gebruikers",
       "ogTitle": "Cookiebeleid van Easy Convert Image",
-      "ogDescription": "Begrijp hoe we cookies gebruiken om uw afbeeldingsconversie-ervaring te verbeteren en uw privacy te beschermen.",
+      "ogDescription": "Begrijp hoe we cookies gebruiken om onze beeldconversiedienst aan te bieden, waarbij we uw privacy respecteren.",
       "structuredData": {
         "name": "Cookiebeleid",
-        "description": "Details over hoe Easy Convert Image cookies en soortgelijke technologieën gebruikt."
+        "description": "Informatie over hoe Easy Convert Image cookies gebruikt."
+      }
+    }
+  },
+  "gdprCompliance": {
+    "heading": "AVG-naleving",
+    "subheading": "AVG-naleving voor Easy Convert Image",
+    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
+    "sections": {
+      "dataProcessing": {
+        "title": "Gegevensverwerking",
+        "content": "Easy Convert Image verwerkt afbeeldingen voor conversie zonder persoonlijke gegevens op te slaan. We bewaren geen informatie over gebruikers of hun afbeeldingen nadat het conversieproces is voltooid."
+      },
+      "legalBasis": {
+        "title": "Juridische basis voor verwerking",
+        "content": "De juridische basis voor het verwerken van uw afbeeldingen is de uitvoering van een overeenkomst - om u de gewenste afbeeldingsconversieservice te bieden. We verwerken geen gegevens buiten wat noodzakelijk is voor dit doel."
+      },
+      "dataSubjectRights": {
+        "title": "Rechten van betrokkenen",
+        "content": "Onder de AVG hebben individuen verschillende rechten met betrekking tot hun persoonlijke gegevens. Omdat wij echter geen persoonlijke gegevens verzamelen of opslaan, zijn de meeste van deze rechten niet van toepassing op onze dienst. We kunnen geen toegang geven tot, corrigeren of verwijderen van gegevens die we niet hebben."
+      },
+      "dataRetention": {
+        "title": "Gegevensbewaring",
+        "content": "We bewaren geen persoonlijke gegevens of afbeeldingen. Alle gegevens worden in realtime verwerkt en onmiddellijk verwijderd nadat de conversie is voltooid."
+      },
+      "internationalTransfers": {
+        "title": "Internationale overdrachten",
+        "content": "Aangezien we geen persoonlijke gegevens verzamelen of opslaan, zijn er geen internationale overdrachten van persoonlijke gegevens om rekening mee te houden."
+      },
+      "security": {
+        "title": "Gegevensbeveiliging",
+        "content": "Hoewel we geen persoonlijke gegevens opslaan, implementeren we sterke beveiligingsmaatregelen om uw afbeeldingen tijdens het conversieproces te beschermen, waaronder versleuteling en beveiligde gegevensoverdrachtsprotocollen."
+      },
+      "euRepresentative": {
+        "title": "EU-vertegenwoordiger",
+        "content": "Aangezien we gevestigd zijn in Braga, Portugal, dat binnen de Europese Unie ligt, hebben we onder de AVG geen aparte EU-vertegenwoordiger nodig."
+      },
+      "contact": {
+        "title": "Neem contact met ons op",
+        "content": "Als u vragen heeft over onze AVG-naleving, stuur dan een e-mail naar admin@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "AVG-naleving | Easy Convert Image",
+      "description": "Ontdek hoe Easy Convert Image naleving van AVG-regelgeving waarborgt bij het aanbieden van gratis online afbeeldingsconversiediensten zonder persoonlijke gegevens op te slaan.",
+      "keywords": "AVG-naleving, gegevensbescherming, EU-privacywet, gebruikersrechten",
+      "ogTitle": "Easy Convert Image AVG-nalevingsinformatie",
+      "ogDescription": "Leer hoe we uw privacy beschermen in overeenstemming met de AVG door geen persoonlijke informatie te verzamelen of op te slaan.",
+      "structuredData": {
+        "name": "AVG-naleving",
+        "description": "Informatie over Easy Convert Image's naleving van AVG-regelgeving."
       }
     }
   },
   "ccpaCompliance": {
     "heading": "CCPA-naleving",
     "subheading": "CCPA-naleving voor Easy Convert Image",
-    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
+    "lastUpdated": "Laatst bijgewerkt: 27 juli 2024",
     "sections": {
       "consumerRights": {
-        "title": "Rechten van Californische Consumenten",
-        "intro": "Krachtens de California Consumer Privacy Act (CCPA) hebben Californische inwoners de volgende rechten:",
-        "list": "1. Recht om te weten welke persoonlijke informatie wordt verzameld\n2. Recht om verwijdering van persoonlijke informatie aan te vragen\n3. Recht om verkoop van persoonlijke informatie te weigeren\n4. Recht op non-discriminatie bij uitoefening van CCPA-rechten"
+        "title": "Rechten van Californische consumenten",
+        "intro": "Volgens de California Consumer Privacy Act (CCPA) hebben Californische ingezetenen bepaalde rechten met betrekking tot hun persoonlijke informatie. Aangezien Easy Convert Image echter geen persoonlijke informatie verzamelt of opslaat, zijn veel van deze rechten niet van toepassing op onze dienst.",
+        "list": "1. Recht om te weten welke persoonlijke informatie wordt verzameld: We verzamelen geen persoonlijke informatie.\n2. Recht om verwijdering van persoonlijke informatie te verzoeken: We slaan geen persoonlijke informatie op die kan worden verwijderd.\n3. Recht om niet-verkoop van persoonlijke informatie te weigeren: We verkopen geen persoonlijke informatie.\n4. Recht op non-discriminatie bij uitoefening van CCPA-rechten: We discrimineren geen enkele gebruiker, ongeacht hun keuze om hun rechten uit te oefenen."
       },
       "infoCollected": {
-        "title": "Categorieën Verzamelde Persoonlijke Informatie",
-        "content": "In de afgelopen 12 maanden heeft Easy Convert Image geen persoonlijke gegevens verzameld."
+        "title": "Categorieën van verzamelde persoonlijke informatie",
+        "content": "Easy Convert Image verzamelt of slaat geen persoonlijke informatie op. We verwerken afbeeldingen voor conversie zonder gegevens op te slaan."
       },
-      "exerciseRights": {
-        "title": "Hoe U Uw Rechten Uitoefent",
-        "content": "Om uw CCPA-rechten uit te oefenen, stuur ons een e-mail naar ccpa@easyconvertimage.com. We zullen uw verzoek binnen 45 dagen behandelen."
+      "noSale": {
+        "title": "Geen verkoop van persoonlijke informatie",
+        "content": "Easy Convert Image verkoopt geen persoonlijke informatie. We verzamelen of bewaren geen persoonlijke gegevens die kunnen worden verkocht."
       },
-      "verification": {
-        "title": "Verificatieproces",
-        "content": "Om uw privacy te beschermen, zullen we uw identiteit verifiëren voordat we op uw verzoek reageren. We kunnen u vragen om aanvullende informatie te verstrekken voor verificatiedoeleinden."
-      },
-      "authorizedAgent": {
-        "title": "Gemachtigde Agent",
-        "content": "U kunt een gemachtigde agent aanwijzen om namens u een verzoek in te dienen. De gemachtigde agent moet bewijs van uw schriftelijke machtiging verstrekken en zijn eigen identiteit bij ons verifiëren."
-      },
-      "doNotSell": {
-        "title": "Verkoop Mijn Persoonlijke Informatie Niet",
-        "content": "Easy Convert Image verkoopt geen persoonlijke informatie. Als u zich echter wilt afmelden voor eventuele toekomstige verkoop van uw informatie, kunt u ons e-mailen naar donotsell@easyconvertimage.com."
+      "contact": {
+        "title": "Neem contact met ons op",
+        "content": "Als u vragen heeft over onze CCPA-naleving, stuur dan een e-mail naar admin@easyconvertimage.com"
       }
     },
     "meta": {
       "title": "CCPA-naleving | Easy Convert Image",
-      "description": "Leer over de naleving van Easy Convert Image van de California Consumer Privacy Act (CCPA) en uw rechten met betrekking tot uw persoonlijke informatie.",
+      "description": "Ontdek hoe Easy Convert Image voldoet aan de California Consumer Privacy Act (CCPA) en hoe we uw privacy beschermen.",
       "keywords": "CCPA, California Consumer Privacy Act, privacyrechten, gegevensbescherming, Easy Convert Image",
       "ogTitle": "CCPA-naleving - Easy Convert Image",
-      "ogDescription": "Begrijp uw rechten onder de CCPA en hoe Easy Convert Image uw persoonlijke informatie beschermt volgens de Californische wetgeving.",
+      "ogDescription": "Begrijp hoe Easy Convert Image voldoet aan CCPA door geen persoonlijke informatie te verzamelen of op te slaan.",
       "structuredData": {
         "name": "CCPA-naleving",
-        "description": "Informatie over de CCPA-naleving van Easy Convert Image en consumentenrechten."
+        "description": "Informatie over de CCPA-naleving van Easy Convert Image."
       }
     }
   },
-  "gdprCompliance": {
-    "heading": "GDPR-naleving",
-    "subheading": "GDPR-naleving voor Easy Convert Image",
-    "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
-    "sections": {
-      "dataController": {
-        "title": "Verwerkingsverantwoordelijke",
-        "content": "Easy Convert Image is de verwerkingsverantwoordelijke voor de persoonsgegevens die via onze dienst worden verzameld."
-      },
-      "legalBasis": {
-        "title": "Rechtmatige Grondslag voor Verwerking",
-        "content": "We verwerken uw persoonsgegevens op basis van de volgende rechtmatige grondslagen: - Toestemming: Wanneer u instemt met ons gebruik van cookies voor niet-essentiële doeleinden. - Uitvoering van een Contract: Wanneer we u onze afbeeldingsconversiedienst leveren. - Gerechtvaardigd Belang: Om onze diensten te verbeteren en de beveiliging te waarborgen."
-      },
-      "dataSubjectRights": {
-        "title": "Rechten van Betrokkenen",
-        "content": "Krachtens de AVG heeft u de volgende rechten: - Recht op toegang - Recht op rectificatie - Recht op wissing - Recht op beperking van de verwerking - Recht op gegevensoverdraagbaarheid - Recht van bezwaar",
-        "exerciseRights": "Om deze rechten uit te oefenen, stuur ons een e-mail naar gdpr@easyconvertimage.com."
-      },
-      "dataRetention": {
-        "title": "Gegevensretentie",
-        "content": "We bewaren uw persoonsgegevens zolang als nodig is om onze diensten te verlenen en te voldoen aan wettelijke verplichtingen. Geconverteerde afbeeldingen worden automatisch na 24 uur verwijderd."
-      },
-      "internationalTransfers": {
-        "title": "Internationale Overdrachten",
-        "content": "Uw gegevens kunnen worden overgedragen naar servers buiten de EER. We zorgen ervoor dat passende waarborgen zijn getroffen, zoals Standaardcontractbepalingen."
-      }
-    },
-    "meta": {
-      "title": "GDPR-naleving | Easy Convert Image",
-      "description": "Ontdek hoe Easy Convert Image voldoet aan de GDPR-voorschriften terwijl het gratis online afbeeldingsconversie- en optimalisatiediensten biedt.",
-      "keywords": "GDPR-naleving, gegevensbescherming, EU-privacywetgeving, gebruikersrechten",
-      "ogTitle": "Informatie over GDPR-naleving van Easy Convert Image",
-      "ogDescription": "Ontdek uw gegevensrechten en hoe we uw persoonlijke informatie beschermen in overeenstemming met de GDPR.",
-      "structuredData": {
-        "name": "GDPR-naleving",
-        "description": "Informatie over de GDPR-naleving van Easy Convert Image."
-      }
-    }
-  },
+
   "articles": [
     {
       "heading": "PNG vs WebP: De definitieve gids voor het optimaliseren van uw webafbeeldingen",
@@ -679,6 +725,70 @@
     },
     "marketing": {
       "name": "Marketing"
+    }
+  },
+
+  "dropboxModal": {
+    "button": {
+      "uploadFromDropbox": "Bestanden uploaden van Dropbox"
+    },
+    "errors": {
+      "downloadError": "Fout bij het downloaden van uw bestanden"
+    },
+    "messages": {
+      "operationCancelled": "Dropbox-operatie geannuleerd"
+    },
+    "accessibility": {
+      "dropboxLogo": "Dropbox-logo"
+    }
+  },
+  "googleModal": {
+    "button": {
+      "uploadFromGoogleDrive": "Bestanden uploaden van Google Drive"
+    },
+    "modal": {
+      "title": "Afbeeldingen selecteren van Google Drive",
+      "heading": "Afbeeldingen selecteren:",
+      "filterFiles": {
+        "label": "Bestanden filteren",
+        "placeholder": "Bestanden filteren op naam..."
+      },
+      "sortBy": {
+        "label": "Sorteren op",
+        "placeholder": "Sorteren op",
+        "options": {
+          "fileName": "Bestandsnaam",
+          "fileSize": "Bestandsgrootte",
+          "creationDate": "Aanmaakdatum"
+        }
+      },
+      "tableHeader": {
+        "select": "Selecteren:",
+        "fileName": "Bestandsnaam:",
+        "fileSize": "Bestandsgrootte:",
+        "creationDate": "Aanmaakdatum:"
+      },
+      "noResults": "Geen resultaten gevonden",
+      "actions": {
+        "clearSelection": "Selectie wissen",
+        "cancel": "Annuleren",
+        "uploadFiles": "Bestanden uploaden"
+      }
+    },
+    "errors": {
+      "uploadError": "Fout bij het uploaden van uw bestanden",
+      "fetchError": "Fout bij het ophalen van Google Drive-bestanden",
+      "loginFailed": "Inloggen mislukt"
+    },
+    "accessibility": {
+      "googleDriveLogo": "Google Drive-logo",
+      "modalLabel": "Google Drive bestandsselectie",
+      "filterFilesLabel": "Bestanden filteren",
+      "sortFilesLabel": "Bestanden sorteren op",
+      "fileDetails": "Bestandsgrootte: {size} kb, Aangemaakt op: {date}",
+      "clearSelectionLabel": "Bestandsselectie wissen",
+      "cancelSelectionLabel": "Bestandsselectie annuleren",
+      "uploadFilesLabel": "Geselecteerde bestanden uploaden"
     }
   }
 }

@@ -29,7 +29,7 @@ export default function BlogPage({
 
   const checkIfExist = (key: string) => t(key, "") !== "";
 
-  const filterExistingItems = (items: any[]) => items.filter(checkIfExist);
+  const filterExistingItems = (items: string[]) => items.filter(checkIfExist);
 
   const currentURL = `https://easyconvertimage.com${location.pathname}${location.search}${location.hash}`;
   const articleKeys = data.article;
@@ -42,7 +42,7 @@ export default function BlogPage({
       text: t(item.title),
     }));
 
-  const renderContentSection = (item: any) => (
+  const renderContentSection = (item: ArticleType['article']['content'][0]) => (
     <div key={t(item.id)}>
       <Heading
         underline
@@ -87,7 +87,7 @@ export default function BlogPage({
     </div>
   );
 
-  const renderProsCons = (item: any) => (
+  const renderProsCons = (item: ArticleType['article']['content']['0']) => (
     <>
       {item.pros && filterExistingItems(item.pros).length > 0 && (
         <div className="u-pt2">

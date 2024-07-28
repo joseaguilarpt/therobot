@@ -53,6 +53,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    > div {
+      width: 90%;
+    }
   }
 
   .text.text--small {
@@ -63,10 +66,9 @@
     border: 2px solid transparent;
     text-align: center;
     border-radius: 100px;
-    font-size: 16px;
     line-height: 24px;
     font-weight: 600;
-    width: 90%;
+    width: 97%;
     cursor: pointer;
     background-color: #000000;
     color: #ffffff !important;
@@ -99,18 +101,24 @@
       justify-content: center;
     }
   
-    svg {
+    .icon--large {
       margin-right: 10px;
       font-size: 2rem;
     }
   
     @include media-query(medium) {
       min-width: 172px;
-      max-width: 350px;
       padding: 5px 30px;
       
-      svg {
-        font-size: 2.5rem;
+      .icon--large {
+        font-size: 3rem;
+      }
+    }
+
+    .text--large {
+      font-size: 1rem;
+      @include media-query(medium) {
+        font-size: 1.25rem;
       }
     }
   

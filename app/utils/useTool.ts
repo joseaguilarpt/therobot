@@ -34,7 +34,10 @@ interface LoaderData {
   csrfToken?: string;
 }
 
-export function useFileConversion(selectedFormat: string) {
+export function useFileConversion(
+  selectedFormat: string,
+  selectedFormatFrom: string
+) {
   const { t, i18n } = useTranslation("common");
   const params = useParams();
   const [status, setStatus] = useState({
@@ -98,8 +101,8 @@ export function useFileConversion(selectedFormat: string) {
       setTimeout(() => {
         // ts-expect-error
         setConvertedFiles((prevFiles) => [
-          ...prevFiles.filter((item) => item.status !== "processing"),
           ...newFiles,
+          ...prevFiles.filter((item) => item.status !== "processing"),
         ]);
         setIsPending(false);
         showSnackbar(t("ui.conversionSuccess"), "success");
@@ -123,7 +126,7 @@ export function useFileConversion(selectedFormat: string) {
         fileName: item.name,
         fileSize: item.size,
       }));
-      setConvertedFiles((prevFiles) => [...prevFiles, ...newFiles]);
+      setConvertedFiles((prevFiles) => [...newFiles, ...prevFiles]);
 
       form.append("format", selectedFormat.toLowerCase());
       files.forEach((file) => form.append("file", file));
@@ -140,7 +143,14 @@ export function useFileConversion(selectedFormat: string) {
         preventScrollReset: true,
       });
     },
-    [selectedFormat, pdfType, loaderData?.csrfToken, submit, executeRecaptcha]
+    [
+      selectedFormatFrom,
+      selectedFormat,
+      pdfType,
+      loaderData?.csrfToken,
+      submit,
+      executeRecaptcha,
+    ]
   );
 
   const handleDownload = useCallback(

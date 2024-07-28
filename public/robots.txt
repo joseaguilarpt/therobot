@@ -47,4 +47,4 @@ Crawl-delay: 10
 
 # Additional comments
 # Last updated: 22-08-2024
-# Contact: info@easyconvertimage.com
+# Contact: admin@easyconvertimage.com

@@ -119,53 +119,14 @@ export default function Terms() {
 
             <Text>{t("termsOfService.lastUpdated")}</Text>
 
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              1. {t("termsOfService.sections.acceptance.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.acceptance.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              2. {t("termsOfService.sections.use.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.use.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              3. {t("termsOfService.sections.userContent.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.userContent.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              4. {t("termsOfService.sections.prohibited.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.prohibited.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              5. {t("termsOfService.sections.termination.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.termination.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              6. {t("termsOfService.sections.liability.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.liability.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              7. {t("termsOfService.sections.changes.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.changes.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              8. {t("termsOfService.sections.contact.title")}
-            </Heading>
-
-            <Text>{t("termsOfService.sections.contact.content")}</Text>
+            {Object.entries(t("termsOfService.sections", { returnObjects: true })).map(([key, section], index) => (
+              <div key={key}>
+                <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
+                  {index + 1}. {section.title}
+                </Heading>
+                <Text>{section.content}</Text>
+              </div>
+            ))}
           </ContentContainer>
         </div>
       </main>

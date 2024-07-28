@@ -32,13 +32,13 @@ export default function ContactForm({
             {t("contact.inquiries")}
           </Heading>
 
-          <Text>{t("email")}: info@easyconvertimage.com</Text>
+          <Text>{t("email")}: admin@easyconvertimage.com</Text>
 
           <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
             {t("contact.support")}
           </Heading>
 
-          <Text>{t("email")}: support@easyconvertimage.com</Text>
+          <Text>{t("email")}: admin@easyconvertimage.com</Text>
         </div>
       </GridItem>
       <GridItem xs={12} lg={6}>

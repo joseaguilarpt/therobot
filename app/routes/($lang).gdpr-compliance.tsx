@@ -119,43 +119,17 @@ export default function GDPR() {
 
             <Text>{t("gdprCompliance.lastUpdated")}</Text>
 
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("gdprCompliance.sections.dataController.title")}
-            </Heading>
-
-            <Text>{t("gdprCompliance.sections.dataController.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("gdprCompliance.sections.legalBasis.title")}
-            </Heading>
-
-            <Text>{t("gdprCompliance.sections.legalBasis.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("gdprCompliance.sections.dataSubjectRights.title")}
-            </Heading>
-
-            <Text>
-              {t("gdprCompliance.sections.dataSubjectRights.content")}
-            </Text>
-
-            <Text>
-              {t("gdprCompliance.sections.dataSubjectRights.exerciseRights")}
-            </Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("gdprCompliance.sections.dataRetention.title")}
-            </Heading>
-
-            <Text>{t("gdprCompliance.sections.dataRetention.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("gdprCompliance.sections.internationalTransfers.title")}
-            </Heading>
-
-            <Text>
-              {t("gdprCompliance.sections.internationalTransfers.content")}
-            </Text>
+            {Object.entries(t("gdprCompliance.sections", { returnObjects: true })).map(([key, section]) => (
+              <div key={key}>
+                <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
+                  {section.title}
+                </Heading>
+                <Text>{section.content}</Text>
+                {section.exerciseRights && (
+                  <Text>{section.exerciseRights}</Text>
+                )}
+              </div>
+            ))}
           </ContentContainer>
         </div>
       </main>

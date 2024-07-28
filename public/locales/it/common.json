@@ -224,7 +224,7 @@
     "copyright": "Easy Convert Image 2024 - Tutti i Diritti Riservati.",
     "pageName": "EasyConvertImage",
     "phone": "+354 910 232 032",
-    "email": "info@easyimageconvert.com",
+    "email": "admin@easyconvertimage.com",
     "usefulInfo": {
       "heading": "Link Utili",
       "option1": {
@@ -404,35 +404,35 @@
     }
   },
   "accessibility": {
-    "title": "Dichiarazione di Accessibilità",
-    "breadcrumb": "Dichiarazione di Accessibilità",
-    "statementTitle": "Dichiarazione di Accessibilità per Easy Convert Image",
-    "lastUpdated": "Ultimo aggiornamento: 15 luglio 2024",
-    "commitment": "Easy Convert Image è impegnata a garantire l'accessibilità digitale per le persone con disabilità. Stiamo continuamente migliorando l'esperienza utente per tutti e applicando gli standard di accessibilità pertinenti.",
+    "title": "Dichiarazione di accessibilità",
+    "breadcrumb": "Dichiarazione di accessibilità",
+    "statementTitle": "Dichiarazione di accessibilità per Easy Convert Image",
+    "lastUpdated": "Ultimo aggiornamento: 27 luglio 2024",
+    "commitment": "Easy Convert Image si impegna a garantire l'accessibilità digitale per le persone con disabilità. Stiamo continuamente migliorando l'esperienza utente per tutti e applicando gli standard di accessibilità rilevanti.",
     "conformanceStatus": {
-      "title": "Stato di Conformità",
-      "description": "Le Linee guida per l'accessibilità dei contenuti web (WCAG) definiscono i requisiti per progettisti e sviluppatori per migliorare l'accessibilità per le persone con disabilità. Definisce tre livelli di conformità: Livello A, Livello AA e Livello AAA. Easy Convert Image è parzialmente conforme con WCAG 2.1 livello AA."
+      "title": "Stato di conformità",
+      "description": "Le Web Content Accessibility Guidelines (WCAG) definiscono i requisiti per i designer e gli sviluppatori per migliorare l'accessibilità per le persone con disabilità. Definisce tre livelli di conformità: Livello A, Livello AA e Livello AAA. Easy Convert Image è parzialmente conforme ai requisiti del Livello AA delle WCAG 2.1."
     },
     "feedback": {
       "title": "Feedback",
-      "description": "Accogliamo con favore il tuo feedback sull'accessibilità di Easy Convert Image. Ti preghiamo di farci sapere se incontri barriere di accessibilità: E-mail: accessibility@easyconvertimage.com"
+      "description": "Accogliamo con favore i vostri commenti sull'accessibilità di Easy Convert Image. Fateci sapere se trovate barriere di accessibilità: E-mail: admin@easyconvertimage.com"
     },
     "technicalSpecs": {
-      "title": "Specifiche Tecniche",
-      "description": "L'accessibilità di Easy Convert Image si basa sulle seguenti tecnologie per funzionare con la particolare combinazione di browser web e tecnologie assistive o plugin installati sul tuo computer: - HTML - WAI-ARIA - CSS - JavaScript"
+      "title": "Specifiche tecniche",
+      "description": "L'accessibilità di Easy Convert Image si basa sulle seguenti tecnologie per funzionare con la particolare combinazione di browser web e tecnologie o plugin di assistenza installati sul vostro computer: - HTML - WAI-ARIA - CSS - JavaScript"
     },
     "assessmentApproach": {
-      "title": "Approccio di Valutazione",
+      "title": "Approccio di valutazione",
       "description": "Easy Convert Image ha valutato l'accessibilità del nostro sito web attraverso i seguenti approcci: - Autovalutazione - Valutazione esterna"
     },
     "meta": {
-      "title": "Dichiarazione di Accessibilità | Easy Convert Image",
-      "description": "Leggi l'impegno di Easy Convert Image per l'accessibilità e i nostri sforzi per garantire che i nostri strumenti gratuiti di conversione delle immagini siano utilizzabili da tutti.",
-      "keywords": "accessibilità, accessibilità web, design inclusivo, strumenti di immagine",
-      "ogTitle": "Dichiarazione di Accessibilità Easy Convert Image",
-      "ogDescription": "Il nostro impegno per rendere la conversione e l'ottimizzazione delle immagini accessibile a tutti gli utenti, indipendentemente dalle abilità.",
+      "title": "Dichiarazione di accessibilità | Easy Convert Image",
+      "description": "Leggete l'impegno di Easy Convert Image sull'accessibilità e i nostri sforzi per garantire che i nostri strumenti gratuiti di conversione delle immagini siano utilizzabili da tutti.",
+      "keywords": "accessibilità, accessibilità web, design inclusivo, strumenti per immagini",
+      "ogTitle": "Dichiarazione di accessibilità di Easy Convert Image",
+      "ogDescription": "Il nostro impegno a rendere la conversione e l'ottimizzazione delle immagini accessibili a tutti gli utenti, indipendentemente dalle loro capacità.",
       "structuredData": {
-        "name": "Dichiarazione di Accessibilità",
+        "name": "Dichiarazione di accessibilità",
         "description": "L'impegno di Easy Convert Image per l'accessibilità web e il design inclusivo.",
         "publisherName": "Easy Convert Image"
       }
@@ -442,40 +442,52 @@
     "content": {
       "heading": "Informativa sulla Privacy",
       "lastUpdated": "Ultimo aggiornamento: 15 luglio 2024",
-      "introduction": "Easy Convert Image (\"noi\" o \"ci\") è impegnata a proteggere la tua privacy. Questa politica spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali quando utilizzi i nostri servizi di conversione delle immagini.",
+      "introduction": "Easy Convert Image ('noi' o 'ci') si impegna a proteggere la tua privacy. Questa policy spiega come gestiamo le tue informazioni quando utilizzi i nostri servizi di conversione delle immagini.",
       "sections": [
         {
-          "title": "Informazioni che Raccogliamo",
-          "content": "Raccogliamo i seguenti tipi di informazioni: - Informazioni personali: indirizzo email (se scegli di creare un account) - Dati di utilizzo: tipi di immagini convertite, frequenza di utilizzo - Dati tecnici: indirizzo IP, tipo di browser, informazioni sul dispositivo"
+          "title": "Informazioni che non raccogliamo",
+          "content": "Non raccogliamo né conserviamo alcuna informazione personale. Il nostro servizio è progettato per essere incentrato sulla privacy e non manteniamo alcun dato su di te o sulle tue immagini dopo il completamento del processo di conversione."
         },
         {
-          "title": "Come Utilizziamo le Tue Informazioni",
-          "content": "Utilizziamo le tue informazioni per: - Fornire e migliorare i nostri servizi di conversione delle immagini - Analizzare i modelli di utilizzo per ottimizzare i nostri algoritmi - Inviare notifiche relative al servizio (ad esempio, avvisi di manutenzione) - Rispondere alle tue domande e richieste di supporto"
+          "title": "Come elaboriamo le tue immagini",
+          "content": "Quando utilizzi il nostro servizio per convertire un'immagine: - L'immagine viene elaborata temporaneamente sui nostri server - Non viene conservata alcuna copia dell'immagine o dei suoi metadati dopo la conversione - L'immagine convertita viene immediatamente resa disponibile per il download e quindi eliminata dai nostri sistemi"
         },
         {
-          "title": "Sicurezza dei Dati",
-          "content": "Implementiamo misure di sicurezza standard del settore per proteggere i tuoi dati, inclusa la crittografia e i controlli di accesso."
+          "title": "Sicurezza dei dati",
+          "content": "Sebbene non archiviamo i tuoi dati, implementiamo misure di sicurezza standard del settore per proteggere le tue immagini durante il processo di conversione, inclusi protocolli di trasmissione dei dati sicuri."
         },
         {
-          "title": "I Tuoi Diritti",
-          "content": "Hai il diritto di: - Accedere e ricevere una copia dei tuoi dati - Rettificare dati inaccurati - Richiedere la cancellazione dei tuoi dati - Opporsi all'uso dei tuoi dati"
+          "title": "I tuoi diritti",
+          "content": "Poiché non raccogliamo né conserviamo dati personali, non ci sono informazioni personali a cui tu possa accedere, rettificare o cancellare. Tuttavia, hai sempre il diritto di scegliere se utilizzare o meno il nostro servizio."
+        },
+        {
+          "title": "Privacy dei minori",
+          "content": "Il nostro servizio non è rivolto ai minori di 13 anni. Poiché non raccogliamo informazioni personali, non abbiamo modo di conoscere l'età dei nostri utenti. Se ritieni che un minore stia utilizzando impropriamente il nostro servizio, ti preghiamo di contattarci."
+        },
+        {
+          "title": "Modifiche a questa policy",
+          "content": "Potremmo aggiornare questa policy di tanto in tanto. Informeremo gli utenti di eventuali modifiche significative pubblicando un avviso sul nostro sito web."
+        },
+        {
+          "title": "Diritti di protezione dei dati dell'UE",
+          "content": "Se sei residente dell'Unione Europea, hai alcuni diritti di protezione dei dati ai sensi del GDPR. Tuttavia, poiché non raccogliamo né conserviamo dati personali, molti di questi diritti potrebbero non applicarsi al nostro servizio. Se hai domande o dubbi, ti preghiamo di contattarci all'indirizzo admin@easyconvertimage.com."
         }
       ]
     },
     "dataSharing": {
-      "title": "Condivisione e Divulgazione dei Dati",
-      "content": "Non vendiamo le tue informazioni personali. Possiamo condividere i dati con: - Fornitori di servizi (ad esempio, fornitori di cloud storage) - Autorità legali quando richiesto dalla legge"
+      "title": "Condivisione e divulgazione dei dati",
+      "content": "Non condividiamo né divulghiamo alcun dato utente, poiché non ne raccogliamo né conserviamo. Le tue immagini vengono elaborate in tempo reale e eliminate immediatamente dopo la conversione."
     },
     "contactUs": {
       "title": "Contattaci",
-      "content": "Per qualsiasi domanda su questa Informativa sulla Privacy, contattaci all'indirizzo privacy@easyconvertimage.com"
+      "content": "Per qualsiasi domanda su questa Informativa sulla Privacy, ti preghiamo di contattarci all'indirizzo admin@easyconvertimage.com"
     },
     "meta": {
       "title": "Informativa sulla Privacy | Easy Convert Image",
-      "description": "Scopri come Easy Convert Image raccoglie, utilizza e protegge le tue informazioni personali quando utilizzi i nostri strumenti gratuiti di conversione delle immagini online.",
-      "keywords": "informativa sulla privacy, protezione dei dati, privacy delle immagini, dati degli utenti",
+      "description": "Scopri come Easy Convert Image protegge la tua privacy quando utilizzi i nostri strumenti gratuiti di conversione delle immagini online.",
+      "keywords": "informativa sulla privacy, protezione dei dati, privacy di conversione delle immagini, dati degli utenti",
       "ogTitle": "Informativa sulla Privacy di Easy Convert Image",
-      "ogDescription": "Scopri come gestiamo i tuoi dati quando utilizzi i nostri servizi di conversione delle immagini. La tua privacy è importante per noi."
+      "ogDescription": "Comprendi come gestiamo i tuoi dati quando utilizzi il nostro servizio di conversione delle immagini. La tua privacy è la nostra priorità."
     }
   },
   "termsOfService": {
@@ -485,146 +497,199 @@
     "sections": {
       "acceptance": {
         "title": "Accettazione dei Termini",
-        "content": "Utilizzando Easy Convert Image, accetti questi Termini di Servizio. Se non sei d'accordo con qualsiasi parte dei termini, non puoi utilizzare il nostro servizio."
+        "content": "Utilizzando Easy Convert Image, accetti questi Termini di Servizio. Se non sei d'accordo con una qualsiasi parte dei termini, non puoi utilizzare il nostro servizio."
       },
       "use": {
         "title": "Utilizzo del Servizio",
-        "content": "Il nostro servizio ti consente di convertire immagini tra diversi formati. Accetti di utilizzare questo servizio solo per scopi legali e in conformità con questi Termini."
+        "content": "Il nostro servizio ti consente di convertire le immagini tra diversi formati. Accetti di utilizzare questo servizio solo per scopi legittimi e in conformità con questi Termini. Non conserviamo le tue immagini o i tuoi dati personali."
       },
       "userContent": {
-        "title": "Contenuti dell'Utente",
-        "content": "Mantieni tutti i diritti sulle immagini che carichi. Non rivendichiamo la proprietà dei tuoi contenuti. Tuttavia, ci concedi una licenza per memorizzare e elaborare le tue immagini esclusivamente per fornire il nostro servizio di conversione."
+        "title": "Contenuto dell'Utente",
+        "content": "Mantieni tutti i diritti sulle immagini che carichi. Non rivendichiamo la proprietà dei tuoi contenuti e non conserviamo copie delle tue immagini dopo la conversione."
       },
       "prohibited": {
-        "title": "Attività Proibite",
-        "content": "Non puoi: - Utilizzare il nostro servizio per convertire o memorizzare contenuti illegali o protetti da copyright - Tentare di ottenere accesso non autorizzato ai nostri sistemi - Utilizzare il nostro servizio in qualsiasi modo che possa danneggiare o sovraccaricare la nostra infrastruttura"
+        "title": "Attività Vietate",
+        "content": "Non puoi: - Utilizzare il nostro servizio per convertire contenuti illegali o protetti da copyright - Tentare di accedere ai nostri sistemi senza autorizzazione - Utilizzare il nostro servizio in modo da danneggiare o sovraccaricare la nostra infrastruttura - Tentare di decodificare o estrarre il codice sorgente del nostro servizio"
       },
       "termination": {
         "title": "Risoluzione",
-        "content": "Possiamo terminare o sospendere il tuo accesso al nostro servizio immediatamente, senza preavviso o responsabilità, per qualsiasi motivo, inclusa, senza limitazione, la violazione dei Termini."
+        "content": "Ci riserviamo il diritto di terminare o sospendere l'accesso al nostro servizio immediatamente, senza preavviso o responsabilità, per qualsiasi motivo, incluso, senza limitazioni, se violi i Termini."
       },
       "liability": {
         "title": "Limitazione di Responsabilità",
-        "content": "Easy Convert Image non sarà responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi, inclusi, senza limitazione, perdita di profitti, dati, uso, buona volontà o altre perdite immateriali."
+        "content": "Easy Convert Image non sarà responsabile di eventuali danni indiretti, incidentali, speciali, consequenziali o punitivi, inclusi, senza limitazioni, la perdita di profitti, dati, uso, avviamento o altre perdite intangibili. Non siamo responsabili di eventuali perdite di dati durante il processo di conversione."
       },
       "changes": {
         "title": "Modifiche ai Termini",
-        "content": "Ci riserviamo il diritto di modificare o sostituire questi Termini in qualsiasi momento. Se una revisione è materiale, cercheremo di fornire un preavviso di almeno 30 giorni prima che i nuovi termini abbiano effetto."
+        "content": "Ci riserviamo il diritto di modificare o sostituire questi Termini in qualsiasi momento. Se una modifica è sostanziale, cercheremo di fornire un preavviso di almeno 30 giorni prima dell'entrata in vigore di nuovi termini."
+      },
+      "governingLaw": {
+        "title": "Legge Applicabile",
+        "content": "Questi Termini saranno regolati e interpretati in conformità con le leggi di Braga, in Portogallo, senza tenere conto delle sue disposizioni sui conflitti di leggi."
       },
       "contact": {
         "title": "Contattaci",
-        "content": "Se hai domande su questi Termini, contattaci all'indirizzo terms@easyconvertimage.com"
+        "content": "Se hai domande su questi Termini, ti preghiamo di contattarci all'indirizzo admin@easyconvertimage.com"
       }
     },
     "meta": {
       "title": "Termini di Servizio | Easy Convert Image",
-      "description": "Consulta i nostri termini di servizio per capire le regole e le normative che regolano l'uso degli strumenti gratuiti di conversione delle immagini online di Easy Convert Image.",
-      "keywords": "termini di servizio, accordo utente, termini di conversione delle immagini, legale",
+      "description": "Consulta i nostri Termini di Servizio per comprendere le regole e i regolamenti che disciplinano l'utilizzo degli strumenti di conversione delle immagini online gratuiti di Easy Convert Image.",
+      "keywords": "termini di servizio, contratto utente, termini di conversione delle immagini, legali",
       "ogTitle": "Termini di Servizio di Easy Convert Image",
-      "ogDescription": "Comprendi i tuoi diritti e responsabilità quando utilizzi i nostri strumenti gratuiti di conversione e ottimizzazione delle immagini."
+      "ogDescription": "Comprendi i tuoi diritti e responsabilità nell'utilizzo dei nostri strumenti di conversione e ottimizzazione delle immagini gratuiti.",
+      "structuredData": {
+        "name": "Termini di Servizio",
+        "description": "Termini e condizioni per l'utilizzo dei servizi di conversione delle immagini online di Easy Convert Image."
+      }
     }
   },
   "cookiePolicy": {
-    "heading": "Politica sui Cookie",
-    "subheading": "Politica sui Cookie per Easy Convert Image",
+    "heading": "Informativa sui Cookie",
+    "subheading": "Informativa sui Cookie per Easy Convert Image",
     "lastUpdated": "Ultimo aggiornamento: 15 luglio 2024",
     "sections": {
       "whatAre": {
-        "title": "Cosa Sono i Cookie",
+        "title": "Che cosa sono i Cookie",
         "content": "I cookie sono piccoli file di testo memorizzati sul tuo dispositivo quando visiti il nostro sito web. Ci aiutano a fornirti una migliore esperienza."
       },
-      "howWeUse": {
-        "title": "Come Utilizziamo i Cookie",
-        "content": "Utilizziamo i seguenti tipi di cookie: - Cookie essenziali: per abilitare le funzionalità di base (ad esempio, ricordare le impostazioni di conversione delle immagini) - Cookie di analisi: per comprendere come i visitatori utilizzano il nostro sito (ad esempio, Google Analytics) - Cookie di preferenza: per ricordare le tue preferenze (ad esempio, impostazione della modalità scura)"
+      "typesOfCookies": {
+        "title": "Tipi di Cookie che utilizziamo",
+        "content": "Utilizziamo i seguenti tipi di cookie sul nostro sito web:",
+        "cookieTypes": [
+          {
+            "name": "Cookie Essenziali",
+            "description": "Questi sono strettamente necessari per il corretto funzionamento del sito web. Abilitano funzionalità di base come sicurezza, gestione della rete e accessibilità. Puoi disattivarli modificando le impostazioni del tuo browser, ma questo potrebbe influire sul funzionamento del sito web."
+          },
+          {
+            "name": "Cookie Funzionali",
+            "description": "Questi cookie abilitano il sito web a fornire funzionalità e personalizzazione migliorate. Possono essere impostati da noi o da fornitori terzi i cui servizi abbiamo aggiunto alle nostre pagine. Se non consenti questi cookie, alcuni o tutti questi servizi potrebbero non funzionare correttamente."
+          },
+          {
+            "name": "Cookie di Marketing",
+            "description": "Questi cookie possono essere impostati sul nostro sito dai nostri partner pubblicitari. Possono essere utilizzati da tali società per creare un profilo dei tuoi interessi e mostrarti annunci pertinenti su altri siti. Non memorizzano informazioni personali dirette, ma si basano sull'identificazione univoca del tuo browser e del tuo dispositivo Internet."
+          },
+          {
+            "name": "Cookie Analitici",
+            "description": "Questi cookie ci permettono di contare le visite e le fonti di traffico, in modo da poter misurare e migliorare le prestazioni del nostro sito. Ci aiutano a sapere quali pagine sono le più e le meno popolari e a vedere come si muovono i visitatori nel sito. Tutte le informazioni raccolte da questi cookie sono aggregate e quindi anonime."
+          }
+        ]
       },
-      "thirdParty": {
-        "title": "Cookie di Terze Parti",
-        "content": "Utilizziamo Google Analytics per aiutarci a comprendere come gli utenti interagiscono con il sito. Questi cookie possono tracciare cose come quanto tempo trascorri sul sito e le pagine che visiti."
+      "howWeUse": {
+        "title": "Come utilizziamo i Cookie",
+        "content": "Utilizziamo principalmente cookie essenziali per consentire la funzionalità di base del nostro servizio. Questi cookie non memorizzano informazioni personali e sono strettamente necessari per il corretto funzionamento del sito web. Potremmo anche utilizzare cookie funzionali, di marketing e analitici per migliorare la tua esperienza e il nostro servizio, ma solo con il tuo esplicito consenso."
       },
       "managing": {
-        "title": "Gestione dei Cookie",
-        "content": "Puoi controllare e/o eliminare i cookie come desideri. Puoi eliminare tutti i cookie già presenti sul tuo computer e puoi impostare la maggior parte dei browser per impedirne il posizionamento."
+        "title": "Gestire i Cookie",
+        "content": "La maggior parte dei browser web consente un certo controllo sulla maggior parte dei cookie attraverso le impostazioni del browser. Per saperne di più sui cookie, incluso come vedere quali cookie sono stati impostati, visita www.aboutcookies.org o www.allaboutcookies.org."
+      },
+      "euCookieLaw": {
+        "title": "Conformità alla Legge sui Cookie dell'UE",
+        "content": "Il nostro utilizzo dei cookie è conforme alla Legge sui Cookie dell'UE (Direttiva e-Privacy). Otteniamo il consenso esplicito per i cookie non essenziali in conformità con la legge dell'UE."
       },
       "contact": {
         "title": "Contattaci",
-        "content": "Se hai domande sull'uso dei cookie, inviaci un'email all'indirizzo cookies@easyconvertimage.com"
+        "content": "Se hai domande sul nostro utilizzo dei cookie, ti preghiamo di inviarci un'e-mail a admin@easyconvertimage.com"
       }
     },
     "meta": {
-      "title": "Politica sui Cookie | Easy Convert Image",
-      "description": "Scopri come Easy Convert Image utilizza i cookie per migliorare la tua esperienza con i nostri strumenti gratuiti di conversione e ottimizzazione delle immagini online.",
-      "keywords": "politica sui cookie, cookie del sito web, tracciamento dei dati, preferenze degli utenti",
-      "ogTitle": "Politica sui Cookie di Easy Convert Image",
-      "ogDescription": "Comprendi come utilizziamo i cookie per migliorare la tua esperienza di conversione delle immagini e proteggere la tua privacy."
+      "title": "Informativa sui Cookie | Easy Convert Image",
+      "description": "Scopri come Easy Convert Image utilizza i cookie per fornire i nostri strumenti gratuiti di conversione e ottimizzazione delle immagini online.",
+      "keywords": "informativa sui cookie, cookie di sito web, cookie essenziali, privacy degli utenti",
+      "ogTitle": "Informativa sui Cookie di Easy Convert Image",
+      "ogDescription": "Comprendi come utilizziamo i cookie per fornire il nostro servizio di conversione delle immagini, rispettando la tua privacy.",
+      "structuredData": {
+        "name": "Informativa sui Cookie",
+        "description": "Dettagli su come Easy Convert Image utilizza i cookie."
+      }
+    }
+  },
+  "gdprCompliance": {
+    "heading": "Conformità al GDPR",
+    "subheading": "Conformità al GDPR per Easy Convert Image",
+    "lastUpdated": "Ultimo aggiornamento: 15 luglio 2024",
+    "sections": {
+      "dataProcessing": {
+        "title": "Elaborazione dei Dati",
+        "content": "Easy Convert Image elabora le immagini per la conversione senza memorizzare alcun dato personale. Non conserviamo informazioni sugli utenti o sulle loro immagini dopo il completamento del processo di conversione."
+      },
+      "legalBasis": {
+        "title": "Base Giuridica per l'Elaborazione",
+        "content": "La base giuridica per l'elaborazione delle tue immagini è l'esecuzione di un contratto - per fornirti il servizio di conversione delle immagini che richiedi. Non elaboriamo alcun dato oltre quanto necessario per questo scopo."
+      },
+      "dataSubjectRights": {
+        "title": "Diritti degli Interessati",
+        "content": "In base al GDPR, gli individui hanno vari diritti riguardo ai loro dati personali. Tuttavia, poiché non raccogliamo né conserviamo dati personali, la maggior parte di questi diritti non si applicano al nostro servizio. Non possiamo fornire accesso, rettifica o cancellazione di dati che non abbiamo."
+      },
+      "dataRetention": {
+        "title": "Conservazione dei Dati",
+        "content": "Non conserviamo alcun dato personale o immagine. Tutti i dati vengono elaborati in tempo reale e immediatamente eliminati dopo il completamento della conversione."
+      },
+      "internationalTransfers": {
+        "title": "Trasferimenti Internazionali",
+        "content": "Poiché non raccogliamo né conserviamo dati personali, non ci sono trasferimenti internazionali di dati personali da considerare."
+      },
+      "security": {
+        "title": "Sicurezza dei Dati",
+        "content": "Sebbene non memorizziamo dati personali, implementiamo solide misure di sicurezza per proteggere le tue immagini durante il processo di conversione, inclusi crittografia e protocolli di trasmissione dei dati sicuri."
+      },
+      "euRepresentative": {
+        "title": "Rappresentante per l'UE",
+        "content": "Essendo con sede a Braga, in Portogallo, che si trova all'interno dell'Unione Europea, non abbiamo bisogno di un rappresentante separato per l'UE ai sensi del GDPR."
+      },
+      "contact": {
+        "title": "Contattaci",
+        "content": "Se hai domande sulla nostra conformità al GDPR, ti preghiamo di inviarci un'email all'indirizzo admin@easyconvertimage.com"
+      }
+    },
+    "meta": {
+      "title": "Conformità al GDPR | Easy Convert Image",
+      "description": "Scopri come Easy Convert Image garantisce la conformità alle normative del GDPR pur fornendo servizi gratuiti di conversione delle immagini online senza memorizzare dati personali.",
+      "keywords": "conformità al GDPR, protezione dei dati, legge sulla privacy dell'UE, diritti degli utenti",
+      "ogTitle": "Informazioni sulla conformità al GDPR di Easy Convert Image",
+      "ogDescription": "Scopri come proteggiamo la tua privacy in conformità al GDPR non raccogliendo né memorizzando alcuna informazione personale.",
+      "structuredData": {
+        "name": "Conformità al GDPR",
+        "description": "Informazioni sulla conformità al GDPR di Easy Convert Image."
+      }
     }
   },
   "ccpaCompliance": {
     "heading": "Conformità CCPA",
     "subheading": "Conformità CCPA per Easy Convert Image",
-    "lastUpdated": "Ultimo aggiornamento: 15 luglio 2024",
+    "lastUpdated": "Ultimo aggiornamento: 27 luglio 2024",
     "sections": {
       "consumerRights": {
-        "title": "Diritti dei Consumatori della California",
-        "intro": "Ai sensi del California Consumer Privacy Act (CCPA), i residenti della California hanno i seguenti diritti:",
-        "list": "1. Diritto di sapere quali informazioni personali vengono raccolte\n2. Diritto di richiedere la cancellazione delle informazioni personali\n3. Diritto di opt-out dalla vendita delle informazioni personali\n4. Diritto a non essere discriminati per l'esercizio dei diritti CCPA"
+        "title": "Diritti dei consumatori della California",
+        "intro": "Ai sensi del California Consumer Privacy Act (CCPA), i residenti della California hanno determinati diritti riguardo alle loro informazioni personali. Tuttavia, poiché Easy Convert Image non raccoglie né memorizza informazioni personali, molti di questi diritti non si applicano al nostro servizio.",
+        "list": "1. Diritto di conoscere quali informazioni personali vengono raccolte: Non raccogliamo informazioni personali.\n2. Diritto di richiedere la cancellazione delle informazioni personali: Non memorizziamo informazioni personali da cancellare.\n3. Diritto di opt-out dalla vendita di informazioni personali: Non vendiamo informazioni personali.\n4. Diritto di non essere discriminati per l'esercizio dei diritti CCPA: Non discriminiamo alcun utente, indipendentemente dalla sua scelta di esercitare i suoi diritti."
       },
       "infoCollected": {
-        "title": "Categorie di Informazioni Personali Raccolte",
-        "content": "Negli ultimi 12 mesi, Easy Convert Image non ha raccolto alcun dato personale."
+        "title": "Categorie di informazioni personali raccolte",
+        "content": "Easy Convert Image non raccoglie né memorizza alcuna informazione personale. Elaboriamo le immagini per la conversione senza conservare alcun dato."
       },
-      "exerciseRights": {
-        "title": "Come Esercitare i Tuoi Diritti",
-        "content": "Per esercitare i tuoi diritti CCPA, inviaci un'email a ccpa@easyconvertimage.com. Risponderemo alla tua richiesta entro 45 giorni."
+      "noSale": {
+        "title": "Nessuna vendita di informazioni personali",
+        "content": "Easy Convert Image non vende informazioni personali. Non raccogliamo né conserviamo alcun dato personale che possa essere venduto."
       },
-      "verification": {
-        "title": "Processo di Verifica",
-        "content": "Per proteggere la tua privacy, verificheremo la tua identità prima di rispondere alla tua richiesta. Potremmo chiederti di fornire ulteriori informazioni per scopi di verifica."
-      },
-      "authorizedAgent": {
-        "title": "Agente Autorizzato",
-        "content": "Puoi designare un agente autorizzato per presentare una richiesta per tuo conto. L'agente autorizzato deve fornire una prova della tua autorizzazione scritta e verificare la propria identità con noi."
-      },
-      "doNotSell": {
-        "title": "\"Non Vendere le Mie Informazioni Personali\"",
-        "content": "Easy Convert Image non vende informazioni personali. Tuttavia, se desideri opt-out da qualsiasi futura potenziale vendita delle tue informazioni, puoi inviarci un'email a donotsell@easyconvertimage.com."
+      "contact": {
+        "title": "Contattaci",
+        "content": "Se avete domande sulla nostra conformità CCPA, vi preghiamo di inviarci un'e-mail all'indirizzo admin@easyconvertimage.com"
       }
     },
-    "gdprCompliance": {
-      "heading": "Conformità GDPR",
-      "subheading": "Conformità GDPR per Easy Convert Image",
-      "lastUpdated": "Ultimo aggiornamento: 15 luglio 2024",
-      "sections": {
-        "dataController": {
-          "title": "Responsabile del Trattamento Dati",
-          "content": "Easy Convert Image è il responsabile del trattamento dei dati personali raccolti attraverso il nostro servizio."
-        },
-        "legalBasis": {
-          "title": "Base Giuridica per il Trattamento",
-          "content": "Trattiamo i tuoi dati personali in base alle seguenti basi giuridiche: - Consenso: Quando acconsenti al nostro utilizzo dei cookie per scopi non essenziali. - Esecuzione di un Contratto: Quando forniamo il nostro servizio di conversione delle immagini a te. - Interessi Legittimi: Per migliorare i nostri servizi e garantire la sicurezza."
-        },
-        "dataSubjectRights": {
-          "title": "Diritti dell'Interessato",
-          "content": "Ai sensi del GDPR, hai i seguenti diritti: - Diritto di accesso - Diritto di rettifica - Diritto alla cancellazione - Diritto di limitazione di trattamento - Diritto alla portabilità dei dati - Diritto di opposizione",
-          "exerciseRights": "Per esercitare questi diritti, inviaci un'email a gdpr@easyconvertimage.com."
-        },
-        "dataRetention": {
-          "title": "Conservazione dei Dati",
-          "content": "Conserviamo i tuoi dati personali per il tempo necessario per fornire i nostri servizi e adempiere agli obblighi legali. Le immagini convertite vengono automaticamente eliminate dopo 24 ore."
-        },
-        "internationalTransfers": {
-          "title": "Trasferimenti Internazionali",
-          "content": "I tuoi dati possono essere trasferiti a server situati al di fuori dello Spazio Economico Europeo (SEE). Garantiamo l'adozione di misure di sicurezza adeguate, come le Clausole Contrattuali Standard."
-        }
-      },
-      "meta": {
-        "title": "Conformità GDPR | Easy Convert Image",
-        "description": "Scopri come Easy Convert Image assicura la conformità alle normative GDPR fornendo servizi gratuiti di conversione e ottimizzazione delle immagini online.",
-        "keywords": "conformità GDPR, protezione dei dati, legge sulla privacy dell'UE, diritti dell'utente",
-        "ogTitle": "Informazioni sulla Conformità GDPR di Easy Convert Image",
-        "ogDescription": "Apprendi i tuoi diritti relativi ai dati e come proteggiamo le tue informazioni personali in conformità al GDPR."
+    "meta": {
+      "title": "Conformità CCPA | Easy Convert Image",
+      "description": "Scoprite come Easy Convert Image rispetta il California Consumer Privacy Act (CCPA) e come proteggiamo la vostra privacy.",
+      "keywords": "CCPA, California Consumer Privacy Act, diritti sulla privacy, protezione dei dati, Easy Convert Image",
+      "ogTitle": "Conformità CCPA - Easy Convert Image",
+      "ogDescription": "Capite come Easy Convert Image rispetta il CCPA non raccogliendo né memorizzando alcuna informazione personale.",
+      "structuredData": {
+        "name": "Conformità CCPA",
+        "description": "Informazioni sulla conformità di Easy Convert Image al California Consumer Privacy Act (CCPA)."
       }
     }
   },
+
   "articles": [
     {
       "heading": "PNG vs WebP: La guida definitiva per ottimizzare le tue immagini web",
@@ -660,6 +725,70 @@
     },
     "marketing": {
       "name": "Marketing"
+    }
+  },
+
+  "dropboxModal": {
+    "button": {
+      "uploadFromDropbox": "Carica file da Dropbox"
+    },
+    "errors": {
+      "downloadError": "Errore durante il download dei tuoi file"
+    },
+    "messages": {
+      "operationCancelled": "Operazione Dropbox annullata"
+    },
+    "accessibility": {
+      "dropboxLogo": "Logo Dropbox"
+    }
+  },
+  "googleModal": {
+    "button": {
+      "uploadFromGoogleDrive": "Carica file da Google Drive"
+    },
+    "modal": {
+      "title": "Seleziona immagini da Google Drive",
+      "heading": "Seleziona immagini:",
+      "filterFiles": {
+        "label": "Filtra file",
+        "placeholder": "Filtra file per nome..."
+      },
+      "sortBy": {
+        "label": "Ordina per",
+        "placeholder": "Ordina per",
+        "options": {
+          "fileName": "Nome file",
+          "fileSize": "Dimensione file",
+          "creationDate": "Data di creazione"
+        }
+      },
+      "tableHeader": {
+        "select": "Seleziona:",
+        "fileName": "Nome file:",
+        "fileSize": "Dimensione file:",
+        "creationDate": "Data di creazione:"
+      },
+      "noResults": "Nessun risultato trovato",
+      "actions": {
+        "clearSelection": "Cancella selezione",
+        "cancel": "Annulla",
+        "uploadFiles": "Carica file"
+      }
+    },
+    "errors": {
+      "uploadError": "Errore durante il caricamento dei tuoi file",
+      "fetchError": "Errore durante il recupero dei file di Google Drive",
+      "loginFailed": "Accesso fallito"
+    },
+    "accessibility": {
+      "googleDriveLogo": "Logo Google Drive",
+      "modalLabel": "Selezione file di Google Drive",
+      "filterFilesLabel": "Filtra file",
+      "sortFilesLabel": "Ordina file per",
+      "fileDetails": "Dimensione file: {size} kb, Creato il: {date}",
+      "clearSelectionLabel": "Cancella selezione file",
+      "cancelSelectionLabel": "Annulla selezione file",
+      "uploadFilesLabel": "Carica file selezionati"
     }
   }
 }

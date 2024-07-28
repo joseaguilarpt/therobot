@@ -33,7 +33,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
     const baseManifest: WebAppManifest = {
       short_name: "EasyConvert",
-      name: "EasyImageConvert",
+      name: "EasyConvertImage",
       description: "Easily convert images between multiple formats online",
       start_url: isValidLang ? `/${lang}/` : "/",
       scope: isValidLang ? `/${lang}/` : "/",

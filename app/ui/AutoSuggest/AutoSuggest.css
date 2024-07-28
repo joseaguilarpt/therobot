@@ -521,7 +521,7 @@
   font-size: 1.45rem;
   border: 2px solid var(--input-border);
   border-radius: 10px;
-  padding: 8px 40px 8px 15px;
+  padding: 0px 40px 0px 15px;
   width: auto;
   min-width: 60px;
   transition: all 0.2s ease-in-out;
@@ -551,17 +551,17 @@
 }
 @media (min-width: 576px) {
   .home-suggest .auto-suggest__button {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 768px) {
   .home-suggest .auto-suggest__button {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 }
 @media (min-width: 992px) {
   .home-suggest .auto-suggest__button {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
 }
 

@@ -394,13 +394,10 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
-.tool-conversion-form .tool-heading__to .icon--medium {
-  color: var(--default-color);
-}
 @media (min-width: 992px) {
   .tool-conversion-form {
     width: 100%;
-    min-height: 125px;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -412,9 +409,9 @@
     box-shadow: 0 2px 4px var(--shadow-color);
     height: 100%;
   }
-  .tool-conversion-form .tool-heading__to .icon--medium {
-    color: var(--contrast-color);
-  }
+}
+.tool-conversion-form .tool-heading__to .icon--medium {
+  color: var(--contrast-color);
 }
 
 /*# sourceMappingURL=Tool.css.map */

@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 export default function StatusBar({
   status = "processing",
 }: {
-  status: "completed" | "error" | "processing";
+  status: string;
 }) {
   const { t } = useTranslation();
   function capitalize(str: string): string {

@@ -413,7 +413,7 @@
   background-color: var(--accent-color-darken);
 }
 .button--primary.button--disabled {
-  background-color: var(--accent-color-light);
+  background-color: grey;
   cursor: not-allowed;
 }
 .button--secondary {
@@ -426,7 +426,6 @@
   background-color: var(--accent-color-darken);
 }
 .button--secondary.button--disabled {
-  background-color: var(--default-color-light);
   cursor: not-allowed;
 }
 .button--tertiary {
