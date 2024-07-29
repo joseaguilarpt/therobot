@@ -475,54 +475,83 @@
 
   "privacyPolicy": {
     "content": {
-      "heading": "Datenschutzbestimmungen",
+      "heading": "Datenschutzerklärung",
       "lastUpdated": "Zuletzt aktualisiert: 15. Juli 2024",
-      "introduction": "Easy Convert Image ('wir' oder 'uns') ist dem Schutz Ihrer Privatsphäre verpflichtet. Diese Richtlinie erklärt, wie wir mit Ihren Informationen umgehen, wenn Sie unsere Bildkonvertierungsdienste nutzen.",
+      "introduction": "Easy Convert Image ('wir' oder 'uns') verpflichtet sich zum Schutz Ihrer Privatsphäre. Diese Richtlinie erläutert, wie wir mit Ihren Informationen umgehen, wenn Sie unsere Bildkonvertierungsdienste nutzen.",
       "sections": [
         {
-          "title": "Informationen, die wir nicht erfassen",
-          "content": "Wir erheben oder speichern keine persönlichen Informationen. Unser Service ist darauf ausgelegt, den Datenschutz in den Vordergrund zu stellen, und wir bewahren nach Abschluss des Konvertierungsvorgangs keine Daten über Sie oder Ihre Bilder auf."
+          "title": "Informationen, die wir nicht sammeln",
+          "content": "Wir sammeln oder speichern keine persönlichen Informationen. Unser Service ist darauf ausgelegt, den Datenschutz zu respektieren, und wir bewahren nach Abschluss des Konvertierungsprozesses keine Daten über Sie oder Ihre Bilder auf."
         },
         {
           "title": "Wie wir Ihre Bilder verarbeiten",
-          "content": "Wenn Sie unseren Service zum Konvertieren eines Bildes nutzen: - Das Bild wird vorübergehend auf unseren Servern verarbeitet - Es wird nach der Konvertierung keine Kopie des Bildes oder seiner Metadaten aufbewahrt - Das konvertierte Bild steht sofort zum Download bereit und wird dann von unseren Systemen gelöscht"
+          "content": "Wenn Sie unseren Service zur Bildkonvertierung nutzen: \n- Das Bild wird vollständig in Ihrem Browser mithilfe von Remix, einem clientseitigen JavaScript-Framework, verarbeitet\n- Während des Konvertierungsprozesses werden keine Daten an unsere Server gesendet\n- Die gesamte Verarbeitung erfolgt lokal auf Ihrem Gerät\n- Nach der Konvertierung wird keine Kopie des Bildes oder seiner Metadaten aufbewahrt\n- Das konvertierte Bild steht sofort zum direkten Download aus Ihrem Browser zur Verfügung"
         },
         {
           "title": "Datensicherheit",
-          "content": "Obwohl wir Ihre Daten nicht speichern, setzen wir branchenübliche Sicherheitsmaßnahmen ein, um Ihre Bilder während des Konvertierungsprozesses zu schützen, einschließlich sicherer Datenübertragungsprotokolle."
+          "content": "Da die gesamte Bildverarbeitung in Ihrem Browser stattfindet, handhaben oder speichern wir Ihre Bilder nicht auf unseren Servern. Dieser clientseitige Verarbeitungsansatz erhöht von Natur aus die Sicherheit und den Schutz Ihrer Daten."
         },
         {
           "title": "Ihre Rechte",
-          "content": "Da wir keine personenbezogenen Daten erfassen oder speichern, gibt es keine personenbezogenen Informationen, auf die Sie zugreifen, die Sie berichtigen oder löschen könnten. Sie haben jedoch immer das Recht, zu entscheiden, ob Sie unseren Service nutzen möchten oder nicht."
+          "content": "Da wir keine personenbezogenen Daten sammeln oder speichern, gibt es keine persönlichen Informationen, auf die Sie zugreifen, die Sie berichtigen oder löschen könnten. Sie haben jedoch jederzeit das Recht zu entscheiden, ob Sie unseren Service nutzen möchten oder nicht."
         },
         {
-          "title": "Datenschutz von Kindern",
-          "content": "Unser Service richtet sich nicht an Kinder unter 13 Jahren. Da wir keine personenbezogenen Informationen erfassen, haben wir keine Möglichkeit, das Alter unserer Nutzer zu ermitteln. Wenn Sie glauben, dass ein Kind unseren Service unangemessen nutzt, kontaktieren Sie uns bitte."
+          "title": "Datenschutz für Kinder",
+          "content": "Unser Service richtet sich nicht an Kinder unter 13 Jahren. Da wir keine persönlichen Informationen sammeln, haben wir keine Möglichkeit, das Alter unserer Nutzer zu kennen. Wenn Sie glauben, dass ein Kind unseren Service unangemessen nutzt, kontaktieren Sie uns bitte."
         },
         {
           "title": "Änderungen dieser Richtlinie",
-          "content": "Wir können diese Richtlinie von Zeit zu Zeit aktualisieren. Wir werden Nutzer über wichtige Änderungen informieren, indem wir eine Mitteilung auf unserer Website veröffentlichen."
+          "content": "Wir können diese Richtlinie von Zeit zu Zeit aktualisieren. Wir werden die Nutzer über wesentliche Änderungen informieren, indem wir einen Hinweis auf unserer Website veröffentlichen."
         },
         {
           "title": "EU-Datenschutzrechte",
-          "content": "Wenn Sie Einwohner der Europäischen Union sind, haben Sie gemäß der DSGVO bestimmte Datenschutzrechte. Da wir jedoch keine personenbezogenen Daten erfassen oder speichern, treffen viele dieser Rechte möglicherweise nicht auf unseren Service zu. Wenn Sie Fragen oder Bedenken haben, wenden Sie sich bitte an admin@easyconvertimage.com."
+          "content": "Wenn Sie in der Europäischen Union ansässig sind, haben Sie bestimmte Datenschutzrechte gemäß der DSGVO. Da wir jedoch keine personenbezogenen Daten sammeln oder speichern, treffen viele dieser Rechte möglicherweise nicht auf unseren Service zu. Wenn Sie Fragen oder Bedenken haben, kontaktieren Sie uns bitte unter admin@easyconvertimage.com."
+        },
+        {
+          "title": "Cookies und Tracking",
+          "content": "Wir verwenden keine Cookies oder Tracking-Technologien auf unserer Website oder in unserem Bildkonvertierungsprozess."
+        },
+        {
+          "title": "Dienste Dritter",
+          "content": "Unsere Website wird auf Cloud-Servern gehostet, aber diese Server verarbeiten oder speichern Ihre Bilder nicht. Das Remix-Framework, das wir für die Bildkonvertierung verwenden, läuft vollständig in Ihrem Browser."
+        },
+        {
+          "title": "Internationale Datenübertragungen",
+          "content": "Da die gesamte Verarbeitung in Ihrem lokalen Browser stattfindet, erfolgen während des Bildkonvertierungsprozesses keine internationalen Datenübertragungen."
+        },
+        {
+          "title": "Rechtsgrundlage für die Verarbeitung",
+          "content": "Wir verarbeiten Ihre Bilder auf Grundlage Ihrer Einwilligung, die Sie durch das Hochladen eines Bildes zur Konvertierung erteilen. Die gesamte Verarbeitung erfolgt lokal in Ihrem Browser."
+        },
+        {
+          "title": "Datenschutzrechte in Kalifornien",
+          "content": "Da wir keine persönlichen Informationen sammeln, treffen die meisten CCPA-Bestimmungen nicht zu. Einwohner Kaliforniens haben das Recht auf Nichtdiskriminierung bei der Ausübung ihrer Datenschutzrechte."
+        },
+        {
+          "title": "Über Remix",
+          "content": "Wir verwenden Remix, ein modernes Web-Framework, um Ihre Bilder zu verarbeiten. Remix ermöglicht es uns, Bildkonvertierungen direkt in Ihrem Webbrowser durchzuführen, ohne dass Ihre Bilder an unsere Server gesendet werden müssen. Dieser Ansatz gewährleistet maximale Privatsphäre und Sicherheit für Ihre Daten."
+        },
+        {
+          "title": "Aufbewahrungsfrist",
+          "content": "Wir bewahren keine Bilddaten auf. Die gesamte Verarbeitung ist temporär und findet nur in Ihrem Browser für die zur Durchführung der Konvertierung erforderliche Dauer statt, typischerweise innerhalb von Sekunden."
         }
       ]
     },
     "dataSharing": {
-      "title": "Datenweitergabe und -offenlegung",
-      "content": "Wir geben oder offenbaren keine Nutzerdaten weiter, da wir keine erfassen oder speichern. Ihre Bilder werden in Echtzeit verarbeitet und nach der Konvertierung sofort gelöscht."
+      "title": "Datenaustausch und Offenlegung",
+      "content": "Wir teilen oder offenbaren keine Benutzerdaten, da wir keine sammeln oder speichern. Ihre Bilder werden vollständig innerhalb Ihres Browsers verarbeitet und niemals an unsere Server oder Dritte übertragen."
     },
     "contactUs": {
       "title": "Kontaktieren Sie uns",
-      "content": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, wenden Sie sich bitte an admin@easyconvertimage.com"
+      "content": "Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte unter admin@easyconvertimage.com"
     },
     "meta": {
-      "title": "Datenschutzbestimmungen | Easy Convert Image",
-      "description": "Erfahren Sie, wie Easy Convert Image Ihre Privatsphäre schützt, wenn Sie unsere kostenlosen Online-Bildkonvertierungstools nutzen.",
-      "keywords": "Datenschutzrichtlinie, Datenschutz, Bildkonvertierung-Privatsphäre, Nutzerdaten",
-      "ogTitle": "Datenschutzrichtlinie von Easy Convert Image",
-      "ogDescription": "Verstehen Sie, wie wir mit Ihren Daten umgehen, wenn Sie unseren Bildkonvertierungsservice nutzen. Ihre Privatsphäre hat für uns höchste Priorität."
+      "title": "Datenschutzerklärung | Easy Convert Image",
+      "description": "Erfahren Sie, wie Easy Convert Image Ihre Privatsphäre schützt, wenn Sie unsere kostenlosen Online-Bildkonvertierungstools verwenden.",
+      "keywords": "Datenschutzerklärung, Datenschutz, Bildkonvertierung Privatsphäre, Benutzerdaten, clientseitige Verarbeitung",
+      "ogTitle": "Easy Convert Image Datenschutzerklärung",
+      "ogDescription": "Verstehen Sie, wie wir mit Ihren Daten umgehen, wenn Sie unsere Bildkonvertierungsdienste nutzen. Ihre Privatsphäre hat für uns Priorität durch clientseitige Verarbeitung.",
+      "effectiveDate": "Diese Richtlinie ist gültig ab dem 15. Juli 2024"
     }
   },
   "termsOfService": {

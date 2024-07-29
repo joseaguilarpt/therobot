@@ -447,15 +447,15 @@
       "sections": [
         {
           "title": "Informasi yang Tidak Kami Kumpulkan",
-          "content": "Kami tidak mengumpulkan atau menyimpan informasi pribadi apa pun. Layanan kami dirancang untuk berfokus pada privasi, dan kami tidak menyimpan data apa pun tentang Anda atau gambar Anda setelah proses konversi selesai."
+          "content": "Kami tidak mengumpulkan atau menyimpan informasi pribadi apa pun. Layanan kami dirancang untuk menghormati privasi, dan kami tidak menyimpan data apa pun tentang Anda atau gambar Anda setelah proses konversi selesai."
         },
         {
-          "title": "Cara Kami Memproses Gambar Anda",
-          "content": "Saat Anda menggunakan layanan kami untuk mengonversi gambar: - Gambar diproses sementara di server kami - Tidak ada salinan gambar atau metadata-nya yang disimpan setelah konversi - Gambar yang telah dikonversi segera tersedia untuk diunduh dan kemudian dihapus dari sistem kami"
+          "title": "Bagaimana Kami Memproses Gambar Anda",
+          "content": "Ketika Anda menggunakan layanan kami untuk mengonversi gambar: \n- Gambar diproses sepenuhnya di dalam browser Anda menggunakan Remix, sebuah framework JavaScript sisi klien\n- Tidak ada data yang dikirim ke server kami selama proses konversi\n- Semua pemrosesan terjadi secara lokal di perangkat Anda\n- Tidak ada salinan gambar atau metadata yang disimpan setelah konversi\n- Gambar yang dikonversi langsung tersedia untuk diunduh langsung dari browser Anda"
         },
         {
           "title": "Keamanan Data",
-          "content": "Meskipun kami tidak menyimpan data Anda, kami menerapkan langkah-langkah keamanan standar industri untuk melindungi gambar Anda selama proses konversi, termasuk protokol transmisi data yang aman."
+          "content": "Karena semua pemrosesan gambar terjadi di dalam browser Anda, kami tidak menangani atau menyimpan gambar Anda di server kami. Pendekatan pemrosesan sisi klien ini secara inheren meningkatkan keamanan dan privasi data Anda."
         },
         {
           "title": "Hak Anda",
@@ -463,7 +463,7 @@
         },
         {
           "title": "Privasi Anak-anak",
-          "content": "Layanan kami tidak ditujukan untuk anak-anak di bawah 13 tahun. Karena kami tidak mengumpulkan informasi pribadi, kami tidak memiliki cara untuk mengetahui usia pengguna kami. Jika Anda percaya seorang anak menggunakan layanan kami dengan tidak semestinya, harap hubungi kami."
+          "content": "Layanan kami tidak ditujukan untuk anak-anak di bawah 13 tahun. Karena kami tidak mengumpulkan informasi pribadi, kami tidak memiliki cara untuk mengetahui usia pengguna kami. Jika Anda percaya seorang anak menggunakan layanan kami secara tidak pantas, harap hubungi kami."
         },
         {
           "title": "Perubahan pada Kebijakan Ini",
@@ -471,24 +471,53 @@
         },
         {
           "title": "Hak Perlindungan Data UE",
-          "content": "Jika Anda adalah penduduk Uni Eropa, Anda memiliki hak perlindungan data tertentu berdasarkan GDPR. Namun, karena kami tidak mengumpulkan atau menyimpan data pribadi, banyak hak ini mungkin tidak berlaku untuk layanan kami. Jika Anda memiliki pertanyaan atau kekhawatiran, silakan hubungi kami di admin@easyconvertimage.com."
+          "content": "Jika Anda adalah penduduk Uni Eropa, Anda memiliki hak perlindungan data tertentu berdasarkan GDPR. Namun, karena kami tidak mengumpulkan atau menyimpan data pribadi, banyak dari hak ini mungkin tidak berlaku untuk layanan kami. Jika Anda memiliki pertanyaan atau kekhawatiran, silakan hubungi kami di admin@easyconvertimage.com."
+        },
+        {
+          "title": "Cookie dan Pelacakan",
+          "content": "Kami tidak menggunakan cookie atau teknologi pelacakan di situs web kami atau dalam proses konversi gambar kami."
+        },
+        {
+          "title": "Layanan Pihak Ketiga",
+          "content": "Situs web kami dihosting di server cloud, tetapi server ini tidak memproses atau menyimpan gambar Anda. Framework Remix yang kami gunakan untuk konversi gambar berjalan sepenuhnya di browser Anda."
+        },
+        {
+          "title": "Transfer Data Internasional",
+          "content": "Karena semua pemrosesan terjadi di browser lokal Anda, tidak ada transfer data internasional yang terjadi selama proses konversi gambar."
+        },
+        {
+          "title": "Dasar Hukum untuk Pemrosesan",
+          "content": "Kami memproses gambar Anda berdasarkan persetujuan Anda, yang Anda berikan dengan mengunggah gambar untuk dikonversi. Semua pemrosesan dilakukan secara lokal di browser Anda."
+        },
+        {
+          "title": "Hak Privasi California",
+          "content": "Karena kami tidak mengumpulkan informasi pribadi, sebagian besar ketentuan CCPA tidak berlaku. Penduduk California memiliki hak untuk tidak didiskriminasi karena menggunakan hak privasi mereka."
+        },
+        {
+          "title": "Tentang Remix",
+          "content": "Kami menggunakan Remix, sebuah framework web modern, untuk memproses gambar Anda. Remix memungkinkan kami melakukan konversi gambar langsung di browser web Anda, tanpa perlu mengirim gambar Anda ke server kami. Pendekatan ini memastikan privasi dan keamanan maksimum untuk data Anda."
+        },
+        {
+          "title": "Periode Penyimpanan",
+          "content": "Kami tidak menyimpan data gambar apa pun. Semua pemrosesan bersifat sementara dan hanya terjadi di browser Anda selama waktu yang diperlukan untuk menyelesaikan konversi, biasanya dalam hitungan detik."
         }
       ]
     },
     "dataSharing": {
       "title": "Berbagi dan Pengungkapan Data",
-      "content": "Kami tidak membagikan atau mengungkapkan data pengguna apa pun, karena kami tidak mengumpulkan atau menyimpan apa pun. Gambar Anda diproses secara real-time dan segera dihapus setelah konversi."
+      "content": "Kami tidak membagikan atau mengungkapkan data pengguna apa pun, karena kami tidak mengumpulkan atau menyimpan apa pun. Gambar Anda diproses sepenuhnya di dalam browser Anda dan tidak pernah ditransmisikan ke server kami atau pihak ketiga mana pun."
     },
     "contactUs": {
       "title": "Hubungi Kami",
-      "content": "Untuk pertanyaan apa pun tentang Kebijakan Privasi ini, harap hubungi kami di admin@easyconvertimage.com"
+      "content": "Untuk pertanyaan apa pun tentang Kebijakan Privasi ini, silakan hubungi kami di admin@easyconvertimage.com"
     },
     "meta": {
       "title": "Kebijakan Privasi | Easy Convert Image",
-      "description": "Pelajari tentang bagaimana Easy Convert Image melindungi privasi Anda saat Anda menggunakan alat konversi gambar online gratis kami.",
-      "keywords": "kebijakan privasi, perlindungan data, privasi konversi gambar, data pengguna",
+      "description": "Pelajari bagaimana Easy Convert Image melindungi privasi Anda saat Anda menggunakan alat konversi gambar online gratis kami.",
+      "keywords": "kebijakan privasi, perlindungan data, privasi konversi gambar, data pengguna, pemrosesan sisi klien",
       "ogTitle": "Kebijakan Privasi Easy Convert Image",
-      "ogDescription": "Pahami bagaimana kami menangani data Anda saat Anda menggunakan layanan konversi gambar kami. Privasi Anda adalah prioritas kami."
+      "ogDescription": "Pahami bagaimana kami menangani data Anda saat Anda menggunakan layanan konversi gambar kami. Privasi Anda adalah prioritas kami dengan pemrosesan sisi klien.",
+      "effectiveDate": "Kebijakan ini berlaku mulai 15 Juli 2024"
     }
   },
   "termsOfService": {

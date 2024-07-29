@@ -442,23 +442,23 @@
     "content": {
       "heading": "Privacybeleid",
       "lastUpdated": "Laatst bijgewerkt: 15 juli 2024",
-      "introduction": "Easy Convert Image ('wij' of 'ons') is toegewijd aan de bescherming van uw privacy. Dit beleid legt uit hoe we omgaan met uw informatie wanneer u onze beeldconversiediensten gebruikt.",
+      "introduction": "Easy Convert Image ('wij' of 'ons') zet zich in om uw privacy te beschermen. Dit beleid legt uit hoe we omgaan met uw informatie wanneer u gebruik maakt van onze diensten voor beeldconversie.",
       "sections": [
         {
           "title": "Informatie die we niet verzamelen",
-          "content": "We verzamelen of slaan geen persoonlijke informatie op. Onze service is ontworpen om zich te richten op privacy, en we bewaren geen gegevens over u of uw afbeeldingen nadat het conversieproces is voltooid."
+          "content": "We verzamelen of bewaren geen persoonlijke informatie. Onze service is ontworpen met privacy in gedachten, en we bewaren geen gegevens over u of uw afbeeldingen nadat het conversieproces is voltooid."
         },
         {
           "title": "Hoe we uw afbeeldingen verwerken",
-          "content": "Wanneer u onze service gebruikt om een afbeelding te converteren: - De afbeelding wordt tijdelijk verwerkt op onze servers - Er wordt geen kopie van de afbeelding of de metadata ervan bewaard na de conversie - De geconverteerde afbeelding is onmiddellijk beschikbaar voor download en wordt vervolgens verwijderd van onze systemen"
+          "content": "Wanneer u onze service gebruikt om een afbeelding te converteren: \n- De afbeelding wordt volledig verwerkt in uw browser met behulp van Remix, een client-side JavaScript framework\n- Er worden geen gegevens naar onze servers verzonden tijdens het conversieproces\n- Alle verwerking vindt lokaal plaats op uw apparaat\n- Er worden geen kopieën van de afbeelding of metadata bewaard na de conversie\n- De geconverteerde afbeelding is direct beschikbaar voor download vanuit uw browser"
         },
         {
           "title": "Gegevensbeveiliging",
-          "content": "Hoewel we uw gegevens niet opslaan, implementeren we branchenorm beveiligingsmaatregelen om uw afbeeldingen tijdens het conversieproces te beschermen, waaronder veilige gegevensoverdrachtsprotocollen."
+          "content": "Omdat alle beeldverwerking binnen uw browser plaatsvindt, verwerken of bewaren we uw afbeeldingen niet op onze servers. Deze client-side verwerkingsaanpak verbetert inherent de veiligheid en privacy van uw gegevens."
         },
         {
           "title": "Uw rechten",
-          "content": "Omdat we geen persoonlijke gegevens verzamelen of opslaan, zijn er geen persoonlijke gegevens waar u toegang toe, kunt wijzigen of verwijderen. U hebt echter altijd het recht om te kiezen of u onze service wel of niet wilt gebruiken."
+          "content": "Aangezien we geen persoonlijke gegevens verzamelen of opslaan, zijn er geen persoonlijke gegevens waartoe u toegang kunt krijgen, die u kunt corrigeren of verwijderen. U heeft echter altijd het recht om te kiezen of u onze service wel of niet wilt gebruiken."
         },
         {
           "title": "Privacy van kinderen",
@@ -466,17 +466,45 @@
         },
         {
           "title": "Wijzigingen in dit beleid",
-          "content": "We kunnen dit beleid van tijd tot tijd bijwerken. We zullen gebruikers op de hoogte stellen van eventuele belangrijke wijzigingen door een kennisgeving op onze website te plaatsen."
+          "content": "We kunnen dit beleid van tijd tot tijd bijwerken. We zullen gebruikers op de hoogte stellen van eventuele significante wijzigingen door een melding op onze website te plaatsen."
         },
         {
           "title": "EU-gegevensbeschermingsrechten",
-          "content": "Als u een inwoner bent van de Europese Unie, heeft u bepaalde gegevensbeschermingsrechten onder de AVG. Aangezien we echter geen persoonlijke gegevens verzamelen of opslaan, zijn veel van deze rechten mogelijk niet van toepassing op onze service. Als u vragen of zorgen hebt, neem dan contact met ons op via admin@easyconvertimage.com."
+          "content": "Als u een inwoner bent van de Europese Unie, heeft u bepaalde rechten op gegevensbescherming onder de AVG. Omdat we echter geen persoonlijke gegevens verzamelen of opslaan, zijn veel van deze rechten mogelijk niet van toepassing op onze service. Als u vragen of zorgen heeft, neem dan contact met ons op via admin@easyconvertimage.com."
+        },
+        {
+          "title": "Cookies en tracking",
+          "content": "We gebruiken geen cookies of trackingtechnologieën op onze website of in ons beeldconversieproces."
+        },
+        {
+          "title": "Diensten van derden",
+          "content": "Onze website wordt gehost op cloudservers, maar deze servers verwerken of bewaren uw afbeeldingen niet. Het Remix-framework dat we gebruiken voor beeldconversie draait volledig in uw browser."
+        },
+        {
+          "title": "Internationale gegevensoverdrachten",
+          "content": "Omdat alle verwerking in uw lokale browser plaatsvindt, vinden er geen internationale gegevensoverdrachten plaats tijdens het beeldconversieproces."
+        },
+        {
+          "title": "Wettelijke basis voor verwerking",
+          "content": "We verwerken uw afbeeldingen op basis van uw toestemming, die u geeft door een afbeelding te uploaden voor conversie. Alle verwerking wordt lokaal in uw browser uitgevoerd."
+        },
+        {
+          "title": "Privacyrechten in Californië",
+          "content": "Omdat we geen persoonlijke informatie verzamelen, zijn de meeste bepalingen van de CCPA niet van toepassing. Inwoners van Californië hebben het recht om niet gediscrimineerd te worden voor het uitoefenen van hun privacyrechten."
+        },
+        {
+          "title": "Over Remix",
+          "content": "We gebruiken Remix, een modern webframework, om uw afbeeldingen te verwerken. Remix stelt ons in staat om beeldconversies direct in uw webbrowser uit te voeren, zonder dat we uw afbeeldingen naar onze servers hoeven te sturen. Deze aanpak zorgt voor maximale privacy en veiligheid van uw gegevens."
+        },
+        {
+          "title": "Bewaartermijn",
+          "content": "We bewaren geen beeldgegevens. Alle verwerking is tijdelijk en vindt alleen plaats in uw browser gedurende de tijd die nodig is om de conversie te voltooien, meestal binnen enkele seconden."
         }
       ]
     },
     "dataSharing": {
-      "title": "Gegevensuitwisseling en -openbaarmaking",
-      "content": "We delen of onthullen geen gebruikersgegevens, omdat we niets verzamelen of opslaan. Uw afbeeldingen worden in real-time verwerkt en onmiddellijk na de conversie verwijderd."
+      "title": "Gegevens delen en openbaarmaking",
+      "content": "We delen of openbaren geen gebruikersgegevens, omdat we niets verzamelen of opslaan. Uw afbeeldingen worden volledig verwerkt binnen uw browser en worden nooit verzonden naar onze servers of derden."
     },
     "contactUs": {
       "title": "Neem contact met ons op",
@@ -484,10 +512,11 @@
     },
     "meta": {
       "title": "Privacybeleid | Easy Convert Image",
-      "description": "Leer hoe Easy Convert Image uw privacy beschermt wanneer u onze gratis online beeldconversietools gebruikt.",
-      "keywords": "privacybeleid, gegevensbescherming, privacy beeldconversie, gebruikersgegevens",
+      "description": "Lees hoe Easy Convert Image uw privacy beschermt wanneer u onze gratis online tools voor beeldconversie gebruikt.",
+      "keywords": "privacybeleid, gegevensbescherming, privacy beeldconversie, gebruikersgegevens, client-side verwerking",
       "ogTitle": "Privacybeleid van Easy Convert Image",
-      "ogDescription": "Begrijp hoe we omgaan met uw gegevens wanneer u onze beeldconversiedienst gebruikt. Uw privacy is onze prioriteit."
+      "ogDescription": "Begrijp hoe we met uw gegevens omgaan wanneer u onze diensten voor beeldconversie gebruikt. Uw privacy is onze prioriteit met client-side verwerking.",
+      "effectiveDate": "Dit beleid is van kracht vanaf 15 juli 2024"
     }
   },
   "termsOfService": {
