@@ -104,7 +104,7 @@ export default function Tool() {
           )}
         </GridItem>
         <GridItem xs={12} lg={5}>
-          <GridContainer className="u-mt4" justifyContent="space-between">
+          <GridContainer className="u-mt4 tool-conversion__container" justifyContent="space-between">
             <GridItem xs={12}>
               <div className="tool-conversion-form">
                 <ConversionForm
