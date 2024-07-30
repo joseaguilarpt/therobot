@@ -62,10 +62,10 @@ export const getMetaIntl = async (params: Params, request: Request) => {
 
   // Combine all keywords
   const allKeywords = [
+    ...conversionKeywords,
     ...baseKeywords,
     ...sourceKeywords,
     ...targetKeywords,
-    ...conversionKeywords,
   ];
 
   const uniqueKeywords = Array.from(new Set(allKeywords)); // Remove duplicates

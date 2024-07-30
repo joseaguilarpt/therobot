@@ -312,14 +312,7 @@
     "description": "Ubah gambar {{sourceFormatUpper}} Anda menjadi format {{targetFormatUpper}} dengan mudah. Konverter online gratis kami mempertahankan {{sourceBenefit}} sambil memberikan {{targetBenefit}}. Tidak perlu registrasi, konversi instan!"
   },
   "keywordGenerator": {
-    "baseKeywords": [
-      "konversi gambar",
-      "konverter gratis",
-      "alat online",
-      "format gambar",
-      "konversi berkas",
-      "gambar digital"
-    ],
+    "baseKeywords": ["konversi gambar", "konverter gratis", "konversi berkas"],
     "formatSpecificKeywords": {
       "jpeg": ["kompresi berkurang", "fotografi", "gambar web"],
       "png": ["kompresi tanpa kehilangan", "transparansi", "grafis"],
@@ -805,6 +798,426 @@
       "clearSelectionLabel": "Hapus pilihan file",
       "cancelSelectionLabel": "Batalkan pemilihan file",
       "uploadFilesLabel": "Unggah file yang dipilih"
+    }
+  },
+  "prosTitle": "Keuntungan",
+  "consTitle": "Kerugian",
+  "jpeg": {
+    "pros": [
+      "Kompatibilitas universal",
+      "Ukuran file yang lebih kecil untuk gambar fotografi",
+      "Ideal untuk web dan email",
+      "Dukungan luas dalam perangkat lunak pengolah gambar"
+    ],
+    "cons": [
+      "Kompresi lossy dapat mengurangi kualitas",
+      "Tidak sesuai untuk gambar dengan teks atau tepi yang tajam",
+      "Tidak ada dukungan untuk transparensi",
+      "Tidak ideal untuk gambar yang memerlukan penyuntingan sering"
+    ],
+    "png": {
+      "description": "Ubah JPEG ke PNG untuk penyuntingan tanpa kehilangan kualitas dan dukungan transparensi. Ideal untuk grafik dengan teks atau tepi yang tajam, PNG menghilangkan kehilangan kualitas lebih lanjut dalam penyuntingan. Sempurna untuk logo, tangkapan layar, dan gambar yang memerlukan beberapa revisi atau kualitas transparensi yang tinggi untuk penggunaan web atau cetak.",
+      "technicalDetails": "Mendukung hingga kedalaman warna 24-bit dan saluran alpha 8-bit. Menggunakan kompresi DEFLATE, menggabungkan LZ77 dan pengkodean Huffman."
+    },
+    "gif": {
+      "description": "Ubah JPEG ke GIF untuk kompatibilitas luas dan dukungan animasi. Ideal untuk grafik sederhana atau membuat animasi ringan dari serangkaian gambar. Dapatkan keuntungan dari ukuran file yang kecil untuk grafik web dengan warna terbatas, sempurna untuk ikon, tombol, dan elemen animasi sederhana.",
+      "technicalDetails": "Menggunakan kompresi LZW dengan paleta 8-bit. Konversi melibatkan kuantisasi warna dan sering menerapkan dithering untuk mensimulasikan lebih banyak warna."
+    },
+    "webp": {
+      "description": "Ubah JPEG ke WebP untuk ukuran file yang jauh lebih kecil tanpa mengorbankan kualitas. Manfaatkan kompresi yang lebih baik, dukungan transparensi, dan kemampuan animasi. Ideal untuk penggunaan web, WebP mempercepat waktu muat halaman, mengurangi penggunaan bandwidth, dan meningkatkan pengalaman pengguna secara keseluruhan sambil mempertahankan kesetiaan visual.",
+      "technicalDetails": "WebP menggunakan pengkodean prediktif, mencapai ukuran 25-35% lebih kecil daripada JPEG dengan kualitas yang setara. Mendukung gamut warna luas dan hingga kedalaman warna 32-bit."
+    },
+    "avif": {
+      "description": "Ubah JPEG ke AVIF untuk kompresi dan kualitas yang lebih unggul. Ideal untuk gambar web, AVIF secara signifikan mengurangi ukuran file sambil mempertahankan atau meningkatkan kesetiaan visual. Dapatkan keuntungan dari kinerja yang lebih baik, penggunaan bandwidth yang lebih rendah, dan dukungan untuk rentang dinamis tinggi dan gamut warna luas.",
+      "technicalDetails": "Berdasarkan codec video AV1, AVIF mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4. Menawarkan kompresi lossy dan lossless."
+    },
+    "tiff": {
+      "description": "Ubah JPEG ke TIFF untuk pengarsipan berkualitas tinggi dan pencetakan profesional. TIFF melestarikan kualitas gambar dan mendukung beberapa halaman dan lapisan. Ideal untuk penerbitan, fotografi, dan alur kerja pengarsipan di mana kualitas dan fleksibilitas maksimal adalah hal yang esensial.",
+      "technicalDetails": "Mendukung berbagai algoritma kompresi, termasuk LZW dan ZIP. Dapat menangani gambar beresolusi tinggi dan mendukung hingga kedalaman warna 24-bit."
+    },
+    "bmp": {
+      "description": "Ubah JPEG ke BMP untuk gambar berkualitas tinggi tanpa kompresi. Ideal untuk situasi yang memerlukan data gambar mentah atau kompatibilitas maksimal dengan sistem lama. BMP memastikan tidak ada kehilangan kualitas tambahan, sehingga cocok untuk pengarsipan atau penggunaan dalam perangkat lunak khusus.",
+      "technicalDetails": "Format tak-terkompresi yang menyimpan data piksel secara langsung. Mendukung berbagai kedalaman warna, biasanya 24-bit true color."
+    },
+    "pdf": {
+      "description": "Ubah JPEG ke PDF untuk integrasi dan berbagi dokumen yang mudah. Ideal untuk membuat dokumen atau laporan berbasis gambar. Dapatkan keuntungan dari kompatibilitas yang luas, format siap cetak, dan kemampuan untuk menggabungkan beberapa JPEG ke dalam satu file yang mudah didistribusikan.",
+      "technicalDetails": "PDF dapat menyematkan gambar JPEG tanpa kompresi ulang. Mendukung berbagai ruang warna dan dapat mempertahankan kualitas gambar asli."
+    },
+    "svg": {
+      "description": "Ubah JPEG ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk membuat versi vektor dari logo atau gambar sederhana. Manfaat termasuk skalabilitas tak terbatas dan ukuran file kecil untuk grafik sederhana. Terbaik untuk gambar dengan bentuk jelas dan gradien warna terbatas.",
+      "technicalDetails": "Membutuhkan algoritme penjejakan untuk mengonversi data raster menjadi jalur vektor. Hasilnya sangat bervariasi tergantung pada kompleksitas gambar dan pengaturan konversi."
+    }
+  },
+  "png": {
+    "pros": [
+      "Kompresi tanpa kehilangan",
+      "Mendukung transparensi",
+      "Ideal untuk grafik, tangkapan layar, dan gambar dengan teks",
+      "Sesuai untuk gambar yang memerlukan penyuntingan sering"
+    ],
+    "cons": [
+      "Ukuran file lebih besar dibandingkan format lossy",
+      "Kurang efisien untuk gambar fotografi",
+      "Tidak seluas didukung seperti JPEG"
+    ],
+    "jpeg": {
+      "description": "Ubah PNG ke JPEG untuk mengurangi ukuran file secara drastis, terutama untuk foto dan gambar kompleks. Ideal untuk penggunaan web dan email, konversi JPEG memastikan kompatibilitas luas dan waktu muat yang lebih cepat. Dapatkan keuntungan dari kompresi yang dapat disesuaikan untuk menyeimbangkan kualitas dan ukuran file demi kinerja yang optimal.",
+      "technicalDetails": "Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan. Biasanya kedalaman warna 24-bit dengan sub-sampling kromatis 4:2:0."
+    },
+    "gif": {
+      "description": "Ubah PNG ke GIF untuk membuat animasi sederhana dan memastikan kompatibilitas maksimal. Ideal untuk grafik web yang membutuhkan dukungan luas, seperti ikon atau tombol animasi. Dapatkan keuntungan dari ukuran file kecil untuk gambar dengan warna terbatas, sempurna untuk elemen web yang cepat dimuat dan menarik.",
+      "technicalDetails": "Menggunakan kompresi LZW dengan paleta 8-bit. Konversi melibatkan kuantisasi warna dan sering menerapkan dithering untuk mensimulasikan lebih banyak warna."
+    },
+    "webp": {
+      "description": "Ubah PNG ke WebP untuk kompresi unggul tanpa mengorbankan kualitas. Ideal untuk grafik web, WebP mempertahankan transparensi sambil secara signifikan mengurangi ukuran file. Dapatkan waktu muat situs web yang lebih cepat, penggunaan bandwidth yang lebih rendah, dan dukungan untuk kompresi lossy dan lossless.",
+      "technicalDetails": "Menggunakan pengkodean prediktif untuk kompresi. Mendukung kompresi lossless dan lossy dengan kedalaman warna 24-bit dan saluran alpha 8-bit."
+    },
+    "avif": {
+      "description": "Ubah PNG ke AVIF untuk kompresi dan kualitas terkini. Ideal untuk gambar web, AVIF menawarkan pengurangan ukuran file yang unggul sambil mempertahankan kualitas gambar. Dapatkan waktu muat yang lebih cepat, penggunaan bandwidth yang lebih rendah, dan dukungan untuk rentang dinamis tinggi dan gamut warna luas.",
+      "technicalDetails": "Berdasarkan codec video AV1, AVIF mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4. Menawarkan kompresi lossy dan lossless."
+    },
+    "tiff": {
+      "description": "Ubah PNG ke TIFF untuk pengarsipan berkualitas tinggi dan pencetakan profesional. TIFF melestarikan kualitas gambar, termasuk transparensi, dan mendukung beberapa halaman dan lapisan. Ideal untuk penerbitan, fotografi, dan alur kerja pengarsipan di mana kualitas dan fleksibilitas maksimal adalah hal yang esensial.",
+      "technicalDetails": "Mendukung berbagai algoritma kompresi, termasuk LZW dan ZIP. Dapat menangani gambar beresolusi tinggi dan mendukung hingga kedalaman warna 24-bit dengan saluran alpha."
+    },
+    "bmp": {
+      "description": "Ubah PNG ke BMP untuk data gambar mentah tanpa kompresi. Ideal untuk sistem lama atau perangkat lunak khusus yang membutuhkan format bitmap. BMP memastikan tidak ada kehilangan kualitas akibat kompresi, sehingga cocok untuk aplikasi industri atau ilmiah tertentu yang membutuhkan data gambar yang belum diproses.",
+      "technicalDetails": "Format tak-terkompresi yang menyimpan data piksel secara langsung. Biasanya mendukung berbagai kedalaman warna, umumnya 24-bit true color, dengan beberapa varian yang mendukung 32-bit (termasuk saluran alpha)."
+    },
+    "pdf": {
+      "description": "Ubah PNG ke PDF untuk integrasi dan berbagi dokumen yang mudah. Ideal untuk membuat dokumen atau laporan berbasis gambar. Dapatkan keuntungan dari kompatibilitas luas, format siap cetak, dan kemampuan untuk menggabungkan beberapa PNG ke dalam satu file yang mudah didistribusikan sambil mempertahankan kualitas gambar.",
+      "technicalDetails": "PDF dapat menyematkan gambar PNG tanpa kompresi ulang. Mendukung berbagai ruang warna dan dapat mempertahankan kualitas gambar asli, termasuk transparensi."
+    },
+    "svg": {
+      "description": "Ubah PNG ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk membuat versi vektor dari logo atau gambar sederhana. Manfaat termasuk skalabilitas tak terbatas dan potensi ukuran file yang lebih kecil. Terbaik untuk gambar dengan bentuk jelas dan gradien warna terbatas.",
+      "technicalDetails": "Membutuhkan algoritme penjejakan untuk mengonversi data raster menjadi jalur vektor. Hasilnya sangat bervariasi tergantung pada kompleksitas gambar dan pengaturan konversi."
+    }
+  },
+  "gif": {
+    "pros": [
+      "Ukuran file kecil untuk grafik sederhana",
+      "Dukungan untuk animasi sederhana",
+      "Kompatibilitas universal",
+      "Ideal untuk ikon web dan grafik dasar"
+    ],
+    "cons": [
+      "Terbatas pada 256 warna",
+      "Hanya transparensi biner",
+      "Tidak sesuai untuk foto",
+      "Dithering terlihat pada gradien"
+    ],
+    "jpeg": {
+      "description": "Ubah GIF ke JPEG untuk meningkatkan kedalaman warna pada gambar diam. Ideal untuk mengonversi grafik sederhana ke format yang lebih cocok untuk foto atau gambar kompleks. Dapatkan keuntungan dari ukuran file yang lebih kecil untuk gambar berwarna penuh dan kompatibilitas yang lebih luas dalam aplikasi berpusat pada foto.",
+      "technicalDetails": "Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan. Mengonversi warna indeks GIF menjadi kedalaman warna 24-bit, sering dengan sub-sampling kromatis 4:2:0."
+    },
+    "png": {
+      "description": "Ubah GIF ke PNG untuk meningkatkan kualitas gambar dan mendukung transparensi penuh. Ideal untuk meningkatkan grafik web sederhana atau mengekstrak frame diam berkualitas tinggi dari GIF. Dapatkan keuntungan dari kompresi tanpa kehilangan, dukungan warna yang lebih luas, dan kualitas yang lebih baik untuk grafik dengan teks atau tepi tajam.",
+      "technicalDetails": "Mendukung hingga kedalaman warna 24-bit dan saluran alpha 8-bit, peningkatan signifikan dibandingkan warna indeks 8-bit GIF. Menggunakan kompresi DEFLATE."
+    },
+    "webp": {
+      "description": "Ubah GIF ke WebP untuk kompresi unggul dan dukungan animasi. Ideal untuk grafik web, WebP mempertahankan kemampuan animasi sambil secara signifikan mengurangi ukuran file. Dapatkan waktu muat situs web yang lebih cepat, penggunaan bandwidth yang lebih rendah, dan kualitas gambar yang lebih baik dibandingkan GIF.",
+      "technicalDetails": "Menggunakan pengkodean prediktif untuk kompresi. Mendukung kompresi lossy dan lossless dengan opsi untuk animasi dan transparensi."
+    },
+    "avif": {
+      "description": "Ubah GIF ke AVIF untuk kompresi dan kualitas generasi terkini. Ideal untuk meningkatkan grafik web, AVIF menawarkan pengurangan ukuran file yang unggul sambil meningkatkan kualitas gambar. Dapatkan waktu muat yang lebih cepat, penggunaan bandwidth yang lebih rendah, dan kesetiaan visual yang ditingkatkan untuk gambar statis dan animasi.",
+      "technicalDetails": "Berdasarkan codec video AV1, AVIF mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4. Menawarkan kompresi lossy dan lossless, dengan potensi dukungan animasi."
+    },
+    "tiff": {
+      "description": "Ubah GIF ke TIFF untuk pengarsipan berkualitas tinggi dan penggunaan profesional. TIFF melestarikan kualitas gambar dan mendukung beberapa halaman, ideal untuk mengonversi animasi GIF. Sempurna untuk penerbitan, pengarsipan, dan alur kerja yang memerlukan kualitas dan fleksibilitas maksimal.",
+      "technicalDetails": "Mendukung berbagai algoritma kompresi. Dapat menangani gambar beresolusi tinggi dan beberapa halaman, memungkinkan konversi dengan kesetiaan tinggi baik untuk GIF statis maupun animasi."
+    },
+    "bmp": {
+      "description": "Ubah GIF ke BMP untuk data gambar mentah tanpa kompresi. Ideal untuk sistem lama atau perangkat lunak khusus yang membutuhkan format bitmap. BMP memastikan tidak ada kehilangan kualitas tambahan, sehingga cocok untuk mengekstrak frame individu dari GIF untuk analisis atau pemrosesan lebih lanjut.",
+      "technicalDetails": "Format tak-terkompresi yang menyimpan data piksel secara langsung. Biasanya mengonversi ke kedalaman warna 24-bit, memperluas warna indeks 8-bit GIF."
+    },
+    "pdf": {
+      "description": "Ubah GIF ke PDF untuk integrasi dokumen yang mudah. Ideal untuk menyertakan konten GIF ke dalam laporan atau presentasi. Dapatkan keuntungan dari kompatibilitas luas dan format siap cetak. Berguna untuk membuat dokumen dari seri GIF atau melestarikan konten GIF dalam format yang lebih fleksibel.",
+      "technicalDetails": "PDF dapat menyematkan gambar GIF, biasanya mengonversinya ke format yang lebih sesuai untuk cetak. PDF multi-halaman dapat mewakili animasi GIF sebagai halaman terpisah."
+    },
+    "svg": {
+      "description": "Ubah GIF ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk membuat versi vektor dari gambar GIF sederhana atau logo. Manfaat termasuk skalabilitas tak terbatas dan potensi ukuran file yang lebih kecil. Terbaik untuk GIF dengan bentuk jelas dan warna terbatas.",
+      "technicalDetails": "Membutuhkan algoritme penjejakan untuk mengonversi data raster GIF menjadi jalur vektor. Hasilnya sangat bervariasi tergantung pada kompleksitas GIF dan pengaturan konversi."
+    }
+  },
+  "webp": {
+    "pros": [
+      "Efisiensi kompresi yang sangat baik",
+      "Mendukung kompresi lossy dan lossless",
+      "Dukungan transparensi dan animasi",
+      "Pemuatan halaman web yang lebih cepat",
+      "Penggunaan bandwidth yang lebih rendah"
+    ],
+    "cons": [
+      "Dukungan terbatas pada browser lama",
+      "Kurang sesuai untuk alur kerja cetak",
+      "Potensi kehilangan metadata",
+      "Waktu pengkodean sedikit lebih lama"
+    ],
+    "jpeg": {
+      "description": "Ubah WebP ke JPEG untuk kompatibilitas maksimal. Ideal untuk berbagi gambar pada platform yang tidak mendukung WebP. Dapatkan penerimaan luas di klien email, browser web lama, dan perangkat lunak pengolah gambar. JPEG memastikan gambar Anda dapat dilihat di mana saja, meskipun dengan beberapa kompromi kualitas.",
+      "technicalDetails": "Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan. Mengonversi data WebP yang mungkin lossless atau saluran alpha menjadi 24-bit warna lossy, sering dengan sub-sampling kromatis 4:2:0."
+    },
+    "png": {
+      "description": "Ubah WebP ke PNG untuk kualitas lossless dan kompatibilitas luas. Ideal untuk melestarikan kualitas gambar dan transparensi. Sempurna untuk penyuntingan lebih lanjut, grafik web berkualitas tinggi, atau saat bekerja dengan perangkat lunak yang tidak mendukung WebP. Memastikan tidak ada kehilangan kualitas untuk gambar WebP lossless.",
+      "technicalDetails": "Menggunakan kompresi DEFLATE. Mendukung hingga kedalaman warna 24-bit dan saluran alpha 8-bit, memungkinkan reproduksi yang setia dari gambar WebP, termasuk transparensi."
+    },
+    "gif": {
+      "description": "Ubah WebP ke GIF untuk kompatibilitas maksimal dan dukungan animasi. Ideal untuk membuat grafik animasi yang didukung secara luas. Sempurna untuk platform media sosial, forum, dan situs web yang tidak mendukung WebP. Dapatkan pemutaran universal untuk gambar animasi Anda.",
+      "technicalDetails": "Menggunakan kompresi LZW dengan paleta 256 warna. WebP animasi dapat dikonversi ke GIF animasi, meskipun dengan potensi kehilangan kualitas dan ukuran file yang lebih besar."
+    },
+    "avif": {
+      "description": "Ubah WebP ke AVIF untuk kompresi gambar generasi berikutnya. Ideal untuk mengoptimalkan lebih lanjut gambar web. Dapatkan ukuran file yang bahkan lebih kecil, preservasi kualitas yang lebih baik pada bitrate rendah, dan dukungan untuk HDR. Sempurna untuk mengamankan masa depan aset gambar Anda.",
+      "technicalDetails": "Berdasarkan codec video AV1, mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4. Menawarkan kompresi lossy dan lossless."
+    },
+    "tiff": {
+      "description": "Ubah WebP ke TIFF untuk pengarsipan berkualitas tinggi dan pencetakan profesional. Ideal untuk melestarikan gambar WebP dalam format yang diterima luas di industri penerbitan dan percetakan. Dapatkan dukungan metadata yang luas dan kemampuan multi-halaman TIFF untuk konten WebP animasi.",
+      "technicalDetails": "Mendukung berbagai algoritma kompresi. Dapat menangani gambar beresolusi tinggi dan beberapa halaman, memungkinkan konversi dengan kesetiaan tinggi baik untuk WebP statis maupun animasi."
+    },
+    "bmp": {
+      "description": "Ubah WebP ke BMP untuk data gambar mentah tanpa kompresi. Ideal untuk skenario yang memerlukan data gambar pixel-perfect atau kompatibilitas maksimal dengan sistem lama. BMP memastikan tidak ada kehilangan kualitas akibat kompresi, berguna untuk analisis atau aplikasi khusus.",
+      "technicalDetails": "Format tak-terkompresi yang menyimpan data piksel secara langsung. Biasanya mengonversi ke kedalaman warna 24-bit, dengan beberapa varian yang mendukung 32-bit (termasuk saluran alpha)."
+    },
+    "pdf": {
+      "description": "Ubah WebP ke PDF untuk integrasi dokumen yang mudah. Ideal untuk menggabungkan grafik web ke dalam dokumen yang dapat dicetak. Dapatkan kompatibilitas universal dan format siap cetak. Sempurna untuk melestarikan konten WebP dalam format dokumen yang diterima secara luas.",
+      "technicalDetails": "PDF dapat menyematkan gambar WebP setelah mengonversinya ke format yang kompatibel. Mendukung berbagai ruang warna dan dapat mempertahankan kualitas gambar asli."
+    },
+    "svg": {
+      "description": "Ubah WebP ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk membuat versi vektor dari gambar WebP sederhana atau logo. Manfaat termasuk skalabilitas tak terbatas dan potensi ukuran file yang lebih kecil. Terbaik untuk WebP dengan bentuk jelas dan warna terbatas.",
+      "technicalDetails": "Membutuhkan algoritme penjejakan untuk mengonversi data raster WebP menjadi jalur vektor. Hasilnya sangat bervariasi tergantung pada kompleksitas gambar dan pengaturan konversi."
+    }
+  },
+  "avif": {
+    "pros": [
+      "Efisiensi kompresi luar biasa",
+      "Kualitas gambar yang unggul, terutama pada bitrate rendah",
+      "Mendukung HDR dan gamut warna luas",
+      "Penggunaan bandwidth yang lebih rendah dan waktu muat yang lebih cepat",
+      "Opsi kompresi lossy dan lossless"
+    ],
+    "cons": [
+      "Dukungan browser dan perangkat lunak yang terbatas",
+      "Waktu pengkodean lebih lama",
+      "Persyaratan komputasi yang lebih tinggi untuk pengkodean/dekodean",
+      "Potensi masalah kompatibilitas dalam beberapa alur kerja"
+    ],
+    "jpeg": {
+      "description": "Ubah AVIF ke JPEG untuk kompatibilitas universal. Ideal untuk berbagi gambar berkualitas tinggi pada platform yang tidak mendukung AVIF. Dapatkan penerimaan luas di klien email, browser web, dan perangkat lunak pengolah gambar, memastikan gambar Anda dapat dilihat di mana saja.",
+      "technicalDetails": "Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan. Mengonversi kedalaman bit AVIF yang mungkin tinggi menjadi 24-bit warna standar, sering dengan sub-sampling kromatis 4:2:0."
+    },
+    "png": {
+      "description": "Ubah AVIF ke PNG untuk kualitas lossless dan kompatibilitas luas. Ideal untuk melestarikan kualitas gambar saat tampilan AVIF tidak tersedia. Sempurna untuk penyuntingan lebih lanjut, grafik web berkualitas tinggi, atau saat bekerja dengan perangkat lunak yang tidak mendukung AVIF.",
+      "technicalDetails": "Menggunakan kompresi DEFLATE. Mendukung hingga kedalaman warna 24-bit dan saluran alpha 8-bit, mungkin kehilangan beberapa data warna dari gambar AVIF kedalaman bit tinggi."
+    },
+    "gif": {
+      "description": "Ubah AVIF ke GIF untuk kompatibilitas maksimal dan dukungan animasi sederhana. Ideal untuk membuat grafik animasi yang didukung secara luas. Sempurna untuk platform yang tidak mendukung AVIF. Dapatkan pemutaran universal untuk gambar animasi atau grafik sederhana Anda.",
+      "technicalDetails": "Menggunakan kompresi LZW dengan paleta 256 warna. AVIF animasi dapat dikonversi ke GIF animasi, meskipun dengan potensi kehilangan kualitas dan ukuran file yang lebih besar."
+    },
+    "webp": {
+      "description": "Ubah AVIF ke WebP untuk kompatibilitas lebih luas sambil mempertahankan kompresi yang baik. Ideal untuk mengoptimalkan gambar web pada platform yang mendukung WebP tetapi tidak mendukung AVIF. Dapatkan ukuran file yang lebih kecil daripada format tradisional dan dukungan untuk kompresi lossless dan animasi.",
+      "technicalDetails": "Menggunakan pengkodean prediktif untuk kompresi. Mendukung kompresi lossy dan lossless dengan kedalaman warna 24-bit dan saluran alpha 8-bit."
+    },
+    "tiff": {
+      "description": "Ubah AVIF ke TIFF untuk pengarsipan berkualitas tinggi dan pencetakan profesional. Ideal untuk melestarikan gambar AVIF dalam format yang diterima luas di industri penerbitan dan percetakan. Dapatkan dukungan metadata yang luas TIFF dan opsi ruang warna yang fleksibel.",
+      "technicalDetails": "Mendukung berbagai algoritma kompresi. Dapat menangani gambar beresolusi tinggi dan beberapa halaman, memungkinkan konversi dengan kesetiaan tinggi dari konten AVIF."
+    },
+    "bmp": {
+      "description": "Ubah AVIF ke BMP untuk data gambar mentah tanpa kompresi. Ideal untuk skenario yang memerlukan data gambar pixel-perfect atau kompatibilitas maksimal dengan sistem lama. BMP memastikan tidak ada artefak kompresi tambahan, berguna untuk analisis atau aplikasi khusus yang membutuhkan data gambar yang belum diproses.",
+      "technicalDetails": "Format tak-terkompresi yang menyimpan data piksel secara langsung. Biasanya mengonversi ke kedalaman warna 24-bit, mungkin kehilangan informasi dari gambar AVIF kedalaman bit tinggi."
+    },
+    "pdf": {
+      "description": "Ubah AVIF ke PDF untuk integrasi dokumen yang mudah. Ideal untuk membuat laporan, presentasi, atau mengarsipkan gambar berkualitas tinggi. Dapatkan keuntungan dari kompatibilitas universal dan format siap cetak. Sempurna untuk melestarikan konten AVIF dalam format dokumen yang diterima secara luas.",
+      "technicalDetails": "PDF dapat menyematkan gambar dalam berbagai format. Mungkin mengonversi AVIF ke format yang lebih kompatibel saat penyematan. Mendukung berbagai ruang warna untuk konversi berkualitas tinggi."
+    },
+    "svg": {
+      "description": "Ubah AVIF ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk membuat versi vektor dari gambar AVIF sederhana atau logo. Manfaat termasuk skalabilitas tak terbatas dan potensi ukuran file yang lebih kecil. Terbaik untuk gambar dengan bentuk jelas dan warna terbatas.",
+      "technicalDetails": "Membutuhkan algoritme penjejakan untuk mengonversi data raster AVIF menjadi jalur vektor. Hasilnya sangat bervariasi tergantung pada kompleksitas gambar dan pengaturan konversi."
+    }
+  },
+  "tiff": {
+    "pros": [
+      "Output berkualitas tinggi dengan opsi fleksibel",
+      "Mendukung lapisan dan beberapa halaman",
+      "Ideal untuk alur kerja cetak dan profesional",
+      "Sangat baik untuk pengarsipan dan pelestarian gambar",
+      "Dukungan metadata yang luas"
+    ],
+    "cons": [
+      "Ukuran file besar",
+      "Tidak sesuai untuk penggunaan web",
+      "Dukungan terbatas dalam beberapa aplikasi",
+      "Format kompleks dengan banyak opsi"
+    ],
+    "jpeg": {
+      "description": "Ubah TIFF ke JPEG untuk kompatibilitas universal dan ukuran file yang lebih kecil. Ideal untuk berbagi gambar berkualitas tinggi dari alur kerja profesional pada platform web. Dapatkan penerimaan luas di klien email, browser, dan perangkat lunak konsumen, memastikan gambar Anda mudah dilihat.",
+      "technicalDetails": "Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan. Mengonversi kedalaman bit TIFF yang mungkin tinggi menjadi 24-bit warna standar, sering dengan sub-sampling kromatis 4:2:0."
+    },
+    "png": {
+      "description": "Ubah TIFF ke PNG untuk gambar web tanpa kehilangan kualitas. Ideal untuk melestarikan grafik berkualitas tinggi dari alur kerja profesional untuk penggunaan web. Sempurna untuk logo, ilustrasi, dan gambar dengan teks. Mempertahankan transparensi dan memberikan kompresi yang baik untuk gambar non-fotografi.",
+      "technicalDetails": "Menggunakan kompresi DEFLATE. Mendukung hingga kedalaman warna 24-bit dan saluran alpha 8-bit, mungkin kehilangan beberapa data warna dari gambar TIFF kedalaman bit tinggi."
+    },
+    "gif": {
+      "description": "Ubah TIFF ke GIF untuk kompatibilitas luas dan animasi sederhana. Ideal untuk membuat grafik web dari sumber TIFF berkualitas tinggi. Sempurna untuk logo sederhana, ikon, atau animasi dasar. Dapatkan ukuran file kecil dan dukungan universal untuk grafik sederhana.",
+      "technicalDetails": "Menggunakan kompresi LZW dengan paleta 256 warna. Pengurangan warna kompleks dari kedalaman bit TIFF yang mungkin tinggi dapat mengakibatkan kehilangan kualitas yang signifikan."
+    },
+    "webp": {
+      "description": "Ubah TIFF ke WebP untuk gambar web yang dioptimalkan secara efisien. Ideal untuk mengonversi file TIFF berkualitas tinggi ke format yang sesuai untuk situs web yang cepat dimuat. Dapatkan kompresi yang sangat baik, dukungan transparensi, dan kualitas gambar yang baik, sempurna untuk portofolio online dan e-commerce.",
+      "technicalDetails": "Menggunakan pengkodean prediktif untuk kompresi. Mendukung kompresi lossy dan lossless dengan kedalaman warna 24-bit dan saluran alpha 8-bit."
+    },
+    "avif": {
+      "description": "Ubah TIFF ke AVIF untuk kompresi gambar generasi berikutnya. Ideal untuk mengarsipkan gambar TIFF berkualitas tinggi dalam format yang efisien. Dapatkan kompresi yang unggul, preservasi kualitas yang sangat baik, dan dukungan untuk kedalaman bit tinggi dan gamut warna luas, sempurna untuk gambar web yang aman untuk masa depan.",
+      "technicalDetails": "Berdasarkan codec video AV1, mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4. Menawarkan kompresi lossy dan lossless."
+    },
+    "bmp": {
+      "description": "Ubah TIFF ke BMP untuk gambar tak-terkompresi dan sangat kompatibel. Ideal untuk skenario yang memerlukan data gambar mentah atau kompatibilitas dengan sistem lama. BMP memastikan tidak ada artefak kompresi, berguna untuk aplikasi industri atau ilmiah tertentu yang membutuhkan data gambar yang belum diproses.",
+      "technicalDetails": "Format tak-terkompresi yang menyimpan data piksel secara langsung. Biasanya mengonversi ke kedalaman warna 24-bit, mungkin kehilangan informasi dari gambar TIFF kedalaman bit tinggi."
+    },
+    "pdf": {
+      "description": "Ubah TIFF ke PDF untuk kompatibilitas dokumen universal. Ideal untuk menyertakan gambar berkualitas tinggi ke dalam laporan, presentasi, atau arsip. Dapatkan dukungan yang luas, format siap cetak, dan kemampuan untuk mempertahankan kesetiaan gambar yang tinggi. Sempurna untuk dokumentasi profesional dan akademik.",
+      "technicalDetails": "PDF dapat menyematkan gambar TIFF secara langsung atau mengonversinya. Mendukung berbagai ruang warna dan dapat mempertahankan kedalaman bit tinggi, memungkinkan konversi berkualitas tinggi dari data TIFF."
+    },
+    "svg": {
+      "description": "Ubah TIFF ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk membuat versi vektor dari gambar TIFF berkualitas tinggi atau logo. Manfaat termasuk skalabilitas tak terbatas dan potensi ukuran file yang lebih kecil. Terbaik untuk gambar dengan bentuk jelas dan gradien warna terbatas.",
+      "technicalDetails": "Membutuhkan algoritme penjejakan untuk mengonversi data raster TIFF menjadi jalur vektor. Hasilnya sangat bervariasi tergantung pada kompleksitas gambar dan pengaturan konversi."
+    }
+  },
+  "bmp": {
+    "pros": [
+      "Tidak ada kehilangan kualitas akibat kompresi",
+      "Kompatibilitas luas dengan sistem lama",
+      "Data gambar mentah untuk aplikasi khusus",
+      "Format sederhana untuk pembacaan dan penulisan yang mudah"
+    ],
+    "cons": [
+      "Ukuran file sangat besar",
+      "Tidak sesuai untuk web atau transfer jaringan",
+      "Kurangnya fitur lanjutan seperti transparensi",
+      "Tidak efisien untuk penyimpanan dan kasus penggunaan modern"
+    ],
+    "jpeg": {
+      "description": "Ubah BMP ke JPEG untuk ukuran file yang jauh lebih kecil. Ideal untuk berbagi gambar BMP di web atau melalui email. Dapatkan kompatibilitas luas dan file yang jauh lebih kecil, sempurna untuk foto digital atau grafik kompleks di mana sedikit kehilangan kualitas dapat diterima.",
+      "technicalDetails": "Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan. Mengonversi data BMP yang tak-terkompresi menjadi 24-bit warna terkompresi, sering dengan sub-sampling kromatis 4:2:0."
+    },
+    "png": {
+      "description": "Ubah BMP ke PNG untuk kompresi tanpa kehilangan yang efisien. Ideal untuk mengurangi ukuran file sambil mempertahankan kualitas gambar. Sempurna untuk grafik, tangkapan layar, atau gambar dengan teks. PNG mendukung transparensi, menawarkan fleksibilitas untuk grafik web dan proyek desain digital.",
+      "technicalDetails": "Menggunakan kompresi DEFLATE. Mendukung hingga kedalaman warna 24-bit dan saluran alpha 8-bit, memungkinkan reproduksi yang setia dari data BMP, termasuk transparensi."
+    },
+    "gif": {
+      "description": "Ubah BMP ke GIF untuk ukuran file kecil dan potensi animasi. Ideal untuk grafik sederhana, logo, atau membuat animasi dari seri gambar BMP. Dapatkan kompatibilitas luas dan file kecil untuk grafik web dasar, sempurna untuk ikon atau elemen animasi sederhana.",
+      "technicalDetails": "Menggunakan kompresi LZW dengan paleta 256 warna. Konversi dari BMP sering melibatkan kuantisasi warna dan dithering untuk beradaptasi dengan ruang warna terbatas GIF."
+    },
+    "webp": {
+      "description": "Ubah BMP ke WebP untuk gambar web modern dan efisien. Ideal untuk mengonversi BMP tak-terkompresi ke format yang dioptimalkan untuk web. Dapatkan kompresi yang sangat baik, dukungan transparensi, dan kualitas gambar yang baik, sempurna untuk situs web yang cepat dimuat dan media online.",
+      "technicalDetails": "Menggunakan pengkodean prediktif untuk kompresi. Mendukung kompresi lossy dan lossless dengan kedalaman warna 24-bit dan saluran alpha 8-bit."
+    },
+    "avif": {
+      "description": "Ubah BMP ke AVIF untuk kompresi dan kualitas yang unggul. Ideal untuk mengarsipkan gambar BMP dengan ukuran file minimal. Dapatkan kompresi yang sangat baik, kualitas gambar tinggi, dan dukungan untuk gamut warna luas. Sempurna untuk mengamankan masa depan gambar dan mengoptimalkan konten web.",
+      "technicalDetails": "Berdasarkan codec video AV1, mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4. Menawarkan kompresi lossy dan lossless."
+    },
+    "tiff": {
+      "description": "Ubah BMP ke TIFF untuk penyimpanan gambar yang serba-guna dan berkualitas tinggi. Ideal untuk melestarikan data BMP dalam format yang sesuai untuk pencetakan profesional dan penerbitan. Dapatkan dukungan TIFF untuk lapisan, beberapa halaman, dan metadata ekstensif, sempurna untuk pengarsipan dan alur kerja profesional.",
+      "technicalDetails": "Mendukung berbagai algoritma kompresi, termasuk LZW dan ZIP. Dapat menangani gambar beresolusi tinggi dan mendukung hingga kedalaman warna 24-bit."
+    },
+    "pdf": {
+      "description": "Ubah BMP ke PDF untuk kompatibilitas dokumen universal. Ideal untuk menyertakan gambar BMP ke dalam laporan, presentasi, atau arsip. Dapatkan dukungan yang luas, format siap cetak, dan kemampuan untuk menggabungkan beberapa BMP ke dalam satu file yang mudah didistribusikan.",
+      "technicalDetails": "PDF dapat menyematkan gambar BMP secara langsung atau mengonversinya. Mendukung berbagai ruang warna dan dapat mempertahankan kualitas gambar asli."
+    },
+    "svg": {
+      "description": "Ubah BMP ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk membuat versi vektor dari gambar BMP sederhana atau logo. Manfaat termasuk skalabilitas tak terbatas dan potensi ukuran file yang lebih kecil. Terbaik untuk BMP dengan bentuk jelas dan warna terbatas.",
+      "technicalDetails": "Membutuhkan algoritme penjejakan untuk mengonversi data raster BMP menjadi jalur vektor. Hasilnya sangat bervariasi tergantung pada kompleksitas gambar dan pengaturan konversi."
+    }
+  },
+  "pdf": {
+    "pros": [
+      "Kompatibilitas universal untuk melihat dan mencetak",
+      "Dapat menggabungkan beberapa gambar dalam satu dokumen",
+      "Mempertahankan kualitas gambar yang tinggi",
+      "Ideal untuk dokumentasi profesional",
+      "Mendukung penyematan font dan metadata"
+    ],
+    "cons": [
+      "Ukuran file lebih besar daripada gambar asli",
+      "Tidak ideal untuk penyuntingan gambar lebih lanjut",
+      "Potensi kehilangan beberapa metadata",
+      "Terlalu berlebihan untuk berbagi gambar sederhana"
+    ],
+    "jpeg": {
+      "description": "Ubah PDF ke JPEG untuk ekstraksi gambar yang kompatibel secara luas. Ideal untuk berbagi halaman atau grafik tertentu dari PDF. Dapatkan tampilan yang mudah di perangkat apa pun, sempurna untuk berbagi konten PDF dengan cepat melalui email atau aplikasi pesan.",
+      "technicalDetails": "Menyaraskan konten PDF, biasanya pada kedalaman warna 24-bit. Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan."
+    },
+    "png": {
+      "description": "Ubah PDF ke PNG untuk ekstraksi gambar berkualitas tinggi. Ideal untuk melestarikan kejelasan teks dan grafik dari PDF. Sempurna untuk membuat gambar web dari konten PDF, mempertahankan kualitas untuk diagram, grafik, dan halaman kaya teks.",
+      "technicalDetails": "Menyaraskan konten PDF. Mendukung hingga kedalaman warna 24-bit dan saluran alpha 8-bit, menggunakan kompresi DEFLATE."
+    },
+    "gif": {
+      "description": "Ubah PDF ke GIF untuk gambar sederhana dan kompatibel secara luas. Ideal untuk membuat grafik web kecil dari konten PDF. Sempurna untuk mengekstrak diagram sederhana atau membuat animasi dasar dari PDF multi-halaman. Dapatkan ukuran file kecil untuk grafik sederhana.",
+      "technicalDetails": "Menyaraskan konten PDF ke kedalaman warna 8-bit. Menggunakan kompresi LZW. Mungkin melibatkan pengurangan warna yang signifikan dan potensi dithering."
+    },
+    "webp": {
+      "description": "Ubah PDF ke WebP untuk gambar web yang dioptimalkan secara efisien. Ideal untuk mengonversi konten PDF menjadi grafik web ringan dan berkualitas tinggi. Dapatkan kompresi yang sangat baik dan kualitas yang baik, sempurna untuk berbagi konten PDF secara online sambil mempertahankan kesetiaan visual dan waktu muat yang cepat.",
+      "technicalDetails": "Menyaraskan konten PDF. Menggunakan pengkodean prediktif untuk kompresi, mendukung mode lossy dan lossless dengan kedalaman warna 24-bit dan saluran alpha 8-bit."
+    },
+    "avif": {
+      "description": "Ubah PDF ke AVIF untuk kompresi gambar generasi berikutnya. Ideal untuk mengarsipkan konten visual PDF dalam format yang efisien. Dapatkan kompresi yang unggul, preservasi kualitas yang sangat baik, dan dukungan untuk rentang dinamis tinggi. Sempurna untuk gambar web yang aman untuk masa depan, dari sumber PDF.",
+      "technicalDetails": "Menyaraskan konten PDF. Berdasarkan codec video AV1, mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4."
+    },
+    "tiff": {
+      "description": "Ubah PDF ke TIFF untuk pengarsipan gambar berkualitas tinggi. Ideal untuk melestarikan konten PDF dalam format yang sesuai untuk pencetakan profesional dan penerbitan. Dapatkan dukungan halaman ganda dan metadata ekstensif TIFF, sempurna untuk pengarsipan dan alur kerja profesional.",
+      "technicalDetails": "Menyaraskan konten PDF. Mendukung berbagai algoritma kompresi, output beresolusi tinggi, dan hingga kedalaman warna 24-bit."
+    },
+    "bmp": {
+      "description": "Ubah PDF ke BMP untuk ekstraksi gambar tak-terkompresi dan sangat kompatibel. Ideal untuk skenario yang memerlukan data mentah dari PDF. BMP memastikan tidak ada artefak kompresi, berguna untuk beberapa sistem lama atau aplikasi khusus yang membutuhkan data gambar yang belum diproses dari konten PDF.",
+      "technicalDetails": "Menyaraskan konten PDF. Format tak-terkompresi yang menyimpan data piksel secara langsung, biasanya pada kedalaman warna 24-bit."
+    },
+    "svg": {
+      "description": "Ubah PDF ke SVG untuk grafik yang dapat diskalakan dan diedit. Ideal untuk mengekstrak konten vektor dari PDF. Manfaat termasuk skalabilitas tak terbatas dan kemampuan edit. Terbaik untuk PDF dengan grafik sederhana, logo, atau ilustrasi. Mempertahankan kualitas vektor untuk penyuntingan lebih lanjut.",
+      "technicalDetails": "Berusaha mengekstrak atau mengonversi elemen vektor PDF menjadi jalur SVG. Elemen raster dapat disematkan atau dijejaki. Hasilnya bervariasi berdasarkan kompleksitas PDF."
+    }
+  },
+  "svg": {
+    "pros": [
+      "Skalabilitas tak terbatas tanpa kehilangan kualitas",
+      "Ukuran file kecil untuk grafik sederhana",
+      "Dapat diedit dalam perangkat lunak grafik vektor",
+      "Ideal untuk logo dan ilustrasi sederhana",
+      "Mendukung animasi dan interaktivitas"
+    ],
+    "cons": [
+      "Tidak sesuai untuk gambar fotografi kompleks",
+      "Dapat ditampilkan berbeda antar browser",
+      "Dapat lebih lambat di-render daripada format raster",
+      "Dukungan terbatas untuk efek grafis canggih"
+    ],
+    "jpeg": {
+      "description": "Ubah SVG ke JPEG untuk kompatibilitas luas dan ukuran file yang lebih kecil. Ideal untuk berbagi grafik vektor sebagai gambar raster. Manfaat termasuk dukungan universal dan pengurangan ukuran file. Terbaik untuk SVG sederhana atau saat format vektor tidak diperlukan.",
+      "technicalDetails": "Menyaraskan konten SVG. Menggunakan transformasi cosinus diskret (DCT) dengan kompresi yang dapat disesuaikan, biasanya pada kedalaman warna 24-bit."
+    },
+    "png": {
+      "description": "Ubah SVG ke PNG untuk gambar raster berkualitas tinggi dengan transparensi. Ideal untuk membuat gambar web dari grafik vektor. Sempurna untuk logo, ikon, dan ilustrasi yang harus mempertahankan kejelasan pada ukuran tetap.",
+      "technicalDetails": "Menyaraskan konten SVG. Mendukung kedalaman warna 24-bit dan saluran alpha 8-bit, menggunakan kompresi DEFLATE."
+    },
+    "gif": {
+      "description": "Ubah SVG ke GIF untuk animasi sederhana dan kompatibilitas luas. Ideal untuk membuat ikon animasi atau ilustrasi sederhana dari SVG. Manfaat termasuk ukuran file kecil untuk grafik dasar dan dukungan universal di semua platform.",
+      "technicalDetails": "Menyaraskan konten SVG. Menggunakan kompresi LZW dengan paleta 256 warna. Mungkin melibatkan kuantisasi warna dan dithering."
+    },
+    "webp": {
+      "description": "Ubah SVG ke WebP untuk gambar web yang efisien dan berkualitas tinggi. Ideal untuk mengonversi grafik vektor menjadi format raster modern. Dapatkan kompresi yang sangat baik, dukungan transparensi, dan kualitas gambar yang baik, sempurna untuk grafik web yang dioptimalkan dari sumber SVG.",
+      "technicalDetails": "Menyaraskan konten SVG. Menggunakan pengkodean prediktif untuk kompresi, mendukung mode lossy dan lossless dengan kedalaman warna 24-bit dan saluran alpha 8-bit."
+    },
+    "avif": {
+      "description": "Ubah SVG ke AVIF untuk kompresi gambar generasi berikutnya. Ideal untuk membuat versi raster yang sangat dioptimalkan dari grafik vektor. Dapatkan kompresi yang unggul, preservasi kualitas yang sangat baik, dan dukungan untuk gamut warna luas. Sempurna untuk gambar web yang aman untuk masa depan, dari sumber SVG.",
+      "technicalDetails": "Menyaraskan konten SVG. Berdasarkan codec video AV1, mendukung hingga kedalaman warna 12-bit dan sub-sampling kromatis 4:4:4."
+    },
+    "tiff": {
+      "description": "Ubah SVG ke TIFF untuk pengarsipan raster berkualitas tinggi. Ideal untuk melestarikan grafik vektor dalam format yang sesuai untuk pencetakan profesional dan penerbitan. Dapatkan dukungan TIFF untuk resolusi tinggi dan metadata ekstensif, sempurna untuk pengarsipan dan alur kerja cetak.",
+      "technicalDetails": "Menyaraskan konten SVG. Mendukung berbagai algoritma kompresi, output beresolusi tinggi, dan hingga kedalaman warna 24-bit dengan saluran alpha opsional."
+    },
+    "bmp": {
+      "description": "Ubah SVG ke BMP untuk gambar raster tak-terkompresi dan sangat kompatibel. Ideal untuk skenario yang memerlukan data gambar mentah atau kompatibilitas maksimal dengan sistem lama. BMP memastikan tidak ada artefak kompresi, berguna untuk aplikasi khusus yang membutuhkan data gambar yang belum diproses.",
+      "technicalDetails": "Menyaraskan konten SVG. Format tak-terkompresi yang menyimpan data piksel secara langsung, biasanya pada kedalaman warna 24-bit."
+    },
+    "pdf": {
+      "description": "Ubah SVG ke PDF untuk kompatibilitas dokumen universal. Ideal untuk menyertakan grafik vektor ke dalam dokumen yang dapat dicetak. Dapatkan preservasi kualitas vektor, dukungan yang luas, dan format siap cetak. Sempurna untuk membuat dokumen dari grafik atau ilustrasi SVG.",
+      "technicalDetails": "Mengonversi jalur SVG menjadi elemen vektor PDF. Mendukung penyematan font dan preservasi grafik vektor. Mungkin menyaraskan beberapa efek kompleks."
     }
   }
 }

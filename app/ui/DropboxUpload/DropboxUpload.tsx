@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import Button from "../Button/Button";
 import dropboxLogo from "../../img/dropbox.svg";
 import "./DropboxUpload.scss";
-import { useMemo } from "react";
 import { useTheme } from "~/context/ThemeContext";
 
 function parseDropboxExtension(sourceFormat: string): string[] {
@@ -102,22 +101,18 @@ export default function DropboxUpload({
     }
   };
 
-  const options = useMemo(
-    () => ({
-      success: handleUploadFiles,
-      cancel: () =>
-        showSnackbar(t("dropboxModal.messages.operationCancelled"), "info"),
-      error: () =>
-        showSnackbar(t("dropboxModal.errors.downloadError"), "error"),
-      linkType: "direct",
-      multiselect: true,
-      folderselect: false,
-      lang: 'es_ES',
-      sizeLimit: 10_000_000,
-      extensions: parseDropboxExtension(sourceFormat),
-    }),
-    [sourceFormat, showSnackbar, t]
-  );
+  const options = {
+    success: handleUploadFiles,
+    cancel: () =>
+      showSnackbar(t("dropboxModal.messages.operationCancelled"), "info"),
+    error: () => showSnackbar(t("dropboxModal.errors.downloadError"), "error"),
+    linkType: "direct",
+    multiselect: true,
+    folderselect: false,
+    lang: "es_ES",
+    sizeLimit: 10_000_000,
+    extensions: parseDropboxExtension(sourceFormat),
+  };
 
   const handleUpload = () => {
     window.Dropbox.choose(options);

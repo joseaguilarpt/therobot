@@ -11,7 +11,6 @@ import CompanyServicesSection from "~/ui/AboutPage/CompanyServicesSection";
 import { POPULAR_CONVERSIONS } from "~/utils/conversions";
 import TestimonialSection from "~/ui/AboutPage/TestimonialSection";
 import FAQSection from "~/ui/AboutPage/FAQSection";
-import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
 import { toolAction } from "~/utils/toolUtils";
 import Tool from "~/ui/Tool/Tool";
@@ -43,7 +42,6 @@ export const action: ActionFunction = async ({ request }) => {
 export const shouldRevalidate = () => false;
 
 export default function IndexPage() {
-  const { t } = useTranslation("common");
   const data = useActionData<typeof action>();
 
   return (
@@ -62,7 +60,6 @@ export default function IndexPage() {
           <div id="top-tools">
             <CompanyServicesSection
               list={POPULAR_CONVERSIONS.slice(0, 9)}
-              heading={t("services.popularConversions")}
             />
           </div>
           <TestimonialSection />

@@ -315,10 +315,7 @@
     "baseKeywords": [
       "conversión de imágenes",
       "convertidor gratuito",
-      "herramienta en línea",
-      "formato de imagen",
-      "conversión de archivos",
-      "imágenes digitales"
+      "conversión de archivos"
     ],
     "formatSpecificKeywords": {
       "jpeg": ["compresión con pérdida", "fotografía", "imágenes web"],
@@ -829,6 +826,426 @@
       "clearSelectionLabel": "Limpiar selección de archivos",
       "cancelSelectionLabel": "Cancelar selección de archivos",
       "uploadFilesLabel": "Subir archivos seleccionados"
+    }
+  },
+  "prosTitle": "Ventajas",
+  "consTitle": "Desventajas",
+  "jpeg": {
+    "pros": [
+      "Compatibilidad universal",
+      "Tamaños de archivo más pequeños para imágenes fotográficas",
+      "Ideal para uso web y correo electrónico",
+      "Amplio soporte en software de edición de imágenes"
+    ],
+    "cons": [
+      "La compresión con pérdida puede reducir la calidad",
+      "No es adecuado para imágenes con texto o bordes nítidos",
+      "No hay soporte para transparencia",
+      "No es ideal para imágenes que requieren ediciones frecuentes"
+    ],
+    "png": {
+      "description": "Transforma JPEG a PNG para edición sin pérdida de calidad y soporte de transparencia. Ideal para gráficos con texto o bordes nítidos, PNG elimina más pérdida de calidad en las ediciones. Perfecto para logotipos, capturas de pantalla e imágenes que requieren múltiples revisiones o alta calidad de transparencia para uso web o impresión.",
+      "technicalDetails": "Admite hasta 24 bits de profundidad de color y 8 bits de canal alfa. Utiliza compresión DEFLATE, que combina LZ77 y codificación de Huffman."
+    },
+    "gif": {
+      "description": "Convierte JPEG a GIF para una amplia compatibilidad y soporte de animación. Ideal para gráficos sencillos o crear animaciones ligeras a partir de una serie de imágenes. Benefíciate de tamaños de archivo pequeños para gráficos web con colores limitados, perfectos para iconos, botones y elementos animados sencillos.",
+      "technicalDetails": "Utiliza compresión LZW con paleta de 8 bits. La conversión implica cuantificación de color y a menudo aplica punteo para simular más colores."
+    },
+    "webp": {
+      "description": "Convierte JPEG a WebP para tamaños de archivo significativamente más pequeños sin comprometer la calidad. Benefíciate de una mejor compresión, soporte de transparencia y capacidades de animación. Ideal para uso web, WebP acelera los tiempos de carga de la página, reduce el uso de ancho de banda y mejora la experiencia general del usuario mientras mantiene la fidelidad visual.",
+      "technicalDetails": "WebP utiliza codificación predictiva, logrando tamaños un 25-35% más pequeños que JPEG con calidad equivalente. Admite amplio espacio de color y hasta 32 bits de profundidad de color."
+    },
+    "avif": {
+      "description": "Transforma JPEG a AVIF para una compresión y calidad superiores. Ideal para imágenes web, AVIF reduce significativamente los tamaños de archivo mientras mantiene o mejora la fidelidad visual. Benefíciate de un mejor rendimiento, un menor uso de ancho de banda y soporte para alto rango dinámico y amplios espacios de color.",
+      "technicalDetails": "Basado en el códec de video AV1, AVIF admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4. Ofrece compresión con y sin pérdida."
+    },
+    "tiff": {
+      "description": "Convierte JPEG a TIFF para archivado de alta calidad e impresión profesional. TIFF preserva la calidad de la imagen y admite múltiples páginas y capas. Ideal para publicación, fotografía y flujos de trabajo de archivado donde la máxima calidad y flexibilidad son esenciales.",
+      "technicalDetails": "Admite varios algoritmos de compresión, incluidos LZW y ZIP. Maneja imágenes de alta resolución y admite hasta 24 bits de profundidad de color."
+    },
+    "bmp": {
+      "description": "Transforma JPEG a BMP para imágenes sin compresión y de alta calidad. Ideal para situaciones que requieren datos de imagen sin procesar o máxima compatibilidad con sistemas heredados. BMP garantiza que no haya pérdida de calidad adicional, lo que lo hace adecuado para el archivado o el uso en software especializado.",
+      "technicalDetails": "Formato sin comprimir que almacena los datos de píxeles directamente. Admite varios niveles de profundidad de color, generalmente 24 bits de color verdadero."
+    },
+    "pdf": {
+      "description": "Convierte JPEG a PDF para una fácil integración y distribución de documentos. Ideal para crear documentos o informes basados en imágenes. Benefíciate de la amplia compatibilidad, el formato listo para imprimir y la capacidad de combinar varios JPEG en un solo archivo fácil de distribuir.",
+      "technicalDetails": "El PDF puede incrustar imágenes JPEG sin recompresión. Admite varios espacios de color y puede mantener la calidad de la imagen original."
+    },
+    "svg": {
+      "description": "Convierte JPEG a SVG para gráficos escalables y editables. Ideal para crear versiones vectoriales de logotipos o imágenes sencillas. Los beneficios incluyen escalabilidad infinita y tamaños de archivo pequeños para gráficos sencillos. Mejor para imágenes con formas claras y degradados de color limitados.",
+      "technicalDetails": "Requiere algoritmos de trazado para convertir datos ráster en trayectorias vectoriales. Los resultados varían mucho en función de la complejidad de la imagen y la configuración de la conversión."
+    }
+  },
+  "png": {
+    "pros": [
+      "Compresión sin pérdida",
+      "Admite transparencia",
+      "Ideal para gráficos, capturas de pantalla e imágenes con texto",
+      "Adecuado para imágenes que requieren ediciones frecuentes"
+    ],
+    "cons": [
+      "Tamaños de archivo más grandes en comparación con los formatos con pérdida",
+      "Menos eficiente para imágenes fotográficas",
+      "No es tan ampliamente compatible como JPEG"
+    ],
+    "jpeg": {
+      "description": "Convierte PNG a JPEG para reducir dramáticamente los tamaños de archivo, especialmente para fotografías e imágenes complejas. Ideal para uso web y correo electrónico, la conversión a JPEG garantiza una compatibilidad amplia y tiempos de carga más rápidos. Benefíciate de una compresión ajustable para equilibrar la calidad y el tamaño del archivo para un rendimiento óptimo.",
+      "technicalDetails": "Utiliza la transformada de coseno discreta (DCT) con compresión ajustable. Típicamente 24 bits de profundidad de color con submuestreo de crominancia 4:2:0."
+    },
+    "gif": {
+      "description": "Convierte PNG a GIF para crear animaciones sencillas y asegurar una compatibilidad máxima. Ideal para gráficos web que necesitan un amplio soporte, como iconos o botones animados. Benefíciate de tamaños de archivo pequeños para imágenes con colores limitados, perfectos para elementos web de carga rápida y llamativos.",
+      "technicalDetails": "Utiliza compresión LZW con una paleta de 8 bits. La conversión implica cuantificación de color y a menudo aplica punteo para simular más colores."
+    },
+    "webp": {
+      "description": "Transforma PNG a WebP para una compresión superior sin sacrificar la calidad. Ideal para gráficos web, WebP mantiene la transparencia mientras reduce significativamente los tamaños de archivo. Benefíciate de una carga de sitios web más rápida, un menor uso de ancho de banda y soporte para compresión con y sin pérdida.",
+      "technicalDetails": "Utiliza codificación predictiva para la compresión. Admite compresión sin pérdida y con pérdida con 24 bits de profundidad de color y un canal alfa de 8 bits."
+    },
+    "avif": {
+      "description": "Convierte PNG a AVIF para una compresión y calidad de vanguardia. Ideal para imágenes web, AVIF ofrece una reducción de tamaño de archivo superior mientras mantiene la calidad de la imagen. Benefíciate de tiempos de carga más rápidos, un menor uso de ancho de banda y soporte para alto rango dinámico y amplios espacios de color.",
+      "technicalDetails": "Basado en el códec de video AV1, AVIF admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4. Ofrece compresión con y sin pérdida."
+    },
+    "tiff": {
+      "description": "Transforma PNG a TIFF para archivado de alta calidad e impresión profesional. TIFF preserva la calidad de la imagen, incluida la transparencia, y admite múltiples páginas y capas. Ideal para publicación, fotografía y flujos de trabajo de archivado donde la máxima calidad y flexibilidad son cruciales.",
+      "technicalDetails": "Admite varios algoritmos de compresión, incluidos LZW y ZIP. Maneja imágenes de alta resolución y admite hasta 24 bits de profundidad de color con canal alfa."
+    },
+    "bmp": {
+      "description": "Convierte PNG a BMP para datos de imagen sin procesar y sin comprimir. Ideal para sistemas heredados o software especializado que requieren formato de mapa de bits. BMP garantiza que no haya pérdida de calidad por compresión, lo que lo hace adecuado para ciertos aplicaciones industriales o científicas que necesitan datos de imagen sin procesar.",
+      "technicalDetails": "Formato sin comprimir que almacena los datos de píxeles directamente. Admite varios niveles de profundidad de color, generalmente 24 bits de color verdadero, con algunas variantes que admiten 32 bits (incluido el canal alfa)."
+    },
+    "pdf": {
+      "description": "Transforma PNG a PDF para una fácil integración y distribución de documentos. Ideal para crear documentos o informes basados en imágenes. Benefíciate de la amplia compatibilidad, el formato listo para imprimir y la capacidad de combinar varios PNG en un solo archivo fácil de distribuir mientras se conserva la calidad de la imagen.",
+      "technicalDetails": "El PDF puede incrustar imágenes PNG sin recompresión. Admite varios espacios de color y puede mantener la calidad de la imagen original, incluida la transparencia."
+    },
+    "svg": {
+      "description": "Convierte PNG a SVG para gráficos escalables y editables. Ideal para crear versiones vectoriales de logotipos o imágenes sencillas. Los beneficios incluyen escalabilidad infinita y potenciales tamaños de archivo más pequeños. Mejor para imágenes con formas claras y degradados de color limitados.",
+      "technicalDetails": "Requiere algoritmos de trazado para convertir datos ráster en trayectorias vectoriales. Los resultados varían mucho en función de la complejidad de la imagen y la configuración de la conversión."
+    }
+  },
+  "gif": {
+    "pros": [
+      "Tamaños de archivo pequeños para gráficos sencillos",
+      "Soporte para animaciones sencillas",
+      "Compatibilidad universal",
+      "Ideal para iconos web y gráficos básicos"
+    ],
+    "cons": [
+      "Limitado a 256 colores",
+      "Solo transparencia binaria",
+      "No apto para fotografías",
+      "Punteo visible en degradados"
+    ],
+    "jpeg": {
+      "description": "Transforma GIF a JPEG para una profundidad de color mejorada en imágenes fijas. Ideal para convertir gráficos sencillos a un formato mejor adaptado para fotografías o imágenes complejas. Benefíciate de tamaños de archivo más pequeños para imágenes a todo color y una compatibilidad más amplia en aplicaciones centradas en fotografía.",
+      "technicalDetails": "Utiliza la transformada de coseno discreta (DCT) con compresión ajustable. Convierte los colores indexados de GIF a profundidad de color de 24 bits, a menudo con submuestreo de crominancia 4:2:0."
+    },
+    "png": {
+      "description": "Convierte GIF a PNG para mejorar la calidad de la imagen y admitir transparencia completa. Ideal para mejorar gráficos web sencillos o extraer cuadros fijos de alta calidad de GIFs. Benefíciate de la compresión sin pérdida, un mejor soporte de color y mejor calidad para gráficos con texto o bordes nítidos.",
+      "technicalDetails": "Admite hasta 24 bits de profundidad de color y 8 bits de canal alfa, una mejora significativa con respecto a los 8 bits de color indexado de GIF. Utiliza compresión DEFLATE."
+    },
+    "webp": {
+      "description": "Transforma GIF a WebP para una compresión superior y soporte de animación. Ideal para gráficos web, WebP mantiene las capacidades de animación mientras reduce significativamente los tamaños de archivo. Benefíciate de una carga de sitios web más rápida, un menor uso de ancho de banda y una mejor calidad de imagen en comparación con GIF.",
+      "technicalDetails": "Utiliza codificación predictiva para la compresión. Admite compresión con y sin pérdida con opciones para animación y transparencia."
+    },
+    "avif": {
+      "description": "Convierte GIF a AVIF para una compresión y calidad de vanguardia. Ideal para mejorar gráficos web, AVIF ofrece una reducción de tamaño de archivo superior mientras mejora la calidad de la imagen. Benefíciate de tiempos de carga más rápidos, un menor uso de ancho de banda y una mayor fidelidad visual para imágenes estáticas y animadas.",
+      "technicalDetails": "Basado en el códec de video AV1, AVIF admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4. Ofrece compresión con y sin pérdida, con posibilidad de soporte para animación."
+    },
+    "tiff": {
+      "description": "Transforma GIF a TIFF para archivado de alta calidad y uso profesional. TIFF preserva la calidad de la imagen y admite múltiples páginas, ideal para convertir animaciones GIF. Perfecto para publicación, archivado y flujos de trabajo que requieren máxima calidad y flexibilidad.",
+      "technicalDetails": "Admite varios algoritmos de compresión. Puede manejar imágenes de alta profundidad de bits y múltiples páginas, permitiendo una conversión de alta fidelidad tanto de GIFs estáticos como animados."
+    },
+    "bmp": {
+      "description": "Convierte GIF a BMP para datos de imagen sin procesar y sin comprimir. Ideal para sistemas heredados o software especializado que requieren formato de mapa de bits. BMP garantiza que no haya pérdida de calidad adicional, lo que lo hace adecuado para extraer cuadros individuales de GIFs para análisis o procesamiento adicional.",
+      "technicalDetails": "Formato sin comprimir que almacena los datos de píxeles directamente. Típicamente se convierte a 24 bits de profundidad de color, ampliando los 8 bits de color indexado de GIF."
+    },
+    "pdf": {
+      "description": "Transforma GIF a PDF para una fácil integración de documentos. Ideal para incorporar contenido GIF en informes o presentaciones. Benefíciate de la amplia compatibilidad y el formato listo para imprimir. Útil para crear documentos a partir de una serie de GIFs o preservar el contenido GIF en un formato más versátil.",
+      "technicalDetails": "El PDF puede incrustar imágenes GIF, generalmente convirtiéndolas a un formato más apropiado para impresión. Los PDFs de varias páginas pueden representar animaciones GIF como páginas separadas."
+    },
+    "svg": {
+      "description": "Convierte GIF a SVG para gráficos escalables y editables. Ideal para crear versiones vectoriales de imágenes GIF sencillas o logotipos. Los beneficios incluyen escalabilidad infinita y potenciales tamaños de archivo más pequeños. Mejor para GIFs con formas claras y colores limitados.",
+      "technicalDetails": "Requiere algoritmos de trazado para convertir los datos ráster de GIF en trayectorias vectoriales. Los resultados varían mucho en función de la complejidad del GIF y la configuración de la conversión."
+    }
+  },
+  "webp": {
+    "pros": [
+      "Excelente eficiencia de compresión",
+      "Admite compresión con y sin pérdida",
+      "Soporte de transparencia y animación",
+      "Carga de páginas web más rápida",
+      "Reducción del uso de ancho de banda"
+    ],
+    "cons": [
+      "Soporte limitado en navegadores antiguos",
+      "Menos adecuado para flujos de trabajo de impresión",
+      "Posible pérdida de metadatos",
+      "Tiempo de codificación ligeramente mayor"
+    ],
+    "jpeg": {
+      "description": "Convierte WebP a JPEG para máxima compatibilidad. Ideal para compartir imágenes en plataformas sin soporte para WebP. Benefíciate de la amplia aceptación en clientes de correo electrónico, navegadores web antiguos y software de edición de imágenes. JPEG garantiza que tus imágenes se puedan ver en todas partes, aunque con algunos compromisos de calidad.",
+      "technicalDetails": "Utiliza la transformada de coseno discreta (DCT) con compresión ajustable. Convierte los datos potencialmente sin pérdida o de canal alfa de WebP a 24 bits de profundidad de color con pérdida, a menudo con submuestreo de crominancia 4:2:0."
+    },
+    "png": {
+      "description": "Transforma WebP a PNG para calidad sin pérdida y amplia compatibilidad. Ideal para preservar la calidad de la imagen y la transparencia. Perfecto para ediciones posteriores, gráficos web de alta calidad o al trabajar con software que no admite WebP. Garantiza que no haya pérdida de calidad para imágenes WebP sin pérdida.",
+      "technicalDetails": "Utiliza compresión DEFLATE. Admite hasta 24 bits de profundidad de color y 8 bits de canal alfa, lo que permite una reproducción fiel de las imágenes WebP, incluida la transparencia."
+    },
+    "gif": {
+      "description": "Convierte WebP a GIF para máxima compatibilidad y soporte de animación. Ideal para crear gráficos animados con amplio soporte. Perfecto para plataformas de redes sociales, foros y sitios web que no admiten WebP. Benefíciate de la reproducción universal de tus imágenes animadas.",
+      "technicalDetails": "Utiliza compresión LZW con paleta de 256 colores. WebP animado se puede convertir a GIF animado, aunque con posible pérdida de calidad y tamaños de archivo más grandes."
+    },
+    "avif": {
+      "description": "Transforma WebP a AVIF para una compresión de imagen de próxima generación. Ideal para optimizar aún más las imágenes web. Benefíciate de tamaños de archivo aún más pequeños, mejor preservación de la calidad a bajas velocidades de bits y soporte para HDR. Perfecto para modernizar tus activos de imagen.",
+      "technicalDetails": "Basado en el códec de video AV1, admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4. Ofrece compresión con y sin pérdida."
+    },
+    "tiff": {
+      "description": "Convierte WebP a TIFF para archivado de alta calidad e impresión profesional. Ideal para preservar imágenes WebP en un formato ampliamente aceptado en la industria de la publicación y la impresión. Benefíciate del amplio soporte de metadatos de TIFF y las capacidades de varias páginas para contenido WebP animado.",
+      "technicalDetails": "Admite varios algoritmos de compresión. Puede manejar imágenes de alta profundidad de bits y múltiples páginas, permitiendo una conversión de alta fidelidad tanto de WebP estático como animado."
+    },
+    "bmp": {
+      "description": "Transforma WebP a BMP para datos de imagen sin procesar y sin comprimir. Ideal para escenarios que requieren datos de imagen a nivel de píxel o máxima compatibilidad con sistemas heredados. BMP garantiza que no haya pérdida de calidad por compresión, útil para análisis o aplicaciones especializadas.",
+      "technicalDetails": "Formato sin comprimir que almacena los datos de píxeles directamente. Típicamente se convierte a 24 bits de profundidad de color, con algunas variantes que admiten 32 bits (incluido el canal alfa)."
+    },
+    "pdf": {
+      "description": "Convierte WebP a PDF para una fácil integración en documentos. Ideal para crear informes, presentaciones o archivar gráficos web. Benefíciate de la compatibilidad universal y el formato listo para imprimir. Perfecto para preservar el contenido WebP en un formato de documento ampliamente aceptado.",
+      "technicalDetails": "El PDF puede incrustar imágenes WebP después de convertirlas a un formato compatible. Admite varios espacios de color y puede mantener la calidad de la imagen original."
+    },
+    "svg": {
+      "description": "Convierte WebP a SVG para gráficos escalables y editables. Ideal para crear versiones vectoriales de imágenes WebP sencillas o logotipos. Los beneficios incluyen escalabilidad infinita y potenciales tamaños de archivo más pequeños. Mejor para WebP con formas claras y colores limitados.",
+      "technicalDetails": "Requiere algoritmos de trazado para convertir datos ráster de WebP en trayectorias vectoriales. Los resultados varían mucho en función de la complejidad de la imagen y la configuración de la conversión."
+    }
+  },
+  "avif": {
+    "pros": [
+      "Eficiencia de compresión excepcional",
+      "Calidad de imagen superior, especialmente a bajas velocidades de bits",
+      "Admite HDR y amplios espacios de color",
+      "Reducción del uso de ancho de banda y tiempos de carga más rápidos",
+      "Opciones de compresión con y sin pérdida"
+    ],
+    "cons": [
+      "Soporte de navegador y software limitado",
+      "Tiempos de codificación más largos",
+      "Mayores requisitos computacionales para codificación/decodificación",
+      "Posibles problemas de compatibilidad en algunos flujos de trabajo"
+    ],
+    "jpeg": {
+      "description": "Convierte AVIF a JPEG para compatibilidad universal. Ideal para compartir imágenes de alta calidad en plataformas sin soporte AVIF. Benefíciate de la amplia aceptación en clientes de correo electrónico, navegadores web y software de edición de imágenes, lo que asegura que tus imágenes se puedan ver en todas partes.",
+      "technicalDetails": "Utiliza la transformada de coseno discreta (DCT) con compresión ajustable. Convierte la potencial alta profundidad de bits de AVIF a 24 bits de color estándar, a menudo con submuestreo de crominancia 4:2:0."
+    },
+    "png": {
+      "description": "Transforma AVIF a PNG para calidad sin pérdida y amplia compatibilidad. Ideal para preservar la calidad de la imagen cuando no esté disponible la visualización AVIF. Perfecto para ediciones posteriores, gráficos web de alta calidad o al trabajar con software que no admite AVIF.",
+      "technicalDetails": "Utiliza compresión DEFLATE. Admite hasta 24 bits de profundidad de color y 8 bits de canal alfa, potencialmente perdiendo algunos datos de color de las imágenes AVIF de alta profundidad de bits."
+    },
+    "gif": {
+      "description": "Convierte AVIF a GIF para máxima compatibilidad y soporte de animación sencilla. Ideal para crear gráficos animados con amplio soporte. Perfecto para plataformas que no admiten AVIF. Benefíciate de la reproducción universal de tus imágenes animadas o gráficos sencillos.",
+      "technicalDetails": "Utiliza compresión LZW con paleta de 256 colores. AVIF animado se puede convertir a GIF animado, aunque con posible pérdida de calidad y tamaños de archivo más grandes."
+    },
+    "webp": {
+      "description": "Transforma AVIF a WebP para una compatibilidad más amplia manteniendo una buena compresión. Ideal para optimizar imágenes web en plataformas que admiten WebP pero no AVIF. Benefíciate de tamaños de archivo más pequeños que los formatos tradicionales y soporte para compresión con y sin pérdida.",
+      "technicalDetails": "Utiliza codificación predictiva para la compresión. Admite compresión con y sin pérdida con 24 bits de profundidad de color y un canal alfa de 8 bits."
+    },
+    "tiff": {
+      "description": "Convierte AVIF a TIFF para archivado de alta calidad e impresión profesional. Ideal para preservar imágenes AVIF en un formato ampliamente aceptado en la industria de la publicación y la impresión. Benefíciate del amplio soporte de metadatos de TIFF y las opciones flexibles de espacio de color.",
+      "technicalDetails": "Admite varios algoritmos de compresión. Puede manejar imágenes de alta profundidad de bits y múltiples páginas, permitiendo una conversión de alta fidelidad del contenido AVIF."
+    },
+    "bmp": {
+      "description": "Transforma AVIF a BMP para datos de imagen sin procesar y sin comprimir. Ideal para escenarios que requieren datos de imagen a nivel de píxel o máxima compatibilidad con sistemas heredados. BMP garantiza que no haya artefactos de compresión adicionales, útil para análisis o aplicaciones especializadas.",
+      "technicalDetails": "Formato sin comprimir que almacena los datos de píxeles directamente. Típicamente se convierte a 24 bits de profundidad de color, potencialmente perdiendo información de las imágenes AVIF de alta profundidad de bits."
+    },
+    "pdf": {
+      "description": "Convierte AVIF a PDF para una fácil integración en documentos. Ideal para crear informes, presentaciones o archivar imágenes de alta calidad. Benefíciate de la compatibilidad universal y el formato listo para imprimir. Perfecto para preservar el contenido AVIF en un formato de documento ampliamente aceptado.",
+      "technicalDetails": "El PDF puede incrustar imágenes en varios formatos. Puede convertir AVIF a un formato más compatible durante la incrustación. Admite varios espacios de color para una conversión de alta calidad."
+    },
+    "svg": {
+      "description": "Convierte AVIF a SVG para gráficos escalables y editables. Ideal para crear versiones vectoriales de imágenes AVIF sencillas o logotipos. Los beneficios incluyen escalabilidad infinita y potenciales tamaños de archivo más pequeños. Mejor para imágenes con formas claras y colores limitados.",
+      "technicalDetails": "Requiere algoritmos de trazado para convertir datos ráster de AVIF en trayectorias vectoriales. Los resultados varían mucho en función de la complejidad de la imagen y la configuración de la conversión."
+    }
+  },
+  "tiff": {
+    "pros": [
+      "Salida de alta calidad con opciones flexibles",
+      "Admite capas y múltiples páginas",
+      "Ideal para flujos de trabajo de impresión y profesionales",
+      "Excelente para archivar y preservar imágenes",
+      "Amplio soporte de metadatos"
+    ],
+    "cons": [
+      "Tamaños de archivo grandes",
+      "No apto para uso web",
+      "Soporte limitado en algunas aplicaciones",
+      "Formato complejo con muchas opciones"
+    ],
+    "jpeg": {
+      "description": "Convierte TIFF a JPEG para compatibilidad universal y tamaños de archivo más pequeños. Ideal para compartir imágenes de alta calidad de flujos de trabajo profesionales en plataformas web. Benefíciate de la amplia aceptación en clientes de correo electrónico, navegadores y software para consumidores, lo que garantiza que tus imágenes se puedan ver fácilmente.",
+      "technicalDetails": "Utiliza la transformada de coseno discreta (DCT) con compresión ajustable. Convierte la potencial alta profundidad de bits de TIFF a 24 bits de color estándar, a menudo con submuestreo de crominancia 4:2:0."
+    },
+    "png": {
+      "description": "Transforma TIFF a PNG para imágenes web sin pérdida. Ideal para preservar gráficos de alta calidad de flujos de trabajo profesionales para uso web. Perfecto para logotipos, ilustraciones e imágenes con texto. Mantiene la transparencia y proporciona una buena compresión para imágenes no fotográficas.",
+      "technicalDetails": "Utiliza compresión DEFLATE. Admite hasta 24 bits de profundidad de color y 8 bits de canal alfa, potencialmente perdiendo algunos datos de color de las imágenes TIFF de alta profundidad de bits."
+    },
+    "gif": {
+      "description": "Convierte TIFF a GIF para amplia compatibilidad y animaciones sencillas. Ideal para crear gráficos web amigables a partir de fuentes TIFF de alta calidad. Perfecto para logotipos sencillos, iconos o animaciones básicas. Benefíciate de tamaños de archivo pequeños y soporte universal para gráficos sencillos.",
+      "technicalDetails": "Utiliza compresión LZW con paleta de 256 colores. La compleja reducción de color desde la potencial alta profundidad de bits de TIFF puede dar como resultado una pérdida de calidad significativa."
+    },
+    "webp": {
+      "description": "Transforma TIFF a WebP para imágenes web optimizadas eficientemente. Ideal para convertir archivos TIFF de alta calidad a un formato adecuado para sitios web de carga rápida. Benefíciate de una excelente compresión, soporte de transparencia y buena calidad de imagen, perfecto para portafolios en línea y comercio electrónico.",
+      "technicalDetails": "Utiliza codificación predictiva para la compresión. Admite compresión con y sin pérdida con 24 bits de profundidad de color y un canal alfa de 8 bits."
+    },
+    "avif": {
+      "description": "Convierte TIFF a AVIF para compresión de imágenes de próxima generación. Ideal para archivar imágenes TIFF de alta calidad en un formato eficiente. Benefíciate de una compresión superior, excelente preservación de la calidad y soporte para altas profundidades de bits y amplios espacios de color, perfecto para imágenes web a prueba de futuro.",
+      "technicalDetails": "Basado en el códec de video AV1, admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4. Ofrece compresión con y sin pérdida."
+    },
+    "bmp": {
+      "description": "Transforma TIFF a BMP para imágenes sin comprimir y ampliamente compatibles. Ideal para escenarios que requieren datos de imagen sin procesar o compatibilidad con sistemas heredados. BMP garantiza que no haya artefactos de compresión, útil para ciertas aplicaciones industriales o científicas que necesitan datos de imagen sin procesar.",
+      "technicalDetails": "Formato sin comprimir que almacena los datos de píxeles directamente. Típicamente se convierte a 24 bits de profundidad de color, potencialmente perdiendo información de las imágenes TIFF de alta profundidad de bits."
+    },
+    "pdf": {
+      "description": "Convierte TIFF a PDF para compatibilidad universal de documentos. Ideal para integrar imágenes de alta calidad en informes, presentaciones o archivos. Benefíciate del amplio soporte, el formato listo para imprimir y la capacidad de mantener una alta fidelidad de la imagen. Perfecto para documentación profesional y académica.",
+      "technicalDetails": "El PDF puede incrustar imágenes TIFF directamente o convertirlas. Admite varios espacios de color y puede mantener altas profundidades de bits, permitiendo una conversión de alta fidelidad de los datos TIFF."
+    },
+    "svg": {
+      "description": "Transforma TIFF a SVG para gráficos escalables y editables. Ideal para crear versiones vectoriales de imágenes TIFF de alta calidad o logotipos. Los beneficios incluyen escalabilidad infinita y potenciales tamaños de archivo más pequeños. Mejor para imágenes con formas claras y degradados de color limitados.",
+      "technicalDetails": "Requiere algoritmos de trazado para convertir datos ráster TIFF en trayectorias vectoriales. Los resultados varían mucho en función de la complejidad de la imagen y la configuración de la conversión."
+    }
+  },
+  "bmp": {
+    "pros": [
+      "Sin pérdida de calidad por compresión",
+      "Amplia compatibilidad con sistemas heredados",
+      "Datos de imagen sin procesar para aplicaciones especializadas",
+      "Formato sencillo para una fácil lectura y escritura"
+    ],
+    "cons": [
+      "Tamaños de archivo muy grandes",
+      "No apto para web o transferencia de red",
+      "Falta de funciones avanzadas como transparencia",
+      "Ineficiente para el almacenamiento y los casos de uso modernos"
+    ],
+    "jpeg": {
+      "description": "Convierte BMP a JPEG para tamaños de archivo significativamente reducidos. Ideal para compartir imágenes BMP en la web o por correo electrónico. Benefíciate de la amplia compatibilidad y archivos mucho más pequeños, perfecto para fotos digitales o gráficos complejos donde se acepta cierta pérdida de calidad.",
+      "technicalDetails": "Utiliza la transformada de coseno discreta (DCT) con compresión ajustable. Convierte los datos sin comprimir de BMP a 24 bits de color comprimido, a menudo con submuestreo de crominancia 4:2:0."
+    },
+    "png": {
+      "description": "Transforma BMP a PNG para una compresión sin pérdida eficiente. Ideal para reducir tamaños de archivo mientras se preserva la calidad de la imagen. Perfecto para gráficos, capturas de pantalla o imágenes con texto. PNG admite transparencia, ofreciendo flexibilidad para gráficos web y proyectos de diseño digital.",
+      "technicalDetails": "Utiliza compresión DEFLATE. Admite hasta 24 bits de profundidad de color y 8 bits de canal alfa, permitiendo una reproducción fiel de los datos BMP, incluida la transparencia."
+    },
+    "gif": {
+      "description": "Convierte BMP a GIF para tamaños de archivo pequeños y potencial de animación. Ideal para gráficos sencillos, logotipos o crear animaciones a partir de series de BMP. Benefíciate de la amplia compatibilidad y archivos pequeños para gráficos web básicos, perfectos para iconos o elementos animados sencillos.",
+      "technicalDetails": "Utiliza compresión LZW con paleta de 256 colores. La conversión desde BMP a menudo implica cuantificación de color y punteo para adaptarse al espacio de color limitado de GIF."
+    },
+    "webp": {
+      "description": "Transforma BMP a WebP para imágenes web modernas y eficientes. Ideal para convertir BMPs sin comprimir a un formato optimizado para la web. Benefíciate de una excelente compresión, soporte de transparencia y buena calidad de imagen, perfecto para sitios web de carga rápida y contenidos multimedia en línea.",
+      "technicalDetails": "Utiliza codificación predictiva para la compresión. Admite compresión con y sin pérdida con 24 bits de profundidad de color y un canal alfa de 8 bits."
+    },
+    "avif": {
+      "description": "Convierte BMP a AVIF para una compresión y calidad superiores. Ideal para archivar imágenes BMP con tamaños de archivo mínimos. Benefíciate de una excelente compresión, alta calidad de imagen y soporte para amplios espacios de color. Perfecto para modernizar imágenes y optimizar contenido web.",
+      "technicalDetails": "Basado en el códec de video AV1, admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4. Ofrece compresión con y sin pérdida."
+    },
+    "tiff": {
+      "description": "Transforma BMP a TIFF para un almacenamiento de imágenes versátil y de alta calidad. Ideal para preservar los datos BMP en un formato adecuado para impresión y publicación profesional. Benefíciate del soporte de TIFF para capas, múltiples páginas y metadatos extensivos, perfecto para flujos de trabajo de archivado y profesionales.",
+      "technicalDetails": "Admite varios algoritmos de compresión, incluidos LZW y ZIP. Puede manejar imágenes de alta resolución y admite hasta 24 bits de profundidad de color."
+    },
+    "pdf": {
+      "description": "Convierte BMP a PDF para compatibilidad universal de documentos. Ideal para incorporar imágenes BMP en informes, presentaciones o archivos. Benefíciate del amplio soporte, el formato listo para imprimir y la capacidad de combinar múltiples BMPs en un solo archivo fácil de distribuir.",
+      "technicalDetails": "El PDF puede incrustar imágenes BMP directamente o convertirlas. Admite varios espacios de color y puede mantener la calidad de la imagen original."
+    },
+    "svg": {
+      "description": "Transforma BMP a SVG para gráficos escalables y editables. Ideal para crear versiones vectoriales de imágenes BMP sencillas o logotipos. Los beneficios incluyen escalabilidad infinita y potenciales tamaños de archivo más pequeños. Mejor para BMPs con formas claras y colores limitados.",
+      "technicalDetails": "Requiere algoritmos de trazado para convertir datos ráster BMP en trayectorias vectoriales. Los resultados varían mucho en función de la complejidad de la imagen y la configuración de la conversión."
+    }
+  },
+  "pdf": {
+    "pros": [
+      "Compatibilidad universal para visualización e impresión",
+      "Puede combinar varias imágenes en un solo documento",
+      "Preserva la alta calidad de la imagen",
+      "Ideal para documentación profesional",
+      "Admite la incrustación de fuentes y metadatos"
+    ],
+    "cons": [
+      "Tamaño de archivo más grande que las imágenes originales",
+      "No ideal para ediciones de imagen posteriores",
+      "Posible pérdida de algunos metadatos",
+      "Excesivo para el simple intercambio de imágenes"
+    ],
+    "jpeg": {
+      "description": "Convierte PDF a JPEG para extracción de imágenes ampliamente compatible. Ideal para compartir páginas o gráficos específicos de PDFs. Benefíciate de la fácil visualización en cualquier dispositivo, perfecto para el intercambio rápido de contenido PDF por correo electrónico o aplicaciones de mensajería.",
+      "technicalDetails": "Rasteiriza el contenido del PDF, típicamente a 24 bits de profundidad de color. Utiliza la transformada de coseno discreta (DCT) con compresión ajustable."
+    },
+    "png": {
+      "description": "Transforma PDF a PNG para extracción de imágenes de alta calidad. Ideal para preservar la claridad del texto y los gráficos de los PDFs. Perfecto para crear imágenes aptas para la web a partir de contenido PDF, manteniendo la calidad para diagramas, gráficos y páginas con texto.",
+      "technicalDetails": "Rasteiriza el contenido del PDF. Admite hasta 24 bits de profundidad de color y 8 bits de canal alfa, utilizando compresión DEFLATE."
+    },
+    "gif": {
+      "description": "Convierte PDF a GIF para imágenes sencillas y ampliamente compatibles. Ideal para crear gráficos web pequeños a partir de contenido PDF. Perfecto para extraer diagramas sencillos o crear animaciones básicas a partir de PDFs de varias páginas. Benefíciate de tamaños de archivo pequeños para gráficos sencillos.",
+      "technicalDetails": "Rasteiriza el contenido del PDF a 8 bits de profundidad de color. Utiliza compresión LZW. Puede implicar una importante reducción de color y posible punteo."
+    },
+    "webp": {
+      "description": "Transforma PDF a WebP para imágenes web optimizadas eficientemente. Ideal para convertir contenido PDF a gráficos web ligeros y de alta calidad. Benefíciate de una excelente compresión y buena calidad, perfecto para compartir contenido PDF en línea manteniendo fidelidad visual y tiempos de carga rápidos.",
+      "technicalDetails": "Rasteiriza el contenido del PDF. Utiliza codificación predictiva para la compresión, compatible con modos con y sin pérdida de 24 bits de profundidad de color."
+    },
+    "avif": {
+      "description": "Convierte PDF a AVIF para una compresión de imagen de próxima generación. Ideal para archivar contenido visual de PDF en un formato eficiente. Benefíciate de una compresión superior, excelente preservación de la calidad y soporte para alto rango dinámico. Perfecto para imágenes web a prueba de futuro a partir de fuentes PDF.",
+      "technicalDetails": "Rasteiriza el contenido del PDF. Basado en el códec de video AV1, admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4."
+    },
+    "tiff": {
+      "description": "Transforma PDF a TIFF para archivado de imágenes de alta calidad. Ideal para preservar contenido PDF en un formato adecuado para impresión y publicación profesional. Benefíciate del soporte de TIFF para múltiples páginas y metadatos extensivos, perfecto para flujos de trabajo de archivado y profesionales.",
+      "technicalDetails": "Rasteiriza el contenido del PDF. Admite varios algoritmos de compresión, salida de alta resolución y hasta 24 bits de profundidad de color."
+    },
+    "bmp": {
+      "description": "Convierte PDF a BMP para extracción de imágenes sin comprimir y de alta compatibilidad. Ideal para escenarios que requieren datos de imagen sin procesar o máxima compatibilidad con sistemas heredados. BMP garantiza que no haya artefactos de compresión, útil para ciertos sistemas especializados que necesitan datos de imagen sin procesar.",
+      "technicalDetails": "Rasteiriza el contenido del PDF. Formato sin comprimir que almacena los datos de píxeles directamente, típicamente a 24 bits de profundidad de color."
+    },
+    "svg": {
+      "description": "Transforma PDF a SVG para gráficos escalables y editables. Ideal para incorporar contenido vectorial de PDF. Los beneficios incluyen preservación de la calidad vectorial, amplio soporte y formato listo para imprimir. Perfecto para crear documentos a partir de gráficos o ilustraciones SVG.",
+      "technicalDetails": "Convierte las trayectorias vectoriales del PDF a elementos vectoriales SVG. Admite la incrustación de fuentes y la preservación de gráficos vectoriales. Puede rasteirizar algunos efectos complejos."
+    }
+  },
+  "svg": {
+    "pros": [
+      "Escalabilidad infinita sin pérdida de calidad",
+      "Tamaños de archivo pequeños para gráficos sencillos",
+      "Editable en software de gráficos vectoriales",
+      "Ideal para logotipos e ilustraciones sencillas",
+      "Admite animación e interactividad"
+    ],
+    "cons": [
+      "No apto para imágenes fotográficas complejas",
+      "Puede renderizarse de manera diferente entre navegadores",
+      "Puede ser más lento de renderizar que los formatos ráster",
+      "Soporte limitado para efectos gráficos avanzados"
+    ],
+    "jpeg": {
+      "description": "Convierte SVG a JPEG para amplia compatibilidad y tamaños de archivo más pequeños. Ideal para compartir gráficos vectoriales como imágenes ráster. Los beneficios incluyen soporte universal y tamaños de archivo reducidos. Mejor para SVG sencillos o cuando no se requiere el formato vectorial.",
+      "technicalDetails": "Rasteiriza el contenido SVG. Utiliza la transformada de coseno discreta (DCT) con compresión ajustable, típicamente a 24 bits de profundidad de color."
+    },
+    "png": {
+      "description": "Transforma SVG a PNG para imágenes ráster de alta calidad con transparencia. Ideal para crear imágenes aptas para la web a partir de gráficos vectoriales. Perfecto para logotipos, iconos e ilustraciones que deben mantener la claridad a un tamaño fijo.",
+      "technicalDetails": "Rasteiriza el contenido SVG. Admite 24 bits de profundidad de color y 8 bits de canal alfa, utilizando compresión DEFLATE."
+    },
+    "gif": {
+      "description": "Convierte SVG a GIF para animaciones sencillas y amplia compatibilidad. Ideal para crear iconos animados o ilustraciones sencillas a partir de SVGs. Los beneficios incluyen tamaños de archivo pequeños para gráficos básicos y soporte universal en todas las plataformas.",
+      "technicalDetails": "Rasteiriza el contenido SVG. Utiliza compresión LZW con una paleta de 256 colores. Puede implicar cuantificación de color y punteo."
+    },
+    "webp": {
+      "description": "Transforma SVG a WebP para imágenes web eficientes y de alta calidad. Ideal para convertir gráficos vectoriales a un formato ráster moderno. Benefíciate de una excelente compresión, soporte de transparencia y buena calidad de imagen, perfecto para gráficos web optimizados a partir de fuentes SVG.",
+      "technicalDetails": "Rasteiriza el contenido SVG. Utiliza codificación predictiva para la compresión, compatible con modos con y sin pérdida de 24 bits de profundidad de color y un canal alfa de 8 bits."
+    },
+    "avif": {
+      "description": "Convierte SVG a AVIF para compresión de imagen de próxima generación. Ideal para crear versiones ráster altamente optimizadas de gráficos vectoriales. Benefíciate de una compresión superior, excelente preservación de la calidad y soporte para amplios espacios de color. Perfecto para imágenes web a prueba de futuro a partir de fuentes SVG.",
+      "technicalDetails": "Rasteiriza el contenido SVG. Basado en el códec de video AV1, admite hasta 12 bits de profundidad de color y submuestreo de crominancia 4:4:4."
+    },
+    "tiff": {
+      "description": "Transforma SVG a TIFF para archivado ráster de alta calidad. Ideal para preservar gráficos vectoriales en un formato adecuado para impresión y publicación profesional. Benefíciate del soporte de TIFF para altas resoluciones y metadatos extensivos, perfecto para flujos de trabajo de archivado e impresión.",
+      "technicalDetails": "Rasteiriza el contenido SVG. Admite varios algoritmos de compresión, salida de alta resolución y hasta 24 bits de profundidad de color con canal alfa opcional."
+    },
+    "bmp": {
+      "description": "Convierte SVG a BMP para imágenes ráster sin comprimir y de alta compatibilidad. Ideal para escenarios que requieren datos de imagen sin procesar o máxima compatibilidad con sistemas heredados. BMP garantiza que no haya artefactos de compresión, útil para ciertas aplicaciones especializadas que necesitan datos de imagen sin procesar.",
+      "technicalDetails": "Rasteiriza el contenido SVG. Formato sin comprimir que almacena los datos de píxeles directamente, típicamente a 24 bits de profundidad de color."
+    },
+    "pdf": {
+      "description": "Transforma SVG a PDF para compatibilidad universal de documentos. Ideal para incorporar gráficos vectoriales en documentos imprimibles. Benefíciate de la preservación de la calidad vectorial, el amplio soporte y el formato listo para imprimir. Perfecto para crear documentos a partir de gráficos o ilustraciones SVG.",
+      "technicalDetails": "Convierte las trayectorias SVG a elementos vectoriales PDF. Admite la incrustación de fuentes y la preservación de gráficos vectoriales. Puede rasteirizar algunos efectos complejos."
     }
   }
 }

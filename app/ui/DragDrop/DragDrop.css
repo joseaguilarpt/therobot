@@ -398,7 +398,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--accent-color);
+  background: var(--accent-color);
+  background-image: var(--linear-background);
   color: var(--font-color);
   font-family: var(--default-font);
   font-size: var(--font-size-medium);
@@ -421,7 +422,8 @@
   color: var(--default-font);
 }
 .drag-and-drop-container.loading {
-  background: linear-gradient(87deg, #47af6b, #3cb73c, var(--accent-color));
+  background: var(--accent-color);
+  background-image: var(--linear-background);
   background-size: 200% 200%;
   animation: gradient-animation 3s ease infinite alternate-reverse;
 }

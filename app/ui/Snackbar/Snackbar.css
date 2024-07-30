@@ -49,6 +49,8 @@
 }
 .snackbar--success {
   background-color: var(--accent-color);
+  background: var(--accent-color);
+  background-image: var(--linear-background);
 }
 .snackbar--error {
   background-color: var(--error-color);

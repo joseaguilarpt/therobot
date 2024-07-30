@@ -3,6 +3,8 @@
 .tool-conversion-form {
   border-radius: var(--border-radius);
   background-color: #47af6b;
+  background: var(--accent-color);
+  background-image: var(--linear-background);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 
@@ -24,6 +26,16 @@
   .tool-heading__to {
     .icon--medium {
       color: var(--contrast-color);
-    }    
+    }
   }
+}
+.hero-pill {
+  margin-bottom: 8px;
+  padding: 5px 15px;
+  background: var(--accent-color);
+  background-image: var(--linear-background);
+  width: max-content;
+  color: var(--contrast-color);
+  font-weight: bold;
+  border-radius: 10px;
 }

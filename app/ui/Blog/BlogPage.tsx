@@ -203,7 +203,7 @@ export default function BlogPage({
           </div>
           <nav aria-labelledby="toc-heading" className="u-pt4">
             <h2 id="toc-heading" className="visually-hidden">
-              Table of Contents
+              {tCommon('blog.table')}
             </h2>
             <TableOfContents items={tableOfContentData} />
           </nav>

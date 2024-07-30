@@ -137,7 +137,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [validateFile, showSnackbar, t, honeypotInputProps, onFilesDrop]
+    [validateFile, showSnackbar, t, honeypotInputProps, onFilesDrop, executeRecaptcha]
   );
 
   useEffect(() => {

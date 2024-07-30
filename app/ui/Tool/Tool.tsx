@@ -60,24 +60,48 @@ export default function Tool() {
     <>
       <GridContainer alignItems="center" justifyContent="space-between">
         <GridItem xs={12} lg={6}>
-          <Heading
-            id="conversion-heading"
-            color="accent"
-            appearance={3}
-            level={1}
-          >
-            {t("hero.header1")}
-          </Heading>
-          <Heading
-            underline
-            appearance={3}
-            level={1}
-          >
-            {t("hero.header2")}
-          </Heading>
-          <Text className="u-pt5 hero-description">
-            {t("hero.description")} {t("hero.freeToUse")}
-          </Text>
+          {sourceFormat && targetFormat && (
+            <>
+             <Text
+             className="hero-pill"
+               size="small"
+              >
+                {t("hero.header1")}
+              </Text>
+              <Heading
+                id="conversion-heading"
+                appearance={3}
+                level={1}
+                underline
+              >
+                {t("services.itemDescriptionContent", {
+                  sourceFormat: sourceFormat?.toUpperCase(),
+                  targetFormat: targetFormat?.toUpperCase(),
+                })}{" "}
+              </Heading>
+              <Text className="u-pt5 hero-description">
+                {t(`${sourceFormat}.${targetFormat}.description`)}
+              </Text>
+            </>
+          )}
+          {!sourceFormat && !targetFormat && (
+            <>
+              <Heading
+                id="conversion-heading"
+                color="accent"
+                appearance={3}
+                level={1}
+              >
+                {t("hero.header1")}
+              </Heading>
+              <Heading underline appearance={3} level={1}>
+                {t("hero.header2")}
+              </Heading>
+              <Text className="u-pt5 hero-description">
+                {t("hero.description")} {t("hero.freeToUse")}
+              </Text>
+            </>
+          )}
         </GridItem>
         <GridItem xs={12} lg={5}>
           <GridContainer className="u-mt4" justifyContent="space-between">
