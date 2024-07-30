@@ -34,6 +34,9 @@ export default function BlogPage({
   const currentURL = `https://easyconvertimage.com${location.pathname}${location.search}${location.hash}`;
   const articleKeys = data.article;
 
+  const moreArticles = blogArticlesArray.filter(
+    (item) => !location.pathname.includes(item.url)
+  );
   const tableOfContentData = Object.values(articleKeys.content)
     .filter((item) => checkIfExist(item.title))
     .map((item) => ({
@@ -42,7 +45,7 @@ export default function BlogPage({
       text: t(item.title),
     }));
 
-  const renderContentSection = (item: ArticleType['article']['content'][0]) => (
+  const renderContentSection = (item: ArticleType["article"]["content"][0]) => (
     <div key={t(item.id)}>
       <Heading
         underline
@@ -87,7 +90,7 @@ export default function BlogPage({
     </div>
   );
 
-  const renderProsCons = (item: ArticleType['article']['content']['0']) => (
+  const renderProsCons = (item: ArticleType["article"]["content"]["0"]) => (
     <>
       {item.pros && filterExistingItems(item.pros).length > 0 && (
         <div className="u-pt2">
@@ -203,7 +206,7 @@ export default function BlogPage({
           </div>
           <nav aria-labelledby="toc-heading" className="u-pt4">
             <h2 id="toc-heading" className="visually-hidden">
-              {tCommon('blog.table')}
+              {tCommon("blog.table")}
             </h2>
             <TableOfContents items={tableOfContentData} />
           </nav>
@@ -247,7 +250,7 @@ export default function BlogPage({
           </Heading>
           <div className="u-pt2">
             <GridContainer>
-              {blogArticlesArray.map((item, index) => (
+              {moreArticles.map((item, index) => (
                 <GridItem
                   animation="slide-in-bottom"
                   xs={12}

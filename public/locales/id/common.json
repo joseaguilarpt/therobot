@@ -713,6 +713,24 @@
     }
   },
 
+  "articles": [
+    {
+      "heading": "PNG vs WebP: Panduan Definitif untuk Mengoptimalkan Gambar Web Anda",
+      "url": "png-vs-webp-conversion-guide"
+    },
+    {
+      "heading": "10 Format Gambar Terbaik untuk Situs Web Anda: Panduan Lengkap",
+      "url": "top-10-image-formats-for-website"
+    },
+    {
+      "heading": "5 Sumber Gratis Terbaik yang Esensial untuk Desainer di 2024",
+      "url": "top-5-free-resources-designers-2024"
+    },
+    {
+      "heading": "Revolusi Visual: Dari GIF ke AVIF - Bagaimana Format Gambar Berkembang",
+      "url": "evolving-image-formats"
+    }
+  ],
   "cookieBanner": {
     "title": "Preferensi Cookie",
     "description": "Kami menggunakan cookie untuk meningkatkan pengalaman browsing Anda dan menganalisis lalu lintas kami. Silakan pilih preferensi Anda di bawah ini.",

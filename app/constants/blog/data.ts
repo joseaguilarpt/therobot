@@ -15,7 +15,12 @@ export const blogArticlesArray = [
     img: '/img/blog/balance-savings.webp',
     heading: "articles.2.heading",
     url: "top-5-free-resources-designers-2024",
-  }
+  },
+  {
+    img: '/img/blog/graphics.webp',
+    heading: "articles.3.heading",
+    url: "evolving-image-formats",
+  },
 ];
 
 const urls = blogArticlesArray.map((item) => item.url)
