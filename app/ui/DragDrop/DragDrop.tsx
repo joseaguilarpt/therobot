@@ -310,7 +310,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
                 <GridContainer direction="column">
                   <GridItem className="u-pb1">
                     <GoogleUpload
-                      isDisabled={isLoading ?? false}
+                      isDisabled={true ?? false}
                       addFiles={addFiles}
                       sourceFormat={params?.sourceFormat ?? "jpeg"}
                     />
