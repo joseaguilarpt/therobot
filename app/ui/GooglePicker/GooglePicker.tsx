@@ -66,7 +66,6 @@ export const GoogleDrivePicker = ({
       multiselect: true,
       locale: i18n.language,
       callbackFunction: (data) => {
-        console.log(data, "data");
         if (data.action === "picked") {
           // @ts-expect-error sisas
           handleUploadFiles(data?.docs);
