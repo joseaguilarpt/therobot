@@ -1187,5 +1187,68 @@
         "technicalDetails": "Преобразует пути SVG в векторные элементы PDF. Поддерживает встраивание шрифтов и сохранение векторной графики. Может растеризовать некоторые сложные эффекты."
       }
     }
+  },
+  "dropboxModal": {
+    "button": {
+      "uploadFromDropbox": "Загрузить файлы из Dropbox"
+    },
+    "errors": {
+      "downloadError": "Ошибка при скачивании ваших файлов"
+    },
+    "messages": {
+      "operationCancelled": "Операция отменена"
+    },
+    "accessibility": {
+      "dropboxLogo": "Логотип Dropbox"
+    }
+  },
+  "googleModal": {
+    "button": {
+      "uploadFromGoogleDrive": "Загрузить файлы из Google Drive"
+    },
+    "modal": {
+      "title": "Выбрать изображения из Google Drive",
+      "heading": "Выбрать изображения:",
+      "filterFiles": {
+        "label": "Фильтровать файлы",
+        "placeholder": "Фильтровать файлы по имени..."
+      },
+      "sortBy": {
+        "label": "Сортировать по",
+        "placeholder": "Сортировать по",
+        "options": {
+          "fileName": "Имя файла",
+          "fileSize": "Размер файла",
+          "creationDate": "Дата создания"
+        }
+      },
+      "tableHeader": {
+        "select": "Выбрать:",
+        "fileName": "Имя файла:",
+        "fileSize": "Размер файла:",
+        "creationDate": "Дата создания:"
+      },
+      "noResults": "Результатов не найдено",
+      "actions": {
+        "clearSelection": "Очистить выбор",
+        "cancel": "Отмена",
+        "uploadFiles": "Загрузить файлы"
+      }
+    },
+    "errors": {
+      "uploadError": "Ошибка при загрузке ваших файлов",
+      "fetchError": "Ошибка при получении файлов из Google Drive",
+      "loginFailed": "Ошибка входа"
+    },
+    "accessibility": {
+      "googleDriveLogo": "Логотип Google Drive",
+      "modalLabel": "Выбор файлов из Google Drive",
+      "filterFilesLabel": "Фильтровать файлы",
+      "sortFilesLabel": "Сортировать файлы по",
+      "fileDetails": "Размер файла: {size} кб, Создан: {date}",
+      "clearSelectionLabel": "Очистить выбор файлов",
+      "cancelSelectionLabel": "Отменить выбор файлов",
+      "uploadFilesLabel": "Загрузить выбранные файлы"
+    }
   }
 }

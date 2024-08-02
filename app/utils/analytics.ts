@@ -6,7 +6,7 @@ declare global {
   interface Window {
     gtag: (command: string, targetId: string, params?: Record<string, unknown>) => void;
     ENV?: {
-      GOOGLE_ID_ANALYTICS?: string;
+      [key: string]: string;
     };
   }
 }
