@@ -770,7 +770,7 @@
       "downloadError": "Erro ao baixar seus arquivos"
     },
     "messages": {
-      "operationCancelled": "Operação do Dropbox cancelada"
+      "operationCancelled": "Operação cancelada"
     },
     "accessibility": {
       "dropboxLogo": "Logo do Dropbox"

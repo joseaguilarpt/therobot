@@ -758,7 +758,7 @@
       "downloadError": "Error downloading your files"
     },
     "messages": {
-      "operationCancelled": "Dropbox operation cancelled"
+      "operationCancelled": "Operation cancelled"
     },
     "accessibility": {
       "dropboxLogo": "Dropbox logo"

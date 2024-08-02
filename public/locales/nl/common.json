@@ -766,7 +766,7 @@
       "downloadError": "Fout bij het downloaden van uw bestanden"
     },
     "messages": {
-      "operationCancelled": "Dropbox-operatie geannuleerd"
+      "operationCancelled": "Operatie geannuleerd"
     },
     "accessibility": {
       "dropboxLogo": "Dropbox-logo"
