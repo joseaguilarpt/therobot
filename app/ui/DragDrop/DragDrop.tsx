@@ -21,9 +21,9 @@ import classNames from "classnames";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { trackClick } from "~/utils/analytics";
 import GridContainer from "../Grid/Grid";
-import GoogleUpload from "../GoogleUpload/GoogleUpload";
 import DropboxUpload from "../DropboxUpload/DropboxUpload";
 import GridItem from "../Grid/GridItem";
+import { GoogleDrivePicker } from "../GooglePicker/GooglePicker";
 
 interface DragAndDropProps {
   isLoading?: boolean;
@@ -309,8 +309,9 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               <GridItem xs={1}>
                 <GridContainer direction="column">
                   <GridItem className="u-pb1">
-                    <GoogleUpload
-                      isDisabled={false}
+                    <GoogleDrivePicker
+                      isDisabled={isLoading ?? false}
+                      setLoading={setInternalLoading}
                       addFiles={addFiles}
                       sourceFormat={params?.sourceFormat ?? "jpeg"}
                     />

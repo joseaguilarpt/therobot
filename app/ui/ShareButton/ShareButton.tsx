@@ -104,7 +104,6 @@ const ShareButton: React.FC<ShareButtonProps> = ({
                 <Button
                   className="share-email__button"
                   onClick={handleEmailShare}
-                  size="large"
                   isLoading={isLoading}
                   isDisabled={!email}
                 >
@@ -116,7 +115,6 @@ const ShareButton: React.FC<ShareButtonProps> = ({
               <Text className="u-pb2">Or</Text>
               <Button
                 className="download-email__button"
-                size="large"
                 onClick={onDownload}
               >
                 {t('share.downloadZip')}

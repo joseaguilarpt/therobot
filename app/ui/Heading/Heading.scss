@@ -1,14 +1,15 @@
-@import '../../styles/theme';
+@import "../../styles/theme";
 
 .heading {
   font-family: var(--heading-font);
   color: var(--heading-color);
+  font-weight: bold;
   position: relative;
   width: inherit;
-  
+
   &--h1 {
     font-size: 2.5rem; /* Default 40px */
-    margin: 0.5em 0;
+    margin: 0.5em 0em;
 
     @include media-query(small) {
       font-size: 3rem; /* 48px */
@@ -60,7 +61,6 @@
       font-size: 2.5rem; /* 40px */
       line-height: 2rem;
       letter-spacing: -3px;
-
     }
 
     @include media-query(large) {
@@ -111,14 +111,17 @@
     margin: 0.5em 0;
 
     @include media-query(small) {
+      line-height: 1rem;
       font-size: 1.25rem; /* 20px */
     }
 
     @include media-query(medium) {
+      line-height: 1.25rem;
       font-size: 1.5rem; /* 24px */
     }
 
     @include media-query(large) {
+      line-height: 1.5rem;
       font-size: 1.75rem; /* 28px */
     }
   }
@@ -139,26 +142,24 @@
   &--left {
     &:after {
       right: unset;
-    } 
+    }
   }
 
   &--right {
     &:after {
       left: unset;
-    } 
+    }
   }
   &--center {
     text-align: center;
     &:after {
       left: 0;
       right: 0;
-    } 
+    }
     &--underline {
       &:after {
-
         left: 0;
         right: 0;
-
       }
     }
   }
