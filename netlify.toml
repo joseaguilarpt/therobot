@@ -45,14 +45,6 @@ for = "/*.{js,css,png,jpg,jpeg,svg,gif}"
 [build.environment]
 NODE_VERSION = "20.5.0"
 
-# Enable HTTP/2 Server Push
-[[headers]]
-for = "/*"
-[headers.values]
-Link = '''
-</build/entry.client-*.js>; rel=preload; as=script
-'''
-
 # Post processing configuration to optimize images
 [build.processing]
 skip_processing = false
