@@ -22,8 +22,7 @@ async function hydrate() {
         ...i18n,
         ns: getInitialNamespaces(),
         backend: { 
-          loadPath: './locales/{{lng}}/{{ns}}.json',
-          addPath: './locales/{{lng}}/{{ns}}.json'
+          loadPath: '/locales/{{lng}}/{{ns}}.json',
         },
         detection: {
           order: ["htmlTag"],
