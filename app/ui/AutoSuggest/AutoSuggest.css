@@ -414,7 +414,7 @@
   align-items: center;
   transition: all 0.2s ease-in-out;
 }
-.auto-suggest__button svg {
+.auto-suggest__button .icon--medium {
   color: var(--accent-color);
   right: 8px;
   position: absolute;
