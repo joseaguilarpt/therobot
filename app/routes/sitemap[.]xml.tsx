@@ -1,55 +1,59 @@
-import { LoaderFunction } from "@remix-run/node";
-import posts from '../constants/blog/data';
+import { LoaderFunction, MetaFunction } from "@remix-run/node";
+import posts from "../constants/blog/data";
 
-const BLOG_POSTS = Object.keys(posts);
-const LANGUAGES = ["en", "es", "pt", "fr", "nl", "de", "it", "id", "ru"];
-const FORMATS = [
-  "jpeg",
-  "png",
-  "gif",
-  "webp",
-  "avif",
-  "tiff",
-  "svg",
-  "bmp",
-  "pdf",
-];
-const SOURCE_FORMATS = FORMATS.filter((format) => format !== "pdf");
-
-const STATIC_ROUTES = [
-  "/",
-  "/about",
-  "/accessibility",
-  "/ccpa-compliance",
-  "/contact",
-  "/cookie-policy",
-  "/gdpr-compliance",
-  "/privacy-policy",
-  "/terms-of-service",
-  "/blog"
-];
-
-function generateRoutes() {
-  const routes = [...STATIC_ROUTES];
-
-  // Add blog post routes
-  for (const post of BLOG_POSTS) {
-    routes.push(`/blog/${post}`);
-  }
-
-  // Add conversion routes
-  for (const source of SOURCE_FORMATS) {
-    for (const target of FORMATS) {
-      if (source !== target) {
-        routes.push(`/convert/${source}/${target}`);
-      }
-    }
-  }
-
-  return routes;
-}
+export const meta: MetaFunction = () => {
+  return [{ title: "Sitemap" }];
+};
 
 export const loader: LoaderFunction = async ({ request }) => {
+  const BLOG_POSTS = Object.keys(posts);
+  const LANGUAGES = ["en", "es", "pt", "fr", "nl", "de", "it", "id", "ru"];
+  const FORMATS = [
+    "jpeg",
+    "png",
+    "gif",
+    "webp",
+    "avif",
+    "tiff",
+    "svg",
+    "bmp",
+    "pdf",
+  ];
+  const SOURCE_FORMATS = FORMATS.filter((format) => format !== "pdf");
+
+  const STATIC_ROUTES = [
+    "/",
+    "/about",
+    "/accessibility",
+    "/ccpa-compliance",
+    "/contact",
+    "/cookie-policy",
+    "/gdpr-compliance",
+    "/privacy-policy",
+    "/terms-of-service",
+    "/blog",
+  ];
+
+  function generateRoutes() {
+    const routes = [...STATIC_ROUTES];
+
+    // Add blog post routes
+    for (const post of BLOG_POSTS) {
+      routes.push(`/blog/${post}`);
+    }
+
+    // Add conversion routes
+    for (const source of SOURCE_FORMATS) {
+      for (const target of FORMATS) {
+        if (source !== target) {
+          routes.push(`/convert/${source}/${target}`);
+        }
+      }
+    }
+
+    return routes;
+  }
+
   const host =
     request.headers.get("X-Forwarded-Host") ?? request.headers.get("host");
   if (!host) {
@@ -95,10 +99,8 @@ export const loader: LoaderFunction = async ({ request }) => {
       "Content-Type": "application/xml",
       "xml-version": "1.0",
       encoding: "UTF-8",
+      "Content-Length": String(Buffer.byteLength(sitemap)),
+      "Cache-Control": "public, max-age=3600",
     },
   });
 };
-
-export default function Sitemap() {
-  return null;
-}
