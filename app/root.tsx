@@ -29,6 +29,7 @@ import { useNonce } from "./context/NonceContext";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import { isValidFormat } from "./constants/formats";
 import { GoogleApiInitializer } from "./ui/GoogleInitializer/GoogleInitializer";
+import { FilesProvider } from "./context/FilesContext";
 
 // Critical CSS for fonts
 const criticalFontCSS = `
@@ -69,33 +70,33 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "icon", href: "/favicon.ico" },
   { rel: "manifest", href: "/manifest.json" },
-  { 
-    rel: "preload", 
-    href: "/fonts/Inter-Bold.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/Inter-Bold.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
-  { 
-    rel: "preload", 
-    href: "/fonts/Poppins-Regular.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/Poppins-Regular.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
-  { 
-    rel: "preload", 
-    href: "/fonts/Questrial-Regular.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/Questrial-Regular.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
-  { 
-    rel: "preload", 
-    href: "/fonts/MaterialIcons-Regular.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/MaterialIcons-Regular.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
 ];
 
@@ -162,13 +163,15 @@ function Document({
   locale,
   nonce,
   i18n,
-  ENV
+  ENV,
 }: {
   children: React.ReactNode;
   locale: string;
   nonce: string;
-  i18n: any;
-  ENV: any;
+  i18n: { dir: () => string | undefined };
+  ENV: {
+    [key: string]: string;
+  };
 }) {
   return (
     <html lang={locale} dir={i18n.dir()}>
@@ -213,7 +216,7 @@ function Document({
           }}
         />
         {ENV.DROPBOX_USER && (
-          <script   
+          <script
             nonce={nonce}
             type="text/javascript"
             src="https://www.dropbox.com/static/api/2/dropins.js"
@@ -246,12 +249,14 @@ export function ErrorBoundary() {
 
   return (
     <Document locale={i18n.language} nonce={nonce} i18n={i18n} ENV={minimalENV}>
-      <ThemeProvider>
-        <SkipToContent />
-        <ErrorComponent />
-        <Snackbar />
-        <CookieConsentBanner />
-      </ThemeProvider>
+      <FilesProvider>
+        <ThemeProvider>
+          <SkipToContent />
+          <ErrorComponent />
+          <Snackbar />
+          <CookieConsentBanner />
+        </ThemeProvider>
+      </FilesProvider>
     </Document>
   );
 }
@@ -265,17 +270,23 @@ const App = React.memo(function App() {
 
   return (
     <Document locale={locale} nonce={nonce} i18n={i18n} ENV={ENV}>
-      <ThemeProvider>
-        <HoneypotProvider {...honeypotInputProps}>
-          <GoogleApiInitializer nonce={nonce} apiKey={ENV.G_DRIVE_API ?? ''} clientId={ENV.G_DRIVE_USER ?? ''} />
-          <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
-            <SkipToContent />
-            <Outlet context={{ locale, honeypotInputProps }} />
-            <Snackbar />
-            <CookieConsentBanner />
-          </GoogleReCaptchaProvider>
-        </HoneypotProvider>
-      </ThemeProvider>
+      <FilesProvider>
+        <ThemeProvider>
+          <HoneypotProvider {...honeypotInputProps}>
+            <GoogleApiInitializer
+              nonce={nonce}
+              apiKey={ENV.G_DRIVE_API ?? ""}
+              clientId={ENV.G_DRIVE_USER ?? ""}
+            />
+            <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
+              <SkipToContent />
+              <Outlet context={{ locale, honeypotInputProps }} />
+              <Snackbar />
+              <CookieConsentBanner />
+            </GoogleReCaptchaProvider>
+          </HoneypotProvider>
+        </ThemeProvider>
+      </FilesProvider>
     </Document>
   );
 });

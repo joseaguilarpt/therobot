@@ -17,6 +17,7 @@ import { FormatImage } from "../FormatImage/FormatImage";
 
 import { useTheme } from "~/context/ThemeContext";
 import { trackClick } from "~/utils/analytics";
+import { ConvertedFile } from "~/utils/useTool";
 
 const { saveAs } = pkg;
 
@@ -124,6 +125,15 @@ const Files: React.FC<FilesProps> = ({
     params?.targetFormat?.toLowerCase() ?? ""
   );
 
+  const getFileType = (file: ConvertedFile) => {
+    const extension =
+      file.fileName.split(".")?.pop()?.toLowerCase() ??
+      file.fileUrl?.type ??
+      params?.sourceFormat ??
+      "jpeg";
+    return extension;
+  };
+
   return (
     <div
       className="files-container"
@@ -220,11 +230,7 @@ const Files: React.FC<FilesProps> = ({
             <GridItem xs={9} md={5} role="cell">
               <GridContainer alignItems="center">
                 <div className="table-item u-pr1">
-                  <FormatImage
-                    format={
-                      file.fileUrl?.type ?? params?.sourceFormat ?? "jpeg"
-                    }
-                  />
+                  <FormatImage format={getFileType(file)} />
                 </div>
                 <Text>{file.fileName}</Text>
               </GridContainer>

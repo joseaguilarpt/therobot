@@ -13,8 +13,9 @@ import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { trackClick } from "./analytics";
 import { handleFileConversion } from "./converterTool";
+import { useFiles } from "~/context/FilesContext";
 
-interface ConvertedFile {
+export interface ConvertedFile {
   status: "processing" | "completed" | "error";
   fileName: string;
   fileSize: number;
@@ -68,21 +69,9 @@ export function useFileConversion(
   const submit = useSubmit();
   const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const [convertedFiles, setConvertedFiles] = useState<ConvertedFile[]>([]);
+  const { convertedFiles, setConvertedFiles } = useFiles();
   const [pdfType, setPdfType] = useState<"separated" | "merged">("separated");
   const [isPending, setIsPending] = useState(false);
-
-  useEffect(() => {
-    if (data?.error) {
-      showSnackbar(data.error, "error");
-      setIsPending(false);
-      setConvertedFiles((prevFiles) =>
-        prevFiles.map((item) =>
-          item.status === "processing" ? { ...item, status: "error" } : item
-        )
-      );
-    }
-  }, [data?.error, showSnackbar]);
 
   useEffect(() => {
     if (status.type === "emailSent") {
@@ -90,26 +79,6 @@ export function useFileConversion(
       setIsPending(false);
     }
   }, [status?.type, showSnackbar, t]);
-
-  useEffect(() => {
-    if (data?.convertedFiles) {
-      const newFiles = data.convertedFiles.map((item) => ({
-        ...item,
-        fileUrl: base64ToImage(item.fileUrl),
-        status: "completed" as const,
-      }));
-
-      setTimeout(() => {
-        // ts-expect-error
-        setConvertedFiles((prevFiles) => [
-          ...newFiles,
-          ...prevFiles.filter((item) => item.status !== "processing"),
-        ]);
-        setIsPending(false);
-        showSnackbar(t("ui.conversionSuccess"), "success");
-      }, 1500);
-    }
-  }, [data?.convertedFiles, showSnackbar, t]);
 
   useEffect(() => {
     if (data?.contactError) {
@@ -137,8 +106,13 @@ export function useFileConversion(
         form.append("csrf", loaderData.csrfToken);
       }
       try {
-        const data = await handleFileConversion(files, selectedFormat.toLowerCase(), form)
+        const data = await handleFileConversion(
+          files,
+          selectedFormat.toLowerCase(),
+          form
+        );
         if (data.convertedFiles) {
+          console.log(data.convertedFiles)
           const newFiles = data.convertedFiles.map((item) => ({
             ...item,
             fileUrl: base64ToImage(item.fileUrl),
@@ -147,21 +121,21 @@ export function useFileConversion(
           setConvertedFiles((prevFiles) => [
             ...newFiles,
             ...prevFiles.filter((item) => item.status !== "processing"),
-          ])
+          ]);
           setIsPending(false);
-        showSnackbar(t("ui.conversionSuccess"), "success");
+          showSnackbar(t("ui.conversionSuccess"), "success");
         }
-      }
-      catch(e) {
-        console.log(e)
+      } catch (e) {
+        setConvertedFiles((prevFiles) =>
+          prevFiles.map((item) =>
+            item.status === "processing" ? { ...item, status: "error" } : item
+          )
+        );
+        setIsPending(false);
+        showSnackbar(t("errorBoundary.message"), "error");
       }
     },
-    [
-      selectedFormatFrom,
-      selectedFormat,
-      pdfType,
-      loaderData?.csrfToken,
-    ]
+    [selectedFormat, pdfType, loaderData?.csrfToken, setConvertedFiles, showSnackbar, t, selectedFormatFrom]
   );
 
   const handleDownload = useCallback(
@@ -192,7 +166,7 @@ export function useFileConversion(
         `language: ${i18n.language} - format from: ${params?.targetFormat} - format to: : ${params?.sourceFormat}`
       );
     },
-    [showSnackbar, t, i18n.language, params?.sourceFormat, params?.targetFormat]
+    [showSnackbar, t, i18n.language, params?.sourceFormat, params?.targetFormat, setConvertedFiles]
   );
 
   const handleRemoveAll = useCallback(() => {
@@ -210,6 +184,7 @@ export function useFileConversion(
     i18n.language,
     params?.sourceFormat,
     params?.targetFormat,
+    setConvertedFiles
   ]);
 
   const handleEmailShare = async (file: Blob, email: string) => {
