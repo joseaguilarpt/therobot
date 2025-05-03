@@ -11,7 +11,7 @@ import { onSendCustomerEmail, onSendEmail } from "./mail.server";
 import { validateCSRFToken } from "./csrf.server";
 import { checkRateLimit } from "./rateLimiter.server";
 import i18next from "~/i18next.server";
-import axios from 'axios';
+import axios from "axios";
 
 async function validateRateLimit(request: Request) {
   const identifier = request.headers.get("x-forwarded-for") || request.ip;
@@ -30,14 +30,14 @@ async function validateCaptcha(token: string) {
   }
 
   const captchaSecret = process.env.RCAPTCHA_SERVER;
-  
+
   try {
     const response = await axios.post(
       `https://www.google.com/recaptcha/api/siteverify?secret=${captchaSecret}&response=${token}`,
       {},
       {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
         },
       }
     );
@@ -51,7 +51,7 @@ async function validateCaptcha(token: string) {
       );
     }
   } catch (error) {
-    console.error('reCAPTCHA verification failed:', error);
+    console.error("reCAPTCHA verification failed:", error);
     throw json(
       { error: "reCAPTCHA verification failed", convertedFiles: null },
       { status: 400 }
@@ -115,10 +115,9 @@ async function handleFileConversion(
     } else {
       convertedFiles = await convertToOtherFormat(files, format);
     }
-  
+
     return json({ convertedFiles });
-  }
-  catch(e){ 
+  } catch (e) {
     return json(
       { error: "An unexpected error occurred", convertedFiles: null },
       { status: 500 }
@@ -132,7 +131,7 @@ export async function toolAction(request: Request) {
 
     const formData = await parseFormData(request);
     const token = formData.get("g-recaptcha-response") as string;
-    const lng = await i18next.getLocale(request)
+    const lng = await i18next.getLocale(request);
 
     await validateCaptcha(token);
     validateHoneypot(formData);
@@ -146,13 +145,13 @@ export async function toolAction(request: Request) {
       case "contact":
         return handleContactForm(formData);
       case "email":
-        formData.append('language', lng)
+        formData.append("language", lng);
         return handleEmailForm(formData);
       default:
         return handleFileConversion(files, format, formData);
     }
   } catch (error) {
-    console.error(error, 'error')
+    console.error(error, "error");
     if (error instanceof Response) {
       return json(
         { error: "An unexpected error occurred", convertedFiles: null },
