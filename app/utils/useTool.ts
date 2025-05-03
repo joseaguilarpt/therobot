@@ -9,7 +9,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { trackClick } from "./analytics";
 
 interface ConvertedFile {
@@ -137,7 +137,7 @@ export function useFileConversion(selectedFormat: string) {
         preventScrollReset: true,
       });
     },
-    [selectedFormat, pdfType, loaderData?.csrfToken, submit]
+    [selectedFormat, pdfType, loaderData?.csrfToken, submit, executeRecaptcha]
   );
 
   const handleDownload = useCallback(
@@ -188,43 +188,38 @@ export function useFileConversion(selectedFormat: string) {
     params?.targetFormat,
   ]);
 
-  const handleEmailShare = useCallback(
-    async (file: Blob, email: string) => {
-      setIsPending(true);
-      const formData = new FormData();
-      formData.append("email", email);
-      formData.append("zipFile", file);
+  const handleEmailShare = async (file: Blob, email: string) => {
+    setIsPending(true);
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("zipFile", file);
 
-      if (loaderData?.csrfToken) {
-        formData.append("csrf", loaderData.csrfToken);
-      }
+    if (loaderData?.csrfToken) {
+      formData.append("csrf", loaderData.csrfToken);
+    }
 
-      if (executeRecaptcha) {
-        try {
-          const token = await executeRecaptcha();
-          if (token) {
-            formData.append("type", "email");
-            formData.set("g-recaptcha-response", token);
-            submit(formData, {
-              method: "post",
-              encType: "multipart/form-data",
-              preventScrollReset: true,
-            });
-          }
-          else {
-            setIsPending(false);
-
-          }
-        } catch (error) {
-          showSnackbar(t("errorBoundary.title"), "error");
+    console.log(executeRecaptcha, "reca");
+    if (executeRecaptcha) {
+      try {
+        const token = await executeRecaptcha();
+        if (token) {
+          formData.append("type", "email");
+          formData.set("g-recaptcha-response", token);
+          submit(formData, {
+            method: "post",
+            encType: "multipart/form-data",
+            preventScrollReset: true,
+          });
+        } else {
+          setIsPending(false);
         }
+      } catch (error) {
+        showSnackbar(t("errorBoundary.title"), "error");
       }
-      else {
-        setIsPending(false);
-      }
-    },
-    [loaderData?.csrfToken, submit]
-  );
+    } else {
+      setIsPending(false);
+    }
+  };
 
   return {
     convertedFiles,
