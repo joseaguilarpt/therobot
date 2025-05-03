@@ -1,3 +1,7 @@
+import styles from "./app.scss?url";
+
+import React from "react";
+
 import {
   Links,
   Meta,
@@ -9,27 +13,52 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import { cssBundleHref } from "@remix-run/css-bundle";
-
-import { LinksFunction, LoaderFunctionArgs, json } from "@remix-run/node";
-import styles from "./app.scss?url";
-import { ThemeProvider } from "./context/ThemeContext";
-import Snackbar from "./ui/Snackbar/Snackbar";
+import { HeadersFunction, LinksFunction, LoaderFunctionArgs, json } from "@remix-run/node";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import CookieConsentBanner from "./ui/CookiesConsent/CookiesConsent";
-import SkipToContent from "./ui/SkipToContent/SkipToContent";
 import { useChangeLanguage } from "remix-i18next/react";
 import { useTranslation } from "react-i18next";
+import { HoneypotProvider } from "remix-utils/honeypot/react";
+import { ThemeProvider } from "./context/ThemeContext";
+import Snackbar from "./ui/Snackbar/Snackbar";
+import CookieConsentBanner from "./ui/CookiesConsent/CookiesConsent";
+import SkipToContent from "./ui/SkipToContent/SkipToContent";
 import i18next from "~/i18next.server";
-import {} from "~/entry.client";
 import NotFound from "./routes/404";
 import ErrorPage from "./routes/Error";
-import { HoneypotProvider } from "remix-utils/honeypot/react";
 import { honeypot } from "~/honeypot.server";
 import i18n from "./i18n";
+import { HCaptchaProvider } from "./context/HCaptchaContext";
+import { HCaptchaComponent } from "~/ui/HCaptcha/Hcaptcha";
+
+export const headers: HeadersFunction = () => {
+  return {
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Content-Security-Policy": `
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://js.hcaptcha.com https://*.hcaptcha.com;
+      style-src 'self' 'unsafe-inline' https://hcaptcha.com https://*.hcaptcha.com;
+      frame-src 'self' https://*.hcaptcha.com;
+      img-src 'self' data: https:;
+      font-src 'self';
+      connect-src 'self' https://*.hcaptcha.com;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'none';
+      block-all-mixed-content;
+      upgrade-insecure-requests;
+    `.replace(/\s{2,}/g, ' ').trim()
+  };
+};
+
+export const links: LinksFunction = () => [
+  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  { rel: "stylesheet", href: styles },
+];
 
 export async function loader({ params, request }: LoaderFunctionArgs) {
+  const checkValidLang = (v: string) => i18n.supportedLngs.includes(v);
 
-  const checkValidLang = (v: string) => i18n.supportedLngs.includes(v)
   if (params?.sourceFormat?.toLowerCase() === "pdf") {
     throw new Response(null, {
       status: 404,
@@ -43,58 +72,32 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
 
   if (urlParam) {
     isValidLang = checkValidLang(urlParam);
-  } 
+  }
   if (!isValidLang) {
     throw new Response(null, {
       status: 404,
       statusText: "Not Found",
     });
   }
-  
+
   return json({ honeypotInputProps: honeypot?.getInputProps(), locale });
 }
 
 export let handle = {
-  // In the handle export, we can add a i18n key with namespaces our route
-  // will need to load. This key can be a single string or an array of strings.
-  // TIP: In most cases, you should set this to your defaultNS from your i18n config
-  // or if you did not set one, set it to the i18next default namespace "translation"
   i18n: "common",
 };
 
-export const queryClient = new QueryClient();
-
-export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-  { rel: "stylesheet", href: styles },
-  {
-    rel: "stylesheet",
-    href: "https://cdn.jsdelivr.net/npm/altcha@latest/dist/altcha.min.css",
-  },
-];
+const queryClient = new QueryClient();
 
 export function ErrorBoundary() {
   const error = useRouteError();
-  // Get the locale from the loader
-  const { i18n, t } = useTranslation();
-  // This hook will change the i18n instance language to the current locale
-  // detected by the loader, this way, when we do something to change the
-  // language, this locale will change and i18next will load the correct
-  // translation files
+  const { i18n } = useTranslation();
   useChangeLanguage(i18n.language ?? "en");
 
-  let ErrorComponent;
+  let ErrorComponent = ErrorPage;
 
-  if (isRouteErrorResponse(error)) {
-    if (error.status === 404) {
-      ErrorComponent = NotFound;
-    } else {
-      ErrorComponent = ErrorPage;
-    }
-  } else if (error instanceof Error) {
-    ErrorComponent = ErrorPage;
-  } else {
-    ErrorComponent = ErrorPage;
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    ErrorComponent = NotFound;
   }
 
   return (
@@ -108,13 +111,14 @@ export function ErrorBoundary() {
       <body>
         <QueryClientProvider client={queryClient}>
           <ThemeProvider>
-            <SkipToContent />
-
-            <NotFound />
-            <Snackbar />
-            <ScrollRestoration />
-            <Scripts />
-            <CookieConsentBanner />
+            <HCaptchaProvider>
+              <SkipToContent />
+              <ErrorComponent />
+              <Snackbar />
+              <ScrollRestoration />
+              <Scripts />
+              <CookieConsentBanner />
+            </HCaptchaProvider>
           </ThemeProvider>
         </QueryClientProvider>
       </body>
@@ -122,15 +126,10 @@ export function ErrorBoundary() {
   );
 }
 
-export default function App() {
-  // Get the locale from the loader
+const App = React.memo(function App() {
   let { locale, honeypotInputProps } = useLoaderData<typeof loader>();
   let { i18n } = useTranslation();
 
-  // This hook will change the i18n instance language to the current locale
-  // detected by the loader, this way, when we do something to change the
-  // language, this locale will change and i18next will load the correct
-  // translation files
   useChangeLanguage(locale);
 
   return (
@@ -145,17 +144,21 @@ export default function App() {
         <body>
           <QueryClientProvider client={queryClient}>
             <ThemeProvider>
-              <SkipToContent />
-
-              <Outlet context={{ locale, honeypotInputProps }} />
-              <Snackbar />
-              <ScrollRestoration />
-              <Scripts />
-              <CookieConsentBanner />
+              <HCaptchaProvider>
+                <SkipToContent />
+                <Outlet context={{ locale, honeypotInputProps }} />
+                <Snackbar />
+                <ScrollRestoration />
+                <Scripts />
+                <CookieConsentBanner />
+                <HCaptchaComponent sitekey="10000000-ffff-ffff-ffff-000000000001" />
+              </HCaptchaProvider>
             </ThemeProvider>
           </QueryClientProvider>
         </body>
       </HoneypotProvider>
     </html>
   );
-}
+});
+
+export default App;

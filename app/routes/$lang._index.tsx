@@ -9,24 +9,18 @@ import Navbar from "~/ui/Navbar/Navbar";
 import ToolContainer from "~/ui/ToolContainer/ToolContainer";
 import ContentContainer from "~/ui/ContentContainer/ContentContainer";
 import Heading from "~/ui/Heading/Heading";
-import GridContainer from "~/ui/Grid/Grid";
-import GridItem from "~/ui/Grid/GridItem";
 import Text from "~/ui/Text/Text";
 import CompanyServicesSection from "~/ui/AboutPage/CompanyServicesSection";
-import Box from "~/ui/Box/Box";
-import FormField from "~/ui/FormField/FormField";
-import { GET_IN_TOUCH_FORM } from "~/constants/getInTouchForm";
 import { POPULAR_CONVERSIONS } from "~/utils/conversions";
 import TestimonialSection from "~/ui/AboutPage/TestimonialSection";
 import FAQSection from "~/ui/AboutPage/FAQSection";
 import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
-import i18n from "~/i18n";
 import { toolAction } from "~/utils/toolUtils";
-import { meta } from "~/utils/meta";
-import { useForm } from "~/utils/formUtils";
 import Tool from "~/ui/Tool/Tool";
 import ContactForm from "~/ui/ContactForm/ContactForm";
+import { meta } from "~/utils/meta";
+import { getCSRFToken } from "~/utils/csrf.server";
 
 export { meta };
 export let handle = { i18n: "common" };
@@ -38,7 +32,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
   let ogDescription = t("homeMeta.ogDescription");
   let description = t("homeMeta.description");
   let title = t("homeMeta.title");
-  return json({ title, description, keywords, ogDescription, ogTitle });
+  const { token, cookieHeader } = await getCSRFToken(request);
+  return json(
+    { title, description, keywords, ogDescription, ogTitle, csrfToken: token },
+    { headers: { "Set-Cookie": cookieHeader } }
+  );
 }
 
 export const action: ActionFunction = async ({ request }) => {
@@ -46,10 +44,10 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function IndexPage() {
-
   let { t } = useTranslation("common");
   const data = useActionData<typeof action>();
-  
+
+  console.log(data, 'data')
   return (
     <>
       <Navbar autoScrolled />
@@ -107,3 +105,5 @@ export default function IndexPage() {
     </>
   );
 }
+
+export { IndexPage };

@@ -8,12 +8,35 @@ import {
 import { SpamError } from "remix-utils/honeypot/server";
 import { json } from "@remix-run/node";
 import { onSendCustomerEmail, onSendEmail } from "./mail.server";
+import { verify } from "hcaptcha";
+import { validateCSRFToken } from "./csrf.server";
 
 export async function toolAction(request: any) {
   const formData = await parseFormData(request);
+  const token = formData.get("h-captcha-response") as string;
+
+  if (!token) {
+    return json({ error: "hCaptcha token is missing" }, { status: 400 });
+  }
+
   try {
-    const c = honeypot.check(formData);
-    console.log(honeypot.getInputProps(), formData, 'fd')
+    const secret = process.env.DUMMY_CAPTCHA_SECRET ?? "";
+    const { success } = await verify(secret, token);
+    if (!success) {
+      return json(
+        { error: "Suspicious Activity: Cancelling", convertedFiles: null },
+        { status: 400 }
+      );
+    }
+  } catch {
+    return json(
+      { error: "Suspicious Activity: Cancelling", convertedFiles: null },
+      { status: 400 }
+    );
+  }
+
+  try {
+    honeypot.check(formData);
   } catch (error) {
     if (error instanceof SpamError) {
       return json(
@@ -22,6 +45,9 @@ export async function toolAction(request: any) {
       );
     }
   }
+
+  await validateCSRFToken(request, formData);
+
   const typeOperation = formData.get("type") as string;
 
   if (typeOperation === "contact") {
