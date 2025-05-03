@@ -23,7 +23,7 @@
         {
           "id": "compression-quality",
           "title": "Compressie en beeldkwaliteit",
-          "img": "/app/img/blog/graphics.webp",
+          "img": "/img/blog/graphics.webp",
           "altText": "Visuele vergelijking van compressie tussen PNG en WebP",
           "pros": [
             "WebP biedt betere compressie terwijl de kwaliteit behouden blijft",
@@ -43,7 +43,7 @@
         {
           "id": "file-size",
           "title": "Bestandsgrootte",
-          "img": "/app/img/blog/thumbsup.webp",
+          "img": "/img/blog/thumbsup.webp",
           "altText": "Vergelijking van bestandsgroottes tussen PNG en WebP",
           "pros": [
             "WebP biedt aanzienlijk kleinere bestandsgroottes",
@@ -76,7 +76,7 @@
         }
       ],
       "image": {
-        "url": "/app/img/blog/man-choosing.webp",
+        "url": "/img/blog/man-choosing.webp",
         "category": "image-optimization",
         "alt": "Visuele vergelijking tussen PNG- en WebP-formaten"
       }

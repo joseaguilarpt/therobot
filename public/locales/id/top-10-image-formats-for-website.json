@@ -23,7 +23,7 @@
       {
         "id": "jpeg",
         "title": "1. JPEG (Joint Photographic Experts Group)",
-        "img": "/app/img/blog/formats/jpg.png",
+        "img": "/img/blog/formats/jpg.png",
         "altText": "Contoh gambar JPEG yang menunjukkan karakteristik kompresinya",
         "pros": ["Ukuran file kecil", "Kompatibilitas luas"],
         "cons": [
@@ -40,7 +40,7 @@
       {
         "id": "png",
         "title": "2. PNG (Portable Network Graphics)",
-        "img": "/app/img/blog/formats/png.png",
+        "img": "/img/blog/formats/png.png",
         "altText": "Ilustrasi format PNG yang menampilkan fitur transparansi",
         "pros": ["Kompresi lossless", "Mendukung transparansi"],
         "cons": ["Ukuran file lebih besar dibandingkan JPEG untuk foto"],
@@ -55,7 +55,7 @@
       {
         "id": "webp",
         "title": "3. WebP",
-        "img": "/app/img/blog/formats/webp.png",
+        "img": "/img/blog/formats/webp.png",
         "altText": "Perbandingan kualitas gambar WebP versus format lain",
         "pros": [
           "Ukuran file lebih kecil daripada JPEG dan PNG",
@@ -76,7 +76,7 @@
       {
         "id": "svg",
         "title": "4. SVG (Scalable Vector Graphics)",
-        "img": "/app/img/blog/formats/svg.png",
+        "img": "/img/blog/formats/svg.png",
         "altText": "Grafik vektor yang mendemonstrasikan skalabilitas SVG",
         "pros": [
           "Dapat diskalakan tanpa kehilangan kualitas",
@@ -99,7 +99,7 @@
       {
         "id": "gif",
         "title": "5. GIF (Graphics Interchange Format)",
-        "img": "/app/img/blog/formats/gif.png",
+        "img": "/img/blog/formats/gif.png",
         "altText": "Contoh GIF animasi yang menampilkan grafik gerakan sederhana",
         "pros": ["Mendukung animasi", "Kompatibilitas luas"],
         "cons": [
@@ -118,7 +118,7 @@
       {
         "id": "avif",
         "title": "6. AVIF (AV1 Image File Format)",
-        "img": "/app/img/blog/formats/avif.png",
+        "img": "/img/blog/formats/avif.png",
         "altText": "Contoh gambar AVIF yang menunjukkan efisiensi kompresi yang tinggi",
         "pros": [
           "Kompresi hebat",
@@ -142,7 +142,7 @@
       {
         "id": "heif",
         "title": "7. HEIF (High Efficiency Image Format)",
-        "img": "/app/img/blog/formats/jpg.png",
+        "img": "/img/blog/formats/jpg.png",
         "altText": "Perbandingan kualitas gambar HEIF dan JPEG pada ukuran file yang serupa",
         "pros": [
           "Ukuran file lebih kecil daripada JPEG dengan kualitas serupa",
@@ -165,7 +165,7 @@
       {
         "id": "bmp",
         "title": "8. BMP (Bitmap Image File)",
-        "img": "/app/img/blog/formats/bmp.png",
+        "img": "/img/blog/formats/bmp.png",
         "altText": "Contoh gambar BMP yang menunjukkan kualitas yang tidak terkompres",
         "pros": [
           "Kualitas lossless",
@@ -188,7 +188,7 @@
       {
         "id": "tiff",
         "title": "9. TIFF (Tagged Image File Format)",
-        "img": "/app/img/blog/formats/tiff.png",
+        "img": "/img/blog/formats/tiff.png",
         "altText": "Contoh gambar TIFF resolusi tinggi untuk perbandingan kualitas cetak",
         "pros": [
           "Kualitas tinggi",
@@ -209,7 +209,7 @@
       {
         "id": "webp-2",
         "title": "10. WebP 2",
-        "img": "/app/img/blog/formats/webp.png",
+        "img": "/img/blog/formats/webp.png",
         "altText": "Pratinjau peningkatan format WebP 2 dibandingkan WebP asli",
         "pros": [
           "Kompresi yang lebih baik daripada WebP",
@@ -254,7 +254,7 @@
       }
     ],
     "image": {
-      "url": "/app/img/blog/folders.webp",
+      "url": "/img/blog/folders.webp",
       "category": "ranking",
       "alt": "Bentuk geometris abstrak yang mewakili berbagai format file gambar"
     }

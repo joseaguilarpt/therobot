@@ -29,10 +29,6 @@ async function hydrate() {
           caches: [],
         },
         fallbackLng: 'en',
-        debug: true,
-        interpolation: {
-          escapeValue: false,
-        },
       });
 
     startTransition(() => {

@@ -23,7 +23,7 @@
       {
         "id": "jpeg",
         "title": "1. JPEG (Joint Photographic Experts Group)",
-        "img": "/app/img/blog/formats/jpg.png",
+        "img": "/img/blog/formats/jpg.png",
         "altText": "Пример изображения JPEG, демонстрирующий его характеристики сжатия",
         "pros": ["Небольшой размер файла", "Широкая совместимость"],
         "cons": [
@@ -40,7 +40,7 @@
       {
         "id": "png",
         "title": "2. PNG (Portable Network Graphics)",
-        "img": "/app/img/blog/formats/png.png",
+        "img": "/img/blog/formats/png.png",
         "altText": "Иллюстрация формата PNG, демонстрирующая функцию прозрачности",
         "pros": ["Сжатие без потерь", "Поддерживает прозрачность"],
         "cons": ["Больший размер файла по сравнению с JPEG для фотографий"],
@@ -55,7 +55,7 @@
       {
         "id": "webp",
         "title": "3. WebP",
-        "img": "/app/img/blog/formats/webp.png",
+        "img": "/img/blog/formats/webp.png",
         "altText": "Сравнение качества изображения WebP с другими форматами",
         "pros": [
           "Меньшие размеры файлов, чем JPEG и PNG",
@@ -76,7 +76,7 @@
       {
         "id": "svg",
         "title": "4. SVG (Scalable Vector Graphics)",
-        "img": "/app/img/blog/formats/svg.png",
+        "img": "/img/blog/formats/svg.png",
         "altText": "Векторная графика, демонстрирующая масштабируемость SVG",
         "pros": [
           "Масштабируется без потери качества",
@@ -99,7 +99,7 @@
       {
         "id": "gif",
         "title": "5. GIF (Graphics Interchange Format)",
-        "img": "/app/img/blog/formats/gif.png",
+        "img": "/img/blog/formats/gif.png",
         "altText": "Пример анимированного GIF, показывающий простую графику движения",
         "pros": ["Поддерживает анимацию", "Широко совместим"],
         "cons": [
@@ -118,7 +118,7 @@
       {
         "id": "avif",
         "title": "6. AVIF (AV1 Image File Format)",
-        "img": "/app/img/blog/formats/avif.png",
+        "img": "/img/blog/formats/avif.png",
         "altText": "Пример изображения AVIF, демонстрирующий высокую эффективность сжатия",
         "pros": [
           "Превосходное сжатие",
@@ -142,7 +142,7 @@
       {
         "id": "heif",
         "title": "7. HEIF (High Efficiency Image Format)",
-        "img": "/app/img/blog/formats/jpg.png",
+        "img": "/img/blog/formats/jpg.png",
         "altText": "Сравнение качества изображения HEIF и JPEG при одинаковых размерах файлов",
         "pros": [
           "Меньшие размеры файлов, чем у JPEG, при аналогичном качестве",
@@ -165,7 +165,7 @@
       {
         "id": "bmp",
         "title": "8. BMP (Bitmap Image File)",
-        "img": "/app/img/blog/formats/bmp.png",
+        "img": "/img/blog/formats/bmp.png",
         "altText": "Пример изображения BMP, показывающий несжатое качество",
         "pros": [
           "Качество без потерь",
@@ -188,7 +188,7 @@
       {
         "id": "tiff",
         "title": "9. TIFF (Tagged Image File Format)",
-        "img": "/app/img/blog/formats/tiff.png",
+        "img": "/img/blog/formats/tiff.png",
         "altText": "Образец изображения TIFF высокого разрешения для сравнения качества печати",
         "pros": [
           "Высокое качество",
@@ -212,7 +212,7 @@
       {
         "id": "webp-2",
         "title": "10. WebP 2",
-        "img": "/app/img/blog/formats/webp.png",
+        "img": "/img/blog/formats/webp.png",
         "altText": "Предварительный просмотр усовершенствований формата WebP 2 по сравнению с исходным WebP",
         "pros": [
           "Улучшенное сжатие по сравнению с WebP",
@@ -260,7 +260,7 @@
       }
     ],
     "image": {
-      "url": "/app/img/blog/folders.webp",
+      "url": "/img/blog/folders.webp",
       "category": "ranking",
       "alt": "Абстрактные геометрические фигуры, представляющие различные форматы файлов изображений"
     }

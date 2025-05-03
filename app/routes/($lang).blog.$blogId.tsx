@@ -89,7 +89,7 @@ export const meta: MetaFunction<typeof loader> = ({
         url: "https://easyconvertimage.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://easyconvertimage.com/app/img/thebot.svg",
+          url: "https://easyconvertimage.com/img/thebot.svg",
         },
       },
       keywords: keywords,

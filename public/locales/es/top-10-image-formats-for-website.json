@@ -23,7 +23,7 @@
         {
           "id": "jpeg",
           "title": "1. JPEG (Joint Photographic Experts Group)",
-          "img": "/app/img/blog/formats/jpg.png",
+          "img": "/img/blog/formats/jpg.png",
           "altText": "Ejemplo de una imagen JPEG mostrando sus características de compresión",
           "pros": ["Tamaño de archivo pequeño", "Amplia compatibilidad"],
           "cons": [
@@ -40,7 +40,7 @@
         {
           "id": "png",
           "title": "2. PNG (Portable Network Graphics)",
-          "img": "/app/img/blog/formats/png.png",
+          "img": "/img/blog/formats/png.png",
           "altText": "Ilustración del formato PNG mostrando la característica de transparencia",
           "pros": ["Compresión sin pérdida", "Soporta transparencia"],
           "cons": [
@@ -57,7 +57,7 @@
         {
           "id": "webp",
           "title": "3. WebP",
-          "img": "/app/img/blog/formats/webp.png",
+          "img": "/img/blog/formats/webp.png",
           "altText": "Comparación de la calidad de imagen WebP frente a otros formatos",
           "pros": [
             "Tamaños de archivo más pequeños que JPEG y PNG",
@@ -78,7 +78,7 @@
         {
           "id": "svg",
           "title": "4. SVG (Scalable Vector Graphics)",
-          "img": "/app/img/blog/formats/svg.png",
+          "img": "/img/blog/formats/svg.png",
           "altText": "Gráfico vectorial demostrando la escalabilidad de SVG",
           "pros": [
             "Escalable sin pérdida de calidad",
@@ -101,7 +101,7 @@
         {
           "id": "gif",
           "title": "5. GIF (Graphics Interchange Format)",
-          "img": "/app/img/blog/formats/gif.png",
+          "img": "/img/blog/formats/gif.png",
           "altText": "Ejemplo de GIF animado mostrando gráficos de movimiento simple",
           "pros": ["Soporta animación", "Amplia compatibilidad"],
           "cons": [
@@ -120,7 +120,7 @@
         {
           "id": "avif",
           "title": "6. AVIF (AV1 Image File Format)",
-          "img": "/app/img/blog/formats/avif.png",
+          "img": "/img/blog/formats/avif.png",
           "altText": "Muestra de imagen AVIF que demuestra la alta eficiencia de compresión",
           "pros": [
             "Excelente compresión",
@@ -144,7 +144,7 @@
         {
           "id": "heif",
           "title": "7. HEIF (High Efficiency Image Format)",
-          "img": "/app/img/blog/formats/jpg.png",
+          "img": "/img/blog/formats/jpg.png",
           "altText": "Comparación de la calidad de imagen HEIF y JPEG en tamaños de archivo similares",
           "pros": [
             "Tamaños de archivo más pequeños que JPEG a calidad similar",
@@ -167,7 +167,7 @@
         {
           "id": "bmp",
           "title": "8. BMP (Archivo de Imagen de Mapa de Bits)",
-          "img": "/app/img/blog/formats/bmp.png",
+          "img": "/img/blog/formats/bmp.png",
           "altText": "Ejemplo de una imagen BMP mostrando calidad sin compresión",
           "pros": [
             "Calidad sin pérdidas",
@@ -190,7 +190,7 @@
         {
           "id": "tiff",
           "title": "9. TIFF (Formato de Archivo de Imagen Etiquetada)",
-          "img": "/app/img/blog/formats/tiff.png",
+          "img": "/img/blog/formats/tiff.png",
           "altText": "Muestra de imagen TIFF de alta resolución para comparación de calidad de impresión",
           "pros": [
             "Alta calidad",
@@ -211,7 +211,7 @@
         {
           "id": "webp-2",
           "title": "10. WebP 2",
-          "img": "/app/img/blog/formats/webp.png",
+          "img": "/img/blog/formats/webp.png",
           "altText": "Vista previa de las mejoras del formato WebP 2 sobre el WebP original",
           "pros": [
             "Mejor compresión que WebP",
@@ -256,7 +256,7 @@
         }
       ],
       "image": {
-        "url": "/app/img/blog/folders.webp",
+        "url": "/img/blog/folders.webp",
         "category": "ranking",
         "alt": "Formas geométricas abstractas que representan varios formatos de archivo de imagen"
       }
