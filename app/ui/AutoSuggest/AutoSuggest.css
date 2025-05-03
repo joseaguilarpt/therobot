@@ -401,6 +401,8 @@
   position: relative;
   width: 100%;
   padding: var(--input-padding);
+  margin: 0;
+  margin-top: 10px;
   font-family: var(--default-font);
   font-size: var(--input-font-size);
   border: 2px solid var(--input-border);
@@ -486,7 +488,6 @@
 
 .home-suggest {
   margin: 0;
-  margin-bottom: 10px;
 }
 .home-suggest .suggestions {
   top: 80px;
@@ -517,13 +518,13 @@
   }
 }
 .home-suggest .auto-suggest__button {
-  margin: 0.5em 0;
   font-size: 1.45rem;
   border: 2px solid var(--input-border);
   border-radius: 10px;
-  padding: 0px 40px 0px 15px;
+  padding: 0px 40px 0px 10px;
   width: auto;
   min-width: 60px;
+  margin: 0;
   transition: all 0.2s ease-in-out;
 }
 @media (min-width: 768px) {

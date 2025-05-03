@@ -1,15 +1,18 @@
 @use "../../styles/theme" as *;
 
+.tool-conversion__container {
+  background-image: var(--linear-background);
+  border-radius: var(--border-radius);
+}
+
 .tool-conversion-form {
   border-radius: var(--border-radius);
-  background: var(--accent-color);
-  background-image: var(--linear-background);
+  background: transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 
   @include media-query(large) {
     width: 100%;
-    min-height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,14 +21,16 @@
     font-family: var(--default-font);
     font-size: var(--font-size-medium);
     transition: all 0.3s ease;
-
-    box-shadow: 0 2px 4px var(--shadow-color);
     height: 100%;
   }
   .tool-heading__to {
     .icon--medium {
       color: var(--contrast-color);
     }
+  }
+
+  .tool-actions {
+    padding-top: 20px;
   }
 }
 .hero-pill {

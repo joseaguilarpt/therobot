@@ -398,13 +398,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--accent-color);
-  background-image: var(--linear-background);
+  background: transparent;
   color: var(--font-color);
   font-family: var(--default-font);
   font-size: var(--font-size-medium);
   transition: all 0.3s ease;
-  padding-top: 15px;
+  padding-top: 0px;
   box-shadow: 0 2px 4px var(--shadow-color);
 }
 .drag-and-drop-container.dragging {
