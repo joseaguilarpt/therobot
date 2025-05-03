@@ -29,10 +29,13 @@ import i18n from "./i18n";
 import { useAnalytics } from "./utils/analytics";
 import { useNonce } from "./context/NonceContext";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import styleFonts from "~/styles/fonts.scss?url";
+
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: styles },
+  { rel: "stylesheet", href: styleFonts },
   { rel: "icon", href: "/favicon.ico" },
   { rel: "manifest", href: "/manifest.json" },
 ];
@@ -70,6 +73,8 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     },
   });
 }
+
+export const shouldRevalidate = () => false;
 
 export const handle = {
   i18n: "common",

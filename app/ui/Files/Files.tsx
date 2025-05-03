@@ -125,6 +125,7 @@ const Files: React.FC<FilesProps> = ({
         alignItems="center"
         justifyContent="space-between"
         className="u-pb2"
+        spacing={2}
       >
         <GridItem>
           <Heading level={2} appearance={5}>
@@ -176,12 +177,12 @@ const Files: React.FC<FilesProps> = ({
         aria-label={t("fileActions.selectedList")}
       >
         <GridContainer className="files-table__heading" role="row">
-          <GridItem xs={5} role="columnheader">
+          <GridItem xs={9} md={5} role="columnheader">
             <Text size="large" textWeight="bold">
               {t("fileActions.fileName")}
             </Text>
           </GridItem>
-          <GridItem xs={3} md={1} role="columnheader">
+          <GridItem className="table-item" xs={3} md={1} role="columnheader">
             <Text size="large" textWeight="bold">
               {t("fileActions.fileSize")}
             </Text>
@@ -208,10 +209,14 @@ const Files: React.FC<FilesProps> = ({
             key={index}
             role="row"
           >
-            <GridItem xs={5} role="cell">
+            <GridItem xs={9} md={5} role="cell">
               <Text>{file.fileName}</Text>
+              <GridContainer className="table-item__mobile" alignItems="center">
+                <Text size="small">{bytesToKilobytes(file.fileSize)} kb</Text>
+                <StatusBar status={file.status} />
+              </GridContainer>
             </GridItem>
-            <GridItem xs={4} md={1} role="cell">
+            <GridItem className="table-item" xs={4} md={1} role="cell">
               <Text>{bytesToKilobytes(file.fileSize)} kb</Text>
             </GridItem>
             <GridItem className="table-item" xs={1} md={3} role="cell">

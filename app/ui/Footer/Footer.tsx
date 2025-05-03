@@ -3,11 +3,8 @@ import "./Footer.scss";
 import ContentContainer from "../ContentContainer/ContentContainer";
 import Heading from "../Heading/Heading";
 import Text from "../Text/Text";
-import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import GridContainer from "../Grid/Grid";
-import GridItem from "../Grid/GridItem";
-import Button from "../Button/Button";
-import Icon, { IconType } from "../Icon/Icon";
+import { IconType } from "../Icon/Icon";
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import { FOOTER } from "~/constants/content";
@@ -36,7 +33,6 @@ const Footer: React.FC<FooterProps> = ({
   copyright,
   className,
   backgroundImageUrl,
-  socialNetworks = [],
 }) => {
   const { t, i18n } = useTranslation();
 

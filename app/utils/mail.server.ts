@@ -5,7 +5,6 @@ import { fileURLToPath } from "url";
 import { json } from "@remix-run/node";
 import { createCustomerEmail } from "~/templates/customerEmail";
 import i18n from "~/i18n";
-import { dirname } from "path";
 
 interface SendEmail {
   file: File;
