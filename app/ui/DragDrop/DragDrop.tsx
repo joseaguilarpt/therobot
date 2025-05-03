@@ -86,7 +86,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   
   const addFiles = useCallback(
     async (files: File[]) => {
-      if (files.length > 10) {
+      if (files.length > 15) {
         showSnackbar(t("tool.maxFiles"), "error");
         return;
       }

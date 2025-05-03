@@ -163,7 +163,7 @@
     },
     "option5": {
       "heading": "Is there a limit to how many images I can convert?",
-      "description": "We allow up to 10 images per conversion, with a maximum file size of 50 MB per image, you can always restart a new batch of conversion."
+      "description": "Upload up to 15 images per batch, with a maximum of 50 MB in total. Start a new batch when needed to process more images"
     },
     "option6": {
       "heading": "How fast are the conversions?",

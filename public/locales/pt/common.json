@@ -162,7 +162,7 @@
     },
     "option5": {
       "heading": "Existe um limite para quantas imagens posso converter?",
-      "description": "Permitimos até 10 imagens por conversão, com um tamanho máximo de arquivo de 50 MB por imagem, você sempre pode iniciar um novo lote de conversão."
+      "description": "Carregue até 15 imagens por lote, com um máximo de 50 MB no total. Inicie um novo lote quando necessário para processar mais imagens."
     },
     "option6": {
       "heading": "Quão rápidas são as conversões?",
