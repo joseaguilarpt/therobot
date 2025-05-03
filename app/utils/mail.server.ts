@@ -31,11 +31,11 @@ const heading = {
   de: "Hier sind Ihre konvertierten Bilder - EasyConvertImage",
 };
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const fileName = fileURLToPath(import.meta.url);
+const dirName = path.dirname(fileName);
 
 const ensureUploadsDirectoryExists = () => {
-  const uploadDir = path.join(__dirname, "../uploads");
+  const uploadDir = path.join(dirName, "../uploads");
   if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
   }
