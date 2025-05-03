@@ -11,20 +11,15 @@ import {
 import { jsPDF } from "jspdf";
 import * as pdfjs from "pdfjs-dist/legacy/build/pdf.mjs";
 import { encode } from "bmp-js";
-
 const PDFJS_WORKER_SRC = "pdfjs-dist/legacy/build/pdf.worker.mjs";
 pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_SRC;
 
-export async function convertPngToSvgBase64(
-  pngBuffer: Buffer
-): Promise<string> {
-  // Convert PNG to black and white bitmap
+async function convertPngToSvgBase64(pngBuffer: Buffer): Promise<string> {
   const bitmapBuffer = await sharp(pngBuffer)
     .flatten({ background: { r: 255, g: 255, b: 255 } })
     .threshold()
     .toBuffer();
 
-  // Trace bitmap to SVG
   const svg = await new Promise<string>((resolve, reject) => {
     potrace.trace(bitmapBuffer, (err: Error | null, svg: string) => {
       if (err) reject(err);
@@ -32,7 +27,6 @@ export async function convertPngToSvgBase64(
     });
   });
 
-  // Convert SVG to base64
   const base64 = Buffer.from(svg).toString("base64");
   return `data:image/svg+xml;base64,${base64}`;
 }
@@ -52,23 +46,28 @@ export const parseFormData = async (request: Request) => {
 };
 
 export const convertToSvg = async (files: File[], format: string) => {
-  return await Promise.all(
-    files.map(async (file) => {
-      const buffer = Buffer.from(await file.arrayBuffer());
-      const convertedFileName = file.name.replace(/\.[^/.]+$/, `.${format}`);
-      const svg = await convertPngToSvgBase64(buffer);
-      return {
-        fileName: convertedFileName,
-        fileSize: buffer.length,
-        fileUrl: svg,
-      };
-    })
-  );
+  try {
+    return await Promise.all(
+      files.map(async (file) => {
+        const buffer = Buffer.from(await file.arrayBuffer());
+        const convertedFileName = file.name.replace(/\.[^/.]+$/, `.${format}`);
+        const svg = await convertPngToSvgBase64(buffer);
+        return {
+          fileName: convertedFileName,
+          fileSize: buffer.length,
+          fileUrl: svg,
+        };
+      })
+    );
+  } catch (error) {
+    console.error('Error in convertToSvg:', error);
+    throw new Error(`SVG conversion failed: ${error.message}`);
+  }
 };
 
 export const convertToOtherFormat = async (files: File[], format: string) => {
   try {
-    const response = await Promise.all(
+    return await Promise.all(
       files.map(async (file) => {
         let buffer;
         if (format.toLowerCase() === "bmp") {
@@ -83,7 +82,6 @@ export const convertToOtherFormat = async (files: File[], format: string) => {
           });
           buffer = bmpData.data;
         } else {
-          // For other formats, use Sharp as before
           buffer = await sharp(await file.arrayBuffer())
             [format]()
             .toBuffer();
@@ -97,12 +95,12 @@ export const convertToOtherFormat = async (files: File[], format: string) => {
         };
       })
     );
-    return response;
-  } catch (e) {
-    console.error(e);
-    throw new Error("Conversion Failed");
+  } catch (error) {
+    console.error('Error in convertToOtherFormat:', error);
+    throw new Error(`Conversion to ${format} failed: ${error.message}`);
   }
 };
+
 interface PdfInfo {
   fileName: string;
   fileSize: number;
@@ -113,7 +111,6 @@ interface ImageFile extends File {
   stream: () => ReadableStream;
 }
 
-// Helper function to convert File to Buffer
 async function fileToBuffer(file: ImageFile): Promise<Buffer> {
   const readable = Readable.from(file.stream());
   const chunks = [];
@@ -127,54 +124,54 @@ export const convertImagesToPdf = async (
   imageFiles: ImageFile[],
   separatePdfs: boolean = false
 ): Promise<PdfInfo[]> => {
-  const results: PdfInfo[] = [];
+  try {
+    const results: PdfInfo[] = [];
 
-  const processSingleImage = async (
-    file: ImageFile,
-    pdfDoc: jsPDF
-  ): Promise<void> => {
-    const buffer = await fileToBuffer(file);
-    const image = sharp(buffer);
-    const { width, height, format } = await image.metadata();
+    const processSingleImage = async (
+      file: ImageFile,
+      pdfDoc: jsPDF
+    ): Promise<void> => {
+      const buffer = await fileToBuffer(file);
+      const image = sharp(buffer);
+      const { width, height, format } = await image.metadata();
 
-    if (!width || !height) {
-      throw new Error("Unable to get image dimensions");
-    }
+      if (!width || !height) {
+        throw new Error("Unable to get image dimensions");
+      }
 
-    const pageWidth = pdfDoc.internal.pageSize.getWidth();
-    const pageHeight = pdfDoc.internal.pageSize.getHeight();
+      const pageWidth = pdfDoc.internal.pageSize.getWidth();
+      const pageHeight = pdfDoc.internal.pageSize.getHeight();
 
-    const scaleFactor = Math.min(pageWidth / width, pageHeight / height);
-    const finalWidth = Math.floor(width * scaleFactor);
-    const finalHeight = Math.floor(height * scaleFactor);
+      const scaleFactor = Math.min(pageWidth / width, pageHeight / height);
+      const finalWidth = Math.floor(width * scaleFactor);
+      const finalHeight = Math.floor(height * scaleFactor);
 
-    let resizedImageBuffer: Buffer;
+      let resizedImageBuffer: Buffer;
 
-    if (format === "jpeg" || format === "jpg") {
-      resizedImageBuffer = await image
-        .jpeg({ quality: 95, mozjpeg: true })
-        .toBuffer();
-    } else {
-      resizedImageBuffer = await image
-        .png({ quality: 100, compressionLevel: 6 })
-        .toBuffer();
-    }
+      if (format === "jpeg" || format === "jpg") {
+        resizedImageBuffer = await image
+          .jpeg({ quality: 95, mozjpeg: true })
+          .toBuffer();
+      } else {
+        resizedImageBuffer = await image
+          .png({ quality: 100, compressionLevel: 6 })
+          .toBuffer();
+      }
 
-    const imageData = `data:image/${format};base64,${resizedImageBuffer.toString(
-      "base64"
-    )}`;
+      const imageData = `data:image/${format};base64,${resizedImageBuffer.toString(
+        "base64"
+      )}`;
 
-    pdfDoc.addImage(
-      imageData,
-      format.toUpperCase(),
-      (pageWidth - finalWidth) / 2,
-      (pageHeight - finalHeight) / 2,
-      finalWidth,
-      finalHeight
-    );
-  };
+      pdfDoc.addImage(
+        imageData,
+        format.toUpperCase(),
+        (pageWidth - finalWidth) / 2,
+        (pageHeight - finalHeight) / 2,
+        finalWidth,
+        finalHeight
+      );
+    };
 
-  const processImages = async () => {
     if (separatePdfs) {
       for (const file of imageFiles) {
         const pdf = new jsPDF();
@@ -184,9 +181,7 @@ export const convertImagesToPdf = async (
         results.push({
           fileName: `${file.name.split(".")[0]}.pdf`,
           fileSize: pdfBuffer.byteLength,
-          fileUrl: `data:application/pdf;base64,${Buffer.from(
-            pdfBuffer
-          ).toString("base64")}`,
+          fileUrl: `data:application/pdf;base64,${Buffer.from(pdfBuffer).toString("base64")}`,
         });
       }
     } else {
@@ -200,13 +195,13 @@ export const convertImagesToPdf = async (
       results.push({
         fileName: "converted_images.pdf",
         fileSize: pdfBuffer.byteLength,
-        fileUrl: `data:application/pdf;base64,${Buffer.from(pdfBuffer).toString(
-          "base64"
-        )}`,
+        fileUrl: `data:application/pdf;base64,${Buffer.from(pdfBuffer).toString("base64")}`,
       });
     }
-  };
 
-  await processImages();
-  return results;
+    return results;
+  } catch (error) {
+    console.error('Error in convertImagesToPdf:', error);
+    throw new Error(`PDF conversion failed: ${error.message}`);
+  }
 };

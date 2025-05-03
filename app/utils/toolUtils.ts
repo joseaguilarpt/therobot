@@ -158,7 +158,15 @@ export async function toolAction(request: Request) {
         formData.append("language", lng);
         return handleEmailForm(formData);
       default:
-        return handleFileConversion(files, format, formData);
+        try {
+          return await handleFileConversion(files, format, formData);
+        } catch (conversionError) {
+          console.error('File conversion error:', conversionError);
+          return json(
+            { error: conversionError?.message ?? 'Conversion Error', convertedFiles: null },
+            { status: 500 }
+          );
+        }
     }
   } catch (error) {
     console.error('Error in toolAction:', error);
