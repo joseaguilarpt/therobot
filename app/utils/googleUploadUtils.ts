@@ -21,6 +21,7 @@ export interface User {
 
 export interface GoogleUploadProps {
   sourceFormat: string;
+  setLoading: (v: boolean) => void;
   isDisabled?: boolean;
   addFiles: (files: File[]) => void;
 }

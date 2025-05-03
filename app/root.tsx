@@ -29,8 +29,8 @@ import i18n from "./i18n";
 import { useAnalytics } from "./utils/analytics";
 import { useNonce } from "./context/NonceContext";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import { isValidFormat } from "./constants/formats";
+import { GoogleApiInitializer } from "./ui/GoogleInitializer/GoogleInitializer";
 
 // Critical CSS for fonts
 const criticalFontCSS = `
@@ -143,7 +143,9 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     honeypotInputProps: honeypot?.getInputProps(),
     locale,
     ENV: {
+      G_DRIVE_API: process.env.G_DRIVE_API,
       DROPBOX_USER: process.env.DROPBOX_USER,
+      G_DRIVE_APP_ID: process.env.G_DRIVE_APP_ID,
       G_DRIVE_USER: process.env.G_DRIVE_USER,
       GOOGLE_ID_ANALYTICS: process.env.GOOGLE_ID_ANALYTICS,
       RCAPTCHA_CLIENT: process.env.RCAPTCHA_CLIENT,
@@ -201,7 +203,6 @@ const App = React.memo(function App() {
   useAnalytics();
 
   return (
-    <GoogleOAuthProvider nonce={nonce} clientId={ENV.G_DRIVE_USER ?? ""}>
       <ThemeProvider>
         <html lang={locale} dir={i18n.dir()}>
           <HoneypotProvider {...honeypotInputProps}>
@@ -236,6 +237,7 @@ const App = React.memo(function App() {
               />
             </head>
             <body>
+              <GoogleApiInitializer nonce={nonce} apiKey={ENV.G_DRIVE_API ?? ''} clientId={ENV.G_DRIVE_USER ?? ''} />
               <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
                 <SkipToContent />
                 <Outlet context={{ locale, honeypotInputProps }} />
@@ -261,7 +263,6 @@ const App = React.memo(function App() {
           </HoneypotProvider>
         </html>
       </ThemeProvider>
-    </GoogleOAuthProvider>
   );
 });
 

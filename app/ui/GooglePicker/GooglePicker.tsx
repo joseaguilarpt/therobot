@@ -1,33 +1,33 @@
-import React, { useState } from "react";
 import Button from "../Button/Button";
 import { useTranslation } from "react-i18next";
 import googleDriveLogo from "../../img/google-drive.svg";
-import useDrivePicker from "react-google-drive-picker";
 import { useTheme } from "~/context/ThemeContext";
-import { GoogleFile, GoogleUploadProps, User } from "~/utils/googleUploadUtils";
-import { useGoogleLogin } from "@react-oauth/google";
+import { GoogleFile, GoogleUploadProps } from "~/utils/googleUploadUtils";
 
 export const GoogleDrivePicker = ({
   addFiles,
   sourceFormat,
+  setLoading,
   isDisabled,
 }: GoogleUploadProps) => {
   const { t, i18n } = useTranslation();
   const { showSnackbar } = useTheme();
-  const [user, setUser] = useState<User | null>(null);
-  const [attempt, setAttempt] = useState<boolean>(false);
-  const [openPicker] = useDrivePicker();
 
   const handleUploadFiles = async (selectedFiles: GoogleFile[]) => {
-    const fileIds = selectedFiles.map((item) => item.id);
+    const token = window.gapi.auth.getToken();
+    if (!token.access_token) {
+      showSnackbar(t("googleModal.errors.noAccessToken"), "error");
+      return;
+    }
+
     try {
-      const downloadPromises = fileIds.map(async (fileId) => {
-        const file = selectedFiles.find((f) => f.id === fileId);
+      setLoading(true);
+      const downloadPromises = selectedFiles.map(async (file) => {
         const response = await fetch(
-          `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`,
+          `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media`,
           {
             headers: {
-              Authorization: `Bearer ${user?.access_token}`,
+              Authorization: `Bearer ${token.access_token}`,
             },
           }
         );
@@ -35,73 +35,83 @@ export const GoogleDrivePicker = ({
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const blob = await response.blob();
-
-        const fileName = file?.name || "unknown";
-        const fileType = file?.mimeType || "application/octet-stream";
-        const downloadedFile = new File([blob], fileName, { type: fileType });
-
-        return { id: fileId, file: downloadedFile };
+        return new File([blob], file.name, { type: file.mimeType });
       });
 
       const downloadedFiles = await Promise.all(downloadPromises);
-      const filesData = downloadedFiles.map((item) => item.file);
-      addFiles(filesData);
-      setUser(null);
+      addFiles(downloadedFiles);
     } catch (error) {
+      setLoading(false);
       showSnackbar(t("googleModal.errors.uploadError"), "error");
     }
   };
 
-  const handleOpenPicker = () => {
-    const query = `image/${sourceFormat?.toLowerCase()}`;
-    openPicker({
-      clientId: window.ENV?.DRIVE_PICKER_CLIENT ?? "",
-      developerKey: window.ENV?.DRIVE_PICKER_API ?? "",
-      viewId: "DOCS",
-      showUploadView: false,
-      token: user?.access_token,
-      showUploadFolders: true,
-      supportDrives: true,
-      viewMimeTypes: query,
-      multiselect: true,
-      locale: i18n.language,
-      callbackFunction: (data) => {
-        if (data.action === "picked") {
-          // @ts-expect-error sisas
-          handleUploadFiles(data?.docs);
-        }
-        if (data.action === "cancel") {
-          showSnackbar(t("dropboxModal.messages.operationCancelled"), "info"),
-          setUser(null)
-        }
-      },
-    });
+  const pickerCallback = (data: { action: string; docs: GoogleFile[] }) => {
+    if (data.action === window.google.picker.Action.PICKED) {
+      handleUploadFiles(data.docs);
+    }
+    if (data.action === window.google.picker.Action.CANCEL) {
+      showSnackbar(t("dropboxModal.messages.operationCancelled"), "info");
+    }
   };
 
-  const login = useGoogleLogin({
-    scope: "https://www.googleapis.com/auth/drive.file",
-    onSuccess: (tokenResponse) => {
-      setUser(tokenResponse as User);
-    },
-    onError: () => {
-      showSnackbar(t("googleModal.errors.loginFailed"), "error");
-    },
-  });
-
-  React.useEffect(() => {
-    if (user && attempt) {
-      handleOpenPicker();
-      setAttempt(false);
+  const createPicker = () => {
+    if (!window.google || !window.google.picker) {
+      console.error("Google Picker API not loaded");
+      showSnackbar(t("googleModal.errors.apiNotLoaded"), "error");
+      return;
     }
-  }, [user, attempt]);
+
+    const showPicker = () => {
+      const token = window.gapi.auth.getToken();
+      if (!token.access_token) {
+        console.error("Access token is null");
+        showSnackbar(t("googleModal.errors.noAccessToken"), "error");
+        return;
+      }
+
+      const picker = new window.google.picker.PickerBuilder()
+        .addView(
+          new window.google.picker.DocsView().setMode(
+            window.google.picker.DocsViewMode.LIST
+          )
+        )
+        .setOAuthToken(token.access_token)
+        .enableFeature(window.google.picker.Feature.MULTISELECT_ENABLED)
+        .setDeveloperKey(window.ENV?.G_DRIVE_API ?? "")
+        .setSelectableMimeTypes(`image/${sourceFormat?.toLowerCase() ?? ""}`)
+        .setCallback(pickerCallback)
+        .setAppId(window.ENV?.G_DRIVE_APP_ID ?? "")
+        .enableFeature(window.google.picker.Feature.SUPPORT_DRIVES)
+        .setLocale(i18n.language)
+        .build();
+
+      picker.setVisible(true);
+    };
+
+    window.tokenClient.callback = async (response: { error: string }) => {
+      if (response.error !== undefined) {
+        console.error("Error getting access token:", response.error);
+        showSnackbar(t("googleModal.errors.authError"), "error");
+        return;
+      }
+      showPicker();
+    };
+
+    if (window.gapi?.client?.getToken() === null) {
+      window.tokenClient.requestAccessToken({ prompt: "consent" });
+    } else {
+      window.tokenClient.requestAccessToken({ prompt: "" });
+    }
+  };
 
   const handleUpload = () => {
-    setAttempt(true);
-    if (user) {
-      handleOpenPicker();
-    } else {
-      login();
+    if (!window.gisInited) {
+      showSnackbar(t("googleModal.errors.apiNotLoaded"), "error");
+      return;
     }
+
+    createPicker();
   };
 
   return (
