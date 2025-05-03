@@ -319,7 +319,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
                   <GridItem className="u-pb1">
                     <ClientOnly>
                       <GoogleDrivePicker
-                        isDisabled={isLoading ?? false}
+                        isDisabled={true}
                         addFiles={addFiles}
                         sourceFormat={params?.sourceFormat ?? "jpeg"}
                       />
