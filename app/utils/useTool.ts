@@ -68,6 +68,7 @@ export function useFileConversion(selectedFormat: string) {
 
   useEffect(() => {
     if (data?.error) {
+      console.error(data?.error)
       showSnackbar(data.error, "error");
       setIsPending(false);
       setConvertedFiles((prevFiles) =>
