@@ -61,7 +61,7 @@
     "drop": "Déposez les fichiers image ici",
     "maxLimit": "La taille du fichier dépasse la limite maximale de",
     "fileType": "Type de fichier",
-    "bytes": "octets",
+    "bytes": "MB",
     "notAccepted": " n'est pas accepté.",
     "selectOption": "Sélectionnez une option :",
     "pdfOption1": "PDF séparé pour chaque image",
@@ -162,7 +162,7 @@
     },
     "option5": {
       "heading": "Y a-t-il une limite au nombre d'images que je peux convertir ?",
-      "description": "Nous autorisons jusqu'à 10 images par conversion, avec une taille maximale de fichier de 10 Mo par image, vous pouvez toujours recommencer un nouveau lot de conversion."
+      "description": "Nous autorisons jusqu'à 10 images par conversion, avec une taille maximale de fichier de 6 Mo par image, vous pouvez toujours recommencer un nouveau lot de conversion."
     },
     "option6": {
       "heading": "À quelle vitesse les conversions sont-elles effectuées ?",

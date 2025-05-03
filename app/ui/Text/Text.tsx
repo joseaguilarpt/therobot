@@ -6,7 +6,7 @@ interface TextProps {
   className?: string;
   id?: string;
   size?: "smaller" | "small" | "medium" | "large";
-  color?: "primary" | "secondary" | "tertiary" | "contrast";
+  color?: "primary" | "secondary" | "tertiary" | "contrast" | "white";
   children: React.ReactNode;
   role?: string;
   textWeight?: "bold" | "normal" | "semi-bold";

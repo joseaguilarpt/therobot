@@ -34,7 +34,7 @@ async function convertPngToSvgBase64(pngBuffer: Buffer): Promise<string> {
 export const createUploadHandler = () =>
   unstable_composeUploadHandlers(
     unstable_createFileUploadHandler({
-      maxPartSize: 10_000_000,
+      maxPartSize: 6_291_456,
       file: ({ filename }) => filename,
     }),
     unstable_createMemoryUploadHandler()

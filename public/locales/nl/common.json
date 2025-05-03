@@ -62,7 +62,7 @@
     "drop": "Zet beeldbestanden hier neer",
     "maxLimit": "Bestandsgrootte overschrijdt de maximale limiet van",
     "fileType": "Bestandstype",
-    "bytes": "bytes",
+    "bytes": "MB",
     "notAccepted": " wordt niet geaccepteerd.",
     "selectOption": "Selecteer een optie:",
     "pdfOption1": "Aparte PDF voor elke afbeelding",
@@ -163,7 +163,7 @@
     },
     "option5": {
       "heading": "Is er een limiet aan het aantal afbeeldingen dat ik kan converteren?",
-      "description": "We staan maximaal 10 afbeeldingen per conversie toe, met een maximale bestandsgrootte van 10 MB per afbeelding, u kunt altijd een nieuwe conversie batch starten."
+      "description": "We staan maximaal 10 afbeeldingen per conversie toe, met een maximale bestandsgrootte van 6 MB per afbeelding, u kunt altijd een nieuwe conversie batch starten."
     },
     "option6": {
       "heading": "Hoe snel worden conversies uitgevoerd?",

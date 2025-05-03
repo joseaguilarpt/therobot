@@ -28,7 +28,7 @@ import { GoogleDrivePicker } from "../GooglePicker/GooglePicker";
 interface DragAndDropProps {
   isLoading?: boolean;
   onFilesDrop: (files: File[], formData: FormData) => void;
-  acceptedTypes?: string[];
+  acceptedTypes: string[];
   maxSize?: number; // in bytes
   files: File[];
 }
@@ -40,12 +40,17 @@ interface OutletContext {
   };
 }
 
+function bytesToMB(bytes: number, decimalPlaces: number = 2): string {
+  const megabytes = bytes / (1024 * 1024);
+  return megabytes.toFixed(decimalPlaces);
+}
+
 const DragAndDrop: React.FC<DragAndDropProps> = ({
   onFilesDrop,
   isLoading: isExternalLoading,
   acceptedTypes: fileTypes,
   files: existingFiles,
-  maxSize = 10_000_000,
+  maxSize = 6_291_456,
 }) => {
   const acceptedTypes = fileTypes?.map((item) => {
     if (item.includes("svg")) {
@@ -68,35 +73,36 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const isLoading = isInternalLoading || isExternalLoading;
 
   const validateFile = useCallback(
-    (file: File): boolean => {
+    (file: File): void => {
       if (acceptedTypes.length > 0 && !acceptedTypes.includes(file.type)) {
-        showSnackbar(
-          `${t("tool.fileType")} ${file.type} ${t("tool.notAccepted")}`,
-          "error"
-        );
-        return false;
+        throw new Error(`${t("tool.fileType")} ${file.type} ${t("tool.notAccepted")}`);
       }
       if (file.size > maxSize) {
-        showSnackbar(
-          `${t("tool.maxLimit")} ${maxSize} ${t("tool.bytes")}.`,
-          "error"
-        );
-        return false;
+        throw new Error(`${t("tool.maxLimit")} ${bytesToMB(maxSize)} ${t("tool.bytes")}`);
       }
-      return true;
     },
-    [acceptedTypes, maxSize, showSnackbar, t]
+    [acceptedTypes, maxSize, t]
   );
-
+  
   const addFiles = useCallback(
     async (files: File[]) => {
-      const validFiles = files.filter(validateFile);
-
       if (files.length > 10) {
         showSnackbar(t("tool.maxFiles"), "error");
         return;
       }
-
+  
+      try {
+        // Validate all files
+        files.forEach(validateFile);
+      } catch (error) {
+        if (error instanceof Error) {
+          showSnackbar(error.message, "error");
+        } else {
+          showSnackbar(t("Conversion Error"), "error");
+        }
+        return;
+      }
+  
       const formData = new FormData();
       const nameFieldName = honeypotInputProps.nameFieldName;
       const validFromFieldName = honeypotInputProps.validFromFieldName;
@@ -114,6 +120,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
           }
         });
       }
+  
       let currentToken = null;
       if (executeRecaptcha) {
         try {
@@ -132,10 +139,10 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
           setInternalLoading(false);
         }
       }
+  
       if (currentToken) {
-        onFilesDrop(validFiles, formData);
+        onFilesDrop(files, formData);
       }
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
     [validateFile, showSnackbar, t, honeypotInputProps, onFilesDrop, executeRecaptcha]
   );
