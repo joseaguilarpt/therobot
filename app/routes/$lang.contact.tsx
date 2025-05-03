@@ -23,17 +23,17 @@ import ContactForm from "~/ui/ContactForm/ContactForm";
 import { getCSRFToken } from "~/utils/csrf.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
-  let keywords = t("contact.meta.keywords");
-  let ogTitle = t("contact.meta.ogTitle");
-  let ogDescription = t("contact.meta.ogDescription");
-  let description = t("contact.meta.description");
-  let title = t("contact.meta.title");
+  const t = await i18next.getFixedT(request);
+  const keywords = t("contact.meta.keywords");
+  const ogTitle = t("contact.meta.ogTitle");
+  const ogDescription = t("contact.meta.ogDescription");
+  const description = t("contact.meta.description");
+  const title = t("contact.meta.title");
   const { token, cookieHeader } = await getCSRFToken(request);
   return json(
     { title, description, keywords, ogDescription, ogTitle, csrfToken: token },
     { headers: { "Set-Cookie": cookieHeader } }
-  );;
+  );
 }
 
 export const meta: MetaFunction = ({ data }) => {

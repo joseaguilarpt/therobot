@@ -1,7 +1,6 @@
 // In app/routes/convert.tsx
 import { ShouldRevalidateFunctionArgs, useActionData, useLoaderData } from "@remix-run/react";
-import { ActionFunction, LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { ActionFunction, LoaderFunctionArgs , json } from "@remix-run/node";
 import BackToTop from "~/ui/BackToTop/BackToTop";
 import Footer from "~/ui/Footer/Footer";
 import { FOOTER } from "~/constants/content";
@@ -24,15 +23,15 @@ import { getCSRFToken } from "~/utils/csrf.server";
 import { HCaptchaComponent } from "~/ui/HCaptcha/Hcaptcha";
 
 export { meta };
-export let handle = { i18n: "common" };
+export const handle = { i18n: "common" };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
-  let keywords = t("homeMeta.keywords");
-  let ogTitle = t("homeMeta.ogTitle");
-  let ogDescription = t("homeMeta.ogDescription");
-  let description = t("homeMeta.description");
-  let title = t("homeMeta.title");
+  const t = await i18next.getFixedT(request);
+  const keywords = t("homeMeta.keywords");
+  const ogTitle = t("homeMeta.ogTitle");
+  const ogDescription = t("homeMeta.ogDescription");
+  const description = t("homeMeta.description");
+  const title = t("homeMeta.title");
   const { token, cookieHeader } = await getCSRFToken(request);
   return json(
     { title, description, keywords, ogDescription, ogTitle, csrfToken: token },
@@ -45,7 +44,7 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export default function IndexPage() {
-  let { t } = useTranslation("common");
+  const { t } = useTranslation("common");
   const data = useActionData<typeof action>();
 
   return (

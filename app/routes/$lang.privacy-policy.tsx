@@ -15,12 +15,12 @@ import Text from "~/ui/Text/Text";
 import { createMeta } from "~/utils/meta";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
-  let keywords = t("privacyPolicy.meta.keywords");
-  let ogTitle = t("privacyPolicy.meta.ogTitle");
-  let ogDescription = t("privacyPolicy.meta.ogDescription");
-  let description = t("privacyPolicy.meta.description");
-  let title = t("privacyPolicy.meta.title");
+  const t = await i18next.getFixedT(request);
+  const keywords = t("privacyPolicy.meta.keywords");
+  const ogTitle = t("privacyPolicy.meta.ogTitle");
+  const ogDescription = t("privacyPolicy.meta.ogDescription");
+  const description = t("privacyPolicy.meta.description");
+  const title = t("privacyPolicy.meta.title");
   return json({ title, description, keywords, ogDescription, ogTitle });
 }
 

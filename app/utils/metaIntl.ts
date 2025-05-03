@@ -1,11 +1,11 @@
 import i18next from "~/i18next.server";
 
 export const getMetaIntl = async (params: any, request: any) => {
-    let t = await i18next.getFixedT(request);
+    const t = await i18next.getFixedT(request);
     const { sourceFormat, targetFormat } = params;
     const sourceFormatUpper = sourceFormat?.toUpperCase();
     const targetFormatUpper = targetFormat?.toUpperCase();
-    let title = t("convertMeta.title", {
+    const title = t("convertMeta.title", {
       sourceFormatUpper,
       targetFormatUpper,
     });
@@ -27,7 +27,7 @@ export const getMetaIntl = async (params: any, request: any) => {
     const targetBenefit =
       formatBenefits[targetFormat as keyof typeof formatBenefits] || "";
   
-    let description = t("convertMeta.description", {
+    const description = t("convertMeta.description", {
       sourceFormatUpper,
       targetFormatUpper,
       sourceBenefit,

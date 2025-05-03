@@ -70,8 +70,8 @@ export async function loader({ params, request, context }: LoaderFunctionArgs) {
     });
   }
 
-  let urlParam = params.lang;
-  let locale = await i18next.getLocale(request);
+  const urlParam = params.lang;
+  const locale = await i18next.getLocale(request);
   let isValidLang = checkValidLang(locale);
 
   if (urlParam) {
@@ -98,7 +98,7 @@ export async function loader({ params, request, context }: LoaderFunctionArgs) {
   });
 }
 
-export let handle = {
+export const handle = {
   i18n: "common",
 };
 
@@ -143,8 +143,8 @@ export function ErrorBoundary() {
 }
 
 const App = React.memo(function App() {
-  let { locale, honeypotInputProps, ENV } = useLoaderData<typeof loader>();
-  let { i18n } = useTranslation();
+  const { locale, honeypotInputProps, ENV } = useLoaderData<typeof loader>();
+  const { i18n } = useTranslation();
   const nonce = useNonce();
 
   useChangeLanguage(locale);

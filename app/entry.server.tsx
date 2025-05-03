@@ -35,13 +35,13 @@ export default async function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
-  let callbackName = isbot(request.headers.get("user-agent"))
+  const callbackName = isbot(request.headers.get("user-agent"))
     ? "onAllReady"
     : "onShellReady";
 
-  let instance = createInstance();
-  let lng = await i18next.getLocale(request);
-  let ns = i18next.getRouteNamespaces(remixContext);
+  const instance = createInstance();
+  const lng = await i18next.getLocale(request);
+  const ns = i18next.getRouteNamespaces(remixContext);
 
   await instance
     .use(initReactI18next)
@@ -62,7 +62,7 @@ export default async function handleRequest(
   return new Promise((resolve, reject) => {
     let didError = false;
 
-    let { pipe, abort } = renderToPipeableStream(
+    const { pipe, abort } = renderToPipeableStream(
       <NonceContext.Provider value={nonce}>
         <I18nextProvider i18n={instance}>
           <RemixServer context={remixContext} url={request.url} nonce={nonce} />
@@ -71,7 +71,7 @@ export default async function handleRequest(
       {
         nonce,
         [callbackName]: () => {
-          let body = new PassThrough();
+          const body = new PassThrough();
           const stream = createReadableStreamFromReadable(body);
           responseHeaders.set("Content-Type", "text/html");
 
@@ -121,7 +121,7 @@ export default async function handleRequest(
   });
 }
 
-export let handleDataRequest: HandleDataRequestFunction = async (
+export const handleDataRequest: HandleDataRequestFunction = async (
   response,
   { request }
 ) => {

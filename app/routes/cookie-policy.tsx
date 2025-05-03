@@ -15,7 +15,7 @@ import Text from "~/ui/Text/Text";
 import { createMeta } from "~/utils/meta";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
+  const t = await i18next.getFixedT(request);
   const title = t("cookiePolicy.meta.title");
   const description = t("cookiePolicy.meta.description");
   const keywords = t("cookiePolicy.meta.keywords");

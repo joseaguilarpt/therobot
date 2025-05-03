@@ -15,7 +15,7 @@ import Text from "~/ui/Text/Text";
 import { createMeta } from "~/utils/meta";
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  let t = await i18next.getFixedT(request);
+  const t = await i18next.getFixedT(request);
   const title = t("gdprCompliance.meta.title");
   const description = t("gdprCompliance.meta.description");
   const keywords = t("gdprCompliance.meta.keywords");
