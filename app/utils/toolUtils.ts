@@ -152,8 +152,12 @@ export async function toolAction(request: Request) {
         return handleFileConversion(files, format, formData);
     }
   } catch (error) {
+    console.error(error, 'error')
     if (error instanceof Response) {
-      return error;
+      return json(
+        { error: "An unexpected error occurred", convertedFiles: null },
+        { status: 500 }
+      );
     }
     return json(
       { error: "An unexpected error occurred", convertedFiles: null },
