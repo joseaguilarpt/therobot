@@ -7,6 +7,9 @@ interface ReCaptchaContextType {
   token: string | null;
   onSuccess: (token: string) => void;
   onError: () => void;
+  resetCaptcha: () => void;
+  executeCaptcha: () => Promise<void>;
+  isLoading: boolean;
 }
 
 const ReCaptchaContext = createContext<ReCaptchaContextType | undefined>(
@@ -15,6 +18,7 @@ const ReCaptchaContext = createContext<ReCaptchaContextType | undefined>(
 
 export function ReCaptchaProvider({ children }: { children: ReactNode }) {
   const [token, setToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const captchaRef = useRef<ReCAPTCHA>(null);
 
   useEffect(() => {
@@ -26,8 +30,36 @@ export function ReCaptchaProvider({ children }: { children: ReactNode }) {
     };
   }, []);
 
-  const onSuccess = (token: string) => setToken(token);
-  const onError = () => setToken(null);
+  const onSuccess = (token: string) => {
+    setToken(token);
+    captchaRef.current?.reset();
+  };
+
+  const onError = () => {
+    setToken(null);
+    captchaRef.current?.reset();
+  };
+
+  const resetCaptcha = () => {
+    captchaRef.current?.reset();
+    setToken(null);
+  };
+
+  const executeCaptcha = async () => {
+    if (isLoading) return;
+    
+    setIsLoading(true);
+    try {
+      const newToken = await captchaRef.current?.executeAsync();
+      if (newToken) {
+        onSuccess(newToken);
+      }
+    } catch (error) {
+      onError();
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <ReCaptchaContext.Provider
@@ -37,6 +69,9 @@ export function ReCaptchaProvider({ children }: { children: ReactNode }) {
         token,
         onSuccess,
         onError,
+        resetCaptcha,
+        executeCaptcha,
+        isLoading,
       }}
     >
       {children}

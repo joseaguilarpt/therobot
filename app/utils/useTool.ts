@@ -231,6 +231,7 @@ export function useFileConversion(selectedFormat: string) {
     pdfType,
     setPdfType,
     isPending,
+    setIsPending,
     handleAllAction,
     handleDownload,
     handleRemove,

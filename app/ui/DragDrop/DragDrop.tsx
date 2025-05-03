@@ -20,6 +20,7 @@ import { useReCaptcha } from "~/context/ReCaptchaContext";
 import classNames from "classnames";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { trackClick } from "~/utils/analytics";
+import { useFileConversion } from "~/utils/useTool";
 
 interface DragAndDropProps {
   isLoading?: boolean;
@@ -52,6 +53,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const { honeypotInputProps } = useOutletContext<OutletContext>();
   const formRef = useRef<HTMLFormElement>(null);
   const { captchaRef } = useReCaptcha();
+  const { setIsPending } = useFileConversion('jpeg')
 
   const validateFile = useCallback((file: File): boolean => {
     if (acceptedTypes.length > 0 && !acceptedTypes.includes(file.type)) {
@@ -92,6 +94,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
         }
       });
     }
+    setIsPending(true);
     let currentToken = null;
     if (captchaRef.current) {
       try {
@@ -103,6 +106,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
       } catch (error) {
         console.error("reCAPTCHA execution failed:", error);
         showSnackbar(t("tool.captchaError"), "error");
+        return;
       }
     }
     if (currentToken) {
