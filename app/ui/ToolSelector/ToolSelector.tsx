@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useLocation, useParams } from "@remix-run/react";
+import { useParams } from "@remix-run/react";
 import InputSelect from "../InputSelect/InputSelect";
 import classNames from "classnames";
 
@@ -12,7 +12,6 @@ type Tool = {
 
 const ToolSelector = ({ keepScrolled }: { keepScrolled?: boolean }) => {
   const { i18n } = useTranslation();
-  const location = useLocation();
   const params = useParams();
   const { t } = useTranslation();
 

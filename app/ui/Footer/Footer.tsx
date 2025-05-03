@@ -32,8 +32,6 @@ type FooterProps = {
 };
 
 const Footer: React.FC<FooterProps> = ({
-  address,
-  phone,
   email,
   copyright,
   className,
