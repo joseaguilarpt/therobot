@@ -5,9 +5,6 @@ import { netlifyPlugin } from "@netlify/remix-adapter/plugin";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
-  optimizeDeps: {
-    include: ['react-google-drive-picker']
-  },
   plugins: [
     remix({
       routes: async (defineRoutes) => {

@@ -21,10 +21,9 @@ import classNames from "classnames";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { trackClick } from "~/utils/analytics";
 import GridContainer from "../Grid/Grid";
+import GoogleUpload from "../GoogleUpload/GoogleUpload";
 import DropboxUpload from "../DropboxUpload/DropboxUpload";
 import GridItem from "../Grid/GridItem";
-import { GoogleDrivePicker } from "../GooglePicker/GooglePicker";
-import { ClientOnly } from "../ClientOnly/ClientOnly";
 
 interface DragAndDropProps {
   isLoading?: boolean;
@@ -138,14 +137,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     },
-    [
-      validateFile,
-      showSnackbar,
-      t,
-      honeypotInputProps,
-      onFilesDrop,
-      executeRecaptcha,
-    ]
+    [validateFile, showSnackbar, t, honeypotInputProps, onFilesDrop, executeRecaptcha]
   );
 
   useEffect(() => {
@@ -317,13 +309,11 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               <GridItem xs={1}>
                 <GridContainer direction="column">
                   <GridItem className="u-pb1">
-                    <ClientOnly>
-                      <GoogleDrivePicker
-                        isDisabled={true}
-                        addFiles={addFiles}
-                        sourceFormat={params?.sourceFormat ?? "jpeg"}
-                      />
-                    </ClientOnly>
+                    <GoogleUpload
+                      isDisabled
+                      addFiles={addFiles}
+                      sourceFormat={params?.sourceFormat ?? "jpeg"}
+                    />
                   </GridItem>
                   <GridItem>
                     <DropboxUpload
