@@ -12,7 +12,6 @@ import i18n from "./i18n";
 
 async function hydrate() {
   try {
-    console.log("Starting hydration...");
 
     await i18next
       .use(initReactI18next)
@@ -42,7 +41,6 @@ async function hydrate() {
       );
     });
 
-    console.log("Hydration complete");
   } catch (error) {
     
     console.error("Hydration error:", error);
