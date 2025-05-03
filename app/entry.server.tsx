@@ -17,6 +17,7 @@ import { config } from "dotenv";
 import crypto from "crypto";
 import { headers as getHeaders } from "./utils/headers";
 import { NonceContext } from "./context/NonceContext";
+import { resolve } from "node:path";
 
 config();
 
@@ -42,6 +43,12 @@ export default async function handleRequest(
   const lng = await i18next.getLocale(request);
   const ns = i18next.getRouteNamespaces(remixContext);
 
+  console.log('Current working directory:', process.cwd());
+
+  // Debug: Log the resolved path
+  const localesPath = resolve("./public/locales");
+  console.log('Resolved locales path:', localesPath);
+
   await instance
     .use(initReactI18next)
     .use(Backend)
@@ -50,8 +57,8 @@ export default async function handleRequest(
       lng,
       ns,
       backend: { 
-        loadPath: './locales/{{lng}}/{{ns}}.json',
-        addPath: './locales/{{lng}}/{{ns}}.json'
+        loadPath: '/locales/{{lng}}/{{ns}}.json',
+        addPath: '/locales/{{lng}}/{{ns}}.json'
       },
       fallbackLng: 'en',
       debug: true,
