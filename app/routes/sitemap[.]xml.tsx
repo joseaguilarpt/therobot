@@ -74,7 +74,7 @@ export const loader: LoaderFunction = async ({ request }) => {
           LANGUAGES.map(
             (lang) => `
           <url>
-            <loc>${domain}${lang === "en" ? "" : "/" + lang}${route}</loc>
+            <loc>${domain}${lang === "en" ? "" : "/" + lang}${route === "/" ? "" : route}</loc>
             <lastmod>${lastmod}</lastmod>
             ${LANGUAGES.map(
               (altLang) => `
