@@ -9,16 +9,12 @@ import {
   unstable_parseMultipartFormData,
 } from "@remix-run/node";
 import { jsPDF } from "jspdf";
-import * as pdfjsLib from "pdfjs-dist";
-import path from "path";
+import * as pdfjs from 'pdfjs-dist/legacy/build/pdf.mjs';
 import { encode } from "bmp-js";
 
-// Set up the worker source
-const pdfjsWorker = path.join(
-  process.cwd(),
-  "node_modules/pdfjs-dist/build/pdf.worker.mjs"
-);
-pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+
+const PDFJS_WORKER_SRC = 'pdfjs-dist/legacy/build/pdf.worker.mjs';
+pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_SRC;
 
 export async function convertPngToSvgBase64(
   pngBuffer: Buffer
