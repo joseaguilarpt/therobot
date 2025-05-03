@@ -18,6 +18,7 @@ import crypto from "crypto";
 import { headers as getHeaders } from "./utils/headers";
 import { NonceContext } from "./context/NonceContext";
 import { resolve } from "node:path";
+import fs from 'fs';
 
 config();
 
@@ -49,6 +50,15 @@ export default async function handleRequest(
   const localesPath = resolve("./public/locales");
   console.log('Resolved locales path:', localesPath);
 
+  // Debug: Check if the directory exists
+  if (fs.existsSync(localesPath)) {
+    console.log('Locales directory exists');
+    // List contents of the directory
+    console.log('Contents of locales directory:', fs.readdirSync(localesPath));
+  } else {
+    console.log('Locales directory does not exist');
+  }
+
   await instance
     .use(initReactI18next)
     .use(Backend)
@@ -57,8 +67,8 @@ export default async function handleRequest(
       lng,
       ns,
       backend: { 
-        loadPath: '/locales/{{lng}}/{{ns}}.json',
-        addPath: '/locales/{{lng}}/{{ns}}.json'
+        loadPath: `${localesPath}/{{lng}}/{{ns}}.json`,
+        addPath: `${localesPath}/{{lng}}/{{ns}}.json`,
       },
       fallbackLng: 'en',
       debug: true,
