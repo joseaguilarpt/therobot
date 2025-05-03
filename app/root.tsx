@@ -1,7 +1,5 @@
 import styles from "./app.scss?inline";
-
 import React from "react";
-
 import {
   Links,
   Meta,
@@ -159,11 +157,76 @@ export const handle = {
   i18n: "common",
 };
 
+function Document({
+  children,
+  locale,
+  nonce,
+  i18n,
+  ENV
+}: {
+  children: React.ReactNode;
+  locale: string;
+  nonce: string;
+  i18n: any;
+  ENV: any;
+}) {
+  return (
+    <html lang={locale} dir={i18n.dir()}>
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+        <style dangerouslySetInnerHTML={{ __html: criticalFontCSS }} />
+        <style dangerouslySetInnerHTML={{ __html: styles }} />
+        <script
+          async
+          nonce={nonce}
+          src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
+        ></script>
+        <script
+          nonce={nonce}
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${ENV.GOOGLE_ID_ANALYTICS}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+      </head>
+      <body>
+        {children}
+        <Scripts nonce={nonce} />
+        <ScrollRestoration nonce={nonce} />
+        <script
+          nonce={nonce}
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(ENV)}`,
+          }}
+        />
+        <script   
+          nonce={nonce}
+          type="text/javascript"
+          src="https://www.dropbox.com/static/api/2/dropins.js"
+          id="dropboxjs"
+          data-app-key={ENV.DROPBOX_USER}
+        ></script>
+      </body>
+    </html>
+  );
+}
+
 export function ErrorBoundary() {
   const error = useRouteError();
   const { i18n } = useTranslation();
   useChangeLanguage(i18n.language ?? "en");
   useAnalytics();
+  const nonce = useNonce();
+  const { ENV } = useLoaderData<typeof loader>();
 
   let ErrorComponent = ErrorPage;
 
@@ -171,27 +234,15 @@ export function ErrorBoundary() {
     ErrorComponent = NotFound;
   }
 
-  const nonce = useNonce();
-
   return (
-    <ThemeProvider>
-      <html lang={i18n.language} dir={i18n.dir()}>
-        <head>
-          <meta charSet="utf-8" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <Meta />
-          <Links />
-        </head>
-        <body>
-          <SkipToContent />
-          <ErrorComponent />
-          <Snackbar />
-          <ScrollRestoration nonce={nonce} />
-          <Scripts nonce={nonce} />
-          <CookieConsentBanner />
-        </body>
-      </html>
-    </ThemeProvider>
+    <Document locale={i18n.language} nonce={nonce} i18n={i18n} ENV={ENV}>
+      <ThemeProvider>
+        <SkipToContent />
+        <ErrorComponent />
+        <Snackbar />
+        <CookieConsentBanner />
+      </ThemeProvider>
+    </Document>
   );
 }
 
@@ -203,66 +254,19 @@ const App = React.memo(function App() {
   useAnalytics();
 
   return (
+    <Document locale={locale} nonce={nonce} i18n={i18n} ENV={ENV}>
       <ThemeProvider>
-        <html lang={locale} dir={i18n.dir()}>
-          <HoneypotProvider {...honeypotInputProps}>
-            <head>
-              <meta charSet="utf-8" />
-              <meta
-                name="viewport"
-                content="width=device-width, initial-scale=1"
-              />
-              <Meta />
-              <Links />
-              <style dangerouslySetInnerHTML={{ __html: criticalFontCSS }} />
-              <style dangerouslySetInnerHTML={{ __html: styles }} />
-
-              <script
-                async
-                nonce={nonce}
-                src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
-              ></script>
-              <script
-                nonce={nonce}
-                dangerouslySetInnerHTML={{
-                  __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${ENV.GOOGLE_ID_ANALYTICS}', {
-                page_path: window.location.pathname,
-              });
-            `,
-                }}
-              />
-            </head>
-            <body>
-              <GoogleApiInitializer nonce={nonce} apiKey={ENV.G_DRIVE_API ?? ''} clientId={ENV.G_DRIVE_USER ?? ''} />
-              <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
-                <SkipToContent />
-                <Outlet context={{ locale, honeypotInputProps }} />
-                <Snackbar />
-                <CookieConsentBanner />
-                <Scripts nonce={nonce} />
-                <ScrollRestoration nonce={nonce} />
-                <script
-                  nonce={nonce}
-                  dangerouslySetInnerHTML={{
-                    __html: `window.ENV = ${JSON.stringify(ENV)}`,
-                  }}
-                />
-                <script   
-                  nonce={nonce}
-                  type="text/javascript"
-                  src="https://www.dropbox.com/static/api/2/dropins.js"
-                  id="dropboxjs"
-                  data-app-key={ENV.DROPBOX_USER}
-                ></script>
-              </GoogleReCaptchaProvider>
-            </body>
-          </HoneypotProvider>
-        </html>
+        <HoneypotProvider {...honeypotInputProps}>
+          <GoogleApiInitializer nonce={nonce} apiKey={ENV.G_DRIVE_API ?? ''} clientId={ENV.G_DRIVE_USER ?? ''} />
+          <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
+            <SkipToContent />
+            <Outlet context={{ locale, honeypotInputProps }} />
+            <Snackbar />
+            <CookieConsentBanner />
+          </GoogleReCaptchaProvider>
+        </HoneypotProvider>
       </ThemeProvider>
+    </Document>
   );
 });
 
