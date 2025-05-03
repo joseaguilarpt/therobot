@@ -72,7 +72,7 @@ export const createMeta = ({
     const jsonLD = structuredData
       ? [
           {
-            "script:ld+json": JSON.stringify(structuredData),
+            "script:ld+json": structuredData,
           },
         ]
       : [];
