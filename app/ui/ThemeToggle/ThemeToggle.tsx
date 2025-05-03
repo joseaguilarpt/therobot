@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const ThemeToggle: React.FC = () => {
   const { toggleTheme, theme } = useTheme();
 const { t } = useTranslation();
-  const icon = theme !== 'dark-mode' ? 'FaMoon' : 'FaSun'
+  const icon = theme !== 'dark-mode' ? 'moon' : 'sun'
   return (
     <Button 
       onClick={toggleTheme} 

@@ -91,7 +91,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, size = 'full',
           onClick={onClose} 
           aria-label="Close Modal"
         >
-          <Icon icon='FaTimes' size='medium' aria-hidden="true" />
+          <Icon icon='close' size='medium' aria-hidden="true" />
         </button>
         {children}
       </div>
