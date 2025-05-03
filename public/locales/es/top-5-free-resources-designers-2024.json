@@ -1,0 +1,152 @@
+{
+    "article": {
+      "id": "top-5-free-resources-designers-2024",
+      "heading": "Los 5 recursos gratuitos más esenciales para diseñadores en 2024",
+      "url": "top-5-free-resources-designers-2024",
+      "category": "Diseño",
+      "editor": "Manuel Gomez",
+      "date": "23/07/2024",
+      "readTime": 10,
+      "prosTitle": "Ventajas",
+      "consTitle": "Desventajas",
+      "resume": "Descubre los 5 recursos gratuitos más importantes que todo diseñador debe conocer en 2024. Desde herramientas de diseño versátiles hasta bibliotecas de activos extensas, estas plataformas ayudarán a elevar tus proyectos sin romper el banco.",
+      "content": [
+        {
+          "id": "introduction",
+          "title": "Introducción",
+          "paragraphs": [
+            "En el mundo vertiginoso del diseño, tener acceso a recursos de alta calidad puede marcar la diferencia para dar vida a tus visiones creativas.",
+            "A medida que navegamos por el 2024, el panorama del diseño continúa evolucionando, ofreciendo una variedad de herramientas y plataformas gratuitas que rivalizan con sus contrapartes de pago.",
+            "En este artículo, exploraremos los 5 recursos gratuitos más importantes que están revolucionando la forma en que los diseñadores trabajan, crean y colaboran. Ya seas un profesional experimentado o un principiante, estas herramientas sin duda mejorarán tu flujo de trabajo de diseño y ampliarán tus posibilidades creativas."
+          ]
+        },
+        {
+          "id": "canva",
+          "title": "1. Canva",
+          "img": "/img/blog/canva.webp",
+          "altText": "Formas geométricas abstractas que representan elementos de diseño gráfico",
+          "pros": [
+            "Interfaz intuitiva y fácil de usar",
+            "Amplia biblioteca de plantillas y elementos de diseño gratuitos",
+            "Funciones de colaboración para proyectos en equipo",
+            "Se actualiza regularmente con nuevas funciones y contenido"
+          ],
+          "cons": [
+            "Algunas funciones avanzadas requieren una suscripción de pago",
+            "Personalización limitada en comparación con software profesional"
+          ],
+          "paragraphs": [
+            "Canva se ha convertido en una herramienta indispensable para diseñadores de todos los niveles. Esta plataforma versátil ofrece una interfaz intuitiva y una amplia gama de plantillas personalizables para crear desde publicaciones en redes sociales hasta presentaciones y logotipos.",
+            "Una de las mayores fortalezas de Canva es su extensa biblioteca de elementos gratuitos, que incluye imágenes, iconos y fuentes. Esto permite a los diseñadores crear proyectos visualmente atractivos sin necesidad de recursos externos.",
+            "La versión gratuita de Canva proporciona más que suficiente funcionalidad para la mayoría de los proyectos. Sin embargo, para acceder a funciones avanzadas como la eliminación de fondos o la herramienta de cambio de tamaño automático, es necesario actualizar a la versión de pago.",
+            "Canva es particularmente útil para principiantes o aquellos que necesitan crear contenido rápidamente. Su facilidad de uso y los resultados con aspecto profesional la convierten en una excelente opción para pequeñas empresas y freelancers que buscan mantener una imagen de marca coherente en diversas plataformas."
+          ]
+        },
+        {
+          "id": "figma",
+          "title": "2. Figma",
+          "img": "/img/blog/figma.webp",
+          "altText": "Hombre seleccionando entre múltiples opciones o caminos",
+          "pros": [
+            "Potentes herramientas de diseño y prototipado",
+            "Funciones de colaboración en tiempo real",
+            "Basado en la nube, accesible desde cualquier dispositivo",
+            "Gran comunidad y recursos compartidos"
+          ],
+          "cons": [
+            "La curva de aprendizaje puede ser empinada para principiantes",
+            "Requiere conexión a Internet para un funcionamiento óptimo"
+          ],
+          "paragraphs": [
+            "Figma ha revolucionado el mundo del diseño de interfaces y del prototipado. Esta herramienta basada en la nube ofrece una plataforma poderosa para el diseño colaborativo con un generoso nivel gratuito que la hace accesible a diseñadores de todos los niveles.",
+            "La versión gratuita de Figma permite a los usuarios trabajar en hasta tres proyectos activos con colaboración en tiempo real. Esto la convierte en una excelente opción para pequeños equipos o diseñadores freelance que buscan una herramienta profesional sin costos iniciales.",
+            "Una de las mayores fortalezas de Figma es su capacidad para crear diseños responsivos y prototipos interactivos. Los diseñadores pueden crear diseños complejos, definir sistemas de diseño y generar prototipos con funciones de clic, todo dentro de la misma plataforma.",
+            "Si bien la curva de aprendizaje puede ser un poco empinada para los principiantes, Figma ofrece numerosos recursos de aprendizaje gratuitos. Además, su creciente comunidad de usuarios comparte constantemente complementos, componentes y plantillas que enriquecen aún más la plataforma."
+          ]
+        },
+        {
+          "id": "unsplash",
+          "title": "3. Unsplash",
+          "img": "/img/blog/unsplash.webp",
+          "altText": "Carpetas de colores para organizar documentos",
+          "pros": [
+            "Imágenes de alta calidad y sin derechos de autor",
+            "Diversa gama de temas y estilos",
+            "Funcionalidad de búsqueda y descarga fácil",
+            "Creciente comunidad de fotógrafos colaboradores"
+          ],
+          "cons": [
+            "Las imágenes populares pueden estar muy utilizadas",
+            "Control limitado sobre la selección de imágenes en comparación con los sitios de stock de pago"
+          ],
+          "paragraphs": [
+            "Unsplash se ha establecido como el estándar de oro para la fotografía de stock gratuita. Esta plataforma ofrece una amplia colección de fotografías profesionales de alta calidad que los diseñadores pueden usar en sus proyectos sin costo alguno.",
+            "Lo que distingue a Unsplash es la calidad y diversidad de su contenido. Desde impresionantes paisajes hasta retratos emotivos y naturalezas muertas artísticas, la plataforma cubre prácticamente cualquier necesidad visual que un diseñador pueda tener.",
+            "Todas las imágenes de Unsplash se publican bajo una licencia que permite su uso comercial y no comercial sin atribución, aunque se recomienda acreditar al fotógrafo. Esto otorga a los diseñadores una gran flexibilidad para utilizar estas imágenes.",
+            "Sin embargo, es importante tener en cuenta que debido a la popularidad de Unsplash, algunas imágenes pueden estar muy utilizadas. Los diseñadores deben ser creativos en su selección y uso para evitar que sus proyectos parezcan genéricos."
+          ]
+        },
+        {
+          "id": "coolors",
+          "title": "4. Coolors",
+          "img": "/img/blog/coolors.webp",
+          "altText": "Formas geométricas abstractas que representan elementos de diseño gráfico",
+          "pros": [
+            "Generación rápida y sencilla de paletas de colores",
+            "Herramientas para ajustar y refinar las paletas",
+            "Opción para extraer colores de imágenes",
+            "Función de comprobación de accesibilidad de color"
+          ],
+          "cons": [
+            "Algunas funciones avanzadas requieren la versión de pago",
+            "Puede ser demasiado aleatorio para proyectos que requieren paletas muy específicas"
+          ],
+          "paragraphs": [
+            "Coolors es una herramienta indispensable para cualquier diseñador que busque crear esquemas de color armoniosos de manera rápida. Esta plataforma ofrece un generador de esquemas de color intuitivo y fácil de usar, totalmente gratuito en su versión web.",
+            "Lo que distingue a Coolors es su sencillez y eficacia. Los usuarios pueden generar nuevas combinaciones de colores al instante presionando la barra espaciadora. Además, permite ajustar y bloquear colores específicos para refinar la paleta según las necesidades del proyecto.",
+            "Coolors no solo genera paletas aleatorias; también ofrece herramientas para extraer esquemas de color de imágenes, ajustar el brillo y la saturación de los colores, y comprobar la accesibilidad de las combinaciones de color. Esto la convierte en un recurso versátil para diversos aspectos del diseño.",
+            "Si bien la versión gratuita es más que suficiente para la mayoría de los usuarios, Coolors también ofrece una versión Pro con funciones adicionales, como crear colecciones ilimitadas y exportar en formatos adicionales."
+          ]
+        },
+        {
+          "id": "behance",
+          "title": "5. Behance",
+          "img": "/img/blog/behance.webp",
+          "altText": "Mano dando un gesto de pulgar arriba de aprobación",
+          "pros": [
+            "Extensa fuente de inspiración para el diseño",
+            "Recursos gratuitos compartidos por la comunidad",
+            "Oportunidades de networking",
+            "Plataforma para mostrar tu trabajo"
+          ],
+          "cons": [
+            "Puede ser abrumador debido a la gran cantidad de contenido",
+            "La competencia por la atención puede ser alta"
+          ],
+          "paragraphs": [
+            "Behance, propiedad de Adobe, es una de las plataformas más grandes y respetadas para que los diseñadores muestren su trabajo y encuentren inspiración. Si bien sirve principalmente como un portafolio en línea, Behance ofrece una gran cantidad de recursos gratuitos para la comunidad de diseño.",
+            "Una de las características más valiosas de Behance es su vasta colección de proyectos de diseño de alta calidad. Los diseñadores pueden explorar trabajos en diversas categorías, desde el diseño gráfico y la fotografía hasta la ilustración y el diseño de productos, lo que brinda una fuente infinita de inspiración.",
+            "Behance también ofrece una sección de recursos gratuitos donde los diseñadores comparten plantillas, mockups, fuentes y otros elementos de diseño. Esto puede ser extremadamente útil para diseñadores que buscan acelerar su flujo de trabajo o experimentar con nuevos estilos.",
+            "Además, la plataforma sirve como un espacio de networking, permitiendo a los diseñadores conectarse con otros profesionales, clientes potenciales y empleadores. Si bien crear un perfil y mostrar tu trabajo es gratuito, aprovechar al máximo la plataforma requiere una inversión de tiempo para construir una presencia sólida."
+          ]
+        },
+        {
+            "id": "conclusion",
+            "title": "Conclusión (TL;DR)",
+            "paragraphs": [
+              "Como hemos explorado en este artículo, el panorama de los recursos de diseño gratuitos en 2024 es rico y diverso, ofreciendo herramientas y plataformas que se adaptan a varios aspectos del proceso de diseño. Desde la interfaz de diseño amigable de Canva hasta la riqueza de inspiración de Behance, estos recursos forman colectivamente un poderoso conjunto de herramientas para diseñadores en cualquier etapa de su carrera.",
+              "Si bien estos recursos gratuitos ofrecen un valor inmenso, es importante recordar que son herramientas para potenciar tu creatividad, no para reemplazarla. La clave para aprovechar al máximo estos recursos radica en cómo los integras en tu proceso de diseño y visión únicos.",
+              "Te recomendamos experimentar con cada una de estas plataformas para encontrar la combinación que mejor se adapte a tu flujo de trabajo. No tengas miedo de ir más allá de lo que estas herramientas gratuitas pueden hacer, a menudo, los diseños más innovadores surgen del uso creativo de los recursos accesibles.",
+              "Por último, ten en cuenta que el mundo del diseño está en constante evolución. Mantente curioso y abierto a nuevas herramientas y recursos a medida que surjan. Tu capacidad para adaptarte y aprovechar estos recursos gratuitos no solo te ahorrará dinero, sino que también mantendrá tus habilidades afiladas y tus diseños frescos en el mundo competitivo del diseño.",
+              "Recuerda, el gran diseño no se trata de las herramientas que uses, sino de cómo las uses. Deja que estos recursos gratuitos potencien tu creatividad y te ayuden a dar vida a tus visiones únicas."
+            ],
+            "quote": "La mejor inversión que un diseñador puede hacer no es en herramientas costosas, sino en aprender a maximizar el potencial de los recursos accesibles."
+          }
+      ],
+      "image": {
+        "url": "/img/blog/balance-savings.webp",
+        "category": "CLASIFICACIÓN",
+        "alt": "Lista o podio que muestra los cinco principales clasificados"
+      }
+    }
+  }

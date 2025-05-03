@@ -13,56 +13,38 @@ Para este artículo:
 
 Utiliza la siguiente estructura para el artículo:
 
-export default {
-  id: "slug-del-articulo",
-  heading: "Título del artículo",
-  url: "url-del-articulo",
-  category: RANKING,
-  editor: "Nombre del Editor",
-  date: "DD/MM/AAAA",
-  readTime: X,
-  resume: "Resumen del artículo",
-  content: [
-    {
-      id: 'introduction',
-      title: "Introduction",
-      paragraphs: [
-        "Párrafo introductorio 1",
-        "Párrafo introductorio 2",
-        "Párrafo introductorio 3"
-      ],
+const data = {
+  article: {
+    id: "article.id",
+    heading: "article.heading",
+    url: "article.url",
+    category: "article.category",
+    editor: "article.editor",
+    date: "article.date",
+    readTime: "article.readTime",
+    resume: "article.resume",
+    prosTitle: "article.prosTitle",
+    consTitle: "article.consTitle",
+    content: [
+      {
+        id: "article.content.0.id",
+        title: "article.content.0.title",
+        paragraphs: [
+          "article.content.0.paragraphs.0",
+          //...more paragraphs
+        ],
+      }
+      // ...more content
+    ],
+    image: {
+      url: "article.image.url",
+      category: "article.image.category",
+      alt: "article.image.alt",
     },
-    {
-      id: 'elemento-1',
-      title: "1. [Nombre del Elemento]",
-      img: {
-        url: "nombre-imagen.webp",
-        category: CATEGORIA,
-        alt: "Descripción de la imagen para accesibilidad",
-      },
-      paragraphs: [
-        "Descripción",
-        "Pros: ...",
-        "Cons: ...",
-        "Información adicional"
-      ],
-    },
-    // Repite la estructura para los 9 elementos restantes
-    {
-      id: 'conclusion',
-      title: "Conclusion",
-      paragraphs: [
-        "Párrafo de conclusión 1",
-        "Párrafo de conclusión 2"
-      ],
-    },
-  ],
-  image: {
-    url: "imagen-principal.webp",
-    category: CATEGORIA,
-    alt: "Descripción de la imagen principal",
   },
 };
+
+export { data };
 
 Para las imágenes, utiliza las siguientes opciones:
 
