@@ -39,7 +39,7 @@ interface OutletContext {
 
 const DragAndDrop: React.FC<DragAndDropProps> = ({
   onFilesDrop,
-  isLoading,
+  isLoading: isExternalLoading,
   acceptedTypes = [],
   files: existingFiles,
   maxSize = Infinity,
@@ -53,8 +53,11 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const { honeypotInputProps } = useOutletContext<OutletContext>();
   const formRef = useRef<HTMLFormElement>(null);
   const { captchaRef, executeCaptcha} = useReCaptcha();
-  const { setIsPending } = useFileConversion('jpeg')
 
+  const [isInternalLoading, setInternalLoading] = useState(false);
+
+  const isLoading = isInternalLoading || isExternalLoading;
+  
   const validateFile = useCallback((file: File): boolean => {
     if (acceptedTypes.length > 0 && !acceptedTypes.includes(file.type)) {
       showSnackbar(
@@ -94,19 +97,23 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
         }
       });
     }
-    setIsPending(true);
     let currentToken = null;
     if (captchaRef.current) {
       try {
+        setInternalLoading(true);
         const token = await executeCaptcha();
         if (token) {
           currentToken = token;
           formData.set("g-recaptcha-response", token);
         }
       } catch (error) {
+        setInternalLoading(false);
         console.error("reCAPTCHA execution failed:", error);
         showSnackbar(t("tool.captchaError"), "error");
         return;
+      }
+      finally {
+        setInternalLoading(false);
       }
     }
     if (currentToken) {

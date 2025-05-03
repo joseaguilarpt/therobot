@@ -1,5 +1,6 @@
 // app/components/ReCaptcha.tsx
 import React, { useCallback, useMemo } from "react";
+import { useTranslation } from "react-i18next";
 import { ClientOnly } from "remix-utils/client-only";
 import { useReCaptcha } from "~/context/ReCaptchaContext";
 import { useTheme } from "~/context/ThemeContext";
@@ -11,6 +12,7 @@ interface ReCaptchaProps {
 export const ReCaptchaComponent = React.memo(function ReCaptchaComponent({
   sitekey,
 }: ReCaptchaProps) {
+  const { i18n } = useTranslation();
   const { onSuccess, setToken, captchaRef } = useReCaptcha();
   const { showSnackbar } = useTheme();
 
@@ -44,6 +46,7 @@ export const ReCaptchaComponent = React.memo(function ReCaptchaComponent({
           onExpired={handleExpire}
           onErrored={handleError}
           ref={captchaRef}
+          hl={i18n?.language ?? 'en'}
         />
       </React.Suspense>
     );
