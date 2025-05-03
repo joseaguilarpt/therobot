@@ -52,15 +52,6 @@ for = "/*"
 Link = '''
 </build/entry.client-*.js>; rel=preload; as=script
 '''
-# Redirect options
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
-
-# Enable serverless functions if you're using them
-[functions]
-directory = "netlify/functions"
 
 # Post processing configuration to optimize images
 [build.processing]
