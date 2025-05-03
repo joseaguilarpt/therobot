@@ -12,6 +12,7 @@ import { validateCSRFToken } from "./csrf.server";
 import { checkRateLimit } from "./rateLimiter.server";
 import i18next from "~/i18next.server";
 import axios from "axios";
+import type { ActionFunction } from '@remix-run/node';
 
 async function validateRateLimit(request: Request) {
   const identifier = request.headers.get("x-forwarded-for") || request.ip;
@@ -125,6 +126,15 @@ async function handleFileConversion(
   }
 }
 
+export const action: ActionFunction = async ({ request }) => {
+  try {
+    return await toolAction(request);
+  } catch (error) {
+    console.error('Error in action function:', error);
+    return handleError(error);
+  }
+};
+
 export async function toolAction(request: Request) {
   try {
     await validateRateLimit(request);
@@ -151,16 +161,27 @@ export async function toolAction(request: Request) {
         return handleFileConversion(files, format, formData);
     }
   } catch (error) {
-    console.error(error, "error");
-    if (error instanceof Response) {
-      return json(
-        { error: "An unexpected error occurred", convertedFiles: null },
-        { status: 500 }
-      );
-    }
+    console.error('Error in toolAction:', error);
+    throw error; // Re-throw the error to be caught by the action function
+  }
+}
+
+export function handleError(error: unknown) {
+  console.error('Handling error:', error);
+
+  if (error instanceof Response) {
+    return error;
+  }
+
+  if (error instanceof Error) {
     return json(
-      { error: "An unexpected error occurred", convertedFiles: null },
+      { error: error.message || "An unexpected error occurred", convertedFiles: null },
       { status: 500 }
     );
   }
+
+  return json(
+    { error: "An unexpected error occurred", convertedFiles: null },
+    { status: 500 }
+  );
 }

@@ -12,7 +12,7 @@ import CompanyServicesSection from "~/ui/AboutPage/CompanyServicesSection";
 import FAQSection from "~/ui/AboutPage/FAQSection";
 import { CONVERSIONS, POPULAR_CONVERSIONS } from "~/utils/conversions";
 import { useTranslation } from "react-i18next";
-import { toolAction } from "~/utils/toolUtils";
+import { handleError, toolAction } from "~/utils/toolUtils";
 import { meta } from "../utils/meta";
 import { getMetaIntl } from "~/utils/metaIntl";
 import Tool from "~/ui/Tool/Tool";
@@ -40,7 +40,12 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
 }
 
 export const action: ActionFunction = async ({ request }) => {
-  return toolAction(request);
+  try {
+    return await toolAction(request);
+  } catch (error) {
+    console.error('Error in action function:', error);
+    return handleError(error);
+  }
 };
 
 export default function ConvertPageMultilanguage() {

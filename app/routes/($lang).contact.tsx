@@ -19,7 +19,7 @@ import i18next from "~/i18next.server";
 import { useTranslation } from "react-i18next";
 import ContactForm from "~/ui/ContactForm/ContactForm";
 import { getCSRFToken } from "~/utils/csrf.server";
-import { toolAction } from "~/utils/toolUtils";
+import { handleError, toolAction } from "~/utils/toolUtils";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request);
@@ -93,8 +93,14 @@ export const meta: MetaFunction<typeof loader> = ({
     },
   })({ data, params, location, matches });
 };
+
 export const action: ActionFunction = async ({ request }) => {
-  return toolAction(request);
+  try {
+    return await toolAction(request);
+  } catch (error) {
+    console.error('Error in action function:', error);
+    return handleError(error);
+  }
 };
 
 export default function Contact() {
