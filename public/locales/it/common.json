@@ -162,7 +162,7 @@
     },
     "option5": {
       "heading": "C'è un limite al numero di immagini che posso convertire?",
-      "description": "Consentiamo fino a 10 immagini per conversione, con una dimensione massima di 10 MB per immagine. Puoi sempre ricominciare un nuovo batch di conversione."
+      "description": "Consentiamo fino a 10 immagini per conversione, con una dimensione massima di 50 MB per immagine. Puoi sempre ricominciare un nuovo batch di conversione."
     },
     "option6": {
       "heading": "Quanto sono veloci le conversioni?",

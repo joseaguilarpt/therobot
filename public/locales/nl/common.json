@@ -163,7 +163,7 @@
     },
     "option5": {
       "heading": "Is er een limiet aan het aantal afbeeldingen dat ik kan converteren?",
-      "description": "We staan maximaal 10 afbeeldingen per conversie toe, met een maximale bestandsgrootte van 10 MB per afbeelding, u kunt altijd een nieuwe conversie batch starten."
+      "description": "We staan maximaal 10 afbeeldingen per conversie toe, met een maximale bestandsgrootte van 50 MB per afbeelding, u kunt altijd een nieuwe conversie batch starten."
     },
     "option6": {
       "heading": "Hoe snel worden conversies uitgevoerd?",

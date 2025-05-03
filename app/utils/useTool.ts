@@ -218,6 +218,11 @@ export function useFileConversion(
     formData.append("email", email);
     formData.append("zipFile", file);
 
+    if (file.size > 25_165_824) {
+      showSnackbar(`${t("tool.maxLimit")} 24 ${t("tool.bytes")}`, "error");
+      setIsPending(false);
+      return;
+    }
     if (loaderData?.csrfToken) {
       formData.append("csrf", loaderData.csrfToken);
     }

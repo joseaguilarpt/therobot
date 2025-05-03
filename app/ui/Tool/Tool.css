@@ -413,8 +413,8 @@
     height: 100%;
   }
 }
-.tool-conversion-form .tool-heading__to .icon--medium {
-  color: var(--contrast-color);
+.tool-conversion-form .tool-heading__to a {
+  padding: 0 !important;
 }
 .tool-conversion-form .tool-actions {
   padding-top: 20px;

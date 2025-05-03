@@ -43,6 +43,12 @@ export default function Tool() {
     navigate(`/${language}/convert/${fromValue}/${toValue}`);
   };
 
+  const handleSwap = () => {
+    const fromValue = selectedFormatFrom?.toLowerCase() ?? "png";
+    const toValue = selectedFormat?.toLowerCase() ?? "jpeg";
+    navigate(`/${language}/convert/${toValue}/${fromValue}`);
+  }
+
   const {
     convertedFiles,
     pdfType,
@@ -115,6 +121,7 @@ export default function Tool() {
                   setPdfType={setPdfType}
                   handleFromChange={handleFromChange}
                   handleToChange={handleToChange}
+                  handleSwap={handleSwap}
                 />
               </div>
             </GridItem>
@@ -124,7 +131,7 @@ export default function Tool() {
                 isLoading={isPending}
                 setIsPending={setIsPending}
                 acceptedTypes={[`image/${selectedFormatFrom?.toLowerCase()}`]}
-                maxSize={10_485_760} // 10 MB
+                maxSize={52_428_800} // 50 MB
                 files={convertedFiles}
               />
             </GridItem>

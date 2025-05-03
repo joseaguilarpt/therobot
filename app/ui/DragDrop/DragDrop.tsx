@@ -50,7 +50,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   isLoading: isExternalLoading,
   acceptedTypes: fileTypes,
   files: existingFiles,
-  maxSize = 10_485_760,
+  maxSize = 52_428_800,
 }) => {
   const acceptedTypes = fileTypes?.map((item) => {
     if (item.includes("svg")) {
@@ -88,6 +88,12 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     async (files: File[]) => {
       if (files.length > 10) {
         showSnackbar(t("tool.maxFiles"), "error");
+        return;
+      }
+
+      const totalSize = files.reduce((sum, file) => sum + file.size, 0) + 0;
+      if (totalSize > maxSize) {
+        showSnackbar(`${t("tool.maxLimit")} ${bytesToMB(maxSize)} ${t("tool.bytes")}`, "error");
         return;
       }
   

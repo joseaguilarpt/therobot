@@ -17,7 +17,7 @@ import type { ActionFunction } from "@remix-run/node";
 export const createUploadHandler = () =>
   unstable_composeUploadHandlers(
     unstable_createFileUploadHandler({
-      maxPartSize: 10_485_760,
+      maxPartSize: 52_428_800,
       file: ({ filename }) => filename,
     }),
     unstable_createMemoryUploadHandler()

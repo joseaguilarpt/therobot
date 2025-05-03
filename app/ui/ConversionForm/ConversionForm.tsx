@@ -7,6 +7,7 @@ import Text from "../Text/Text";
 import ButtonGroup from "../ButtonGroup/ButtonGroup";
 import { useTranslation } from "react-i18next";
 import { trackClick } from "~/utils/analytics";
+import Button from "../Button/Button";
 
 type Option = {
   id: string | number;
@@ -20,6 +21,7 @@ interface ConversionFormProps {
   pdfType: string;
   setPdfType: (type: string) => void;
   handleFromChange: (value: string) => void;
+  handleSwap: () => void;
   handleToChange: (value: string) => void;
   options: Option[];
 }
@@ -33,6 +35,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
     options,
     handleFromChange,
     handleToChange,
+    handleSwap,
   }: ConversionFormProps) {
     const { t, i18n } = useTranslation("common");
 
@@ -101,7 +104,9 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
             />
           </GridItem>
           <GridItem className="tool-heading__to">
-            <Icon icon="arrow_forward" size="medium" color="white" />
+            <Button onClick={handleSwap} ariaLabel="Swap Format" appareance="link">
+            <Icon icon="swap_horiz" size="large" color="white" />
+            </Button>
           </GridItem>
           <GridItem className="u-pl1 u-pr1">
             <AutoSuggest

@@ -162,7 +162,7 @@
     },
     "option5": {
       "heading": "Apakah ada batasan berapa banyak gambar yang dapat saya konversi?",
-      "description": "Kami memungkinkan hingga 10 gambar per konversi, dengan ukuran file maksimum 10 MB per gambar, Anda selalu dapat memulai batch konversi baru."
+      "description": "Kami memungkinkan hingga 10 gambar per konversi, dengan ukuran file maksimum 50 MB per gambar, Anda selalu dapat memulai batch konversi baru."
     },
     "option6": {
       "heading": "Seberapa cepat proses konversi?",
