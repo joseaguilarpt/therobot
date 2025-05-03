@@ -9,6 +9,8 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 import { getInitialNamespaces } from "remix-i18next/client";
 import i18n from "./i18n"; // your i18n configuration
+import * as path from 'path';
+
 
 async function hydrate() {
   try {
@@ -21,7 +23,10 @@ async function hydrate() {
       .init({
         ...i18n,
         ns: getInitialNamespaces(),
-        backend: { loadPath: "/locales/{{lng}}/{{ns}}.json" },
+        backend: { 
+          loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
+          addPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json')
+         },
         detection: {
           order: ["htmlTag"],
           caches: [],

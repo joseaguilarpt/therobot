@@ -13,11 +13,11 @@ import i18next from "./i18next.server";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import Backend from "i18next-fs-backend";
 import i18n from "./i18n";
-import { resolve } from "node:path";
 import { config } from "dotenv";
 import crypto from "crypto";
 import { headers as getHeaders } from "./utils/headers";
 import { NonceContext } from "./context/NonceContext";
+import * as path from 'path';
 
 config();
 
@@ -50,7 +50,10 @@ export default async function handleRequest(
       ...i18n,
       lng,
       ns,
-      backend: { loadPath: resolve("./locales/{{lng}}/{{ns}}.json") },
+      backend: { 
+        loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
+        addPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json')
+       },
       fallbackLng: 'en',
       debug: true,
     });
