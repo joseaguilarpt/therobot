@@ -1,0 +1,122 @@
+Genera un artículo de ranking basado en el siguiente enunciado:
+
+"Los mejores [tema] para [objetivo] en [año]"
+
+Para este artículo:
+
+1. Crea un título atractivo y relevante.
+2. Genera un resumen conciso del artículo en 2-3 frases.
+3. Define 10 elementos para el ranking.
+4. Para cada elemento del ranking, proporciona:
+   - Un título breve y descriptivo
+   - 4-5 párrafos de contenido, incluyendo una descripción, pros, contras y casos de uso
+
+Utiliza la siguiente estructura para el artículo:
+
+export default {
+  id: "slug-del-articulo",
+  heading: "Título del artículo",
+  url: "url-del-articulo",
+  category: RANKING,
+  editor: "Nombre del Editor",
+  date: "DD/MM/AAAA",
+  readTime: X,
+  resume: "Resumen del artículo",
+  content: [
+    {
+      id: 'introduction',
+      title: "Introduction",
+      paragraphs: [
+        "Párrafo introductorio 1",
+        "Párrafo introductorio 2",
+        "Párrafo introductorio 3"
+      ],
+    },
+    {
+      id: 'elemento-1',
+      title: "1. [Nombre del Elemento]",
+      img: {
+        url: "nombre-imagen.webp",
+        category: CATEGORIA,
+        alt: "Descripción de la imagen para accesibilidad",
+      },
+      paragraphs: [
+        "Descripción",
+        "Pros: ...",
+        "Cons: ...",
+        "Información adicional"
+      ],
+    },
+    // Repite la estructura para los 9 elementos restantes
+    {
+      id: 'conclusion',
+      title: "Conclusion",
+      paragraphs: [
+        "Párrafo de conclusión 1",
+        "Párrafo de conclusión 2"
+      ],
+    },
+  ],
+  image: {
+    url: "imagen-principal.webp",
+    category: CATEGORIA,
+    alt: "Descripción de la imagen principal",
+  },
+};
+
+Para las imágenes, utiliza las siguientes opciones:
+
+export const BLOG_IMAGES = [
+  {
+    name: "balance.webp",
+    category: FINANCE,
+    alt: "Balance scale representing financial equilibrium",
+  },
+  {
+    name: "balance-savings.webp",
+    category: FINANCE,
+    alt: "Piggy bank on a balance scale showing savings concept",
+  },
+  {
+    name: "folders.webp",
+    category: ORGANIZATION,
+    alt: "Colorful file folders for organizing documents",
+  },
+  {
+    name: "girl-yes-or-no.webp",
+    category: DECISION_MAKING,
+    alt: "Young girl contemplating a yes or no decision",
+  },
+  {
+    name: "graphics.webp",
+    category: DESIGN,
+    alt: "Abstract geometric shapes representing graphic design elements",
+  },
+  {
+    name: "man-choosing.webp",
+    category: DECISION_MAKING,
+    alt: "Man selecting between multiple options or paths",
+  },
+  {
+    name: "profit.webp",
+    category: FINANCE,
+    alt: "Upward trending graph or arrow indicating profit growth",
+  },
+  {
+    name: "savings.webp",
+    category: FINANCE,
+    alt: "Piggy bank or coin jar representing savings",
+  },
+  {
+    name: "thumbsup.webp",
+    category: APPROVAL,
+    alt: "Hand giving a thumbs up gesture of approval",
+  },
+  {
+    name: "top-ten.webp",
+    category: RANKING,
+    alt: "List or podium showing top ten ranking",
+  },
+];
+
+Asegúrate de que el contenido sea informativo, actualizado y relevante para el tema y objetivo especificados en el enunciado. Selecciona imágenes apropiadas de la lista BLOG_IMAGES para cada elemento del ranking y para la imagen principal del artículo.

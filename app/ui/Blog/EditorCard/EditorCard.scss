@@ -1,0 +1,49 @@
+// EditorCard.scss
+.editor-card {
+    display: flex;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    align-items: center;
+    border: 1px solid #80808033;
+    &__image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 83px;
+      padding: 20px;
+    }
+  
+    &__content {
+      padding: 16px;
+      flex: 1;
+    }
+  
+    &__name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0 0 8px 0;
+    }
+  
+    &__role {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 0 0 12px 0;
+    }
+  
+    &__bio {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    a {
+        padding: 0;
+        margin: 0;
+    }
+    .icon--medium {
+        color: var(--default-color);
+    }
+  }

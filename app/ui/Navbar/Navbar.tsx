@@ -53,6 +53,11 @@ const Navbar = ({
       href: `/${i18n?.language ?? ''}/about`,
       icon: "FaHome",
     },
+    {
+      value: "Blog",
+      href: `/${i18n?.language ?? ''}/blog`,
+      icon: "FaMap",
+    },
   ];
   
 

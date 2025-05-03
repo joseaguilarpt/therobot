@@ -1,24 +1,45 @@
 import { LoaderFunction } from "@remix-run/node";
 
+const BLOG_POSTS = [
+  "top-10-image-formats-for-website",
+  "png-vs-webp-conversion-guide",
+];
 const LANGUAGES = ["en", "es", "pt", "fr", "nl", "de", "it", "id", "ru"];
-const FORMATS = ["jpeg", "png", "gif", "webp", "avif", "tiff", "svg", "bmp", "pdf"];
-const SOURCE_FORMATS = FORMATS.filter(format => format !== "pdf");
+const FORMATS = [
+  "jpeg",
+  "png",
+  "gif",
+  "webp",
+  "avif",
+  "tiff",
+  "svg",
+  "bmp",
+  "pdf",
+];
+const SOURCE_FORMATS = FORMATS.filter((format) => format !== "pdf");
 
 const STATIC_ROUTES = [
-  '/',
-  '/about',
-  '/accessibility',
-  '/ccpa-compliance',
-  '/contact',
-  '/cookie-policy',
-  '/gdpr-compliance',
-  '/privacy-policy',
-  '/terms-of-service',
+  "/",
+  "/about",
+  "/accessibility",
+  "/ccpa-compliance",
+  "/contact",
+  "/cookie-policy",
+  "/gdpr-compliance",
+  "/privacy-policy",
+  "/terms-of-service",
+  "/blog"
 ];
 
 function generateRoutes() {
   const routes = [...STATIC_ROUTES];
-  
+
+  // Add blog post routes
+  for (const post of BLOG_POSTS) {
+    routes.push(`/blog/${post}`);
+  }
+
+  // Add conversion routes
   for (const source of SOURCE_FORMATS) {
     for (const target of FORMATS) {
       if (source !== target) {
@@ -26,12 +47,13 @@ function generateRoutes() {
       }
     }
   }
-  
+
   return routes;
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const host = request.headers.get("X-Forwarded-Host") ?? request.headers.get("host");
+  const host =
+    request.headers.get("X-Forwarded-Host") ?? request.headers.get("host");
   if (!host) {
     throw new Error("Could not determine domain");
   }
@@ -45,20 +67,28 @@ export const loader: LoaderFunction = async ({ request }) => {
     <?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
             xmlns:xhtml="http://www.w3.org/1999/xhtml">
-      ${routes.flatMap(route => 
-        LANGUAGES.map(lang => `
+      ${routes
+        .flatMap((route) =>
+          LANGUAGES.map(
+            (lang) => `
           <url>
-            <loc>${domain}${lang === 'en' ? '' : '/' + lang}${route}</loc>
+            <loc>${domain}${lang === "en" ? "" : "/" + lang}${route}</loc>
             <lastmod>${lastmod}</lastmod>
-            ${LANGUAGES.map(altLang => `
+            ${LANGUAGES.map(
+              (altLang) => `
               <xhtml:link 
                  rel="alternate" 
                  hreflang="${altLang}" 
-                 href="${domain}${altLang === 'en' ? '' : '/' + altLang}${route}"
-              />`).join('')}
+                 href="${domain}${
+                altLang === "en" ? "" : "/" + altLang
+              }${route}"
+              />`
+            ).join("")}
           </url>
-        `)
-      ).join('')}
+        `
+          )
+        )
+        .join("")}
     </urlset>
   `.trim();
 
@@ -66,8 +96,8 @@ export const loader: LoaderFunction = async ({ request }) => {
     headers: {
       "Content-Type": "application/xml",
       "xml-version": "1.0",
-      "encoding": "UTF-8"
-    }
+      encoding: "UTF-8",
+    },
   });
 };
 

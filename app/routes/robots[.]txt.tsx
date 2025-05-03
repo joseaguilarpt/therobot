@@ -6,6 +6,18 @@ export const loader: LoaderFunction = async ({ request }) => {
 User-agent: *
 Allow: /
 
+# Explicitly allow blog and language versions
+Allow: /blog/
+Allow: /en/
+Allow: /es/
+Allow: /fr/
+Allow: /de/
+Allow: /pt/
+Allow: /nl/
+Allow: /it/
+Allow: /id/
+Allow: /ru/
+
 # Disallow crawling of administrative and private areas
 Disallow: /admin/
 Disallow: /login
@@ -37,8 +49,15 @@ Disallow: /nogooglebot/
 User-agent: Bingbot
 Disallow: /nobingbot/
 
+User-agent: Yandexbot
+Disallow: /noyandexbot/
+
+User-agent: Baiduspider
+Disallow: /nobaiduspider/
+
 # Sitemaps
 Sitemap: https://easyconvertimage.com/sitemap.xml
+Sitemap: https://easyconvertimage.com/blog-sitemap.xml
 
 # Crawl-delay directive (optional, adjust as needed)
 Crawl-delay: 10

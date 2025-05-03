@@ -16,7 +16,29 @@
     "topTools": "Strumenti Principali",
     "contact": "Contatto",
     "about": "Chi Siamo",
+    "blog": "Blog",
     "main": "Navigazione Principale"
+  },
+  "blog": {
+    "table": "Indice dei contenuti",
+    "finance": "finanza",
+    "organization": "organizzazione",
+    "decisionMaking": "processo_decisionale",
+    "design": "design",
+    "approval": "approvazione",
+    "ranking": "classifica",
+    "share": "Condividi",
+    "shareInFacebook": "Condividi su Facebook",
+    "shareInTwitter": "Condividi su Twitter",
+    "shareInWhatsapp": "Condividi su WhatsApp",
+    "shareInLinkedin": "Condividi su LinkedIn",
+    "minsRead": "Min Di Lettura",
+    "by": "Di",
+    "seniorTechnicalEditor": "Redattore Tecnico Senior",
+    "relatedPosts": "Post Correlati",
+    "manuelGomezBio": "Manuel Gomez è un appassionato sviluppatore web ed entusiasta dell'ottimizzazione delle immagini. Con oltre un decennio di esperienza nella creazione di siti web belli e performanti, Manuel ama condividere le sue conoscenze per aiutare gli altri a creare esperienze web migliori. Quando non si immerge nelle ultime tecnologie web, lo si può trovare a sperimentare con la fotografia e ad esplorare la natura",
+    "latestPosts": "Ultimi Post",
+    "latestPostsDescription": "Scopri i nostri articoli più recenti e rimani aggiornato"
   },
   "convert": "Converti",
   "images": "immagini",
@@ -605,5 +627,15 @@
         "ogDescription": "Apprendi i tuoi diritti relativi ai dati e come proteggiamo le tue informazioni personali in conformità al GDPR."
       }
     }
-  }
+  },
+  "articles": [
+    {
+      "heading": "PNG vs WebP: La guida definitiva per ottimizzare le tue immagini web",
+      "url": "png-vs-webp-conversion-guide"
+    },
+    {
+      "heading": "I 10 migliori formati di immagine per il tuo sito web: Una guida completa",
+      "url": "top-10-image-formats-for-website"
+    }
+  ]
 }

@@ -32,6 +32,10 @@
     color: var(--accent-color);
   }
 
+  &--contrast {
+    color: var(--contrast-color);
+  }
+
   &--bold {
     font-weight: bold;
   }
@@ -74,5 +78,14 @@
 
   &--justify {
     text-align: justify;
+  }
+  &--capitalize {
+    text-transform: capitalize;
+  }
+  &--uppercase {
+    text-transform: uppercase;
+  }
+  &--lowercase {
+    text-transform: lowercase;
   }
 }

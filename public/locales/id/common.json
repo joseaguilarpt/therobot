@@ -16,7 +16,29 @@
     "topTools": "Alat Teratas",
     "contact": "Kontak",
     "about": "Tentang",
+    "blog": "Blog",
     "main": "Navigasi Utama"
+  },
+  "blog": {
+    "table": "Daftar Isi",
+    "finance": "keuangan",
+    "organization": "organisasi",
+    "decisionMaking": "pengambilan_keputusan",
+    "design": "desain",
+    "approval": "persetujuan",
+    "ranking": "peringkat",
+    "share": "Bagikan",
+    "shareInFacebook": "Bagikan di Facebook",
+    "shareInTwitter": "Bagikan di Twitter",
+    "shareInWhatsapp": "Bagikan di WhatsApp",
+    "shareInLinkedin": "Bagikan di LinkedIn",
+    "minsRead": "Min Baca",
+    "by": "Oleh",
+    "seniorTechnicalEditor": "Editor Teknis Senior",
+    "relatedPosts": "Pos Terkait",
+    "manuelGomezBio": "Manuel Gomez adalah pengembang web yang bersemangat dan antusias optimasi gambar. Dengan pengalaman lebih dari satu dekade dalam membuat situs web yang indah dan berkinerja tinggi, Manuel senang berbagi pengetahuannya untuk membantu orang lain menciptakan pengalaman web yang lebih baik. Ketika tidak mendalami teknologi web terbaru, Anda dapat menemukannya bereksperimen dengan fotografi dan menjelajahi alam",
+    "latestPosts": "Postingan Terbaru",
+    "latestPostsDescription": "Temukan artikel terbaru kami dan tetap up-to-date"
   },
   "convert": "Konversi",
   "images": "gambar",
@@ -622,6 +644,16 @@
         "name": "Kepatuhan GDPR",
         "description": "Informasi tentang kepatuhan Easy Convert Image dengan peraturan GDPR."
       }
-    }
+    },
+    "articles": [
+      {
+        "heading": "PNG vs WebP: Panduan Lengkap untuk Mengoptimalkan Gambar Web Anda",
+        "url": "png-vs-webp-conversion-guide"
+      },
+      {
+        "heading": "10 Format Gambar Terbaik untuk Situs Web Anda: Panduan Komprehensif",
+        "url": "top-10-image-formats-for-website"
+      }
+    ]
   }
 }

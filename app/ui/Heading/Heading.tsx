@@ -12,6 +12,7 @@ export interface HeadingProps {
   className?: string;
   align?: "left" | "center" | "right";
   id?: string;
+  italic?: boolean;
   tabIndex?: number;
 }
 
@@ -24,6 +25,7 @@ const Heading: React.FC<HeadingProps> = ({
   align,
   className,
   id,
+  italic,
   tabIndex
 }) => {
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
@@ -36,6 +38,7 @@ const Heading: React.FC<HeadingProps> = ({
         color && `heading--${color}`,
         underline && `heading--underline`,
         align && `heading--${align}`,
+        italic && 'heading--italic',
         className
       )}
       id={id}

@@ -1,20 +1,23 @@
-import './Hero.scss';
+import "./Hero.scss";
 
-import React, { ReactNode } from 'react';
-import ContentContainer from '../ContentContainer/ContentContainer';
-import classNames from 'classnames';
+import React, { ReactNode } from "react";
+import ContentContainer from "../ContentContainer/ContentContainer";
+import classNames from "classnames";
 
 interface HeroType {
-    children: ReactNode;
-    background?: string;
+  children: ReactNode;
+  background?: string;
+  size?: "full" | "half";
 }
 
-export default function Hero({ children, background }: HeroType) {
-    return (
-        <div className={classNames('hero', background)}>
-            <ContentContainer>
-                {children}
-            </ContentContainer>
-        </div>
-    )
+export default function Hero({
+  children,
+  background,
+  size = "full",
+}: HeroType) {
+  return (
+    <div className={classNames("hero", background, size)}>
+      <ContentContainer>{children}</ContentContainer>
+    </div>
+  );
 }

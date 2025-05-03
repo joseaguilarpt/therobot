@@ -1,59 +1,82 @@
 import React from 'react';
 import classNames from 'classnames';
 import './Checkbox.scss';
+import Text from '../Text/Text';
 
 interface CheckboxProps {
-  checked?: boolean; // Allow undefined for uncontrolled usage
-  defaultChecked?: boolean; // Initial checked state for uncontrolled usage
-  onChange?: (checked: boolean) => void; // Controlled onChange handler
+  checked?: boolean;
+  defaultChecked?: boolean;
+  onChange?: (checked: boolean) => void;
   ariaLabel?: string;
   label?: string;
   hideLabel?: boolean;
-  id?: string; // Add an id prop for form compatibility
-  name: string; // Add a name prop for form compatibility
+  id: string; // Make id required for accessibility
+  name: string;
+  disabled?: boolean; // Add disabled prop
+  required?: boolean; // Add required prop
+  error?: string; // Add error prop for validation feedback
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({
   checked: controlledChecked,
-  defaultChecked = false, // Default checked state for uncontrolled usage
+  defaultChecked = false,
   onChange,
   ariaLabel,
   label,
   hideLabel,
   id,
   name,
+  disabled = false,
+  required = false,
+  error,
 }) => {
-  // Internal state for uncontrolled usage
   const [internalChecked, setInternalChecked] = React.useState(defaultChecked);
 
-  // Handle change event
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isChecked = event.target.checked;
-
     if (onChange) {
-      onChange(isChecked); // Propagate change to parent if controlled
+      onChange(isChecked);
     } else {
-      setInternalChecked(isChecked); // Update internal state if uncontrolled
+      setInternalChecked(isChecked);
     }
   };
 
-  // Determine checked state based on props (controlled vs. uncontrolled)
   const isChecked = onChange ? controlledChecked : internalChecked;
 
+  const checkboxId = `checkbox-${id}`;
+  const errorId = `${checkboxId}-error`;
+
   return (
-    <label className="checkbox" htmlFor={id}>
-      <input
-        type="checkbox"
-        id={id}
-        name={name}
-        checked={isChecked}
-        onChange={handleChange}
-        aria-label={ariaLabel}
-        className="checkbox__input"
-      />
-      <span className="checkbox__checkmark" />
-      {!hideLabel && <span className="checkbox__label">{label}</span>}
-    </label>
+    <div className="checkbox-wrapper">
+      <label className={classNames('checkbox', { 'checkbox--disabled': disabled })} htmlFor={checkboxId}>
+        <input
+          type="checkbox"
+          id={checkboxId}
+          name={name}
+          checked={isChecked}
+          onChange={handleChange}
+          disabled={disabled}
+          required={required}
+          aria-label={hideLabel ? label || ariaLabel : undefined}
+          aria-required={required}
+          aria-invalid={!!error}
+          aria-describedby={error ? errorId : undefined}
+          className="checkbox__input"
+        />
+        <span className="checkbox__checkmark" aria-hidden="true" />
+        {!hideLabel && (
+          <Text className='u-pl1' as="span">
+            {label}
+            {required && <span className="visually-hidden"> (required)</span>}
+          </Text>
+        )}
+      </label>
+      {error && (
+        <Text id={errorId} className="checkbox__error" role="alert">
+          {error}
+        </Text>
+      )}
+    </div>
   );
 };
 

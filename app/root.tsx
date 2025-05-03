@@ -106,6 +106,7 @@ const queryClient = new QueryClient();
 
 export function ErrorBoundary() {
   const error = useRouteError();
+  console.log(error, 'error')
   const { i18n } = useTranslation();
   useChangeLanguage(i18n.language ?? "en");
   useAnalytics();

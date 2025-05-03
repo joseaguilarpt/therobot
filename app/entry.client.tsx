@@ -8,6 +8,17 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 import { getInitialNamespaces } from "remix-i18next/client";
 
+function detectNamespaceFromURL() {
+	const path = window.location.pathname;
+	const match = path.match(/\/blog\/([\w-]+)/);
+	if (match) {
+	  return ['common', match[1]];  // Return both 'common' and the specific article namespace
+	}
+	return ['common'];  // Default namespace
+  }
+  
+  const detectedNamespaces = detectNamespaceFromURL();
+
 async function hydrate() {
 	await i18next
 		.use(initReactI18next) // Tell i18next to use the react-i18next plugin
@@ -16,7 +27,7 @@ async function hydrate() {
 		.init({
 			...i18n, // spread the configuration
 			// This function detects the namespaces your routes rendered while SSR use
-			ns: getInitialNamespaces(),
+			ns: [...getInitialNamespaces(), ...detectedNamespaces],
 			backend: { loadPath: "/locales/{{lng}}/{{ns}}.json" },
 			detection: {
 				// Here only enable htmlTag detection, we'll detect the language only

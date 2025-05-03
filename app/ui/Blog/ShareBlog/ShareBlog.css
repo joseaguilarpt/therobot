@@ -1,29 +1,40 @@
-.shareSocial {
+/* ShareSocial.css */
+.share-social {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
-.shareSocial button {
-  padding: 10px 15px;
+
+.share-button {
+  padding: 5px 10px;
   border: none;
   border-radius: 5px;
   color: white;
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
-.shareSocial button:hover {
+.share-button .icon--medium {
+  padding-left: 4px;
+  font-size: 1.5rem;
+}
+
+.share-button:hover {
   opacity: 0.8;
 }
-.shareSocial .facebook {
+
+.share-facebook {
   background-color: #3b5998;
 }
-.shareSocial .twitter {
+
+.share-twitter {
   background-color: #1da1f2;
 }
-.shareSocial .linkedin {
+
+.share-linkedin {
   background-color: #0077b5;
 }
-.shareSocial .whatsapp {
+
+.share-whatsapp {
   background-color: #25d366;
 }
 
