@@ -19,6 +19,7 @@ export interface ButtonProps {
   className?: string;
   leftIcon?: IconType;
   target?: string;
+  rel?: string;
   size?: "small" | "medium" | "large";
   tooltipContent?: string;
 }
@@ -32,6 +33,7 @@ const Button: React.FC<ButtonProps> = ({
   ariaLabel,
   type = "button",
   className,
+  rel,
   target,
   isLoading = false,
   isDisabled = false,
@@ -65,6 +67,7 @@ const Button: React.FC<ButtonProps> = ({
     "aria-disabled": isDisabled || isLoading,
     "aria-busy": isLoading,
     "aria-label": ariaLabel,
+    rel: rel
   };
 
   const buttonElement = isLink ? (

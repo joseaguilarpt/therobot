@@ -13,14 +13,13 @@ import {
   MetaFunction,
   json,
 } from "@remix-run/node";
-import { parseFormData } from "~/utils/converter.server";
 import { useActionData } from "@remix-run/react";
-import { onSendCustomerEmail } from "~/utils/mail.server";
-import { createMeta } from "~/utils/meta";
+import { MetaProps, createMeta } from "~/utils/meta";
 import i18next from "~/i18next.server";
 import { useTranslation } from "react-i18next";
 import ContactForm from "~/ui/ContactForm/ContactForm";
 import { getCSRFToken } from "~/utils/csrf.server";
+import { toolAction } from "~/utils/toolUtils";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request);
@@ -36,8 +35,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
   );
 }
 
-export const meta: MetaFunction = ({ data }) => {
-  const { description, title } = data as any;
+export const meta: MetaFunction<typeof loader> = ({
+  data,
+  params,
+  location,
+  matches,
+}) => {
+  if (!data) {
+    return [];
+  }
+  const { description, title } = data as MetaProps;
   const url = `https://easyconvertimage.com/contact`;
 
   return createMeta({
@@ -74,18 +81,11 @@ export const meta: MetaFunction = ({ data }) => {
         url: "https://easyconvertimage.com",
       },
     },
-    // @ts-ignore
-  })({ data });
+  })({ data, params, location, matches });
 };
 
 export const action: ActionFunction = async ({ request }) => {
-  const formData = await parseFormData(request);
-  try {
-    await onSendCustomerEmail(formData);
-    return json({ emailSent: true });
-  } catch {
-    return json({ error: "Error sending email" }, { status: 400 });
-  }
+  return toolAction(request);
 };
 
 export default function Contact() {
@@ -108,7 +108,11 @@ export default function Contact() {
           <GridContainer justifyContent="center" className="u-pt3">
             <Breadcrumb
               paths={[
-                { icon: "FaHome", label: t("home"), href: `/${i18n.language ?? ''}` },
+                {
+                  icon: "FaHome",
+                  label: t("home"),
+                  href: `/${i18n.language ?? ""}`,
+                },
                 { label: t("contact.contactUs") },
               ]}
             />

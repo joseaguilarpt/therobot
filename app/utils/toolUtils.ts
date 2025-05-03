@@ -11,6 +11,7 @@ import { onSendCustomerEmail, onSendEmail } from "./mail.server";
 import { verify } from "hcaptcha";
 import { validateCSRFToken } from "./csrf.server";
 import { checkRateLimit } from "./rateLimiter.server";
+import i18next from "~/i18next.server";
 
 async function validateRateLimit(request: Request) {
   const identifier = request.headers.get("x-forwarded-for") || request.ip;
@@ -59,7 +60,7 @@ function validateHoneypot(formData: FormData) {
 async function handleContactForm(formData: FormData) {
   try {
     await onSendCustomerEmail(formData);
-    return json({ emailSent: true });
+    return json({ contactEmailSent: true });
   } catch {
     return json(
       { contactError: "Error sending contact email" },
@@ -84,22 +85,30 @@ async function handleFileConversion(
     );
   }
 
-  let convertedFiles: any[];
+  let convertedFiles: Array<{ fileUrl: string; fileName: string }>;
 
-  if (format === "svg") {
-    convertedFiles = await convertToSvg(files, format);
-  } else if (format === "pdf") {
-    const pdfType = formData.get("pdfType");
-    const imageFiles = Array.from(files);
-    convertedFiles = await convertImagesToPdf(
-      imageFiles,
-      pdfType === "separated"
-    );
-  } else {
-    convertedFiles = await convertToOtherFormat(files, format);
+  try {
+    if (format === "svg") {
+      convertedFiles = await convertToSvg(files, format);
+    } else if (format === "pdf") {
+      const pdfType = formData.get("pdfType");
+      const imageFiles = Array.from(files);
+      convertedFiles = await convertImagesToPdf(
+        imageFiles,
+        pdfType === "separated"
+      );
+    } else {
+      convertedFiles = await convertToOtherFormat(files, format);
+    }
+  
+    return json({ convertedFiles });
   }
-
-  return json({ convertedFiles });
+  catch(e){ 
+    return json(
+      { error: "An unexpected error occurred", convertedFiles: null },
+      { status: 500 }
+    );
+  }
 }
 
 export async function toolAction(request: Request) {
@@ -108,21 +117,23 @@ export async function toolAction(request: Request) {
 
     const formData = await parseFormData(request);
     const token = formData.get("h-captcha-response") as string;
+    const lng = await i18next.getLocale(request)
 
     await validateCaptcha(token);
     validateHoneypot(formData);
     await validateCSRFToken(request, formData);
 
     const typeOperation = formData.get("type") as string;
+    const files = formData.getAll("file") as File[];
+    const format = formData.get("format") as string;
 
     switch (typeOperation) {
       case "contact":
         return handleContactForm(formData);
       case "email":
+        formData.append('language', lng)
         return handleEmailForm(formData);
       default:
-        const files = formData.getAll("file") as File[];
-        const format = formData.get("format") as string;
         return handleFileConversion(files, format, formData);
     }
   } catch (error) {

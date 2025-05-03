@@ -14,16 +14,14 @@ interface EditorCardProps {
   imageUrl: string;
 }
 
-const editorBio = {
-  name: "Manuel Gomez",
-  role: "Senior Technical Editor",
-  bio: `Manuel Gomez is a passionate web developer and image optimization enthusiast. With over a decade of experience in crafting beautiful, performant websites, Manuel loves sharing his knowledge to help others create better web experiences. When he's not diving into the latest web technologies, you can find him experimenting with photography and exploring the great outdoors.`
-};
+// const editorBio = {
+//   name: "Manuel Gomez",
+//   role: "Senior Technical Editor",
+//   bio: `Manuel Gomez is a passionate web developer and image optimization enthusiast. With over a decade of experience in crafting beautiful, performant websites, Manuel loves sharing his knowledge to help others create better web experiences. When he's not diving into the latest web technologies, you can find him experimenting with photography and exploring the great outdoors.`
+// };
 
 const EditorCard: React.FC<EditorCardProps> = ({
   name,
-  role,
-  bio,
   imageUrl,
 }) => {
   const { t } = useTranslation()
@@ -39,7 +37,7 @@ const EditorCard: React.FC<EditorCardProps> = ({
           {t('blog.manuelGomezBio')}
         </Text>
         <div className="u-pt1">
-        <Button appareance="link" onClick={() => {}}>
+        <Button ariaLabel="Go to linkedin"  appareance="link" onClick={() => {}}>
           <Icon color="dark" icon="FaLinkedin" />
         </Button>
         </div>

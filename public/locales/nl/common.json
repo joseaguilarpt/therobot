@@ -55,6 +55,8 @@
     "freeToUse": "Gratis, geen registratie vereist. Transformeer uw afbeeldingen in enkele seconden!"
   },
   "tool": {
+    "maxFiles": "Maximaal aantal bestanden bereikt. Je kunt tot 15 bestanden tegelijk uploaden.",
+
     "fileArea": "Bestandsuploadarea",
     "inputFile": "Invoerbestand",
     "drop": "Zet beeldbestanden hier neer",
@@ -655,5 +657,28 @@
       "heading": "Top 10 afbeeldingsformaten voor uw website: Een uitgebreide gids",
       "url": "top-10-image-formats-for-website"
     }
-  ]
+  ],
+  "cookieBanner": {
+    "title": "Cookievoorkeuren",
+    "description": "We gebruiken cookies om uw browse-ervaring te verbeteren en ons verkeer te analyseren. Selecteer hieronder uw voorkeuren.",
+    "legend": "Cookievoorkeuren",
+    "savePreferences": "Voorkeuren opslaan",
+    "acceptAll": "Alles accepteren",
+    "savePreferencesAriaLabel": "Cookievoorkeuren opslaan",
+    "acceptAllAriaLabel": "Alle cookies accepteren"
+  },
+  "cookiePreferences": {
+    "necessary": {
+      "name": "Noodzakelijk (Altijd actief)"
+    },
+    "functional": {
+      "name": "Functioneel"
+    },
+    "analytics": {
+      "name": "Analytisch"
+    },
+    "marketing": {
+      "name": "Marketing"
+    }
+  }
 }

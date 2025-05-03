@@ -55,6 +55,7 @@
     "freeToUse": "Gratuit, sans inscription requise. Transformez vos images en quelques secondes !"
   },
   "tool": {
+    "maxFiles": "Limite maximale de fichiers atteinte. Vous pouvez télécharger jusqu'à 15 fichiers à la fois.",
     "fileArea": "Zone de téléchargement de fichiers",
     "inputFile": "Entrée de fichier",
     "drop": "Déposez les fichiers image ici",
@@ -663,5 +664,28 @@
       "heading": "Les 10 meilleurs formats d'image pour votre site web : Un guide complet",
       "url": "top-10-image-formats-for-website"
     }
-  ]
+  ],
+  "cookieBanner": {
+    "title": "Préférences de cookies",
+    "description": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. Veuillez sélectionner vos préférences ci-dessous.",
+    "legend": "Préférences de cookies",
+    "savePreferences": "Enregistrer les préférences",
+    "acceptAll": "Tout accepter",
+    "savePreferencesAriaLabel": "Enregistrer les préférences de cookies",
+    "acceptAllAriaLabel": "Accepter tous les cookies"
+  },
+  "cookiePreferences": {
+    "necessary": {
+      "name": "Nécessaires (Toujours actifs)"
+    },
+    "functional": {
+      "name": "Fonctionnels"
+    },
+    "analytics": {
+      "name": "Analytiques"
+    },
+    "marketing": {
+      "name": "Marketing"
+    }
+  }
 }

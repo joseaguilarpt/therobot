@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from "react";
 import "./InputSelect.scss";
-import useOutsideClick from '../../utils/useOutsideClick';
-import Icon from '../Icon/Icon';
+import useOutsideClick from "../../utils/useOutsideClick";
+import Icon from "../Icon/Icon";
 
 interface Option {
   id: number;
@@ -68,9 +68,16 @@ const InputSelect: React.FC<InputSelectProps> = ({
     buttonRef.current?.focus();
   };
 
+  const handleOptionKeyDown = (event: React.KeyboardEvent, value: string) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleOptionClick(value);
+    }
+  };
+
   const handleKeyDown = (event: React.KeyboardEvent) => {
     switch (event.key) {
-      case 'ArrowDown':
+      case "ArrowDown":
         event.preventDefault();
         if (!isOpen) {
           setIsOpen(true);
@@ -79,17 +86,19 @@ const InputSelect: React.FC<InputSelectProps> = ({
           setFocusedIndex((prevIndex) => (prevIndex + 1) % options.length);
         }
         break;
-      case 'ArrowUp':
+      case "ArrowUp":
         event.preventDefault();
         if (!isOpen) {
           setIsOpen(true);
           setFocusedIndex(options.length - 1);
         } else {
-          setFocusedIndex((prevIndex) => (prevIndex - 1 + options.length) % options.length);
+          setFocusedIndex(
+            (prevIndex) => (prevIndex - 1 + options.length) % options.length
+          );
         }
         break;
-      case 'Enter':
-      case ' ':
+      case "Enter":
+      case " ":
         event.preventDefault();
         if (isOpen && focusedIndex !== -1) {
           handleOptionClick(options[focusedIndex].value);
@@ -97,7 +106,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
           setIsOpen(true);
         }
         break;
-      case 'Escape':
+      case "Escape":
         setIsOpen(false);
         setFocusedIndex(-1);
         buttonRef.current?.focus();
@@ -107,7 +116,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
 
   useEffect(() => {
     if (isOpen && focusedIndex !== -1) {
-      optionsRef.current[focusedIndex]?.scrollIntoView({ block: 'nearest' });
+      optionsRef.current[focusedIndex]?.scrollIntoView({ block: "nearest" });
     }
   }, [focusedIndex, isOpen]);
 
@@ -116,10 +125,10 @@ const InputSelect: React.FC<InputSelectProps> = ({
 
   return (
     <div className={`input-select ${className}`} ref={selectRef}>
-      <label 
-        id={`${uniqueId}-label`} 
+      <label
+        id={`${uniqueId}-label`}
         htmlFor={`${uniqueId}-button`}
-        className={hideLabel ? 'visually-hidden' : ''}
+        className={hideLabel ? "visually-hidden" : ""}
       >
         {label}
       </label>
@@ -134,7 +143,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
       >
         {selected}
         <span className="input-select__arrow" aria-hidden="true">
-          <Icon size='small' icon='FaChevronDown' />
+          <Icon size="small" icon="FaChevronDown" />
         </span>
       </button>
       {isOpen && (
@@ -147,13 +156,17 @@ const InputSelect: React.FC<InputSelectProps> = ({
           {options.map((option, index) => (
             <li
               key={option.id}
-              ref={el => optionsRef.current[index] = el}
+              ref={(el) => (optionsRef.current[index] = el)}
               id={`${uniqueId}-option-${option.value}`}
               role="option"
               aria-selected={option.value === selectedOption}
-              className={`input-select__option ${index === focusedIndex ? 'focused' : ''}`}
+              className={`input-select__option ${
+                index === focusedIndex ? "focused" : ""
+              }`}
               onClick={() => handleOptionClick(option.value)}
+              onKeyDown={(e) => handleOptionKeyDown(e, option.value)}
               onMouseEnter={() => setFocusedIndex(index)}
+              tabIndex={0}
             >
               {option.label}
             </li>

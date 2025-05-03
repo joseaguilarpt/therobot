@@ -1,12 +1,12 @@
-import React, { createContext, useState, useContext, ReactNode } from "react";
-import HCaptcha from "../ui/Catpcha/Catpcha";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
+import React, { createContext, useState, useContext, ReactNode, useRef, useEffect } from "react";
 
 interface HCaptchaContextType {
-  captchaRef: any;
-  setToken: any;
+  captchaRef: React.RefObject<HCaptcha>;
+  setToken: React.Dispatch<React.SetStateAction<string | null>>;
   token: string | null;
-  onSuccess: (token: string, key: string) => void;
-  onError: (token: string) => void;
+  onSuccess: (token: string) => void;
+  onError: () => void;
 }
 
 const HCaptchaContext = createContext<HCaptchaContextType | undefined>(
@@ -14,19 +14,21 @@ const HCaptchaContext = createContext<HCaptchaContextType | undefined>(
 );
 
 export function HCaptchaProvider({ children }: { children: ReactNode }) {
-  const [token, setToken] = useState(null);
-  const captchaRef = React.useRef<HCaptcha>(null);
+  const [token, setToken] = useState<string | null>(null);
+  const captchaRef = useRef<HCaptcha>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    const currentCaptchaRef = captchaRef.current;
     return () => {
-      if (captchaRef.current) {
-        captchaRef.current.resetCaptcha();
+      if (currentCaptchaRef) {
+        currentCaptchaRef.resetCaptcha();
       }
     };
   }, []);
 
-  const onSuccess = (value: string, key: string) => setToken(value);
-  const onError = (value: string) => setToken(null);
+  const onSuccess = (token: string) => setToken(token);
+  const onError = () => setToken(null);
+
   return (
     <HCaptchaContext.Provider
       value={{

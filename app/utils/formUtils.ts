@@ -5,14 +5,27 @@ import { useTranslation } from "react-i18next";
 import { useHCaptcha } from "~/context/HCaptchaContext";
 import { useTheme } from "~/context/ThemeContext";
 import { validateEmailFormat } from "~/ui/ShareButton/ShareButton";
+import { trackClick } from "./analytics";
 
-export function useForm(data: any) {
-  const { t } = useTranslation("common");
+interface ContactFormData {
+  name: string;
+  phone: string;
+  email: string;
+  comments: string;
+}
+
+export function useForm(data: { contactError: boolean; contactEmailSent: boolean; }) {
+  const { t, i18n } = useTranslation("common");
   const { showSnackbar } = useTheme();
   const { captchaRef } = useHCaptcha();
   const loaderData = useLoaderData();
   const [isPending, setIsPending] = React.useState(false);
-  const [contactFormData, setContactForm] = React.useState({});
+  const [contactFormData, setContactForm] = React.useState<ContactFormData>({
+    name: "",
+    phone: "",
+    email: "",
+    comments: ""
+  });
 
   const submit = useSubmit();
 
@@ -21,25 +34,28 @@ export function useForm(data: any) {
       showSnackbar(t("ui.emailError"), "error");
       setIsPending(false);
     }
-  }, [data?.contactError]);
+  }, [data?.contactError, showSnackbar, t]);
 
   React.useEffect(() => {
     if (data?.contactEmailSent) {
       showSnackbar(t("ui.contactEmailSent"), "success");
       setIsPending(false);
-      setContactForm({});
+      setContactForm({
+        name: "",
+        phone: "",
+        email: "",
+        comments: ""
+      });
     }
-  }, [data?.contactEmailSent]);
+  }, [data?.contactEmailSent, showSnackbar, t]);
 
-  const onFormSubmit = async (p: any) => {
-    let currentToken = null;
+  const onFormSubmit = async (p: ContactFormData) => {
     const formData = new FormData();
 
     if (captchaRef.current) {
       const { response } = await captchaRef.current.execute({ async: true });
 
       if (response) {
-        currentToken = response;
         formData.set("h-captcha-response", response);
       } else {
         showSnackbar(t("errorBoundary.title"), "error");
@@ -75,11 +91,16 @@ export function useForm(data: any) {
     }
     formData.append("type", "contact");
     setIsPending(true);
+
+    trackClick(
+      "Contact Form Interaction",
+      `Contact Us`,
+      `language: ${i18n.language}`
+    );
+
     submit(formData, {
       method: "post",
       encType: "multipart/form-data",
-      replace: false,
-      preventScrollReset: true,
     });
   };
   return {

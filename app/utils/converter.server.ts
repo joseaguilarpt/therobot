@@ -9,11 +9,15 @@ import {
   unstable_parseMultipartFormData,
 } from "@remix-run/node";
 import { jsPDF } from "jspdf";
-import * as pdfjsLib from 'pdfjs-dist';
-import path from 'path';
+import * as pdfjsLib from "pdfjs-dist";
+import path from "path";
+import { encode } from "bmp-js";
 
 // Set up the worker source
-const pdfjsWorker = path.join(process.cwd(), 'node_modules/pdfjs-dist/build/pdf.worker.mjs');
+const pdfjsWorker = path.join(
+  process.cwd(),
+  "node_modules/pdfjs-dist/build/pdf.worker.mjs"
+);
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 export async function convertPngToSvgBase64(
@@ -70,9 +74,22 @@ export const convertToSvg = async (files: File[], format: string) => {
 export const convertToOtherFormat = async (files: File[], format: string) => {
   return await Promise.all(
     files.map(async (file) => {
-      const buffer = await sharp(await file.arrayBuffer())
-        [format]()
-        .toBuffer();
+      let buffer;
+      if (format.toLowerCase() === "bmp") {
+        const rawBuffer = await sharp(await file.arrayBuffer())
+          .raw()
+          .toBuffer({ resolveWithObject: true });
+
+        const bmpData = encode({
+          data: rawBuffer.data,
+          width: rawBuffer.info.width,
+          height: rawBuffer.info.height,
+        });
+        buffer = bmpData.data;
+      } else {
+        // For other formats, use Sharp as before
+        buffer = await sharp(await file.arrayBuffer())[format]().toBuffer();
+      }
 
       const convertedFileName = file.name.replace(/\.[^/.]+$/, `.${format}`);
       return {
@@ -83,15 +100,18 @@ export const convertToOtherFormat = async (files: File[], format: string) => {
     })
   );
 };
-
 interface PdfInfo {
   fileName: string;
   fileSize: number;
   fileUrl: string;
 }
 
+interface ImageFile extends File {
+  stream: () => ReadableStream;
+}
+
 // Helper function to convert File to Buffer
-async function fileToBuffer(file: any): Promise<Buffer> {
+async function fileToBuffer(file: ImageFile): Promise<Buffer> {
   const readable = Readable.from(file.stream());
   const chunks = [];
   for await (const chunk of readable) {
@@ -101,13 +121,13 @@ async function fileToBuffer(file: any): Promise<Buffer> {
 }
 
 export const convertImagesToPdf = async (
-  imageFiles: any[],
+  imageFiles: ImageFile[],
   separatePdfs: boolean = false
 ): Promise<PdfInfo[]> => {
   const results: PdfInfo[] = [];
 
   const processSingleImage = async (
-    file: any,
+    file: ImageFile,
     pdfDoc: jsPDF
   ): Promise<void> => {
     const buffer = await fileToBuffer(file);

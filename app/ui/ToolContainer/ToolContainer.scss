@@ -1,3 +1,5 @@
+@use '../../styles/media-queries' as *;
+
 .tool-container {
     background: var(--background-color);
     background-size: 400% 400%;
@@ -13,6 +15,12 @@
 		}
 		.text {
 			line-height: 1.6;
+		}
+		.conversion-heading-bottom, .hero-description {
+			display: none;
+			@include media-query(medium) {
+				display: block;
+			}
 		}
 	}
 }

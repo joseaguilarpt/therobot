@@ -1,6 +1,6 @@
 import { LoaderFunction } from "@remix-run/node";
 
-export const loader: LoaderFunction = async ({ request }) => {
+export const loader: LoaderFunction = async () => {
   const robotsTxt = `
 # Global rules
 User-agent: *

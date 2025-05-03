@@ -56,6 +56,7 @@
     "latestPostsDescription": "Discover our most recent articles and stay up-to-date"
   },
   "tool": {
+    "maxFiles": "Maximum file limit reached. You can upload up to 15 files at a time.",
     "fileArea": "File upload area",
     "inputFile": "File input",
     "drop": "Drop image files here",
@@ -656,5 +657,28 @@
       "heading": "Top 10 Image Formats for Your Website: A Comprehensive Guide",
       "url": "top-10-image-formats-for-website"
     }
-  ]
+  ],
+  "cookieBanner": {
+    "title": "Cookie Preferences",
+    "description": "We use cookies to enhance your browsing experience and analyze our traffic. Please select your preferences below.",
+    "legend": "Cookie Preferences",
+    "savePreferences": "Save Preferences",
+    "acceptAll": "Accept All",
+    "savePreferencesAriaLabel": "Save cookie preferences",
+    "acceptAllAriaLabel": "Accept all cookies"
+  },
+  "cookiePreferences": {
+    "necessary": {
+      "name": "Necessary (Always active)"
+    },
+    "functional": {
+      "name": "Functional"
+    },
+    "analytics": {
+      "name": "Analytics"
+    },
+    "marketing": {
+      "name": "Marketing"
+    }
+  }
 }

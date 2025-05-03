@@ -10,18 +10,17 @@ import Editor from "./Editor/Editor";
 import ShareSocial from "./ShareBlog/ShareBlog";
 import TableOfContents from "./TableOfContent/TableOfContent";
 import EditorCard from "./EditorCard/EditorCard";
-import { COMPANY_OBJECTIVES } from "~/constants/content";
 import GridItem from "../Grid/GridItem";
 import Card from "../Card/Card";
 import { useLocation } from "@remix-run/react";
 import Button from "../Button/Button";
-import { blogArticlesArray } from "~/constants/blog/data";
+import { ArticleType, blogArticlesArray } from "~/constants/blog/data";
 
 export default function BlogPage({
   data,
   blogId,
 }: {
-  data: any;
+  data: ArticleType;
   blogId: string;
 }) {
   const { t, i18n } = useTranslation(blogId);
@@ -32,12 +31,6 @@ export default function BlogPage({
 
   const articleKeys = data.article;
 
-  const parsedObjectives = COMPANY_OBJECTIVES.map((item) => ({
-    ...item,
-    title: tOther(item.title),
-    content: tOther(item.content),
-  }));
-
   const tableOfContentData = Object.values(articleKeys.content).map((item) => ({
     level: 1,
     id: t(item.id),
@@ -45,7 +38,15 @@ export default function BlogPage({
   }));
 
   return (
-    <div className="blog-page-container">
+    <div
+      className="blog-page-container"
+      role="main"
+      aria-labelledby="blog-title"
+      lang={i18n.language}
+    >
+      <a href="#blog-content" className="visually-hidden">
+        Skip to main content
+      </a>
       <ScrollProgressBar />
       <ContentContainer>
         <GridContainer justifyContent="flex-start" className="u-pb3">
@@ -76,7 +77,13 @@ export default function BlogPage({
             </Text>
           </div>
         </div>
-        <Heading level={1} appearance={4} underline className="u-mb5">
+        <Heading
+          level={1}
+          appearance={4}
+          underline
+          className="u-mb5"
+          id="blog-title"
+        >
           {t(articleKeys.heading)}
         </Heading>
         <Editor
@@ -94,6 +101,7 @@ export default function BlogPage({
             url={currentURL}
             title={tOther("blog.share")}
             description={t(articleKeys.resume)}
+            aria-label={tOther("blog.shareAriaLabel")}
           />
         </div>
       </ContentContainer>
@@ -103,11 +111,15 @@ export default function BlogPage({
             <img
               src={t(articleKeys.image.url)}
               alt={t(articleKeys.image.alt)}
+              loading="lazy"
             />
           </div>
-          <div className="u-pt4">
+          <nav aria-labelledby="toc-heading" className="u-pt4">
+            <h2 id="toc-heading" className="visually-hidden">
+              Table of Contents
+            </h2>
             <TableOfContents items={tableOfContentData} />
-          </div>
+          </nav>
         </ContentContainer>
         <ContentContainer className="blog-content">
           {articleKeys.content.map((item) => (
@@ -123,12 +135,18 @@ export default function BlogPage({
               </Heading>
               {item.img && (
                 <div className="u-pt2 u-pb2 content-image">
-                  <img src={t(item.img)} alt={t(item.altText)} />
+                  <img
+                    src={t(item.img)}
+                    alt={t(item.altText)}
+                    width="100%"
+                    height="auto"
+                    loading="lazy"
+                  />
                 </div>
               )}
-              {item.paragraphs?.map((p, index) => (
+              {item.paragraphs?.map((p: string, index: number) => (
                 <Text key={index} className="u-pt2">
-                  {t(p)}:
+                  {t(p)}
                 </Text>
               ))}
               {item.pros && (
@@ -137,7 +155,7 @@ export default function BlogPage({
                     {t(articleKeys.prosTitle)}
                   </Text>
                   <ul>
-                    {item.pros?.map((pro, index) => (
+                    {item.pros?.map((pro: string, index: number) => (
                       <li key={`${pro}-${index}`}>
                         <Text>{t(pro)}</Text>
                       </li>
@@ -151,7 +169,7 @@ export default function BlogPage({
                     {t(articleKeys.consTitle)}
                   </Text>
                   <ul>
-                    {item.cons?.map((con, index) => (
+                    {item.cons?.map((con: string, index: number) => (
                       <li key={`${con}-${index}`}>
                         <Text>{t(con)}</Text>
                       </li>
@@ -179,9 +197,10 @@ export default function BlogPage({
               {tOther("hero.freeToUse")}{" "}
             </Text>
             <Button
-              target={"blank"}
+              target="_blank"
               size="large"
               href="https://easyconvertimage.com"
+              rel="noopener noreferrer"
             >
               {tOther("goNow")} Easy Convert Image
             </Button>

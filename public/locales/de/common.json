@@ -54,6 +54,7 @@
     "freeToUse": "Kostenlos nutzbar, keine Registrierung erforderlich. Transformieren Sie Ihre Bilder in Sekundenschnelle!"
   },
   "tool": {
+    "maxFiles": "Maximale Dateianzahl erreicht. Sie können bis zu 15 Dateien gleichzeitig hochladen.",
     "fileArea": "Datei-Upload-Bereich",
     "inputFile": "Dateieingabe",
     "drop": "Bilddateien hier ablegen",
@@ -658,5 +659,28 @@
       "heading": "Die 10 besten Bildformate für Ihre Website: Ein umfassender Leitfaden",
       "url": "top-10-image-formats-for-website"
     }
-  ]
+  ],
+  "cookieBanner": {
+    "title": "Cookie-Einstellungen",
+    "description": "Wir verwenden Cookies, um Ihr Browsing-Erlebnis zu verbessern und unseren Verkehr zu analysieren. Bitte wählen Sie unten Ihre Präferenzen aus.",
+    "legend": "Cookie-Einstellungen",
+    "savePreferences": "Einstellungen speichern",
+    "acceptAll": "Alle akzeptieren",
+    "savePreferencesAriaLabel": "Cookie-Einstellungen speichern",
+    "acceptAllAriaLabel": "Alle Cookies akzeptieren"
+  },
+  "cookiePreferences": {
+    "necessary": {
+      "name": "Notwendig (Immer aktiv)"
+    },
+    "functional": {
+      "name": "Funktional"
+    },
+    "analytics": {
+      "name": "Analyse"
+    },
+    "marketing": {
+      "name": "Marketing"
+    }
+  }
 }

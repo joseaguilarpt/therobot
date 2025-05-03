@@ -1,15 +1,9 @@
-// In app/routes/convert.tsx
-import { LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { LoaderFunctionArgs , json } from "@remix-run/node";
 import BackToTop from "~/ui/BackToTop/BackToTop";
-import Footer from "~/ui/Footer/Footer";
-import { FOOTER } from "~/constants/content";
 import Navbar from "~/ui/Navbar/Navbar";
-import ToolContainer from "~/ui/ToolContainer/ToolContainer";
 import Heading from "~/ui/Heading/Heading";
 import type { MetaFunction } from "@remix-run/node";
 import { createMeta } from "~/utils/meta";
-import { POPULAR_CONVERSIONS } from "~/utils/conversions";
 import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
 import GridContainer from "~/ui/Grid/Grid";
@@ -61,21 +55,6 @@ export const meta: MetaFunction = createMeta({
 
 export default function ErrorPage() {
   const { t } = useTranslation("common");
-  const footerData = { ...FOOTER };
-
-  footerData.sections = [
-    ...footerData.sections,
-    {
-      title: t("footer.otherTools.heading"),
-      links: POPULAR_CONVERSIONS?.slice(0, 7)?.map((item) => ({
-        name: t("services.itemTitle", {
-          sourceFormat: item.from,
-          targetFormat: item.to,
-        }),
-        url: item.href,
-      })),
-    },
-  ];
   return (
     <>
       <Navbar autoScrolled />

@@ -24,7 +24,6 @@ interface ButtonGroupProps {
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({
   options,
-  ariaLabel,
   label,
   id,
   isLabelVisible = true,

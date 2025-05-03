@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import "./Navbar.scss";
-import { Link, useLocation } from "@remix-run/react";
+import { useLocation } from "@remix-run/react";
 import ContentContainer from "../ContentContainer/ContentContainer";
 import GridContainer from "../Grid/Grid";
 import GridItem from "../Grid/GridItem";
@@ -76,40 +76,51 @@ const Navbar = ({
   }, []);
 
   useEffect(() => {
+    const menuElement = menuRef.current;
+  
     const handleKeyDown = (event: KeyboardEvent) => {
-      const menuItems = menuRef.current?.querySelectorAll('[role="menuitem"]');
+      const menuItems = menuElement?.querySelectorAll('[role="menuitem"]');
       if (!menuItems) return;
-
-      const currentIndex = Array.from(menuItems).findIndex(
+  
+      const menuItemsArray = Array.from(menuItems);
+      const currentIndex = menuItemsArray.findIndex(
         (item) => item === document.activeElement
       );
-
+  
       switch (event.key) {
         case "ArrowRight":
         case "ArrowDown":
           event.preventDefault();
-          if (currentIndex < menuItems.length - 1) {
-            (menuItems[currentIndex + 1] as HTMLElement).focus();
+          if (currentIndex < menuItemsArray.length - 1) {
+            (menuItemsArray[currentIndex + 1] as HTMLElement).focus();
           } else {
-            (menuItems[0] as HTMLElement).focus();
+            (menuItemsArray[0] as HTMLElement).focus();
           }
           break;
         case "ArrowLeft":
         case "ArrowUp":
           event.preventDefault();
           if (currentIndex > 0) {
-            (menuItems[currentIndex - 1] as HTMLElement).focus();
+            (menuItemsArray[currentIndex - 1] as HTMLElement).focus();
           } else {
-            (menuItems[menuItems.length - 1] as HTMLElement).focus();
+            (menuItemsArray[menuItemsArray.length - 1] as HTMLElement).focus();
           }
+          break;
+        case "Home":
+          event.preventDefault();
+          (menuItemsArray[0] as HTMLElement).focus();
+          break;
+        case "End":
+          event.preventDefault();
+          (menuItemsArray[menuItemsArray.length - 1] as HTMLElement).focus();
           break;
       }
     };
-
-    menuRef.current?.addEventListener("keydown", handleKeyDown);
-
+  
+    menuElement?.addEventListener("keydown", handleKeyDown);
+  
     return () => {
-      menuRef.current?.removeEventListener("keydown", handleKeyDown);
+      menuElement?.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
@@ -178,7 +189,7 @@ const Navbar = ({
                 onClick={() => setIsOpen(true)}
                 aria-expanded={isOpen}
                 aria-controls="mobile-menu"
-                aria-label={t("openMobileMenu")}
+                ariaLabel={t("openMobileMenu")}
               >
                 <Icon
                   icon="FaBars"

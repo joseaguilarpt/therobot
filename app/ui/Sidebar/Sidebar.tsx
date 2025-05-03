@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useRef, useCallback } from "react";
 import { IconType } from "react-icons";
 import * as Icons from "react-icons/fa";
 import classNames from "classnames";
@@ -19,7 +19,7 @@ export interface SidebarProps {
   className?: string;
   children?: ReactNode;
   id?: string;
-  label: string; // Add a label prop for accessibility
+  label: string;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({
@@ -38,16 +38,16 @@ const Sidebar: React.FC<SidebarProps> = ({
 
   const { t } = useTranslation();
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
     if (
       sidebarRef.current &&
       !sidebarRef.current.contains(event.target as Node)
     ) {
       onClose();
     }
-  };
+  }, [onClose]);
 
-  const handleKeyDown = (event: KeyboardEvent) => {
+  const handleKeyDown = useCallback((event: KeyboardEvent) => {
     if (event.key === "Escape") {
       onClose();
     }
@@ -66,7 +66,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         lastFocusableElement.current?.focus();
       }
     }
-  };
+  }, [onClose]);
 
   useEffect(() => {
     if (isOpen) {
@@ -86,7 +86,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [isOpen]);
+  }, [isOpen, handleClickOutside, handleKeyDown]);
 
   useEffect(() => {
     if (sidebarRef.current) {

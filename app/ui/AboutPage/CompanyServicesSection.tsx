@@ -4,10 +4,10 @@ import GridItem from "~/ui/Grid/GridItem";
 import Heading from "~/ui/Heading/Heading";
 import Text from "~/ui/Text/Text";
 import Card from "~/ui/Card/Card";
-import { POPULAR_CONVERSIONS } from "~/utils/conversions";
+import { ConversionService, POPULAR_CONVERSIONS } from "~/utils/conversions";
 import { useTranslation } from "react-i18next";
 
-export default function CompanyServicesSection({ list = POPULAR_CONVERSIONS, heading = 'Our Tools' }) {
+export default function CompanyServicesSection({ list = POPULAR_CONVERSIONS }: { list: ConversionService[] }) {
 
   const data = list.filter((item) => item?.from?.toLowerCase() !== 'pdf');
   const { t } = useTranslation();

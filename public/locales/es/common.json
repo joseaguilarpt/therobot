@@ -56,6 +56,7 @@
     "freeToUse": "Gratis de usar, sin registro requerido. ¡Transforma tus imágenes en segundos!"
   },
   "tool": {
+    "maxFiles": "Límite máximo de archivos alcanzado. Puedes subir hasta 15 archivos a la vez.",
     "fileArea": "Área de carga de archivos",
     "inputFile": "Entrada de archivo",
     "drop": "Suelta los archivos de imagen aquí",
@@ -673,5 +674,28 @@
       "heading": "Los 10 mejores formatos de imagen para tu sitio web: Una guía completa",
       "url": "top-10-image-formats-for-website"
     }
-  ]
+  ],
+  "cookieBanner": {
+    "title": "Preferencias de cookies",
+    "description": "Utilizamos cookies para mejorar su experiencia de navegación y analizar nuestro tráfico. Por favor, seleccione sus preferencias a continuación.",
+    "legend": "Preferencias de cookies",
+    "savePreferences": "Guardar preferencias",
+    "acceptAll": "Aceptar todo",
+    "savePreferencesAriaLabel": "Guardar preferencias de cookies",
+    "acceptAllAriaLabel": "Aceptar todas las cookies"
+  },
+  "cookiePreferences": {
+    "necessary": {
+      "name": "Necesarias (Siempre activas)"
+    },
+    "functional": {
+      "name": "Funcionales"
+    },
+    "analytics": {
+      "name": "Analíticas"
+    },
+    "marketing": {
+      "name": "Marketing"
+    }
+  }
 }

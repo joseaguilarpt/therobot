@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import ReactDOM from "react-dom";
 import classNames from "classnames";
 import "./Modal.scss";
@@ -10,7 +10,7 @@ interface ModalProps {
   children: React.ReactNode;
   size?: "sm" | "md" | "lg" | "xl" | "xxl" | "full";
   className?: string;
-  title: string; // Add a required title prop for accessibility
+  title: string;
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, size = 'full', className = '', title }) => {
@@ -22,6 +22,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, size = 'full',
     setMounted(true);
     return () => setMounted(false);
   }, []);
+
+  const handleOverlayClick = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) {
+      onClose();
+    }
+  }, [onClose]);
+
+  const handleKeyDown = useCallback((event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Escape") {
+      onClose();
+    }
+  }, [onClose]);
 
   useEffect(() => {
     if (isOpen && mounted) {
@@ -56,26 +68,22 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, size = 'full',
     }
   }, [isOpen, mounted]);
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === "Escape") {
-      onClose();
-    }
-  };
-
   if (!isOpen || !mounted) return null;
 
   return ReactDOM.createPortal(
+    // eslint-disable-next-line
     <div 
       className={classNames("modal-overlay", className)} 
       role="dialog" 
       aria-modal="true" 
       aria-labelledby="modal-title"
+      onClick={handleOverlayClick}
+      onKeyDown={handleKeyDown}
     >
       <div
         className={classNames("modal-content", size)}
         tabIndex={-1}
         ref={modalRef}
-        onKeyDown={handleKeyDown}
       >
         <h2 id="modal-title" className="sr-only">{title}</h2>
         <button 

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect, useCallback, useMemo } from "react";
 
 type Theme = "light-mode" | "dark-mode";
 
@@ -21,11 +21,11 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   const [theme, setTheme] = useState<Theme>("light-mode");
   const [snackbar, setSnackbar] = useState({ message: "", type: "" });
 
-  const showSnackbar = React.useCallback((message: string, type: string) => {
+  const showSnackbar = useCallback((message: string, type: string) => {
     setSnackbar({ message, type });
   }, []);
 
-  const hideSnackbar = React.useCallback(() => {
+  const hideSnackbar = useCallback(() => {
     setSnackbar({ message: "", type: "" });
   }, []);
 
@@ -44,14 +44,16 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     }
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light-mode" ? "dark-mode" : "light-mode";
-    setTheme(newTheme);
-    document.body.className = newTheme;
-    localStorage.setItem("theme", newTheme);
-  };
+  const toggleTheme = useCallback(() => {
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "light-mode" ? "dark-mode" : "light-mode";
+      document.body.className = newTheme;
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
+  }, []);
 
-  const value = React.useMemo(
+  const value = useMemo(
     () => ({
       theme,
       toggleTheme,
@@ -59,7 +61,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
       showSnackbar,
       hideSnackbar,
     }),
-    [snackbar, showSnackbar, hideSnackbar, theme, toggleTheme]
+    [theme, toggleTheme, snackbar, showSnackbar, hideSnackbar]
   );
 
   return (

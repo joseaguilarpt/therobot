@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation } from "@remix-run/react";
+import { useLocation } from "@remix-run/react";
 import InputSelect from "../InputSelect/InputSelect";
 import classNames from "classnames";
 
@@ -12,7 +12,6 @@ type Language = {
 
 const LanguageSwitcher = ({ keepScrolled }: { keepScrolled?: boolean }) => {
   const { i18n } = useTranslation();
-  const navigate = useNavigate();
   const location = useLocation();
 
   const { t } = useTranslation();
