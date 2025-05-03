@@ -128,7 +128,6 @@ const data = {
           "article.content.5.paragraphs.1",
           "article.content.5.paragraphs.2",
           "article.content.5.paragraphs.3",
-          "article.content.5.paragraphs.4",
         ],
       },
       {
