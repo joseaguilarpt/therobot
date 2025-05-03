@@ -36,8 +36,27 @@ interface LoaderData {
 export function useFileConversion(selectedFormat: string) {
   const { t, i18n } = useTranslation("common");
   const params = useParams();
+  const [status, setStatus] = useState({
+    state: "idle",
+    type: "",
+  });
   const loaderData = useLoaderData<LoaderData>();
   const data = useActionData<ActionData>();
+
+  useEffect(() => {
+    if (data?.emailSent) {
+      setStatus({
+        state: "success",
+        type: "emailSent",
+      });
+      setTimeout(() => {
+        setStatus({
+          state: "idle",
+          type: "",
+        });
+      }, 2000);
+    }
+  }, [data]);
 
   const { showSnackbar } = useTheme();
   const submit = useSubmit();
@@ -60,11 +79,11 @@ export function useFileConversion(selectedFormat: string) {
   }, [data?.error, showSnackbar]);
 
   useEffect(() => {
-    if (data?.emailSent) {
+    if (status.type === "emailSent") {
       showSnackbar(t("ui.emailSuccess"), "success");
       setIsPending(false);
     }
-  }, [data?.emailSent, showSnackbar, t]);
+  }, [status?.type, showSnackbar, t]);
 
   useEffect(() => {
     if (data?.convertedFiles) {
@@ -125,13 +144,13 @@ export function useFileConversion(selectedFormat: string) {
     (file: ConvertedFile) => {
       if (file.fileUrl) {
         downloadBlob(file.fileUrl, file.fileName);
-  
+
         trackClick(
           "Files Interaction",
           `Download File`,
           `language: ${i18n.language} - format from: ${params?.targetFormat} - format to: : ${params?.sourceFormat}`
         );
-  
+
         showSnackbar(t("ui.downloadSuccess"), "success");
       }
     },
@@ -142,7 +161,7 @@ export function useFileConversion(selectedFormat: string) {
     (index: number) => {
       setConvertedFiles((prevFiles) => prevFiles.filter((_, i) => i !== index));
       showSnackbar(t("ui.fileRemoveSuccess"), "info");
-  
+
       trackClick(
         "Files Interaction",
         `Remove File`,
@@ -155,13 +174,19 @@ export function useFileConversion(selectedFormat: string) {
   const handleRemoveAll = useCallback(() => {
     showSnackbar(t("ui.filesRemoveSuccess"), "info");
     setConvertedFiles([]);
-  
+
     trackClick(
       "Files Interaction",
       `Remove all Files`,
       `language: ${i18n.language} - format from: ${params?.targetFormat} - format to: : ${params?.sourceFormat}`
     );
-  }, [showSnackbar, t, i18n.language, params?.sourceFormat, params?.targetFormat]);
+  }, [
+    showSnackbar,
+    t,
+    i18n.language,
+    params?.sourceFormat,
+    params?.targetFormat,
+  ]);
 
   const handleEmailShare = useCallback(
     async (file: Blob, email: string) => {

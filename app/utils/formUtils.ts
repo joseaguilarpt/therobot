@@ -102,6 +102,9 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
       method: "post",
       encType: "multipart/form-data",
     });
+    setTimeout(() => {
+      setIsPending(false)
+    }, 5000)
   };
   return {
     onFormSubmit,
