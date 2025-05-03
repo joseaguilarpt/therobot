@@ -558,8 +558,8 @@
     display: none;
   }
 }
-.navbar__menu--mobile svg {
-  fill: var(--default-color);
+.navbar__menu--mobile .icon--medium {
+  color: var(--default-color);
 }
 
 .navbar__select--mobile {

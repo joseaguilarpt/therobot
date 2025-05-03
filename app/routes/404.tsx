@@ -70,7 +70,7 @@ export default function NotFound() {
               alignItems="center"
               direction="column"
             >
-              <Icon color="secondary" size="xlarge" icon="FaSadTear" />
+              <Icon color="secondary" size="xlarge" icon="sentiment_very_dissatisfied" />
 
               <Heading level={1} underline align="center" appearance={1}>
                 404: {t("notFound.title")}

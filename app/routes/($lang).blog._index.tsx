@@ -97,7 +97,7 @@ export default function Blog() {
             <Breadcrumb
               paths={[
                 {
-                  icon: "FaHome",
+                  icon: "home",
                   label: t("nav.home"),
                   href: `/${i18n.language ?? ""}`,
                 },
@@ -140,8 +140,8 @@ export default function Blog() {
         {...FOOTER}
         backgroundImageUrl={""}
         socialNetworks={[
-          { label: "Facebook", icon: "FaFacebook", href: "#" },
-          { label: "Twitter", icon: "FaTwitter", href: "#" },
+          { label: "Facebook", icon: "facebook", href: "#" },
+          { label: "Twitter", icon: "X", href: "#" },
         ]}
       />
     </>

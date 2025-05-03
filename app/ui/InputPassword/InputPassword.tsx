@@ -34,9 +34,9 @@ const PasswordInput: React.ForwardRefRenderFunction<
           aria-label={showPassword ? t("Hide password") : t("Show password")}
         >
           {showPassword ? (
-            <Icon size="small" icon="FaEyeSlash" />
+            <Icon size="small" icon="visibility_off" />
           ) : (
-            <Icon size="small" icon="FaEye" />
+            <Icon size="small" icon="visibility" />
           )}
         </button>
       )}

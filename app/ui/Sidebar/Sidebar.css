@@ -66,9 +66,10 @@
 .sidebar__link:hover {
   background-color: var(--sidebar-item-hover-color, #e9ecef);
 }
-.sidebar__icon {
+.sidebar .icon--medium {
   margin-right: var(--spacing-small, 0.5rem);
   font-size: 1.25rem;
+  color: var(--default-color);
 }
 .sidebar__label {
   font-size: var(--font-size-base, 1rem);

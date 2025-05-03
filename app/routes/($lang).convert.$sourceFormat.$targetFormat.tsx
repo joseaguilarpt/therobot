@@ -122,8 +122,8 @@ export default function ConvertPageMultilanguage() {
         {...footerData}
         backgroundImageUrl={""}
         socialNetworks={[
-          { label: "Facebook", icon: "FaFacebook", href: "#" },
-          { label: "Twitter", icon: "FaTwitter", href: "#" },
+          { label: "Facebook", icon: "facebook", href: "#" },
+          { label: "Twitter", icon: "X", href: "#" },
         ]}
       />
     </>

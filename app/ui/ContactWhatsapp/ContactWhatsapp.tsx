@@ -33,7 +33,7 @@ const ContactWithWhatsapp: React.FC<ContactWithWhatsappProps> = ({
 
   return (
     <div className="contact-with-whatsapp">
-      <Button isDisabled={isDisabled} leftIcon="FaWhatsapp" appareance="primary" onClick={handleClick}>
+      <Button isDisabled={isDisabled} leftIcon="whatsapp" appareance="primary" onClick={handleClick}>
         {t("share.viaWhatsapp")}
       </Button>
     </div>

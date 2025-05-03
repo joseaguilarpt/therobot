@@ -4,37 +4,37 @@ export const COMPANY_OBJECTIVES_DESCRIPTION =
   export const COMPANY_OBJECTIVES = [
     {
       title: "companyObjectives.simplifyConversion.title",
-      icon: "FaHome",
+      icon: "home",
       content: "companyObjectives.simplifyConversion.content",
       imageUrl: "/img/simplify-conversion.jpg",
     },
     {
       title: "companyObjectives.accessibility.title",
-      icon: "FaInfo",
+      icon: "info",
       content: "companyObjectives.accessibility.content",
       imageUrl: "/img/accessibility.jpg",
     },
     {
       title: "companyObjectives.advancedTechnology.title",
-      icon: "FaEnvelope",
+      icon: "mail",
       content: "companyObjectives.advancedTechnology.content",
       imageUrl: "/img/advanced-technology.jpg",
     },
     {
       title: "companyObjectives.userPrivacy.title",
-      icon: "FaInfo",
+      icon: "info",
       content: "companyObjectives.userPrivacy.content",
       imageUrl: "/img/user-privacy.jpg",
     },
     {
       title: "companyObjectives.formatSupport.title",
-      icon: "FaBars",
+      icon: "menu",
       content: "companyObjectives.formatSupport.content",
       imageUrl: "/img/format-support.jpg",
     },
     {
       title: "companyObjectives.userFeedback.title",
-      icon: "FaInfo",
+      icon: "info",
       content: "companyObjectives.userFeedback.content",
       imageUrl: "/img/user-feedback.jpg",
     },
@@ -126,7 +126,6 @@ export const FOOTER = {
         { name: "footer.usefulInfo.option1.label", url: "footer.usefulInfo.option1.url" },
         { name: "footer.usefulInfo.option2.label", url: "footer.usefulInfo.option2.url" },
         { name: "footer.usefulInfo.option3.label", url: "footer.usefulInfo.option3.url" },
-        { name: "footer.usefulInfo.option4.label", url: "footer.usefulInfo.option4.url" },
       ],
     },
     {

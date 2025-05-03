@@ -57,7 +57,7 @@ const MenuDropdown: React.FC<{ menuItems: MenuItem[]; scrolled: boolean }> = ({
         ref={buttonRef}
         className={classNames("menu-dropdown__toggle")}
       >
-        <Icon icon="FaBars" color={!scrolled ? "success" : "primary"} size='medium' />
+        <Icon icon="menu" color={!scrolled ? "success" : "primary"} size='medium' />
       </button>
       <ul
         className={classNames("menu-dropdown__list", { open: isOpen })}

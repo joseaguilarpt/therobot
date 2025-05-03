@@ -166,7 +166,7 @@ const InputSelect: React.FC<InputSelectProps> = ({
       >
         {selected}
         <span className="input-select__arrow" aria-hidden="true">
-          <Icon size="small" icon="FaChevronDown" />
+          <Icon size="medium" color="success" icon="keyboard_arrow_down" />
         </span>
       </button>
       {isOpen && (

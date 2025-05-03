@@ -393,6 +393,9 @@
   cursor: pointer;
   width: 100%;
 }
+.input-select .icon--medium {
+  line-height: 0.5;
+}
 .input-select .visually-hidden {
   position: absolute;
   width: 1px;

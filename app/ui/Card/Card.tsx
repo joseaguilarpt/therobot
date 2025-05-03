@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = ({
     }
   );
 
-  const iconValue: IconType = icon ? t(icon) : "Fa500Px";
+  const iconValue: IconType = icon ? t(icon) : "leaderboard";
 
   // Create a unique ID for the card
   const cardId = `card-${id}`;

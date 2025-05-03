@@ -241,7 +241,7 @@ const Files: React.FC<FilesProps> = ({
                             })
                           }
                         >
-                          <Icon color="secondary" size="small" icon="FaImage" />
+                          <Icon color="secondary" size="small" icon="image" />
                         </Button>
                       </GridItem>
                     )}

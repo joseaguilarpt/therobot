@@ -248,7 +248,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
         <input type="hidden" name="actionType" value="uploadFiles" />
         {isDragging && !isLoading ? (
           <div className="drag-zone" aria-live="polite">
-            <Icon color="dark" size="large" icon="FaRegFolderOpen" />
+            <Icon color="dark" size="large" icon="folder_open" />
             <Heading level={4} appearance={6}>
               {t("tool.drop")}
             </Heading>
@@ -275,7 +275,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               )}
               {!isLoading && (
                 <>
-                  <Icon icon="FaUpload" size="large" aria-hidden="true" />{" "}
+                  <Icon icon="upload" size="large" aria-hidden="true" />{" "}
                   <Divider orientation="vertical" />{" "}
                   <Text align="center" size="large" color="white">
                     {existingFiles.length > 0

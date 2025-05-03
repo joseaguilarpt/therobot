@@ -77,9 +77,10 @@
     }
   }
 
-  &__icon {
+  .icon--medium {
     margin-right: var(--spacing-small, 0.5rem);
     font-size: 1.25rem;
+    color: var(--default-color);
   }
 
   &__label {

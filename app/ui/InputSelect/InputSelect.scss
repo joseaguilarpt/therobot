@@ -5,6 +5,10 @@
   cursor: pointer;
   width: 100%;
 
+  .icon--medium {
+    line-height: .5;
+  }
+
   .visually-hidden {
     position: absolute;
     width: 1px;

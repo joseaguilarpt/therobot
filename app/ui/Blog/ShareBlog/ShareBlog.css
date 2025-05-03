@@ -13,9 +13,8 @@
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
-.share-button .icon--medium {
-  padding-left: 4px;
-  font-size: 1.5rem;
+.share-button img {
+  max-width: 30px;
 }
 
 .share-button:hover {

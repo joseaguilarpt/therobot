@@ -105,7 +105,7 @@ export default function AboutPage() {
             <GridContainer justifyContent="center" className="u-pt3">
               <Breadcrumb
                 paths={[
-                  { icon: "FaHome", label: t("home"), href: `/${i18n.language ?? ''}` },
+                  { icon: "home", label: t("home"), href: `/${i18n.language ?? ''}` },
                   { label: t("about.about") },
                 ]}
               />
@@ -120,8 +120,8 @@ export default function AboutPage() {
         {...footerData}
         backgroundImageUrl={""}
         socialNetworks={[
-          { label: "Facebook", icon: "FaFacebook", href: "#" },
-          { label: "Twitter", icon: "FaTwitter", href: "#" },
+          { label: "Facebook", icon: "facebook", href: "#" },
+          { label: "Twitter", icon: "X", href: "#" },
         ]}
       />
     </>

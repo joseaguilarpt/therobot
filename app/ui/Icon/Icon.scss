@@ -1,65 +1,51 @@
 /* app/components/Icon.scss */
 @import '../../styles/theme';
 
-.icon {
-    &--primary {
-      color: var(--button-color);
-    }
-  
-    &--secondary {
-      color: var(--font-color);
-    }
-  
-    &--success {
-      color: var(--accent-color);
-    }
-  
-    &--danger {
-      color: #ff4d4f; /* Example color */
-    }
-  
-    &--warning {
-      color: #faad14; /* Example color */
-    }
-  
-    &--info {
-      color: #1890ff; /* Example color */
-    }
+@font-face {
+  font-family: 'Material Icons';
+  src: url('/fonts/MaterialIcons-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-    &--white {
-      color: $contrast-color-light; /* Example color */
-    }
-  
-    &--light {
-      color: var(--background-color);
-    }
-  
-    &--dark {
-      color: var(--nav-dropdown-background-color);
-    }
-  
-    &--xxsmall {
-      font-size: 0.5rem; /* Example size */
-    }
-  
-    &--xsmall {
-      font-size: 0.75rem; /* Example size */
-    }
-  
-    &--small {
-      font-size: 1rem; /* Example size */
-    }
-  
-    &--medium {
-      font-size: 2rem; /* Example size */
-    }
-  
-    &--large {
-      font-size: 3rem; /* Example size */
-    }
-  
-    &--xlarge {
-      font-size: 4rem; /* Example size */
-    }
-  }
-  
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.icon {
+  &--primary { color: var(--button-color); }
+  &--secondary { color: var(--font-color); }
+  &--success { color: var(--accent-color); }
+  &--danger { color: #ff4d4f; }
+  &--warning { color: #faad14; }
+  &--info { color: #1890ff; }
+  &--white { color: $contrast-color-light; }
+  &--light { color: var(--background-color); }
+  &--dark { color: var(--nav-dropdown-background-color); }
+
+  &--xxsmall { font-size: 0.5rem; }
+  &--xsmall { font-size: 0.75rem; }
+  &--small { font-size: 1rem; }
+  &--medium { font-size: 2rem; }
+  &--large { font-size: 3rem; }
+  &--xlarge { font-size: 4rem; }
+}

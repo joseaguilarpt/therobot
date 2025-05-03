@@ -43,7 +43,7 @@ const BackToTop = () => {
       title={t('ui.backToTop')}
       tabIndex={isVisible ? 0 : -1}
     >
-      <Icon icon='FaArrowUp' size='medium' aria-hidden="true" />
+      <Icon icon='keyboard_arrow_up' size='medium' aria-hidden="true" />
       <span className="sr-only">{t('ui.backToTop')}</span>
     </button>
   );

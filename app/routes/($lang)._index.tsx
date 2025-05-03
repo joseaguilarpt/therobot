@@ -100,7 +100,7 @@ export default function IndexPage() {
         {...FOOTER}
         backgroundImageUrl={""}
         socialNetworks={[
-          { label: "Facebook", icon: "FaFacebook", href: "#" },
+          { label: "Facebook", icon: "facebook", href: "#" },
           { label: "Twitter", icon: "FaTwitter", href: "#" },
         ]}
       />

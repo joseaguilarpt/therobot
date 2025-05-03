@@ -16,7 +16,7 @@ const ContactWithCall: React.FC<ContactWithCallProps> = ({ phoneNumber }) => {
 
   return (
     <div className="contact-with-call">
-      <Button leftIcon="FaPhone" appareance="secondary" onClick={handleClick}>
+      <Button leftIcon="phone" appareance="secondary" onClick={handleClick}>
         {t("contactCall.call")}
       </Button>
     </div>

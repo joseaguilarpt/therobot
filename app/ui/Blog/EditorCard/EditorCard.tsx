@@ -38,7 +38,7 @@ const EditorCard: React.FC<EditorCardProps> = ({
         </Text>
         <div className="u-pt1">
         <Button ariaLabel="Go to linkedin"  appareance="link" onClick={() => {}}>
-          <Icon color="dark" icon="FaLinkedin" />
+          <Icon color="dark" icon="share" />
         </Button>
         </div>
       </div>

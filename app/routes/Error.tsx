@@ -67,7 +67,7 @@ export default function ErrorPage() {
               alignItems="center"
               direction="column"
             >
-                <Icon color="secondary" size="xlarge" icon='FaSadCry' />
+                <Icon color="secondary" size="xlarge" icon='sentiment_sad' />
               <Heading level={1} underline align="center" appearance={1}>
                {t('errorBoundary.title')}
               </Heading>

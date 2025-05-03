@@ -53,7 +53,7 @@ export default function BlogPage({
           <Breadcrumb
             paths={[
               {
-                icon: "FaHome",
+                icon: "home",
                 label: tOther("nav.home"),
                 href: `/${i18n.language ?? ""}`,
               },
