@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 import Heading from "../Heading/Heading";
 import { HoneypotInputs } from "remix-utils/honeypot/react";
 import { useTheme } from "~/context/ThemeContext";
-import { useHCaptcha } from "~/context/HCaptchaContext";
+import { useReCaptcha } from "~/context/ReCaptchaContext";
 import classNames from "classnames";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { trackClick } from "~/utils/analytics";
@@ -51,7 +51,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { honeypotInputProps } = useOutletContext<OutletContext>();
   const formRef = useRef<HTMLFormElement>(null);
-  const { captchaRef } = useHCaptcha();
+  const { captchaRef } = useReCaptcha();
 
   const validateFile = useCallback((file: File): boolean => {
     if (acceptedTypes.length > 0 && !acceptedTypes.includes(file.type)) {
@@ -94,11 +94,15 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     }
     let currentToken = null;
     if (captchaRef.current) {
-      const { response } = await captchaRef.current.execute({ async: true });
-
-      if (response) {
-        currentToken = response;
-        formData.set("h-captcha-response", response);
+      try {
+        const token = await captchaRef.current.executeAsync();
+        if (token) {
+          currentToken = token;
+          formData.set("g-recaptcha-response", token);
+        }
+      } catch (error) {
+        console.error("reCAPTCHA execution failed:", error);
+        showSnackbar(t("tool.captchaError"), "error");
       }
     }
     if (currentToken) {

@@ -45,7 +45,7 @@ const ShareSocial: React.FC<ShareSocialProps> = ({
 
   const shareWhatsApp = () => {
     window.open(
-      `https://api.whatsapp.com/send?text=${encodedTitle} ${encodedUrl}`,
+      `https://wa.me/?text=${encodedTitle} ${encodedUrl}`,
       "_blank"
     );
   };

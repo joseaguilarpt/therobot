@@ -89,9 +89,9 @@ const Card: React.FC<CardProps> = ({
   };
 
   return (
-    <div 
-      className={cardClasses} 
-      role="region" 
+    <div
+      className={cardClasses}
+      role="region"
       aria-labelledby={labelledBy}
       id={cardId}
     >
@@ -143,15 +143,22 @@ const Card: React.FC<CardProps> = ({
       )}
       <div className={classNames("card__content", icon && "__with-icon")}>
         {title && (
-          <Heading
-            align="left"
-            underline={underline}
-            level={3}
-            appearance={6}
-            id={titleId}
+          <Button
+            onClick={handleNavigation}
+            appareance="link"
+            className="heading--button"
+            ariaLabel={ariaLabel ? ariaLabel : title}
           >
-            {title}
-          </Heading>
+            <Heading
+              align="left"
+              underline={underline}
+              level={3}
+              appearance={6}
+              id={titleId}
+            >
+              {title}
+            </Heading>
+          </Button>
         )}
         {content && (
           <div className={underline ? "u-pt2" : ""}>
@@ -163,7 +170,6 @@ const Card: React.FC<CardProps> = ({
             <Button
               onClick={handleNavigation}
               appareance="link"
-              size="large"
               ariaLabel={ariaLabel ? ariaLabel : t("goToDetails")}
             >
               {t("goNow")}

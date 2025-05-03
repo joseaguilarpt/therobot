@@ -1,3 +1,4 @@
+import './TestimonialSection.scss';
 import ContentContainer from "~/ui/ContentContainer/ContentContainer";
 import GridContainer from "~/ui/Grid/Grid";
 import GridItem from "~/ui/Grid/GridItem";
@@ -31,7 +32,7 @@ export default function CompanyServicesSection({ list = POPULAR_CONVERSIONS }: {
           </Text>
         </div>
       </GridItem>
-      <GridContainer className="u-mt4">
+      <GridContainer className="services-container u-mt4">
         {data.map((item, index) => (
           <GridItem
             animation="slide-in-bottom"

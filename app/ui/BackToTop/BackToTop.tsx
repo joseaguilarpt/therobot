@@ -7,6 +7,7 @@ const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const { t } = useTranslation();
+
   useEffect(() => {
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
@@ -23,10 +24,14 @@ const BackToTop = () => {
 
   const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    // Focus on the first focusable element in the page
-    const firstFocusableElement = document.querySelector('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])');
-    if (firstFocusableElement) {
-      firstFocusableElement.focus();
+    
+    // Focus on the main content area instead of the first focusable element
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.focus();
+    } else {
+      // Fallback: focus on the body if main content is not found
+      document.body.focus();
     }
   };
 
@@ -34,8 +39,8 @@ const BackToTop = () => {
     <button
       className={`back-to-top ${isVisible ? 'visible' : ''}`}
       onClick={handleScrollToTop}
-      aria-label="Back to top"
-      title="Back to top"
+      aria-label={t('ui.backToTop')}
+      title={t('ui.backToTop')}
       tabIndex={isVisible ? 0 : -1}
     >
       <Icon icon='FaArrowUp' size='medium' aria-hidden="true" />

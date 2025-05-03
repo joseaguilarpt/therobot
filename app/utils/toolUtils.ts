@@ -8,10 +8,10 @@ import {
 import { SpamError } from "remix-utils/honeypot/server";
 import { json } from "@remix-run/node";
 import { onSendCustomerEmail, onSendEmail } from "./mail.server";
-import { verify } from "hcaptcha";
 import { validateCSRFToken } from "./csrf.server";
 import { checkRateLimit } from "./rateLimiter.server";
 import i18next from "~/i18next.server";
+import axios from 'axios';
 
 async function validateRateLimit(request: Request) {
   const identifier = request.headers.get("x-forwarded-for") || request.ip;
@@ -26,19 +26,34 @@ async function validateRateLimit(request: Request) {
 
 async function validateCaptcha(token: string) {
   if (!token) {
-    throw json({ error: "hCaptcha token is missing" }, { status: 400 });
+    throw json({ error: "reCAPTCHA token is missing" }, { status: 400 });
   }
 
-  const captchaSecret =
-    process.env.NODE_ENV === "development"
-      ? process.env.DUMMY_CAPTCHA_SECRET
-      : process.env.CAPTCHA_SECRET;
+  const captchaSecret = process.env.RCAPTCHA_SERVER;
+  
+  try {
+    const response = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${captchaSecret}&response=${token}`,
+      {},
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8"
+        },
+      }
+    );
 
-  const secret = captchaSecret ?? "";
-  const { success } = await verify(secret, token);
-  if (!success) {
+    const { success } = response.data;
+
+    if (!success) {
+      throw json(
+        { error: "Suspicious Activity: Cancelling", convertedFiles: null },
+        { status: 400 }
+      );
+    }
+  } catch (error) {
+    console.error('reCAPTCHA verification failed:', error);
     throw json(
-      { error: "Suspicious Activity: Cancelling", convertedFiles: null },
+      { error: "reCAPTCHA verification failed", convertedFiles: null },
       { status: 400 }
     );
   }
@@ -116,7 +131,7 @@ export async function toolAction(request: Request) {
     await validateRateLimit(request);
 
     const formData = await parseFormData(request);
-    const token = formData.get("h-captcha-response") as string;
+    const token = formData.get("g-recaptcha-response") as string;
     const lng = await i18next.getLocale(request)
 
     await validateCaptcha(token);

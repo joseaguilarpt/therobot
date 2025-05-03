@@ -36,10 +36,6 @@ export default function FAQSection() {
       content: t("faq.option6.description"),
     },
     {
-      title: t("faq.option7.heading"),
-      content: t("faq.option7.description"),
-    },
-    {
       title: t("faq.option8.heading"),
       content: t("faq.option8.description"),
     },
