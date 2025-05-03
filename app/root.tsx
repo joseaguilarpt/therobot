@@ -179,24 +179,28 @@ function Document({
         <Links />
         <style dangerouslySetInnerHTML={{ __html: criticalFontCSS }} />
         <style dangerouslySetInnerHTML={{ __html: styles }} />
-        <script
-          async
-          nonce={nonce}
-          src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
-        ></script>
-        <script
-          nonce={nonce}
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${ENV.GOOGLE_ID_ANALYTICS}', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
+        {ENV.GOOGLE_ID_ANALYTICS && (
+          <>
+            <script
+              async
+              nonce={nonce}
+              src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
+            ></script>
+            <script
+              nonce={nonce}
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${ENV.GOOGLE_ID_ANALYTICS}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body>
         {children}
@@ -208,13 +212,15 @@ function Document({
             __html: `window.ENV = ${JSON.stringify(ENV)}`,
           }}
         />
-        <script   
-          nonce={nonce}
-          type="text/javascript"
-          src="https://www.dropbox.com/static/api/2/dropins.js"
-          id="dropboxjs"
-          data-app-key={ENV.DROPBOX_USER}
-        ></script>
+        {ENV.DROPBOX_USER && (
+          <script   
+            nonce={nonce}
+            type="text/javascript"
+            src="https://www.dropbox.com/static/api/2/dropins.js"
+            id="dropboxjs"
+            data-app-key={ENV.DROPBOX_USER}
+          ></script>
+        )}
       </body>
     </html>
   );
@@ -226,7 +232,6 @@ export function ErrorBoundary() {
   useChangeLanguage(i18n.language ?? "en");
   useAnalytics();
   const nonce = useNonce();
-  const { ENV } = useLoaderData<typeof loader>();
 
   let ErrorComponent = ErrorPage;
 
@@ -234,8 +239,13 @@ export function ErrorBoundary() {
     ErrorComponent = NotFound;
   }
 
+  const minimalENV = {
+    GOOGLE_ID_ANALYTICS: "", // You might want to hardcode this if it's critical
+    DROPBOX_USER: "",
+  };
+
   return (
-    <Document locale={i18n.language} nonce={nonce} i18n={i18n} ENV={ENV}>
+    <Document locale={i18n.language} nonce={nonce} i18n={i18n} ENV={minimalENV}>
       <ThemeProvider>
         <SkipToContent />
         <ErrorComponent />
