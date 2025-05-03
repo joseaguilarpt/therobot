@@ -5,6 +5,9 @@ publish = "build/client"
 [functions]
 included_files = ["locales/**, img/**"]
 
+[functions.timeout]
+duration = 25
+
 [dev]
 command = "npm run dev"
 framework = "vite"
