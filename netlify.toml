@@ -4,7 +4,6 @@ publish = "build/client"
 
 [functions]
 included_files = ["locales/**, img/**"]
-timeout = 20
 
 [dev]
 command = "npm run dev"
