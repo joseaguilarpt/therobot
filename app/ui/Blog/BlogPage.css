@@ -399,6 +399,7 @@
 .blog-page-container .blog-header__image img {
   position: relative;
   z-index: 2;
+  max-width: 100%;
 }
 .blog-page-container .blog-header__image::after {
   content: "";
@@ -452,10 +453,7 @@
   font-size: 1.25rem;
 }
 .blog-page-container .blog-content .content-image {
-  width: max-content;
-}
-.blog-page-container .blog-content .content-image img {
-  max-height: 350px;
+  width: fit-content;
 }
 
 .blogs-page {

@@ -395,17 +395,20 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  max-width: 100%;
 }
 .breadcrumb__list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  max-width: 100%;
   flex-wrap: wrap;
 }
 .breadcrumb__item {
   display: flex;
   align-items: center;
+  max-width: 100%;
 }
 .breadcrumb__item:not(:last-child) {
   margin-right: 0.5rem;
@@ -424,6 +427,7 @@
   transition: 0.3s;
   position: relative;
   text-transform: uppercase;
+  overflow: hidden;
 }
 .breadcrumb__link {
   font-size: var(--font-size-medium);
