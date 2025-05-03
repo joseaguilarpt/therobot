@@ -11,13 +11,15 @@ import { useTheme } from "~/context/ThemeContext";
 import ContactWithWhatsapp from "../ContactWhatsapp/ContactWhatsapp";
 import { useTranslation } from "react-i18next";
 
-interface FileInfo {
-  fileUrl: string;
+interface File {
   fileName: string;
+  fileSize: number;
+  fileUrl: Blob;
+  status: string;
 }
 
 interface ShareButtonProps {
-  files: FileInfo[];
+  files: File[];
   onDownload: () => void;
   onEmailShare: (email: string) => void;
 }

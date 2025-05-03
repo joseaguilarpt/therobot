@@ -7,8 +7,6 @@ import { FOOTER } from "~/constants/content";
 import Navbar from "~/ui/Navbar/Navbar";
 import ToolContainer from "~/ui/ToolContainer/ToolContainer";
 import ContentContainer from "~/ui/ContentContainer/ContentContainer";
-import Heading from "~/ui/Heading/Heading";
-import Text from "~/ui/Text/Text";
 import { allOptions } from "~/constants/formats";
 import CompanyServicesSection from "~/ui/AboutPage/CompanyServicesSection";
 import FAQSection from "~/ui/AboutPage/FAQSection";
@@ -83,26 +81,11 @@ export default function ConvertPageMultilanguage() {
       <Navbar autoScrolled />
       <main id="main-content">
         <ToolContainer>
-          <ContentContainer>
+          <ContentContainer className="u-mb5">
             <section
               className="tool-heading"
               aria-labelledby="conversion-heading"
             >
-              <Heading
-                id="conversion-heading"
-                align="center"
-                color="accent"
-                appearance={4}
-                level={1}
-              >
-                {t("hero.header1")}
-              </Heading>
-              <Heading align="center" underline appearance={4} level={2}>
-                {t("hero.header2")}
-              </Heading>
-              <Text className="u-pt5 hero-description" align="center">
-                {t("hero.description")}{' '}{t("hero.freeToUse")}
-              </Text>
               <Tool />
             </section>
           </ContentContainer>

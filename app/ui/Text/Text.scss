@@ -1,23 +1,52 @@
+@use '../../styles/theme' as *;
+
 .text {
   margin: 0;
   font-family: var(--text-font);
 
   &--smaller {
     font-size: 0.75rem; /* 12px */
-    line-height: 2;
+    line-height: 1.5;
+    
+    @include media-query(medium) {
+      font-size: 0.875rem; /* 14px */
+      line-height: 1.75;
+    }
   }
 
   &--small {
-    font-size: 0.875rem; /* 14px */
+    font-size: 0.725rem; /* 14px */
+    line-height: 1.6;
+    
+    @include media-query(medium) {
+      font-size: 0.875rem; /* 16px */
+      line-height: 1.75;
+    }
   }
 
   &--medium {
-    font-size: 1.05rem; /* 16px */
-    line-height: 1.5rem;
+    font-size: 0.875rem; /* 16px */
+    line-height: 1.5;
+    
+    @include media-query(medium) {
+      font-size: 1.05rem; /* 16px */
+      line-height: 1.6;
+    }
   }
 
   &--large {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1rem; /* 18px */
+    line-height: 1.4;
+    
+    @include media-query(medium) {
+      font-size: 1.125rem; /* 20px */
+      line-height: 1.5;
+    }
+    
+    @include media-query(large) {
+      font-size: 1.25rem; /* 24px */
+      line-height: 1.6;
+    }
   }
 
   &--primary {
@@ -79,12 +108,15 @@
   &--justify {
     text-align: justify;
   }
+
   &--capitalize {
     text-transform: capitalize;
   }
+
   &--uppercase {
     text-transform: uppercase;
   }
+
   &--lowercase {
     text-transform: lowercase;
   }

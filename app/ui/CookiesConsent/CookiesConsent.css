@@ -464,24 +464,6 @@
   flex: 1;
 }
 
-.cookie-banner__button--save {
-  background-color: #4caf50;
-  color: white;
-}
-
-.cookie-banner__button--save:hover {
-  background-color: #45a049;
-}
-
-.cookie-banner__button--accept-all {
-  background-color: #2196f3;
-  color: white;
-}
-
-.cookie-banner__button--accept-all:hover {
-  background-color: #0b7dda;
-}
-
 @media (max-width: 768px) {
   .cookie-banner__buttons {
     flex-direction: column;

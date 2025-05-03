@@ -32,10 +32,13 @@ export const meta: MetaFunction<typeof loader> = ({
   if (!data) {
     return [];
   }
-  const { description, title, keywords, ogDescription, ogTitle } = data as MetaProps;
-  const lang = params.lang || 'en';
-  const path = 'ccpa-compliance';
-  const fullUrl = `https://easyconvertimage.com${lang === 'en' ? '' : '/' + lang}/${path}`;
+  const { description, title, keywords, ogDescription, ogTitle } =
+    data as MetaProps;
+  const lang = params.lang || "en";
+  const path = "ccpa-compliance";
+  const fullUrl = `https://easyconvertimage.com${
+    lang === "en" ? "" : "/" + lang
+  }/${path}`;
 
   const alternateLanguages = {
     "x-default": `https://easyconvertimage.com/${path}`,
@@ -128,34 +131,22 @@ export default function CCPA() {
             <Text>{t("ccpaCompliance.sections.consumerRights.list")}</Text>
 
             <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
+              {t("ccpaCompliance.sections.noSale.title")}
+            </Heading>
+
+            <Text>{t("ccpaCompliance.sections.noSale.content")}</Text>
+
+            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
               {t("ccpaCompliance.sections.infoCollected.title")}
             </Heading>
 
             <Text>{t("ccpaCompliance.sections.infoCollected.content")}</Text>
 
             <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("ccpaCompliance.sections.exerciseRights.title")}
+              {t("ccpaCompliance.sections.contact.title")}
             </Heading>
 
-            <Text>{t("ccpaCompliance.sections.exerciseRights.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("ccpaCompliance.sections.verification.title")}
-            </Heading>
-
-            <Text>{t("ccpaCompliance.sections.verification.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("ccpaCompliance.sections.authorizedAgent.title")}
-            </Heading>
-
-            <Text>{t("ccpaCompliance.sections.authorizedAgent.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              {t("ccpaCompliance.sections.doNotSell.title")}
-            </Heading>
-
-            <Text>{t("ccpaCompliance.sections.doNotSell.content")}</Text>
+            <Text>{t("ccpaCompliance.sections.contact.content")}</Text>
           </ContentContainer>
         </div>
       </main>

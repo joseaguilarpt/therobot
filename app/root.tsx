@@ -1,4 +1,4 @@
-import styles from "./app.scss?url";
+import styles from "./app.scss?inline";
 
 import React from "react";
 
@@ -29,20 +29,96 @@ import i18n from "./i18n";
 import { useAnalytics } from "./utils/analytics";
 import { useNonce } from "./context/NonceContext";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
-import styleFonts from "~/styles/fonts.scss?url";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import { isValidFormat } from "./constants/formats";
+
+// Critical CSS for fonts
+const criticalFontCSS = `
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Questrial';
+  src: url('/fonts/Questrial-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+  
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Bold.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  src: url('/fonts/MaterialIcons-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+`;
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
-  { rel: "stylesheet", href: styles },
-  { rel: "stylesheet", href: styleFonts },
   { rel: "icon", href: "/favicon.ico" },
   { rel: "manifest", href: "/manifest.json" },
+  { 
+    rel: "preload", 
+    href: "/fonts/Inter-Bold.woff2", 
+    as: "font", 
+    type: "font/woff2", 
+    crossOrigin: "anonymous" 
+  },
+  { 
+    rel: "preload", 
+    href: "/fonts/Poppins-Regular.woff2", 
+    as: "font", 
+    type: "font/woff2", 
+    crossOrigin: "anonymous" 
+  },
+  { 
+    rel: "preload", 
+    href: "/fonts/Questrial-Regular.woff2", 
+    as: "font", 
+    type: "font/woff2", 
+    crossOrigin: "anonymous" 
+  },
+  { 
+    rel: "preload", 
+    href: "/fonts/MaterialIcons-Regular.woff2", 
+    as: "font", 
+    type: "font/woff2", 
+    crossOrigin: "anonymous" 
+  },
 ];
 
 export async function loader({ params, request }: LoaderFunctionArgs) {
   const checkValidLang = (v: string) => i18n.supportedLngs.includes(v);
 
   if (params?.sourceFormat?.toLowerCase() === "pdf") {
+    throw new Response(null, {
+      status: 404,
+      statusText: "Not Found",
+    });
+  }
+
+  if (params?.sourceFormat && !isValidFormat(params?.sourceFormat)) {
+    throw new Response(null, {
+      status: 404,
+      statusText: "Not Found",
+    });
+  }
+
+  if (params?.targetFormat && !isValidFormat(params?.targetFormat)) {
     throw new Response(null, {
       status: 404,
       statusText: "Not Found",
@@ -67,6 +143,8 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     honeypotInputProps: honeypot?.getInputProps(),
     locale,
     ENV: {
+      DROPBOX_USER: process.env.DROPBOX_USER,
+      G_DRIVE_USER: process.env.G_DRIVE_USER,
       GOOGLE_ID_ANALYTICS: process.env.GOOGLE_ID_ANALYTICS,
       RCAPTCHA_CLIENT: process.env.RCAPTCHA_CLIENT,
     },
@@ -123,26 +201,30 @@ const App = React.memo(function App() {
   useAnalytics();
 
   return (
-    <ThemeProvider>
-      <html lang={locale} dir={i18n.dir()}>
-        <HoneypotProvider {...honeypotInputProps}>
-          <head>
-            <meta charSet="utf-8" />
-            <meta
-              name="viewport"
-              content="width=device-width, initial-scale=1"
-            />
-            <Meta />
-            <Links />
-            <script
-              async
-              nonce={nonce}
-              src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
-            ></script>
-            <script
-              nonce={nonce}
-              dangerouslySetInnerHTML={{
-                __html: `
+    <GoogleOAuthProvider nonce={nonce} clientId={ENV.G_DRIVE_USER ?? ""}>
+      <ThemeProvider>
+        <html lang={locale} dir={i18n.dir()}>
+          <HoneypotProvider {...honeypotInputProps}>
+            <head>
+              <meta charSet="utf-8" />
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+              />
+              <Meta />
+              <Links />
+              <style dangerouslySetInnerHTML={{ __html: criticalFontCSS }} />
+              <style dangerouslySetInnerHTML={{ __html: styles }} />
+
+              <script
+                async
+                nonce={nonce}
+                src={`https://www.googletagmanager.com/gtag/js?id=${ENV.GOOGLE_ID_ANALYTICS}`}
+              ></script>
+              <script
+                nonce={nonce}
+                dangerouslySetInnerHTML={{
+                  __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -150,28 +232,37 @@ const App = React.memo(function App() {
                 page_path: window.location.pathname,
               });
             `,
-              }}
-            />
-          </head>
-          <body>
-            <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
-              <SkipToContent />
-              <Outlet context={{ locale, honeypotInputProps }} />
-              <Snackbar />
-              <CookieConsentBanner />
-              <Scripts nonce={nonce} />
-              <ScrollRestoration nonce={nonce} />
-              <script
-                nonce={nonce}
-                dangerouslySetInnerHTML={{
-                  __html: `window.ENV = ${JSON.stringify(ENV)}`,
                 }}
               />
-            </GoogleReCaptchaProvider>
-          </body>
-        </HoneypotProvider>
-      </html>
-    </ThemeProvider>
+            </head>
+            <body>
+              <GoogleReCaptchaProvider reCaptchaKey={ENV.RCAPTCHA_CLIENT ?? ""}>
+                <SkipToContent />
+                <Outlet context={{ locale, honeypotInputProps }} />
+                <Snackbar />
+                <CookieConsentBanner />
+                <Scripts nonce={nonce} />
+                <ScrollRestoration nonce={nonce} />
+                <script
+                  nonce={nonce}
+                  dangerouslySetInnerHTML={{
+                    __html: `window.ENV = ${JSON.stringify(ENV)}`,
+                  }}
+                />
+                <script
+                
+                  nonce={nonce}
+                  type="text/javascript"
+                  src="https://www.dropbox.com/static/api/2/dropins.js"
+                  id="dropboxjs"
+                  data-app-key={ENV.DROPBOX_USER}
+                ></script>
+              </GoogleReCaptchaProvider>
+            </body>
+          </HoneypotProvider>
+        </html>
+      </ThemeProvider>
+    </GoogleOAuthProvider>
   );
 });
 

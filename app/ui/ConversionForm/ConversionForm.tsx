@@ -52,7 +52,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
           (item) =>
             item.label.toLowerCase() !== selectedFormatFrom.toLowerCase()
         ),
-      [options, selectedFormatFrom]
+      [options, selectedFormatFrom, selectedFormat]
     );
 
     const handleFromChangeCallback = useCallback(
@@ -64,7 +64,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
         );
         handleFromChange(v.label);
       },
-      [handleFromChange, i18n.language, selectedFormat]
+      [handleFromChange, i18n.language, selectedFormat, selectedFormatFrom]
     );
 
     const handleToChangeCallback = useCallback(
@@ -76,7 +76,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
         );
         handleToChange(v.label);
       },
-      [handleToChange, i18n.language, selectedFormatFrom]
+      [handleToChange, i18n.language, selectedFormatFrom, selectedFormat]
     );
 
     return (

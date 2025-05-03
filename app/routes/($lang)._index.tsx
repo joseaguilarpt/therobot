@@ -7,8 +7,6 @@ import { FOOTER } from "~/constants/content";
 import Navbar from "~/ui/Navbar/Navbar";
 import ToolContainer from "~/ui/ToolContainer/ToolContainer";
 import ContentContainer from "~/ui/ContentContainer/ContentContainer";
-import Heading from "~/ui/Heading/Heading";
-import Text from "~/ui/Text/Text";
 import CompanyServicesSection from "~/ui/AboutPage/CompanyServicesSection";
 import { POPULAR_CONVERSIONS } from "~/utils/conversions";
 import TestimonialSection from "~/ui/AboutPage/TestimonialSection";
@@ -20,8 +18,6 @@ import Tool from "~/ui/Tool/Tool";
 import ContactForm from "~/ui/ContactForm/ContactForm";
 import { meta } from "~/utils/meta";
 import { getCSRFToken } from "~/utils/csrf.server";
-import GridContainer from "~/ui/Grid/Grid";
-import GridItem from "~/ui/Grid/GridItem";
 
 export { meta };
 export const handle = { i18n: "common" };
@@ -55,7 +51,7 @@ export default function IndexPage() {
       <Navbar autoScrolled />
       <main id="main-content">
         <ToolContainer>
-          <ContentContainer>
+          <ContentContainer  className="u-mb5">
             <section
               className="tool-heading"
               aria-labelledby="conversion-heading"
@@ -68,9 +64,9 @@ export default function IndexPage() {
               list={POPULAR_CONVERSIONS.slice(0, 9)}
               heading={t("services.popularConversions")}
             />
-            <TestimonialSection />
-            <FAQSection />
           </div>
+          <TestimonialSection />
+            <FAQSection />
 
           <ContentContainer className="bg-color-secondary">
             <ContactForm data={data} />

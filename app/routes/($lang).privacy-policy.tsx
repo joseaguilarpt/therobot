@@ -32,10 +32,13 @@ export const meta: MetaFunction<typeof loader> = ({
   if (!data) {
     return [];
   }
-  const { description, title, keywords, ogDescription, ogTitle } = data as MetaProps;
-  const lang = params.lang || 'en';
-  const path = 'privacy-policy';
-  const fullUrl = `https://easyconvertimage.com${lang === 'en' ? '' : '/' + lang}/${path}`;
+  const { description, title, keywords, ogDescription, ogTitle } =
+    data as MetaProps;
+  const lang = params.lang || "en";
+  const path = "privacy-policy";
+  const fullUrl = `https://easyconvertimage.com${
+    lang === "en" ? "" : "/" + lang
+  }/${path}`;
 
   const alternateLanguages = {
     "x-default": `https://easyconvertimage.com/${path}`,
@@ -118,47 +121,25 @@ export default function PrivacyPolicy() {
             </Heading>
 
             <Text>{t("privacyPolicy.content.lastUpdated")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              1. {t("privacyPolicy.content.sections.0.title")}
-            </Heading>
-
             <Text>{t("privacyPolicy.content.introduction")}</Text>
 
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              2. {t("privacyPolicy.content.sections.0.title")}
-            </Heading>
-
-            <Text>{t("privacyPolicy.content.sections.0.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              3. {t("privacyPolicy.content.sections.1.title")}
-            </Heading>
-
-            <Text>{t("privacyPolicy.content.sections.1.content")}</Text>
+            {t("privacyPolicy.content.sections", { returnObjects: true }).map((section, index) => (
+              <div key={index}>
+                <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
+                  {index + 1}. {section.title}
+                </Heading>
+                <Text>{section.content}</Text>
+              </div>
+            ))}
 
             <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              4. {t("privacyPolicy.dataSharing.title")}
+              {t("privacyPolicy.dataSharing.title")}
             </Heading>
-
             <Text>{t("privacyPolicy.dataSharing.content")}</Text>
 
             <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              5. {t("privacyPolicy.content.sections.2.title")}
+              {t("privacyPolicy.contactUs.title")}
             </Heading>
-
-            <Text>{t("privacyPolicy.content.sections.2.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              6. {t("privacyPolicy.content.sections.3.title")}
-            </Heading>
-
-            <Text>{t("privacyPolicy.content.sections.3.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              7. {t("privacyPolicy.contactUs.title")}
-            </Heading>
-
             <Text>{t("privacyPolicy.contactUs.content")}</Text>
           </ContentContainer>
         </div>

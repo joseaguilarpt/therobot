@@ -64,7 +64,7 @@ Crawl-delay: 10
 
 # Additional comments
 # Last updated: ${new Date().toISOString().split('T')[0]}
-# Contact: theimagesbot@gmail.com
+# Contact: admin@easyconvertimage.com
   `.trim();
 
   return new Response(robotsTxt, {

@@ -4,7 +4,7 @@ import { ConversionForm } from "../ConversionForm/ConversionForm";
 import DragAndDrop from "../DragDrop/DragDrop";
 import Files from "../Files/Files";
 import { allOptions } from "~/constants/formats";
-import { useParams } from "@remix-run/react";
+import { useNavigate, useParams } from "@remix-run/react";
 import { useFileConversion } from "~/utils/useTool";
 import GridContainer from "../Grid/Grid";
 import GridItem from "../Grid/GridItem";
@@ -14,13 +14,7 @@ import Text from "../Text/Text";
 
 export default function Tool() {
   const { sourceFormat, targetFormat, lang } = useParams();
-
-  let language = lang;
-  const { i18n, t } = useTranslation();
-  if (!language) {
-    language = i18n.language;
-  }
-
+  const navigate = useNavigate();
   const initialFrom = allOptions.find(
     (item) => item.value === sourceFormat?.toLowerCase()
   );
@@ -28,19 +22,25 @@ export default function Tool() {
     (item) => item.value === targetFormat?.toLowerCase()
   );
 
+  let language = lang;
+  const { i18n, t } = useTranslation();
+  if (!language) {
+    language = i18n.language;
+  }
+
   const selectedFormat = initialTo?.label ?? "PNG";
   const selectedFormatFrom = initialFrom?.label ?? "JPEG";
 
   const handleFromChange = (v: string) => {
     const fromValue = v?.toLowerCase() ?? "png";
     const toValue = selectedFormat?.toLowerCase() ?? "jpeg";
-    window.location.href = `/${language}/convert/${fromValue}/${toValue}`;
+    navigate(`/${language}/convert/${fromValue}/${toValue}`);
   };
 
   const handleToChange = (v: string) => {
     const fromValue = selectedFormatFrom?.toLowerCase() ?? "png";
     const toValue = v?.toLowerCase() ?? "jpeg";
-    window.location.href = `/${language}/convert/${fromValue}/${toValue}`;
+    navigate(`/${language}/convert/${fromValue}/${toValue}`);
   };
 
   const {
@@ -54,7 +54,7 @@ export default function Tool() {
     handleRemove,
     handleRemoveAll,
     handleEmailShare,
-  } = useFileConversion(selectedFormat);
+  } = useFileConversion(selectedFormat, selectedFormatFrom);
 
   return (
     <>
@@ -62,7 +62,6 @@ export default function Tool() {
         <GridItem xs={12} lg={6}>
           <Heading
             id="conversion-heading"
-            //align="center"
             color="accent"
             appearance={3}
             level={1}
@@ -70,7 +69,6 @@ export default function Tool() {
             {t("hero.header1")}
           </Heading>
           <Heading
-            //align="center"
             underline
             appearance={3}
             level={1}

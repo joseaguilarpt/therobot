@@ -16,10 +16,14 @@ import { useTranslation } from "react-i18next";
 import Heading from "../Heading/Heading";
 import { HoneypotInputs } from "remix-utils/honeypot/react";
 import { useTheme } from "~/context/ThemeContext";
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import classNames from "classnames";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { trackClick } from "~/utils/analytics";
+import GridContainer from "../Grid/Grid";
+import GoogleUpload from "../GoogleUpload/GoogleUpload";
+import DropboxUpload from "../DropboxUpload/DropboxUpload";
+import GridItem from "../Grid/GridItem";
 
 interface DragAndDropProps {
   isLoading?: boolean;
@@ -43,13 +47,12 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   files: existingFiles,
   maxSize = Infinity,
 }) => {
-
   const acceptedTypes = fileTypes?.map((item) => {
-    if (item.includes('svg')) {
-      return 'image/svg+xml';
+    if (item.includes("svg")) {
+      return "image/svg+xml";
     }
     return item;
-  })
+  });
   const params = useParams();
   const { showSnackbar } = useTheme();
   const { t, i18n } = useTranslation("common");
@@ -63,70 +66,79 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   const [isInternalLoading, setInternalLoading] = useState(false);
 
   const isLoading = isInternalLoading || isExternalLoading;
-  
-  const validateFile = useCallback((file: File): boolean => {
-    if (acceptedTypes.length > 0 && !acceptedTypes.includes(file.type)) {
-      showSnackbar(
-        `${t("tool.fileType")} ${file.type} ${t("tool.notAccepted")}`,
-        "error"
-      );
-      return false;
-    }
-    if (file.size > maxSize) {
-      showSnackbar(
-        `${t("tool.maxLimit")} ${maxSize} ${t("tool.bytes")}.`,
-        "error"
-      );
-      return false;
-    }
-    return true;
-  }, [acceptedTypes, maxSize, showSnackbar, t]);
 
-  const addFiles = useCallback(async (files: File[]) => {
-    const validFiles = files.filter(validateFile);
+  const validateFile = useCallback(
+    (file: File): boolean => {
+      if (acceptedTypes.length > 0 && !acceptedTypes.includes(file.type)) {
+        showSnackbar(
+          `${t("tool.fileType")} ${file.type} ${t("tool.notAccepted")}`,
+          "error"
+        );
+        return false;
+      }
+      if (file.size > maxSize) {
+        showSnackbar(
+          `${t("tool.maxLimit")} ${maxSize} ${t("tool.bytes")}.`,
+          "error"
+        );
+        return false;
+      }
+      return true;
+    },
+    [acceptedTypes, maxSize, showSnackbar, t]
+  );
 
-    if (files.length > 15) {
-      showSnackbar(t("tool.maxFiles"), "error");
-      return;
-    }
+  const addFiles = useCallback(
+    async (files: File[]) => {
+      const validFiles = files.filter(validateFile);
 
-    const formData = new FormData();
-    const nameFieldName = honeypotInputProps.nameFieldName;
-    const validFromFieldName = honeypotInputProps.validFromFieldName;
-    if (formRef.current) {
-      const formElements = formRef.current.elements as HTMLFormControlsCollection;
-      Object.values(formElements).forEach((field: Element) => {
-        if (field instanceof HTMLInputElement) {
-          if (field.id && (nameFieldName === field.id || validFromFieldName === field.id)) {
-            formData.append(field.id, field.value);
-          }
-        }
-      });
-    }
-    let currentToken = null;
-    if (executeRecaptcha) {
-      try {
-        setInternalLoading(true);
-        const token = await executeRecaptcha();
-        if (token) {
-          currentToken = token;
-          formData.set("g-recaptcha-response", token);
-        }
-      } catch (error) {
-        setInternalLoading(false);
-        console.error("reCAPTCHA execution failed:", error);
-        showSnackbar(t("tool.captchaError"), "error");
+      if (files.length > 15) {
+        showSnackbar(t("tool.maxFiles"), "error");
         return;
       }
-      finally {
-        setInternalLoading(false);
+
+      const formData = new FormData();
+      const nameFieldName = honeypotInputProps.nameFieldName;
+      const validFromFieldName = honeypotInputProps.validFromFieldName;
+      if (formRef.current) {
+        const formElements = formRef.current
+          .elements as HTMLFormControlsCollection;
+        Object.values(formElements).forEach((field: Element) => {
+          if (field instanceof HTMLInputElement) {
+            if (
+              field.id &&
+              (nameFieldName === field.id || validFromFieldName === field.id)
+            ) {
+              formData.append(field.id, field.value);
+            }
+          }
+        });
       }
-    }
-    if (currentToken) {
-      onFilesDrop(validFiles, formData);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [validateFile, showSnackbar, t, honeypotInputProps, onFilesDrop]);
+      let currentToken = null;
+      if (executeRecaptcha) {
+        try {
+          setInternalLoading(true);
+          const token = await executeRecaptcha();
+          if (token) {
+            currentToken = token;
+            formData.set("g-recaptcha-response", token);
+          }
+        } catch (error) {
+          setInternalLoading(false);
+          console.error("reCAPTCHA execution failed:", error);
+          showSnackbar(t("tool.captchaError"), "error");
+          return;
+        } finally {
+          setInternalLoading(false);
+        }
+      }
+      if (currentToken) {
+        onFilesDrop(validFiles, formData);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    },
+    [validateFile, showSnackbar, t, honeypotInputProps, onFilesDrop]
+  );
 
   useEffect(() => {
     const handlePaste = (e: ClipboardEvent) => {
@@ -137,7 +149,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
       trackClick(
         "Tool Interaction",
         `Paste File`,
-        `language: ${i18n.language} - format from: ${params?.targetFormat} - format to: : ${params?.sourceFormat}`
+        `language: ${i18n.language} - format from: ${params?.targetFormat} - format to: ${params?.sourceFormat}`
       );
 
       if (e.clipboardData && e.clipboardData.files.length > 0) {
@@ -151,7 +163,13 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     return () => {
       window.removeEventListener("paste", handlePaste);
     };
-  }, [isLoading, i18n.language, params?.targetFormat, params?.sourceFormat, addFiles]);
+  }, [
+    isLoading,
+    i18n.language,
+    params?.targetFormat,
+    params?.sourceFormat,
+    addFiles,
+  ]);
 
   const handleDrag = (e: DragEvent<HTMLDivElement>) => {
     if (isLoading) {
@@ -255,36 +273,58 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
           </div>
         ) : (
           <div className="upload-button-container">
-            <Button
-              isDisabled={isLoading}
-              ariaLabel={
-                existingFiles.length > 0
-                  ? t("tool.uploadMoreImages")
-                  : t("tool.uploadButton")
-              }
-              onClick={handleButtonClick}
-              className="upload-button"
-            >
-              {isLoading && (
-                <>
-                  <LoadingSpinner /> <Divider orientation="vertical" />{" "}
-                  <Text align="center" size="large" color="white">
-                    {t("fileActions.processing")}
-                  </Text>
-                </>
-              )}
-              {!isLoading && (
-                <>
-                  <Icon icon="upload" size="large" aria-hidden="true" />{" "}
-                  <Divider orientation="vertical" />{" "}
-                  <Text align="center" size="large" color="white">
-                    {existingFiles.length > 0
+            <GridContainer alignItems="center" justifyContent="flex-start">
+              <GridItem xs={11}>
+                <Button
+                  isDisabled={isLoading}
+                  ariaLabel={
+                    existingFiles.length > 0
                       ? t("tool.uploadMoreImages")
-                      : t("tool.uploadButton")}
-                  </Text>
-                </>
-              )}
-            </Button>
+                      : t("tool.uploadButton")
+                  }
+                  onClick={handleButtonClick}
+                  className="upload-button"
+                >
+                  {isLoading && (
+                    <>
+                      <LoadingSpinner /> <Divider orientation="vertical" />{" "}
+                      <Text align="center" size="large" color="white">
+                        {t("fileActions.processing")}
+                      </Text>
+                    </>
+                  )}
+                  {!isLoading && (
+                    <>
+                      <Icon icon="upload" size="large" aria-hidden="true" />{" "}
+                      <Divider orientation="vertical" />{" "}
+                      <Text align="center" size="large" color="white">
+                        {existingFiles.length > 0
+                          ? t("tool.uploadMoreImages")
+                          : t("tool.uploadButton")}
+                      </Text>
+                    </>
+                  )}
+                </Button>
+              </GridItem>
+              <GridItem xs={1}>
+                <GridContainer direction="column">
+                  <GridItem className="u-pb1">
+                    <GoogleUpload
+                      isDisabled={true}
+                      addFiles={addFiles}
+                      sourceFormat={params?.sourceFormat ?? "jpeg"}
+                    />
+                  </GridItem>
+                  <GridItem>
+                    <DropboxUpload
+                      isDisabled
+                      addFiles={addFiles}
+                      sourceFormat={params?.sourceFormat ?? "jpeg"}
+                    />
+                  </GridItem>
+                </GridContainer>
+              </GridItem>
+            </GridContainer>
             <Text
               color="contrast"
               align="center"

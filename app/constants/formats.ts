@@ -10,7 +10,7 @@ export const FORMATS = [
   { value: "pdf", label: "PDF" },
 ];
 
-const PLAIN_FORMATS = FORMATS.map((item) => item.value)
+export const PLAIN_FORMATS = FORMATS.map((item) => item.value)
 
 export const allOptions = FORMATS.map((item, index) => ({
   ...item,

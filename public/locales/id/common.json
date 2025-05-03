@@ -223,7 +223,7 @@
     "copyright": "Easy Convert Image 2024 - Seluruh Hak Dilindungi.",
     "pageName": "EasyConvertImage",
     "phone": "+354 910 232 032",
-    "email": "info@easyimageconvert.com",
+    "email": "admin@easyconvertimage.com",
     "usefulInfo": {
       "heading": "Tautan Berguna",
       "option1": {
@@ -407,118 +407,140 @@
     "title": "Pernyataan Aksesibilitas",
     "breadcrumb": "Pernyataan Aksesibilitas",
     "statementTitle": "Pernyataan Aksesibilitas untuk Easy Convert Image",
-    "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
-    "commitment": "Easy Convert Image berkomitmen untuk memastikan aksesibilitas digital bagi orang-orang dengan disabilitas. Kami terus memperbaiki pengalaman pengguna untuk semua orang dan menerapkan standar aksesibilitas yang relevan.",
+    "lastUpdated": "Terakhir diperbarui: 27 juli 2024",
+    "commitment": "Easy Convert Image berkomitmen untuk memastikan aksesibilitas digital bagi penyandang disabilitas. Kami terus meningkatkan pengalaman pengguna untuk semua orang dan menerapkan standar aksesibilitas yang relevan.",
     "conformanceStatus": {
-      "title": "Status kesesuaian",
-      "description": "Pedoman Konten Web Aksesibilitas (WCAG) mendefinisikan persyaratan untuk desainer dan pengembang untuk meningkatkan aksesibilitas bagi orang-orang dengan disabilitas. Ini mendefinisikan tiga tingkat kesesuaian: Level A, Level AA, dan Level AAA. Easy Convert Image sebagian sesuai dengan WCAG 2.1 level AA."
+      "title": "Status Kesesuaian",
+      "description": "Pedoman Aksesibilitas Konten Web (WCAG) mendefinisikan persyaratan bagi desainer dan pengembang untuk meningkatkan aksesibilitas bagi penyandang disabilitas. Ini mendefinisikan tiga level kesesuaian: Level A, Level AA, dan Level AAA. Easy Convert Image sebagian sesuai dengan WCAG 2.1 level AA."
     },
     "feedback": {
       "title": "Umpan Balik",
-      "description": "Kami menyambut umpan balik Anda tentang aksesibilitas Easy Convert Image. Beri tahu kami jika Anda menghadapi hambatan aksesibilitas: E-mail: accessibility@easyconvertimage.com"
+      "description": "Kami menyambut baik umpan balik Anda tentang aksesibilitas Easy Convert Image. Beri tahu kami jika Anda menemui hambatan aksesibilitas: E-mail: admin@easyconvertimage.com"
     },
     "technicalSpecs": {
       "title": "Spesifikasi Teknis",
-      "description": "Aksesibilitas Easy Convert Image bergantung pada teknologi berikut untuk bekerja dengan kombinasi khusus browser web dan teknologi bantu atau plugin yang diinstal di komputer Anda: - HTML - WAI-ARIA - CSS - JavaScript"
+      "description": "Aksesibilitas Easy Convert Image bergantung pada teknologi berikut untuk dapat bekerja dengan kombinasi browser web dan teknologi bantuan atau plugin tertentu yang terpasang di komputer Anda: - HTML - WAI-ARIA - CSS - JavaScript"
     },
     "assessmentApproach": {
       "title": "Pendekatan Penilaian",
-      "description": "Easy Convert Image menilai aksesibilitas situs web kami dengan pendekatan berikut: - Evaluasi mandiri - Evaluasi eksternal"
+      "description": "Easy Convert Image menilai aksesibilitas situs web kami melalui pendekatan berikut: - Penilaian mandiri - Penilaian eksternal"
     },
     "meta": {
       "title": "Pernyataan Aksesibilitas | Easy Convert Image",
-      "description": "Baca tentang komitmen Easy Convert Image terhadap aksesibilitas dan upaya kami untuk memastikan alat konversi gambar online gratis kami dapat digunakan oleh semua orang.",
+      "description": "Baca tentang komitmen Easy Convert Image terhadap aksesibilitas dan upaya kami untuk memastikan alat konversi gambar gratis kami dapat digunakan oleh semua orang.",
       "keywords": "aksesibilitas, aksesibilitas web, desain inklusif, alat gambar",
       "ogTitle": "Pernyataan Aksesibilitas Easy Convert Image",
-      "ogDescription": "Komitmen kami untuk membuat konversi dan optimisasi gambar dapat diakses oleh semua pengguna, tanpa memandang kemampuan mereka."
+      "ogDescription": "Komitmen kami untuk membuat konversi dan optimalisasi gambar dapat diakses oleh semua pengguna, terlepas dari kemampuan mereka.",
+      "structuredData": {
+        "name": "Pernyataan Aksesibilitas",
+        "description": "Komitmen Easy Convert Image terhadap aksesibilitas web dan desain inklusif.",
+        "publisherName": "Easy Convert Image"
+      }
     }
   },
+
   "privacyPolicy": {
     "content": {
       "heading": "Kebijakan Privasi",
       "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
-      "introduction": "Easy Convert Image (\"kami\" atau \"kami\") berkomitmen untuk melindungi privasi Anda. Kebijakan ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan layanan konversi gambar kami.",
+      "introduction": "Easy Convert Image ('kami') berkomitmen untuk melindungi privasi Anda. Kebijakan ini menjelaskan bagaimana kami menangani informasi Anda saat Anda menggunakan layanan konversi gambar kami.",
       "sections": [
         {
-          "title": "Informasi yang Kami Kumpulkan",
-          "content": "Kami mengumpulkan jenis informasi berikut: - Informasi pribadi: alamat email (jika Anda memilih untuk membuat akun) - Data penggunaan: jenis gambar yang dikonversi, frekuensi penggunaan - Data teknis: alamat IP, jenis browser, informasi perangkat"
+          "title": "Informasi yang Tidak Kami Kumpulkan",
+          "content": "Kami tidak mengumpulkan atau menyimpan informasi pribadi apa pun. Layanan kami dirancang untuk berfokus pada privasi, dan kami tidak menyimpan data apa pun tentang Anda atau gambar Anda setelah proses konversi selesai."
         },
         {
-          "title": "Bagaimana Kami Menggunakan Informasi Anda",
-          "content": "Kami menggunakan informasi Anda untuk: - Menyediakan dan meningkatkan layanan konversi gambar kami - Menganalisis pola penggunaan untuk mengoptimalkan algoritma kami - Mengirim pemberitahuan terkait layanan (mis. peringatan pemeliharaan) - Menanggapi pertanyaan dan permintaan dukungan Anda"
+          "title": "Cara Kami Memproses Gambar Anda",
+          "content": "Saat Anda menggunakan layanan kami untuk mengonversi gambar: - Gambar diproses sementara di server kami - Tidak ada salinan gambar atau metadata-nya yang disimpan setelah konversi - Gambar yang telah dikonversi segera tersedia untuk diunduh dan kemudian dihapus dari sistem kami"
         },
         {
           "title": "Keamanan Data",
-          "content": "Kami menerapkan langkah-langkah keamanan standar industri untuk melindungi data Anda, termasuk enkripsi dan kontrol akses."
+          "content": "Meskipun kami tidak menyimpan data Anda, kami menerapkan langkah-langkah keamanan standar industri untuk melindungi gambar Anda selama proses konversi, termasuk protokol transmisi data yang aman."
         },
         {
           "title": "Hak Anda",
-          "content": "Anda memiliki hak untuk: - Mengakses dan menerima salinan data Anda - Memperbaiki data yang tidak akurat - Meminta penghapusan data Anda - Memprotes penggunaan data Anda"
+          "content": "Karena kami tidak mengumpulkan atau menyimpan data pribadi, tidak ada informasi pribadi yang dapat Anda akses, perbaiki, atau hapus. Namun, Anda selalu memiliki hak untuk memilih apakah akan menggunakan layanan kami atau tidak."
+        },
+        {
+          "title": "Privasi Anak-anak",
+          "content": "Layanan kami tidak ditujukan untuk anak-anak di bawah 13 tahun. Karena kami tidak mengumpulkan informasi pribadi, kami tidak memiliki cara untuk mengetahui usia pengguna kami. Jika Anda percaya seorang anak menggunakan layanan kami dengan tidak semestinya, harap hubungi kami."
+        },
+        {
+          "title": "Perubahan pada Kebijakan Ini",
+          "content": "Kami dapat memperbarui kebijakan ini dari waktu ke waktu. Kami akan memberi tahu pengguna tentang perubahan signifikan dengan memposting pemberitahuan di situs web kami."
+        },
+        {
+          "title": "Hak Perlindungan Data UE",
+          "content": "Jika Anda adalah penduduk Uni Eropa, Anda memiliki hak perlindungan data tertentu berdasarkan GDPR. Namun, karena kami tidak mengumpulkan atau menyimpan data pribadi, banyak hak ini mungkin tidak berlaku untuk layanan kami. Jika Anda memiliki pertanyaan atau kekhawatiran, silakan hubungi kami di admin@easyconvertimage.com."
         }
       ]
     },
     "dataSharing": {
-      "title": "Berbagi Data dan Pengungkapan",
-      "content": "Kami tidak menjual informasi pribadi Anda. Kami dapat berbagi data dengan: - Penyedia layanan (mis. penyedia penyimpanan cloud) - Otoritas hukum saat diperlukan oleh hukum"
+      "title": "Berbagi dan Pengungkapan Data",
+      "content": "Kami tidak membagikan atau mengungkapkan data pengguna apa pun, karena kami tidak mengumpulkan atau menyimpan apa pun. Gambar Anda diproses secara real-time dan segera dihapus setelah konversi."
     },
     "contactUs": {
       "title": "Hubungi Kami",
-      "content": "Untuk pertanyaan tentang Kebijakan Privasi ini, silakan hubungi kami di privacy@easyconvertimage.com"
+      "content": "Untuk pertanyaan apa pun tentang Kebijakan Privasi ini, harap hubungi kami di admin@easyconvertimage.com"
     },
     "meta": {
       "title": "Kebijakan Privasi | Easy Convert Image",
-      "description": "Pelajari tentang bagaimana Easy Convert Image mengumpulkan, menggunakan, dan melindungi informasi pribadi Anda saat Anda menggunakan alat konversi dan optimisasi gambar online gratis kami.",
+      "description": "Pelajari tentang bagaimana Easy Convert Image melindungi privasi Anda saat Anda menggunakan alat konversi gambar online gratis kami.",
       "keywords": "kebijakan privasi, perlindungan data, privasi konversi gambar, data pengguna",
       "ogTitle": "Kebijakan Privasi Easy Convert Image",
-      "ogDescription": "Pahami bagaimana kami mengelola data Anda saat Anda menggunakan layanan konversi gambar kami. Privasi Anda penting bagi kami."
+      "ogDescription": "Pahami bagaimana kami menangani data Anda saat Anda menggunakan layanan konversi gambar kami. Privasi Anda adalah prioritas kami."
     }
   },
   "termsOfService": {
-    "heading": "Syarat Layanan",
-    "subheading": "Syarat Layanan untuk Easy Convert Image",
+    "heading": "Ketentuan Layanan",
+    "subheading": "Ketentuan Layanan untuk Easy Convert Image",
     "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
     "sections": {
       "acceptance": {
-        "title": "Penerimaan Syarat",
-        "content": "Dengan menggunakan Easy Convert Image, Anda menyetujui Syarat Layanan ini. Jika Anda tidak setuju dengan bagian mana pun dari syarat tersebut, Anda tidak boleh menggunakan layanan kami."
+        "title": "Penerimaan Ketentuan",
+        "content": "Dengan menggunakan Easy Convert Image, Anda setuju dengan Ketentuan Layanan ini. Jika Anda tidak setuju dengan bagian mana pun dari ketentuan, Anda tidak dapat menggunakan layanan kami."
       },
       "use": {
         "title": "Penggunaan Layanan",
-        "content": "Layanan kami memungkinkan Anda untuk mengkonversi gambar antara format yang berbeda. Anda setuju untuk menggunakan layanan ini hanya untuk tujuan yang sah dan sesuai dengan Syarat ini."
+        "content": "Layanan kami memungkinkan Anda mengonversi gambar di antara berbagai format. Anda setuju untuk menggunakan layanan ini hanya untuk tujuan yang sah dan sesuai dengan Ketentuan ini. Kami tidak menyimpan gambar atau data pribadi Anda."
       },
       "userContent": {
         "title": "Konten Pengguna",
-        "content": "Anda tetap memiliki semua hak atas gambar yang Anda unggah. Kami tidak mengklaim kepemilikan konten Anda. Namun, Anda memberi kami lisensi untuk menyimpan dan memproses gambar Anda semata-mata untuk tujuan menyediakan layanan konversi kami."
+        "content": "Anda tetap memiliki semua hak atas gambar yang Anda unggah. Kami tidak mengklaim kepemilikan atas konten Anda dan tidak menyimpan salinan gambar Anda setelah konversi."
       },
       "prohibited": {
-        "title": "Aktivitas yang Dilarang",
-        "content": "Anda tidak boleh: - Menggunakan layanan kami untuk mengonversi atau menyimpan konten ilegal atau berhak cipta - Berusaha untuk mendapatkan akses yang tidak sah ke sistem kami - Menggunakan layanan kami dengan cara yang dapat merusak atau membebani infrastruktur kami"
+        "title": "Kegiatan yang Dilarang",
+        "content": "Anda tidak boleh: - Menggunakan layanan kami untuk mengonversi konten ilegal atau yang dilindungi hak cipta - Mencoba mengakses sistem kami tanpa izin - Menggunakan layanan kami dengan cara apa pun yang dapat merusak atau membebani infrastruktur kami - Mencoba merekayasa balik atau mengekstrak kode sumber layanan kami"
       },
       "termination": {
         "title": "Pengakhiran",
-        "content": "Kami dapat mengakhiri atau menangguhkan akses Anda ke layanan kami secara segera, tanpa pemberitahuan atau tanggung jawab sebelumnya, atas alasan apa pun, termasuk namun tidak terbatas pada pelanggaran Syarat ini."
+        "content": "Kami berhak untuk mengakhiri atau menangguhkan akses ke layanan kami segera, tanpa pemberitahuan atau kewajiban sebelumnya, untuk alasan apa pun, termasuk, tetapi tidak terbatas pada, jika Anda melanggar Ketentuan."
       },
       "liability": {
         "title": "Batasan Tanggung Jawab",
-        "content": "Easy Convert Image tidak bertanggung jawab atas kerugian tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk namun tidak terbatas pada kehilangan keuntungan, data, penggunaan, goodwill, atau kerugian lainnya yang tidak berwujud."
+        "content": "Easy Convert Image tidak akan bertanggung jawab atas segala kerusakan tidak langsung, insidental, khusus, konsekuensial, atau hukuman, termasuk, tetapi tidak terbatas pada, kehilangan keuntungan, data, penggunaan, goodwill, atau kerugian tak berwujud lainnya. Kami tidak bertanggung jawab atas kehilangan data apa pun selama proses konversi."
       },
       "changes": {
-        "title": "Perubahan pada Syarat",
-        "content": "Kami berhak untuk memodifikasi atau mengganti Syarat ini kapan saja. Jika revisi tersebut material, kami akan mencoba memberikan pemberitahuan setidaknya 30 hari sebelum syarat baru berlaku."
+        "title": "Perubahan pada Ketentuan",
+        "content": "Kami berhak untuk memodifikasi atau mengganti Ketentuan ini kapan saja. Jika revisi bersifat material, kami akan berusaha memberikan pemberitahuan setidaknya 30 hari sebelum ketentuan baru mulai berlaku."
+      },
+      "governingLaw": {
+        "title": "Hukum yang Berlaku",
+        "content": "Ketentuan ini akan diatur dan ditafsirkan sesuai dengan hukum Braga, Portugal, tanpa memperhatikan ketentuan konflik hukumnya."
       },
       "contact": {
         "title": "Hubungi Kami",
-        "content": "Jika Anda memiliki pertanyaan tentang Syarat ini, silakan hubungi kami di terms@easyconvertimage.com"
+        "content": "Jika Anda memiliki pertanyaan tentang Ketentuan ini, silakan hubungi kami di admin@easyconvertimage.com"
       }
     },
     "meta": {
-      "title": "Syarat Layanan | Easy Convert Image",
-      "description": "Periksa syarat layanan kami untuk memahami aturan dan regulasi yang mengatur penggunaan alat konversi dan optimisasi gambar online gratis Easy Convert Image.",
-      "keywords": "syarat layanan, perjanjian pengguna, syarat konversi gambar, hukum",
-      "ogTitle": "Syarat Layanan Easy Convert Image",
-      "ogDescription": "Pahami hak dan kewajiban Anda saat menggunakan alat konversi dan optimisasi gambar gratis kami.",
+      "title": "Ketentuan Layanan | Easy Convert Image",
+      "description": "Tinjau ketentuan layanan kami untuk memahami aturan dan peraturan yang mengatur penggunaan alat konversi gambar online gratis Easy Convert Image.",
+      "keywords": "ketentuan layanan, perjanjian pengguna, ketentuan konversi gambar, hukum",
+      "ogTitle": "Ketentuan Layanan Easy Convert Image",
+      "ogDescription": "Pahami hak dan tanggung jawab Anda saat menggunakan alat konversi dan optimasi gambar gratis kami.",
       "structuredData": {
-        "name": "Syarat Layanan",
+        "name": "Ketentuan Layanan",
         "description": "Syarat dan ketentuan untuk menggunakan layanan konversi gambar online Easy Convert Image."
       }
     }
@@ -529,78 +551,57 @@
     "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
     "sections": {
       "whatAre": {
-        "title": "Apa Itu Cookie",
+        "title": "Apa itu Cookie?",
         "content": "Cookie adalah file teks kecil yang disimpan di perangkat Anda saat Anda mengunjungi situs web kami. Mereka membantu kami memberikan pengalaman yang lebih baik kepada Anda."
+      },
+      "typesOfCookies": {
+        "title": "Jenis Cookie yang Kami Gunakan",
+        "content": "Kami menggunakan jenis cookie berikut di situs web kami:",
+        "cookieTypes": [
+          {
+            "name": "Cookie Esensial",
+            "description": "Ini sangat diperlukan agar situs web berfungsi dengan benar. Mereka memungkinkan fungsionalitas inti seperti keamanan, manajemen jaringan, dan aksesibilitas. Anda dapat menonaktifkannya dengan mengubah pengaturan browser Anda, tetapi ini dapat memengaruhi bagaimana situs web berfungsi."
+          },
+          {
+            "name": "Cookie Fungsional",
+            "description": "Cookie ini memungkinkan situs web menyediakan fungsi dan personalisasi yang ditingkatkan. Mereka dapat ditetapkan oleh kami atau oleh penyedia pihak ketiga yang layanannya telah kami tambahkan ke halaman kami. Jika Anda tidak mengizinkan cookie ini, beberapa atau semua layanan ini mungkin tidak berfungsi dengan benar."
+          },
+          {
+            "name": "Cookie Pemasaran",
+            "description": "Cookie ini dapat ditetapkan di situs kami oleh mitra iklan kami. Mereka dapat digunakan oleh perusahaan-perusahaan itu untuk membangun profil minat Anda dan menampilkan iklan yang relevan di situs lain. Mereka tidak menyimpan informasi pribadi secara langsung, tetapi berdasarkan pada identifikasi unik browser dan perangkat internet Anda."
+          },
+          {
+            "name": "Cookie Analitik",
+            "description": "Cookie ini memungkinkan kami menghitung kunjungan dan sumber lalu lintas sehingga kami dapat mengukur dan meningkatkan kinerja situs kami. Mereka membantu kami mengetahui halaman mana yang paling dan kurang populer, dan melihat bagaimana pengunjung bergerak di situs. Semua informasi yang dikumpulkan cookie ini diakumulasikan dan karenanya anonim."
+          }
+        ]
       },
       "howWeUse": {
         "title": "Bagaimana Kami Menggunakan Cookie",
-        "content": "Kami menggunakan jenis cookie berikut: - Cookie penting: Untuk mengaktifkan fungsi inti (mis., mengingat pengaturan konversi gambar Anda) - Cookie analitik: Untuk memahami bagaimana pengunjung menggunakan situs kami (mis., Google Analytics) - Cookie preferensi: Untuk mengingat preferensi Anda (mis., pengaturan mode gelap)"
-      },
-      "thirdParty": {
-        "title": "Cookie Pihak Ketiga",
-        "content": "Kami menggunakan Google Analytics untuk membantu kami memahami bagaimana pengguna berinteraksi dengan situs web. Cookie ini dapat melacak hal-hal seperti berapa lama Anda menghabiskan waktu di situs dan halaman apa yang Anda kunjungi."
+        "content": "Kami terutama menggunakan cookie esensial untuk memungkinkan fungsionalitas inti layanan kami. Cookie ini tidak menyimpan informasi pribadi dan sangat diperlukan agar situs web berfungsi dengan benar. Kami juga dapat menggunakan cookie fungsional, pemasaran, dan analitik untuk meningkatkan pengalaman Anda dan memperbaiki layanan kami, tetapi hanya dengan persetujuan Anda yang jelas."
       },
       "managing": {
         "title": "Mengelola Cookie",
-        "content": "Anda dapat mengontrol dan/atau menghapus cookie sesuai keinginan Anda. Anda dapat menghapus semua cookie yang sudah ada di komputer Anda dan Anda dapat mengatur sebagian besar browser untuk mencegah mereka ditempatkan."
+        "content": "Sebagian besar browser web memungkinkan kontrol atas sebagian besar cookie melalui pengaturan browser. Untuk mengetahui lebih lanjut tentang cookie, termasuk cara melihat cookie apa yang telah ditetapkan, kunjungi www.aboutcookies.org atau www.allaboutcookies.org."
+      },
+      "euCookieLaw": {
+        "title": "Kepatuhan terhadap Hukum Cookie UE",
+        "content": "Penggunaan cookie kami sesuai dengan Hukum Cookie UE (Direktif e-Privacy). Kami memperoleh persetujuan eksplisit untuk cookie non-esensial sesuai dengan hukum UE."
       },
       "contact": {
         "title": "Hubungi Kami",
-        "content": "Jika Anda memiliki pertanyaan tentang penggunaan cookie kami, silakan email kami di cookies@easyconvertimage.com"
+        "content": "Jika Anda memiliki pertanyaan tentang penggunaan cookie kami, kirimkan email ke admin@easyconvertimage.com"
       }
     },
     "meta": {
       "title": "Kebijakan Cookie | Easy Convert Image",
-      "description": "Pelajari tentang bagaimana Easy Convert Image menggunakan cookie untuk meningkatkan pengalaman Anda dengan alat konversi dan optimisasi gambar online gratis kami.",
-      "keywords": "kebijakan cookie, cookie situs web, pelacakan data, preferensi pengguna",
+      "description": "Pelajari bagaimana Easy Convert Image menggunakan cookie untuk menyediakan alat konversi dan optimasi gambar online gratis kami.",
+      "keywords": "kebijakan cookie, cookie situs web, cookie esensial, privasi pengguna",
       "ogTitle": "Kebijakan Cookie Easy Convert Image",
-      "ogDescription": "Pahami bagaimana kami menggunakan cookie untuk meningkatkan pengalaman konversi gambar Anda dan melindungi privasi Anda.",
+      "ogDescription": "Pahami bagaimana kami menggunakan cookie untuk menyediakan layanan konversi gambar kami sambil menghormati privasi Anda.",
       "structuredData": {
         "name": "Kebijakan Cookie",
-        "description": "Detail tentang bagaimana Easy Convert Image menggunakan cookie dan teknologi serupa."
-      }
-    }
-  },
-  "ccpaCompliance": {
-    "heading": "Kepatuhan CCPA",
-    "subheading": "Kepatuhan CCPA untuk Easy Convert Image",
-    "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
-    "sections": {
-      "consumerRights": {
-        "title": "Hak Konsumen California",
-        "intro": "Di bawah California Consumer Privacy Act (CCPA), penduduk California memiliki hak-hak berikut:",
-        "list": "1. Hak untuk mengetahui informasi pribadi apa yang dikumpulkan\n2. Hak untuk meminta penghapusan informasi pribadi\n3. Hak untuk tidak menjual informasi pribadi\n4. Hak untuk tidak diskriminasi atas penggunaan hak-hak CCPA"
-      },
-      "infoCollected": {
-        "title": "Kategori Informasi Pribadi yang Dikumpulkan",
-        "content": "Dalam 12 bulan terakhir, Easy Convert Image tidak mengumpulkan Data pribadi apapun."
-      },
-      "exerciseRights": {
-        "title": "Bagaimana Melakukan Hak Anda",
-        "content": "Untuk menggunakan hak-hak CCPA Anda, silakan email kami di ccpa@easyconvertimage.com. Kami akan merespons permintaan Anda dalam waktu 45 hari."
-      },
-      "verification": {
-        "title": "Proses Verifikasi",
-        "content": "Untuk melindungi privasi Anda, kami akan memverifikasi identitas Anda sebelum menanggapi permintaan Anda. Kami dapat meminta Anda untuk memberikan informasi tambahan untuk tujuan verifikasi."
-      },
-      "authorizedAgent": {
-        "title": "Agen Berwenang",
-        "content": "Anda dapat menunjuk agen berwenang untuk membuat permintaan atas nama Anda. Agen berwenang harus memberikan bukti izin tertulis Anda dan memverifikasi identitas mereka sendiri kepada kami."
-      },
-      "doNotSell": {
-        "title": "\"Jangan Jual Informasi Pribadi Saya\"",
-        "content": "Easy Convert Image tidak menjual informasi pribadi. Namun, jika Anda ingin mengopt-out dari penjualan informasi Anda di masa depan, Anda dapat email kami di donotsell@easyconvertimage.com."
-      }
-    },
-    "meta": {
-      "title": "Kepatuhan CCPA | Easy Convert Image",
-      "description": "Pelajari tentang kepatuhan Easy Convert Image dengan California Consumer Privacy Act (CCPA) dan hak Anda terkait informasi pribadi Anda.",
-      "keywords": "CCPA, California Consumer Privacy Act, hak privasi, perlindungan data, Easy Convert Image",
-      "ogTitle": "Kepatuhan CCPA - Easy Convert Image",
-      "ogDescription": "Pahami hak-hak Anda di bawah CCPA dan bagaimana Easy Convert Image melindungi informasi pribadi Anda sesuai dengan hukum California.",
-      "structuredData": {
-        "name": "Kepatuhan CCPA",
-        "description": "Informasi tentang kepatuhan Easy Convert Image dengan peraturan California Consumer Privacy Act (CCPA) dan hak konsumen."
+        "description": "Detail tentang bagaimana Easy Convert Image menggunakan cookie."
       }
     }
   },
@@ -609,54 +610,87 @@
     "subheading": "Kepatuhan GDPR untuk Easy Convert Image",
     "lastUpdated": "Terakhir diperbarui: 15 Juli 2024",
     "sections": {
-      "dataController": {
-        "title": "Pengontrol Data",
-        "content": "Easy Convert Image, adalah pengontrol data untuk data pribadi yang dikumpulkan melalui layanan kami."
+      "dataProcessing": {
+        "title": "Pemrosesan Data",
+        "content": "Easy Convert Image memproses gambar untuk konversi tanpa menyimpan data pribadi apa pun. Kami tidak menyimpan informasi tentang pengguna atau gambar mereka setelah proses konversi selesai."
       },
       "legalBasis": {
-        "title": "Dasar Hukum untuk Pengolahan",
-        "content": "Kami mengolah data pribadi Anda berdasarkan dasar hukum berikut: - Persetujuan: Ketika Anda menyetujui penggunaan cookie kami untuk tujuan yang tidak penting. - Penyelesaian Kontrak: Ketika kami menyediakan layanan konversi gambar kami kepada Anda. - Kepentingan yang sah: Untuk meningkatkan layanan kami dan memastikan keamanan."
+        "title": "Dasar Hukum untuk Pemrosesan",
+        "content": "Dasar hukum untuk memproses gambar Anda adalah pelaksanaan kontrak - untuk menyediakan layanan konversi gambar yang Anda minta. Kami tidak memproses data apa pun selain yang diperlukan untuk tujuan ini."
       },
       "dataSubjectRights": {
-        "title": "Hak Subjek Data",
-        "content": "Di bawah GDPR, Anda memiliki hak-hak berikut: - Hak untuk mengakses - Hak untuk perbaikan - Hak untuk penghapusan - Hak untuk membatasi pemrosesan - Hak portabilitas data - Hak untuk keberatan",
-        "exerciseRights": "Untuk menggunakan hak-hak ini, silakan email kami di gdpr@easyconvertimage.com."
+        "title": "Hak Pihak Terkait Data",
+        "content": "Berdasarkan GDPR, individu memiliki berbagai hak terkait data pribadi mereka. Namun, karena kami tidak mengumpulkan atau menyimpan data pribadi, sebagian besar hak ini tidak berlaku untuk layanan kami. Kami tidak dapat memberikan akses, perbaikan, atau penghapusan data yang tidak kami miliki."
       },
       "dataRetention": {
-        "title": "Pemeliharaan Data",
-        "content": "Kami menyimpan data pribadi Anda selama yang diperlukan untuk menyediakan layanan kami dan mematuhi kewajiban hukum. Gambar yang dikonversi akan dihapus secara otomatis setelah 24 jam."
+        "title": "Retensi Data",
+        "content": "Kami tidak menyimpan data pribadi atau gambar apa pun. Semua data diproses secara real-time dan segera dihapus setelah konversi selesai."
       },
       "internationalTransfers": {
         "title": "Transfer Internasional",
-        "content": "Data Anda dapat ditransfer ke server yang terletak di luar EEA. Kami memastikan tindakan pencegahan yang tepat, seperti Klousul Kontrak Standar."
+        "content": "Karena kami tidak mengumpulkan atau menyimpan data pribadi, tidak ada transfer data pribadi internasional yang perlu dipertimbangkan."
+      },
+      "security": {
+        "title": "Keamanan Data",
+        "content": "Meskipun kami tidak menyimpan data pribadi, kami menerapkan langkah-langkah keamanan yang ketat untuk melindungi gambar Anda selama proses konversi, termasuk enkripsi dan protokol transmisi data yang aman."
+      },
+      "euRepresentative": {
+        "title": "Perwakilan UE",
+        "content": "Karena kami berbasis di Braga, Portugal, yang berada di dalam Uni Eropa, kami tidak memerlukan perwakilan UE terpisah berdasarkan GDPR."
+      },
+      "contact": {
+        "title": "Hubungi Kami",
+        "content": "Jika Anda memiliki pertanyaan tentang kepatuhan GDPR kami, silakan kirimkan email ke admin@easyconvertimage.com"
       }
     },
     "meta": {
       "title": "Kepatuhan GDPR | Easy Convert Image",
-      "description": "Temukan bagaimana Easy Convert Image memastikan kepatuhan dengan peraturan GDPR sambil menyediakan layanan konversi gambar online dan optimisasi gratis.",
-      "keywords": "kepatuhan GDPR, perlindungan data, undang-undang privasi UE, hak pengguna",
+      "description": "Temukan bagaimana Easy Convert Image memastikan kepatuhan terhadap peraturan GDPR sambil menyediakan layanan konversi gambar online gratis tanpa menyimpan data pribadi.",
+      "keywords": "kepatuhan GDPR, perlindungan data, hukum privasi UE, hak pengguna",
       "ogTitle": "Informasi Kepatuhan GDPR Easy Convert Image",
-      "ogDescription": "Pelajari tentang hak data Anda dan bagaimana kami melindungi informasi pribadi Anda sesuai dengan GDPR.",
+      "ogDescription": "Pelajari bagaimana kami melindungi privasi Anda sesuai dengan GDPR dengan tidak mengumpulkan atau menyimpan informasi pribadi apa pun.",
       "structuredData": {
         "name": "Kepatuhan GDPR",
-        "description": "Informasi tentang kepatuhan Easy Convert Image dengan peraturan GDPR."
+        "description": "Informasi tentang kepatuhan GDPR Easy Convert Image."
+      }
+    }
+  },
+  "ccpaCompliance": {
+    "heading": "Kepatuhan CCPA",
+    "subheading": "Kepatuhan CCPA untuk Easy Convert Image",
+    "lastUpdated": "Terakhir diperbarui: 27 juli 2024",
+    "sections": {
+      "consumerRights": {
+        "title": "Hak Konsumen California",
+        "intro": "Berdasarkan California Consumer Privacy Act (CCPA), penduduk California memiliki hak tertentu terkait informasi pribadi mereka. Namun, karena Easy Convert Image tidak mengumpulkan atau menyimpan informasi pribadi, banyak hak ini tidak berlaku untuk layanan kami.",
+        "list": "1. Hak untuk mengetahui informasi pribadi apa yang dikumpulkan: Kami tidak mengumpulkan informasi pribadi.\n2. Hak untuk meminta penghapusan informasi pribadi: Kami tidak menyimpan informasi pribadi yang dapat dihapus.\n3. Hak untuk menolak penjualan informasi pribadi: Kami tidak menjual informasi pribadi.\n4. Hak untuk tidak didiskriminasi karena menggunakan hak CCPA: Kami tidak mendiskriminasi pengguna apa pun, terlepas dari pilihan mereka untuk menggunakan hak mereka."
+      },
+      "infoCollected": {
+        "title": "Kategori Informasi Pribadi yang Dikumpulkan",
+        "content": "Easy Convert Image tidak mengumpulkan atau menyimpan informasi pribadi apa pun. Kami memproses gambar untuk konversi tanpa menyimpan data apa pun."
+      },
+      "noSale": {
+        "title": "Tidak Ada Penjualan Informasi Pribadi",
+        "content": "Easy Convert Image tidak menjual informasi pribadi. Kami tidak mengumpulkan atau menyimpan data pribadi yang dapat dijual."
+      },
+      "contact": {
+        "title": "Hubungi Kami",
+        "content": "Jika Anda memiliki pertanyaan tentang kepatuhan CCPA kami, silakan kirim email ke admin@easyconvertimage.com"
       }
     },
-    "articles": [
-      {
-        "heading": "PNG vs WebP: Panduan Lengkap untuk Mengoptimalkan Gambar Web Anda",
-        "url": "png-vs-webp-conversion-guide"
-      },
-      {
-        "heading": "10 Format Gambar Terbaik untuk Situs Web Anda: Panduan Komprehensif",
-        "url": "top-10-image-formats-for-website"
-      },
-      {
-        "heading": "5 Sumber Daya Gratis Penting untuk Desainer di Tahun 2024",
-        "url": "top-5-free-resources-designers-2024"
+    "meta": {
+      "title": "Kepatuhan CCPA | Easy Convert Image",
+      "description": "Pelajari tentang kepatuhan Easy Convert Image terhadap California Consumer Privacy Act (CCPA) dan bagaimana kami melindungi privasi Anda.",
+      "keywords": "CCPA, California Consumer Privacy Act, hak privasi, perlindungan data, Easy Convert Image",
+      "ogTitle": "Kepatuhan CCPA - Easy Convert Image",
+      "ogDescription": "Pahami bagaimana Easy Convert Image mematuhi CCPA dengan tidak mengumpulkan atau menyimpan informasi pribadi apa pun.",
+      "structuredData": {
+        "name": "Kepatuhan CCPA",
+        "description": "Informasi tentang kepatuhan Easy Convert Image terhadap California Consumer Privacy Act (CCPA)."
       }
-    ]
+    }
   },
+
   "cookieBanner": {
     "title": "Preferensi Cookie",
     "description": "Kami menggunakan cookie untuk meningkatkan pengalaman browsing Anda dan menganalisis lalu lintas kami. Silakan pilih preferensi Anda di bawah ini.",
@@ -678,6 +712,70 @@
     },
     "marketing": {
       "name": "Pemasaran"
+    }
+  },
+
+  "dropboxModal": {
+    "button": {
+      "uploadFromDropbox": "Unggah File dari Dropbox"
+    },
+    "errors": {
+      "downloadError": "Kesalahan saat mengunduh file Anda"
+    },
+    "messages": {
+      "operationCancelled": "Operasi Dropbox dibatalkan"
+    },
+    "accessibility": {
+      "dropboxLogo": "Logo Dropbox"
+    }
+  },
+  "googleModal": {
+    "button": {
+      "uploadFromGoogleDrive": "Unggah File dari Google Drive"
+    },
+    "modal": {
+      "title": "Pilih Gambar dari Google Drive",
+      "heading": "Pilih Gambar:",
+      "filterFiles": {
+        "label": "Filter File",
+        "placeholder": "Filter File berdasarkan nama..."
+      },
+      "sortBy": {
+        "label": "Urutkan Berdasarkan",
+        "placeholder": "Urutkan Berdasarkan",
+        "options": {
+          "fileName": "Nama File",
+          "fileSize": "Ukuran File",
+          "creationDate": "Tanggal Pembuatan"
+        }
+      },
+      "tableHeader": {
+        "select": "Pilih:",
+        "fileName": "Nama File:",
+        "fileSize": "Ukuran File:",
+        "creationDate": "Tanggal Pembuatan:"
+      },
+      "noResults": "Tidak Ada Hasil Ditemukan",
+      "actions": {
+        "clearSelection": "Hapus Pilihan",
+        "cancel": "Batal",
+        "uploadFiles": "Unggah File"
+      }
+    },
+    "errors": {
+      "uploadError": "Kesalahan saat mengunggah file Anda",
+      "fetchError": "Kesalahan saat mengambil file Google Drive",
+      "loginFailed": "Gagal Masuk"
+    },
+    "accessibility": {
+      "googleDriveLogo": "Logo Google Drive",
+      "modalLabel": "Pemilihan file Google Drive",
+      "filterFilesLabel": "Filter file",
+      "sortFilesLabel": "Urutkan file berdasarkan",
+      "fileDetails": "Ukuran file: {size} kb, Dibuat pada: {date}",
+      "clearSelectionLabel": "Hapus pilihan file",
+      "cancelSelectionLabel": "Batalkan pemilihan file",
+      "uploadFilesLabel": "Unggah file yang dipilih"
     }
   }
 }

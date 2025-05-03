@@ -13,6 +13,7 @@ import { LoaderFunctionArgs, MetaFunction, json } from "@remix-run/node";
 import i18next from "~/i18next.server";
 import { useTranslation } from "react-i18next";
 import { POPULAR_CONVERSIONS } from "~/utils/conversions";
+import FAQSection from "~/ui/AboutPage/FAQSection";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request);
@@ -123,6 +124,8 @@ export default function AboutPage() {
           </Hero>{" "}
           <CompanyGoalSection />
           <CompanyServicesSection />
+          <FAQSection />
+
         </main>
       </div>
       <BackToTop />

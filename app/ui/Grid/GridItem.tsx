@@ -1,4 +1,4 @@
-import React from "react";
+import React, { KeyboardEventHandler } from "react";
 import classNames from "classnames";
 import "./GridItem.scss";
 import FadeInComponent from "../FadeIn/FadeIn";
@@ -13,6 +13,9 @@ interface GridItemProps {
   xl?: number;
   role?: string;
   spacing?: number;
+  onClick?: () => void;
+  tabIndex?: number;
+  onKeyPress?: (e: KeyboardEventHandler<HTMLDivElement>) => void;
   className?: string;
   animation?: string;
   justifyContent?:
@@ -44,7 +47,9 @@ const GridItem: React.FC<GridItemProps> = ({
   justifyContent,
   alignItems,
   id,
-  role
+  tabIndex,
+  role,
+  ...rest
 }) => {
   const itemClasses = classNames("grid-item", className, {
     [`grid-item--xs-${xs}`]: xs !== undefined,
@@ -65,7 +70,7 @@ const GridItem: React.FC<GridItemProps> = ({
   }
 
   return (
-    <div role={role} id={id} className={itemClasses} style={{ gap: spacing }}>
+    <div tabIndex={tabIndex} role={role} id={id} className={itemClasses} style={{ gap: spacing }} {...rest}>
       {children}
     </div>
   );

@@ -16,7 +16,7 @@ type CookiePreferences = {
 };
 
 export function CookiesConsent() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [cookies, setCookie, removeCookie] = useCookies([
     "functional_cookies",
     "necessary_cookies",
@@ -182,6 +182,9 @@ export function CookiesConsent() {
           </fieldset>
         </form>
         <div className="cookie-banner__buttons">
+        <Button href={`${i18n?.language ?? ''}/cookie-policy`} appareance="link">
+              Learn More
+            </Button>
           <Button
             appareance="outlined"
             className="cookie-banner__button cookie-banner__button--save"

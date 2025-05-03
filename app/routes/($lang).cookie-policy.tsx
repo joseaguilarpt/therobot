@@ -84,6 +84,7 @@ export const meta: MetaFunction<typeof loader> = ({
 
 export default function CookiesPolicy() {
   const { t, i18n } = useTranslation();
+
   return (
     <>
       <Navbar autoScrolled />
@@ -119,35 +120,25 @@ export default function CookiesPolicy() {
 
             <Text>{t("cookiePolicy.lastUpdated")}</Text>
 
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              1. {t("cookiePolicy.sections.whatAre.title")}
-            </Heading>
-
-            <Text>{t("cookiePolicy.sections.whatAre.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              2. {t("cookiePolicy.sections.howWeUse.title")}
-            </Heading>
-
-            <Text>{t("cookiePolicy.sections.howWeUse.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              3. {t("cookiePolicy.sections.thirdParty.title")}
-            </Heading>
-
-            <Text>{t("cookiePolicy.sections.thirdParty.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              4. {t("cookiePolicy.sections.managing.title")}
-            </Heading>
-
-            <Text>{t("cookiePolicy.sections.managing.content")}</Text>
-
-            <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
-              5. {t("cookiePolicy.sections.contact.title")}
-            </Heading>
-
-            <Text>{t("cookiePolicy.sections.contact.content")}</Text>
+            {Object.entries(t("cookiePolicy.sections", { returnObjects: true })).map(([key, section], index) => (
+              <div key={key}>
+                <Heading className="u-pt3 u-pb1" level={2} appearance={5}>
+                  {index + 1}. {section.title}
+                </Heading>
+                <Text>{section.content}</Text>
+                {key === "typesOfCookies" && section.cookieTypes && (
+                  <ul>
+                    {section.cookieTypes.map((cookieType, idx) => (
+                      <li className="u-pb2" key={idx}>
+                        <Text>
+                        <strong>{cookieType.name}:</strong> {cookieType.description}
+                        </Text>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </ContentContainer>
         </div>
       </main>

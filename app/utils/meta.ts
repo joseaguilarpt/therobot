@@ -22,7 +22,7 @@ const BASE_URL = "https://easyconvertimage.com";
 
 const languages = ["en", "es", "fr", "de", "pt", "nl", "it", "id", "ru"];
 
-const getAlternateLanguages = (path: string, currentLang: string): Record<string, string> => {
+const getAlternateLanguages = (path: string): Record<string, string> => {
   const alternateLanguages: Record<string, string> = {};
   languages.forEach((lang) => {
     alternateLanguages[lang] = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}${path ? `/${path}` : ''}`;
