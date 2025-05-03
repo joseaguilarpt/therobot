@@ -20,6 +20,7 @@ import { toolAction } from "~/utils/toolUtils";
 import Tool from "~/ui/Tool/Tool";
 import ContactForm from "~/ui/ContactForm/ContactForm";
 import { meta } from "~/utils/meta";
+import { getCSRFToken } from "~/utils/csrf.server";
 
 export { meta };
 export let handle = { i18n: "common" };
@@ -31,7 +32,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
   let ogDescription = t("homeMeta.ogDescription");
   let description = t("homeMeta.description");
   let title = t("homeMeta.title");
-  return json({ title, description, keywords, ogDescription, ogTitle });
+  const { token, cookieHeader } = await getCSRFToken(request);
+  return json(
+    { title, description, keywords, ogDescription, ogTitle, csrfToken: token },
+    { headers: { "Set-Cookie": cookieHeader } }
+  );
 }
 
 export const action: ActionFunction = async ({ request }) => {
@@ -66,10 +71,7 @@ export default function IndexPage() {
                 {t("hero.header2")}
               </Heading>
               <Text className="u-pt5" align="center">
-                {t("hero.description")}
-              </Text>
-              <Text className="u-pt2" align="center">
-                {t("hero.freeToUse")}
+                {t("hero.description")}{' '}{t("hero.freeToUse")}
               </Text>
               <Tool />
             </section>

@@ -20,6 +20,7 @@ import { createMeta } from "~/utils/meta";
 import i18next from "~/i18next.server";
 import { useTranslation } from "react-i18next";
 import ContactForm from "~/ui/ContactForm/ContactForm";
+import { getCSRFToken } from "~/utils/csrf.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   let t = await i18next.getFixedT(request);
@@ -28,7 +29,11 @@ export async function loader({ request }: LoaderFunctionArgs) {
   let ogDescription = t("contact.meta.ogDescription");
   let description = t("contact.meta.description");
   let title = t("contact.meta.title");
-  return json({ title, description, keywords, ogDescription, ogTitle });
+  const { token, cookieHeader } = await getCSRFToken(request);
+  return json(
+    { title, description, keywords, ogDescription, ogTitle, csrfToken: token },
+    { headers: { "Set-Cookie": cookieHeader } }
+  );;
 }
 
 export const meta: MetaFunction = ({ data }) => {

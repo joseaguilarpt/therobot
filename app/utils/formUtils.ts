@@ -1,5 +1,5 @@
 // src/hooks/useFileConversion.ts
-import { useSubmit } from "@remix-run/react";
+import { useLoaderData, useSubmit } from "@remix-run/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHCaptcha } from "~/context/HCaptchaContext";
@@ -10,6 +10,7 @@ export function useForm(data: any) {
   const { t } = useTranslation("common");
   const { showSnackbar } = useTheme();
   const { captchaRef } = useHCaptcha();
+  const loaderData = useLoaderData();
   const [isPending, setIsPending] = React.useState(false);
   const [contactFormData, setContactForm] = React.useState({});
 
@@ -40,9 +41,8 @@ export function useForm(data: any) {
       if (response) {
         currentToken = response;
         formData.set("h-captcha-response", response);
-      }
-      else {
-        showSnackbar(t('errorBoundary.title'), 'error')
+      } else {
+        showSnackbar(t("errorBoundary.title"), "error");
         return;
       }
     }
@@ -69,6 +69,9 @@ export function useForm(data: any) {
     if (!p.comments) {
       showSnackbar(t("ui.missingComments"), "error");
       return;
+    }
+    if (loaderData?.csrfToken) {
+      formData.append("csrf", loaderData?.csrfToken);
     }
     formData.append("type", "contact");
     setIsPending(true);

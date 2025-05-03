@@ -1,5 +1,5 @@
 // In app/routes/convert.tsx
-import { useActionData } from "@remix-run/react";
+import { useActionData, useLoaderData } from "@remix-run/react";
 import { ActionFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import BackToTop from "~/ui/BackToTop/BackToTop";
@@ -47,7 +47,6 @@ export default function IndexPage() {
   let { t } = useTranslation("common");
   const data = useActionData<typeof action>();
 
-  console.log(data, 'data')
   return (
     <>
       <Navbar autoScrolled />
@@ -71,10 +70,7 @@ export default function IndexPage() {
                 {t("hero.header2")}
               </Heading>
               <Text className="u-pt5" align="center">
-                {t("hero.description")}
-              </Text>
-              <Text className="u-pt2" align="center">
-                {t("hero.freeToUse")}
+                {t("hero.description")}{' '}{t("hero.freeToUse")}
               </Text>
               <Tool />
             </section>

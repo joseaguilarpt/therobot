@@ -29,7 +29,7 @@
   "hero": {
     "header1": "Easy Image Conversion",
     "header2": "Any Format, Anytime.",
-    "description": "Convert images easily with Easy Convert Image. Drag & drop files, paste with Ctrl+V, or upload from your device. Batch convert multiple images at once. Supports JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP and more formats.",
+    "description": "Convert images easily with Easy Convert Image. Drag & drop files, paste with Ctrl+V, or upload from your device. Batch convert multiple images at once. Supports JPG, PNG, SVG, WebP and more formats.",
     "freeToUse": "Free to use, no registration required. Transform your images in seconds!"
   },
   "tool": {
@@ -126,7 +126,7 @@
     },
     "option2": {
       "heading": "Which image formats does Easy Convert Image support?",
-      "description": "We support a wide range of formats including JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO, and more. You can convert between any of these formats in both directions."
+      "description": "We support a wide range of formats including JPEG, PNG,  GIF, WebP, TIFF, SVG, BMP, ICO, and more. You can convert between any of these formats in both directions."
     },
     "option3": {
       "heading": "Is Easy Convert Image really free?",
@@ -260,11 +260,11 @@
   },
   "homeMeta": {
     "name": "Easy Convert Image",
-    "title": "Easy Convert Image: Free Online Converter & Optimizer (JPG, PNG, WebP)",
-    "description": "Convert, resize, and optimize images instantly. Support for JPG, PNG, WebP, AVIF, SVG, and more. Batch processing, no sign-up. Fast, secure, and 100% free.",
-    "keywords": "image converter, JPG to PNG, WebP converter, image resizer, image optimization, batch image processing",
+    "title": "Easy Convert Image: Free Online Converter & Optimizer (JPG, PNG,  WebP)",
+    "description": "Convert, resize, and optimize images instantly. Support for JPG, PNG,  WebP, AVIF, SVG, and more. Batch processing, no sign-up. Fast, secure, and 100% free.",
+    "keywords": "image converter, JPG to PNG,  WebP converter, image resizer, image optimization, batch image processing",
     "ogTitle": "Easy Convert Image: Transform Any Image Format Instantly (Free)",
-    "ogDescription": "Convert, resize, and optimize images in seconds. JPG, PNG, WebP, AVIF & more. No sign-up, no watermarks. Try our lightning-fast tool now!"
+    "ogDescription": "Convert, resize, and optimize images in seconds. JPG, PNG,  WebP, AVIF & more. No sign-up, no watermarks. Try our lightning-fast tool now!"
   },
   "ui": {
     "emailError": "Error sending contact email",

@@ -29,7 +29,7 @@
   "hero": {
     "header1": "Eenvoudige Beeldconversie",
     "header2": "Elk formaat, altijd.",
-    "description": "Converteer eenvoudig afbeeldingen met Easy Convert Image. Sleep en drop bestanden, plak met Ctrl+V, of upload vanaf uw apparaat. Converteer meerdere afbeeldingen in één keer. Ondersteunt JPG, PNG, GIF, SVG, WebP, AVIF, TIFF, BMP en meer.",
+    "description": "Converteer eenvoudig afbeeldingen met Easy Convert Image. Sleep en drop bestanden, plak met Ctrl+V, of upload vanaf uw apparaat. Converteer meerdere afbeeldingen in één keer. Ondersteunt JPG, PNG, SVG, WebP en meer.",
     "freeToUse": "Gratis, geen registratie vereist. Transformeer uw afbeeldingen in enkele seconden!"
   },
   "tool": {
@@ -126,7 +126,7 @@
     },
     "option2": {
       "heading": "Welke afbeeldingsformaten ondersteunt Easy Convert Image?",
-      "description": "We ondersteunen een breed scala aan formaten, waaronder JPEG, PNG, GIF, WebP, TIFF, SVG, BMP, ICO en meer. U kunt converteren tussen welk van deze formaten dan ook in beide richtingen."
+      "description": "We ondersteunen een breed scala aan formaten, waaronder JPEG, PNG,  GIF, WebP, TIFF, SVG, BMP, ICO en meer. U kunt converteren tussen welk van deze formaten dan ook in beide richtingen."
     },
     "option3": {
       "heading": "Is Easy Convert Image echt gratis?",
@@ -259,11 +259,11 @@
     }
   },
   "homeMeta": {
-    "title": "Easy Convert Image: Gratis Online Converter en Optimalisator (JPG, PNG, WebP)",
-    "description": "Converteer, resize en optimaliseer afbeeldingen in een handomdraai. Ondersteunt JPG, PNG, WebP, AVIF, SVG en meer. Batch-verwerking, geen registratie. Snel, veilig en 100% gratis.",
-    "keywords": "afbeeldingsconverter, JPG naar PNG, WebP converter, afbeelding resizer, afbeeldingsoptimalisatie, batch-afbeeldingsverwerking",
+    "title": "Easy Convert Image: Gratis Online Converter en Optimalisator (JPG, PNG,  WebP)",
+    "description": "Converteer, resize en optimaliseer afbeeldingen in een handomdraai. Ondersteunt JPG, PNG,  WebP, AVIF, SVG en meer. Batch-verwerking, geen registratie. Snel, veilig en 100% gratis.",
+    "keywords": "afbeeldingsconverter, JPG naar PNG,  WebP converter, afbeelding resizer, afbeeldingsoptimalisatie, batch-afbeeldingsverwerking",
     "ogTitle": "Easy Convert Image: Transformeer Elk Afbeeldingsformaat Direct (Gratis)",
-    "ogDescription": "Converteer, resize en optimaliseer afbeeldingen in enkele seconden. JPG, PNG, WebP, AVIF en meer. Geen registratie, geen watermerken. Probeer onze supersnelle tool nu!"
+    "ogDescription": "Converteer, resize en optimaliseer afbeeldingen in enkele seconden. JPG, PNG,  WebP, AVIF en meer. Geen registratie, geen watermerken. Probeer onze supersnelle tool nu!"
   },
   "ui": {
     "emailError": "Fout bij het verzenden van contacte-mail",

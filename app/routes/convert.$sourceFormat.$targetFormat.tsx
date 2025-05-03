@@ -18,6 +18,7 @@ import { toolAction } from "~/utils/toolUtils";
 import { meta } from "../utils/meta";
 import { getMetaIntl } from "~/utils/metaIntl";
 import Tool from "~/ui/Tool/Tool";
+import { getCSRFToken } from "~/utils/csrf.server";
 
 export { meta };
 export let handle = { i18n: "common" };
@@ -26,10 +27,15 @@ export async function loader({ request, params }: LoaderFunctionArgs) {
   const { sourceFormat, targetFormat } = params;
   const data = await getMetaIntl(params, request);
 
-  return json({
-    ...data,
-    alternate: `convert/${sourceFormat}/${targetFormat}`,
-  });
+  const { token, cookieHeader } = await getCSRFToken(request);
+  return json(
+    {
+      ...data,
+      alternate: `convert/${sourceFormat}/${targetFormat}`,
+      csrfToken: token,
+    },
+    { headers: { "Set-Cookie": cookieHeader } }
+  );
 }
 
 export const action: ActionFunction = async ({ request }) => {
@@ -93,10 +99,7 @@ export default function ConvertPageMultilanguage() {
                 {t("hero.header2")}
               </Heading>
               <Text className="u-pt5" align="center">
-                {t("hero.description")}
-              </Text>
-              <Text className="u-pt2" align="center">
-                {t("hero.freeToUse")}
+                {t("hero.description")}{' '}{t("hero.freeToUse")}
               </Text>
               <Tool />
             </section>

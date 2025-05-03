@@ -485,7 +485,8 @@
 }
 
 .home-suggest {
-  margin: 10px;
+  margin: 0;
+  margin-bottom: 10px;
 }
 .home-suggest .suggestions {
   top: 80px;
