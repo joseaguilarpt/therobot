@@ -445,25 +445,25 @@
 
   "privacyPolicy": {
     "content": {
-      "heading": "Politique de confidentialité",
+      "heading": "Politique de Confidentialité",
       "lastUpdated": "Dernière mise à jour : 15 juillet 2024",
-      "introduction": "Easy Convert Image ('nous') s'engage à protéger votre vie privée. Cette politique explique comment nous traitons vos informations lorsque vous utilisez nos services de conversion d'images.",
+      "introduction": "Easy Convert Image ('nous') s'engage à protéger votre vie privée. Cette politique explique comment nous gérons vos informations lorsque vous utilisez nos services de conversion d'images.",
       "sections": [
         {
           "title": "Informations que nous ne collectons pas",
-          "content": "Nous ne collectons ni ne stockons aucune information personnelle. Notre service est conçu pour se concentrer sur la protection de la vie privée, et nous ne conservons aucune donnée sur vous ou vos images une fois le processus de conversion terminé."
+          "content": "Nous ne collectons ni ne stockons aucune information personnelle. Notre service est conçu pour respecter la vie privée, et nous ne conservons aucune donnée vous concernant ou concernant vos images une fois le processus de conversion terminé."
         },
         {
           "title": "Comment nous traitons vos images",
-          "content": "Lorsque vous utilisez notre service pour convertir une image : - L'image est temporairement traitée sur nos serveurs - Aucune copie de l'image ou de ses métadonnées n'est conservée après la conversion - L'image convertie est immédiatement mise à disposition pour téléchargement, puis supprimée de nos systèmes"
+          "content": "Lorsque vous utilisez notre service pour convertir une image : \n- L'image est entièrement traitée dans votre navigateur en utilisant Remix, un framework JavaScript côté client\n- Aucune donnée n'est envoyée à nos serveurs pendant le processus de conversion\n- Tout le traitement se fait localement sur votre appareil\n- Aucune copie de l'image ou de ses métadonnées n'est conservée après la conversion\n- L'image convertie est immédiatement disponible pour le téléchargement directement depuis votre navigateur"
         },
         {
           "title": "Sécurité des données",
-          "content": "Bien que nous ne stockions pas vos données, nous mettons en œuvre des mesures de sécurité standard de l'industrie pour protéger vos images pendant le processus de conversion, notamment des protocoles de transmission de données sécurisés."
+          "content": "Comme tout le traitement des images se fait dans votre navigateur, nous ne manipulons ni ne stockons vos images sur nos serveurs. Cette approche de traitement côté client améliore intrinsèquement la sécurité et la confidentialité de vos données."
         },
         {
           "title": "Vos droits",
-          "content": "Étant donné que nous ne collectons ni ne stockons de données personnelles, il n'y a pas d'informations personnelles auxquelles vous pourriez accéder, rectifier ou supprimer. Cependant, vous avez toujours le droit de choisir d'utiliser ou non notre service."
+          "content": "Comme nous ne collectons ni ne stockons de données personnelles, il n'y a pas d'informations personnelles auxquelles vous pouvez accéder, rectifier ou supprimer. Cependant, vous avez toujours le droit de choisir d'utiliser ou non notre service."
         },
         {
           "title": "Confidentialité des enfants",
@@ -475,24 +475,53 @@
         },
         {
           "title": "Droits de protection des données de l'UE",
-          "content": "Si vous résidez dans l'Union européenne, vous avez certains droits de protection des données en vertu du RGPD. Cependant, comme nous ne collectons ni ne stockons de données personnelles, la plupart de ces droits peuvent ne pas s'appliquer à notre service. Si vous avez des questions ou des préoccupations, veuillez nous contacter à admin@easyconvertimage.com."
+          "content": "Si vous êtes résident de l'Union européenne, vous disposez de certains droits de protection des données en vertu du RGPD. Cependant, comme nous ne collectons ni ne stockons de données personnelles, bon nombre de ces droits peuvent ne pas s'appliquer à notre service. Si vous avez des questions ou des préoccupations, veuillez nous contacter à admin@easyconvertimage.com."
+        },
+        {
+          "title": "Cookies et suivi",
+          "content": "Nous n'utilisons pas de cookies ou de technologies de suivi sur notre site web ou dans notre processus de conversion d'images."
+        },
+        {
+          "title": "Services tiers",
+          "content": "Notre site web est hébergé sur des serveurs cloud, mais ces serveurs ne traitent ni ne stockent vos images. Le framework Remix que nous utilisons pour la conversion d'images s'exécute entièrement dans votre navigateur."
+        },
+        {
+          "title": "Transferts internationaux de données",
+          "content": "Comme tout le traitement se fait dans votre navigateur local, aucun transfert international de données n'a lieu pendant le processus de conversion d'images."
+        },
+        {
+          "title": "Base légale du traitement",
+          "content": "Nous traitons vos images sur la base de votre consentement, que vous fournissez en téléchargeant une image pour conversion. Tout le traitement se fait localement dans votre navigateur."
+        },
+        {
+          "title": "Droits de confidentialité en Californie",
+          "content": "Comme nous ne collectons pas d'informations personnelles, la plupart des dispositions du CCPA ne s'appliquent pas. Les résidents de Californie ont le droit de ne pas être discriminés pour avoir exercé leurs droits de confidentialité."
+        },
+        {
+          "title": "À propos de Remix",
+          "content": "Nous utilisons Remix, un framework web moderne, pour traiter vos images. Remix nous permet d'effectuer des conversions d'images directement dans votre navigateur web, sans avoir besoin d'envoyer vos images à nos serveurs. Cette approche garantit une confidentialité et une sécurité maximales pour vos données."
+        },
+        {
+          "title": "Période de conservation",
+          "content": "Nous ne conservons aucune donnée d'image. Tout le traitement est temporaire et ne se produit que dans votre navigateur pendant le temps nécessaire pour effectuer la conversion, généralement en quelques secondes."
         }
       ]
     },
     "dataSharing": {
       "title": "Partage et divulgation des données",
-      "content": "Nous ne partageons ni ne divulguons aucune donnée d'utilisateur, car nous n'en collectons ni n'en stockons. Vos images sont traitées en temps réel et immédiatement supprimées après la conversion."
+      "content": "Nous ne partageons ni ne divulguons aucune donnée utilisateur, car nous n'en collectons ni n'en stockons aucune. Vos images sont entièrement traitées dans votre navigateur et ne sont jamais transmises à nos serveurs ou à des tiers."
     },
     "contactUs": {
-      "title": "Contactez-nous",
-      "content": "Pour toute question sur cette Politique de confidentialité, veuillez nous contacter à admin@easyconvertimage.com"
+      "title": "Nous contacter",
+      "content": "Pour toute question concernant cette Politique de Confidentialité, veuillez nous contacter à admin@easyconvertimage.com"
     },
     "meta": {
-      "title": "Politique de confidentialité | Easy Convert Image",
-      "description": "Apprenez comment Easy Convert Image protège votre vie privée lorsque vous utilisez nos outils de conversion d'images en ligne gratuits.",
-      "keywords": "politique de confidentialité, protection des données, confidentialité de la conversion d'images, données des utilisateurs",
-      "ogTitle": "Politique de confidentialité d'Easy Convert Image",
-      "ogDescription": "Comprenez comment nous gérons vos données lorsque vous utilisez notre service de conversion d'images. Votre vie privée est notre priorité."
+      "title": "Politique de Confidentialité | Easy Convert Image",
+      "description": "Découvrez comment Easy Convert Image protège votre vie privée lorsque vous utilisez nos outils gratuits de conversion d'images en ligne.",
+      "keywords": "politique de confidentialité, protection des données, confidentialité de la conversion d'images, données utilisateur, traitement côté client",
+      "ogTitle": "Politique de Confidentialité d'Easy Convert Image",
+      "ogDescription": "Comprenez comment nous gérons vos données lorsque vous utilisez nos services de conversion d'images. Votre confidentialité est notre priorité grâce au traitement côté client.",
+      "effectiveDate": "Cette politique est en vigueur à partir du 15 juillet 2024"
     }
   },
   "termsOfService": {

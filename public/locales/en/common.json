@@ -482,11 +482,11 @@
         },
         {
           "title": "How We Process Your Images",
-          "content": "When you use our service to convert an image: - The image is temporarily processed on our servers - No copy of the image or its metadata is retained after conversion - The converted image is immediately made available for download and then deleted from our systems"
+          "content": "When you use our service to convert an image: \n- The image is processed entirely within your browser using Remix, a client-side JavaScript framework\n- No data is sent to our servers during the conversion process\n- All processing occurs locally on your device\n- No copy of the image or its metadata is retained after conversion\n- The converted image is immediately made available for download directly from your browser"
         },
         {
           "title": "Data Security",
-          "content": "Although we do not store your data, we implement industry-standard security measures to protect your images during the conversion process, including secure data transmission protocols."
+          "content": "As all image processing occurs within your browser, we do not handle or store your images on our servers. This client-side processing approach inherently enhances the security and privacy of your data."
         },
         {
           "title": "Your Rights",
@@ -503,12 +503,40 @@
         {
           "title": "EU Data Protection Rights",
           "content": "If you are a resident of the European Union, you have certain data protection rights under the GDPR. However, as we do not collect or store personal data, many of these rights may not apply to our service. If you have any questions or concerns, please contact us at admin@easyconvertimage.com."
+        },
+        {
+          "title": "Cookies and Tracking",
+          "content": "We do not use cookies or any tracking technologies on our website or in our image conversion process."
+        },
+        {
+          "title": "Third-Party Services",
+          "content": "Our website is hosted on cloud servers, but these servers do not process or store your images. The Remix framework we use for image conversion runs entirely in your browser."
+        },
+        {
+          "title": "International Data Transfers",
+          "content": "As all processing occurs in your local browser, no international data transfers take place during the image conversion process."
+        },
+        {
+          "title": "Legal Basis for Processing",
+          "content": "We process your images based on your consent, which you provide by uploading an image for conversion. All processing is done locally in your browser."
+        },
+        {
+          "title": "California Privacy Rights",
+          "content": "As we do not collect personal information, most CCPA provisions do not apply. California residents have the right to non-discrimination for exercising their privacy rights."
+        },
+        {
+          "title": "About Remix",
+          "content": "We use Remix, a modern web framework, to process your images. Remix allows us to perform image conversions directly in your web browser, without needing to send your images to our servers. This approach ensures maximum privacy and security for your data."
+        },
+        {
+          "title": "Retention Period",
+          "content": "We do not retain any image data. All processing is temporary and occurs only in your browser for the duration necessary to complete the conversion, typically within seconds."
         }
       ]
     },
     "dataSharing": {
       "title": "Data Sharing and Disclosure",
-      "content": "We do not share or disclose any user data, as we do not collect or store any. Your images are processed in real-time and immediately deleted after conversion."
+      "content": "We do not share or disclose any user data, as we do not collect or store any. Your images are processed entirely within your browser and are never transmitted to our servers or any third parties."
     },
     "contactUs": {
       "title": "Contact Us",
@@ -517,9 +545,10 @@
     "meta": {
       "title": "Privacy Policy | Easy Convert Image",
       "description": "Learn about how Easy Convert Image protects your privacy when you use our free online image conversion tools.",
-      "keywords": "privacy policy, data protection, image conversion privacy, user data",
+      "keywords": "privacy policy, data protection, image conversion privacy, user data, client-side processing",
       "ogTitle": "Easy Convert Image Privacy Policy",
-      "ogDescription": "Understand how we handle your data when you use our image conversion services. Your privacy is our priority."
+      "ogDescription": "Understand how we handle your data when you use our image conversion services. Your privacy is our priority with client-side processing.",
+      "effectiveDate": "This policy is effective as of July 15, 2024"
     }
   },
   "termsOfService": {

@@ -275,7 +275,7 @@ export default function GoogleUpload({
                           <GridItem className="u-pl2" xs={2} role="cell">
                             <Checkbox
                               checked={isSelected}
-                              onChange={() => {}}
+                              onChange={() => handleAddFile(item)}
                               id={item.name}
                               name={item.name}
                               label={item.name}
