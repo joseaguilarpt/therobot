@@ -69,7 +69,6 @@ export const GoogleApiInitializer: FC<GoogleApiInitializerProps> = ({
         callback: '', // defined later
       });
       window.gisInited = true;
-      console.log('GIS initialized');
     };
     script2.onerror = (error: Event | string) => console.error('Error loading GSI:', error);
 

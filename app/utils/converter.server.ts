@@ -9,11 +9,10 @@ import {
   unstable_parseMultipartFormData,
 } from "@remix-run/node";
 import { jsPDF } from "jspdf";
-import * as pdfjs from 'pdfjs-dist/legacy/build/pdf.mjs';
+import * as pdfjs from "pdfjs-dist/legacy/build/pdf.mjs";
 import { encode } from "bmp-js";
 
-
-const PDFJS_WORKER_SRC = 'pdfjs-dist/legacy/build/pdf.worker.mjs';
+const PDFJS_WORKER_SRC = "pdfjs-dist/legacy/build/pdf.worker.mjs";
 pdfjs.GlobalWorkerOptions.workerSrc = PDFJS_WORKER_SRC;
 
 export async function convertPngToSvgBase64(
@@ -68,33 +67,41 @@ export const convertToSvg = async (files: File[], format: string) => {
 };
 
 export const convertToOtherFormat = async (files: File[], format: string) => {
-  return await Promise.all(
-    files.map(async (file) => {
-      let buffer;
-      if (format.toLowerCase() === "bmp") {
-        const rawBuffer = await sharp(await file.arrayBuffer())
-          .raw()
-          .toBuffer({ resolveWithObject: true });
+  try {
+    const response = await Promise.all(
+      files.map(async (file) => {
+        let buffer;
+        if (format.toLowerCase() === "bmp") {
+          const rawBuffer = await sharp(await file.arrayBuffer())
+            .raw()
+            .toBuffer({ resolveWithObject: true });
 
-        const bmpData = encode({
-          data: rawBuffer.data,
-          width: rawBuffer.info.width,
-          height: rawBuffer.info.height,
-        });
-        buffer = bmpData.data;
-      } else {
-        // For other formats, use Sharp as before
-        buffer = await sharp(await file.arrayBuffer())[format]().toBuffer();
-      }
+          const bmpData = encode({
+            data: rawBuffer.data,
+            width: rawBuffer.info.width,
+            height: rawBuffer.info.height,
+          });
+          buffer = bmpData.data;
+        } else {
+          // For other formats, use Sharp as before
+          buffer = await sharp(await file.arrayBuffer())
+            [format]()
+            .toBuffer();
+        }
 
-      const convertedFileName = file.name.replace(/\.[^/.]+$/, `.${format}`);
-      return {
-        fileName: convertedFileName,
-        fileSize: buffer.length,
-        fileUrl: `data:image/${format};base64,${buffer.toString("base64")}`,
-      };
-    })
-  );
+        const convertedFileName = file.name.replace(/\.[^/.]+$/, `.${format}`);
+        return {
+          fileName: convertedFileName,
+          fileSize: buffer.length,
+          fileUrl: `data:image/${format};base64,${buffer.toString("base64")}`,
+        };
+      })
+    );
+    return response;
+  } catch (e) {
+    console.error(e);
+    throw new Error("Conversion Failed");
+  }
 };
 interface PdfInfo {
   fileName: string;
