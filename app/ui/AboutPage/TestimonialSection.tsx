@@ -32,7 +32,7 @@ export default function TestimonialSection() {
         <GridContainer justifyContent="space-between" className="u-pt4">
           <GridItem className="testimonial-item  u-pb3" xs={12} lg={4}>
             <Icon size="large" icon="Fa500Px" />
-            <Heading align="center" level={4} appearance={5}>
+            <Heading align="center" level={3} appearance={5}>
               {t("testimonials.option1.heading")}
             </Heading>
             <Text align="center"> {t("testimonials.option1.description")}</Text>
@@ -40,7 +40,7 @@ export default function TestimonialSection() {
           <GridItem className="testimonial-item  u-pb3" xs={12} lg={4}>
             <Icon size="large" icon="FaBlender" />
 
-            <Heading align="center" level={4} appearance={5}>
+            <Heading align="center" level={3} appearance={5}>
               {t("testimonials.option2.heading")}
             </Heading>
             <Text align="center"> {t("testimonials.option2.description")}</Text>
@@ -48,7 +48,7 @@ export default function TestimonialSection() {
           <GridItem className="testimonial-item  u-pb3" xs={12} lg={4}>
             <Icon size="large" icon="FaCalendarCheck" />
 
-            <Heading align="center" level={4} appearance={5}>
+            <Heading align="center" level={3} appearance={5}>
               {t("testimonials.option3.heading")}
             </Heading>
             <Text align="center"> {t("testimonials.option3.description")}</Text>
@@ -58,7 +58,7 @@ export default function TestimonialSection() {
           <GridItem className="testimonial-item  u-pb3" xs={12} lg={4}>
             <Icon size="large" icon="FaCommentDollar" />
 
-            <Heading align="center" level={4} appearance={5}>
+            <Heading align="center" level={3} appearance={5}>
               {t("testimonials.option4.heading")}
             </Heading>
             <Text align="center"> {t("testimonials.option4.description")}</Text>
@@ -66,7 +66,7 @@ export default function TestimonialSection() {
           <GridItem className="testimonial-item  u-pb3" xs={12} lg={4}>
             <Icon size="large" icon="FaUserSlash" />
 
-            <Heading align="center" level={4} appearance={5}>
+            <Heading align="center" level={3} appearance={5}>
               {t("testimonials.option5.heading")}
             </Heading>
             <Text align="center"> {t("testimonials.option5.description")}</Text>
@@ -74,7 +74,7 @@ export default function TestimonialSection() {
           <GridItem className="testimonial-item u-pb3" xs={12} lg={4}>
             <Icon size="large" icon="FaShippingFast" />
 
-            <Heading align="center" level={4} appearance={5}>
+            <Heading align="center" level={3} appearance={5}>
               {t("testimonials.option6.heading")}
             </Heading>
             <Text align="center"> {t("testimonials.option6.description")}</Text>

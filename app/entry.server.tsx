@@ -15,10 +15,19 @@ import Backend from "i18next-fs-backend";
 import i18n from "./i18n";
 import { resolve } from "node:path";
 import { config } from "dotenv";
+import crypto from "crypto";
+import { headers as getHeaders } from "./utils/headers";
+import { NonceContext } from "./context/NonceContext";
 
 config();
 
 const ABORT_DELAY = 5000;
+
+declare module "@remix-run/node" {
+  interface EntryContext {
+    nonce?: string;
+  }
+}
 
 export default async function handleRequest(
   request: Request,
@@ -44,24 +53,37 @@ export default async function handleRequest(
       backend: { loadPath: resolve("./public/locales/{{lng}}/{{ns}}.json") },
     });
 
+  const nonce = crypto.randomBytes(16).toString("base64");
+
+  const securityHeaders = getHeaders({ nonce });
+
+  (remixContext as any).customNonce = nonce;
+
   return new Promise((resolve, reject) => {
     let didError = false;
 
     let { pipe, abort } = renderToPipeableStream(
-      <I18nextProvider i18n={instance}>
-        <RemixServer context={remixContext} url={request.url} />
-      </I18nextProvider>,
+      <NonceContext.Provider value={nonce}>
+        <I18nextProvider i18n={instance}>
+          <RemixServer context={remixContext} url={request.url} nonce={nonce} />
+        </I18nextProvider>
+      </NonceContext.Provider>,
       {
+        nonce,
         [callbackName]: () => {
           let body = new PassThrough();
           const stream = createReadableStreamFromReadable(body);
           responseHeaders.set("Content-Type", "text/html");
 
+          // Apply security headers
+          Object.entries(securityHeaders).forEach(([key, value]) => {
+            responseHeaders.set(key, value);
+          });
+
           const isDevelopment = process.env.NODE_ENV === "development";
           const SITE_URL = isDevelopment
             ? "http://localhost:5173"
-            : process.env.SITE_URL ?? '';
-
+            : process.env.SITE_URL ?? "";
           const allowedOrigins = isDevelopment
             ? [SITE_URL, "http://127.0.0.1:5173"]
             : [SITE_URL];
@@ -73,15 +95,9 @@ export default async function handleRequest(
               status: didError ? 500 : responseStatusCode,
             }),
             {
-              origin: (origin) => {
-                if (allowedOrigins.includes(origin)) {
-                  return true;
-                } else {
-                  return false;
-                }
-              },
-              methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-              allowedHeaders: ['Content-Type', 'Authorization'],
+              origin: (origin) => allowedOrigins.includes(origin),
+              methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+              allowedHeaders: ["Content-Type", "Authorization"],
               credentials: true,
               maxAge: 3600,
             }

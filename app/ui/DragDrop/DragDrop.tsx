@@ -100,7 +100,6 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     if (captchaRef.current) {
       const { response } = await captchaRef.current.execute({ async: true });
 
-      console.log(response)
       if (response) {
         currentToken = response;
         formData.set("h-captcha-response", response);
@@ -162,7 +161,8 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
     }
   };
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (e: any) => {
+    e.preventDefault();
     if (isLoading) {
       return;
     }
@@ -172,7 +172,6 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   return (
     <Form
       ref={formRef}
-      navigate={false}
       className="drag-drop-form"
       method="post"
       encType="multipart/form-data"

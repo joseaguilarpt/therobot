@@ -44,7 +44,7 @@ const InputArea: React.ForwardRefRenderFunction<InputAreaRef, InputAreaProps> = 
   onBlur,
   rows = 3,
   className,
-  maxLength,
+  maxLength = 100,
 }, ref) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { t } = useTranslation();
@@ -132,7 +132,7 @@ const InputArea: React.ForwardRefRenderFunction<InputAreaRef, InputAreaProps> = 
         aria-invalid={!!errorText}
         aria-describedby={`${hintText ? hintId : ''} ${errorText ? errorId : ''}`.trim() || undefined}
         rows={rows}
-        maxLength={maxLength}
+        maxLength={100}
       />
       {hintText && <div id={hintId} className="input-area__hint">{t(hintText)}</div>}
       {errorText && <div id={errorId} className="input-area__error" role="alert">{t(errorText)}</div>}

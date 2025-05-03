@@ -83,7 +83,7 @@ const Footer: React.FC<FooterProps> = ({
         <ContentContainer>
           <div className="footer__container">
             <div className="footer__section">
-              <Heading appearance={6} level={6} color="accent">
+              <Heading appearance={6} level={2} color="accent">
                 {t("pageName")}
               </Heading>
               <address className="footer__address u-pb1">
@@ -114,7 +114,7 @@ const Footer: React.FC<FooterProps> = ({
 
             {sections.map((section, index) => (
               <div className="footer__section" key={index}>
-                <Heading appearance={6} level={6} color="accent">
+                <Heading appearance={6} level={2} color="accent">
                   {t(section.title)}
                 </Heading>
                 <ul className="footer__links">

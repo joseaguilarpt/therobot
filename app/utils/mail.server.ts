@@ -20,7 +20,7 @@ const ensureUploadsDirectoryExists = () => {
   }
 };
 
-export async function sendEmail({ file, email }: SendEmail) {
+export async function sendImagesEmail({ file, email }: SendEmail) {
   try {
     if (!file || typeof email !== "string") {
       throw new Error("Missing File or Email");
@@ -93,7 +93,7 @@ export async function onSendEmail(formData: FormData) {
     );
   }
   try {
-    const data = await sendEmail({
+    const data = await sendImagesEmail({
       file: zipFile,
       email: email,
     });
@@ -171,7 +171,7 @@ export async function onSendCustomerEmail(formData: FormData) {
       comments,
       email,
     });
-    return json({ emailSent: true });
+    return json({ contactEmailSent: true });
   } catch (e) {
     return json(
       { error: "Failed sending email", convertedFiles: null },

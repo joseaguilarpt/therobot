@@ -23,6 +23,7 @@ interface CardProps {
   underline?: boolean;
   icon?: string;
   iconType?: string;
+  id: number; // Make id required and of type number
   ariaLabel?: string;
   conversion?: { from: string; to: string };
 }
@@ -38,13 +39,13 @@ const Card: React.FC<CardProps> = ({
   underline,
   unstyled,
   icon,
+  id,
   ariaLabel,
   iconType = "circle",
   children,
   conversion,
 }) => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
   const cardClasses = classNames(
     "card",
     className,
@@ -59,7 +60,12 @@ const Card: React.FC<CardProps> = ({
   // @ts-ignore
   const iconValue: IconType = icon ? t(icon) : "Fa500Px";
 
-  const titleId = title ? `card-title-${title}` : undefined;
+  // Create a unique ID for the card
+  const cardId = `card-${id}`;
+  // Create a unique ID for the title
+  const titleId = title ? `${cardId}-title` : undefined;
+  // Create a unique labelledby value
+  const labelledBy = titleId ? `${cardId} ${titleId}` : cardId;
 
   const getLocalizedUrl = (originalUrl: string): string => {
     const currentLocale = i18n.language;
@@ -85,7 +91,12 @@ const Card: React.FC<CardProps> = ({
   };
 
   return (
-    <div className={cardClasses} role="region" aria-labelledby={titleId}>
+    <div 
+      className={cardClasses} 
+      role="region" 
+      aria-labelledby={labelledBy}
+      id={cardId}
+    >
       {icon && (
         <div className="__icon-wrapper" aria-hidden="true">
           <div
@@ -129,7 +140,7 @@ const Card: React.FC<CardProps> = ({
           }}
           className={classNames("card__image", `image-${imagePosition}`)}
           role="img"
-          aria-label={"Card image"}
+          aria-label={t("cardImage")}
         ></div>
       )}
       <div className={classNames("card__content", icon && "__with-icon")}>

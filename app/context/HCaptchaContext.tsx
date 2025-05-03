@@ -17,6 +17,14 @@ export function HCaptchaProvider({ children }: { children: ReactNode }) {
   const [token, setToken] = useState(null);
   const captchaRef = React.useRef<HCaptcha>(null);
 
+  React.useEffect(() => {
+    return () => {
+      if (captchaRef.current) {
+        captchaRef.current.resetCaptcha();
+      }
+    };
+  }, []);
+
   const onSuccess = (value: string, key: string) => setToken(value);
   const onError = (value: string) => setToken(null);
   return (

@@ -8,6 +8,14 @@
     font-weight: bold;
   }
 }
+.preview-button {
+  .icon--small {
+    color: var(--accent-color);
+    &:hover {
+      color: var(--accent-color-darken);
+    }
+  }
+}
 .files-table__container {
   box-shadow: 0 4px 8px #80808030;
   border-radius: var(--border-radius);
@@ -41,11 +49,10 @@
     }
 
     button {
-        padding: 6px 9px;
-        @include media-query(medium) {
-            padding: var(--input-padding);
-        };
-        
+      padding: 6px 9px;
+      @include media-query(medium) {
+        padding: var(--input-padding);
+      }
     }
   }
 }
@@ -53,4 +60,15 @@
 .files-table__remove-button {
   background-color: black;
   color: white;
+}
+
+.preview-modal {
+  .modal-content {
+    border: none;
+  }
+  .modal-close-button {
+    .icon--medium {
+      color: var(--default-color);
+    }
+  }
 }

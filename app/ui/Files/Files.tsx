@@ -11,6 +11,9 @@ import pkg from "file-saver";
 import { useTheme } from "~/context/ThemeContext";
 import ShareButton from "../ShareButton/ShareButton";
 import { useTranslation } from "react-i18next";
+import Modal from "../Modal/Modal";
+import Icon from "../Icon/Icon";
+import Advertiser from "../Advertiser/Avertiser";
 
 const { saveAs } = pkg;
 
@@ -29,6 +32,10 @@ const Files: React.FC<FilesProps> = ({
   onRemoveAll,
   onEmailShare,
 }) => {
+  const [previewModal, setPreviewModal] = React.useState<null | {
+    file: string;
+    fileName: string;
+  }>(null);
   const { t } = useTranslation();
   const { showSnackbar } = useTheme();
   if (files?.length === 0) {
@@ -70,6 +77,21 @@ const Files: React.FC<FilesProps> = ({
     }
   };
 
+  const handlePreview = (data: { name: string; file: Blob }) => {
+    const blobUrl = URL.createObjectURL(data.file);
+    setPreviewModal({
+      file: blobUrl,
+      fileName: data.name,
+    });
+  };
+
+  const closePreview = () => {
+    if (previewModal) {
+      URL.revokeObjectURL(previewModal.file);
+    }
+    setPreviewModal(null);
+  };
+
   const notDownloadable = files?.filter((item) => item.status === "processing");
 
   return (
@@ -85,8 +107,8 @@ const Files: React.FC<FilesProps> = ({
       >
         <GridItem>
           <Heading level={2} appearance={5}>
-            {files?.length} {t("fileActions.files")}{' '}
-            {t("fileActions.selected")}:
+            {files?.length} {t("fileActions.files")} {t("fileActions.selected")}
+            :
           </Heading>
         </GridItem>
         <GridItem>
@@ -140,7 +162,7 @@ const Files: React.FC<FilesProps> = ({
           </GridItem>
           <GridItem xs={3} md={1} role="columnheader">
             <Text size="large" textWeight="bold">
-              {t('fileActions.fileSize')}
+              {t("fileActions.fileSize")}
             </Text>
           </GridItem>
           <GridItem className="table-item" xs={1} md={3} role="columnheader">
@@ -179,16 +201,33 @@ const Files: React.FC<FilesProps> = ({
             <GridItem xs={3} md={3} role="cell">
               <GridContainer justifyContent="flex-end">
                 {file.fileUrl && (
-                  <GridItem className="u-pr1">
-                    <Button
-                      onClick={() => onDownload(file)}
-                      ariaLabel={`${t("fileActions.download")} ${
-                        file.fileName
-                      }`}
-                    >
-                      {t('fileActions.download')}
-                    </Button>
-                  </GridItem>
+                  <>
+                    <GridItem className="u-pr1 preview-button table-item">
+                      <Button
+                        appareance="link"
+                        ariaLabel={t("fileActions.preview")}
+                        tooltipContent={t("fileActions.preview")}
+                        onClick={() =>
+                          handlePreview({
+                            name: file.fileName,
+                            file: file?.fileUrl,
+                          })
+                        }
+                      >
+                        <Icon color="secondary" size="small" icon="FaImage" />
+                      </Button>
+                    </GridItem>
+                    <GridItem className="u-pr1">
+                      <Button
+                        onClick={() => onDownload(file)}
+                        ariaLabel={`${t("fileActions.download")} ${
+                          file?.fileName
+                        }`}
+                      >
+                        {t("fileActions.download")}
+                      </Button>
+                    </GridItem>
+                  </>
                 )}
                 <GridItem className="table-item">
                   <Button
@@ -204,6 +243,33 @@ const Files: React.FC<FilesProps> = ({
           </GridContainer>
         ))}
       </div>
+      <Modal
+        title={t("fileActions.preview")}
+        className="preview-modal"
+        onClose={closePreview}
+        isOpen={Boolean(previewModal)}
+      >
+        <GridContainer
+          direction="column"
+          className="max-height"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Heading align="center" className="u-pt2" appearance={6} level={2}>
+            {previewModal?.fileName}
+          </Heading>
+          <img
+            style={{ maxWidth: "700px", width: "100%" }}
+            src={previewModal?.file}
+            alt={t("fileActions.preview")}
+          />
+        </GridContainer>
+        <GridContainer justifyContent="center">
+          <div style={{ maxWidth: "700px", width: "100%" }} className="u-pt3">
+            <Advertiser />
+          </div>
+        </GridContainer>
+      </Modal>
     </div>
   );
 };

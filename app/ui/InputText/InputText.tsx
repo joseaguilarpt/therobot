@@ -165,6 +165,7 @@ const InputText: React.ForwardRefRenderFunction<
           disabled={isDisabled}
           aria-required={isRequired}
           aria-invalid={!!error}
+          maxLength={100}
           aria-describedby={
             `${hintText ? hintId : ""} ${error ? errorId : ""}`.trim() ||
             undefined
