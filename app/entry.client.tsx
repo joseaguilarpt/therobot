@@ -8,9 +8,7 @@ import { I18nextProvider, initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import Backend from "i18next-http-backend";
 import { getInitialNamespaces } from "remix-i18next/client";
-import i18n from "./i18n"; // your i18n configuration
-import * as path from 'path';
-
+import i18n from "./i18n";
 
 async function hydrate() {
   try {
@@ -24,9 +22,9 @@ async function hydrate() {
         ...i18n,
         ns: getInitialNamespaces(),
         backend: { 
-          loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
-          addPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json')
-         },
+          loadPath: './locales/{{lng}}/{{ns}}.json',
+          addPath: './locales/{{lng}}/{{ns}}.json'
+        },
         detection: {
           order: ["htmlTag"],
           caches: [],
@@ -51,6 +49,7 @@ async function hydrate() {
 
     console.log("Hydration complete");
   } catch (error) {
+    
     console.error("Hydration error:", error);
   }
 }

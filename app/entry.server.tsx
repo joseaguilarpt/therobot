@@ -17,7 +17,6 @@ import { config } from "dotenv";
 import crypto from "crypto";
 import { headers as getHeaders } from "./utils/headers";
 import { NonceContext } from "./context/NonceContext";
-import * as path from 'path';
 
 config();
 
@@ -51,9 +50,9 @@ export default async function handleRequest(
       lng,
       ns,
       backend: { 
-        loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
-        addPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json')
-       },
+        loadPath: './locales/{{lng}}/{{ns}}.json',
+        addPath: './locales/{{lng}}/{{ns}}.json'
+      },
       fallbackLng: 'en',
       debug: true,
     });

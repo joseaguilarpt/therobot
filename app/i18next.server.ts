@@ -1,7 +1,11 @@
 import Backend from "i18next-fs-backend";
 import { RemixI18Next } from "remix-i18next/server";
 import i18n from "~/i18n"; // your i18n configuration file
-import * as path from 'path';
+import fs from 'fs';
+
+console.log('Current working directory:', process.cwd());
+console.log('Files in current directory:', fs.readdirSync('.'));
+console.log('Files in locales directory:', fs.readdirSync('./locales'));
 
 const i18next = new RemixI18Next({
   detection: {
@@ -11,9 +15,9 @@ const i18next = new RemixI18Next({
   i18next: {
     ...i18n,
     backend: { 
-      loadPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json'),
-      addPath: path.join(__dirname, '../locales/{{lng}}/{{ns}}.json')
-     },
+      loadPath: './locales/{{lng}}/{{ns}}.json',
+      addPath: './locales/{{lng}}/{{ns}}.json'
+    },
   },
   plugins: [Backend],
 });

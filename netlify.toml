@@ -2,6 +2,9 @@
 command = "npm run build"
 publish = "build/client"
 
+[functions]
+  included_files = ["locales/**"]
+
 [dev]
 command = "npm run dev"
 framework = "vite"
