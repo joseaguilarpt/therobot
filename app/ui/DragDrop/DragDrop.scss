@@ -1,5 +1,12 @@
 @import "../../styles/theme.scss";
 
+.drag-drop-form {
+
+  @include media-query(large) {
+    padding-left: 15px;
+  }
+}
+
 .drag-and-drop-container {
   width: 100%;
   min-height: 150px;
@@ -44,7 +51,11 @@
   }
 
   .upload-button-container {
-    margin-bottom: 20px;
+    margin: 0px 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .text.text--small {
@@ -66,10 +77,6 @@
     transition: all 0.3s ease;
 
     &:disabled {
-      > &:hover {
-        background-color: #4b4b4b;
-
-      }
       cursor: not-allowed;
       background-color: #4b4b4b;
 
@@ -102,6 +109,7 @@
   
     @include media-query(medium) {
       min-width: 172px;
+      max-width: 350px;
       padding: 15px 30px;
       
       svg {

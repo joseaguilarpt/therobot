@@ -67,6 +67,7 @@ export async function toolAction(request: any) {
 
   const typeOperation = formData.get("type") as string;
 
+  console.log(typeOperation, )
   if (typeOperation === "contact") {
     try {
       await onSendCustomerEmail(formData);
@@ -78,12 +79,15 @@ export async function toolAction(request: any) {
       );
     }
   } else if (typeOperation === "email") {
+    console.log('email')
+
     return await onSendEmail(formData);
   } else {
     const files = formData.getAll("file") as File[];
     const format = formData.get("format") as string | null;
 
     if (files.length === 0 || !format) {
+      console.log('file length')
       return json(
         { error: "Files and format are required", convertedFiles: null },
         { status: 400 }

@@ -54,6 +54,8 @@ export const headers: HeadersFunction = () => {
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: styles },
+  { rel: "icon", href: "/favicon.ico" },
+  { rel: "manifest", href: "/manifest.json" },
 ];
 
 export async function loader({ params, request }: LoaderFunctionArgs) {

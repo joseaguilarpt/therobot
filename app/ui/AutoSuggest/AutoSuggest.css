@@ -538,7 +538,7 @@
   box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.4);
 }
 .home-suggest .auto-suggest__button:hover {
-  background-color: var(--input-hover-background-color);
+  background-color: var(--input-background-color);
 }
 .home-suggest .auto-suggest__button[aria-expanded=true] svg {
   transform: rotate(180deg);
