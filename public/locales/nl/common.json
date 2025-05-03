@@ -315,10 +315,7 @@
     "baseKeywords": [
       "afbeeldingsconversie",
       "gratis converter",
-      "online tool",
-      "afbeeldingsformaat",
-      "bestandsconversie",
-      "digitale beelden"
+      "bestandsconversie"
     ],
     "formatSpecificKeywords": {
       "jpeg": ["verliescompressie", "fotografie", "webafbeeldingen"],
@@ -818,6 +815,426 @@
       "clearSelectionLabel": "Bestandsselectie wissen",
       "cancelSelectionLabel": "Bestandsselectie annuleren",
       "uploadFilesLabel": "Geselecteerde bestanden uploaden"
+    }
+  },
+  "prosTitle": "Voordelen",
+  "consTitle": "Nadelen",
+  "jpeg": {
+    "pros": [
+      "Universele compatibiliteit",
+      "Kleinere bestandsgroottes voor fotografische afbeeldingen",
+      "Ideaal voor web en e-mail",
+      "Brede ondersteuning in beeldverwerkingssoftware"
+    ],
+    "cons": [
+      "Verliescompressie kan de kwaliteit verminderen",
+      "Niet geschikt voor afbeeldingen met tekst of scherpe randen",
+      "Geen ondersteuning voor transparantie",
+      "Niet ideaal voor afbeeldingen die frequent bewerkt moeten worden"
+    ],
+    "png": {
+      "description": "Converteer JPEG naar PNG voor verliesloze bewerking en ondersteuning van transparantie. Ideaal voor grafische elementen met tekst of scherpe randen, PNG elimineert verdere kwaliteitsverlies bij bewerkingen. Perfect voor logo's, schermafdrukken en afbeeldingen die meerdere revisies of hoge kwaliteit transparantie voor web of print vereisen.",
+      "technicalDetails": "Ondersteunt tot 24-bit kleurdiepte en 8-bit alpha-kanaal. Maakt gebruik van DEFLATE-compressie, gecombineerd met LZ77 en Huffman-codering."
+    },
+    "gif": {
+      "description": "Converteer JPEG naar GIF voor brede compatibiliteit en ondersteuning van animatie. Ideaal voor eenvoudige grafische elementen of het maken van lichtgewicht animaties vanuit een reeks afbeeldingen. Profiteer van kleine bestandsgroottes voor webgrafiek met beperkte kleuren, perfect voor iconen, knoppen en eenvoudige geanimeerde elementen.",
+      "technicalDetails": "Maakt gebruik van LZW-compressie met een 8-bit palet. Conversie omvat kleurkwantisatie en past vaak dithering toe om meer kleuren te simuleren."
+    },
+    "webp": {
+      "description": "Converteer JPEG naar WebP voor aanzienlijk kleinere bestandsgroottes zonder kwaliteitsverlies. Profiteer van betere compressie, ondersteuning voor transparantie en animatiemogelijkheden. Ideaal voor web, WebP versnelt paginalaadtijden, vermindert bandbreedte-gebruik en verbetert de algehele gebruikerservaring, terwijl de visuele kwaliteit behouden blijft.",
+      "technicalDetails": "WebP maakt gebruik van voorspellende codering, waardoor bestanden 25-35% kleiner zijn dan JPEG bij gelijkwaardige kwaliteit. Ondersteunt een breed kleurengamma en tot 32-bit kleurdiepte."
+    },
+    "avif": {
+      "description": "Converteer JPEG naar AVIF voor superieure compressie en kwaliteit. Ideaal voor webafbeeldingen, AVIF vermindert de bestandsgroottes aanzienlijk terwijl de visuele kwaliteit behouden of verbeterd blijft. Profiteer van betere prestaties, lager bandbreedte-gebruik en ondersteuning voor hoge dynamische bereik en brede kleurruimtes.",
+      "technicalDetails": "Gebaseerd op de AV1-videocodec, ondersteunt AVIF tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling. Biedt zowel verliesloze als verliesvolle compressie."
+    },
+    "tiff": {
+      "description": "Converteer JPEG naar TIFF voor hoogwaardige archivering en professionele afdruk. TIFF behoudt de beeldkwaliteit en ondersteunt meerdere pagina's en lagen. Ideaal voor publicatie, fotografie en archiveringsworkflows waar maximale kwaliteit en flexibiliteit essentieel zijn.",
+      "technicalDetails": "Ondersteunt verschillende compressie-algoritmen, waaronder LZW en ZIP. Kan met hoogresolutiefoto's overweg en ondersteunt tot 24-bit kleurdiepte."
+    },
+    "bmp": {
+      "description": "Converteer JPEG naar BMP voor ongecomprimeerde, hoogwaardige afbeeldingen. Ideaal voor situaties die onbewerkte beeldgegevens of maximale compatibiliteit met oudere systemen vereisen. BMP garandeert dat er geen extra kwaliteitsverlies optreedt, wat het geschikt maakt voor archivering of gebruik in gespecialiseerde software.",
+      "technicalDetails": "Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat. Ondersteunt verschillende kleurdieptes, meestal 24-bit true color."
+    },
+    "pdf": {
+      "description": "Converteer JPEG naar PDF voor eenvoudige documentintegratie en -deling. Ideaal voor het maken van op afbeeldingen gebaseerde documenten of rapporten. Profiteer van brede compatibiliteit, print-klaar formaat en de mogelijkheid om meerdere JPEG's in één gemakkelijk te distribueren bestand te combineren.",
+      "technicalDetails": "PDF kan JPEG-afbeeldingen zonder hercompressie inbedden. Ondersteunt verschillende kleurruimtes en kan de oorspronkelijke beeldkwaliteit behouden."
+    },
+    "svg": {
+      "description": "Converteer JPEG naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het maken van vectorversies van logo's of eenvoudige afbeeldingen. Voordelen zijn oneindig schalen en kleine bestandsgroottes voor eenvoudige grafiek. Beste keuze voor afbeeldingen met duidelijke vormen en beperkte kleurverloop.",
+      "technicalDetails": "Vereist traceringsalgoritmen om rastergegevens om te zetten in vectorpaden. De resultaten variëren sterk afhankelijk van de complexiteit van de afbeelding en de conversie-instellingen."
+    }
+  },
+  "png": {
+    "pros": [
+      "Verliesloze compressie",
+      "Ondersteunt transparantie",
+      "Ideaal voor grafiek, schermafdrukken en afbeeldingen met tekst",
+      "Geschikt voor afbeeldingen die frequent bewerkt moeten worden"
+    ],
+    "cons": [
+      "Grotere bestandsgroottes in vergelijking met verliesvolle formaten",
+      "Minder efficiënt voor fotografische afbeeldingen",
+      "Niet zo breed ondersteund als JPEG"
+    ],
+    "jpeg": {
+      "description": "Converteer PNG naar JPEG om de bestandsgroottes drastisch te verminderen, vooral voor foto's en complexe afbeeldingen. Ideaal voor web- en e-mailgebruik, JPEG-conversie zorgt voor brede compatibiliteit en snellere laadtijden. Profiteer van aanpasbare compressie om kwaliteit en bestandsgrootte te balanceren voor optimale prestaties.",
+      "technicalDetails": "Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie. Meestal 24-bit kleurdiepte met 4:2:0 chroma-subsampeling."
+    },
+    "gif": {
+      "description": "Converteer PNG naar GIF voor het maken van eenvoudige animaties en maximale compatibiliteit. Ideaal voor webgrafiek die brede ondersteuning nodig heeft, zoals geanimeerde iconen of knoppen. Profiteer van kleine bestandsgroottes voor afbeeldingen met beperkte kleuren, perfect voor snel ladende, opvallende webelementen.",
+      "technicalDetails": "Gebruikt LZW-compressie met een 8-bit palet. Conversie omvat kleurkwantisatie en past vaak dithering toe om meer kleuren te simuleren."
+    },
+    "webp": {
+      "description": "Transformeer PNG naar WebP voor superieure compressie zonder kwaliteitsverlies. Ideaal voor webgrafiek, WebP behoudt transparantie terwijl de bestandsgroottes aanzienlijk verminderen. Profiteer van snellere websitelaadtijden, verminderd bandbreedte-gebruik en ondersteuning voor zowel verliesloze als verliesvolle compressie.",
+      "technicalDetails": "Gebruikt voorspellende codering voor compressie. Ondersteunt verliesloze en verliesvolle compressie met 24-bit kleurdiepte en een 8-bit alpha-kanaal."
+    },
+    "avif": {
+      "description": "Converteer PNG naar AVIF voor state-of-the-art compressie en kwaliteit. Ideaal voor webafbeeldingen, AVIF biedt superieure bestandsgrootte-reductie terwijl de beeldkwaliteit behouden of verbeterd blijft. Profiteer van snellere laadtijden, lager bandbreedte-gebruik en ondersteuning voor hoog dynamisch bereik en brede kleurruimtes.",
+      "technicalDetails": "Gebaseerd op de AV1-videocodec, ondersteunt AVIF tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling. Biedt zowel verliesvolle als verliesloze compressie."
+    },
+    "tiff": {
+      "description": "Converteer PNG naar TIFF voor hoogwaardige archivering en professionele afdruk. TIFF behoudt de beeldkwaliteit, inclusief transparantie, en ondersteunt meerdere pagina's en lagen. Ideaal voor publicatie, fotografie en archiveringsworkflows waar maximale kwaliteit en flexibiliteit cruciaal zijn.",
+      "technicalDetails": "Ondersteunt verschillende compressie-algoritmen, waaronder LZW en ZIP. Kan met hoogresolutiefoto's overweg en ondersteunt tot 24-bit kleurdiepte met alpha-kanaal."
+    },
+    "bmp": {
+      "description": "Converteer PNG naar BMP voor ongecomprimeerde, ruwe beeldgegevens. Ideaal voor oudere systemen of gespecialiseerde software die het BMP-formaat vereisen. BMP garandeert dat er geen kwaliteitsverlies door compressie optreedt, wat het geschikt maakt voor bepaalde industriële of wetenschappelijke toepassingen die onbewerkte beeldgegevens nodig hebben.",
+      "technicalDetails": "Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat. Ondersteunt verschillende kleurdieptes, meestal 24-bit ware kleuren, met enkele varianten die 32-bit (inclusief alpha-kanaal) ondersteunen."
+    },
+    "pdf": {
+      "description": "Converteer PNG naar PDF voor eenvoudige documentintegratie en -deling. Ideaal voor het maken van op afbeeldingen gebaseerde documenten of rapporten. Profiteer van brede compatibiliteit, print-klaar formaat en de mogelijkheid om meerdere PNG's in één gemakkelijk te distribueren bestand te combineren, waarbij de beeldkwaliteit behouden blijft.",
+      "technicalDetails": "PDF kan PNG-afbeeldingen zonder hercompressie inbedden. Ondersteunt verschillende kleurruimtes en kan de oorspronkelijke beeldkwaliteit, inclusief transparantie, behouden."
+    },
+    "svg": {
+      "description": "Converteer PNG naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het maken van vectorversies van logo's of eenvoudige afbeeldingen. Voordelen zijn oneindig schalen en potentieel kleinere bestandsgroottes. Beste keuze voor afbeeldingen met duidelijke vormen en beperkt kleurverloop.",
+      "technicalDetails": "Vereist traceringsalgoritmen om rastergegevens om te zetten in vectorpaden. De resultaten variëren sterk afhankelijk van de complexiteit van de afbeelding en de conversie-instellingen."
+    }
+  },
+  "gif": {
+    "pros": [
+      "Kleine bestandsgroottes voor eenvoudige grafiek",
+      "Ondersteuning voor eenvoudige animaties",
+      "Universele compatibiliteit",
+      "Ideaal voor web-iconen en eenvoudige grafiek"
+    ],
+    "cons": [
+      "Beperkt tot 256 kleuren",
+      "Alleen binaire transparantie",
+      "Niet geschikt voor foto's",
+      "Zichtbare dithering in verloop"
+    ],
+    "jpeg": {
+      "description": "Converteer GIF naar JPEG voor verbeterde kleurdiepte in stilstaande afbeeldingen. Ideaal voor het converteren van eenvoudige grafiek naar een formaat dat beter geschikt is voor foto's of complexe afbeeldingen. Profiteer van kleinere bestandsgroottes voor full-color afbeeldingen en bredere compatibiliteit in fotocentrische applicaties.",
+      "technicalDetails": "Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie. Converteert de geïndexeerde kleuren van GIF naar 24-bit kleurdiepte, vaak met 4:2:0 chroma-subsampeling."
+    },
+    "png": {
+      "description": "Converteer GIF naar PNG om de beeldkwaliteit te verbeteren en volledige transparantie te ondersteunen. Ideaal voor het upgraden van eenvoudige webgrafiek of het extraheren van high-quality stilstaande frames uit GIF's. Profiteer van verliesloze compressie, bredere kleurondersteuning en betere kwaliteit voor grafiek met tekst of scherpe randen.",
+      "technicalDetails": "Ondersteunt tot 24-bit kleurdiepte en 8-bit alpha-kanaal, een aanzienlijke verbetering ten opzichte van de 8-bit geïndexeerde kleuren van GIF. Maakt gebruik van DEFLATE-compressie."
+    },
+    "webp": {
+      "description": "Transformeer GIF naar WebP voor superieure compressie en ondersteuning van animatie. Ideaal voor webgrafiek, WebP behoudt de animatiemogelijkheden terwijl de bestandsgroottes aanzienlijk verminderen. Profiteer van snellere websitelaadtijden, verminderd bandbreedte-gebruik en verbeterde beeldkwaliteit in vergelijking met GIF.",
+      "technicalDetails": "Gebruikt voorspellende codering voor compressie. Ondersteunt zowel verliesvolle als verliesloze compressie met opties voor animatie en transparantie."
+    },
+    "avif": {
+      "description": "Converteer GIF naar AVIF voor state-of-the-art compressie en kwaliteit. Ideaal voor het upgraden van webgrafiek, AVIF biedt superieure bestandsgrootte-reductie terwijl de beeldkwaliteit verbeterd wordt. Profiteer van snellere laadtijden, lager bandbreedte-gebruik en verbeterde visuele kwaliteit voor zowel statische als geanimeerde afbeeldingen.",
+      "technicalDetails": "Gebaseerd op de AV1-videocodec, ondersteunt AVIF tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling. Biedt zowel verliesvolle als verliesloze compressie, met potentieel voor animatieondersteuning."
+    },
+    "tiff": {
+      "description": "Converteer GIF naar TIFF voor hoogwaardige archivering en professioneel gebruik. TIFF behoudt de beeldkwaliteit en ondersteunt meerdere pagina's, ideaal voor het converteren van GIF-animaties. Perfect voor publicatie, archivering en workflows waar maximale kwaliteit en flexibiliteit vereist zijn.",
+      "technicalDetails": "Ondersteunt verschillende compressie-algoritmen. Kan met hoogresolutiefoto's en meerdere pagina's overweg, waardoor een hoogwaardige conversie van zowel statische als geanimeerde GIF's mogelijk is."
+    },
+    "bmp": {
+      "description": "Converteer GIF naar BMP voor ongecomprimeerde, ruwe beeldgegevens. Ideaal voor oudere systemen of gespecialiseerde software die het BMP-formaat vereisen. BMP garandeert dat er geen extra kwaliteitsverlies optreedt, wat het geschikt maakt voor het extraheren van individuele frames uit GIF's voor analyse of verdere verwerking.",
+      "technicalDetails": "Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat. Converteert over het algemeen naar 24-bit kleurdiepte, waarmee de 8-bit geïndexeerde kleuren van GIF worden uitgebreid."
+    },
+    "pdf": {
+      "description": "Converteer GIF naar PDF voor eenvoudige documentintegratie. Ideaal voor het opnemen van GIF-inhoud in rapporten of presentaties. Profiteer van brede compatibiliteit en print-klaar formaat. Nuttig voor het maken van documenten uit GIF-series of het bewaren van GIF-inhoud in een flexibeler formaat.",
+      "technicalDetails": "PDF kan GIF-afbeeldingen inbedden, waarbij deze meestal worden geconverteerd naar een geschikter formaat voor afdrukken. Meerlagige PDF's kunnen GIF-animaties als aparte pagina's weergeven."
+    },
+    "svg": {
+      "description": "Converteer GIF naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het maken van vectorversies van eenvoudige GIF-afbeeldingen of logo's. Voordelen zijn oneindig schalen en potentieel kleinere bestandsgroottes. Beste keuze voor GIF's met duidelijke vormen en beperkte kleuren.",
+      "technicalDetails": "Vereist traceringsalgoritmen om raster-GIF-gegevens om te zetten in vectorpaden. De resultaten variëren sterk afhankelijk van de complexiteit van de GIF en de conversie-instellingen."
+    }
+  },
+  "webp": {
+    "pros": [
+      "Uitstekende compressie-efficiëntie",
+      "Ondersteunt zowel verliesvolle als verliesloze compressie",
+      "Ondersteuning voor transparantie en animatie",
+      "Snellere websitelaadtijden",
+      "Verminderd bandbreedte-gebruik"
+    ],
+    "cons": [
+      "Beperkte ondersteuning in oudere browsers",
+      "Minder geschikt voor print-workflows",
+      "Mogelijk verlies van metadata",
+      "Iets langere codeertijd"
+    ],
+    "jpeg": {
+      "description": "Converteer WebP naar JPEG voor maximale compatibiliteit. Ideaal voor het delen van afbeeldingen op platforms zonder WebP-ondersteuning. Profiteer van brede acceptatie in e-mailclients, oudere webbrowsers en beeldverwerkingssoftware. JPEG zorgt ervoor dat uw afbeeldingen overal bekeken kunnen worden, zij het met enige kwaliteitskompromissen.",
+      "technicalDetails": "Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie. Converteert eventueel verliesloze of alpha-kanaal-gegevens van WebP naar 24-bit verliesvolle kleur, vaak met 4:2:0 chroma-subsampeling."
+    },
+    "png": {
+      "description": "Transformeer WebP naar PNG voor verliesloze kwaliteit en brede compatibiliteit. Ideaal voor het bewaren van beeldkwaliteit en transparantie. Perfect voor verdere bewerking, high-quality webgrafiek of wanneer u werkt met software die WebP niet ondersteunt. Garandeert geen kwaliteitsverlies voor verliesloze WebP-afbeeldingen.",
+      "technicalDetails": "Gebruikt DEFLATE-compressie. Ondersteunt tot 24-bit kleurdiepte en 8-bit alpha-kanaal, waardoor een getrouwe reproductie van WebP-afbeeldingen, inclusief transparantie, mogelijk is."
+    },
+    "gif": {
+      "description": "Converteer WebP naar GIF voor maximale compatibiliteit en animatieondersteuning. Ideaal voor het maken van breed ondersteunde geanimeerde grafiek. Perfect voor social media-platforms, forums en websites die WebP niet ondersteunen. Profiteer van universele weergave van uw geanimeerde afbeeldingen.",
+      "technicalDetails": "Gebruikt LZW-compressie met een 256-kleuren palet. Geanimeerde WebP kan worden geconverteerd naar geanimeerde GIF, hoewel met mogelijk kwaliteitsverlies en grotere bestandsgroottes."
+    },
+    "avif": {
+      "description": "Transformeer WebP naar AVIF voor beeldcompressie van de volgende generatie. Ideaal voor verdere optimalisatie van webafbeeldingen. Profiteer van nog kleinere bestandsgroottes, betere kwaliteitsbehoud bij lage bitsnelheden en ondersteuning voor HDR. Perfect om uw afbeeldingen toekomstbestendig te maken.",
+      "technicalDetails": "Gebaseerd op de AV1-videocodec, ondersteunt tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling. Biedt zowel verliesvolle als verliesloze compressie."
+    },
+    "tiff": {
+      "description": "Converteer WebP naar TIFF voor hoogwaardige archivering en professionele afdruk. Ideaal voor het behouden van WebP-afbeeldingen in een formaat dat breed geaccepteerd is in de uitgeverij- en printindustrie. Profiteer van de uitgebreide metadataondersteuning en multi-pagina-mogelijkheden van TIFF voor geanimeerde WebP-inhoud.",
+      "technicalDetails": "Ondersteunt verschillende compressie-algoritmen. Kan met hoogresolutiefoto's en meerdere pagina's overweg, waardoor een hoogwaardige conversie van zowel statische als geanimeerde WebP mogelijk is."
+    },
+    "bmp": {
+      "description": "Transformeer WebP naar BMP voor ongecomprimeerde, ruwe beeldgegevens. Ideaal voor scenario's die pixelperfecte beeldgegevens of maximale compatibiliteit met oudere systemen vereisen. BMP garandeert dat er geen kwaliteitsverlies door compressie optreedt, nuttig voor analyse of gespecialiseerde toepassingen.",
+      "technicalDetails": "Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat. Converteert doorgaans naar 24-bit kleurdiepte, met enkele varianten die 32-bit (inclusief alpha-kanaal) ondersteunen."
+    },
+    "pdf": {
+      "description": "Converteer WebP naar PDF voor eenvoudige documentintegratie. Ideaal voor het opnemen van webgrafiek in documenten. Profiteer van universele compatibiliteit en print-klaar formaat. Perfect voor het bewaren van WebP-inhoud in een breed geaccepteerd documentformaat.",
+      "technicalDetails": "PDF kan WebP-afbeeldingen inbedden nadat deze zijn geconverteerd naar een compatibel formaat. Ondersteunt verschillende kleurruimtes en kan de oorspronkelijke beeldkwaliteit behouden."
+    },
+    "svg": {
+      "description": "Converteer WebP naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het maken van vectorversies van eenvoudige WebP-afbeeldingen of logo's. Voordelen zijn oneindig schalen en potentieel kleinere bestandsgroottes. Beste keuze voor WebP's met duidelijke vormen en beperkte kleuren.",
+      "technicalDetails": "Vereist traceringsalgoritmen om raster-WebP-gegevens om te zetten in vectorpaden. De resultaten variëren sterk afhankelijk van de complexiteit van de afbeelding en de conversie-instellingen."
+    }
+  },
+  "avif": {
+    "pros": [
+      "Uitzonderlijke compressie-efficiëntie",
+      "Superieure beeldkwaliteit, vooral bij lage bitsnelheden",
+      "Ondersteunt HDR en brede kleurruimtes",
+      "Verminderd bandbreedte-gebruik en snellere laadtijden",
+      "Opties voor verliesvolle en verliesloze compressie"
+    ],
+    "cons": [
+      "Beperkte browser- en softwareondersteuning",
+      "Langere codeertijd",
+      "Hogere rekenkundige vereisten voor coderen/decoderen",
+      "Potentiële compatibiliteitsproblemen in sommige workflows"
+    ],
+    "jpeg": {
+      "description": "Converteer AVIF naar JPEG voor universele compatibiliteit. Ideaal voor het delen van hoogwaardige afbeeldingen op platforms zonder AVIF-ondersteuning. Profiteer van brede acceptatie in e-mailclients, webbrowsers en beeldverwerkingssoftware, zodat uw afbeeldingen overal bekeken kunnen worden.",
+      "technicalDetails": "Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie. Converteert de mogelijk hoge bitdiepte van AVIF naar standaard 24-bit kleur, vaak met 4:2:0 chroma-subsampeling."
+    },
+    "png": {
+      "description": "Transformeer AVIF naar PNG voor verliesloze kwaliteit en brede compatibiliteit. Ideaal voor het behouden van beeldkwaliteit wanneer AVIF-weergave niet beschikbaar is. Perfect voor verdere bewerking, high-quality webgrafiek of wanneer u werkt met software die AVIF niet ondersteunt.",
+      "technicalDetails": "Gebruikt DEFLATE-compressie. Ondersteunt tot 24-bit kleurdiepte en 8-bit alpha-kanaal, waardoor mogelijk enkele kleurgegevens van AVIF-afbeeldingen met hoge bitdiepte verloren gaan."
+    },
+    "gif": {
+      "description": "Converteer AVIF naar GIF voor maximale compatibiliteit en eenvoudige animatieondersteuning. Ideaal voor het maken van breed ondersteunde geanimeerde grafiek. Perfect voor platforms die AVIF niet ondersteunen. Profiteer van universele weergave van uw geanimeerde afbeeldingen of eenvoudige grafiek.",
+      "technicalDetails": "Gebruikt LZW-compressie met een 256-kleuren palet. Geanimeerd AVIF kan worden geconverteerd naar geanimeerde GIF, hoewel met mogelijk kwaliteitsverlies en grotere bestandsgroottes."
+    },
+    "webp": {
+      "description": "Transformeer AVIF naar WebP voor bredere compatibiliteit met behoud van goede compressie. Ideaal voor het optimaliseren van webafbeeldingen op platforms die WebP, maar niet AVIF ondersteunen. Profiteer van kleinere bestandsgroottes dan traditionele formaten en ondersteuning voor zowel verliesloze als verliesvolle compressie.",
+      "technicalDetails": "Gebruikt voorspellende codering voor compressie. Ondersteunt verliesvolle en verliesloze compressie met 24-bit kleurdiepte en een 8-bit alpha-kanaal."
+    },
+    "tiff": {
+      "description": "Converteer AVIF naar TIFF voor hoogwaardige archivering en professionele afdruk. Ideaal voor het behouden van AVIF-afbeeldingen in een formaat dat breed geaccepteerd is in de uitgeverij- en printindustrie. Profiteer van de uitgebreide metadataondersteuning en flexibele kleurruimte-opties van TIFF.",
+      "technicalDetails": "Ondersteunt verschillende compressie-algoritmen. Kan met hoogresolutiefoto's en meerdere pagina's overweg, waardoor een hoogwaardige conversie van AVIF-inhoud mogelijk is."
+    },
+    "bmp": {
+      "description": "Transformeer AVIF naar BMP voor ongecomprimeerde, ruwe beeldgegevens. Ideaal voor scenario's die pixelperfecte beeldgegevens of maximale compatibiliteit met oudere systemen vereisen. BMP garandeert dat er geen extra compressie-artefacten optreden, nuttig voor analyse of gespecialiseerde toepassingen.",
+      "technicalDetails": "Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat. Converteert doorgaans naar 24-bit kleurdiepte, mogelijk verliezend informatie van AVIF-afbeeldingen met hoge bitdiepte."
+    },
+    "pdf": {
+      "description": "Converteer AVIF naar PDF voor eenvoudige documentintegratie. Ideaal voor het maken van rapporten, presentaties of het archiveren van hoogwaardige afbeeldingen. Profiteer van universele compatibiliteit en print-klaar formaat. Perfect voor het bewaren van AVIF-inhoud in een breed geaccepteerd documentformaat.",
+      "technicalDetails": "PDF kan afbeeldingen in verschillende formaten inbedden. Kan AVIF mogelijk converteren naar een compatibeler formaat tijdens het inbedden. Ondersteunt verschillende kleurruimtes voor hoogwaardige conversie."
+    },
+    "svg": {
+      "description": "Converteer AVIF naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het maken van vectorversies van eenvoudige AVIF-afbeeldingen of logo's. Voordelen zijn oneindig schalen en potentieel kleinere bestandsgroottes. Beste keuze voor afbeeldingen met duidelijke vormen en beperkte kleuren.",
+      "technicalDetails": "Vereist traceringsalgoritmen om raster-AVIF-gegevens om te zetten in vectorpaden. De resultaten variëren sterk afhankelijk van de complexiteit van de afbeelding en de conversie-instellingen."
+    }
+  },
+  "tiff": {
+    "pros": [
+      "Hoogwaardige output met flexibele opties",
+      "Ondersteunt lagen en meerdere pagina's",
+      "Ideaal voor print- en professionele workflows",
+      "Uitstekend voor het archiveren en bewaren van afbeeldingen",
+      "Uitgebreide metadataondersteuning"
+    ],
+    "cons": [
+      "Grote bestandsgroottes",
+      "Niet geschikt voor web",
+      "Beperkte ondersteuning in sommige applicaties",
+      "Complex formaat met vele opties"
+    ],
+    "jpeg": {
+      "description": "Converteer TIFF naar JPEG voor universele compatibiliteit en kleinere bestandsgroottes. Ideaal voor het delen van hoogwaardige afbeeldingen uit professionele workflows op webplatforms. Profiteer van brede acceptatie in e-mailclients, browsers en consumenten software",
+      "technicalDetails": "Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie. Converteert de mogelijk hoge bitdiepte van TIFF naar standaard 24-bit kleur, vaak met 4:2:0 chroma-subsampeling."
+    },
+    "png": {
+      "description": "Transformeer TIFF naar PNG voor verliesloze webvriendelijke afbeeldingen. Ideaal voor het behouden van hoogwaardige grafiek uit professionele workflows voor webgebruik. Perfect voor logo's, illustraties en afbeeldingen met tekst. Behoudt transparantie en biedt goede compressie voor niet-fotografische afbeeldingen.",
+      "technicalDetails": "Gebruikt DEFLATE-compressie. Ondersteunt tot 24-bit kleurdiepte en 8-bit alpha-kanaal, mogelijk verliezend enkele kleurgegevens van TIFF-afbeeldingen met hoge bitdiepte."
+    },
+    "gif": {
+      "description": "Converteer TIFF naar GIF voor brede compatibiliteit en eenvoudige animaties. Ideaal voor het maken van webvriendelijke grafiek uit hoogwaardige TIFF-bronnen. Perfect voor eenvoudige logo's, iconen of basic animaties. Profiteer van kleine bestandsgroottes en universele ondersteuning voor eenvoudige grafiek.",
+      "technicalDetails": "Gebruikt LZW-compressie met een 256-kleuren palet. Complexe kleurreductie van de mogelijk hoge bitdiepte van TIFF kan leiden tot aanzienlijk kwaliteitsverlies."
+    },
+    "webp": {
+      "description": "Transformeer TIFF naar WebP voor efficiënt webgeoptimaliseerde afbeeldingen. Ideaal voor het converteren van hoogwaardige TIFF-bestanden naar een formaat dat geschikt is voor snel ladende websites. Profiteer van uitstekende compressie, transparantieondersteuning en goede beeldkwaliteit, perfect voor online portefeuilles en e-commerce.",
+      "technicalDetails": "Gebruikt voorspellende codering voor compressie. Ondersteunt verliesvolle en verliesloze compressie met 24-bit kleurdiepte en een 8-bit alpha-kanaal."
+    },
+    "avif": {
+      "description": "Converteer TIFF naar AVIF voor beeldcompressie van de volgende generatie. Ideaal voor het archiveren van hoogwaardige TIFF-afbeeldingen in een efficiënt formaat. Profiteer van superieure compressie, uitstekend kwaliteitsbehoud en ondersteuning voor hoge bitdieptes en brede kleurruimtes, perfect voor toekomstbestendige webafbeeldingen.",
+      "technicalDetails": "Gebaseerd op de AV1-videocodec, ondersteunt tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling. Biedt zowel verliesvolle als verliesloze compressie."
+    },
+    "bmp": {
+      "description": "Transformeer TIFF naar BMP voor ongecomprimeerde, breed compatibele afbeeldingen. Ideaal voor scenario's die onbewerkte beeldgegevens of compatibiliteit met oudere systemen vereisen. BMP garandeert dat er geen compressie-artefacten optreden, nuttig voor bepaalde industriële of wetenschappelijke toepassingen die onbewerkte beeldgegevens nodig hebben.",
+      "technicalDetails": "Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat. Converteert doorgaans naar 24-bit kleurdiepte, mogelijk verliezend informatie van TIFF-afbeeldingen met hoge bitdiepte."
+    },
+    "pdf": {
+      "description": "Converteer TIFF naar PDF voor universele documentcompatibiliteit. Ideaal voor het integreren van hoogwaardige afbeeldingen in rapporten, presentaties of archieven. Profiteer van brede ondersteuning, print-klaar formaat en het vermogen om hoge beeldtrouw te behouden. Perfect voor professionele en academische documentatie.",
+      "technicalDetails": "PDF kan TIFF-afbeeldingen direct inbedden of converteren. Ondersteunt verschillende kleurruimtes en kan hoge bitdieptes behouden, wat hoogwaardige conversie van TIFF-gegevens mogelijk maakt."
+    },
+    "svg": {
+      "description": "Transformeer TIFF naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het maken van vectorversies van hoogwaardige TIFF-afbeeldingen of logo's. Voordelen zijn oneindig schalen en potentieel kleinere bestandsgroottes. Beste keuze voor afbeeldingen met duidelijke vormen en beperkt kleurverloop.",
+      "technicalDetails": "Vereist traceringsalgoritmen om raster-TIFF-gegevens om te zetten in vectorpaden. De resultaten variëren sterk afhankelijk van de complexiteit van de afbeelding en de conversie-instellingen."
+    }
+  },
+  "bmp": {
+    "pros": [
+      "Geen kwaliteitsverlies door compressie",
+      "Brede compatibiliteit met oudere systemen",
+      "Ruwe beeldgegevens voor gespecialiseerde toepassingen",
+      "Eenvoudig formaat voor gemakkelijk lezen en schrijven"
+    ],
+    "cons": [
+      "Zeer grote bestandsgroottes",
+      "Niet geschikt voor web of netwerkoverdracht",
+      "Gebrek aan geavanceerde functies zoals transparantie",
+      "Inefficiënt voor opslag en moderne gebruiksgevallen"
+    ],
+    "jpeg": {
+      "description": "Converteer BMP naar JPEG voor aanzienlijk kleinere bestandsgroottes. Ideaal voor het delen van BMP-afbeeldingen op het web of via e-mail. Profiteer van brede compatibiliteit en veel kleinere bestanden, perfect voor digitale foto's of complexe grafiek waar enig kwaliteitsverlies acceptabel is.",
+      "technicalDetails": "Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie. Converteert de ongecomprimeerde BMP-gegevens naar gecomprimeerde 24-bit kleur, vaak met 4:2:0 chroma-subsampeling."
+    },
+    "png": {
+      "description": "Transformeer BMP naar PNG voor efficiënte verliesloze compressie. Ideaal voor het verminderen van bestandsgroottes terwijl de beeldkwaliteit behouden blijft. Perfect voor grafiek, schermafdrukken of afbeeldingen met tekst. PNG ondersteunt transparantie en biedt flexibiliteit voor webgrafiek en digitale ontwerppro jecten.",
+      "technicalDetails": "Gebruikt DEFLATE-compressie. Ondersteunt tot 24-bit kleurdiepte en 8-bit alpha-kanaal, waardoor een getrouwe reproductie van BMP-gegevens, inclusief transparantie, mogelijk is."
+    },
+    "gif": {
+      "description": "Converteer BMP naar GIF voor kleine bestandsgroottes en animatiepotentieel. Ideaal voor eenvoudige grafiek, logo's of het maken van animaties uit BMP-series. Profiteer van brede compatibiliteit en kleine bestanden voor basiswebgrafiek, perfect voor iconen of eenvoudige geanimeerde elementen.",
+      "technicalDetails": "Gebruikt LZW-compressie met een 256-kleuren palet. Conversie vanuit BMP omvat vaak kleurkwantisatie en dithering om aan de beperkte kleurruimte van GIF aan te passen."
+    },
+    "webp": {
+      "description": "Transformeer BMP naar WebP voor moderne, efficiënte webafbeeldingen. Ideaal voor het converteren van ongecomprimeerde BMPs naar een voor het web geoptimaliseerd formaat. Profiteer van uitstekende compressie, transparantieondersteuning en goede beeldkwaliteit, perfect voor snel ladende websites en online media.",
+      "technicalDetails": "Gebruikt voorspellende codering voor compressie. Ondersteunt verliesvolle en verliesloze compressie met 24-bit kleurdiepte en een 8-bit alpha-kanaal."
+    },
+    "avif": {
+      "description": "Converteer BMP naar AVIF voor superieure compressie en kwaliteit. Ideaal voor het archiveren van BMP-afbeeldingen met minimale bestandsgrootte. Profiteer van uitstekende compressie, hoge beeldkwaliteit en ondersteuning voor brede kleurruimtes. Perfect voor het toekomstbestendig maken van afbeeldingen en het optimaliseren van webinhoud.",
+      "technicalDetails": "Gebaseerd op de AV1-videocodec, ondersteunt tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling. Biedt zowel verliesvolle als verliesloze compressie."
+    },
+    "tiff": {
+      "description": "Transformeer BMP naar TIFF voor veelzijdige, hoogwaardige beeldopslag. Ideaal voor het behouden van BMP-gegevens in een formaat dat geschikt is voor professionele afdruk en publicatie. Profiteer van de ondersteuning van TIFF voor lagen, meerdere pagina's en uitgebreide metadata, perfect voor archivering en professionele workflows.",
+      "technicalDetails": "Ondersteunt verschillende compressie-algoritmen, inclusief LZW en ZIP. Kan met hoogresolutiefoto's overweg en ondersteunt tot 24-bit kleurdiepte."
+    },
+    "pdf": {
+      "description": "Converteer BMP naar PDF voor universele documentcompatibiliteit. Ideaal voor het opnemen van BMP-afbeeldingen in rapporten, presentaties of archieven. Profiteer van brede ondersteuning, print-klaar formaat en de mogelijkheid om meerdere BMPs in één gemakkelijk te distribueren bestand te combineren.",
+      "technicalDetails": "PDF kan BMP-afbeeldingen direct inbedden of converteren. Ondersteunt verschillende kleurruimtes en kan de oorspronkelijke beeldkwaliteit behouden."
+    },
+    "svg": {
+      "description": "Transformeer BMP naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het maken van vectorversies van eenvoudige BMP-afbeeldingen of logo's. Voordelen zijn oneindig schalen en potentieel kleinere bestandsgroottes. Beste keuze voor BMPs met duidelijke vormen en beperkte kleuren.",
+      "technicalDetails": "Vereist traceringsalgoritmen om raster-BMP-gegevens om te zetten in vectorpaden. De resultaten variëren sterk afhankelijk van de complexiteit van de afbeelding en de conversie-instellingen."
+    }
+  },
+  "pdf": {
+    "pros": [
+      "Universele compatibiliteit voor weergave en afdrukken",
+      "Kunnen meerdere afbeeldingen in één document combineren",
+      "Behoudt hoge beeldkwaliteit",
+      "Ideaal voor professionele documentatie",
+      "Ondersteunt inbedding van lettertypen en metadata"
+    ],
+    "cons": [
+      "Grotere bestandsgrootte dan de originele afbeeldingen",
+      "Niet ideaal voor verdere beeldbewerking",
+      "Potentieel verlies van sommige metadata",
+      "Overdreven voor eenvoudig delen van afbeeldingen"
+    ],
+    "jpeg": {
+      "description": "Converteer PDF naar JPEG voor breed compatibele beeldextractie. Ideaal voor het delen van specifieke pagina's of grafiek uit PDF's. Profiteer van eenvoudige weergave op elk apparaat, perfect voor snel delen van PDF-inhoud via e-mail of berichtapps.",
+      "technicalDetails": "Rastert de PDF-inhoud, meestal in 24-bit kleurdiepte. Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie."
+    },
+    "png": {
+      "description": "Transformeer PDF naar PNG voor hoogwaardige beeldextractie. Ideaal voor het behouden van de duidelijkheid van tekst en grafiek uit PDF's. Perfect voor het maken van webvriendelijke afbeeldingen uit PDF-inhoud, waarbij de kwaliteit voor diagrammen, grafieken en tekstrijke pagina's behouden blijft.",
+      "technicalDetails": "Rastert de PDF-inhoud. Ondersteunt tot 24-bit kleurdiepte en 8-bit alpha-kanaal, met gebruik van DEFLATE-compressie."
+    },
+    "gif": {
+      "description": "Converteer PDF naar GIF voor eenvoudige, breed compatibele afbeeldingen. Ideaal voor het maken van kleine, webvriendelijke grafiek uit PDF-inhoud. Perfect voor het extraheren van eenvoudige diagrammen of het maken van basic animaties uit meerpa gina-PDF's. Profiteer van kleine bestandsgroottes voor eenvoudige grafiek.",
+      "technicalDetails": "Rastert de PDF-inhoud naar 8-bit kleurdiepte. Gebruikt LZW-compressie. Kan aanzienlijke kleurreductie en potentieel dithering inhouden."
+    },
+    "webp": {
+      "description": "Transformeer PDF naar WebP voor efficiënt webgeoptimaliseerde afbeeldingen. Ideaal voor het converteren van PDF-inhoud naar lichtgewicht, hoogwaardige webgrafiek. Profiteer van uitstekende compressie en goede kwaliteit, perfect voor het online delen van PDF-inhoud terwijl de visuele trouw en snelle laadtijden behouden blijven.",
+      "technicalDetails": "Rastert de PDF-inhoud. Gebruikt voorspellende codering voor compressie, met ondersteuning voor verliesvolle en verliesloze modi met 24-bit kleurdiepte en een 8-bit alpha-kanaal."
+    },
+    "avif": {
+      "description": "Converteer PDF naar AVIF voor beeldcompressie van de volgende generatie. Ideaal voor het archiveren van visuele PDF-inhoud in een efficiënt formaat. Profiteer van superieure compressie, uitstekend kwaliteitsbehoud en ondersteuning voor hoog dynamisch bereik. Perfect voor toekomstbestendige webafbeeldingen vanuit PDF-bronnen.",
+      "technicalDetails": "Rastert de PDF-inhoud. Gebaseerd op de AV1-videocodec, ondersteunt tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling."
+    },
+    "tiff": {
+      "description": "Transformeer PDF naar TIFF voor hoogwaardige beeldarchivering. Ideaal voor het behouden van PDF-inhoud in een formaat dat geschikt is voor professionele afdruk en publicatie. Profiteer van de ondersteuning van TIFF voor meerdere pagina's en uitgebreide metadata, perfect voor archivering en professionele workflows.",
+      "technicalDetails": "Rastert de PDF-inhoud. Ondersteunt diverse compressie-algoritmen, hoge resolutie output en tot 24-bit kleurdiepte."
+    },
+    "bmp": {
+      "description": "Converteer PDF naar BMP voor ongecomprimeerde, breed compatibele beeldextractie. Ideaal voor scenario's die ruwe gegevens uit PDF's vereisen. BMP garandeert dat er geen compressie-artefacten optreden, nuttig voor bepaalde oudere systemen of gespecialiseerde applicaties die onbewerkte beeldgegevens uit PDF-inhoud nodig hebben.",
+      "technicalDetails": "Rastert de PDF-inhoud. Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat, meestal in 24-bit kleurdiepte."
+    },
+    "svg": {
+      "description": "Transformeer PDF naar SVG voor schaalbare, bewerkbare grafiek. Ideaal voor het extraheren van vectorinhoud uit PDF's. Voordelen zijn oneindig schalen en bewerkbaarheid. Beste keuze voor PDF's met eenvoudige grafiek, logo's of illustraties. Behoudt vectorkwaliteit voor verdere bewerking.",
+      "technicalDetails": "Probeert vectorelementen uit de PDF te extraheren of om te zetten naar SVG-paden. Raster-elementen kunnen worden ingebed of getraceerd. De resultaten variëren afhankelijk van de complexiteit van de PDF."
+    }
+  },
+  "svg": {
+    "pros": [
+      "Oneindig schalen zonder kwaliteitsverlies",
+      "Kleine bestandsgroottes voor eenvoudige grafiek",
+      "Bewerkbaar in vectorgrafische software",
+      "Ideaal voor logo's en eenvoudige illustraties",
+      "Ondersteunt animatie en interactiviteit"
+    ],
+    "cons": [
+      "Niet geschikt voor complexe fotografische afbeeldingen",
+      "Kan verschillend worden weergegeven tussen browsers",
+      "Kan trager renderen dan rasterformaten",
+      "Beperkte ondersteuning voor geavanceerde grafische effecten"
+    ],
+    "jpeg": {
+      "description": "Converteer SVG naar JPEG voor brede compatibiliteit en kleinere bestandsgroottes. Ideaal voor het delen van vectorgrafiek als rasterafbeeldingen. Voordelen zijn universele ondersteuning en gereduceerde bestandsgroottes. Beste keuze voor eenvoudige SVG's of wanneer het vectorformaat niet vereist is.",
+      "technicalDetails": "Rastert de SVG-inhoud. Gebruikt discrete cosinustransformatie (DCT) met instelbare compressie, meestal in 24-bit kleurdiepte."
+    },
+    "png": {
+      "description": "Transformeer SVG naar PNG voor rasterafbeeldingen van hoge kwaliteit met transparantie. Ideaal voor het maken van webvriendelijke afbeeldingen uit vectorgrafiek. Perfect voor logo's, iconen en illustraties die op een vaste grootte duidelijk moeten blijven.",
+      "technicalDetails": "Rastert de SVG-inhoud. Ondersteunt 24-bit kleurdiepte en 8-bit alpha-kanaal, met gebruik van DEFLATE-compressie."
+    },
+    "gif": {
+      "description": "Converteer SVG naar GIF voor eenvoudige animaties en brede compatibiliteit. Ideaal voor het maken van geanimeerde iconen of eenvoudige illustraties uit SVG. Voordelen zijn kleine bestandsgroottes voor basisgrafiek en universele ondersteuning op alle platforms.",
+      "technicalDetails": "Rastert de SVG-inhoud. Gebruikt LZW-compressie met een 256-kleuren palet. Kan kleurkwantisatie en dithering inhouden."
+    },
+    "webp": {
+      "description": "Transformeer SVG naar WebP voor efficiënte, hoogwaardige webafbeeldingen. Ideaal voor het converteren van vectorgrafiek naar een modern rasterformaat. Profiteer van uitstekende compressie, transparantieondersteuning en goede beeldkwaliteit, perfect voor geoptimaliseerde webgrafiek uit SVG-bronnen.",
+      "technicalDetails": "Rastert de SVG-inhoud. Gebruikt voorspellende codering voor compressie, met ondersteuning voor verliesvolle en verliesloze modi met 24-bit kleurdiepte en een 8-bit alpha-kanaal."
+    },
+    "avif": {
+      "description": "Converteer SVG naar AVIF voor beeldcompressie van de volgende generatie. Ideaal voor het maken van sterk geoptimaliseerde rasterversies van vectorgrafiek. Profiteer van superieure compressie, uitstekend kwaliteitsbehoud en ondersteuning voor brede kleurruimtes. Perfect voor toekomstbestendige webafbeeldingen uit SVG-bronnen.",
+      "technicalDetails": "Rastert de SVG-inhoud. Gebaseerd op de AV1-videocodec, ondersteunt tot 12-bit kleurdiepte en 4:4:4 chroma-subsampeling."
+    },
+    "tiff": {
+      "description": "Transformeer SVG naar TIFF voor hoogwaardige rasterarchivering. Ideaal voor het behouden van vectorgrafiek in een formaat dat geschikt is voor professionele afdruk en publicatie. Profiteer van de ondersteuning van TIFF voor hoge resoluties en uitgebreide metadata, perfect voor archivering en afdrukworkflows.",
+      "technicalDetails": "Rastert de SVG-inhoud. Ondersteunt diverse compressie-algoritmen, hoge resolutie output en tot 24-bit kleurdiepte met optioneel alpha-kanaal."
+    },
+    "bmp": {
+      "description": "Converteer SVG naar BMP voor ongecomprimeerde, breed compatibele rasterafbeeldingen. Ideaal voor scenario's die onbewerkte beeldgegevens of maximale compatibiliteit met oudere systemen vereisen. BMP garandeert dat er geen compressie-artefacten optreden, nuttig voor bepaalde gespecialiseerde toepassingen die onbewerkte beeldgegevens nodig hebben.",
+      "technicalDetails": "Rastert de SVG-inhoud. Niet-gecomprimeerd formaat dat pixelgegevens direct opslaat, meestal in 24-bit kleurdiepte."
+    },
+    "pdf": {
+      "description": "Transformeer SVG naar PDF voor universele documentcompatibiliteit. Ideaal voor het opnemen van vectorgrafiek in afdrukbare documenten. Profiteer van behoud van vectorkwaliteit, brede ondersteuning en print-klaar formaat. Perfect voor het maken van documenten uit SVG-grafiek of -illustraties.",
+      "technicalDetails": "Converteert SVG-paden naar PDF-vectorelementen. Ondersteunt inbedding van lettertypen en behoud van vectorgrafiek. Kan enkele complexe effecten rasteren."
     }
   }
 }

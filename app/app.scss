@@ -19,7 +19,7 @@ body {
 // main.scss or your main CSS file
 
 :root {
-  /* Fonts */
+  --linear-background: linear-gradient(45deg, #4CAF50, #009688);
   --default-font: #{$default-font};
   --heading-font: #{$heading-font};
   --text-font: #{$text-font};

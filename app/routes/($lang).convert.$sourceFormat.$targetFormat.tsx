@@ -17,6 +17,7 @@ import { meta } from "../utils/meta";
 import { getMetaIntl } from "~/utils/metaIntl";
 import Tool from "~/ui/Tool/Tool";
 import { getCSRFToken } from "~/utils/csrf.server";
+import ComparisonSection from "~/ui/AboutPage/ComparisonSection";
 
 export { meta };
 export const handle = { i18n: "common" };
@@ -90,11 +91,9 @@ export default function ConvertPageMultilanguage() {
             </section>
           </ContentContainer>
           <div id="top-tools">
+            <ComparisonSection />
             <CompanyServicesSection
               list={conversionOptions}
-              heading={t("services.otherConversions", {
-                conversion: selectedFormatFrom,
-              })}
             />
             <FAQSection />
           </div>

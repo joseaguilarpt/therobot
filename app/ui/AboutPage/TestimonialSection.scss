@@ -1,3 +1,5 @@
+@use '../../styles/theme' as *;
+
 .testimonial-container {
   padding: 20px;
   background: var(--default-color);
@@ -36,5 +38,72 @@
   }
   .button--link {
     font-weight: bold;
+  }
+}
+
+.comparsion-container {
+  width: 100%;
+  
+  @include media-query(medium) {
+    padding-top: 55px;
+  }
+  .comparison-image {
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    width: fit-content;
+    z-index: 2;
+    @include media-query(medium) {
+      top: -35px;
+    }
+
+    img {
+      width: 85px;
+
+      @include media-query(medium) {
+        width: 130px;
+      }
+    }
+  }
+  .grow {
+    position: relative;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+  }
+  .comparison-item {
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background-image: var(--linear-background);
+    padding-top: 20px;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    border-radius: var(--border-radius);
+    ul {
+      margin: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    .comparision-content__item {
+      display: flex;
+    }
+  }
+  .vs {
+    background-clip: text;
+    background: var(--linear-background);
+    transform: scale(1.2);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .table-item {
+    opacity:0;
+    @include media-query(medium) {
+      opacity: 1;;
+    }
   }
 }
