@@ -50,12 +50,9 @@ export default async function handleRequest(
       ...i18n,
       lng,
       ns,
-      backend: { loadPath: resolve("/locales/{{lng}}/{{ns}}.json") },
+      backend: { loadPath: resolve("../locales/{{lng}}/{{ns}}.json") },
       fallbackLng: 'en',
       debug: true,
-      interpolation: {
-        escapeValue: false,
-      },
     });
 
   const nonce = crypto.randomBytes(16).toString("base64");
