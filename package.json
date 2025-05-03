@@ -44,7 +44,7 @@
     "match-sorter": "^6.3.1",
     "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.14",
-    "potrace": "^2.1.1",
+    "potrace": "^2.1.8",
     "rate-limiter-flexible": "^5.0.3",
     "react": "^17.0.0 || ^18.0.0",
     "react-cookie": "^7.1.4",
@@ -94,5 +94,11 @@
   },
   "engines": {
     "node": ">=20.5.0"
-  }
+  },
+  "overrides": {
+  "phin": "^3.7.1",
+  "@jimp/core": "latest",
+  "@jimp/custom": "latest",
+  "jimp": "latest"
+}
 }
