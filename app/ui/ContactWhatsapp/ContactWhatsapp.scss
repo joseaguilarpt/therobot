@@ -1,0 +1,16 @@
+.contact-with-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      svg {
+        font-size: 1.2rem;
+        margin-right: 8px;
+      }
+    }
+  }
+  

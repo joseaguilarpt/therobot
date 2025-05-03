@@ -1,0 +1,106 @@
+.multiselect {
+  position: relative;
+  width: 100%;
+}
+.multiselect__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.multiselect__input {
+  width: 100%;
+  padding: var(--input-padding);
+  font-family: var(--default-font);
+  font-size: var(--input-font-size);
+  border: 1px solid var(--input-border);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  outline: none;
+}
+.multiselect__input.__left-icon {
+  padding-left: 40px;
+}
+.multiselect__input:focus {
+  border-color: var(--input-border);
+  box-shadow: 0 0 0 2.5px var(--input-border-active);
+}
+.multiselect__input::placeholder {
+  color: var(--placeholder-color);
+}
+.multiselect__input:disabled {
+  background-color: var(--placeholder-color);
+  cursor: not-allowed;
+}
+.multiselect__icon {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--default-color);
+}
+.multiselect__icon-right {
+  position: absolute;
+  left: initial;
+  right: 0.75rem;
+  color: var(--default-color);
+}
+.multiselect__clear-button {
+  position: absolute;
+  right: 0.75rem;
+  background: none !important;
+  border: none !important;
+  color: var(--default-color) !important;
+  padding: 0 !important;
+  cursor: pointer;
+}
+.multiselect__clear-button:hover {
+  color: var(--accent-color) !important;
+}
+.multiselect__suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0 0 4px 4px;
+  background-color: var(--input-background-color);
+  z-index: 10;
+  overflow-y: auto;
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  text-align: left;
+  max-height: 300px;
+}
+.multiselect__suggestions li {
+  display: flex;
+  padding: var(--input-padding);
+  cursor: pointer;
+  color: var(--default-color);
+}
+.multiselect__suggestions li:hover, .multiselect__suggestions li.active {
+  background-color: var(--accent-color);
+  font-weight: 600;
+}
+.multiselect__suggestions li.disabled {
+  cursor: not-allowed;
+  font-weight: 400;
+  background-color: var(--background-color);
+}
+.multiselect__selected-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+.multiselect__selected-option-pill {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--accent-color);
+  border-radius: 25%;
+  font-size: var(--font-size-small);
+  font-family: var(--heading-font);
+  color: var(--font-color);
+}
+
+/*# sourceMappingURL=Multiselect.css.map */

@@ -1,0 +1,18 @@
+.contact-with-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-with-call .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.contact-with-call .button svg {
+  font-size: 1rem;
+  margin-right: 8px;
+  color: white;
+}
+
+/*# sourceMappingURL=ContactWithCall.css.map */

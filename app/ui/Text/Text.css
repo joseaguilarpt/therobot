@@ -1,0 +1,62 @@
+.text {
+  margin: 0;
+  font-family: var(--heading-font);
+}
+.text--smaller {
+  font-size: 0.75rem; /* 12px */
+  line-height: 2;
+}
+.text--small {
+  font-size: 0.875rem; /* 14px */
+}
+.text--medium {
+  font-size: 1.05rem; /* 16px */
+  line-height: 1.5rem;
+}
+.text--large {
+  font-size: 1.25rem; /* 20px */
+}
+.text--primary {
+  color: var(--default-color);
+}
+.text--secondary {
+  color: var(--heading-color);
+}
+.text--tertiary {
+  color: var(--accent-color);
+}
+.text--bold {
+  font-weight: bold;
+}
+.text--semi-bold {
+  font-weight: 600;
+}
+.text--italic {
+  font-style: italic;
+}
+.text--oblique {
+  font-style: oblique;
+}
+.text--underline {
+  text-decoration: underline;
+}
+.text--overline {
+  text-decoration: overline;
+}
+.text--line-through {
+  text-decoration: line-through;
+}
+.text--left {
+  text-align: left;
+}
+.text--center {
+  text-align: center;
+}
+.text--right {
+  text-align: right;
+}
+.text--justify {
+  text-align: justify;
+}
+
+/*# sourceMappingURL=Text.css.map */

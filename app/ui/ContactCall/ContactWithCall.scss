@@ -1,0 +1,17 @@
+.contact-with-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      svg {
+        font-size: 1rem;
+        margin-right: 8px;
+        color: white;
+      }
+    }
+  }
+  

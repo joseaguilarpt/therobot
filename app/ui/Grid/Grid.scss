@@ -1,0 +1,85 @@
+// Grid.scss
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-flex-start {
+  justify-content: flex-start;
+}
+
+.justify-flex-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.align-flex-start {
+  align-items: flex-start;
+}
+
+.align-flex-end {
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-stretch {
+  align-items: stretch;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.content-flex-start {
+  align-content: flex-start;
+}
+
+.content-flex-end {
+  align-content: flex-end;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-stretch {
+  align-content: stretch;
+}
+
+.content-space-between {
+  align-content: space-between;
+}
+
+.content-space-around {
+  align-content: space-around;
+}
+
+// Gap Utilities
+@for $i from 0 through 10 {
+  .gap-#{$i} {
+    gap: $i * 8px; // Adjust the multiplier to your spacing scale
+  }
+}

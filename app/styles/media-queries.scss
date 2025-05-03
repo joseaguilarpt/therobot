@@ -1,0 +1,21 @@
+// styles/media-queries.scss
+
+// Breakpoints definition
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  extra-large: 1200px
+);
+
+// Media query mixin
+@mixin media-query($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}. Check your breakpoints map in media-queries.scss.";
+  }
+}
+

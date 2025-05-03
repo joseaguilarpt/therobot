@@ -1,0 +1,134 @@
+@import '../../styles/mixins';
+@import '../../styles/variables';
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  &.__half {
+    overflow: unset;
+    height: 60vh;
+    z-index: 3;
+  }
+}
+
+.carousel__inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.carousel__slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  @include flex-center;
+}
+
+.carousel__slide--active {
+  @include flex-center;
+}
+
+.carousel__overlay {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--carousel-overlay);
+  }
+}
+.carousel__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.carousel__title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.carousel__description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.carousel__button:hover {
+  background-color: #ff6347;
+}
+
+.carousel__controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel__control {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.carousel__control:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.carousel__control--prev {
+  margin-left: 10px;
+}
+
+.carousel__control--next {
+  margin-right: 10px;
+}
+
+.carousel__indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.carousel__indicator {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel__indicator--active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.carousel__content {
+  h2 {
+    color: $contrast-color-light;
+  }
+}

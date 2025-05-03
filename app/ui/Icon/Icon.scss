@@ -1,0 +1,65 @@
+/* app/components/Icon.scss */
+@import '../../styles/theme';
+
+.icon {
+    &--primary {
+      color: var(--button-color);
+    }
+  
+    &--secondary {
+      color: var(--font-color);
+    }
+  
+    &--success {
+      color: var(--accent-color);
+    }
+  
+    &--danger {
+      color: #ff4d4f; /* Example color */
+    }
+  
+    &--warning {
+      color: #faad14; /* Example color */
+    }
+  
+    &--info {
+      color: #1890ff; /* Example color */
+    }
+
+    &--white {
+      color: $contrast-color-light; /* Example color */
+    }
+  
+    &--light {
+      color: var(--background-color);
+    }
+  
+    &--dark {
+      color: var(--nav-dropdown-background-color);
+    }
+  
+    &--xxsmall {
+      font-size: 0.5rem; /* Example size */
+    }
+  
+    &--xsmall {
+      font-size: 0.75rem; /* Example size */
+    }
+  
+    &--small {
+      font-size: 1rem; /* Example size */
+    }
+  
+    &--medium {
+      font-size: 2rem; /* Example size */
+    }
+  
+    &--large {
+      font-size: 3rem; /* Example size */
+    }
+  
+    &--xlarge {
+      font-size: 4rem; /* Example size */
+    }
+  }
+  

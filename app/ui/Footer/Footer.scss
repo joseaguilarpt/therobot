@@ -1,0 +1,76 @@
+// styles/Footer.scss
+@use "../../styles/theme" as *;
+
+.footer {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+
+  &__overlay {
+    background: #000000; /* Dark overlay */
+    padding: 0px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__section {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 20px;
+  }
+
+  &__heading {
+    font-size: var(--font-size-large);
+    color: var(--accent-color);
+    margin-bottom: 10px;
+  }
+
+  &__address {
+    font-family: var(--default-font);
+    font-size: var(--font-size-medium);
+    color: $contrast-color-light;
+    line-height: 1.5;
+  }
+
+  &__buttons {
+    button {
+      border: 1.5px solid $contrast-color-light;
+      svg {
+        padding-right: 0 !important;
+      }
+    }
+  }
+
+  &__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__link-item {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    font-family: var(--default-font);
+    color: $contrast-color-light;
+    text-decoration: none;
+    font-size: var(--font-size-medium);
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--input-border);
+    p {
+      color: $contrast-color-light;
+    }
+  }
+}

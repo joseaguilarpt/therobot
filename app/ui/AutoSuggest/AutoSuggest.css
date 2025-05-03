@@ -1,0 +1,561 @@
+.u-p0 {
+  padding: 0px;
+}
+
+.u-pt0 {
+  padding-top: 0px;
+}
+
+.u-pr0 {
+  padding-right: 0px;
+}
+
+.u-pb0 {
+  padding-bottom: 0px;
+}
+
+.u-pl0 {
+  padding-left: 0px;
+}
+
+.u-p1 {
+  padding: 8px;
+}
+
+.u-pt1 {
+  padding-top: 8px;
+}
+
+.u-pr1 {
+  padding-right: 8px;
+}
+
+.u-pb1 {
+  padding-bottom: 8px;
+}
+
+.u-pl1 {
+  padding-left: 8px;
+}
+
+.u-p2 {
+  padding: 16px;
+}
+
+.u-pt2 {
+  padding-top: 16px;
+}
+
+.u-pr2 {
+  padding-right: 16px;
+}
+
+.u-pb2 {
+  padding-bottom: 16px;
+}
+
+.u-pl2 {
+  padding-left: 16px;
+}
+
+.u-p3 {
+  padding: 24px;
+}
+
+.u-pt3 {
+  padding-top: 24px;
+}
+
+.u-pr3 {
+  padding-right: 24px;
+}
+
+.u-pb3 {
+  padding-bottom: 24px;
+}
+
+.u-pl3 {
+  padding-left: 24px;
+}
+
+.u-p4 {
+  padding: 32px;
+}
+
+.u-pt4 {
+  padding-top: 32px;
+}
+
+.u-pr4 {
+  padding-right: 32px;
+}
+
+.u-pb4 {
+  padding-bottom: 32px;
+}
+
+.u-pl4 {
+  padding-left: 32px;
+}
+
+.u-p5 {
+  padding: 40px;
+}
+
+.u-pt5 {
+  padding-top: 40px;
+}
+
+.u-pr5 {
+  padding-right: 40px;
+}
+
+.u-pb5 {
+  padding-bottom: 40px;
+}
+
+.u-pl5 {
+  padding-left: 40px;
+}
+
+.u-m0 {
+  margin: 0px;
+}
+
+.u-mt0 {
+  margin-top: 0px;
+}
+
+.u-mr0 {
+  margin-right: 0px;
+}
+
+.u-mb0 {
+  margin-bottom: 0px;
+}
+
+.u-ml0 {
+  margin-left: 0px;
+}
+
+.u-m1 {
+  margin: 8px;
+}
+
+.u-mt1 {
+  margin-top: 8px;
+}
+
+.u-mr1 {
+  margin-right: 8px;
+}
+
+.u-mb1 {
+  margin-bottom: 8px;
+}
+
+.u-ml1 {
+  margin-left: 8px;
+}
+
+.u-m2 {
+  margin: 16px;
+}
+
+.u-mt2 {
+  margin-top: 16px;
+}
+
+.u-mr2 {
+  margin-right: 16px;
+}
+
+.u-mb2 {
+  margin-bottom: 16px;
+}
+
+.u-ml2 {
+  margin-left: 16px;
+}
+
+.u-m3 {
+  margin: 24px;
+}
+
+.u-mt3 {
+  margin-top: 24px;
+}
+
+.u-mr3 {
+  margin-right: 24px;
+}
+
+.u-mb3 {
+  margin-bottom: 24px;
+}
+
+.u-ml3 {
+  margin-left: 24px;
+}
+
+.u-m4 {
+  margin: 32px;
+}
+
+.u-mt4 {
+  margin-top: 32px;
+}
+
+.u-mr4 {
+  margin-right: 32px;
+}
+
+.u-mb4 {
+  margin-bottom: 32px;
+}
+
+.u-ml4 {
+  margin-left: 32px;
+}
+
+.u-m5 {
+  margin: 40px;
+}
+
+.u-mt5 {
+  margin-top: 40px;
+}
+
+.u-mr5 {
+  margin-right: 40px;
+}
+
+.u-mb5 {
+  margin-bottom: 40px;
+}
+
+.u-ml5 {
+  margin-left: 40px;
+}
+
+.u-m6 {
+  margin: 48px;
+}
+
+.u-mt6 {
+  margin-top: 48px;
+}
+
+.u-mr6 {
+  margin-right: 48px;
+}
+
+.u-mb6 {
+  margin-bottom: 48px;
+}
+
+.u-ml6 {
+  margin-left: 48px;
+}
+
+.u-m7 {
+  margin: 56px;
+}
+
+.u-mt7 {
+  margin-top: 56px;
+}
+
+.u-mr7 {
+  margin-right: 56px;
+}
+
+.u-mb7 {
+  margin-bottom: 56px;
+}
+
+.u-ml7 {
+  margin-left: 56px;
+}
+
+.u-m8 {
+  margin: 64px;
+}
+
+.u-mt8 {
+  margin-top: 64px;
+}
+
+.u-mr8 {
+  margin-right: 64px;
+}
+
+.u-mb8 {
+  margin-bottom: 64px;
+}
+
+.u-ml8 {
+  margin-left: 64px;
+}
+
+.u-m9 {
+  margin: 72px;
+}
+
+.u-mt9 {
+  margin-top: 72px;
+}
+
+.u-mr9 {
+  margin-right: 72px;
+}
+
+.u-mb9 {
+  margin-bottom: 72px;
+}
+
+.u-ml9 {
+  margin-left: 72px;
+}
+
+.u-m10 {
+  margin: 80px;
+}
+
+.u-mt10 {
+  margin-top: 80px;
+}
+
+.u-mr10 {
+  margin-right: 80px;
+}
+
+.u-mb10 {
+  margin-bottom: 80px;
+}
+
+.u-ml10 {
+  margin-left: 80px;
+}
+
+.light-mode, body.light-mode {
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+.dark-mode, body.dark-mode {
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+.bg-color-primary {
+  background-color: var(--default-color);
+}
+
+.bg-color-secondary {
+  background-color: color-mix(in srgb, var(--default-color), transparent 94%);
+}
+
+.bg-color-success {
+  background-color: var(--accent-color);
+}
+
+.bg-color-danger {
+  background-color: var(--nav-hover-color);
+}
+
+.bg-color-warning {
+  background-color: var(--nav-dropdown-hover-color);
+}
+
+.bg-color-info {
+  background-color: var(--nav-dropdown-color);
+}
+
+.bg-color-light {
+  background-color: var(--background-color);
+}
+
+.bg-color-dark {
+  background-color: var(--nav-dropdown-background-color);
+}
+
+.max-height {
+  height: 100%;
+}
+
+.full-screen-height {
+  min-height: 100vh !important;
+}
+
+.auto-suggest {
+  position: relative;
+  width: 100%;
+}
+.auto-suggest__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.auto-suggest__button {
+  position: relative;
+  width: 100%;
+  padding: var(--input-padding);
+  font-family: var(--default-font);
+  font-size: var(--input-font-size);
+  border: 2px solid var(--input-border);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-background-color);
+  color: var(--font-color);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+.auto-suggest__button svg {
+  color: var(--accent-color);
+  right: 8px;
+  position: absolute;
+}
+.auto-suggest__button.__left-icon {
+  padding-left: 40px;
+}
+.auto-suggest__button:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.4);
+}
+.auto-suggest__button:hover {
+  background-color: var(--input-hover-background-color);
+}
+.auto-suggest__button:disabled {
+  background-color: var(--input-disabled-background);
+  color: var(--input-disabled-color);
+  cursor: not-allowed;
+}
+.auto-suggest__button--error {
+  border-color: var(--error-color);
+}
+.auto-suggest .suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 2px solid var(--input-border);
+  border-top: none;
+  border-radius: 0 0 var(--input-border-radius) var(--input-border-radius);
+  background-color: var(--background-color);
+  z-index: 301;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  max-height: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.auto-suggest .suggestions li {
+  padding: 10px 15px;
+  cursor: pointer;
+  color: var(--font-color);
+  transition: background-color 0.2s ease-in-out;
+}
+.auto-suggest .suggestions li:hover, .auto-suggest .suggestions li:focus, .auto-suggest .suggestions li.active {
+  background-color: rgba(175, 175, 175, 0.22);
+  color: var(--background-color);
+  outline: none;
+}
+.auto-suggest .suggestions li.disabled {
+  cursor: not-allowed;
+  background-color: var(--input-disabled-background);
+  color: var(--input-disabled-color);
+}
+.auto-suggest .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.home-suggest {
+  margin: 10px;
+}
+.home-suggest .suggestions {
+  top: 80px;
+  max-height: unset;
+  border: none;
+  background: var(--background-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+.home-suggest .suggestions li:hover, .home-suggest .suggestions li:focus, .home-suggest .suggestions li.active {
+  background-color: rgba(175, 175, 175, 0.22);
+  color: var(--background-color);
+}
+.home-suggest .suggestions p {
+  padding: 10px 15px;
+}
+.home-suggest .auto-suggest__icon-right {
+  right: 15px;
+  position: absolute;
+  pointer-events: none;
+}
+.home-suggest .auto-suggest__icon-right svg {
+  fill: var(--accent-color);
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .home-suggest .auto-suggest__icon-right svg {
+    font-size: 1.5rem;
+  }
+}
+.home-suggest .auto-suggest__button {
+  margin: 0.5em 0;
+  font-size: 1.45rem;
+  border: 2px solid var(--input-border);
+  border-radius: 10px;
+  padding: 8px 40px 8px 15px;
+  width: auto;
+  min-width: 60px;
+  transition: all 0.2s ease-in-out;
+}
+@media (min-width: 768px) {
+  .home-suggest .auto-suggest__button {
+    min-width: 175px;
+    font-size: 1.75rem;
+  }
+}
+.home-suggest .auto-suggest__button:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.4);
+}
+.home-suggest .auto-suggest__button:hover {
+  background-color: var(--input-hover-background-color);
+}
+.home-suggest .auto-suggest__button[aria-expanded=true] svg {
+  transform: rotate(180deg);
+}
+@media (min-width: 576px) {
+  .home-suggest .auto-suggest__button {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 768px) {
+  .home-suggest .auto-suggest__button {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .home-suggest .auto-suggest__button {
+    font-size: 2.25rem;
+  }
+}
+
+/*# sourceMappingURL=AutoSuggest.css.map */

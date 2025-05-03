@@ -1,0 +1,66 @@
+// _themes.scss
+@import 'variables';
+@import 'mixins';
+@import "media-queries";
+
+// Define themes
+
+.light-mode {
+  background-color: var(--background-color);
+  color:  var(--default-color);
+}
+
+.dark-mode {
+  background-color: var(--background-color);
+  color:  var(--default-color);
+}
+
+// Apply themes to body
+body.light-mode {
+  @extend .light-mode;
+}
+
+body.dark-mode {
+  @extend .dark-mode;
+}
+
+
+.bg-color-primary {
+  background-color: var(--default-color);
+}
+
+.bg-color-secondary {
+  background-color: color-mix(in srgb, var(--default-color), transparent 94%);
+}
+
+.bg-color-success {
+  background-color: var(--accent-color);
+}
+
+.bg-color-danger {
+  background-color: var(--nav-hover-color);
+}
+
+.bg-color-warning {
+  background-color: var(--nav-dropdown-hover-color);
+}
+
+.bg-color-info {
+  background-color: var(--nav-dropdown-color);
+}
+
+.bg-color-light {
+  background-color: var(--background-color);
+}
+
+.bg-color-dark {
+  background-color: var(--nav-dropdown-background-color);
+}
+
+.max-height {
+  height: 100%;
+}
+
+.full-screen-height {
+  min-height: 100vh !important;
+}

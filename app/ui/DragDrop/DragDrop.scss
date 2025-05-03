@@ -1,0 +1,120 @@
+@import "../../styles/theme.scss";
+
+.drag-and-drop-container {
+  width: 100%;
+  min-height: 200px;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-color);
+  color: var(--font-color);
+  font-family: var(--default-font);
+  font-size: var(--font-size-medium);
+  transition: all 0.3s ease;
+  padding: 15px 0px;
+
+  &.dragging {
+    background-color: var(--input-background-color);
+    border-color: var(--accent-color-darken);
+    outline: 2px solid var(--accent-color);
+  }
+
+  .instructions {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .upload-button-container {
+    margin-bottom: 20px;
+  }
+
+  .text.text--small {
+    color: var(--contrast-color);
+  }
+
+  .upload-button {
+    border: 2px solid transparent;
+    text-align: center;
+    border-radius: 100px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+  
+    &:focus {
+      outline: none;
+      border-color: var(--contrast-color);
+      box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb), 0.5);
+    }
+  
+    &:hover {
+      background-color: #{lighten(#000000, 20%)};
+    }
+  
+    &:active {
+      transform: translateY(1px);
+    }
+  
+    .button__text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    svg {
+      margin-right: 10px;
+      font-size: 2rem;
+    }
+  
+    @include media-query(medium) {
+      min-width: 172px;
+      padding: 15px 30px;
+      
+      svg {
+        font-size: 2.5rem;
+      }
+    }
+  
+    .divider {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 1px;
+      height: 30px !important;
+      margin: 0 15px;
+    }
+  }
+
+  .format-selector {
+    margin-top: 20px;
+
+    select {
+      margin-left: 10px;
+      padding: 5px;
+      font-size: var(--input-font-size);
+    }
+  }
+}
+
+.error {
+  color: var(--error-color);
+  margin-top: 10px;
+}
+
+@keyframes progress {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.files-list {
+  width: 100%;
+}

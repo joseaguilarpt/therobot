@@ -1,0 +1,86 @@
+@use "../../styles/theme" as *;
+
+.input-select {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  button {
+    width: 100%;
+    padding: var(--input-padding);
+    font-family: var(--default-font);
+    font-size: var(--input-font-size);
+    border: 1px solid var(--input-border);
+    border-radius: var(--input-border-radius);
+    background-color: var(--input-background-color);
+    outline: none;
+    color: var(--default-color);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    &:focus {
+      box-shadow: 0 0 0 2px var(--accent-color);
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    
+    svg {
+      fill: var(--accent-color) !important;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    min-width: 200px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 4px;
+    padding: 0; // Remove default padding
+    list-style-type: none; // Remove list bullets
+
+    .input-select__option {
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 15px;
+      font-family: var(--default-font);
+      font-size: var(--input-font-size);
+      color: $font-color-light;
+      margin: 0; // Remove default margin
+
+      &:hover, &.focused {
+        background-color: #f0f0f0;
+      }
+
+      &[aria-selected="true"] {
+        background-color: var(--accent-color);
+        color: #fff;
+      }
+    }
+  }
+}

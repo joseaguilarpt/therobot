@@ -1,0 +1,41 @@
+.image__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f0f0f0; /* Optional: Background color for loading screen */
+  z-index: 1; /* Ensure it overlays the image */
+}
+.image__img {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease; /* Optional: Fade effect when image loads */
+}
+.image__img.hidden {
+  opacity: 0; /* Optional: Hide image while loading */
+}
+.image__fallback {
+  /* Styles for fallback UI */
+}
+
+.spinner {
+  /* Style your spinner here */
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #333;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=Image.css.map */

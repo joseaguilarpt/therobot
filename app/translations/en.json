@@ -1,0 +1,517 @@
+{
+  "pageName": "EasyConvertImage",
+  "home": "Home",
+  "contact": "Contact",
+  "about": "About",
+  "spanish": "Spanish",
+  "english": "English",
+  "phone": "Phone",
+  "email": "Email",
+  "successTitle": "Success",
+  "errorTitle": "Error",
+  "infoTitle": "Notification",
+  "warningTitle": "Alert",
+  "carousel": {
+    "slide1": {
+      "title": "Welcome to Our Company",
+      "description": "Discover our innovative solutions and services tailored to your needs.",
+      "buttonText": "Explore More"
+    },
+    "slide2": {
+      "title": "Transform Your Business",
+      "description": "Unlock new opportunities with our cutting-edge technologies and strategic partnerships.",
+      "buttonText": "See Our Offerings"
+    },
+    "slide3": {
+      "title": "Join Our Community",
+      "description": "Be part of a global network dedicated to excellence and collaboration.",
+      "buttonText": "Join Us"
+    }
+  },
+  "carouselSlide1": {
+    "backgroundImage": "../img/car-dealer.jpg"
+  },
+  "heading": "Find your perfect car now",
+  "getInTouch": {
+    "successDescription": "Form submitted successfully!",
+    "errorDescription": "There was an error submitting the form."
+  },
+  "companyObjectives": {
+    "title": "Company Goals",
+    "description": "Unlock new opportunities with our cutting-edge technologies and strategic partnerships.",
+
+    "option1": {
+      "title": "Increase Customer Satisfaction",
+      "content": "Deliver exceptional service and products that exceed customer expectations, ensuring high satisfaction levels."
+    },
+    "option2": {
+      "title": "Enhance Product Innovation",
+      "content": "Drive continuous innovation in product development, leveraging cutting-edge technologies and market insights."
+    },
+    "option3": {
+      "title": "Strengthen Market Leadership",
+      "content": "Solidify our position as a market leader through strategic initiatives and effective market penetration strategies."
+    },
+    "option4": {
+      "title": "Empower Employee Growth",
+      "content": "Cultivate a supportive environment that promotes learning, growth, and career development for our employees."
+    },
+    "option5": {
+      "title": "Drive Sustainable Practices",
+      "content": "Champion sustainability initiatives across our operations, minimizing environmental impact and fostering eco-friendly practices."
+    },
+    "option6": {
+      "title": "Expand Global Reach",
+      "content": "Expand our global footprint by entering new markets and forging strategic partnerships worldwide."
+    }
+  },
+  "viewMore": "View More",
+  "companyServices": {
+    "title": "Our Services",
+    "description": "Explore our comprehensive range of services designed to help your business thrive.",
+    "option1": {
+      "title": "Web Development",
+      "icon": "FaDesktop",
+      "href": "#",
+      "content": "We specialize in creating responsive and user-friendly websites that meet your business needs.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option2": {
+      "title": "Digital Marketing",
+      "icon": "FaChartLine",
+      "href": "#",
+      "content": "Boost your online presence with our tailored digital marketing strategies that drive results.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option3": {
+      "title": "Graphic Design",
+      "icon": "FaPalette",
+      "href": "#",
+      "content": "Transform your brand identity with stunning graphic designs that leave a lasting impression.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option4": {
+      "title": "E-commerce Solutions",
+      "icon": "FaShoppingCart",
+      "href": "#",
+      "content": "Launch and optimize your online store with our comprehensive e-commerce solutions.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option5": {
+      "title": "Mobile App Development",
+      "icon": "FaMobileAlt",
+      "href": "#",
+      "content": "Create engaging mobile experiences with our innovative mobile app development services.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option6": {
+      "title": "Consulting Services",
+      "icon": "FaBriefcase",
+      "href": "#",
+      "content": "Gain strategic insights and guidance with our expert consulting services tailored to your business goals.",
+      "imageUrl": "https://via.placeholder.com/150"
+    }
+  },
+  "companyMission": {
+    "title": "Our Mission",
+    "image": "https://via.placeholder.com/400x650",
+    "description": "At our company, we are dedicated to driving innovation, focusing on our customers, and promoting sustainability. Our mission guides every decision we make and every action we take.",
+    "option1": {
+      "title": "Innovation",
+      "icon": "FaLightbulb",
+      "href": "#",
+      "content": "We strive to be at the forefront of technology, constantly innovating to provide cutting-edge solutions.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option2": {
+      "title": "Customer Focus",
+      "icon": "FaUserFriends",
+      "href": "#",
+      "content": "Our mission is to put our customers at the center of everything we do, ensuring their satisfaction and success.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option3": {
+      "title": "Sustainability",
+      "icon": "FaLeaf",
+      "href": "#",
+      "content": "We are committed to sustainable practices that protect the environment and benefit the communities we serve.",
+      "imageUrl": "https://via.placeholder.com/150"
+    }
+  },
+
+  "companyPortfolio": {
+    "title": "Our Portfolio",
+    "description": "Explore our diverse range of projects showcasing our expertise and commitment to excellence.",
+    "option1": {
+      "title": "Skyline Towers",
+      "image": "https://via.placeholder.com/150",
+      "category": "Construction",
+      "content": "Redefining skylines with innovative architecture."
+    },
+    "option2": {
+      "title": "Green Homes",
+      "image": "https://via.placeholder.com/150",
+      "category": "Construction",
+      "content": "Redefining skylines with innovative architecture.",
+      "description": "Luxury homes with eco-friendly designs."
+    },
+    "option3": {
+      "title": "Urban Park",
+      "image": "https://via.placeholder.com/150",
+      "category": "Urban Development",
+      "content": "Revitalizing parks for vibrant community spaces."
+    },
+    "option4": {
+      "title": "Marketing Campaign",
+      "image": "https://via.placeholder.com/150",
+      "category": "Marketing",
+      "content": "Boosting brand awareness through digital strategies."
+    },
+    "option5": {
+      "title": "E-commerce Platform",
+      "image": "https://via.placeholder.com/150",
+      "category": "Technology",
+      "content": "User-friendly platform for seamless online shopping."
+    },
+    "option6": {
+      "title": "Corporate Rebranding",
+      "image": "https://via.placeholder.com/150",
+      "category": "Branding",
+      "content": "Transforming brand identity for future growth."
+    },
+    "option7": {
+      "title": "Healthcare App",
+      "image": "https://via.placeholder.com/150",
+      "category": "Technology",
+      "content": "App providing healthcare services at your fingertips."
+    },
+    "option8": {
+      "title": "Luxury Resort",
+      "image": "https://via.placeholder.com/150",
+      "category": "Hospitality",
+      "content": "Designing a resort with world-class amenities."
+    },
+    "option9": {
+      "title": "Community Outreach",
+      "image": "https://via.placeholder.com/150",
+      "category": "Social Impact",
+      "content": "Improving communities through education and empowerment."
+    }
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "description": "Read what our clients have to say about their experience with XYZ Company.",
+    "option1": {
+      "image": "https://via.placeholder.com/150",
+      "title": "John Doe",
+      "content": "The team at XYZ Company exceeded our expectations. Their attention to detail and commitment to our project's success was outstanding. We highly recommend their services!",
+      "buttonLabel": "Read More",
+      "rating": 5
+    },
+    "option2": {
+      "image": "https://via.placeholder.com/150",
+      "title": "Jane Smith",
+      "content": "Working with XYZ Company was a game-changer for our business. Their innovative solutions and dedicated support helped us achieve our goals efficiently.",
+      "buttonLabel": "Explore",
+      "rating": 4
+    },
+    "option3": {
+      "image": "https://via.placeholder.com/150",
+      "title": "Alice Johnson",
+      "content": "XYZ Company provided exceptional service and delivered a top-notch product. Their team is professional, knowledgeable, and always willing to go the extra mile.",
+      "buttonLabel": "Read More",
+      "rating": 5
+    },
+    "option4": {
+      "image": "https://via.placeholder.com/150",
+      "title": "Robert Brown",
+      "content": "I was thoroughly impressed by XYZ Company's expertise and dedication. They transformed our vision into reality, and the results speak for themselves.",
+      "buttonLabel": "Explore",
+      "rating": 4
+    },
+    "option5": {
+      "image": "https://via.placeholder.com/150",
+      "title": "Emily Davis",
+      "content": "The collaboration with XYZ Company was smooth and effective. Their team is incredibly skilled, and their solutions are both innovative and practical.",
+      "buttonLabel": "Read More",
+      "rating": 5
+    },
+    "option6": {
+      "image": "https://via.placeholder.com/150",
+      "title": "Michael Wilson",
+      "content": "XYZ Company's commitment to quality and customer satisfaction is unparalleled. Their creative approach and professional service made a significant impact on our project.",
+      "buttonLabel": "Explore",
+      "rating": 4
+    }
+  },
+
+  "companyBlog": {
+    "title": "Company Blog",
+    "description": "Explore our insights and articles covering the latest trends in technology, business strategies, and more.",
+    "option1": {
+      "title": "How to Improve SEO Ranking in 2024",
+      "icon": "FaHome",
+      "href": "#",
+      "content": "Discover the latest strategies to boost your website's SEO ranking in 2024. Learn about content optimization, backlink building, and more.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option2": {
+      "title": "The Future of Artificial Intelligence in Business",
+      "icon": "FaInfo",
+      "href": "#",
+      "content": "Explore how AI is transforming industries and reshaping business operations. Understand its potential impact on your organization.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option3": {
+      "title": "Effective Strategies for Social Media Marketing",
+      "icon": "FaEnvelope",
+      "href": "#",
+      "content": "Discover proven tactics to enhance your social media marketing efforts. Learn about engagement strategies and platform-specific tips.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option4": {
+      "title": "Navigating Cybersecurity Threats in 2024",
+      "icon": "FaInfo",
+      "href": "#",
+      "content": "Stay ahead of cybersecurity threats with practical advice and best practices. Learn about current trends and defensive strategies.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option5": {
+      "title": "The Impact of Remote Work on Company Culture",
+      "icon": "FaBars",
+      "href": "#",
+      "content": "Explore the benefits and challenges of remote work and its effects on company culture. Discover strategies for fostering a cohesive team environment.",
+      "imageUrl": "https://via.placeholder.com/150"
+    },
+    "option6": {
+      "title": "How to Leverage Data Analytics for Business Growth",
+      "icon": "FaInfo",
+      "href": "#",
+      "content": "Learn how to harness the power of data analytics to drive business growth. Explore data-driven decision-making and actionable insights.",
+      "imageUrl": "https://via.placeholder.com/150"
+    }
+  },
+
+  "footer": {
+    "socialNetworks": [
+      { "label": "Facebook", "icon": "FaFacebook", "href": "#" },
+      { "label": "Twitter", "icon": "FaTwitter", "href": "#" }
+    ],
+    "title": "Useful Links and More",
+    "description": "Explore our services and find helpful resources.",
+    "option1": {
+      "title": "Useful Links",
+      "link1": {
+        "name": "Home",
+        "url": "#"
+      },
+      "link2": {
+        "name": "About Us",
+        "url": "#"
+      },
+      "link3": {
+        "name": "Services",
+        "url": "#"
+      },
+      "link4": {
+        "name": "Terms of Service",
+        "url": "#"
+      },
+      "link5": {
+        "name": "Privacy Policy",
+        "url": "#"
+      }
+    },
+    "option2": {
+      "title": "Our Services",
+      "link1": {
+        "name": "Web Design",
+        "url": "#"
+      },
+      "link2": {
+        "name": "Web Development",
+        "url": "#"
+      },
+      "link3": {
+        "name": "Product Management",
+        "url": "#"
+      },
+      "link4": {
+        "name": "Marketing",
+        "url": "#"
+      },
+      "link5": {
+        "name": "Graphic Design",
+        "url": "#"
+      }
+    },
+    "option3": {
+      "title": "Explore More",
+      "link1": {
+        "name": "Inspiration Gallery",
+        "url": "#"
+      },
+      "link2": {
+        "name": "Customer Stories",
+        "url": "#"
+      },
+      "link3": {
+        "name": "Career Opportunities",
+        "url": "#"
+      },
+      "link4": {
+        "name": "Contact Us",
+        "url": "#"
+      },
+      "link5": {
+        "name": "FAQs",
+        "url": "#"
+      }
+    },
+    "address": "A108 Adam Street, New York, NY 535022",
+    "phone": "+1 5589 55488 55",
+    "email": "info@example.com",
+    "copyright": "© Copyright EasyConvertImage. All Rights Reserved"
+  },
+  "getInTouch_form": {
+    "title": "Contact Form",
+    "description": "Please fill out the fields below.",
+    "nameInput": "Full Name",
+    "phoneInput": "Phone Number",
+    "emailInput": "Email Address",
+    "commentsInput": "Comments",
+    "errorDescription": "Error, please try again later.",
+    "successDescription": "We will be in touch soon!",
+    "button": "Submit",
+    "radio": {
+      "option1": {
+        "label": "Buy"
+      },
+      "option2": {
+        "label": "Lease"
+      },
+      "option3": {
+        "label": "Finance"
+      },
+      "title": "Transaction Type",
+      "label": "Transaction Type"
+    },
+    "locationInput": {
+      "placeholder": "Enter a location...",
+      "label": "Location"
+    },
+    "categoryInput": {
+      "placeholder": "What are you looking for...",
+      "label": "Category"
+    },
+    "equipment": {
+      "placeholder": "Equipment:",
+      "label": "Equipment"
+    },
+    "priceFromInput": {
+      "placeholder": "Price from:",
+      "label": "Price from"
+    },
+    "priceToInput": {
+      "placeholder": "Price to:",
+      "label": "Price to"
+    },
+    "areaFromInput": {
+      "placeholder": "Mileage from:",
+      "label": "Mileage from"
+    },
+    "areaToInput": {
+      "placeholder": "Mileage to:",
+      "label": "Mileage to"
+    },
+    "buttonLabel": "Search",
+    "amenities": {
+      "placeholder": "Features:"
+    },
+    "inputDescription": {
+      "placeholder": "Description Keywords:"
+    },
+    "rooms": "Seats",
+    "bathrooms": "Doors",
+    "roomsOptions": ["2", "4", "5", "7", "9+"],
+    "bathroomsOptions": ["2", "4", "5", "7", "9+"]
+  },
+  "offersSection": {
+    "heading": "Car Deals",
+    "subheading": "Explore these new arrivals with special discounts"
+  },
+  "productCard": {
+    "rooms": "Seats",
+    "area": "Mileage",
+    "contactButton": "Contact",
+    "viewMoreButton": "View Details"
+  },
+  "filters": {
+    "sort": "Sort",
+    "filters": "Filters",
+    "clearFilters": "Clear Filters",
+    "moreFilters": "More Filters",
+    "lessFilters": "Less Filters",
+    "search": "Search",
+    "viewMap": "View Map",
+    "backToList": "Back to list"
+  },
+  "modal": {
+    "title": "More Filters"
+  },
+  "form": {
+    "location": {
+      "placeholder": "Type a location..."
+    }
+  },
+  "searchResults": {
+    "results": "Results",
+    "carsToBuy": "Cars for Sale",
+    "carsToLease": "Cars for Lease",
+    "carsToFinance": "Cars for Financing",
+    "carsToBuyOrLeaseOrFinance": "Cars for Sale, Lease or Financing",
+    "propertiesTorentOrBuy": "Vehículos a la venta",
+    "of": "of"
+  },
+  "productDetails": {
+    "viewMap": "View Map",
+    "area": "Mileage",
+    "rooms": "Seats",
+    "bathrooms": "Doors",
+    "operation": "Transaction Type",
+    "description": "Description",
+    "propertyDetails": "Car Details",
+    "propertyAmenities": "Car Features",
+    "map": "Map",
+    "contactAdvertiser": "You can contact the seller through:",
+    "sendEmail": "Or send an email:",
+    "photos": "Car photos"
+  },
+  "mapPopup": {
+    "contact": "Contact",
+    "viewMore": "View More",
+    "rooms": "Seats",
+    "area": "Mileage",
+    "bathrooms": "Doors"
+  },
+  "contactWithWhatsapp": {
+    "contactOnWhatsApp": "Contact on WhatsApp"
+  },
+  "contactCall": {
+    "call": "Call Now"
+  },
+  "login": {
+    "resetButton": "Forgot your Password?",
+    "heading": "Admin",
+    "name": "Username/Email",
+    "loginButton": "Log In",
+    "password": "Password",
+    "resetLabel": "Reset Password",
+    "backToLogin": "Back to Login"
+  },
+  "sort1": { "label": "Cheapest", "value": "price-asc", "id": 0 },
+  "sort2": { "label": "Relevant", "value": "relevant", "id": 1 },
+  "sort3": { "label": "Newest", "value": "newest", "id": 2 },
+  "sort4": { "label": "Smallest", "value": "smallest", "id": 3 },
+  "sort5": { "label": "Biggest", "value": "biggest", "id": 4 }
+}

@@ -1,0 +1,20 @@
+.testimonial-container {
+  padding: 20px;
+  background: var(--default-color);
+  border-radius: var(--input-border-radius);
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+.testimonial-container .testimonial-item {
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.testimonial-container .testimonial-item .heading, .testimonial-container .testimonial-item .text, .testimonial-container .testimonial-item .icon--large {
+  color: var(--contrast-color);
+  transition: all 0.3s ease;
+}
+.testimonial-container .testimonial-item:hover .heading, .testimonial-container .testimonial-item:hover .text, .testimonial-container .testimonial-item:hover .icon--large {
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+/*# sourceMappingURL=TestimonialSection.css.map */

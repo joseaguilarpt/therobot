@@ -1,0 +1,69 @@
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.37, 0, 0.63, 1);
+}
+.fade-in.visible {
+  opacity: 1;
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.slide-in-left.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.slide-in-right.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slide-in-top {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.slide-in-top.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.slide-in-bottom {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.slide-in-bottom.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.scale-up {
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.scale-up.visible {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-180deg);
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+.rotate-in.visible {
+  transform: rotate(0);
+  opacity: 1;
+}
+
+/*# sourceMappingURL=FadeIn.css.map */
