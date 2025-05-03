@@ -9,7 +9,7 @@ import {
 import { useTranslation } from "react-i18next";
 import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
-import { useReCaptcha } from "~/context/ReCaptchaContext";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { trackClick } from "./analytics";
 
 interface ConvertedFile {
@@ -60,7 +60,7 @@ export function useFileConversion(selectedFormat: string) {
 
   const { showSnackbar } = useTheme();
   const submit = useSubmit();
-  const { captchaRef } = useReCaptcha();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [convertedFiles, setConvertedFiles] = useState<ConvertedFile[]>([]);
   const [pdfType, setPdfType] = useState<"separated" | "merged">("separated");
@@ -68,7 +68,6 @@ export function useFileConversion(selectedFormat: string) {
 
   useEffect(() => {
     if (data?.error) {
-      console.error(data?.error)
       showSnackbar(data.error, "error");
       setIsPending(false);
       setConvertedFiles((prevFiles) =>
@@ -200,9 +199,9 @@ export function useFileConversion(selectedFormat: string) {
         formData.append("csrf", loaderData.csrfToken);
       }
 
-      if (captchaRef.current) {
+      if (executeRecaptcha) {
         try {
-          const token = await captchaRef.current.executeAsync();
+          const token = await executeRecaptcha();
           if (token) {
             formData.append("type", "email");
             formData.set("g-recaptcha-response", token);
@@ -224,7 +223,7 @@ export function useFileConversion(selectedFormat: string) {
         setIsPending(false);
       }
     },
-    [captchaRef, loaderData?.csrfToken, submit]
+    [loaderData?.csrfToken, submit]
   );
 
   return {
