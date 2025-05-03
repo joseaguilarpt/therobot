@@ -52,30 +52,39 @@ export const meta: MetaFunction<typeof loader> = ({
     dateModified,
   } = data as MetaProps;
 
-  const url = `https://easyconvertimage.com/blog/${path}`;
+  const lang = params.lang || 'en';
+  const fullUrl = `https://easyconvertimage.com${lang === 'en' ? '' : '/' + lang}/blog/${path}`;
+
+  const alternateLanguages = {
+    "x-default": `https://easyconvertimage.com/blog/${path}`,
+    en: `https://easyconvertimage.com/blog/${path}`,
+    es: `https://easyconvertimage.com/es/blog/${path}`,
+    fr: `https://easyconvertimage.com/fr/blog/${path}`,
+    de: `https://easyconvertimage.com/de/blog/${path}`,
+    pt: `https://easyconvertimage.com/pt/blog/${path}`,
+    nl: `https://easyconvertimage.com/nl/blog/${path}`,
+    it: `https://easyconvertimage.com/it/blog/${path}`,
+    id: `https://easyconvertimage.com/id/blog/${path}`,
+    ru: `https://easyconvertimage.com/ru/blog/${path}`,
+  };
 
   return createMeta({
-    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage: "https://easyconvertimage.com/img/advanced-technology.jpg",
     twitterCard: "summary_large_image",
-    canonicalUrl: url,
-    alternateLanguages: {
-      en: `https://easyconvertimage.com/en/blog/${path}`,
-      es: `https://easyconvertimage.com/es/blog/${path}`,
-      fr: `https://easyconvertimage.com/fr/blog/${path}`,
-      de: `https://easyconvertimage.com/de/blog/${path}`,
-      pt: `https://easyconvertimage.com/pt/blog/${path}`,
-      nl: `https://easyconvertimage.com/nl/blog/${path}`,
-      it: `https://easyconvertimage.com/it/blog/${path}`,
-      id: `https://easyconvertimage.com/id/blog/${path}`,
-      ru: `https://easyconvertimage.com/ru/blog/${path}`,
-    },
+    canonicalUrl: fullUrl,
+    alternateLanguages,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
       headline: title,
       description: description,
-      image: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
-      url: url,
+      image: "https://easyconvertimage.com/img/advanced-technology.jpg",
+      url: fullUrl,
       datePublished: datePublished,
       dateModified: dateModified,
       author: {
@@ -94,10 +103,6 @@ export const meta: MetaFunction<typeof loader> = ({
       },
       keywords: keywords,
     },
-    title,
-    description,
-    ogTitle,
-    ogDescription,
   })({ data, params, location, matches });
 };
 

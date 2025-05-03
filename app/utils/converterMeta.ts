@@ -74,7 +74,7 @@ export const meta: MetaFunction = ({ data }) => {
     keywords: generateKeywords(sourceFormat, targetFormat),
     ogTitle: `${sourceFormatUpper} to ${targetFormatUpper} Converter - Free & Instant | Easy Convert Image`,
     ogDescription: `Convert ${sourceFormatUpper} to ${targetFormatUpper} online for free. Preserve ${sourceBenefit} and gain ${targetBenefit}. No registration, no watermarks!`,
-    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    ogImage: "https://easyconvertimage.com/img/advanced-technology.jpg",
     twitterCard: "summary_large_image",
     canonicalUrl: url,
     alternateLanguages: {

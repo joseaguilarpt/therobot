@@ -32,29 +32,39 @@ export const meta: MetaFunction<typeof loader> = ({
   if (!data) {
     return [];
   }
-  const { description, title } = data as MetaProps;
-  const url = `https://easyconvertimage.com/terms-of-service`;
+  const { description, title, keywords, ogDescription, ogTitle } = data as MetaProps;
+  const lang = params.lang || 'en';
+  const path = 'terms-of-service';
+  const fullUrl = `https://easyconvertimage.com${lang === 'en' ? '' : '/' + lang}/${path}`;
+
+  const alternateLanguages = {
+    "x-default": `https://easyconvertimage.com/${path}`,
+    en: `https://easyconvertimage.com/${path}`,
+    es: `https://easyconvertimage.com/es/${path}`,
+    fr: `https://easyconvertimage.com/fr/${path}`,
+    de: `https://easyconvertimage.com/de/${path}`,
+    pt: `https://easyconvertimage.com/pt/${path}`,
+    nl: `https://easyconvertimage.com/nl/${path}`,
+    it: `https://easyconvertimage.com/it/${path}`,
+    id: `https://easyconvertimage.com/id/${path}`,
+    ru: `https://easyconvertimage.com/ru/${path}`,
+  };
 
   return createMeta({
-    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage: "https://easyconvertimage.com/img/advanced-technology.jpg",
     twitterCard: "summary_large_image",
-    canonicalUrl: url,
-    alternateLanguages: {
-      en: "https://easyconvertimage.com/en/terms-of-service",
-      es: `https://easyconvertimage.com/es/terms-of-service`,
-      fr: `https://easyconvertimage.com/fr/terms-of-service`,
-      de: `https://easyconvertimage.com/de/terms-of-service`,
-      pt: `https://easyconvertimage.com/pt/terms-of-service`,
-      nl: `https://easyconvertimage.com/nl/terms-of-service`,
-      it: `https://easyconvertimage.com/it/terms-of-service`,
-      id: `https://easyconvertimage.com/id/terms-of-service`,
-      ru: `https://easyconvertimage.com/ru/terms-of-service`,
-    },
+    canonicalUrl: fullUrl,
+    alternateLanguages,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       name: title,
-      url: url,
+      url: fullUrl,
       description: description,
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Any",

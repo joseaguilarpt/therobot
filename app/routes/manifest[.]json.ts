@@ -22,33 +22,25 @@ interface WebAppManifest {
   lang: string;
 }
 
-const LANGUAGES = [
-    "en",
-    "es",
-    "pt",
-    "fr",
-    "nl",
-    "de",
-    "it",
-    "id",
-    "ru",
-  ]; // Add all languages you support
+const LANGUAGES = ["en", "es", "pt", "fr", "nl", "de", "it", "id", "ru"];
 
 export const loader: LoaderFunction = async ({ request }) => {
   try {
     const url = new URL(request.url);
     const lang = url.pathname.split("/")[1];
     const isValidLang = LANGUAGES.includes(lang);
+    const effectiveLang = isValidLang ? lang : "en";
+
     const baseManifest: WebAppManifest = {
       short_name: "EasyConvert",
       name: "EasyImageConvert",
       description: "Easily convert images between multiple formats online",
       start_url: isValidLang ? `/${lang}/` : "/",
-      scope: "/",
+      scope: isValidLang ? `/${lang}/` : "/",
       display: "standalone",
       background_color: "#ffffff",
       theme_color: "#4a90e2",
-      lang: isValidLang ? lang : "en",
+      lang: effectiveLang,
       categories: ["photo", "utility"],
       icons: [
         {

@@ -22,14 +22,13 @@ const BASE_URL = "https://easyconvertimage.com";
 
 const languages = ["en", "es", "fr", "de", "pt", "nl", "it", "id", "ru"];
 
-const getAlternateLanguages = (url: string): Record<string, string> => {
+const getAlternateLanguages = (path: string, currentLang: string): Record<string, string> => {
   const alternateLanguages: Record<string, string> = {};
-  languages.forEach((item) => {
-    alternateLanguages[item] = `${BASE_URL}/${item}`;
-    if (url) {
-      alternateLanguages[item] = `${alternateLanguages[item]}/${url}`;
-    }
+  languages.forEach((lang) => {
+    alternateLanguages[lang] = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}${path ? `/${path}` : ''}`;
   });
+  // Set x-default to the English version
+  alternateLanguages['x-default'] = alternateLanguages['en'];
   return alternateLanguages;
 };
 
@@ -73,7 +72,7 @@ export const createMeta = ({
     const jsonLD = structuredData
       ? [
           {
-            "script:ld+json": structuredData,
+            "script:ld+json": JSON.stringify(structuredData),
           },
         ]
       : [];
@@ -91,19 +90,27 @@ export const meta: MetaFunction = ({ data, params, location, matches }) => {
   if (!data) {
     return [];
   }
-  const { description, title, url, alternate } =
-    (data as MetaProps & { url: string; alternate: string }) || {};
-  const alternateLanguages = alternate ? getAlternateLanguages(alternate) : {};
+  const { description, title, keywords, ogTitle, ogDescription } = (data as MetaProps) || {};
+  const lang = params.lang || 'en';
+  const path = location.pathname.split('/').slice(lang === 'en' ? 1 : 2).join('/');
+  const fullUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}${path ? `/${path}` : ''}`;
+  const alternateLanguages = getAlternateLanguages(path, lang);
+
   return createMeta({
-    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage: "https://easyconvertimage.com/img/simplify-conversion.jpg",
     twitterCard: "summary_large_image",
-    canonicalUrl: url,
+    canonicalUrl: fullUrl,
     alternateLanguages,
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebApplication",
       name: title,
-      url: url,
+      url: fullUrl,
       description: description,
       applicationCategory: "MultimediaApplication",
       operatingSystem: "Any",
