@@ -49,8 +49,9 @@ NODE_VERSION = "20.5.0"
 [[headers]]
 for = "/*"
 [headers.values]
-Link = </build/entry.client-*.js>; rel=preload; as=script
-
+Link = '''
+</build/entry.client-*.js>; rel=preload; as=script
+'''
 # Redirect options
 [[redirects]]
 from = "/*"
