@@ -763,7 +763,7 @@
       "downloadError": "Kesalahan saat mengunduh file Anda"
     },
     "messages": {
-      "operationCancelled": "Operasi Dropbox dibatalkan"
+      "operationCancelled": "Operasi dibatalkan"
     },
     "accessibility": {
       "dropboxLogo": "Logo Dropbox"

@@ -767,7 +767,7 @@
       "downloadError": "Errore durante il download dei tuoi file"
     },
     "messages": {
-      "operationCancelled": "Operazione Dropbox annullata"
+      "operationCancelled": "Operazione annullata"
     },
     "accessibility": {
       "dropboxLogo": "Logo Dropbox"

@@ -71,33 +71,33 @@ export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "icon", href: "/favicon.ico" },
   { rel: "manifest", href: "/manifest.json" },
-  { 
-    rel: "preload", 
-    href: "/fonts/Inter-Bold.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/Inter-Bold.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
-  { 
-    rel: "preload", 
-    href: "/fonts/Poppins-Regular.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/Poppins-Regular.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
-  { 
-    rel: "preload", 
-    href: "/fonts/Questrial-Regular.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/Questrial-Regular.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
-  { 
-    rel: "preload", 
-    href: "/fonts/MaterialIcons-Regular.woff2", 
-    as: "font", 
-    type: "font/woff2", 
-    crossOrigin: "anonymous" 
+  {
+    rel: "preload",
+    href: "/fonts/MaterialIcons-Regular.woff2",
+    as: "font",
+    type: "font/woff2",
+    crossOrigin: "anonymous",
   },
 ];
 
@@ -143,6 +143,8 @@ export async function loader({ params, request }: LoaderFunctionArgs) {
     honeypotInputProps: honeypot?.getInputProps(),
     locale,
     ENV: {
+      DRIVE_PICKER_API: process.env.DRIVE_PICKER_API,
+      DRIVE_PICKER_CLIENT: process.env.DRIVE_PICKER_CLIENT,
       DROPBOX_USER: process.env.DROPBOX_USER,
       G_DRIVE_USER: process.env.G_DRIVE_USER,
       GOOGLE_ID_ANALYTICS: process.env.GOOGLE_ID_ANALYTICS,
@@ -201,7 +203,7 @@ const App = React.memo(function App() {
   useAnalytics();
 
   return (
-    <GoogleOAuthProvider nonce={nonce} clientId={ENV.G_DRIVE_USER ?? ""}>
+    <GoogleOAuthProvider nonce={nonce} clientId={ENV.DRIVE_PICKER_CLIENT ?? ""}>
       <ThemeProvider>
         <html lang={locale} dir={i18n.dir()}>
           <HoneypotProvider {...honeypotInputProps}>
@@ -250,7 +252,6 @@ const App = React.memo(function App() {
                   }}
                 />
                 <script
-                
                   nonce={nonce}
                   type="text/javascript"
                   src="https://www.dropbox.com/static/api/2/dropins.js"
