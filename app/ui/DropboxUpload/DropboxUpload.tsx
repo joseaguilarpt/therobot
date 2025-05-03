@@ -110,7 +110,7 @@ export default function DropboxUpload({
     multiselect: true,
     folderselect: false,
     lang: "es_ES",
-    sizeLimit: 6_291_456,
+    sizeLimit: 10_485_760,
     extensions: parseDropboxExtension(sourceFormat),
   };
 

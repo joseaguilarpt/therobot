@@ -124,7 +124,7 @@ export default function Tool() {
                 isLoading={isPending}
                 setIsPending={setIsPending}
                 acceptedTypes={[`image/${selectedFormatFrom?.toLowerCase()}`]}
-                maxSize={6_291_456} // 6 MB
+                maxSize={10_485_760} // 10 MB
                 files={convertedFiles}
               />
             </GridItem>

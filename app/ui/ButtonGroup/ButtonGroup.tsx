@@ -56,7 +56,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
   return (
     <div className={classNames("button-group", className)} role="group" aria-labelledby={`${id}-label`}>
       {isLabelVisible && label && (
-        <Text id={`${id}-label`} className="button-group__label" as="span">
+        <Text color="contrast" id={`${id}-label`} className="button-group__label">
           {t(label)}
         </Text>
       )}

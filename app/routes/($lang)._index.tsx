@@ -12,7 +12,7 @@ import { POPULAR_CONVERSIONS } from "~/utils/conversions";
 import TestimonialSection from "~/ui/AboutPage/TestimonialSection";
 import FAQSection from "~/ui/AboutPage/FAQSection";
 import i18next from "~/i18next.server";
-import { handleError, toolAction } from "~/utils/toolUtils";
+import { handleError, contactAction } from "~/utils/serverUtils";
 import Tool from "~/ui/Tool/Tool";
 import ContactForm from "~/ui/ContactForm/ContactForm";
 import { meta } from "~/utils/meta";
@@ -37,7 +37,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 export const action: ActionFunction = async ({ request }) => {
   try {
-    return await toolAction(request);
+    return await contactAction(request);
   } catch (error) {
     console.error('Error in action function:', error);
     return handleError(error);

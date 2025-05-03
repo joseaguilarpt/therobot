@@ -12,6 +12,7 @@ import { useTheme } from "~/context/ThemeContext";
 import { base64ToImage, downloadBlob } from "~/utils/convertUtils";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { trackClick } from "./analytics";
+import { handleFileConversion } from "./converterTool";
 
 interface ConvertedFile {
   status: "processing" | "completed" | "error";
@@ -118,7 +119,7 @@ export function useFileConversion(
   }, [data?.contactError, showSnackbar, t]);
 
   const handleAllAction = useCallback(
-    (files: File[], form: FormData) => {
+    async (files: File[], form: FormData) => {
       setIsPending(true);
 
       const newFiles = files.map((item) => ({
@@ -129,27 +130,37 @@ export function useFileConversion(
       setConvertedFiles((prevFiles) => [...newFiles, ...prevFiles]);
 
       form.append("format", selectedFormat.toLowerCase());
-      files.forEach((file) => form.append("file", file));
       if (selectedFormat === "PDF") {
         form.append("pdfType", pdfType);
       }
       if (loaderData?.csrfToken) {
         form.append("csrf", loaderData.csrfToken);
       }
-      submit(form, {
-        method: "post",
-        action: location.pathname,
-        encType: "multipart/form-data",
-        preventScrollReset: true,
-      });
+      try {
+        const data = await handleFileConversion(files, selectedFormat.toLowerCase(), form)
+        if (data.convertedFiles) {
+          const newFiles = data.convertedFiles.map((item) => ({
+            ...item,
+            fileUrl: base64ToImage(item.fileUrl),
+            status: "completed" as const,
+          }));
+          setConvertedFiles((prevFiles) => [
+            ...newFiles,
+            ...prevFiles.filter((item) => item.status !== "processing"),
+          ])
+          setIsPending(false);
+        showSnackbar(t("ui.conversionSuccess"), "success");
+        }
+      }
+      catch(e) {
+        console.log(e)
+      }
     },
     [
       selectedFormatFrom,
       selectedFormat,
       pdfType,
       loaderData?.csrfToken,
-      submit,
-      executeRecaptcha,
     ]
   );
 

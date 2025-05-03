@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "@remix-run/react";
 import JSZip from "jszip";
-import pkg from 'file-saver';
+import pkg from "file-saver";
 import Button from "../Button/Button";
 import Text from "../Text/Text";
 import GridContainer from "../Grid/Grid";
@@ -47,7 +47,9 @@ const Files: React.FC<FilesProps> = ({
   onRemoveAll,
   onEmailShare,
 }) => {
-  const [previewModal, setPreviewModal] = useState<PreviewModalState | null>(null);
+  const [previewModal, setPreviewModal] = useState<PreviewModalState | null>(
+    null
+  );
   const { t, i18n } = useTranslation();
   const params = useParams();
   const { showSnackbar } = useTheme();
@@ -218,8 +220,11 @@ const Files: React.FC<FilesProps> = ({
             <GridItem xs={9} md={5} role="cell">
               <GridContainer alignItems="center">
                 <div className="table-item u-pr1">
-                <FormatImage format={file.fileUrl?.type ?? params?.sourceFormat ?? 'jpeg'} />
-
+                  <FormatImage
+                    format={
+                      file.fileUrl?.type ?? params?.sourceFormat ?? "jpeg"
+                    }
+                  />
                 </div>
                 <Text>{file.fileName}</Text>
               </GridContainer>
@@ -299,7 +304,7 @@ const Files: React.FC<FilesProps> = ({
             {previewModal?.fileName}
           </Heading>
           <img
-            style={{ maxWidth: "700px", width: "100%" }}
+            style={{ maxWidth: "700px", width: "auto", maxHeight: "80vh" }}
             src={previewModal?.file}
             alt={t("fileActions.preview")}
           />

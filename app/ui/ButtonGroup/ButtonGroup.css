@@ -405,7 +405,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin: 0;
-  padding: 0;
+  padding: 0px 15px;
 }
 .button-group__buttons .button-group__button {
   display: flex;
@@ -421,6 +421,7 @@
   user-select: none;
   position: relative;
   border-radius: 0;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .button-group__buttons .button-group__button {

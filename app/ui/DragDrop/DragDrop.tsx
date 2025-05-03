@@ -40,7 +40,7 @@ interface OutletContext {
   };
 }
 
-function bytesToMB(bytes: number, decimalPlaces: number = 2): string {
+function bytesToMB(bytes: number, decimalPlaces: number = 0): string {
   const megabytes = bytes / (1024 * 1024);
   return megabytes.toFixed(decimalPlaces);
 }
@@ -50,7 +50,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   isLoading: isExternalLoading,
   acceptedTypes: fileTypes,
   files: existingFiles,
-  maxSize = 6_291_456,
+  maxSize = 10_485_760,
 }) => {
   const acceptedTypes = fileTypes?.map((item) => {
     if (item.includes("svg")) {

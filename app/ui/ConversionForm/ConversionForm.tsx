@@ -119,11 +119,11 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
           </GridItem>
         </GridContainer>
         {selectedFormat === "PDF" && (
-          <>
-            <Text textWeight="bold" align="center">
+          <div className="u-pt2">
+            <Text textWeight="bold" color="contrast" align="center">
               {t("tool.selectOption")}
             </Text>
-            <GridContainer className="u-pt2 u-pb3" justifyContent="center">
+            <GridContainer className="u-pt2 u-pb1" justifyContent="center">
               <ButtonGroup
                 id="pdf-type"
                 onChange={setPdfType}
@@ -134,7 +134,7 @@ export const ConversionForm: React.FC<ConversionFormProps> = React.memo(
                 ]}
               />
             </GridContainer>
-          </>
+          </div>
         )}
       </>
     );
