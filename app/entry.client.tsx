@@ -20,6 +20,7 @@ function detectNamespaceFromURL() {
 const detectedNamespaces = detectNamespaceFromURL();
 
 async function hydrate() {
+  try {
   // eslint-disable-next-line import/no-named-as-default-member
   await i18next
     .use(initReactI18next) // Tell i18next to use the react-i18next plugin
@@ -51,6 +52,10 @@ async function hydrate() {
       </I18nextProvider>
     );
   });
+  }
+  catch (error) {
+    console.error("Hydration error:", error);
+  }
 }
 
 if (window.requestIdleCallback) {
