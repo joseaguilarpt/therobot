@@ -7,7 +7,7 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap; // Allow items to wrap within the container
-max-width: 100%;
+  max-width: 100%;
 
   &__list {
     list-style: none;
@@ -21,13 +21,14 @@ max-width: 100%;
   &__item {
     display: flex;
     align-items: center;
-max-width: 100%;
+    max-width: 100%;
     &:not(:last-child) {
       margin-right: 0.5rem;
     }
   }
 
-  &__label, &__link {
+  &__label,
+  &__link {
     text-decoration: none;
     color: var(--contrast-color);
     font-size: var(--font-size-medium);
@@ -73,7 +74,8 @@ max-width: 100%;
     font-size: var(--font-size-small);
   }
 
-  .breadcrumb__label, .breadcrumb__link {
+  .breadcrumb__label,
+  .breadcrumb__link {
     font-size: var(--font-size-small);
     padding: 0 1px;
   }
@@ -84,9 +86,8 @@ max-width: 100%;
 }
 
 @media (max-width: 480px) {
-
-
-  .breadcrumb__label, .breadcrumb__link {
+  .breadcrumb__label,
+  .breadcrumb__link {
     font-size: var(--font-size-x-small);
     padding: 0;
   }

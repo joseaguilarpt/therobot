@@ -61,34 +61,34 @@ body {
   --nav-dropdown-hover-color: #{$nav-dropdown-hover-color-light};
 }
 
-/* Dark Mode */
-body.dark-mode {
-  --background-color: #{$background-color-dark};
-  --font-color: #{$font-color-dark};
-  --default-color: #{$default-color-dark};
-  --heading-color: #{$heading-color-dark};
-  --accent-color: #{$accent-color-dark};
-  --accent-color-darken: #{$accent-color-dark-darken};
-  --contrast-color: #{$contrast-color-dark};
-  --shadow-color: #{$shadow-color-dark};
-  --error-color: #{$error-color-dark};
-  --carousel-overlay: #{$carousel-overlay-dark};
-  --button-color: #{$button-color-dark};
-  --image-background: #{$image-background-dark};
+// /* Dark Mode */
+// body.dark-mode {
+//   --background-color: #{$background-color-dark};
+//   --font-color: #{$font-color-dark};
+//   --default-color: #{$default-color-dark};
+//   --heading-color: #{$heading-color-dark};
+//   --accent-color: #{$accent-color-dark};
+//   --accent-color-darken: #{$accent-color-dark-darken};
+//   --contrast-color: #{$contrast-color-dark};
+//   --shadow-color: #{$shadow-color-dark};
+//   --error-color: #{$error-color-dark};
+//   --carousel-overlay: #{$carousel-overlay-dark};
+//   --button-color: #{$button-color-dark};
+//   --image-background: #{$image-background-dark};
 
 
-  /* Nav Menu Colors */
-  --nav-color: #{$nav-color-dark};
-  --placeholder-color: #{$placeholder-color-dark};
-  --input-border: #{$input-border-dark};
-  --input-border-active: #{$input-border-active-dark};
-  --nav-hover-color: #{$nav-hover-color-dark};
-  --nav-dropdown-background-color: #{$nav-dropdown-background-color-dark};
-  --nav-dropdown-color: #{$nav-dropdown-color-dark};
-  --nav-dropdown-hover-color: #{$nav-dropdown-hover-color-dark};
-  --input-background-color: #{$input-background-color-dark};
+//   /* Nav Menu Colors */
+//   --nav-color: #{$nav-color-dark};
+//   --placeholder-color: #{$placeholder-color-dark};
+//   --input-border: #{$input-border-dark};
+//   --input-border-active: #{$input-border-active-dark};
+//   --nav-hover-color: #{$nav-hover-color-dark};
+//   --nav-dropdown-background-color: #{$nav-dropdown-background-color-dark};
+//   --nav-dropdown-color: #{$nav-dropdown-color-dark};
+//   --nav-dropdown-hover-color: #{$nav-dropdown-hover-color-dark};
+//   --input-background-color: #{$input-background-color-dark};
 
-}
+// }
 
 
 // Root variables
