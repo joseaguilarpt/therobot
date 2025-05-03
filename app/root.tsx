@@ -6,9 +6,7 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
   useLoaderData,
-  useParams,
   useRouteError,
-  useRouteLoaderData,
 } from "@remix-run/react";
 import { cssBundleHref } from "@remix-run/css-bundle";
 
@@ -22,19 +20,32 @@ import SkipToContent from "./ui/SkipToContent/SkipToContent";
 import { useChangeLanguage } from "remix-i18next/react";
 import { useTranslation } from "react-i18next";
 import i18next from "~/i18next.server";
+import {} from "~/entry.client";
 import NotFound from "./routes/404";
 import ErrorPage from "./routes/Error";
-import React from "react";
+import { HoneypotProvider } from "remix-utils/honeypot/react";
+import { honeypot } from "~/honeypot.server";
+import i18n from "./i18n";
 
-export async function loader({ request, params }: LoaderFunctionArgs) {
-  if (params?.sourceFormat?.toLowerCase() === 'pdf') {
+export async function loader({ params }: LoaderFunctionArgs) {
+  if (params?.sourceFormat?.toLowerCase() === "pdf") {
     throw new Response(null, {
       status: 404,
       statusText: "Not Found",
     });
   }
-  let locale = await i18next.getLocale(request);
-  return json({ locale });
+
+  let locale = params.lang ?? "";
+  const isValidLang = i18n.supportedLngs.includes(locale);
+
+  if (!isValidLang) {
+    throw new Response(null, {
+      status: 404,
+      statusText: "Not Found",
+    });
+  }
+  
+  return json({ honeypotInputProps: honeypot?.getInputProps(), locale });
 }
 
 export let handle = {
@@ -50,6 +61,10 @@ export const queryClient = new QueryClient();
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
   { rel: "stylesheet", href: styles },
+  {
+    rel: "stylesheet",
+    href: "https://cdn.jsdelivr.net/npm/altcha@latest/dist/altcha.min.css",
+  },
 ];
 
 export function ErrorBoundary() {
@@ -103,9 +118,8 @@ export function ErrorBoundary() {
 
 export default function App() {
   // Get the locale from the loader
-  let { locale } = useLoaderData<typeof loader>();
+  let { locale, honeypotInputProps } = useLoaderData<typeof loader>();
   let { i18n } = useTranslation();
-
 
   // This hook will change the i18n instance language to the current locale
   // detected by the loader, this way, when we do something to change the
@@ -115,25 +129,27 @@ export default function App() {
 
   return (
     <html lang={locale} dir={i18n.dir()}>
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <QueryClientProvider client={queryClient}>
-          <ThemeProvider>
-            <SkipToContent />
+      <HoneypotProvider {...honeypotInputProps}>
+        <head>
+          <meta charSet="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <Meta />
+          <Links />
+        </head>
+        <body>
+          <QueryClientProvider client={queryClient}>
+            <ThemeProvider>
+              <SkipToContent />
 
-            <Outlet />
-            <Snackbar />
-            <ScrollRestoration />
-            <Scripts />
-            <CookieConsentBanner />
-          </ThemeProvider>
-        </QueryClientProvider>
-      </body>
+              <Outlet context={{ locale, honeypotInputProps }} />
+              <Snackbar />
+              <ScrollRestoration />
+              <Scripts />
+              <CookieConsentBanner />
+            </ThemeProvider>
+          </QueryClientProvider>
+        </body>
+      </HoneypotProvider>
     </html>
   );
 }

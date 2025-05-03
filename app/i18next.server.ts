@@ -18,19 +18,16 @@ let i18next = new RemixI18Next({
 });
 
 // Custom function to get locale from URL with fallback
-async function getLocaleWithFallback(request: Request): Promise<string> {
+export async function getLocaleWithFallback(request: Request): Promise<string> {
   const url = new URL(request.url);
   const pathname = url.pathname;
-  const firstPathPart = pathname.split('/')[1];
+  const firstPathPart = pathname.split("/")[1];
 
   if (i18n.supportedLngs.includes(firstPathPart)) {
     return firstPathPart;
   }
 
-  return i18n.fallbackLng;
+  return await i18next.getLocale(request);
 }
-
-// Override the getLocale method
-i18next.getLocale = getLocaleWithFallback;
 
 export default i18next;

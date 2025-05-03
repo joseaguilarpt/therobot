@@ -67,7 +67,7 @@ export const meta: MetaFunction = ({ data }) => {
 };
 
 export default function AboutPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   let footerData = { ...FOOTER };
 
@@ -102,7 +102,7 @@ export default function AboutPage() {
             <GridContainer justifyContent="center" className="u-pt3">
               <Breadcrumb
                 paths={[
-                  { icon: "FaHome", label: t("home"), href: "/" },
+                  { icon: "FaHome", label: t("home"), href: `/${i18n.language ?? ''}` },
                   { label: t("about.about") },
                 ]}
               />

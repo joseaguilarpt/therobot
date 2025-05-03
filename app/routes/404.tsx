@@ -15,6 +15,7 @@ import i18next from "~/i18next.server";
 import GridContainer from "~/ui/Grid/Grid";
 import ContentContainer from "~/ui/ContentContainer/ContentContainer";
 import Icon from "~/ui/Icon/Icon";
+import Button from "~/ui/Button/Button";
 
 export let handle = { i18n: "common" };
 
@@ -60,7 +61,7 @@ export const meta: MetaFunction = createMeta({
 });
 
 export default function NotFound() {
-  let { t } = useTranslation("common");
+  let { t, i18n } = useTranslation("common");
   let footerData = { ...FOOTER };
 
   footerData.sections = [
@@ -76,6 +77,7 @@ export default function NotFound() {
       })),
     },
   ];
+
   return (
     <>
       <Navbar autoScrolled />
@@ -83,19 +85,29 @@ export default function NotFound() {
         <ContentContainer>
           <div style={{ height: "calc(100vh - 100px)" }}>
             <GridContainer
-            className="max-height"
+              className="max-height"
               justifyContent="center"
               alignItems="center"
               direction="column"
             >
-                              <Icon color="secondary" size="xlarge" icon='FaSadTear' />
+              <Icon color="secondary" size="xlarge" icon="FaSadTear" />
 
               <Heading level={1} underline align="center" appearance={1}>
-              404: {t('notFound.title')}
+                404: {t("notFound.title")}
               </Heading>
               <Heading level={1} align="center" appearance={5}>
-              {t('notFound.message')}
+                {t("notFound.message")}
               </Heading>
+              <div className="u-mt3">
+                <Button
+                  onClick={() =>
+                    (window.location.href = `/${i18n.language ?? ""}`)
+                  }
+                  size="large"
+                >
+                  {t("nav.home")}
+                </Button>
+              </div>
             </GridContainer>
           </div>
         </ContentContainer>

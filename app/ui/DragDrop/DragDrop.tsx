@@ -13,10 +13,12 @@ import Text from "../Text/Text";
 import { Form } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import Heading from "../Heading/Heading";
+import { HoneypotInputs } from "remix-utils/honeypot/react";
+import { useOutletContext } from "@remix-run/react";
+import { useTheme } from "~/context/ThemeContext";
 
 interface DragAndDropProps {
-  onFilesDrop: (files: File[]) => void;
-  onError: (error: string) => void;
+  onFilesDrop: (files: File[], formData: FormData) => void;
   acceptedTypes?: string[];
   maxSize?: number; // in bytes
   files: File[];
@@ -24,16 +26,18 @@ interface DragAndDropProps {
 
 const DragAndDrop: React.FC<DragAndDropProps> = ({
   onFilesDrop,
-  onError,
   acceptedTypes = [],
-  files: filesLength,
+  files: existingFiles,
   maxSize = Infinity,
 }) => {
+  const { showSnackbar } = useTheme();
   let { t } = useTranslation("common");
-
   const [isDragging, setIsDragging] = useState(false);
   const dropRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { honeypotInputProps } = useOutletContext<any>();
+
+  const formRef = React.useRef();
 
   useEffect(() => {
     window.addEventListener("paste", handlePaste);
@@ -51,13 +55,18 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   };
 
   const validateFile = (file: File): boolean => {
-    console.log(file.type ,'file.type')
     if (acceptedTypes.length > 0 && !acceptedTypes.includes(file.type)) {
-      onError(`${t("tool.fileType")} ${file.type} ${t("tool.notAccepted")}`);
+      showSnackbar(
+        `${t("tool.fileType")} ${file.type} ${t("tool.notAccepted")}`,
+        "error"
+      );
       return false;
     }
     if (file.size > maxSize) {
-      onError(`${t("tool.maxLimit")} ${maxSize} ${t("tool.bytes")}.`);
+      showSnackbar(
+        `${t("tool.maxLimit")} ${maxSize} ${t("tool.bytes")}.`,
+        "error"
+      );
       return false;
     }
     return true;
@@ -65,7 +74,20 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
 
   const addFiles = (files: File[]) => {
     const validFiles = files.filter(validateFile);
-    onFilesDrop(validFiles);
+
+    const formData = new FormData();
+    const nameFieldName = honeypotInputProps.nameFieldName;
+    const validFromFieldName = honeypotInputProps.validFromFieldName;
+    formRef.current &&
+      Object.values(formRef.current)?.forEach((field: any) => {
+        if (field?.id && nameFieldName === field.id) {
+          formData.append(field.id, field.value);
+        }
+        if (field?.id && validFromFieldName === field.id) {
+          formData.append(field.id, field.value);
+        }
+      });
+    onFilesDrop(validFiles, formData);
   };
 
   const handleDrag = (e: DragEvent<HTMLDivElement>) => {
@@ -109,7 +131,13 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
   };
 
   return (
-    <Form method="post" encType="multipart/form-data">
+    <Form
+      ref={formRef}
+      navigate={false}
+      method="post"
+      encType="multipart/form-data"
+    >
+      <HoneypotInputs label="" />
       <div
         className={`drag-and-drop-container ${isDragging ? "dragging" : ""}`}
         onDragEnter={handleDragIn}
@@ -131,9 +159,9 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
           <div className="upload-button-container">
             <Button
               ariaLabel={
-                filesLength.length > 0
-                  ? t("tool.uploadButton")
-                  : t("tool.uploadMoreImages")
+                existingFiles.length > 0
+                  ? t("tool.uploadMoreImages")
+                  : t("tool.uploadButton")
               }
               onClick={handleButtonClick}
               className="upload-button"
@@ -141,7 +169,7 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               <Icon icon="FaUpload" size="large" aria-hidden="true" />{" "}
               <Divider orientation="vertical" />{" "}
               <Text align="center" size="large" color="contrast">
-                {filesLength.length > 0
+                {existingFiles.length > 0
                   ? t("tool.uploadMoreImages")
                   : t("tool.uploadButton")}
               </Text>
@@ -164,9 +192,13 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({
               onChange={handleFileInput}
               style={{ display: "none" }}
               multiple
+              id="input-file"
               accept={acceptedTypes.join(",")}
               aria-label={t("t.inputFile")}
             />
+            <button type="submit" style={{ display: "none" }}>
+              Submit
+            </button>
           </div>
         )}
       </div>

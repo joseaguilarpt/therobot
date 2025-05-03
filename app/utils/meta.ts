@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@remix-run/node";
+import i18next from "~/i18next.server";
 
 interface MetaProps {
   title?: string;
@@ -11,6 +12,21 @@ interface MetaProps {
   canonicalUrl?: string;
   alternateLanguages?: Record<string, string>;
   structuredData?: Record<string, any>;
+}
+
+const BASE_URL = 'https://easyconvertimage.com';
+
+const languages = ['en', 'es', 'fr', 'de', 'pt', 'nl', 'it', 'id', 'ru']
+
+const getAlternateLanguages = (url: string) => {
+  let alternateLanguages: any = {}
+    languages.forEach((item) => {
+      alternateLanguages[item] = `${BASE_URL}/${item}`
+      if (url) {
+        alternateLanguages[item] = `${alternateLanguages}/${url}`
+      }
+    })
+    return alternateLanguages;
 }
 
 export const createMeta = ({
@@ -60,4 +76,34 @@ export const createMeta = ({
       ...jsonLD,
     ];
   };
+};
+
+export const meta: MetaFunction = ({ data }) => {
+  const { description, title, url, alternate } = data as any;
+  const alternateLanguages = getAlternateLanguages(alternate)
+  return createMeta({
+    ogImage: "https://easyconvertimage.com/assets/conversion-tool-og.jpg",
+    twitterCard: "summary_large_image",
+    canonicalUrl: url,
+    alternateLanguages,
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      name: title,
+      url: url,
+      description: description,
+      applicationCategory: "MultimediaApplication",
+      operatingSystem: "Any",
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+      creator: {
+        "@type": "Organization",
+        name: "Easy Convert Image",
+        url: BASE_URL,
+      },
+    },
+  })({ data });
 };

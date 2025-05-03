@@ -11,7 +11,6 @@ import React, { useState } from "react";
 import AutoSuggest from "../AutoSuggest/AutoSuggest";
 import classNames from "classnames";
 import GridItem from "../Grid/GridItem";
-import { InputSearchLocation } from '../InputSearchLocation/InputSearchLocation';
 import Multiselect from '../Multiselect/Multiselect';
 import InputPassword from '../InputPassword/InputPassword';
 import { useTranslation } from 'react-i18next';
@@ -149,16 +148,7 @@ const DynamicField = ({
           onChange={(value) => onChange(input.id, value)}
         />
       );
-    case "searchLocation":
-      return (
-        <InputSearchLocation
-          key={input.id}
-          {...input}
-          value={formData[input.id]}
-          onChange={(value) => onChange(input.id, value)}
-        />
-      );
-      case "multiselect":
+    case "multiselect":
         return (
           <Multiselect
             key={input.id}
