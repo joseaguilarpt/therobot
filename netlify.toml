@@ -18,6 +18,12 @@ for = "/build/*"
 [headers.values]
 "Cache-Control" = "public, max-age=31560000, immutable"
 
+[[redirects]]
+from = "https://thebot-dev.netlify.app/*"
+to = "https://easyconvertimage.com/:splat"
+status = 301
+force = true
+
 [build.environment]
 NODE_VERSION = "20.5.0"
 
