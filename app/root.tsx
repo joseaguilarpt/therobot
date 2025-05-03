@@ -27,7 +27,9 @@ import { HoneypotProvider } from "remix-utils/honeypot/react";
 import { honeypot } from "~/honeypot.server";
 import i18n from "./i18n";
 
-export async function loader({ params }: LoaderFunctionArgs) {
+export async function loader({ params, request }: LoaderFunctionArgs) {
+
+  const checkValidLang = (v: string) => i18n.supportedLngs.includes(v)
   if (params?.sourceFormat?.toLowerCase() === "pdf") {
     throw new Response(null, {
       status: 404,
@@ -35,9 +37,13 @@ export async function loader({ params }: LoaderFunctionArgs) {
     });
   }
 
-  let locale = params.lang ?? "";
-  const isValidLang = i18n.supportedLngs.includes(locale);
+  let urlParam = params.lang;
+  let locale = await i18next.getLocale(request);
+  let isValidLang = checkValidLang(locale);
 
+  if (urlParam) {
+    isValidLang = checkValidLang(urlParam);
+  } 
   if (!isValidLang) {
     throw new Response(null, {
       status: 404,
