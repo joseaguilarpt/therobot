@@ -388,14 +388,19 @@
   min-height: 100vh !important;
 }
 
+.tool-conversion-form {
+  border-radius: var(--border-radius);
+  background-color: #47af6b;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
 .tool-conversion-form .tool-heading__to .icon--medium {
   color: var(--default-color);
 }
 @media (min-width: 992px) {
   .tool-conversion-form {
     width: 100%;
-    min-height: 155px;
-    border-radius: var(--border-radius);
+    min-height: 125px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -404,9 +409,6 @@
     font-family: var(--default-font);
     font-size: var(--font-size-medium);
     transition: all 0.3s ease;
-    min-height: 154px;
-    border-radius: var(--border-radius);
-    background-color: #47af6b;
     box-shadow: 0 2px 4px var(--shadow-color);
     height: 100%;
   }

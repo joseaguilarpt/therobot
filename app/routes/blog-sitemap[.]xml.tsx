@@ -2,7 +2,7 @@ import { LoaderFunction } from "@remix-run/node";
 import posts from "../constants/blog/data";
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const BLOG_POSTS = Object.keys(posts);
+  const BLOG_POSTS = posts;
   const LANGUAGES = ["en", "es", "pt", "fr", "nl", "de", "it", "id", "ru"];
 
   const host =

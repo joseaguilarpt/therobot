@@ -6,7 +6,7 @@ export const meta: MetaFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const BLOG_POSTS = Object.keys(posts);
+  const BLOG_POSTS = posts;
   const LANGUAGES = ["en", "es", "pt", "fr", "nl", "de", "it", "id", "ru"];
   const FORMATS = [
     "jpeg",
