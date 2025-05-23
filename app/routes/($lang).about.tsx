@@ -1,8 +1,8 @@
 import Navbar from "~/ui/Navbar/Navbar";
 import Footer from "~/ui/Footer/Footer";
 import BackToTop from "~/ui/BackToTop/BackToTop";
-import CompanyGoalSection from "../ui/AboutPage/CompanyGoalSection";
-import CompanyServicesSection from "../ui/AboutPage/CompanyServicesSection";
+import CompanyGoalSection from "../ui/LegalPage/CompanyGoalSection";
+import CompanyServicesSection from "../ui/LegalPage/CompanyServicesSection";
 import { FOOTER } from "~/constants/content";
 import Hero from "~/ui/Hero/Hero";
 import Heading from "~/ui/Heading/Heading";
@@ -13,7 +13,7 @@ import { LoaderFunctionArgs, MetaFunction, json } from "@remix-run/node";
 import i18next from "~/i18next.server";
 import { useTranslation } from "react-i18next";
 import { POPULAR_CONVERSIONS } from "~/utils/conversions";
-import FAQSection from "~/ui/AboutPage/FAQSection";
+import FAQSection from "~/ui/LegalPage/FAQSection";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const t = await i18next.getFixedT(request);

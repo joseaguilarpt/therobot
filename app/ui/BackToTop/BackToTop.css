@@ -404,6 +404,7 @@
   background-color: #2d7d4c;
   border: none;
   cursor: pointer;
+  width: 60px;
 }
 .back-to-top svg {
   color: var(--button-color);

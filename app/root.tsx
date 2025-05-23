@@ -31,7 +31,7 @@ import { isValidFormat } from "./constants/formats";
 import { GoogleApiInitializer } from "./ui/GoogleInitializer/GoogleInitializer";
 import { FilesProvider } from "./context/FilesContext";
 
-// Critical CSS for fonts
+// CSS for fonts
 const criticalFontCSS = `
 @font-face {
   font-family: 'Poppins';
@@ -243,7 +243,7 @@ export function ErrorBoundary() {
   }
 
   const minimalENV = {
-    GOOGLE_ID_ANALYTICS: "", // You might want to hardcode this if it's critical
+    GOOGLE_ID_ANALYTICS: "",
     DROPBOX_USER: "",
   };
 

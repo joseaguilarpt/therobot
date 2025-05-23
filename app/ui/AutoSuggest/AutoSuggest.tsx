@@ -153,6 +153,7 @@ const AutoSuggest: React.FC<AutoSuggestProps> = ({
             leftIcon && "__left-icon"
           )}
           id={id}
+          data-testid='left-icon'
           aria-haspopup="listbox"
           aria-expanded={isOpen}
           aria-labelledby={`${id}-label`}

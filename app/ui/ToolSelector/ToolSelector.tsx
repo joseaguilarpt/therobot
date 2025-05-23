@@ -74,12 +74,12 @@ const ToolSelector = ({ keepScrolled }: { keepScrolled?: boolean }) => {
     },
   ];
 
-  const [currentTool, setCurrentTool] = useState('');
+  const [currentTool, setCurrentTool] = useState("");
 
   useEffect(() => {
     const selection = `${params.sourceFormat}/${params.targetFormat}`;
     if (tools.find((item) => item.value === selection)) {
-        setCurrentTool(selection)
+      setCurrentTool(selection);
     }
   }, [params?.sourceFormat, params?.targetFormat]);
 

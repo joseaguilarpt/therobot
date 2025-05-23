@@ -2,10 +2,10 @@
 import { useLoaderData, useLocation, useSubmit } from "@remix-run/react";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useTheme } from "~/context/ThemeContext";
 import { validateEmailFormat } from "~/ui/ShareButton/ShareButton";
-import { trackClick } from "./analytics";
+import { trackClick } from "../utils/analytics";
 
 interface ContactFormData {
   name: string;
@@ -14,7 +14,25 @@ interface ContactFormData {
   comments: string;
 }
 
-export function useForm(data: { contactError: boolean; contactEmailSent: boolean; }) {
+interface ValidationResult {
+  valid: boolean;
+  errorKey?: string;
+}
+
+function validateContactForm(p: ContactFormData): ValidationResult {
+  if (!p.name) return { valid: false, errorKey: "ui.missingName" };
+  if (!p.phone) return { valid: false, errorKey: "ui.missingPhone" };
+  if (!p.email) return { valid: false, errorKey: "ui.missingEmail" };
+  if (!validateEmailFormat(p.email))
+    return { valid: false, errorKey: "ui.formatEmail" };
+  if (!p.comments) return { valid: false, errorKey: "ui.missingComments" };
+  return { valid: true };
+}
+
+export function useForm(data: {
+  contactError: boolean;
+  contactEmailSent: boolean;
+}) {
   const { t, i18n } = useTranslation("common");
   const { showSnackbar } = useTheme();
   const { executeRecaptcha } = useGoogleReCaptcha();
@@ -25,7 +43,7 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
     name: "",
     phone: "",
     email: "",
-    comments: ""
+    comments: "",
   });
 
   const submit = useSubmit();
@@ -45,12 +63,18 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
         name: "",
         phone: "",
         email: "",
-        comments: ""
+        comments: "",
       });
     }
   }, [data?.contactEmailSent, showSnackbar, t]);
 
   const onFormSubmit = async (p: ContactFormData) => {
+    const validation = validateContactForm(p);
+    if (!validation.valid) {
+      showSnackbar(t(validation.errorKey!), "error");
+      return;
+    }
+
     const formData = new FormData();
     if (executeRecaptcha) {
       try {
@@ -66,26 +90,6 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
     formData.append("phone", p.phone);
     formData.append("email", p.email);
     formData.append("comments", p.comments);
-    if (!p.name) {
-      showSnackbar(t("ui.missingName"), "error");
-      return;
-    }
-    if (!p.phone) {
-      showSnackbar(t("ui.missingPhone"), "error");
-      return;
-    }
-    if (!p.email) {
-      showSnackbar(t("ui.missingEmail"), "error");
-      return;
-    }
-    if (!validateEmailFormat(p.email)) {
-      showSnackbar(t("ui.formatEmail"), "error");
-      return;
-    }
-    if (!p.comments) {
-      showSnackbar(t("ui.missingComments"), "error");
-      return;
-    }
     if (loaderData?.csrfToken) {
       formData.append("csrf", loaderData?.csrfToken);
     }
@@ -104,9 +108,10 @@ export function useForm(data: { contactError: boolean; contactEmailSent: boolean
       encType: "multipart/form-data",
     });
     setTimeout(() => {
-      setIsPending(false)
-    }, 5000)
+      setIsPending(false);
+    }, 5000);
   };
+
   return {
     onFormSubmit,
     contactFormData,

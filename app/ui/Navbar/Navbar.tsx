@@ -1,5 +1,3 @@
-// app/components/Navbar.tsx
-
 import { useEffect, useState, useRef } from "react";
 import "./Navbar.scss";
 import { useLocation } from "@remix-run/react";

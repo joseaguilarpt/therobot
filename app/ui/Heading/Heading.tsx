@@ -1,4 +1,3 @@
-// app/components/Heading.tsx
 import React from "react";
 import classNames from "classnames";
 import "./Heading.scss";

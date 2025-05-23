@@ -20,7 +20,6 @@ const Snackbar = () => {
 
   const closeSnackbar = useCallback(() => {
     hideSnackbar();
-    // Return focus to the previously focused element
     if (previousFocusRef.current) {
       previousFocusRef.current.focus();
     }
@@ -28,14 +27,12 @@ const Snackbar = () => {
 
   useEffect(() => {
     if (snackbar.message) {
-      // Store the currently focused element
       previousFocusRef.current = document.activeElement as HTMLElement;
 
       const timer = setTimeout(() => {
         closeSnackbar();
       }, 5000);
 
-      // Focus the snackbar when it appears
       snackbarRef.current?.focus();
 
       return () => clearTimeout(timer);

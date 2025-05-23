@@ -14,12 +14,6 @@ interface EditorCardProps {
   imageUrl: string;
 }
 
-// const editorBio = {
-//   name: "Manuel Gomez",
-//   role: "Senior Technical Editor",
-//   bio: `Manuel Gomez is a passionate web developer and image optimization enthusiast. With over a decade of experience in crafting beautiful, performant websites, Manuel loves sharing his knowledge to help others create better web experiences. When he's not diving into the latest web technologies, you can find him experimenting with photography and exploring the great outdoors.`
-// };
-
 const EditorCard: React.FC<EditorCardProps> = ({
   name,
   imageUrl,

@@ -2,10 +2,10 @@ import "./Tool.scss";
 
 import { ConversionForm } from "../ConversionForm/ConversionForm";
 import DragAndDrop from "../DragDrop/DragDrop";
-import Files from "../Files/Files";
+import FilesTable from "../Files/Files";
 import { allOptions } from "~/constants/formats";
 import { useNavigate, useParams } from "@remix-run/react";
-import { useFileConversion } from "~/utils/useTool";
+import { useFileConversion } from "~/hooks/useTool";
 import GridContainer from "../Grid/Grid";
 import GridItem from "../Grid/GridItem";
 import { useTranslation } from "react-i18next";
@@ -47,7 +47,7 @@ export default function Tool() {
     const fromValue = selectedFormatFrom?.toLowerCase() ?? "png";
     const toValue = selectedFormat?.toLowerCase() ?? "jpeg";
     navigate(`/${language}/convert/${toValue}/${fromValue}`);
-  }
+  };
 
   const {
     convertedFiles,
@@ -68,10 +68,7 @@ export default function Tool() {
         <GridItem xs={12} lg={6}>
           {sourceFormat && targetFormat && (
             <>
-             <Text
-             className="hero-pill"
-               size="small"
-              >
+              <Text className="hero-pill" size="small">
                 {t("hero.header1")}
               </Text>
               <Heading
@@ -110,7 +107,10 @@ export default function Tool() {
           )}
         </GridItem>
         <GridItem xs={12} lg={5}>
-          <GridContainer className="u-mt4 tool-conversion__container" justifyContent="space-between">
+          <GridContainer
+            className="u-mt4 tool-conversion__container"
+            justifyContent="space-between"
+          >
             <GridItem xs={12}>
               <div className="tool-conversion-form">
                 <ConversionForm
@@ -138,7 +138,7 @@ export default function Tool() {
           </GridContainer>
         </GridItem>
       </GridContainer>
-      <Files
+      <FilesTable
         onEmailShare={handleEmailShare}
         onRemove={handleRemove}
         onRemoveAll={handleRemoveAll}

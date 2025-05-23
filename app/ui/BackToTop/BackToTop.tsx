@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import './BackToTop.scss';
-import Icon from '../Icon/Icon';
-import { useTranslation } from 'react-i18next';
+import { useState, useEffect } from "react";
+import "./BackToTop.scss";
+import Icon from "../Icon/Icon";
+import { useTranslation } from "react-i18next";
 
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,16 +17,16 @@ const BackToTop = () => {
       }
     };
 
-    window.addEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
   const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     // Focus on the main content area instead of the first focusable element
-    const mainContent = document.getElementById('main-content');
+    const mainContent = document.getElementById("main-content");
     if (mainContent) {
       mainContent.focus();
     } else {
@@ -37,14 +37,15 @@ const BackToTop = () => {
 
   return (
     <button
-      className={`back-to-top ${isVisible ? 'visible' : ''}`}
+      data-testid="back-to-top"
+      className={`back-to-top ${isVisible ? "visible" : ""}`}
       onClick={handleScrollToTop}
-      aria-label={t('ui.backToTop')}
-      title={t('ui.backToTop')}
+      aria-label={t("ui.backToTop")}
+      title={t("ui.backToTop")}
       tabIndex={isVisible ? 0 : -1}
     >
-      <Icon icon='keyboard_arrow_up' size='medium' aria-hidden="true" />
-      <span className="sr-only">{t('ui.backToTop')}</span>
+      <Icon icon="keyboard_arrow_up" size="medium" aria-hidden="true" />
+      <span className="sr-only">{t("ui.backToTop")}</span>
     </button>
   );
 };

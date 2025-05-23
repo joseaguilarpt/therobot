@@ -11,6 +11,8 @@
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "lintfix": "eslint --fix --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "netlify serve",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -61,17 +63,23 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.10.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/express-rate-limit": "^6.0.0",
     "@types/file-saver": "^2.0.7",
+    "@types/jest": "^29.5.14",
     "@types/leaflet": "^1.9.12",
     "@types/lodash": "^4.17.5",
     "@types/nodemailer": "^6.4.15",
-    "@types/react": "^18.2.20",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "^18.3.22",
+    "@types/react-dom": "^18.3.7",
     "@types/react-google-recaptcha": "^2.1.9",
     "@types/react-i18next": "^7.8.3",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.13.0",
+    "@vitejs/plugin-react": "^4.5.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^9.0.0",
@@ -80,9 +88,11 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "^26.1.0",
     "typescript": "^5.1.6",
     "vite": "^5.0.0",
-    "vite-tsconfig-paths": "^4.2.1"
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^3.1.4"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",

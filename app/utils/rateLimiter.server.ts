@@ -1,4 +1,3 @@
-// app/utils/rateLimiter.server.ts
 import { RateLimiterMemory } from 'rate-limiter-flexible';
 
 const rateLimiter = new RateLimiterMemory({

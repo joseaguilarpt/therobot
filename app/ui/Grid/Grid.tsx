@@ -23,7 +23,7 @@ interface GridContainerProps {
   spacing?: number;
   className?: string;
   role?: string;
-  backgroundColorClass?: string; // New prop for background color class
+  backgroundColorClass?: string;
 }
 
 const GridContainer: React.FC<GridContainerProps> = ({
@@ -36,7 +36,7 @@ const GridContainer: React.FC<GridContainerProps> = ({
   spacing = 0,
   role,
   className,
-  backgroundColorClass, // Handle background color class
+  backgroundColorClass,
 }) => {
   const containerClasses = classNames(
     "grid-container",
@@ -49,7 +49,7 @@ const GridContainer: React.FC<GridContainerProps> = ({
       [`justify-${justifyContent}`]: justifyContent,
       [`align-${alignItems}`]: alignItems,
       [`content-${alignContent}`]: alignContent,
-      [`gap-${spacing}`]: spacing > 0, // Apply spacing class if greater than 0
+      [`gap-${spacing}`]: spacing > 0,
     }
   );
 

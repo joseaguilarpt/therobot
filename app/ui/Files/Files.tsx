@@ -17,7 +17,7 @@ import { FormatImage } from "../FormatImage/FormatImage";
 
 import { useTheme } from "~/context/ThemeContext";
 import { trackClick } from "~/utils/analytics";
-import { ConvertedFile } from "~/utils/useTool";
+import { ConvertedFile } from "~/hooks/useTool";
 
 const { saveAs } = pkg;
 

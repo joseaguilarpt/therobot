@@ -1,12 +1,17 @@
 import { vitePlugin as remix } from "@remix-run/dev";
-import { defineConfig } from "vite";
+import { defineConfig } from 'vitest/config';
 import tsconfigPaths from "vite-tsconfig-paths";
 import { netlifyPlugin } from "@netlify/remix-adapter/plugin";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   plugins: [
-    remix({
+    // Remix plugin for handling routes and assets
+    // This plugin is used to define the routes for the Remix application
+    // and to handle the assets during the build process.
+    // checkig if the environment is not VITEST
+    // to avoid issues with the Remix plugin during testing
+    !process.env.VITEST && remix({
       routes: async (defineRoutes) => {
         return defineRoutes((route) => {
           // Root route with optional language parameter
@@ -47,4 +52,10 @@ export default defineConfig({
       filename: "dist/stats.html",
     }),
   ],
+   test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './setupTests.ts',
+    exclude: ['**/build/**', '**/node_modules/**', '**/dist/**', '**/app/routes/**'], // 👈 evita rutas Remix
+  },
 });

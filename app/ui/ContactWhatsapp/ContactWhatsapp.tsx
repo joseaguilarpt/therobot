@@ -1,5 +1,3 @@
-// app/components/ContactWhatsapp/ContactWhatsapp.tsx
-
 import React from "react";
 import Button from "~/ui/Button/Button";
 import "./ContactWhatsapp.scss";

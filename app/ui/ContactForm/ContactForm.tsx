@@ -6,7 +6,7 @@ import Text from "../Text/Text";
 import Box from "../Box/Box";
 import FormField from "../FormField/FormField";
 import { GET_IN_TOUCH_FORM } from "~/constants/getInTouchForm";
-import { useForm } from "~/utils/formUtils";
+import { useForm } from "~/hooks/useForm";
 
 export default function ContactForm({
   data,

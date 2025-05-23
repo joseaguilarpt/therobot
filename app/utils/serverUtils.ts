@@ -14,21 +14,32 @@ import i18next from "~/i18next.server";
 import axios from "axios";
 import type { ActionFunction } from "@remix-run/node";
 
+/**
+ * Creates a file upload handler that supports both file system and memory uploads.
+ */
 export const createUploadHandler = () =>
   unstable_composeUploadHandlers(
     unstable_createFileUploadHandler({
-      maxPartSize: 52_428_800,
+      maxPartSize: 52_428_800, // Max file size ~50MB
       file: ({ filename }) => filename,
     }),
     unstable_createMemoryUploadHandler()
   );
 
+/**
+ * Parses multipart form data from the request using the upload handler.
+ */
 export const parseFormData = async (request: Request) => {
   const uploadHandler = createUploadHandler();
   return await unstable_parseMultipartFormData(request, uploadHandler);
 };
 
+/**
+ * Checks if the request exceeds the rate limit.
+ * Throws a 429 error if the limit is exceeded.
+ */
 async function validateRateLimit(request: Request) {
+  // @ts-ignore
   const identifier = request.headers.get("x-forwarded-for") || request.ip;
   const rateLimitError = await checkRateLimit(identifier);
   if (rateLimitError) {
@@ -39,6 +50,10 @@ async function validateRateLimit(request: Request) {
   }
 }
 
+/**
+ * Validates the reCAPTCHA token with Google's API.
+ * Throws a 400 error if the token is missing or invalid.
+ */
 async function validateCaptcha(token: string) {
   if (!token) {
     throw json({ error: "reCAPTCHA token is missing" }, { status: 400 });
@@ -74,6 +89,10 @@ async function validateCaptcha(token: string) {
   }
 }
 
+/**
+ * Checks the honeypot field to detect spam bots.
+ * Throws a 400 error if spam is detected.
+ */
 function validateHoneypot(formData: FormData) {
   try {
     honeypot.check(formData);
@@ -87,6 +106,10 @@ function validateHoneypot(formData: FormData) {
   }
 }
 
+/**
+ * Handles the contact form submission by sending a customer email.
+ * Returns a JSON response indicating success or failure.
+ */
 async function handleContactForm(formData: FormData) {
   try {
     await onSendCustomerEmail(formData);
@@ -99,10 +122,17 @@ async function handleContactForm(formData: FormData) {
   }
 }
 
+/**
+ * Handles the email form submission by sending an email.
+ */
 async function handleEmailForm(formData: FormData) {
   return await onSendEmail(formData);
 }
 
+/**
+ * Main action function for handling form submissions.
+ * Delegates to contactAction and handles errors.
+ */
 export const action: ActionFunction = async ({ request }) => {
   try {
     return await contactAction(request);
@@ -112,6 +142,11 @@ export const action: ActionFunction = async ({ request }) => {
   }
 };
 
+/**
+ * Handles the logic for contact and email form submissions.
+ * Validates rate limit, captcha, honeypot, and CSRF token.
+ * Dispatches to the appropriate handler based on form type.
+ */
 export async function contactAction(request: Request) {
   try {
     await validateRateLimit(request);
@@ -137,10 +172,13 @@ export async function contactAction(request: Request) {
     }
   } catch (error) {
     console.error("Error in contactAction:", error);
-    throw error; // Re-throw the error to be caught by the action function
+    throw error;
   }
 }
 
+/**
+ * Handles errors by returning a JSON response with the error message.
+ */
 export function handleError(error: unknown) {
   console.error("Handling error:", error);
 

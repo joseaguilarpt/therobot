@@ -3,10 +3,12 @@ import { PDFDocument, PageSizes } from "pdf-lib";
 import pkg from "imagetracerjs";
 const trace = pkg;
 
+// Types & Interfaces
+
 interface ConvertedFile {
   fileName: string;
   fileSize: number;
-  fileUrl: string; // This will always be a base64 string
+  fileUrl: string; // Always a base64 string
 }
 
 interface TraceOptions {
@@ -15,29 +17,44 @@ interface TraceOptions {
   pathomit: number;
 }
 
+// Utility Functions
+
+function uint8ArrayToBase64(uint8Array: Uint8Array): string {
+  let binary = "";
+  for (let i = 0; i < uint8Array.byteLength; i++) {
+    binary += String.fromCharCode(uint8Array[i]);
+  }
+  return btoa(binary);
+}
+
+function getImageQuality(pixelCount: number): "low" | "medium" | "high" {
+  if (pixelCount > 3_000_000) return "low";
+  if (pixelCount > 250_000) return "medium";
+  return "high";
+}
+
+function getTraceOptions(quality: "low" | "medium" | "high"): TraceOptions {
+  return {
+    ltres: quality === "low" ? 0.1 : quality === "medium" ? 1 : 10,
+    qtres: quality === "low" ? 1 : quality === "medium" ? 5 : 10,
+    pathomit: quality === "low" ? 8 : quality === "medium" ? 4 : 0,
+  };
+}
+
+// Image Conversion Functions
+
+/**
+ * Converts a PNG File to SVG (base64-encoded).
+ */
 async function convertPngToSvgBase64(
   file: File,
   maxDimension: number = 1000
 ): Promise<string> {
-  // Create an image bitmap from the file
   const img = await createImageBitmap(file);
+  const quality = getImageQuality(img.width * img.height);
 
-  // Determine quality based on original image size
-  let quality: "low" | "medium" | "high";
-  const pixelCount = img.width * img.height;
-  if (pixelCount > 3000000) {
-    // More than 3 megapixel
-    quality = "low";
-  } else if (pixelCount > 250000) {
-    // More than 0.25 megapixels
-    quality = "medium";
-  } else {
-    quality = "high";
-  }
-
-  // Downscale the image if it's too large
-  let width = img.width;
-  let height = img.height;
+  // Downscale if needed
+  let { width, height } = img;
   if (width > maxDimension || height > maxDimension) {
     if (width > height) {
       height = Math.round((height / width) * maxDimension);
@@ -48,7 +65,7 @@ async function convertPngToSvgBase64(
     }
   }
 
-  // Create a canvas and draw the image
+  // Draw image to canvas
   const canvas = document.createElement("canvas");
   canvas.width = width;
   canvas.height = height;
@@ -56,32 +73,26 @@ async function convertPngToSvgBase64(
   if (!ctx) throw new Error("Could not get canvas context");
   ctx.drawImage(img, 0, 0, width, height);
 
-  // Get the image data
+  // Trace to SVG
   const imageData = ctx.getImageData(0, 0, width, height);
+  const traceOptions = getTraceOptions(quality);
 
-  // Define trace options based on quality
-  const traceOptions: TraceOptions = {
-    ltres: quality === "low" ? 0.1 : quality === "medium" ? 1 : 10,
-    qtres: quality === "low" ? 1 : quality === "medium" ? 5 : 10,
-    pathomit: quality === "low" ? 8 : quality === "medium" ? 4 : 0,
-  };
-
-  // Perform the tracing
-  return new Promise((resolve, reject) => {
-    try {
-      const svgString = trace.imagedataToSVG(imageData, traceOptions);
-      resolve(`data:image/svg+xml;base64,${btoa(svgString)}`);
-    } catch (error) {
-      reject(error);
-    }
-  });
+  try {
+    const svgString = trace.imagedataToSVG(imageData, traceOptions);
+    return `data:image/svg+xml;base64,${btoa(svgString)}`;
+  } catch (error) {
+    throw error;
+  }
 }
 
+/**
+ * Converts images to other raster formats (e.g., jpg, bmp, webp).
+ */
 async function convertToOtherFormat(
   files: File[],
   format: string
 ): Promise<ConvertedFile[]> {
-  return await Promise.all(
+  return Promise.all(
     files.map(async (file) => {
       const canvas = document.createElement("canvas");
       const ctx = canvas.getContext("2d");
@@ -99,7 +110,6 @@ async function convertToOtherFormat(
 
       let base64: string;
       if (format.toLowerCase() === "bmp") {
-        // BMP conversion logic here if needed
         base64 = canvas.toDataURL("image/bmp");
       } else {
         base64 = canvas.toDataURL(`image/${format}`);
@@ -109,47 +119,53 @@ async function convertToOtherFormat(
 
       return {
         fileName: file.name.replace(/\.[^/.]+$/, `.${format}`),
-        fileSize: Math.round((base64.length * 3) / 4), // Approximate size
+        fileSize: Math.round((base64.length * 3) / 4),
         fileUrl: base64,
       };
     })
   );
 }
 
-async function convertImagesToPdf(imageFiles: File[], separatePdfs: boolean = false): Promise<ConvertedFile[]> {
+/**
+ * Converts images to PDF (single or multiple PDFs).
+ */
+async function convertImagesToPdf(
+  imageFiles: File[],
+  separatePdfs: boolean = false
+): Promise<ConvertedFile[]> {
   const results: ConvertedFile[] = [];
 
   async function convertToPng(file: File): Promise<File> {
     return new Promise((resolve, reject) => {
       const img = new Image();
       img.onload = () => {
-        const canvas = document.createElement('canvas');
+        const canvas = document.createElement("canvas");
         canvas.width = img.width;
         canvas.height = img.height;
-        const ctx = canvas.getContext('2d');
-        if (!ctx) {
-          reject(new Error('Could not get canvas context'));
-          return;
-        }
+        const ctx = canvas.getContext("2d");
+        if (!ctx) return reject(new Error("Could not get canvas context"));
         ctx.drawImage(img, 0, 0);
         canvas.toBlob((blob) => {
           if (blob) {
-            const pngFile = new File([blob], file.name.replace(/\.[^/.]+$/, '.png'), { type: 'image/png' });
-            resolve(pngFile);
+            resolve(
+              new File([blob], file.name.replace(/\.[^/.]+$/, ".png"), {
+                type: "image/png",
+              })
+            );
           } else {
-            reject(new Error('Failed to create PNG blob'));
+            reject(new Error("Failed to create PNG blob"));
           }
-        }, 'image/png');
+        }, "image/png");
       };
-      img.onerror = () => reject(new Error(`Failed to load image: ${file.name}`));
-
-      // For TIFF and WebP files, we need to use a FileReader to get a data URL
-      if (file.type === 'image/tiff' || file.type === 'image/webp') {
+      img.onerror = () =>
+        reject(new Error(`Failed to load image: ${file.name}`));
+      if (file.type === "image/tiff" || file.type === "image/webp") {
         const reader = new FileReader();
         reader.onload = (e) => {
           img.src = e.target?.result as string;
         };
-        reader.onerror = () => reject(new Error(`Failed to read file: ${file.name}`));
+        reader.onerror = () =>
+          reject(new Error(`Failed to read file: ${file.name}`));
         reader.readAsDataURL(file);
       } else {
         img.src = URL.createObjectURL(file);
@@ -157,17 +173,23 @@ async function convertImagesToPdf(imageFiles: File[], separatePdfs: boolean = fa
     });
   }
 
-  async function processSingleImage(file: File, pdfDoc: PDFDocument): Promise<void> {
+  async function processSingleImage(
+    file: File,
+    pdfDoc: PDFDocument
+  ): Promise<void> {
     let imageFile = file;
-    if (['image/svg+xml', 'image/bmp', 'image/tiff', 'image/webp'].includes(file.type)) {
+    if (
+      ["image/svg+xml", "image/bmp", "image/tiff", "image/webp"].includes(
+        file.type
+      )
+    ) {
       imageFile = await convertToPng(file);
     }
-
     const arrayBuffer = await imageFile.arrayBuffer();
     let img;
-    if (imageFile.type === 'image/jpeg' || imageFile.type === 'image/jpg') {
+    if (imageFile.type === "image/jpeg" || imageFile.type === "image/jpg") {
       img = await pdfDoc.embedJpg(arrayBuffer);
-    } else if (imageFile.type === 'image/png') {
+    } else if (imageFile.type === "image/png") {
       img = await pdfDoc.embedPng(arrayBuffer);
     } else {
       throw new Error(`Unsupported image type: ${imageFile.type}`);
@@ -176,7 +198,6 @@ async function convertImagesToPdf(imageFiles: File[], separatePdfs: boolean = fa
     const page = pdfDoc.addPage(PageSizes.A4);
     const { width, height } = img.scale(1);
     const aspectRatio = width / height;
-
     const pdfWidth = page.getWidth();
     const pdfHeight = page.getHeight();
     const pdfAspectRatio = pdfWidth / pdfHeight;
@@ -198,15 +219,6 @@ async function convertImagesToPdf(imageFiles: File[], separatePdfs: boolean = fa
     });
   }
 
-  function uint8ArrayToBase64(uint8Array: Uint8Array): string {
-    let binary = '';
-    const len = uint8Array.byteLength;
-    for (let i = 0; i < len; i++) {
-      binary += String.fromCharCode(uint8Array[i]);
-    }
-    return btoa(binary);
-  }
-
   if (separatePdfs) {
     for (const file of imageFiles) {
       try {
@@ -214,9 +226,8 @@ async function convertImagesToPdf(imageFiles: File[], separatePdfs: boolean = fa
         await processSingleImage(file, pdfDoc);
         const pdfBytes = await pdfDoc.save();
         const base64 = uint8ArrayToBase64(pdfBytes);
-
         results.push({
-          fileName: `${file.name.split('.')[0]}.pdf`,
+          fileName: `${file.name.split(".")[0]}.pdf`,
           fileSize: pdfBytes.length,
           fileUrl: `data:application/pdf;base64,${base64}`,
         });
@@ -232,19 +243,20 @@ async function convertImagesToPdf(imageFiles: File[], separatePdfs: boolean = fa
       }
       const pdfBytes = await pdfDoc.save();
       const base64 = uint8ArrayToBase64(pdfBytes);
-
       results.push({
-        fileName: 'converted_images.pdf',
+        fileName: "converted_images.pdf",
         fileSize: pdfBytes.length,
         fileUrl: `data:application/pdf;base64,${base64}`,
       });
     } catch (error) {
-      console.error('Error creating combined PDF:', error);
+      console.error("Error creating combined PDF:", error);
     }
   }
 
   return results;
 }
+
+// Main Conversion Dispatcher
 
 export async function convertImages(
   files: File[],
@@ -252,22 +264,24 @@ export async function convertImages(
   separatePdfs?: boolean
 ): Promise<ConvertedFile[]> {
   if (format === "svg") {
-    return await Promise.all(
+    return Promise.all(
       files.map(async (file) => {
         const svg = await convertPngToSvgBase64(file);
         return {
           fileName: file.name.replace(/\.[^/.]+$/, ".svg"),
-          fileSize: Math.round((svg.length * 3) / 4), // Approximate size
+          fileSize: Math.round((svg.length * 3) / 4),
           fileUrl: svg,
         };
       })
     );
-  } else if (format === "pdf") {
-    return await convertImagesToPdf(files, separatePdfs);
-  } else {
-    return await convertToOtherFormat(files, format);
   }
+  if (format === "pdf") {
+    return convertImagesToPdf(files, separatePdfs);
+  }
+  return convertToOtherFormat(files, format);
 }
+
+// Handler for UI/Forms
 
 export async function handleFileConversion(
   files: File[],
@@ -275,23 +289,15 @@ export async function handleFileConversion(
   formData: FormData
 ): Promise<{ convertedFiles: ConvertedFile[] | null; error: string | null }> {
   if (files.length === 0 || !format) {
-    return {
-      error: "Files and format are required",
-      convertedFiles: null,
-    };
+    return { error: "Files and format are required", convertedFiles: null };
   }
-
   try {
     const pdfType = formData.get("pdfType") as string;
     const separatePdfs = format === "pdf" && pdfType === "separated";
     const convertedFiles = await convertImages(files, format, separatePdfs);
-
     return { convertedFiles, error: null };
   } catch (e) {
     console.error("Conversion error:", e);
-    return {
-      error: "An unexpected error occurred",
-      convertedFiles: null,
-    };
+    return { error: "An unexpected error occurred", convertedFiles: null };
   }
 }

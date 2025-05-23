@@ -3,7 +3,6 @@ import "./Footer.scss";
 import ContentContainer from "../ContentContainer/ContentContainer";
 import Heading from "../Heading/Heading";
 import Text from "../Text/Text";
-import GridContainer from "../Grid/Grid";
 import { IconType } from "../Icon/Icon";
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
@@ -36,7 +35,6 @@ const Footer: React.FC<FooterProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
 
-
   const sections = [
     ...FOOTER.sections,
     {
@@ -54,8 +52,8 @@ const Footer: React.FC<FooterProps> = ({
   // Helper function to ensure the locale is in the URL
   const getLocalizedUrl = (originalUrl: string): string => {
     const currentLocale = i18n.language;
-    const urlParts = originalUrl.split('/').filter(Boolean);
-    
+    const urlParts = originalUrl.split("/").filter(Boolean);
+
     // Check if the URL already starts with a locale
     if (i18n.options.supportedLngs?.includes(urlParts[0])) {
       // If it does, replace it with the current locale
@@ -65,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({
       urlParts.unshift(currentLocale);
     }
 
-    return `/${urlParts.join('/')}`;
+    return `/${urlParts.join("/")}`;
   };
 
   return (
@@ -81,36 +79,27 @@ const Footer: React.FC<FooterProps> = ({
                 {t("pageName")}
               </Heading>
               <address className="footer__address u-pb1">
-                <strong>{t('email')}:</strong> {t(email)}
+                <strong>{t("email")}:</strong> {t(email)}
               </address>
-              <GridContainer className="footer__buttons u-pt1">
-                {/* <GridItem>
-                  <ThemeToggle />
-                </GridItem> */}
-                {/* {socialNetworks.map((item) => (
-                  <GridItem className="u-pl1" key={item.icon}>
-                    <Button
-                      href={getLocalizedUrl(item.href)}
-                      ariaLabel={item.label}
-                      appareance="tertiary"
-                      tooltipContent={item.label}
-                    >
-                      <Icon icon={item.icon} color="white" size="small" />
-                    </Button>
-                  </GridItem>
-                ))} */}
-              </GridContainer>
             </div>
 
             {sections.map((section, index) => (
               <div className="footer__section" key={index}>
-                <Heading type="questrial" appearance={6} level={2} color="accent">
+                <Heading
+                  type="questrial"
+                  appearance={6}
+                  level={2}
+                  color="accent"
+                >
                   {t(section.title)}
                 </Heading>
                 <ul className="footer__links">
                   {section.links.map((link, linkIndex) => (
                     <li className="footer__link-item" key={linkIndex}>
-                      <a href={getLocalizedUrl(t(link.url))} className="footer__link">
+                      <a
+                        href={getLocalizedUrl(t(link.url))}
+                        className="footer__link"
+                      >
                         {t(link.name)}
                       </a>
                     </li>

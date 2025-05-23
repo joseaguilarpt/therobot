@@ -10,11 +10,11 @@ interface CheckboxProps {
   ariaLabel?: string;
   label?: string;
   hideLabel?: boolean;
-  id: string; // Make id required for accessibility
+  id: string;
   name: string;
-  disabled?: boolean; // Add disabled prop
-  required?: boolean; // Add required prop
-  error?: string; // Add error prop for validation feedback
+  disabled?: boolean;
+  required?: boolean;
+  error?: string;
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({

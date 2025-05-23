@@ -1,4 +1,3 @@
-// app/utils/csrf.server.ts
 import { createCookieSessionStorage } from "@remix-run/node";
 import crypto from "crypto";
 

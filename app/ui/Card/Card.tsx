@@ -22,7 +22,7 @@ interface CardProps {
   underline?: boolean;
   icon?: string;
   iconType?: string;
-  id: number; // Make id required and of type number
+  id: number;
   ariaLabel?: string;
   conversion?: { from: string; to: string };
 }

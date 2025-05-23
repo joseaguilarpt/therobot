@@ -1,10 +1,10 @@
-import React from 'react';
-import './Radio.scss';
+import React from "react";
+import "./Radio.scss";
 
 interface RadioProps {
-  checked?: boolean; // Allow undefined for uncontrolled usage
-  defaultChecked?: boolean; // Initial checked state for uncontrolled usage
-  onChange?: () => void; // Controlled onChange handler
+  checked?: boolean;
+  defaultChecked?: boolean;
+  onChange?: () => void;
   ariaLabel?: string;
   label?: string;
   hideLabel?: boolean;
@@ -13,26 +13,23 @@ interface RadioProps {
 
 const Radio: React.FC<RadioProps> = ({
   checked: controlledChecked,
-  defaultChecked = false, // Default checked state for uncontrolled usage
+  defaultChecked = false,
   onChange,
   ariaLabel,
   label,
   hideLabel,
   name,
 }) => {
-  // Internal state for uncontrolled usage
   const [internalChecked, setInternalChecked] = React.useState(defaultChecked);
 
-  // Handle change event
   const handleChange = () => {
     if (onChange) {
-      onChange(); // Propagate change to parent if controlled
+      onChange();
     } else {
-      setInternalChecked(!internalChecked); // Update internal state if uncontrolled
+      setInternalChecked(!internalChecked);
     }
   };
 
-  // Determine checked state based on props (controlled vs. uncontrolled)
   const isChecked = onChange ? controlledChecked : internalChecked;
 
   return (

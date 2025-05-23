@@ -45,10 +45,8 @@ const LanguageSwitcher = ({ keepScrolled }: { keepScrolled?: boolean }) => {
       const supportedLanguages = languages.map((option) => option.value);
 
       if (supportedLanguages.includes(pathParts[0])) {
-        // If the first part of the path is a supported language code, replace it
         pathParts[0] = langCode;
       } else {
-        // Otherwise, add the language code at the beginning
         pathParts.unshift(langCode);
       }
 

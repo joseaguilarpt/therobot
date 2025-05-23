@@ -29,7 +29,7 @@ interface DragAndDropProps {
   isLoading?: boolean;
   onFilesDrop: (files: File[], formData: FormData) => void;
   acceptedTypes: string[];
-  maxSize?: number; // in bytes
+  maxSize?: number;
   files: File[];
 }
 

@@ -1,4 +1,3 @@
-// app/components/Icon.tsx
 import React from "react";
 import "./Icon.scss";
 
@@ -12,7 +11,7 @@ interface IconProps {
 
 const Icon: React.FC<IconProps> = ({ icon, size = "medium", color = "primary" }) => {
   return (
-    <i className={`material-icons icon icon--${color} icon--${size}`}>
+    <i data-testid='data-icon' className={`material-icons icon icon--${color} icon--${size}`}>
       {icon}
     </i>
   );

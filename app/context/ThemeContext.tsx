@@ -29,21 +29,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
     setSnackbar({ message: "", type: "" });
   }, []);
 
-  // useEffect(() => {
-  //   const savedTheme = localStorage.getItem("theme") as Theme;
-  //   if (savedTheme) {
-  //     setTheme(savedTheme);
-  //     document.body.className = savedTheme;
-  //   } else {
-  //     const systemPreference = window.matchMedia("(prefers-color-scheme: dark)")
-  //       .matches
-  //       ? "dark-mode"
-  //       : "light-mode";
-  //     setTheme(systemPreference);
-  //     document.body.className = systemPreference;
-  //   }
-  // }, []);
-
   const toggleTheme = useCallback(() => {
     // setTheme((prevTheme) => {
     //   const newTheme = prevTheme === "light-mode" ? "dark-mode" : "light-mode";
